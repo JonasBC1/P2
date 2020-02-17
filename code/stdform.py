@@ -1,17 +1,15 @@
-f	=	"4x1 + 6x2 + x3 = z"
+f	=	{"x1":4, "x2": 6, "x3": 1}
 
-A	=[	
-"12x1 - x2 =< 15",
-"3x2 + 2x3 =< 10",
-"x1 => 0",
-"x2 => 0",
-"x3 => 0"]
+A	=[
+{"x1": 12,	"x2": -1,	"lig": "leq",	"b": 15},
+{"x2": 3,	"x3": 2,	"lig": "leq",	"b": 10},
+{"x1": "geq",	"b": 0},
+{"x2": "geq",	"b": 0},
+{"x3": "geq",	"b": 0}]
 
 
 def stdform(f=f, A=A):
-	mx	=	f.count("x")
-	
-	for i in range(1, mx + 1):
+	for i in A:
 		
 
 stdform()
