@@ -9,11 +9,11 @@
 
 % Variabler, som bruges til automatisk at indsætte titel, forfattere, osv. på
 % forsiden og titelbladet.
-\def \projecttitle       {Projekttitel}
-\def \projectsubtitle    {Projektundertitel}
-\def \projecttheme       {Projekttema}
-\def \projectdegree      {Matematik}  % eller Matematik-Økonomi/Teknologi
-\def \projectperiod      {Forårssemesteret 20XX}
+\def \projecttitle       {Optimering}
+\def \projectsubtitle    {Lineær programmering}
+\def \projecttheme       {Lineær algebra}
+\def \projectdegree      {Matematik}
+\def \projectperiod      {Efterårssemesteret 2020}
 \def \projectnumber      {P2}
 \def \projectgroup       {B303c}
 \def \projectauthors     {
@@ -25,9 +25,7 @@
 	Rasmus Jespersgaard
 }
 \def \projectsupervisors {
-  Projektvejleder 1\\
-  Projektvejleder 2
-  % ...
+  Horia Cornean
 }
 
 % Preamblet indeholder alle de indstillinger og makroer, som skal indsættes for
@@ -57,6 +55,16 @@
 % \include{incl/main/example1}
 % \include{incl/main/example2}
 % ...
+
+
+% INDLEDNING
+	\include{incl/main/indledning/forord}
+	\include{incl/main/indledning/indledning}
+	
+% LINEÆRE ALGEBRA 
+	\include{incl/main/linear_algebra/matricer}
+	\include{incl/main/linear_algebra/lineare_ligningssystemer}
+	\include{incl/main/linear_algebra/gauss_elimination}
 
 % Appendicer indsættes inde i en appendices-blok og bliver nummereret med
 % bogstaver i stedet for tal
