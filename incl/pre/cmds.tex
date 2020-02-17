@@ -26,20 +26,11 @@
 \theoremstyle{definition}          	% Title med fed, opretstående tekst
 %\newtheorem{defn}[thm]{Definition} % Definitioner, nummereret ligesom sætninger
 \newcounter{example}[chapter]
-\newenvironment{eks}{
-\bigskip
-\refstepcounter{example}
-\textbf{Example~\thechapter.\theexample}
-\phantom{.}\newline\noindent\rule{\textwidth}{0.4pt}
-}
+\newenvironment{eks}{\bigskip\phantom{.}\newline\noindent\refstepcounter{example}\textbf{Example~\thechapter.\theexample}\phantom{.}\newline\noindent\rule{\textwidth}{0.4pt}}
 {\phantom{.}\newline\rule{\textwidth}{0.4pt}}  
 
 \newcounter{proof}[chapter]
-\renewenvironment{proof}{
-\bigskip
-\refstepcounter{proof}
-\textbf{Bevis~\thechapter.\theproof}
-\phantom{.}\newline\noindent}
+\renewenvironment{proof}{\phantom{.}\newline\noindent\refstepcounter{proof}\textbf{Bevis~\thechapter.\theproof}\phantom{.}\newline\noindent}
 {\qed}  
 
 %farvet-commands
