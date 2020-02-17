@@ -1,9 +1,9 @@
 \section{Gauss elimination}
-%sætning 1.4 kan vi bevise den
+% Sætning 1.4 kan vi bevise den
 En algoritme til løsningen af linære ligningssystemer er  rækkereduktionsalgoritmen, som omdanner en matrix fra en totalmatrice til reduceret trappeform.
 Når den bruges til at løse linære ligningssystemer, kaldes denne process for Gauss elimination.
 I algoritmen bruges de elemæntere rækkeoperationer for at omdanne en matrix $A$ til trappeform. 
-Herefter benyttes rækkeoperationerne igen til at omdanne matricen på trappeform til reduceret trappeform.
+Herefter benyttes rækkeoperationerne igen til at reducere matricen til trappeform og videre til reduceret trappeform.
 Algortimen gennemgår således følgende skridt:
 %
 \begin{enumerate}
@@ -15,26 +15,94 @@ Algortimen gennemgår således følgende skridt:
 \item Ved rækkeudskiftning sikres nu $0$er over og under pivot-indgangene.
 \end{enumerate}
 % Eksempel
+\begin{eks}
 Givet ligningssystemet:
 \begin{align*}
 x_1-x_3-2x_4-8x_5&=-3 \\
 -2x_1+x_3+2x_4+9x_5&=5 \\
 3x_1-2x_3-3x_4-15x_5&=-9 \\
 \end{align*}
-\[
-\begin{blockarray}{cccccc}
-a & b & c & d & e \\
-\begin{block}{[ccccc]c}
-  1 & 1 & 1 & 1 & 1 & f \\
-  0 & 1 & 0 & 0 & 1 & g \\
-  0 & 0 & 1 & 0 & 1 & h \\
-  0 & 0 & 0 & 1 & 1 & i \\
-  0 & 0 & 0 & 0 & 1 & j \\
+Ligningssystemet opskrevet som totalmatrix $[A|\mathbf{b}]$
+%
+\begin{equation*}
+  A=
+\begin{blockarray}{ccccccc}
+x_1 & x_2 & x_3 & x_4 & x_5 & b \\
+\begin{block}{[ccccc|c]c}
+  1 & 0 & -1 & -2 & -8 & -3 \\
+  -2 & 0 & 1 & 2 & 9 & 5 \\
+  3 & 0 & -2 & -3 & -15 & -9 \\
 \end{block}
 \end{blockarray}
- \]
+\end{equation*}
+De elementære rækkeopperationer benyttes nu med henblik på at reducere totalmatricen til trappeform.
+\begin{equation*}
+\xrightarrow[R_3 \rightarrow R_3-3R_1]{R_2 \rightarrow R_2+2R_1} 
+\begin{blockarray}{ccccccc}
+x_1 & x_2 & x_3 & x_4 & x_5 & b \\
+\begin{block}{[ccccc|c]c}
+  1 & 0 & -1 & -2 & -8 & -3 \\
+  0 & 0 & -1 & -2 & -7 & -1 \\
+  0 & 0 & 1 & 3 & 9 & 0 \\
+\end{block}
+\end{blockarray}
+\end{equation*}
+\begin{equation*}
+\xrightarrow{R_3 \rightarrow R_3+R_2}
+\begin{blockarray}{ccccccc}
+x_1 & x_2 & x_3 & x_4 & x_5 & b \\
+\begin{block}{[ccccc|c]c}
+  1 & 0 & -1 & -2 & -8 & -3 \\
+  0 & 0 & -1 & -2 & -7 & -1 \\
+  0 & 0 & 0 & 1 & 2 & -1 \\
+\end{block}
+\end{blockarray}
+\end{equation*}
+Algoritmen fortsættes nu med henblik på at opnå reduceret trappeform.
+\begin{equation*}
+\xrightarrow[R_2 \rightarrow R_2+2R_3]{R_1 \rightarrow R_1+2R_3}
+\begin{blockarray}{ccccccc}
+x_1 & x_2 & x_3 & x_4 & x_5 & b \\
+\begin{block}{[ccccc|c]c}
+  1 & 0 & -1 & 0 & -4 & -5 \\
+  0 & 0 & -1 & 0 & -3 & -3 \\
+  0 & 0 & 0 & 1 & 2 & -1 \\
+\end{block}
+\end{blockarray}
+\end{equation*}
+\begin{equation*}
+\xrightarrow{R_2 \rightarrow -1R_2}
+\begin{blockarray}{ccccccc}
+x_1 & x_2 & x_3 & x_4 & x_5 & b \\
+\begin{block}{[ccccc|c]c}
+  1 & 0 & -1 & 0 & -4 & -5 \\
+  0 & 0 & 1 & 0 & 3 & 3 \\
+  0 & 0 & 0 & 1 & 2 & -1 \\
+\end{block}
+\end{blockarray}
+\end{equation*}
+\begin{equation*}
+\xrightarrow{R_1 \rightarrow R_1+R_2}
+\begin{blockarray}{ccccccc}
+x_1 & x_2 & x_3 & x_4 & x_5 & b \\
+\begin{block}{[ccccc|c]c}
+  1 & 0 & 0 & 0 & -1 & -2 \\
+  0 & 0 & 1 & 0 & 3 & 3 \\
+  0 & 0 & 0 & 1 & 2 & -1 \\
+\end{block}
+\end{blockarray}
+\end{equation*}
+Herefter kan løsninger opskrives:
+\begin{align*}
+x_1-x_5&=-2 &\iff x_1&=x_5-2 \\
+x_3-3x_5&=3 &\iff x_3&=-3x_5+3 \\
+x_4+2x_5&=-1 &\iff x_4&=-2x_5-1 \\
+\end{align*}
+Parameterfremstillingen for løsningen i $\R^5$ bliver således 
 
-\end{document}
+
+\end{eks}
+
 
 \begin{thm}{}{konsitens}
 \end{thm}
