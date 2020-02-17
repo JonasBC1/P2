@@ -6,7 +6,8 @@ $$ a_1x_1+a_2x_2+\cdots+a_nx_n=b$$
 hvor $a_1,a_2,\ldots,a_n$ er reelle tal. 
 
 \begin{defn}{}{}
-Et lineært ligningssystem er en mængde af $m $lineære ligninger  med de samme $n$ variabler, hvor $m$ og $n$ er positive heltal. Dette kan skrives på formen
+Et lineært ligningssystem er en mængde af $m$ lineære ligninger  med de samme $n$ variabler, hvor $m$ og $n$ er positive heltal.
+Dette kan skrives på formen
 \begin{align*}
 a_{11}x_1+a_{12}x_2+&\cdots+a_{1n}x_n=b_1\\
 a_{21}x_1+a_{22}x_2+&\cdots+a_{2n}x_n=b_2\\
@@ -15,13 +16,65 @@ a_{m1}x_1+a_{m2}x_2+&\cdots +a_{mn}x_n=b_m
 \end{align*}
 hvor er $a_{ij}$ betegner koefficienten af $x_j$ i ligning $i$
 \end{defn}
-
-\begin{eks}
+\noindent
+Løsningen på et sådanne system er en vektor$\begin{bmatrix}
+s_1\\
+s_2\\
+\vdots\\
+s_n
+\end{bmatrix}
+$i $\R ^n$ således at alle ligninger er opfyldt når $x_i$ bliver erstattet med $s_i$.
+\begin{eks}\label{eks}
 \begin{align*}
-2x_1+3x_2+4x_4&=6\\
--2x_2+4x_3&=2\\
-4x_1+7x_3+3x_4&=8\\
+x_1-x_3-2x_4-8x_5&=-3 \\
+-2x_1+x_3+2x_4+9x_5&=5 \\
+3x_1-2x_3-3x_4-15x_5&=-9
 \end{align*}
-
+Løsningen på dette system ses i eksempel \ref{eks_gauss}
 \end{eks}
-
+\phantom{g}\\\\
+Alle lineære ligningssystemer har enten ingen, præcis en eller uendelig mange løsninger.
+Alle ligningerne i systemet repræsenteres af linje hvis systemet er i 2 variable, og et plan i 3 variable, osv. Hvis disse ligningers er parallelle og forskellige, har systemet ingen løsning. Hvis ligningerne er forskellige, så har systemet præcis en løsning. Hvis ligningerne er ens har systemet uendelig mange løsninger.\\
+Et system der har en eller flere løsninger kaldes \textit{konsistent}, ellers kaldes det for \textit{inkonsistent}, da der ingen løsninger eksisterer.\\\\
+Med udgangspunktet i eksmpel \ref{eks}, kan et lineært ligningssystem opstilles som en matrix ligning A\textbf{x}=\textbf{b}, hvor\\
+\begin{center}
+$A=
+\begin{bmatrix}
+1 & 0 & -1 & -2 & -8\\
+-2 & 0 & 1 & 2 & 9\\
+3 & 0 & -2 & -3 & -15
+\end{bmatrix}
+$, 
+$\textbf{x}=
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3\\
+x_4\\
+x_5
+\end{bmatrix}
+$
+og
+$
+\textbf{b}=\begin{bmatrix}
+-3\\
+5\\
+-9
+\end{bmatrix}.
+$
+\end{center}
+A kaldes for koefficientmatricen. 
+%efter hårdt sammenleje bliver A matricen og b til totalmatricen
+Totalmatrixen er dannet ved at kombinere koefficientmatricen med vektoren \textbf{b}. Totalmatrixen indeholder alle informationer der skal bruges til at løse et lineært ligningssystem.
+Ligningssystemet fra eksempel \ref{eks} skrevet som totalmatrix
+\begin{equation*}
+  A=
+\begin{blockarray}{ccccccc}
+x_1 & x_2 & x_3 & x_4 & x_5 & b \\
+\begin{block}{[ccccc|c]c}
+  1 & 0 & -1 & -2 & -8 & -3 \\
+  -2 & 0 & 1 & 2 & 9 & 5 \\
+  3 & 0 & -2 & -3 & -15 & -9 \\
+\end{block}
+\end{blockarray}
+\end{equation*}
