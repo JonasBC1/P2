@@ -17,7 +17,7 @@
 
 % Sætninger o.lign. ------------------------------------------------------------
 % http://www.ctex.org/documents/packages/math/amsthdoc.pdf
-%\theoremstyle{plain}                 % Titel med fed, tekst med skråskrift
+\theoremstyle{plain}                 % Titel med fed, tekst med skråskrift
 %\newtheorem{thm}{Sætning}[chapter]   % Sætninger, nummereret efter kapitel
 %\newtheorem{lem}[thm]{Lemma}         % Lemmaer, nummereret ligesom sætninger
 %\newtheorem{prop}[thm]{Proposition}  % Propositioner, nummereret ligesom sætninger
@@ -25,7 +25,23 @@
 
 \theoremstyle{definition}          	% Title med fed, opretstående tekst
 %\newtheorem{defn}[thm]{Definition} % Definitioner, nummereret ligesom sætninger
-\newtheorem{eks}[chapter]{Eksempel}     		% Eksempler, nummereret ligesom sætninger
+\newcounter{example}[chapter]
+\newenvironment{eks}{
+\bigskip
+\refstepcounter{example}
+\textbf{Example~\thechapter.\theexample}
+\phantom{.}\newline\noindent\rule{\textwidth}{0.4pt}
+}
+{\phantom{.}\newline\noindent\rule{\textwidth}{0.4pt}}  
+
+\newcounter{proof}[chapter]
+\renewenvironment{proof}{
+\bigskip
+\refstepcounter{proof}
+\textbf{Bevis~\thechapter.\theproof}
+\phantom{.}\newline\noindent\rule{\textwidth}{0.4pt}
+}
+{\phantom{.}\newline\noindent\rule{\textwidth}{0.4pt}}  
 
 %farvet-commands
 \definecolor{myblue}{RGB}{89, 79, 191}
