@@ -1,20 +1,59 @@
 \subsection{Matrixsum og skalarprodukt}
 %
-\begin{defn}{}{}
+\begin{defn}{}{mxsum}
 Lad $A$ og $B$ være $m \times n$ matricer.
-\textbf{Summen} af $A$ og $B$, noteret $A + B$, er matricen, hvor
-\begin{align*}
-(A + B)_{i,j} = a_{i,j} + b_{i,j},
-\end{align*}
-for alle indgange.
+\textbf{Summen} af $A$ og $B$  er matricen, $A + B$, hvor de $(i,j)$'te indgange er $a_{i,j} + b_{i,j}$.
+Ligeledes er subtraktion mellem matricerne $A$ og $B$ muligt og indgangene i den resulterende matrix er $a_{i,j} - b_{i,j}$.
 Lad nu $k$ være en skalar.
-\textbf{Skalarproduktet} af $A$, noteret $kA$, er en $m \times n$ matrix, hvor
-\begin{align*}
-(kA)_{i,j} = ka_{i,j},
-\end{align*}
-for alle indgange. Bemærk at $-1A = -A$
+\textbf{Skalarproduktet} af $A$, noteret $kA$, er en $m \times n$ matrix, hvor de $(i,j)$'te indgange er $ka_{i,j}$.
+Bemærk at $1A = A$, $-1A = -A$ og $0A = O$.
 \end{defn}
 %
-\begin{proof}
-as
-\end{proof}
+\begin{eks}
+Betragtes nu $3A$, $-B$ og $3A+B$, hvor 
+\begin{align*}
+A= 
+\begin{bmatrix}
+3	&	-3	&	1\\
+2	&	0	&	4
+\end{bmatrix}
+\text{\phantom{---}og\phantom{---}}
+B= 
+\begin{bmatrix}
+-1	&	4	&	1\\
+5	&	3	&	2
+\end{bmatrix}.
+\end{align*}
+Ud fra definition \ref{defn:mxsum} haves
+\begin{align*}
+3A= 
+\begin{bmatrix}
+9	&	-9	&	3\\
+6	&	0	&	12
+\end{bmatrix}
+\text{,\phantom{---}}
+-B= 
+\begin{bmatrix}
+1	&	-4	&	-1\\
+-5	&	-3	&	-2
+\end{bmatrix}
+\end{align*}
+og
+\begin{align*}
+3A+B= 
+\begin{bmatrix}
+9	&	-9	&	3\\
+6	&	0	&	12
+\end{bmatrix}
++ 
+\begin{bmatrix}
+-1	&	4	&	1\\
+5	&	3	&	2
+\end{bmatrix}
+=
+\begin{bmatrix}
+8	&	-5	&	4\\
+11	&	3	&	14
+\end{bmatrix}.
+\end{align*}
+\end{eks}
