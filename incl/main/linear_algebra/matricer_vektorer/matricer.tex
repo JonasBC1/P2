@@ -3,13 +3,48 @@
 
 %Noget indledningsvist - hvorfor er matricer/vektorer vigtige? 
 
-Matricer er nyttige i forbindelse med løsning af lineære ligningssystemer. 
+I forbindelse med løsning af lineære ligningssystemer og optimeringsproblemer er det nødvendigt at redegøre for \textit{matricer} og tilhørende notation. 
 
-\begin{defn}{Matrix}{}
-En \textit{matrix} er en rektangulær tabel, hvis elementer er $k \in \R$. 
-En matrix med $m$ rækker og $n$ søjler kaldes en $m \times n$ matrix.
+\begin{defn}{}{}
+En matrix er en rektangulær tabel, hvis elementer er \textit{skalarer}, der er $k \in \R$. 
+En matrix med $m$ rækker og $n$ søjler har størrelsen $m \times n$.
 Hvis $m=n$, er matricen kvadratisk. 
-Et element $a_{ij}$ i $i'te$ række og $j'te$ søjle kaldes $(i, j)-indgangen$ i matricen. 
+Elementet $a_{i,j}$ i $i'te$ række og $j'te$ søjle kaldes $(i,j)-indgangen$ i matricen. 
 \end{defn}
+
+På figur \ref{fig:matrix_gen_eks} ses et generelt eksempel på en matrix $A = m \times n$.
+
+\begin{figure}[H] \label{fig:matrix_gen_eks}
+	\begin{center}
+$$
+A=
+\begin{bmatrix}
+a_{1,1} & a_{1,2} & \ldots & a_{1,j} \\
+a_{2,1} & a_{2,2} & \ldots & a_{2,j} \\
+\vdots  & \ldots  & \ddots & \vdots \\
+a_{i,1} & a_{i,2} & \ldots & a_{i,j} \\
+\end{bmatrix}
+$$
+	\end{center}
+\end{figure}
+
+Enhver række $i$ eller søjle $j$ er en \textit{vektor}. En matrix med én række kaldes en \textit{rækkevektor}, og en matrix med én søjle kaldes en \textit{søjlevektor}. I denne rapport noteres vektorer med små, fede bogstaver, såsom $\textbf{a}$ og $\textbf{b}$. Søjlevektorer noteres desuden ofte med et indeks tilsvarende søjlen i matricen, således 
+$$
+\textbf{a}_j= 
+\begin{bmatrix}
+a_{1,j} \\
+a_{2,} \\
+\vdots \\
+a_{i,j} \\
+\end{bmatrix}
+$$. 
+
+
+
+
+
+
+
+
 
 
