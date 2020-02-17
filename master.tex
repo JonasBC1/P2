@@ -52,26 +52,19 @@
 % Input-filer bør opdeles således, at hver fil svarer til et kapitel. Makroen
 % \include indsætter et sideskift og indholdet fra den givne stil.
 
-% \include{incl/main/example1}
-% \include{incl/main/example2}
-% ...
-
-
 % INDLEDNING
 	\include{incl/main/indledning/forord}
 	\include{incl/main/indledning/indledning}
 	
 % LINEÆRE ALGEBRA 
-	\include{incl/main/linear_algebra/matricer}
+	\include{incl/main/linear_algebra/linear_algebra}
 	\include{incl/main/linear_algebra/lineare_ligningssystemer}
 	\include{incl/main/linear_algebra/gauss_elimination}
 
 % Appendicer indsættes inde i en appendices-blok og bliver nummereret med
 % bogstaver i stedet for tal
 \begin{appendices}
-  % \include{incl/app/appendix1}
-  % \include{incl/app/appendix2}
-  % ..
+
 \end{appendices}
 
 % Dokumentets 'back matter' er til ekstra ting som f.eks. litteraturlisten.
