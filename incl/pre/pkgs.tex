@@ -20,6 +20,7 @@
 
 % Figur-pakker -----------------------------------------------------------------
 \usepackage[dvipsnames]{xcolor}    % til farvet skrift
+\usepackage{colortbl}
 \usepackage{graphicx}              % billedhåndtering
 \usepackage{booktabs}              % bedre tabeller
 \usepackage{caption}               % indstillinger for billedtekst
@@ -28,6 +29,9 @@
 \usepackage[chapter]{algorithm}    % algoritme-figurer
 \usepackage[noend]{algpseudocode}  % pseudokode
 \usepackage{listings}              % visning af kildekode
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{listings}			   % directe input af kode
 
 % Styling-pakker ---------------------------------------------------------------
 \usepackage{microtype}             % forbedret justering af tekst
@@ -37,11 +41,13 @@
 \usepackage[margin=3cm]{geometry}  % indstillinger for sidemargen
 \usepackage[toc,page]{appendix}    % bedre appendicer
 \usepackage[some]{background}      % til at indsætte baggrundsbilleder
+\usepackage{xcolor}                % flere farver
+\usepackage{enumitem}			   % bedre lister
 
-% Skrifttyper ------------------------------------------------------------------
+% ------------------------------------------------------------
 % http://www.tug.org/pracjourn/2006-1/hartke/hartke.pdf
 % http://www.tug.dk/FontCatalogue/
-\usepackage{fourier}               % Adobe Utopia som primær skrifttype
+\usepackage{lmodern}               % Adobe Utopia som primær skrifttype
 \usepackage{DejaVuSansMono}        % DejaVu Sans Mono til bl.a. kildekode
 
 % Inkluderede tredjepartspakker ------------------------------------------------

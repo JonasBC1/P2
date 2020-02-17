@@ -12,6 +12,8 @@
 \newcommand{\ind}{\mathbbm{1}}       % indikatorfunktion
 \newcommand{\bigO}{\mathcal{O}}      % store-O notation
 \renewcommand{\vec}[1]{\bm{#1}}      % skriv vektorer med fed skrift
+\usepackage{xcolor}
+\usepackage{pgfplots}
 
 % Sætninger o.lign. ------------------------------------------------------------
 % http://www.ctex.org/documents/packages/math/amsthdoc.pdf
@@ -23,7 +25,78 @@
 
 \theoremstyle{definition}            % Title med fed, opretstående tekst
 \newtheorem{defn}[thm]{Definition}   % Definitioner, nummereret ligesom sætninger
-\newtheorem{exmp}[thm]{Eksempel}      % Eksempler, nummereret ligesom sætninger
+\newtheorem{eks}[thm]{Eksempel}      % Eksempler, nummereret ligesom sætninger
+
+%farvet-commands
+\definecolor{myblue}{RGB}{89, 79, 191}
+\definecolor{mygreen}{RGB}{157, 187, 29}
+\definecolor{myred}{RGB}{223, 103, 82}
+\definecolor{mygrey}{RGB}{222, 223, 226}
+\newtcbtheorem[auto counter, number within = chapter]
+{defncol}
+{Definition}
+{
+colback		= myblue!15,
+colframe	= myblue!15,
+coltitle	= black,
+before skip	= 20pt plus 2pt,
+after skip	= 20pt plus 2pt,
+fonttitle	= \bfseries
+}
+{defn}
+
+\newtcbtheorem[auto counter, number within = chapter]
+{lemcol}
+{Lemma}
+{
+colback		= myblue!15,
+colframe	= myblue!15,
+coltitle	= black,
+before skip	= 20pt plus 2pt,
+after skip	= 20pt plus 2pt,
+fonttitle	= \bfseries
+}
+{lem}
+
+
+\newtcbtheorem[auto counter, number within = chapter]
+{korcol}
+{Korollar}
+{
+colback		= myblue!15,
+colframe	= myblue!15,
+coltitle	= black,
+before skip	= 20pt plus 2pt,
+after skip	= 20pt plus 2pt,
+fonttitle	= \bfseries
+}
+{kor}
+
+\newtcbtheorem[auto counter, number within = chapter]
+{thmcol}
+{Sætning}
+{
+colback		= myblue!15,
+colframe	= myblue!15,
+coltitle	= black,
+before skip	= 20pt plus 2pt,
+after skip	= 20pt plus 2pt,
+fonttitle	= \bfseries
+}
+{thm}
+
+\newtcbtheorem[no counter]
+{col}
+{}
+{
+colback		= myblue!15,
+colframe	= myblue!15,
+coltitle	= black,
+before skip	= 20pt plus 2pt,
+after skip	= 20pt plus 2pt,
+fonttitle	= \bfseries
+}
+{col}
 
 % Figur-makroer ----------------------------------------------------------------
 
