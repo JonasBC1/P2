@@ -178,8 +178,19 @@ Hvis udsagn $(3)$ er falsk følger det at  $$0 x_1+0 x_2 + \ldots + 0x_n =d$$ hv
 Såfremt dette er sandt gælder omvendt, at alle rækker i den reducerede trappeform indeholder en løsning, som også er løsning til $A\mathbf{x}=\mathbf{b}$. 
 Således er $(1)$ og $(3)$ ækvivalente.
 \end{proof}
-
-\begin{eks}
-fisk
-\end{eks}
-
+\\\\
+%
+Med udgangspunkt i eksempel \ref{eks_gauss}, ses derfor, at den er konsistent, da $d$ ikke er en pivot-indgang, såfremt ligningssystemet skulle være inkonsistent kunne den have følgende form: 
+%
+\begin{align*}
+A=\begin{blockarray}{ccccccc}
+x_1 & x_2 & x_3 & x_4 & x_5 & b \\
+\begin{block}{[ccccc|c]c}
+  1 & 0 & 0 & 0 & -1 & -2 \\
+  0 & 0 & 1 & 0 & 3 & 3 \\
+  0 & 0 & 0 & 0 & 0 & -1 \\
+\end{block}
+\end{blockarray} 
+\end{align*}
+Hvor $d \neq 0$ er i indgang $a_{3,6}$. 
+Det følger derfor også, at man ikke kan opnå dette $b$, da det ikke kan laves som linear kombination af søjlerne. 
