@@ -70,7 +70,7 @@ Som eksempel på elementære rækkeoperationer ses eksempler på dem i eksempel 
 En række kaldes for en nulrække hvis alle indgange er nul, og en ikke nul række hvis der bare er en indgang der er forskellig fra nul.
 Dette bruges til definitionen af trappeform.
 \begin{defn}{}{}
-En matrix er på \textbf{trappeform} hvis den opfylder følgende krav.
+En matrix er på \textbf{trappeform}, hvis den opfylder følgende krav.
 \itemize
 \item Enhver ikke nul række ligger over alle nul rækker
 \item Den første ikke nul indgang i en ikke nul række ligger i en søjle til højre for første ikke nul indgange i forrige række.
@@ -99,4 +99,24 @@ B=
 
 \end{eks}
 
+\begin{defn}{}{}
+En matrix er på \textbf{reduceret trappeform}, hvis den opfylder følgende krav.
+\itemize
+\item Hvis en søjle har den første ikke nul indgang i en række, så er alle indgange i søjlen nul.
+\item Den første indgang i hver ikke nul række er 1. 
+\end{defn}
 
+\begin{eks}
+Det kan ses på følgende matrix, at $A$ er på reduceret trappeform.
+\begin{align*}
+A=
+\begin{bmatrix}
+1 & 0 & 5 & 0 & 0\\
+0 & 1 & 3 & 0 & 0\\
+0 & 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 1
+\end{bmatrix}
+\end{align*}
+\end{eks}
+
+\subsection{Pivotindgange}
