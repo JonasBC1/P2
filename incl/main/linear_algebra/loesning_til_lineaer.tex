@@ -1,1 +1,102 @@
 \section{Løsning til lineær ligningssystemer}
+
+
+\subsection{Elementære rækkeopperationer}
+Der eksisterer tre opperationer som kan udføres på rækker i et lineært ligningssystem.
+Dette gøres mest når systemet er skrevet som en matrice.
+De er ombytning, udskiftning og skalaring.
+
+\begin{defn}{}{element}
+\textbf{Ombytning} af rækker, bytter rundt på pladserne af to rækker og noteres
+\begin{align*}
+A \xrightarrow{R_i \leftrightarrow R_h} B, 
+\end{align*}
+hvor $A$ er matricen før opperationen, $B$ er matricen efter opperationen og $R_h$ og $R_i$ er rækker i $A$.\\
+\textbf{Skalaring} betyder at en bestemt række skaleres med en ikke nul værdi, og noteres
+\begin{align*}
+A \xrightarrow{R_i \rightarrow cR_i} B, 
+\end{align*}
+\textbf{Udskiftning} af rækker betyder at en række udskiftes med rækken selv plus en skalaring af en anden række og noteres
+\begin{align*}
+A \xrightarrow{R_i \rightarrow R_i + cR_h} B
+\end{align*}
+
+\end{defn}
+
+Som eksempel på elementære rækkeoperationer ses eksempler på dem i eksempel \thechapter .\ref{eks1}
+
+\begin{eks}\label{eks1}
+\begin{align*}
+\begin{bmatrix}
+5 & 5 & 3 \\
+2 & 2 & 1\\
+3 & 4 & 8
+\end{bmatrix}
+&\xrightarrow{R_1 \leftrightarrow R_3}
+\begin{bmatrix}
+3 & 4 & 8\\
+2 & 2 & 1\\
+5 & 5 & 3
+\end{bmatrix}\\
+%
+%
+\begin{bmatrix}
+3 & 4 & 8\\
+2 & 2 & 1\\
+5 & 5 & 3
+\end{bmatrix}
+&\xrightarrow{R_2 \rightarrow -2R_2}
+\begin{bmatrix}
+3 & 4 & 8\\
+-4 & -4 & -2\\
+5 & 5 & 3
+\end{bmatrix}\\
+\begin{bmatrix}
+3 & 4 & 8\\
+-4 & -4 & -2\\
+5 & 5 & 3
+\end{bmatrix}
+&\xrightarrow{R_3 \rightarrow 3R_1+R_3}
+\begin{bmatrix}
+3 & 4 & 8\\
+-4 & -4 & -2\\
+14 & 17 & 27
+\end{bmatrix}
+\end{align*}
+\end{eks}
+
+
+\subsection{Trappeform og reduceret trappeform}
+En række kaldes for en nulrække hvis alle indgange er nul, og en ikke nul række hvis der bare er en indgang der er forskellig fra nul.
+Dette bruges til definitionen af trappeform.
+\begin{defn}{}{}
+En matrix er på \textbf{trappeform} hvis den opfylder følgende krav.
+\itemize
+\item Enhver ikke nul række ligger over alle nul rækker
+\item Den første ikke nul indgang i en ikke nul række ligger i en søjle til højre for første ikke nul indgange i forrige række.
+\item Hvis en søjle har den første ikke nul indgang i en række, så er alle indgangene i søjlen under den nul.
+\end{defn}
+
+\begin{eks}
+Det kan ses på de to følgende matricer at $A$ er på trappeform, mens $B$ ikke er på trappeform, da den første indgang i række fire ikke er en nul indgang. Hvis der laves en række ombytning på række to og fire, så ville matrix $B$ også være på trappeform
+\begin{align*}
+A=
+\begin{bmatrix}
+2 & 4 & 8 & 2\\
+0 & 5 & -2 & 5\\
+0 & 0 & 2 & 7\\
+0 & 0 & 0 & 0
+\end{bmatrix}
+\text{ }
+B=
+\begin{bmatrix}
+2 & 4 & 8 & 2\\
+0 & 5 & -2 & 5\\
+0 & 4 & 2 & 7\\
+2 & 0 & 0 & 0
+\end{bmatrix}
+\end{align*}
+
+\end{eks}
+
+
