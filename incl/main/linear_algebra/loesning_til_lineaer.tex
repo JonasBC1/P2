@@ -26,42 +26,55 @@ A \xrightarrow{R_i \rightarrow R_i + cR_h} B
 Som eksempel på elementære rækkeoperationer ses eksempler på dem i eksempel \thechapter .\ref{eks1}
 
 \begin{eks}\label{eks1}
+Først laves ombytning mellem række et og tre i matricen. Derefter laves en skalaring med -2 på række to. Til sidst laves en udskiftning på række tre hvor række et bliver lagt til række tre, tre gange. 
 \begin{align*}
-\begin{bmatrix}
+\begin{blockarray}{ccc}
+\begin{block}{[cc|c]}
 5 & 5 & 3 \\
 2 & 2 & 1\\
-3 & 4 & 8
-\end{bmatrix}
+3 & 4 & 8\\
+\end{block}
+\end{blockarray}
 &\xrightarrow{R_1 \leftrightarrow R_3}
-\begin{bmatrix}
+\begin{blockarray}{ccc}
+\begin{block}{[cc|c]}
 3 & 4 & 8\\
 2 & 2 & 1\\
-5 & 5 & 3
-\end{bmatrix}\\
+5 & 5 & 3\\
+\end{block}
+\end{blockarray}\\
 %
 %
-\begin{bmatrix}
+\begin{blockarray}{ccc}
+\begin{block}{[cc|c]}
 3 & 4 & 8\\
 2 & 2 & 1\\
-5 & 5 & 3
-\end{bmatrix}
+5 & 5 & 3\\
+\end{block}
+\end{blockarray}
 &\xrightarrow{R_2 \rightarrow -2R_2}
-\begin{bmatrix}
+\begin{blockarray}{ccc}
+\begin{block}{[cc|c]}
 3 & 4 & 8\\
 -4 & -4 & -2\\
-5 & 5 & 3
-\end{bmatrix}\\
-\begin{bmatrix}
+5 & 5 & 3\\
+\end{block}
+\end{blockarray}\\
+\begin{blockarray}{ccc}
+\begin{block}{[cc|c]}
 3 & 4 & 8\\
 -4 & -4 & -2\\
-5 & 5 & 3
-\end{bmatrix}
+5 & 5 & 3\\
+\end{block}
+\end{blockarray}
 &\xrightarrow{R_3 \rightarrow 3R_1+R_3}
-\begin{bmatrix}
+\begin{blockarray}{ccc}
+\begin{block}{[cc|c]}
 3 & 4 & 8\\
 -4 & -4 & -2\\
-14 & 17 & 27
-\end{bmatrix}
+14 & 17 & 27\\
+\end{block}
+\end{blockarray}
 \end{align*}
 \end{eks}
 
@@ -81,20 +94,24 @@ En matrix er på \textbf{trappeform}, hvis den opfylder følgende krav.
 Det kan ses på de to følgende matricer at $A$ er på trappeform, mens $B$ ikke er på trappeform, da den første indgang i række fire ikke er en nul indgang. Hvis der laves en række ombytning på række to og fire, så ville matrix $B$ også være på trappeform
 \begin{align*}
 A=
-\begin{bmatrix}
+\begin{blockarray}{cccc}
+\begin{block}{[ccc|c]}
 2 & 4 & 8 & 2\\
 0 & 5 & -2 & 5\\
 0 & 0 & 2 & 7\\
-0 & 0 & 0 & 0
-\end{bmatrix}
+0 & 0 & 0 & 0\\
+\end{block}
+\end{blockarray}
 \text{ }
 B=
-\begin{bmatrix}
+\begin{blockarray}{cccc}
+\begin{block}{[ccc|c]}
 2 & 4 & 8 & 2\\
 0 & 5 & -2 & 5\\
 0 & 4 & 2 & 7\\
-2 & 0 & 0 & 0
-\end{bmatrix}
+2 & 0 & 0 & 0\\
+\end{block}
+\end{blockarray}
 \end{align*}
 
 \end{eks}
@@ -110,12 +127,14 @@ En matrix er på \textbf{reduceret trappeform}, hvis den opfylder følgende krav
 Det kan ses på følgende matrix, at $A$ er på reduceret trappeform.
 \begin{align*}
 A=
-\begin{bmatrix}
+\begin{blockarray}{ccccc}
+\begin{block}{[cccc|c]}
 1 & 0 & 5 & 0 & 0\\
 0 & 1 & 3 & 0 & 0\\
 0 & 0 & 0 & 1 & 0\\
-0 & 0 & 0 & 0 & 1
-\end{bmatrix}
+0 & 0 & 0 & 0 & 1\\
+\end{block}
+\end{blockarray}
 \end{align*}
 \end{eks}
 
