@@ -34,7 +34,7 @@
 \newcounter{proof}[chapter]
 \def\theproof{\thechapter.\arabic{example}}
 \renewenvironment{proof}{\phantom{.}\newline\noindent\refstepcounter{proof}\textbf{Bevis~\theproof}\phantom{.}\newline\noindent}
-{\qed}  
+{\qed\newline}  
 
 %farvet-commands
 \definecolor{myblue}{RGB}{89, 79, 191}

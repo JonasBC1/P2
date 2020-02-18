@@ -6,7 +6,7 @@ Lad $A$ og $B$ være $m \times n$ matricer.
 Ligeledes er subtraktion mellem matricerne $A$ og $B$ muligt og indgangene i den resulterende matrix er $a_{i,j} - b_{i,j}$.
 Lad nu $k$ være en skalar.
 \textbf{Skalarproduktet} af $A$, noteret $kA$, er en $m \times n$ matrix, hvor de $(i,j)$'te indgange er $ka_{i,j}$.
-Bemærk at $1A = A$, $-1A = -A$ og $A - A = 0A = O$.
+Bemærk at $1A = A$, $-1A = -A$ og $0A = O$.
 \end{defn}
 %
 \begin{eks}
@@ -24,7 +24,7 @@ B=
 5	&	3	&	2
 \end{bmatrix}.
 \end{align*}
-Ud fra definition \ref{defn:mxsum} haves
+Jævnfør definition \ref{defn:mxsum} haves
 \begin{align*}
 3A= 
 \begin{bmatrix}
@@ -73,7 +73,14 @@ Så har matricerne følgende egenskaber:
 \item $(k + s)A = kA + sA$.
 \end{enumerate}
 \end{thm}
-
+%
 \begin{proof}
-Det hele er trivielt.
+Lad $A$, $B$ og $C$ være $m \times n$ matricer, og lad $k$ og $s$ være skalarer.
+Betragt både $A + B$ og $B + A$ og se, jævnfør \ref{defn:mxsum}, at de $(i,j)$'te indgange bliver henholdsvis $a_{i,j} + b_{i,j}$ og $b_{i,j} + a_{i,j}$, hvilket beviser (a).
+Ligeledes ses det, at $(a_{i,j} + b_{i,j}) + c_{i,j} = a_{i,j} + (b_{i,j} + c_{i,j})$, hvilket beviser (b).
+Endvidere kan der isoleres for null i $a_{i,j} + 0 = a_{i,j}$ for at få $a_{i,j} + (-a_{i,j}) = 0$, hvilket beviser (c) og (d).
+
+
 \end{proof}
+
+Da vektorer er matricer med enten én række eller én søjle er samme operationer mulige og opfylder samme egenskaber.
