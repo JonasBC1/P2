@@ -123,7 +123,7 @@ En matrix er på \textbf{reduceret trappeform}, hvis den opfylder følgende krav
 \item Den første indgang i hver ikke nul række er 1. 
 \end{defn}
 
-\begin{eks}
+\begin{eks}\label{trappe}
 Det kan ses på følgende matrix, at $A$ er på reduceret trappeform.
 \begin{align*}
 A=
@@ -142,6 +142,8 @@ A=
 \begin{defn}{}{}
 Pivotindgange betegnes som den første ikke nul indgang i enhver række i en matrix på trappeform. 
 \end{defn}
+Hvis det følgende tilfælde fra eksempel \ref{trappe}, så ses det at ligningssystemet, ikke har nogen løsning, da den fjerde ligning ikke har nogen løsning.\\
+\begin{minipage}{0.5\textwidth}
 
 \begin{align*}
 A=
@@ -153,12 +155,15 @@ x_1 & x_2 & x_3 & x_4 & b \\
 0 & 0 & 0 & 1 & 0\\
 0 & 0 & 0 & 0 & 1\\
 \end{block}
-\end{blockarray}
+\end{blockarray}\\
 \end{align*}
-
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
 \begin{align*}
 x_1+5x_3&=0\\
 x_2+3x_3&=0\\
 x_4&=0\\
 0&=1
 \end{align*}
+\end{minipage}
+I tilfælder hvor der er pivot indgang i den sidste søjle, så har ligningssystemet ingen løsning.
