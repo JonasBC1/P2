@@ -1,2 +1,293 @@
 \subsection{Span}
-% 1.4
+% 1.6
+Spandet er den del af vektorrummet en given mængde vektorer dækker over. 
+%
+\begin{defn}{}{}
+For en ikke-tom mængde vektorer $\S = {\mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k }$ i $\R^n$ er spannet af $\S$ som mængden af alle linear kombinationer af $\mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k$ i $\R^n$. 
+Denne mængde noteres $\text{span} \{ \S \}$ eller $\text{span}\{ \mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k \}$.
+\end{defn}
+%
+\begin{eks}
+Givet mængderne af vektorer $\S_1$ og $\S_2$ kan $\text{span}\{\S_1 \}$ og $\text{span}\{\S_2 \}$ findes.
+%
+\begin{align*}
+\S_1 = \left\{
+\begin{bmatrix}
+           -1 \\
+           1 \\
+\end{bmatrix}
+,
+\begin{bmatrix}
+           2 \\
+           -2 \\
+\end{bmatrix}
+\right\}
+= \left\{ \mathbf{u}_1, \mathbf{u}_2 \right\}
+\\
+\S_2 = \left\{
+\begin{bmatrix}
+           -1 \\
+           1 \\
+\end{bmatrix}
+,
+\begin{bmatrix}
+           2 \\
+           -2 \\
+\end{bmatrix}
+,
+\begin{bmatrix}
+           1 \\
+           2 \\
+\end{bmatrix}
+\right\}
+= \left\{ \mathbf{u}_1, \mathbf{u}_2,  \mathbf{u}_3 \right\}
+\end{align*}
+%
+Spannet for $\S_1$ bliver derfor:
+%
+\begin{align*}
+\text{span}\{\S_1 \} =
+\left\{ x_1 
+\begin{bmatrix}
+           -1 \\
+           1 \\
+\end{bmatrix} 
++ x_2
+\begin{bmatrix}
+           2 \\
+           -2 \\
+\end{bmatrix}
+\right\}.
+\end{align*}
+%
+Som det fremgår geometrisk på figur \ref{span_eks} er $\text{span}\{\S_1 \}$ en ret linje. Eftersom $\mathbf{u}_2$ er en mulig lineær kombination af $\mathbf{u}_1$ kan dette reduceres til  
+%
+\begin{align*}
+\text{span}\{\S_1 \} =
+\left\{ x_1 
+\begin{bmatrix}
+           -1 \\
+           1 \\
+\end{bmatrix} 
+\right\}.
+\end{align*}
+%
+Mængden $\S_2$ kan derfor reduceres til $\S_2=\{ \mathbf{u}_1, \mathbf{u}_2 \}$. Spannet for $\S_2$ er derfor
+%
+\begin{align*}
+\text{span}\{\S_2 \} = 
+\left\{ x_1 
+\begin{bmatrix}
+           -1 \\
+           1 \\
+\end{bmatrix} 
++ x_2
+\begin{bmatrix}
+           1 \\
+           2 \\
+\end{bmatrix}
+\right\}.
+= \R^2,
+\end{align*}
+%
+da den dækker alle punkter i planen. 
+% Eventuelt planet xD
+Dette gør den, da det er muligt at besøge alle punkter ved at indfører passende $x_1$ og $x_2$ værdier.
+%
+% Skal sættes rigtigt inden aflevering!
+\begin{figure}[h!]
+%
+\centering
+\begin{tikzpicture}
+  \draw[thin,gray!40] (-3,-3) grid (3,3);
+  \draw[<->] (-3,0)--(3,0) node[right]{$x$};
+  \draw[<->] (0,-3)--(0,3) node[above]{$y$};
+  \draw[line width=2pt,blue,-stealth](0,0)--(-1,1) node[anchor=south west]{$\boldsymbol{\mathbf{u}_1}$};
+  \draw[line width=2pt,red,-stealth](0,0)--(2,-2) node[anchor=north east]{$\boldsymbol{\mathbf{u}_2}$};
+  \draw[line width=2pt,green,-stealth](0,0)--(1,2) node[anchor=north east]{$\boldsymbol{\mathbf{u}_3}$};
+\end{tikzpicture}
+%
+\caption{Grafisk illustration af mængderne $\S_1 \subset \S_2$.}
+\label{span_eks}
+\end{figure}
+%
+\end{eks}
+%
+Typisk bruges spannen til at undersøge, hvorvidt en givet vektor er i spannet for en vektormængde. 
+Dette gøres ved at undersøge om en vektor kan konstrueres som linear kombination af vektorerne i mængden. 
+Dette gøres ved hjælp af rækkereduktionsalgoritmen. 
+%
+\begin{eks}
+%
+Det skal undersøges hvorvidt vektor $\mathbf{v}$ er i spannet for $\S_1$. 
+Givet
+\begin{align*}
+\mathbf{v}= \begin{bmatrix}
+           -1 \\
+           2 \\
+           3 \\
+\end{bmatrix} 
+\text{      }
+\text{span}\{\S \} =
+\left\{ 
+\begin{bmatrix}
+           1 \\
+           2 \\
+           1 \\
+\end{bmatrix} 
+,
+\begin{bmatrix}
+           1 \\
+           1 \\
+           0 \\
+\end{bmatrix}
+,
+\begin{bmatrix}
+           1 \\
+           -1 \\
+           -2 \\
+\end{bmatrix}
+\right\}.
+\end{align*}
+%
+Dette opskrives nu som total-matrix 
+%
+\begin{align*}
+A=\begin{blockarray}{ccccc}
+\mathbf{u}_1 & \mathbf{u}_2 & \mathbf{u}_3 & \mathbf{v} \\
+\begin{block}{[ccc|c]c}
+  1 & 1 & 1 & -1 \\
+  2 & 1 & -1 & 2 \\
+  1 & 0 & -2 & 3 \\
+\end{block}
+\end{blockarray} 
+\end{align*}
+\begin{align*}
+\xrightarrow[R_3 \rightarrow R_3-R_1]{R_2 \rightarrow R_2-2R_1}
+\begin{blockarray}{ccccc}
+\mathbf{u}_1 & \mathbf{u}_2 & \mathbf{u}_3 & \mathbf{v} \\
+\begin{block}{[ccc|c]c}
+  1 & 1 & 1 & -1 \\
+  0 & -1 & -3 & 4 \\
+  0 & -1 & -3 & 4 \\
+\end{block}
+\end{blockarray} 
+\end{align*}
+\begin{align*}
+\xrightarrow{R_3 \rightarrow R_3-R_2}
+\begin{blockarray}{ccccc}
+\mathbf{u}_1 & \mathbf{u}_2 & \mathbf{u}_3 & \mathbf{v} \\
+\begin{block}{[ccc|c]c}
+  1 & 1 & 1 & -1 \\
+  0 & -1 & -3 & 4 \\
+  0 & 0 & 0 & 0 \\
+\end{block}
+\end{blockarray} 
+\end{align*}
+%
+Ud fra dette ses det, at $\mathbf{v}$ er i $\text{span}\{\S \}$.
+%
+\end{eks}
+%
+tekst 
+% 
+\begin{thm}{}{}
+%
+De følgende udsagn vedrørende $m \times n$ matrix $A$ er ækvivalent med:
+%
+\begin{enumerate}[label=(\alph*)]
+\item Spannet af søjlerne i $A$ er $\R^m$.
+\item Matricen $A\mathbf{x}=\mathbf{b}$ har mindst en løsning for alle $b$ i $\R^m$.
+\item Rangen af $A$ er antallet af rækker $m$.
+\item Den reducerede trappeform har ingen nul-rækker 
+\item Der er pivot-indgang i hver række i $A$. 
+\end{enumerate}
+%
+\end{thm}
+%
+%
+\begin{proof}
+%
+Udsagn $(a)$ og $(b)$ er ækvivalente, eftersom det en forudsætning af der kan skabes en linear kombination af $A\mathbf{x} =\mathbf{b}$, for ethvert $\mathbf{b}$ i $\R^m$, da det netop er definitionen af spannen, der dækker $\R^m$.
+Se sætning \ref{thm:konsitens}.
+%
+Hvis der ikke er nogle nul-rækker i den reducerede trappeform, følger det, at $\text{rang}\{A\}$ er $m$, hvorfor $(c)$ og $(d)$ er ækvivalente. 
+Eftersom matrixen er på reducerede trappeform, er denne derfor ækvivalent med $(e)$.
+\\\\
+Det skal nu bevises at $(b)$ og $(c)$ er ækvivalente. 
+Lad $B$ være den reducerede trappeform af $A$ og $\mathbf{e}_m$ er standart vektoren:
+%
+\begin{align*}
+\mathbf{\mathbf{e}_m} = \begin{bmatrix}
+		0 \\
+        \vdots \\
+        0 \\
+        1 
+\end{bmatrix}.
+\end{align*}
+%
+i $\R^m$. 
+Gennem rækkereduktionsalgoritmen kan $A$ transformeres til $B$. 
+Da disse række er reversible, følger det, at der findes en sekvens af rækkeopperationer, som kan transformere $B$ til $A$.
+
+%
+\end{proof}
+\\\\
+%
+tekst 
+%
+
+\begin{thm}{}{}
+%
+Lad $\S =  \{\mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k \}$ være en mængde vektorer i $\R^n$, og lad $\mathbf{v}$ være en vektor i $\R^n$.
+Så er $\text{span}\{ \mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\} =\text{span}\{\S\}$, hvis og kun hvis $\mathbf{v}$ tilhører $\text{span}\{\S\}$.
+%
+\end{thm}
+%
+%
+\begin{proof}
+%
+Antag af $\mathbf{v}$ er i $\text{span}\{\S\}$. Så er $\mathbf{v}$ en lineær kombination af $\S$, hvilket kan opskrives som $\mathbf{v}=a_1\mathbf{u}_1+a_2\mathbf{u}_2+ \ldots + a_k\mathbf{u}_k$, hvor $a_1,a_2,\ldots, a_k$ er skalar. 
+Hvis en vektor $\mathbf{w}$ er i $\text{span}\{ \mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\}$ kan denne opskrives $\mathbf{v}=c_1\mathbf{u}_1+c_2\mathbf{u}_2+ \ldots + c_k\mathbf{u}_k+b\mathbf{v}$, hvor $c_1,c_2,\ldots, c_k$ er skalar.
+Ved substitution af $\mathbf{v}$ med $\{ \mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\}$, så vides det at $\mathbf{w}$ kan opskrives som en linear kombination af $\S$. 
+Det gælder endvidere, at alle linear kombinationer i $\S$ også kan dannes fra vektorerne $\mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}$, hvis $\mathbf{v}$ ganges med skalaren af $0$.
+Det følger derfor, at de to mængder har samme span. 
+Mangler det sidste xddddddddddddddddddddddddd
+%
+\end{proof}
+\\\\
+%
+tekst 
+%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

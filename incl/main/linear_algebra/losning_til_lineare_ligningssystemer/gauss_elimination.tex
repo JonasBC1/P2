@@ -1,8 +1,8 @@
 \subsection{Gauss elimination}
 % 1.4
 % Sætning 1.4 kan vi bevise den
-En algoritme til løsningen af linære ligningssystemer er  rækkereduktionsalgoritmen, som omdanner en matrix fra en totalmatrice til reduceret trappeform.
-Når den bruges til at løse linære ligningssystemer, kaldes denne process for Gauss elimination.
+En algoritme til løsningen af linære ligningssystemer er  \textbf{rækkereduktionsalgoritmen}, som omdanner en matrix fra en totalmatrice til reduceret trappeform.
+Når den bruges til at løse linære ligningssystemer, kaldes denne process for \textbf{Gauss elimination}.
 I algoritmen bruges de elemæntere rækkeoperationer for at omdanne en matrix $A$ til trappeform. 
 Herefter benyttes rækkeoperationerne igen til at reducere matricen til trappeform og videre til reduceret trappeform.
 Algortimen gennemgår således følgende skridt:
@@ -137,8 +137,8 @@ Parameterfremstillingen for løsningen i $\R^5$ bliver således:
 \subsection{Rang og nullitet}
 %her skal der stå et eller andet
 \begin{defn}{}{}
-Rangen af en matrix $A$ er antallet af pivotindgange, noteret $\text{rang}(A)$. \\
-Nulliteten af $A$ er antallet af søjler uden pivotindgange, noteret $\text{null}(A)$.
+\textbf{Rangen} af en matrix $A$ er antallet af pivotindgange, noteret $\text{rang}(A)$. \\
+\textbf{Nulliteten} af $A$ er antallet af søjler uden pivotindgange, noteret $\text{null}(A)$.
 \end{defn}
 %
 I en $m \times n$-matrix er $\text{rang}(A)+\text{null}(A)=n$
@@ -153,12 +153,13 @@ x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \end{block}
 \end{blockarray}$$ 
 således $\text{rang}(A)=3$ og $\text{null}(A)=3$. 
-%hvilket er heldigt når der er 6 søjler
+%
+% Hvilket er heldigt når der er 6 søjler
 \begin{thm}{Konsistens}{konsitens}
 Følgende udsagn er ækvivalente:
 \begin{enumerate}
-\item Matrixen $A\mathbf{x}=\mathbf{b}$ er konsistent.
-\item Vektoren $\mathbf{b}$ er en linearkombination af søjlerne i $A$
+\item Matricen $A\mathbf{x}=\mathbf{b}$ er \textbf{konsistent}.
+\item Vektoren $\mathbf{b}$ er en linearkombination af søjlerne i $A$.
 \item Den reducerede trappeform af totalmatrixen $[A|\mathbf{b}]$ har ingen rækker af formen $[ 0 \ldots 0 | d  ]$, hvor $d \neq 0$.
 \end{enumerate}
 \end{thm}
