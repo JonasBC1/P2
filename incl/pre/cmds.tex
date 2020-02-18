@@ -18,20 +18,22 @@
 
 % Sætninger o.lign. ------------------------------------------------------------
 % http://www.ctex.org/documents/packages/math/amsthdoc.pdf
-\theoremstyle{plain}                 % Titel med fed, tekst med skråskrift
-%\newtheorem{thm}{Sætning}[chapter]   % Sætninger, nummereret efter kapitel
-%\newtheorem{lem}[thm]{Lemma}         % Lemmaer, nummereret ligesom sætninger
-%\newtheorem{prop}[thm]{Proposition}  % Propositioner, nummereret ligesom sætninger
-%\newtheorem*{cor}{Korollar}         % Korollarer, unnumbered
+\theoremstyle{plain}                % Titel med fed, tekst med skråskrift
+%\newtheorem{thm}{Sætning}[chapter] % Sætninger, nummereret efter kapitel
+%\newtheorem{lem}[thm]{Lemma}       % Lemmaer, nummereret ligesom sætninger
+%\newtheorem{prop}[thm]{Proposition}% Propositioner, nummereret ligesom sætninger
+%\newtheorem*{cor}{Korollar}        % Korollarer, unnumbered
 
 \theoremstyle{definition}          	% Title med fed, opretstående tekst
 %\newtheorem{defn}[thm]{Definition} % Definitioner, nummereret ligesom sætninger
 \newcounter{example}[chapter]
-\newenvironment{eks}{\bigskip\phantom{.}\newline\noindent\refstepcounter{example}\textbf{Example~\thechapter.\theexample}\phantom{.}\newline\noindent\rule{\textwidth}{0.4pt}}
-{\phantom{.}\newline\rule{\textwidth}{0.4pt}}  
+\def\theexample{\thechapter.\arabic{example}}
+\newenvironment{eks}{\phantom{.}\newline\noindent\refstepcounter{example}\textbf{Example~\theexample}\phantom{.}\newline\noindent\textcolor{myblue!25}{\rule{\textwidth}{1pt}}}
+{\phantom{.}\newline\textcolor{myblue!25}{\rule{\textwidth}{1pt}}\bigskip}  
 
 \newcounter{proof}[chapter]
-\renewenvironment{proof}{\phantom{.}\newline\noindent\refstepcounter{proof}\textbf{Bevis~\thechapter.\theproof}\phantom{.}\newline\noindent}
+\def\theproof{\thechapter.\arabic{example}}
+\renewenvironment{proof}{\phantom{.}\newline\noindent\refstepcounter{proof}\textbf{Bevis~\theproof}\phantom{.}\newline\noindent}
 {\qed}  
 
 %farvet-commands
