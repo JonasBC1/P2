@@ -1,6 +1,7 @@
-\subsection{Linearkombination}
+\subsection{Linearkombination og matrix-vektorprodukt}
 
-.... metatekst
+%Et eller andet metatekst her.
+\textit{Linearkombination} er en essentiel del af lineær algebra. 
 
 \begin{defn}{}{}
 Givet matricerne $A_1, A_2, \ldots, A_k$ med dimensionerne $m \times n$, så er \textit{linearkombinationen} af $A_1, A_2, \ldots, A_k$ en matrix $B$ på formen 
@@ -11,18 +12,200 @@ med dimensionerne $m \times n$.
 Linearkombinationen er mulig, hvis og kun hvis skalarerne $c_1, c_2, \ldots, c_k$ eksisterer. 
 Skalarerne kaldes linearkombinationens \textit{koefficienter}.
 \end{defn}
-%KILDE: https://www.statlect.com/matrix-algebra/linear-combinations
+%KILDE primært: https://www.statlect.com/matrix-algebra/linear-combinations
 
 I lineær algebra er det oftest række- eller søjlevektorer, der indgår i linearkombinationer. 
+En linearkombination af én vektor er blot en skalarmultiplikation af vektoren.
 
+\begin{eks}
+Lad 
+$
+\textbf{a}=
+\begin{bmatrix}
+5 & 9 & 4
+\end{bmatrix}^T
+$
+,
+$
+\textbf{b}=
+\begin{bmatrix}
+8 & 12 & 3
+\end{bmatrix}^T
+$
+og
+$\textbf{c}=
+\begin{bmatrix}
+0 & 0 & 7
+\end{bmatrix}^T
+$ 
+og $c_a=-4$, $c_b=100$ og $c_c=2$. Linearkombinationen af $\textbf{a}$, $\textbf{b}$ og $\textbf{c}$ er 
 
+$$
+(-4)
+\begin{bmatrix}
+5 \\ 
+9 \\ 
+4
+\end{bmatrix}
++
+100
+\begin{bmatrix}
+8 \\
+12 \\ 
+3
+\end{bmatrix}
++
+2
+\begin{bmatrix}
+0 \\
+0 \\ 
+7
+\end{bmatrix}
+=
+\begin{bmatrix}
+780 \\
+1164 \\ 
+298
+\end{bmatrix}
+\text{.}
+$$
 
+\end{eks}
 
+Bemærk, at enhver vektor 
+$
+\textbf{a}=
+\begin{bmatrix}
+a_1 & a_2 & \ldots & a_n
+\end{bmatrix}^T
+$
+i $\R^n$kan skrives som linearkombination af standardvektorerne i $R^n$. 
+Standardvektorerne i $R^n$ er 
 
+$$
+\textbf{e}_1=
+\begin{bmatrix}
+1 \\ 
+0 \\ 
+\vdots \\
+0
+\end{bmatrix}
+\text{, }
+\textbf{e}_2=
+\begin{bmatrix}
+0 \\ 
+1 \\ 
+\vdots \\
+0
+\end{bmatrix}
+\text{, }
+\ldots
+\text{, }
+\textbf{e}_n=
+\begin{bmatrix}
+0 \\ 
+0 \\ 
+\vdots \\
+1
+\end{bmatrix}
+\text{. }
+$$
 
+Givet skalarerne er vektorer, så er der tale om et \textit{matrix-vektorprodukt}.
 
-\subsection{Matrix-vektorprodukt}
-
-\begin{defn}{}{}
-
+\begin{defn}{}{mvp}
+\phantom{gdfs}\\Lad $A$ være en $m \times n$ matrix og \textbf{v} være en $n \times 1$ vektor. \textbf{Matrix-vektor-produktet} af A og \textbf{v} defineres som den lineære kombination af søjlerne i A hvis koefficienter er de tilsvarende komponenter af \textbf{v}, og noteres A\textbf{v}. Det vil sige
+\begin{align*}
+A\textbf{v} =v_1\textbf{a}_1 + v_2\textbf{a}_2 + \cdots + v_n\textbf{a}_n.
+\end{align*}
 \end{defn}
+\noindent
+For at $A\textbf{v}$ eksisterer, skal der være lige mange komponenter i \textbf{v} som søjler i $A$. Et eksempel på et matrix-vektor-produkt mellem en matrix $B$ og en vektor \textbf{u} ses i eksempel \ref{Matrix-vektor}.
+\begin{eks}\label{Matrix-vektor}
+\begin{center} 
+$$B=
+\begin{blockarray}{c c c c}
+\begin{block}{[c c c c]}
+2 & 5 & 6 \\
+4 & 7 & 3\\
+1 & 4 & 1\\
+2 & 3 & 8\\
+\end{block}
+\end{blockarray}
+%
+\text{ og }
+%
+\textbf{u}=
+\begin{bmatrix}
+4 \\
+2 \\
+3 \\ 
+\end{bmatrix}.
+$$
+Eftersom $B$ har 3 søjler og \textbf{u} har 3 komponenter, så eksisterer $B\textbf{u}$ og findes ved
+$$
+B\textbf{u}=
+\begin{bmatrix}
+2 & 5 & 6 \\
+4 & 7 & 3\\
+1 & 4 & 1\\
+2 & 3 & 8\\
+\end{bmatrix}
+\begin{bmatrix}
+4 \\
+2 \\
+3 \\ 
+\end{bmatrix}
+=4
+\begin{bmatrix}
+2\\
+4\\
+1\\
+2\\
+\end{bmatrix}
++2
+\begin{bmatrix}
+5\\
+7\\
+4\\
+3\\
+\end{bmatrix}
++3
+\begin{bmatrix}
+6\\
+3\\
+1\\
+8\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+8\\
+16\\
+4\\
+8\\
+\end{bmatrix}
++
+\begin{bmatrix}
+10\\
+14\\
+8\\
+6\\
+\end{bmatrix}
++
+\begin{bmatrix}
+18\\
+9\\
+3\\
+24\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+36\\
+39\\
+15\\
+38\\
+\end{bmatrix}.
+$$
+\end{center}
+\end{eks}
+ 
