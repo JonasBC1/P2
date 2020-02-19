@@ -1,11 +1,11 @@
-\subsection{Matrixsum og skalarprodukt}
+\subsection{Matrixsum og skalarmultiplikation}
 %
 \begin{defn}{}{mxsum}
 Lad $A$ og $B$ være $m \times n$ matricer.
 \textbf{Summen} af $A$ og $B$  er matricen, $A + B$, hvor de $(i,j)$'te indgange er $a_{i,j} + b_{i,j}$.
 Ligeledes er subtraktion mellem matricerne $A$ og $B$ muligt og indgangene i den resulterende matrix er $a_{i,j} - b_{i,j}$.
 Lad nu $k$ være en skalar.
-\textbf{Skalarproduktet} af $A$, noteret $kA$, er en $m \times n$ matrix, hvor de $(i,j)$'te indgange er $ka_{i,j}$.
+\textbf{Skalering} af $A$, noteret $kA$, er en $m \times n$ matrix, hvor de $(i,j)$'te indgange er $ka_{i,j}$.
 Bemærk at $1A = A$, $-1A = -A$ og $0A = O$.
 \end{defn}
 %
@@ -80,10 +80,10 @@ Betragt både $A + B$ og $B + A$ og se, jævnfør \ref{defn:mxsum}, at de $(i,j)
 Ligeledes kan ses det, at $(a_{i,j} + b_{i,j}) + c_{i,j} = a_{i,j} + (b_{i,j} + c_{i,j})$, hvilket beviser (b).
 Endvidere kan der isoleres for null i $a_{i,j} + 0 = a_{i,j}$ for at få $a_{i,j} + (-a_{i,j}) = 0$, hvilket beviser (c) og (d), da alle indgange i en null matrix er $0$.
 
-Betragt skalarproduktet til $A$ med skalaren $ks$, som er et produkt af skalarene $k$ og $s$, og skalarproduktet til $A$ med $k$ og så $s$.
-For indgangene i disse skalarprodukter findes ligheden $(ks)a_{i,j} = s(ka_{i,j})$, hvilket beviser (e).
+Betragt skaleringen af $A$ med skalaren $ks$, som er et produkt af skalarene $k$ og $s$, og skaleringen af $A$ med $k$ og så $s$.
+For indgangene i disse skaleringer findes ligheden $(ks)a_{i,j} = s(ka_{i,j})$, hvilket beviser (e).
 Ligeledes betragtes indgangene for begge sider af ligheden i (f) og det ses, at $k(a_{i,j} + b_{i,j}) = ka_{i,j} + kb_{i,j}$, hvilket beviser (f).
-Det samme gøres for ligheden i (g) og ligheden $(k + s)a_{i,j} = ka_{i,j} + sa_{i,j}$ opstilles, hvilket beviser (g) og afslutter beviset.
+Det samme gøres for ligheden i (g) og ligheden $(k + s)a_{i,j} = ka_{i,j} + sa_{i,j}$ opstilles, hvilket beviser (g).
 \end{proof}
 
 Da vektorer er matricer med enten én række eller én søjle er samme operationer mulige og opfylder samme egenskaber.
