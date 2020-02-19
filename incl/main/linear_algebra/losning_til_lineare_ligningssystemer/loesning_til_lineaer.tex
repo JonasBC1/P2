@@ -1,36 +1,35 @@
-\section{Løsning til lineær ligningssystemer}
+\section{Løsning til lineære ligningssystemer}
 %
 \textbf{Tekst her}
-%
-\subsection{Elementære rækkeopperationer}
-Der eksisterer tre opperationer som kan udføres på rækker i et lineært ligningssystem.
-Dette gøres nemmest når systemet er skrevet som en matrice.
-De er ombytning, udskiftning og skalering.
+%Ja
+\subsection{Elementære rækkeoperationer}
+Der eksisterer tre operationer, som kan udføres på rækker i et lineært ligningssystem.
 %
 \begin{defn}{}{element}
-\textbf{Ombytning} af rækker, bytter rundt på pladserne af to rækker og noteres
+Ved \textbf{ombytning} bytter to rækker plads i ligningssystemet, hvilket noteres
 \begin{align*}
 A \xrightarrow{R_i \leftrightarrow R_j} B, 
 \end{align*}
-hvor $A$ er matricen før opperationen, $B$ er matricen efter opperationen og $R_j$ og $R_i$ er rækker i $A$.\\
-\textbf{Skalering} betyder at en bestemt række skaleres med en ikke nul værdi, og noteres
+hvor $A$ er matricen før rækkeoperationen udføres og $B$ er matricen efter rækkeoperationen er udført. 
+$R_j$ og $R_i$ er rækker i $A$.\\\\
+Ved \textbf{skalering} skaleres en række med et tal $k \neq 0$, hvilket noteres
 \begin{align*}
 A \xrightarrow{R_i \rightarrow cR_i} B.
 \end{align*}
-\textbf{Udskiftning} af rækker betyder at en række udskiftes med rækken selv plus en skalering af en anden række og noteres
+Ved \textbf{udskiftning} udskiftes en række med rækken selv plus en skalering af en anden række, hvilket noteres
 \begin{align*}
 A \xrightarrow{R_i \rightarrow R_i + cR_h} B.
 \end{align*}
 %
 \end{defn}
 \noindent
-Eksempler på de elementære rækkeoperationer ses i eksempel \ref{eks1}.
+Rækkeoperationerne udføres oftest, når ligningssystemet er skrevet som en matrice. Eksempler på de elementære rækkeoperationer ses i eksempel \ref{eks1}.
 \\
 %
 \begin{eks}\label{eks1}
-Først laves ombytning mellem række et og tre i matricen. 
-Derefter laves en skalering med -2 på række to. 
-Til sidst laves en udskiftning på række tre hvor række et bliver lagt til række tre, tre gange. 
+Først laves ombytning mellem $R_1$ og $R_3$ i matricen. 
+Derefter skaleres $R_2$ med $-2$. 
+Til sidst laves en udskiftning på $R_3$, hvor skaleringen $3R_1$ adderes $R_3$. 
 \begin{align*}
 \begin{blockarray}{ccc}
 \begin{block}{[cc|c]}
@@ -56,7 +55,7 @@ Til sidst laves en udskiftning på række tre hvor række et bliver lagt til ræ
 5 & 5 & 3\\
 \end{block}
 \end{blockarray}
-&\xrightarrow{R_2 \rightarrow -2R_2}
+&\xrightarrow{R_2 \rightarrow (-2)R_2}
 \begin{blockarray}{ccc}
 \begin{block}{[cc|c]}
 3 & 4 & 8\\
@@ -82,21 +81,22 @@ Til sidst laves en udskiftning på række tre hvor række et bliver lagt til ræ
 \end{align*}
 \end{eks}
 %
-%
+%Jeg kunne personligt godt tænke mig mere "matematik" i disse subsections, men jeg ved jo godt, at det er smag og behag. 
 %
 \subsection{Trappeform og reduceret trappeform}
-En række kaldes for en \textbf{nulrække}, hvis alle indgange er nul, og en ikke nulrække hvis der bare er en indgang der er forskellig fra nul.
+En række i en matrix kaldes en \textbf{nulrække}, hvis alle indgange er nul, og en \textbf{ikke-nulrække}, hvis mindst én indgang i rækken er forskellig fra nul.
 Dette bruges til definitionen af trappeform.
 \begin{defn}{}{}
-En matrix er på \textbf{trappeform}, hvis den opfylder følgende krav.
+En matrix er på \textbf{trappeform}, hvis den opfylder følgende kriterier:
 \itemize
-\item Enhver ikke nul række ligger over alle nul rækker.
-\item Den første ikke nul indgang i en ikke nul række ligger i en søjle til højre for første ikke nul indgange i forrige række.
-\item Hvis en søjle har den første ikke nul indgang i en række, så er alle indgangene i søjlen under den nul.
+\item Enhver ikke-nulrække ligger over alle nul rækker.
+\item Den første ikke-nulindgang i en ikke-nulrække ligger i en søjle til højre for første ikke-nulindgange i forrige række.
+\item Hvis en søjle har den første ikke-nulindgang i en række, så er alle indgangene i søjlen under den $0$.
 \end{defn}
 \begin{eks}
-Det kan ses på de to følgende matricer at $A$ er på trappeform, mens $B$ ikke er på trappeform, da den første indgang i række fire ikke er en nul indgang. 
-Hvis der laves en række ombytning på række to og fire, så ville matrix $B$ også være på trappeform
+Betragt $A$ og $B$. $A$ er på trappeform, mens $B$ ikke er på trappeform, da den første indgang i række fire ikke er en nulindgang.
+%forslag til ændring af ovenstående: ..., da $b_{4,1} \neq 0$. 
+Hvis der foretages en ombytning på række to og fire, så ville matrix $B$ også være på trappeform
 %
 \begin{align*}
 A=
@@ -122,19 +122,19 @@ B=
 %
 \end{eks}
 %
-\begin{defn}{}{}
-En matrix er på \textbf{reduceret trappeform}, hvis den opfylder følgende krav.
+\begin{defn}{}{redtrap}
+En matrix er på \textbf{reduceret trappeform}, hvis den opfylder følgende kriterier:
 \itemize
-\item Hvis en søjle har den første ikke nul indgang i en række, så er alle indgange i søjlen nul.
-\item Den første indgang i hver ikke nul række er 1. 
+\item Hvis en søjle har den første ikke-nulindgang i en række, så er alle indgange i søjlen $0$.
+\item Den første indgang i hver ikke-nulrække er $1$. 
 \end{defn}
 \noindent
-Et lineært ligningssystem, som ikke står på trappeform kan laves om til trappeform, og derefter til reduceret trappeform, hvilket gør løsningen af systemet mere simpel. 
+Et lineært ligningssystem, som ikke står på trappeform, kan laves om til trappeform og derefter reduceret trappeform, hvilket gør løsningen af systemet mere simpel.
 Metoden til at gøre dette ses i afsnit \ref{gauss}.
 \\
 %
 \begin{eks}\label{trappe}
-Det kan ses på følgende matrix, at $A$ er på reduceret trappeform.
+Betragt matricen $A$.
 \begin{align*}
 A=
 \begin{blockarray}{ccccc}
@@ -147,14 +147,15 @@ A=
 \end{blockarray}
 \end{align*}
 %
+Jævnfør definition \ref{defn:redtrap} er $A$ på reduceret trappeform.
 \end{eks}
 %
 \subsection{Pivotindgange}
 \begin{defn}{}{}
-Pivotindgange betegnes som den første ikke nul indgang i enhver række i en matrix på trappeform. 
+Pivotindgange betegnes som den første ikke-nulindgang i enhver række i en matrix på trappeform. 
 \end{defn}
 \noindent
-I det følgende tilfælde fra eksempel \ref{trappe}, så ses det at ligningssystemet, ikke har nogen løsning, da den fjerde ligning ikke har nogen løsning.\\
+Betragt eksempel \ref{trappe}. Det ses, at ligningssystemet ikke har nogen løsning, da den fjerde ligning ikke har nogen løsning.\\
 \begin{minipage}{0.5\textwidth}
 %
 \begin{align*}
@@ -179,8 +180,8 @@ x_4&=0\\
 \end{align*}
 \end{minipage}
 %
-I tilfælder, hvor der er pivot indgang i den sidste søjle, så har ligningssystemet ingen løsning.
+Hvis der er pivotindgang i den sidste søjle, så har ligningssystemet ingen løsning.
 %
-De variablers søjler som indeholder pivotindgange kaldes for faste variabler og dem som ikke indholder pivotindgange kaldes for frie variabler. 
+De variablers søjler, som indeholder pivotindgange, kaldes for \textbf{faste variabler}, mens de, som ikke indholder pivotindgange, kaldes for \textbf{frie variabler}. 
 Der kan løses for de faste variabler udtrykt ved de frie variabler. 
 For hvert sæt af frie variabler giver ligningssystemet nogle tilsvarende værdier af de faste variabler.

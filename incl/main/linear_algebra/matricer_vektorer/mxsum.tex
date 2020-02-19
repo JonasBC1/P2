@@ -1,8 +1,8 @@
 \subsection{Matrixsum og skalarmultiplikation}
-%
+%Blev vi ikke enige om skalering? Skal der ikke stå det samme i underafsnitstitlen som i definitionen, eller er det ligemeget? 
 \begin{defn}{}{mxsum}
 Lad $A$ og $B$ være $m \times n$ matricer.
-\textbf{Summen} af $A$ og $B$  er matricen, $A + B$, hvor de $(i,j)$'te indgange er $a_{i,j} + b_{i,j}$.
+\textbf{Summen} af $A$ og $B$ er $m \times n$ matricen $A + B$, hvor de $(i,j)$'te indgange er $a_{i,j} + b_{i,j}$.
 Ligeledes er subtraktion mellem matricerne $A$ og $B$ muligt og indgangene i den resulterende matrix er $a_{i,j} - b_{i,j}$.
 Lad nu $k$ være en skalar.
 \textbf{Skalering} af $A$, noteret $kA$, er en $m \times n$ matrix, hvor de $(i,j)$'te indgange er $ka_{i,j}$.
@@ -10,7 +10,7 @@ Bemærk, at $1A = A$, $-1A = -A$ og $0A = O$.
 \end{defn}
 %
 \begin{eks}
-Betragt nu $3A$, $-B$ og $3A+B$, hvor 
+Lad
 \begin{align*}
 A= 
 \begin{bmatrix}
@@ -58,11 +58,11 @@ og
 \end{align*}
 \end{eks}
 %
-Ud fra disse operationer har matricer en række egenskaber, som er afgørende for lineær algebra.
-%
+Ud fra disse operationer har matricer en række egenskaber, som ses i sætning \ref{thm:mxprop}.
+%Nedenstående definition er ordret den samme som i bogen (s. 6), men vi kan jo nærmest ikke skrive den og lignende sætninger anderledes; skal vi ikke bare lige vende det med Horia, tror I? 
 \begin{thm}{}{mxprop}
 Lad $A$, $B$ og $C$ være $m \times n$ matricer, og lad $k$ og $s$ være skalarer.
-Så har matricerne følgende egenskaber:
+Så har matricer følgende egenskaber:
 \begin{enumerate}[label=(\alph*)]
 \item $A + B = B + A$.
 \item $(A + B) + C = A + (B + C)$.
@@ -76,14 +76,14 @@ Så har matricerne følgende egenskaber:
 %
 \begin{proof}
 Lad $A$, $B$ og $C$ være $m \times n$ matricer, og lad $k$ og $s$ være skalarer.
-Betragt både $A + B$ og $B + A$ og se, jævnfør \ref{defn:mxsum}, at de $(i,j)$'te indgange bliver henholdsvis $a_{i,j} + b_{i,j}$ og $b_{i,j} + a_{i,j}$, hvilket beviser (a).
-Ligeledes kan ses det, at $(a_{i,j} + b_{i,j}) + c_{i,j} = a_{i,j} + (b_{i,j} + c_{i,j})$, hvilket beviser (b).
-Endvidere kan der isoleres for nul i $a_{i,j} + 0 = a_{i,j}$ for at få $a_{i,j} + (-a_{i,j}) = 0$, hvilket beviser (c) og (d), da alle indgange i en nulmatrix er $0$.
-\\\\
-Betragt skaleringen af $A$ med skalaren $ks$, som er et produkt af skalarene $k$ og $s$, og skaleringen af $A$ med $k$ og så $s$.
+Betragt $A + B$ og $B + A$ og bemærk jævnfør \ref{defn:mxsum}, at de $(i,j)$'te indgange bliver henholdsvis $a_{i,j} + b_{i,j}$ og $b_{i,j} + a_{i,j}$, hvilket beviser (a).
+Ligeledes ses det, at $(a_{i,j} + b_{i,j}) + c_{i,j} = a_{i,j} + (b_{i,j} + c_{i,j})$, hvilket beviser (b).
+Endvidere kan $0$ isoleres i $a_{i,j} + 0 = a_{i,j}$, således $a_{i,j} + (-a_{i,j}) = 0$, hvilket beviser (c) og (d), da alle indgange i en nulmatrix er $0$.
+\\\\%I linje 83: Kan man godt bare sige "... og så $s$ ..."? :-)
+(e) Betragt skaleringen af $A$ med skalaren $ks$, som er et produkt af skalarene $k$ og $s$, og skaleringen af $A$ med $k$ og så $s$.
 For indgangene i disse skaleringer findes ligheden $(ks)a_{i,j} = s(ka_{i,j})$, hvilket beviser (e).
-Ligeledes betragtes indgangene for begge sider af ligheden i (f) og det ses, at $k(a_{i,j} + b_{i,j}) = ka_{i,j} + kb_{i,j}$, hvilket beviser (f).
-Det samme gøres for ligheden i (g) og ligheden $(k + s)a_{i,j} = ka_{i,j} + sa_{i,j}$ opstilles, hvilket beviser (g).
+Betragt ligeledes (f) og bemærk, at $k(a_{i,j} + b_{i,j}) = ka_{i,j} + kb_{i,j}$, hvilket beviser (f).
+Det samme gøres for ligheden i (g), hvor ligheden $(k + s)a_{i,j} = ka_{i,j} + sa_{i,j}$ opstilles, hvilket beviser (g).
 \end{proof}
 \noindent
 \\

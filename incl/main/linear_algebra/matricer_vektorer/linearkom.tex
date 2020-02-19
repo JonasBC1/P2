@@ -1,15 +1,15 @@
-\subsection{Linearkombination og matrix-vektorprodukt}
+\subsection{Linearkombination}
 %
 % Et eller andet metatekst her.
 %
 \textbf{Linearkombination} er en essentiel del af lineær algebra. 
 %
-\begin{defn}{}{}
-Givet matricerne $A_1, A_2, \ldots, A_k$ med dimensionerne $m \times n$, så er linearkombinationen af $A_1, A_2, \ldots, A_k$ en matrix $B$ på formen 
+\begin{defn}{}{mxlinkom}
+Givet matricerne $A_1, A_2, \ldots, A_k$ med størrelsen $m \times n$, så er linearkombinationen af $A_1, A_2, \ldots, A_k$ en matrix $B$ på formen 
 %
 $$c_1A_1+c_2A_2+\ldots+c_kA_k=\sum\limits_{i=1}^k c_iA_i=B,$$
 %
-med dimensionerne $m \times n$. 
+med størrelsen $m \times n$. 
 Linearkombinationen er mulig, hvis og kun, hvis skalarerne $c_1, c_2, \ldots, c_k$ eksisterer. 
 Skalarerne kaldes linearkombinationens koefficienter.
 \end{defn}
@@ -49,7 +49,7 @@ $$
 \end{bmatrix},
 $$
 samt $c_a=-4$, $c_b=100$ og $c_c=2$. 
-Linearkombinationen af $\textbf{a}$, $\textbf{b}$ og $\textbf{c}$ er 
+Jævnfør definition \ref{defn:mxlinkom} er linearkombinationen af $\textbf{a}$, $\textbf{b}$ og $\textbf{c}$
 $$
 (-4)
 \begin{bmatrix}
@@ -92,27 +92,30 @@ a_1 & a_2 & \ldots & a_n
 $
 i $\R^n$ kan skrives som linearkombination af $I_n$ i $R^n$. 
 Givet to ikke-parallelle vektorer $u$ og $v$ i $\R^2$, så er enhver anden vektor i $\R^2$ en linearkombination af $u$ og $v$. 
-Hvis skalarerne i en linearkombination i stedet er vektorer, så er der tale om et \textbf{matrix-vektorprodukt}.
+Hvis koefficienterne i en linearkombination er vektorer, så er der tale om et \textbf{matrix-vektorprodukt}.
 %
+%
+%
+%
+\subsection{Matrix-vektorprodukt}
+%Altså, jeg vil måske mene, at nedenstående definition minder for meget om den i bogen (s. 19). Men igen... "Det er heller ikke ham, der har fundet på det." - Mads Vejleder, 2019. 
 \begin{defn}{}{mvp}
 Lad $A$ være en $m \times n$ matrix og \textbf{v} være en $n \times 1$ vektor. 
-Matrix-vektor-produktet af $A$ og $\textbf{v}$ defineres som den lineære kombination af søjlerne i $A$, hvis koefficienter er de tilsvarende komponenter af $\textbf{v}$, og noteres $A\textbf{v}$. 
-Det vil sige
+Matrix-vektorproduktet af $A$ og $\textbf{v}$ defineres som linearkombinationen af søjlerne i $A$, hvis koefficienter er de tilsvarende komponenter af $\textbf{v}$, og noteres $A\textbf{v}$. 
+Dermed er
 \begin{align*}
 A\textbf{v} =v_1\textbf{a}_1 + v_2\textbf{a}_2 + \cdots + v_n\textbf{a}_n.
 \end{align*}
 \end{defn}
 \noindent
-For at $A\textbf{v}$ eksisterer, skal der være lige mange komponenter i \textbf{v} som søjler i $A$. 
-Et eksempel på et matrix-vektor-produkt mellem en matrix $B$ og en vektor \textbf{u} ses i eksempel \ref{Matrix-vektor}.
+For at $A\textbf{v}$ eksisterer, skal der være lige mange komponenter i \textbf{v}, som der er søjler i $A$. 
+Et eksempel på et matrix-vektorprodukt mellem en matrix $B$ og en vektor \textbf{u} ses i eksempel \ref{Matrix-vektor}.
 \\
 %
 \begin{eks}
 \label{Matrix-vektor}
 %
-\textbf{Skriv noget tekst her}
-%
-\begin{center} 
+Lad
 $$B=
 \begin{blockarray}{c c c c}
 \begin{block}{[c c c c]}
@@ -197,5 +200,4 @@ B\textbf{u}=
 38\\
 \end{bmatrix}.
 $$
-\end{center}
 \end{eks}

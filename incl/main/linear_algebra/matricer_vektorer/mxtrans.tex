@@ -1,9 +1,9 @@
-\subsection{Matrix transponering}
+\subsection{Matrixtransponering}
 \begin{defn}{}{mxtrans}
 Lad $A$ være en $m \times n$ matrix. \textbf{Transponeringen} til $A$, er en $n \times m$ matrix, noteret $A^T$, hvor $A$'s $(i,j)$'te indgang er den $(j,i)$'te indgang i $A^T$.
 \end{defn}
 \noindent
-En transponering af en matrice resulterer i en ny matrice, hvor rækkerne i den originale matrice kommer til at være søjlerne i den transponerede matrice.
+En transponering af en matrix resulterer i en ny matrix, hvor rækkerne i den oprindelige matrice er søjlerne i den transponerede matrice.
 \\
 %
 \begin{eks}
@@ -14,7 +14,7 @@ Betragt nu $A^T$ og $(A+B)^T$, hvor
 \begin{align*}
 A= 
 \begin{bmatrix}
-3	&	-3	&	1\\
+3	&	-3	&	1 \\
 2	&	0	&	4
 \end{bmatrix}
 \text{\phantom{---}og\phantom{---}}
@@ -52,9 +52,9 @@ A^T =
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Følgende sætning viser, at transponering bevarer summering og skalering af matricer.
+Sætning \ref{thm:mxtranspo} viser, at transponering bevarer summering og skalering af matricer.
 %
-\begin{thm}{}{}
+\begin{thm}{}{mxtranspo}
 Lad $A$ og $B$ være $m \times n$ matricer, og lad $k$ være en skalar.
 Så har matricerne følgende egenskaber:
 \begin{enumerate}[label=(\alph*)]
@@ -66,11 +66,11 @@ Så har matricerne følgende egenskaber:
 %
 \begin{proof}
 Lad $A$ og $B$ være $m \times n$ matricer og lad $k$ være en skalar.
-Det vides at indgangene i $A+B$ er $a_{i,j} + b_{i,j}$ og transponeringen af dette resulterer $n \times m$ matrix med indgangende $a_{j,i} + b_{j,i}$.
-Det ses at  $A^T + B^T$ også er en $n \times m$ matrix med indgangene $a_{i,j} + b_{i,j}$, hvilket beviser (a).
+Det vides, at indgangene i $A+B$ er $a_{i,j} + b_{i,j}$, og transponeringen af dette resulterer i en $n \times m$ matrix med indgangende $a_{j,i} + b_{j,i}$.
+Det ses, at  $A^T + B^T$ også er en $n \times m$ matrix med indgangene $a_{i,j} + b_{i,j}$, hvilket beviser (a).
 Ved skalering og transponering af en matrix ses, at forskellig rækkefølge på operationerne er uden betydning for slutresultatet.
 Dette tydeliggøres ved at betragte $kA^T$ og $(kA)^T$.
-For $kA^T$ er indgangende $ka_{j,i}$ og indgangende i $kA$ er $ka_{i,j}$, som efter transponering er $ka_{j,i}$, hvilket beviser (b).
+For $kA^T$ er indgangene $ka_{j,i}$, og indgangene i $kA$ er $ka_{i,j}$, som efter transponering er $ka_{j,i}$, hvilket beviser (b).
 Transponeres $A$ to gange vil resultatet være $A$.
 Første transponering resulterer i en $n \times m$ matrix med indgangene $a_{j,i}$ og anden transponering resulterer i en $m \times n$ matrix med indgangene $a_{i,j}$, hvilket beviser (c).
 \end{proof}
