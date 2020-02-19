@@ -1,16 +1,104 @@
 \subsection{Matrixmultiplikation}
 
-
-\begin{defn}{}{}
-Matrixproduktet af en $m \times n$ matrix $A$ og en $n \times p$ matrix $B$ er en $m \times p$ matrix $C$, 
-
+Der er ofte nødvendigt at multiplicere matricer med andre matricer. 
+\begin{defn}{}{}\label{def:mxmulti}
+Matrixproduktet $AB$ af en $m \times n$ matrix $A$ og en $n \times p$ matrix $B$ er en $m \times p$ matrix $C$, 
 $$
 C=
 \begin{bmatrix}
 A\textbf{b}_1 & A\textbf{b}_2 & \ldots & A\textbf{b}_p
 \end{bmatrix}\text{,}
 $$
-
 hvor $A\textbf{b}_j$ er den $j$'te række i $C$.
 \end{defn}
-
+%
+Som det fremgår af definition \ref{def:mxmulti}, skal antallet af søjler i $A$ tilsvare antallet af rækker i $B$, for at $AB$ er defineret og matrixmultiplikation dermed er muligt. 
+Bemærk, at selvom $AB$ er defineret, er $BA$ ikke nødvendigvis defineret. 
+Hvis både $AB$ og $BA$ er defineret, er de desuden ikke nødvendigvis lig hinanden.\\\\
+%
+\begin{eks}
+Lad 
+$$
+A=
+\begin{bmatrix}
+7 & 9 & 1 \\
+4 & 0 & 0 \\
+8 & 5 & 5
+\end{bmatrix}
+\text{og }
+B=
+\begin{bmatrix}
+2 & 3 \\
+5 & 1 \\
+0 & 1 
+\end{bmatrix}
+\text{.}
+$$
+Ved at betragte $A$ og $B$ vides det, $AB$ er defineret og er en $3 \times 2$ matrix. 
+Først findes søjlerne $A\textbf{b}_1$ og $A\textbf{b}_2$:
+$$
+A\textbf{b}_1=
+\begin{bmatrix}
+7 & 9 & 1 \\
+4 & 0 & 0 \\
+8 & 5 & 5
+\end{bmatrix}
+\begin{bmatrix}
+2 \\
+5 \\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+14 + 45 + 0 \\
+8 + 0 + 0 \\
+16 + 25 + 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+59 \\
+8 \\
+41
+\end{bmatrix}
+$$
+og
+$$
+A\textbf{b}_1=
+\begin{bmatrix}
+7 & 9 & 1 \\
+4 & 0 & 0 \\
+8 & 5 & 5
+\end{bmatrix}
+\begin{bmatrix}
+3 \\
+1 \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+21 + 9 + 1 \\
+12 + 0 + 0 \\
+24 + 5 + 5
+\end{bmatrix}
+=
+\begin{bmatrix}
+31 \\
+12 \\
+34
+\end{bmatrix}
+$$
+Dermed er 
+$$
+AB=
+\begin{bmatrix}
+A\textbf{b}_1 & A\textbf{b}_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+59 & 31 \\
+8 & 12 \\
+41 & 34
+\end{bmatrix}
+$$
+\end{eks}
+Da matricen $B$ inddeles i sine søjlevektorer, er grundprincippet i matrixmultiplikation at finde matrix-vektorprodukter. 
