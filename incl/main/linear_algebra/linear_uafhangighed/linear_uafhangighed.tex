@@ -1,2 +1,78 @@
 \subsection{Lineær uafhængighed}
 % 1.7
+\textbf{Raaaasmusss hjælp mig xD}
+% 
+\begin{defn}{Lineær afhængighed og lineær uafhængighed}{}
+Et sæt af vektorerne $\mathbf{v}_1, \ldots , \mathbf{v}_k$ i $\R^n$ kaldes \textbf{lineært uafhængige}, hvis der eksistere skalare $x_1,x_2, \ldots , x_l$, sådan at ligningen 
+\begin{align*}
+x_1\mathbf{v}_1 + \ldots + x_k \mathbf{v}_k = \mathbf{0}, 
+\end{align*}
+kun har løsningen $c_1 = \ldots = c_k = 0$.
+Ellers kaldes vektorerne \textbf{lineært afhængige}.
+\end{defn}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Eksempel
+\begin{eks}
+
+\end{eks}
+% 
+tekst 
+%
+\begin{thm}{}{}
+%
+Lad $A$ være en $m \times n$ matrix.
+Følgende udsagn er ækvivalente:
+%
+\begin{enumerate}[label=(\alph*)]
+\item $A$'s søjler er lineært uafhængige. 
+\item Ligningssystemet $A\mathbf{x}=\mathbf{b}$ har højst en løsning $\forall \mathbf{b} \in \R^m$.
+\item $\text{null}(A)=0$.
+\item $\text{rang}(A)=n$.
+\item Søjlerne i $A$ på reduceret trappeform er standardvektoren i $\R^m$.
+\item $A\mathbf{x}=\mathbf{0}$ har kun løsningen $\mathbf{x}=\mathbf{0}$.
+\item Der er pivot-indgange i hver søjle i $A$. 
+\end{enumerate}
+%
+\end{thm}
+%
+\begin{proof}
+%
+Lad $\mathbf{b}=\mathbf{0}$. 
+Ligningssystemet $A\mathbf{x}=\mathbf{b}$ har altid løsningen $\mathbf{x}=\mathbf{0}$, der derfor er den eneste løsning til $A\mathbf{x}=\mathbf{0}$, hvilket beviser (b) og (e).
+\\
+Lad $\mathbf{u}, \mathbf{v}$ være løsninger til $A\mathbf{x}=\mathbf{b}$.
+% Sætning 1.3
+Jævnfør sætning \ref{fisk}, følger det at $A(\mathbf{u}-\mathbf{v})=A\mathbf{u}-A\mathbf{v}=\mathbf{b}-\mathbf{b}=\mathbf{0}$, hvilket tilsvarer $\mathbf{u}-\mathbf{v}=\mathbf{0}
+\rightarrow  
+\mathbf{u} =\mathbf{v}.$
+Mangler resten 
+%
+\end{proof}
+\\
+%
+tekst
+%
+\begin{thm}{}{}
+%
+Vektorerne $\mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_k$ i $\R^n$ er lineært afhængige, 
+hvis og kun hvis, $\mathbf{u}_1=\mathbf{0}$, eller hvis der findes $i \geq 2$ således $\mathbf{u}_i \in \text{span} \{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}$.
+%
+\end{thm}
+%
+\begin{proof}
+%
+Lad $\mathbf{b}=\mathbf{0}$. 
+Ligningssystemet $A\mathbf{x}=\mathbf{b}$ har altid løsningen $\mathbf{x}=\mathbf{0}$, der derfor er den eneste løsning til $A\mathbf{x}=\mathbf{0}$, hvilket beviser (b) og (e).
+\\
+Lad $\mathbf{u}, \mathbf{v}$ være løsninger til $A\mathbf{x}=\mathbf{b}$.
+% Sætning 1.3
+Jævnfør sætning \ref{fisk}, følger det at $A(\mathbf{u}-\mathbf{v})=A\mathbf{u}-A\mathbf{v}=\mathbf{b}-\mathbf{b}=\mathbf{0}$, hvilket tilsvarer $\mathbf{u}-\mathbf{v}=\mathbf{0}
+\rightarrow  
+\mathbf{u} =\mathbf{v}.$
+Mangler resten 
+%
+\end{proof}
+\\
+%
+tekst

@@ -6,7 +6,7 @@
 Der eksisterer tre opperationer som kan udføres på rækker i et lineært ligningssystem.
 Dette gøres nemmest når systemet er skrevet som en matrice.
 De er ombytning, udskiftning og skalering.
-
+%
 \begin{defn}{}{element}
 \textbf{Ombytning} af rækker, bytter rundt på pladserne af to rækker og noteres
 \begin{align*}
@@ -21,13 +21,16 @@ A \xrightarrow{R_i \rightarrow cR_i} B.
 \begin{align*}
 A \xrightarrow{R_i \rightarrow R_i + cR_h} B.
 \end{align*}
-
+%
 \end{defn}
 \noindent
-Eksempler på de elementære rækkeoperationer ses i eksempel \ref{eks1}
-
+Eksempler på de elementære rækkeoperationer ses i eksempel \ref{eks1}.
+\\
+%
 \begin{eks}\label{eks1}
-Først laves ombytning mellem række et og tre i matricen. Derefter laves en skalering med -2 på række to. Til sidst laves en udskiftning på række tre hvor række et bliver lagt til række tre, tre gange. 
+Først laves ombytning mellem række et og tre i matricen. 
+Derefter laves en skalering med -2 på række to. 
+Til sidst laves en udskiftning på række tre hvor række et bliver lagt til række tre, tre gange. 
 \begin{align*}
 \begin{blockarray}{ccc}
 \begin{block}{[cc|c]}
@@ -78,8 +81,9 @@ Først laves ombytning mellem række et og tre i matricen. Derefter laves en ska
 \end{blockarray}
 \end{align*}
 \end{eks}
-
-
+%
+%
+%
 \subsection{Trappeform og reduceret trappeform}
 En række kaldes for en \textbf{nulrække}, hvis alle indgange er nul, og en ikke nulrække hvis der bare er en indgang der er forskellig fra nul.
 Dette bruges til definitionen af trappeform.
@@ -91,7 +95,9 @@ En matrix er på \textbf{trappeform}, hvis den opfylder følgende krav.
 \item Hvis en søjle har den første ikke nul indgang i en række, så er alle indgangene i søjlen under den nul.
 \end{defn}
 \begin{eks}
-Det kan ses på de to følgende matricer at $A$ er på trappeform, mens $B$ ikke er på trappeform, da den første indgang i række fire ikke er en nul indgang. Hvis der laves en række ombytning på række to og fire, så ville matrix $B$ også være på trappeform
+Det kan ses på de to følgende matricer at $A$ er på trappeform, mens $B$ ikke er på trappeform, da den første indgang i række fire ikke er en nul indgang. 
+Hvis der laves en række ombytning på række to og fire, så ville matrix $B$ også være på trappeform
+%
 \begin{align*}
 A=
 \begin{blockarray}{cccc}
@@ -123,7 +129,8 @@ En matrix er på \textbf{reduceret trappeform}, hvis den opfylder følgende krav
 \item Den første indgang i hver ikke nul række er 1. 
 \end{defn}
 \noindent
-Et lineært ligningssystem, som ikke står på trappeform kan laves om til trappeform, og derefter til reduceret trappeform, hvilket gør løsningen af systemet mere simpel. Metoden til at gøre dette ses i afsnit \ref{gauss}.
+Et lineært ligningssystem, som ikke står på trappeform kan laves om til trappeform, og derefter til reduceret trappeform, hvilket gør løsningen af systemet mere simpel. 
+Metoden til at gøre dette ses i afsnit \ref{gauss}.
 \\
 %
 \begin{eks}\label{trappe}
@@ -141,7 +148,7 @@ A=
 \end{align*}
 %
 \end{eks}
-
+%
 \subsection{Pivotindgange}
 \begin{defn}{}{}
 Pivotindgange betegnes som den første ikke nul indgang i enhver række i en matrix på trappeform. 
@@ -149,7 +156,7 @@ Pivotindgange betegnes som den første ikke nul indgang i enhver række i en mat
 \noindent
 I det følgende tilfælde fra eksempel \ref{trappe}, så ses det at ligningssystemet, ikke har nogen løsning, da den fjerde ligning ikke har nogen løsning.\\
 \begin{minipage}{0.5\textwidth}
-
+%
 \begin{align*}
 A=
 \begin{blockarray}{ccccc}
