@@ -1,4 +1,5 @@
 \subsection{Gauss elimination}
+\label{gauss}
 % 1.4
 % Sætning 1.4 kan vi bevise den
 En algoritme til løsningen af linære ligningssystemer er  \textbf{rækkereduktionsalgoritmen}, som omdanner en matrix fra en totalmatrice til reduceret trappeform.
@@ -10,7 +11,7 @@ Algoritmen gennemgår således følgende skridt:
 \begin{enumerate}
 \item Find første ikke-nul søjle i $A$ fra venstre.
 \item Ved rækkeombytning placeres en ikke-nul indgang øverst i pivot-søjlen.
-\item Skab nuller under pivot-indgangen øverst i pivot-søjlen ved hjælp af rækkeudskiftning.
+\item Skab nuller under pivot-indgangen ved hjælp af rækkeudskiftning.
 \item Øverste række markeres som afsluttet og trin $1-3$ gennemføres nu på den næste række.
 \item Alle rækker med pivot-indgange skaleres så alle pivot-indgange er lig $1$.
 \item Ved rækkeudskiftning sikres nu $0$'er over og under pivot-indgangene.
@@ -28,7 +29,7 @@ x_1-x_3-2x_4-8x_5    &=  &-3 \\
 \end{array}
 \end{align*}
 %
-Ligningssystemet opskrevet som totalmatrix $[A \text{   }|\text{ }\mathbf{b}]$
+Ligningssystemet opskrevet som totalmatrix $[A \text{   }|\text{ }\mathbf{b}]$.
 %
 \begin{equation*}
 A=
@@ -217,7 +218,7 @@ Lad $A$ være en $n \times m$ matrix og lad $\mathbf{b}$ være i $\R^m$ ud fra d
 i $\R^n$, der opfylder, at $A\mathbf{v}=\mathbf{b}$, hvis og kun hvis $$v_1 \mathbf{a}_1+v_2 \mathbf{a}_2 + \ldots + v_n \mathbf{a}_n$$ hvilket er linearkombinationen af matricen og vektoren. 
 Det følger derfor at udsagn $(a)$ og udsagn $(b)$ er ækvivalente.
 Herefter bevises, at $(a)$ og $(c)$ er ækvivalente. 
-Hvis udsagn $(c)$ er falsk følger det, at  $$0 x_1+0 x_2 + \ldots + 0x_n =d$$, hvor $d\neq0$, da dette ikke har nogen løsning følger det, at ligningssystemet således bliver inkonsistent. 
+Hvis udsagn $(c)$ er falsk følger det, at  $$0 x_1+0 x_2 + \ldots + 0x_n =d,$$ hvor $d\neq0$, da dette ikke har nogen løsning følger det, at ligningssystemet således bliver inkonsistent. 
 Såfremt $(c)$ er sandt gælder omvendt, at alle rækker i den reducerede trappeform indeholder en løsning, som også er løsning til $A\mathbf{x}=\mathbf{b}$. 
 Således er $(a)$ og $(c)$ ækvivalente.
 %

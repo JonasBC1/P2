@@ -1,6 +1,7 @@
 \section{Løsning til lineær ligningssystemer}
-
-
+%
+\textbf{Tekst her}
+%
 \subsection{Elementære rækkeopperationer}
 Der eksisterer tre opperationer som kan udføres på rækker i et lineært ligningssystem.
 Dette gøres nemmest når systemet er skrevet som en matrice.
@@ -9,16 +10,16 @@ De er ombytning, udskiftning og skalering.
 \begin{defn}{}{element}
 \textbf{Ombytning} af rækker, bytter rundt på pladserne af to rækker og noteres
 \begin{align*}
-A \xrightarrow{R_i \leftrightarrow R_h} B, 
+A \xrightarrow{R_i \leftrightarrow R_j} B, 
 \end{align*}
-hvor $A$ er matricen før opperationen, $B$ er matricen efter opperationen og $R_h$ og $R_i$ er rækker i $A$.\\
+hvor $A$ er matricen før opperationen, $B$ er matricen efter opperationen og $R_j$ og $R_i$ er rækker i $A$.\\
 \textbf{Skalering} betyder at en bestemt række skaleres med en ikke nul værdi, og noteres
 \begin{align*}
-A \xrightarrow{R_i \rightarrow cR_i} B, 
+A \xrightarrow{R_i \rightarrow cR_i} B.
 \end{align*}
 \textbf{Udskiftning} af rækker betyder at en række udskiftes med rækken selv plus en skalering af en anden række og noteres
 \begin{align*}
-A \xrightarrow{R_i \rightarrow R_i + cR_h} B
+A \xrightarrow{R_i \rightarrow R_i + cR_h} B.
 \end{align*}
 
 \end{defn}
@@ -80,12 +81,12 @@ Først laves ombytning mellem række et og tre i matricen. Derefter laves en ska
 
 
 \subsection{Trappeform og reduceret trappeform}
-En række kaldes for en \textbf{nulrække} hvis alle indgange er nul, og en ikke nulrække hvis der bare er en indgang der er forskellig fra nul.
+En række kaldes for en \textbf{nulrække}, hvis alle indgange er nul, og en ikke nulrække hvis der bare er en indgang der er forskellig fra nul.
 Dette bruges til definitionen af trappeform.
 \begin{defn}{}{}
 En matrix er på \textbf{trappeform}, hvis den opfylder følgende krav.
 \itemize
-\item Enhver ikke nul række ligger over alle nul rækker
+\item Enhver ikke nul række ligger over alle nul rækker.
 \item Den første ikke nul indgang i en ikke nul række ligger i en søjle til højre for første ikke nul indgange i forrige række.
 \item Hvis en søjle har den første ikke nul indgang i en række, så er alle indgangene i søjlen under den nul.
 \end{defn}
@@ -110,11 +111,11 @@ B=
 0 & 4 & 2 & 7\\
 2 & 0 & 0 & 0\\
 \end{block}
-\end{blockarray}
+\end{blockarray}.
 \end{align*}
-
+%
 \end{eks}
-
+%
 \begin{defn}{}{}
 En matrix er på \textbf{reduceret trappeform}, hvis den opfylder følgende krav.
 \itemize
@@ -122,8 +123,9 @@ En matrix er på \textbf{reduceret trappeform}, hvis den opfylder følgende krav
 \item Den første indgang i hver ikke nul række er 1. 
 \end{defn}
 \noindent
-Et lineært ligningssystem som ikke står på trappeform kan laves om til trappeform, og derefter til reduceret trappeform, hvilket gør løsningen af systemet mere simpel. Metoden til at gøre dette ses i afsnit \ref{gauss}.
-\newpage
+Et lineært ligningssystem, som ikke står på trappeform kan laves om til trappeform, og derefter til reduceret trappeform, hvilket gør løsningen af systemet mere simpel. Metoden til at gøre dette ses i afsnit \ref{gauss}.
+\\
+%
 \begin{eks}\label{trappe}
 Det kan ses på følgende matrix, at $A$ er på reduceret trappeform.
 \begin{align*}
@@ -137,6 +139,7 @@ A=
 \end{block}
 \end{blockarray}
 \end{align*}
+%
 \end{eks}
 
 \subsection{Pivotindgange}
@@ -168,6 +171,9 @@ x_4&=0\\
 0&=1
 \end{align*}
 \end{minipage}
-I tilfælder hvor der er pivot indgang i den sidste søjle, så har ligningssystemet ingen løsning.
 %
-De variablers søjler som indeholder pivotindgange kaldes for faste variabler og dem som ikke indholder pivotindgange kaldes for frie variabler. Der kan løses for de faste variabler udtrykt ved de frie variabler. For hvert sæt af frie variabler giver ligningssystemet nogle tilsvarende værdier af de faste variabler.
+I tilfælder, hvor der er pivot indgang i den sidste søjle, så har ligningssystemet ingen løsning.
+%
+De variablers søjler som indeholder pivotindgange kaldes for faste variabler og dem som ikke indholder pivotindgange kaldes for frie variabler. 
+Der kan løses for de faste variabler udtrykt ved de frie variabler. 
+For hvert sæt af frie variabler giver ligningssystemet nogle tilsvarende værdier af de faste variabler.

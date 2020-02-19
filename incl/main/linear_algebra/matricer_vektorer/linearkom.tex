@@ -1,45 +1,55 @@
 \subsection{Linearkombination og matrix-vektorprodukt}
-
-%Et eller andet metatekst her.
-\textit{Linearkombination} er en essentiel del af lineær algebra. 
-
+%
+% Et eller andet metatekst her.
+%
+\textbf{Linearkombination} er en essentiel del af lineær algebra. 
+%
 \begin{defn}{}{}
-Givet matricerne $A_1, A_2, \ldots, A_k$ med dimensionerne $m \times n$, så er \textit{linearkombinationen} af $A_1, A_2, \ldots, A_k$ en matrix $B$ på formen 
-
+Givet matricerne $A_1, A_2, \ldots, A_k$ med dimensionerne $m \times n$, så er linearkombinationen af $A_1, A_2, \ldots, A_k$ en matrix $B$ på formen 
+%
 $$c_1A_1+c_2A_2+\ldots+c_kA_k=\sum\limits_{i=1}^k c_iA_i=B,$$
-
+%
 med dimensionerne $m \times n$. 
-Linearkombinationen er mulig, hvis og kun hvis skalarerne $c_1, c_2, \ldots, c_k$ eksisterer. 
-Skalarerne kaldes linearkombinationens \textit{koefficienter}.
+Linearkombinationen er mulig, hvis og kun, hvis skalarerne $c_1, c_2, \ldots, c_k$ eksisterer. 
+Skalarerne kaldes linearkombinationens koefficienter.
 \end{defn}
-%KILDE primært: https://www.statlect.com/matrix-algebra/linear-combinations
-
+%
+% KILDE primært: https://www.statlect.com/matrix-algebra/linear-combinations
+%
+\noindent 
+%
 I lineær algebra er det oftest række- eller søjlevektorer, der indgår i linearkombinationer. 
-En linearkombination af én vektor er blot en skalarmultiplikation af vektoren.
-
+En linearkombination af én vektor er blot en skalering af vektoren.
+\\
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 \begin{eks}
 Lad 
-$
+$$
 \textbf{a}=
 \begin{bmatrix}
-5 & 9 & 4
-\end{bmatrix}^T
-$
-,
-$
+5 \\
+9 \\
+4
+\end{bmatrix}
+\text{, }
 \textbf{b}=
 \begin{bmatrix}
-8 & 12 & 3
-\end{bmatrix}^T
-$
-og
-$\textbf{c}=
+8  \\
+12 \\ 
+3
+\end{bmatrix}
+\text{og }
+\textbf{c}=
 \begin{bmatrix}
-0 & 0 & 7
-\end{bmatrix}^T
-$
-, samt $c_a=-4$, $c_b=100$ og $c_c=2$. Linearkombinationen af $\textbf{a}$, $\textbf{b}$ og $\textbf{c}$ er 
-
+0 \\
+0 \\
+7
+\end{bmatrix},
+$$
+samt $c_a=-4$, $c_b=100$ og $c_c=2$. 
+Linearkombinationen af $\textbf{a}$, $\textbf{b}$ og $\textbf{c}$ er 
 $$
 (-4)
 \begin{bmatrix}
@@ -69,9 +79,10 @@ $$
 \end{bmatrix}
 \text{.}
 $$
-
 \end{eks}
-
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 Enhver vektor 
 $
 \textbf{a}=
@@ -79,19 +90,28 @@ $
 a_1 & a_2 & \ldots & a_n
 \end{bmatrix}^T
 $
-i $\R^n$kan skrives som linearkombination af $I_n$ i $R^n$. 
+i $\R^n$ kan skrives som linearkombination af $I_n$ i $R^n$. 
 Givet to ikke-parallelle vektorer $u$ og $v$ i $\R^2$, så er enhver anden vektor i $\R^2$ en linearkombination af $u$ og $v$. 
-Hvis skalarerne i en linearkombination i stedet er vektorer, så er der tale om et \textit{matrix-vektorprodukt}.
+Hvis skalarerne i en linearkombination i stedet er vektorer, så er der tale om et \textbf{matrix-vektorprodukt}.
 
 \begin{defn}{}{mvp}
-\phantom{gdfs}\\Lad $A$ være en $m \times n$ matrix og \textbf{v} være en $n \times 1$ vektor. \textbf{Matrix-vektor-produktet} af A og \textbf{v} defineres som den lineære kombination af søjlerne i A hvis koefficienter er de tilsvarende komponenter af \textbf{v}, og noteres A\textbf{v}. Det vil sige
+\phantom{gdfs}\\
+Lad $A$ være en $m \times n$ matrix og \textbf{v} være en $n \times 1$ vektor. 
+Matrix-vektor-produktet af $A$ og $\textbf{v}$ defineres som den lineære kombination af søjlerne i $A$, hvis koefficienter er de tilsvarende komponenter af $\textbf{v}$, og noteres $A\textbf{v}$. 
+Det vil sige
 \begin{align*}
 A\textbf{v} =v_1\textbf{a}_1 + v_2\textbf{a}_2 + \cdots + v_n\textbf{a}_n.
 \end{align*}
 \end{defn}
 \noindent
 For at $A\textbf{v}$ eksisterer, skal der være lige mange komponenter i \textbf{v} som søjler i $A$. Et eksempel på et matrix-vektor-produkt mellem en matrix $B$ og en vektor \textbf{u} ses i eksempel \ref{Matrix-vektor}.
-\begin{eks}\label{Matrix-vektor}
+\\
+%
+\begin{eks}
+\label{Matrix-vektor}
+%
+\textbf{Skriv noget tekst her}
+%
 \begin{center} 
 $$B=
 \begin{blockarray}{c c c c}
@@ -112,6 +132,7 @@ $$B=
 3 \\ 
 \end{bmatrix}.
 $$
+%
 Eftersom $B$ har 3 søjler og \textbf{u} har 3 komponenter, så eksisterer $B\textbf{u}$ og findes ved
 $$
 B\textbf{u}=
