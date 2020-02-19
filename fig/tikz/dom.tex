@@ -1,0 +1,61 @@
+\begin{figure}[h!]
+  \centering
+  \begin{tikzpicture}
+    \tikzset{punkt/.style={point, draw=black}}\draw[color=black](2,-2) circle (1.5);
+	\draw[color=black](6,-2) circle (1.5);  
+	\draw[color=black, fill=myblue!15](6,-2) circle (0.75);  
+%Punkter
+	\draw  node[fill,circle,inner sep=0pt,minimum size=3pt] at (2,-2.65)  (v1) {};
+	\draw  node[fill,circle,inner sep=0pt,minimum size=3pt] at (2,-1.35)  (v2) {};
+	\draw  node[fill,circle,inner sep=0pt,minimum size=3pt] at (6,-2)  (v3) {};
+
+%Labels
+	\draw  node at (1.75,-2.55)  {$\textbf{u}$};
+	\draw  node at (1.75,-1.25)  {$\textbf{v}$};
+	\draw  node at (6.25,-1.85)  {$\textbf{w}$};
+	
+	
+	
+	%Navn på cirklerne 
+	\draw[black, fill=black] (1.75,-0) circle (0pt) node[anchor=west] {$V_1$};    
+	\draw[black, fill=black] (5.75,-0) circle (0pt) node[anchor=west] {$V_2$};
+	%Navn på punkter 
+	
+	
+
+	 \draw [->, thick, draw=red] ([xshift=5pt, yshift=-1pt]v1.north) -- ([xshift=-5pt, yshift=1pt]v3.south);
+     \draw [->, thick, draw=black] ([xshift=5pt, yshift=1pt]v2.south) -- ([xshift=-5pt, yshift=-1pt]v3.north);
+
+
+    
+	%Streger mellem punkterne
+  \end{tikzpicture}
+  \caption{Eksempel på en todelt graf, hvor de to disjunkte delmængder, $V_1$ og $V_2$, er farvet.}
+  \label{fig:}
+\end{figure}
+%
+%
+%    \node[punkt] at (-4,0.5)      (v1){$v_1$};
+%    \node[punkt] at (-2,0.5)      (v2){$v_2$};
+%    \node[punkt] at (-4,-1.5)     (v3){$v_3$};
+%    \node[punkt] at (-2,-1.5)     (v4){$v_4$};
+%    \node at (-3,2)     (v){$K_{4}$};
+%
+%
+%    \node[punkt] at (4.6,-0.2)      (k1){$v_3$};
+%    \node[punkt] at (1.4,-0.2)      (k2){$v_2$};
+%    \node[punkt] at (2,-2)     (k3){$v_4$};
+%    \node[punkt] at (4,-2)     (k4){$v_5$};
+%    \node[punkt] at (3,1)      (k5){$v_1$};
+%    \node at (3,2)      (k){$K_{5}$};
+%
+%
+%
+%
+%
+%    \draw [-, thick, draw=black] (v1) -- (v2);
+%    \draw [-, thick, draw=black] (v1) -- (v3);
+%    \draw [-, thick, draw=black] (v1) -- (v4);
+%    \draw [-, thick, draw=black] (v2) -- (v3);
+%    \draw [-, thick, draw=black] (v2) -- (v4);
+%    \draw [-, thick, draw=black] (v3) -- (v4);
