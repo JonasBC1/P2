@@ -1,3 +1,50 @@
 \subsection{Specielle matricer} %skal måske hedde noget andet? 
 
-Den ene af to specielle matricer, der benyttes i dette projekt, er \textit{nulmatricen}. 
+Den ene af to specielle matricer, der benyttes i dette projekt, er \textit{nulmatricen}. I en nulmatrice er alle elementer $0$, og en $m \times n$ nulmatrice noteres $0_{m,n}$. 
+%Er det korrekt notation? Fandt det på wiki hehehehe
+
+Den anden specielle matrice er \textit{identitetsmatricen}. 
+
+\begin{defn}{}{}
+En $n \times n$, $n \in \Z^+$, identitetsmatrice $I_n$ består af alle standardvektorer $\textbf{e}_1, textbf{e}_2, \ldots, textbf{e}_n$ i $R^n$, således 
+
+$
+I_n=
+\begin{bmatrix}
+\textbf{e}_1 & textbf{e}_2 & \ldots & textbf{e}_n
+\end{bmatrix}
+$. 
+
+\end{defn}
+
+Standardvektorerne i $\R^n$ er defineret ved 
+%Kan evt. kommer inden definitionen, men kan bedst lide denne rækkefølge. 
+$$
+\textbf{e}_1=
+\begin{bmatrix}
+1 \\ 
+0 \\ 
+\vdots \\
+0
+\end{bmatrix}
+\text{, }
+\textbf{e}_2=
+\begin{bmatrix}
+0 \\ 
+1 \\ 
+\vdots \\
+0
+\end{bmatrix}
+\text{, }
+\ldots
+\text{, }
+\textbf{e}_n=
+\begin{bmatrix}
+0 \\ 
+0 \\ 
+\vdots \\
+1
+\end{bmatrix}
+\text{. }
+$$
+
