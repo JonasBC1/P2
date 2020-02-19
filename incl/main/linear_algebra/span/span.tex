@@ -229,10 +229,28 @@ Lad $B$ være den reducerede trappeform af $A$ og $\mathbf{e}_m$ er standart vek
 i $\R^m$. 
 Gennem rækkereduktionsalgoritmen kan $A$ transformeres til $B$. 
 Da disse række er reversible, følger det, at der findes en sekvens af rækkeopperationer, som kan transformere $B$ til $A$.
-
+Hvis disse opperationer udføres på totalmatricen for 
+$[B \text{    } \mathbf{e}_m]$ 
+for at konstruere matricen 
+$[A \text{    } \mathbf{d}]$ 
+for $\mathbf{d}$ i $\R^n$. 
+Så følger det, at ligningsystemet $A\mathbf{x}=\mathbf{
+d}$ er ækvivalent med $B\mathbf{x}=\mathbf{e}_m$.
+\\\\
+Hvis $(b)$ er sand følger det at de to ligningssystemer er konsistente. 
+Det fører derfor fra sætning \ref{thm:konsistens}, at den sidste række ikke kan være en nul-række, da det på grund af standardvektoreren $\mathbf{e}_m$ således vil have pivot-indgang i sidste søjle og derfor vil ligningssystemet være inkonsistent.
+Det følger derfor at rangen af $A$ er $m$, hvilket tilsvare $(c)$.
+% Dette kan eventuelt forklares dybere xD
+Antag at $(c)$ er sand. 
+Lad $[B \text{    } \mathbf{c}]$ 
+være den reducerede trappeform af 
+$[A \text{    } \mathbf{b}]$.
+Eftersom $A$ har rangen $m$, følger det at $B$ ikke indeholder en række, hvori der ikke er et nul.  
+Derfor kan $[B \text{    } \mathbf{c}]$ ikke indeholde en række hvis eneste nul-indgang er i sidste søjle. 
+Det følger derfor, jævnfør sætning \ref{thm:konsistens}, at $A\mathbf{x}=\mathbf{b}$ er konsistens $\mathbf{b}$.
 %
 \end{proof}
-\\\\
+\\
 %
 tekst 
 %
@@ -249,13 +267,21 @@ Så er $\text{span}\{ \mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf
 %
 Antag af $\mathbf{v}$ er i $\text{span}\{\S\}$. Så er $\mathbf{v}$ en lineær kombination af $\S$, hvilket kan opskrives som $\mathbf{v}=a_1\mathbf{u}_1+a_2\mathbf{u}_2+ \ldots + a_k\mathbf{u}_k$, hvor $a_1,a_2,\ldots, a_k$ er skalar. 
 Hvis en vektor $\mathbf{w}$ er i $\text{span}\{ \mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\}$ kan denne opskrives $\mathbf{v}=c_1\mathbf{u}_1+c_2\mathbf{u}_2+ \ldots + c_k\mathbf{u}_k+b\mathbf{v}$, hvor $c_1,c_2,\ldots, c_k$ er skalar.
-Ved substitution af $\mathbf{v}$ med $\{ \mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\}$, så vides det at $\mathbf{w}$ kan opskrives som en linear kombination af $\S$. 
+Ved substitution af $\mathbf{v}$ med $\{ \mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\}$, så vides det at $\mathbf{w}$ kan opskrives som en linear kombination af $\S$. 
 Det gælder endvidere, at alle linear kombinationer i $\S$ også kan dannes fra vektorerne $\mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}$, hvis $\mathbf{v}$ ganges med skalaren af $0$.
 Det følger derfor, at de to mængder har samme span. 
-Mangler det sidste xddddddddddddddddddddddddd
+Antag nu, at $v$ ikke er i $\text{span}\S$. 
+Det følger herfra at i spannet af 
+$\{ \mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\}$ da 
+$\mathbf{v}=0\mathbf{u}_1+0\mathbf{u}_2+ \ldots + 0\mathbf{u}_k+1\mathbf{v}$.
+Derfor 
+$\text{span}\{ \mathbf{u}_1,, \mathbf{u}_2 , \ldots , \mathbf{u}_k \}
+\neq
+\text{span}\{ \mathbf{u}_1,, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\}$, 
+da mængerne ikke er ækvivalente, idet kun en af dem indeholder $\mathbf{v}$. 
 %
 \end{proof}
-\\\\
+\\
 %
 tekst 
 %
