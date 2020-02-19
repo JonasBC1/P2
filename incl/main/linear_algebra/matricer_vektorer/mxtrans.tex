@@ -54,5 +54,12 @@ Så har matricerne følgende egenskaber:
 \end{thm}
 
 \begin{proof}
-Trivielt?
+Lad $A$ og $B$ være $m \times n$ matricer og lad $k$ være en skalar.
+Det vides at indgangene i $A+B$ er $a_{i,j} + b_{i,j}$ og transponeringen af dette resulterer $n \times m$ matrix med indgangende $a_{j,i} + b_{j,i}$.
+Det ses at  $A^T + B^T$ også er en $n \times m$ matrix med indgangene $a_{i,j} + b_{i,j}$, hvilket beviser (a).
+Ved skalering og transponering af en matrix ses, at forskellig rækkefølge på operationerne er uden betydning for slutresultatet.
+Dette tydeliggøres ved at betragte $kA^T$ og $(kA)^T$.
+For $kA^T$ er indgangende $ka_{j,i}$ og indgangende i $kA$ er $ka_{i,j}$, som efter transponering er $ka_{j,i}$, hvilket beviser (b).
+Transponeres $A$ to gange vil resultatet være $A$.
+Første transponering resulterer i en $n \times m$ matrix med indgangene $a_{j,i}$ og anden transponering resulterer i en $m \times n$ matrix med indgangene $a_{i,j}$, hvilket beviser (c).
 \end{proof}

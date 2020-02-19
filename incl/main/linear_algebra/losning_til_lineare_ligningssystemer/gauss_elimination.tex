@@ -21,12 +21,14 @@ Algoritmen gennemgår således følgende skridt:
 Givet ligningssystemet:
 %
 \begin{align*}
-x_1-x_3-2x_4-8x_5&=-3 \\
--2x_1+x_3+2x_4+9x_5&=5 \\
-3x_1-2x_3-3x_4-15x_5&=-9 \\
+\begin{array}{rlr}
+x_1-x_3-2x_4-8x_5    &=  &-3 \\
+-2x_1+x_3+2x_4+9x_5  &=  &5 \\
+3x_1-2x_3-3x_4-15x_5 &=  &-9 
+\end{array}
 \end{align*}
 %
-Ligningssystemet opskrevet som totalmatrix $[A \text{   }|\mathbf{b}]$
+Ligningssystemet opskrevet som totalmatrix $[A \text{   }|\text{ }\mathbf{b}]$
 %
 \begin{equation*}
 A=
@@ -161,17 +163,17 @@ Parameterfremstillingen for løsningen i $\R^5$ bliver således:
 %
 \subsection{Rang og nullitet}
 % 
-her skal der stå et eller andet
+For at beskrive en matrix egenskaber i forhold til pivot-indgange er der brug for at definere nogle begreber. 
 %
 \begin{defn}{}{}
 \textbf{Rangen} af en matrix $A$ er antallet af pivotindgange, noteret $\text{rang}(A)$. \\
 \textbf{Nulliteten} af $A$ er antallet af søjler uden pivotindgange, noteret $\text{null}(A)$.
 \end{defn}
 %
+\noindent
 I en $m \times n$-matrix er $\text{rang}(A)+\text{null}(A)=n$
 %
 Med udgangspunkt i eksempel \ref{eks_gauss} bliver rang og nullitet i 
-
 %
 \begin{align*}
 A=\begin{blockarray}{ccccccc}
@@ -209,18 +211,18 @@ Lad $A$ være en $n \times m$ matrix og lad $\mathbf{b}$ være i $\R^m$ ud fra d
         v_{2} \\
         \vdots \\
         v_{n} 
-        \end{bmatrix}  
+        \end{bmatrix},  
 \end{align*}
 %
 i $\R^n$, der opfylder, at $A\mathbf{v}=\mathbf{b}$, hvis og kun hvis $$v_1 \mathbf{a}_1+v_2 \mathbf{a}_2 + \ldots + v_n \mathbf{a}_n$$ hvilket er linearkombinationen af matricen og vektoren. 
 Det følger derfor at udsagn $(a)$ og udsagn $(b)$ er ækvivalente.
-Herefter bevises at $(1)$ og $(c)$ er ækvivalente. 
-Hvis udsagn $(c)$ er falsk følger det at  $$0 x_1+0 x_2 + \ldots + 0x_n =d$$ hvor $d\neq0$, da dette ikke har nogen løsning følger det, at ligningssystemet således bliver inkonsistent. 
-Såfremt dette er sandt gælder omvendt, at alle rækker i den reducerede trappeform indeholder en løsning, som også er løsning til $A\mathbf{x}=\mathbf{b}$. 
+Herefter bevises, at $(a)$ og $(c)$ er ækvivalente. 
+Hvis udsagn $(c)$ er falsk følger det, at  $$0 x_1+0 x_2 + \ldots + 0x_n =d$$, hvor $d\neq0$, da dette ikke har nogen løsning følger det, at ligningssystemet således bliver inkonsistent. 
+Såfremt $(c)$ er sandt gælder omvendt, at alle rækker i den reducerede trappeform indeholder en løsning, som også er løsning til $A\mathbf{x}=\mathbf{b}$. 
 Således er $(a)$ og $(c)$ ækvivalente.
 %
 \end{proof}
-\\\\
+\\
 %
 Med udgangspunkt i eksempel \ref{eks_gauss}, ses derfor, at den er konsistent, da $d$ ikke er en pivot-indgang, såfremt ligningssystemet skulle være inkonsistent kunne den have følgende form: 
 %
