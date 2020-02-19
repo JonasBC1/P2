@@ -3,40 +3,45 @@
 % Sætning 1.4 kan vi bevise den
 En algoritme til løsningen af linære ligningssystemer er  \textbf{rækkereduktionsalgoritmen}, som omdanner en matrix fra en totalmatrice til reduceret trappeform.
 Når den bruges til at løse linære ligningssystemer, kaldes denne process for \textbf{Gauss elimination}.
-I algoritmen bruges de elemæntere rækkeoperationer for at omdanne en matrix $A$ til trappeform. 
+I algoritmen bruges de elementære rækkeoperationer for at omdanne en matrix $A$ til trappeform. 
 Herefter benyttes rækkeoperationerne igen til at reducere matricen til trappeform og videre til reduceret trappeform.
-Algortimen gennemgår således følgende skridt:
+Algoritmen gennemgår således følgende skridt:
 %
 \begin{enumerate}
-\item Find første ikke-nul søjlse i $A$ fra venstre.
+\item Find første ikke-nul søjle i $A$ fra venstre.
 \item Ved rækkeombytning placeres en ikke-nul indgang øverst i pivot-søjlen.
 \item Skab nuller under pivot-indgangen øverst i pivot-søjlen ved hjælp af rækkeudskiftning.
 \item Øverste række markeres som afsluttet og trin $1-3$ gennemføres nu på den næste række.
 \item Alle rækker med pivot-indgange skaleres så alle pivot-indgange er lig $1$.
 \item Ved rækkeudskiftning sikres nu $0$'er over og under pivot-indgangene.
 \end{enumerate}
+%
 % Eksempel
 \begin{eks}
 Givet ligningssystemet:
+%
 \begin{align*}
 x_1-x_3-2x_4-8x_5&=-3 \\
 -2x_1+x_3+2x_4+9x_5&=5 \\
 3x_1-2x_3-3x_4-15x_5&=-9 \\
 \end{align*}
-Ligningssystemet opskrevet som totalmatrix $[A|\mathbf{b}]$
+%
+Ligningssystemet opskrevet som totalmatrix $[A \text{   }|\mathbf{b}]$
 %
 \begin{equation*}
-  A=
+A=
 \begin{blockarray}{ccccccc}
 x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \begin{block}{[ccccc|c]c}
-  1 & 0 & -1 & -2 & -8 & -3 \\
-  -2 & 0 & 1 & 2 & 9 & 5 \\
-  3 & 0 & -2 & -3 & -15 & -9 \\
+1 & 0 & -1 & -2 & -8 & -3 \\
+-2 & 0 & 1 & 2 & 9 & 5 \\
+3 & 0 & -2 & -3 & -15 & -9 \\
 \end{block}
 \end{blockarray}
 \end{equation*}
+%
 De elementære rækkeopperationer benyttes nu med henblik på at reducere totalmatricen til trappeform.
+%
 \begin{equation*}
 \xrightarrow[R_3 \rightarrow R_3-3R_1]{R_2 \rightarrow R_2+2R_1} 
 \begin{blockarray}{ccccccc}
@@ -48,6 +53,7 @@ x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \end{block}
 \end{blockarray}
 \end{equation*}
+%
 \begin{equation*}
 \xrightarrow{R_3 \rightarrow R_3+R_2}
 \begin{blockarray}{ccccccc}
@@ -59,7 +65,9 @@ x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \end{block}
 \end{blockarray}
 \end{equation*}
+%
 Algoritmen fortsættes nu med henblik på at opnå reduceret trappeform.
+%
 \begin{equation*}
 \xrightarrow[R_2 \rightarrow R_2+2R_3]{R_1 \rightarrow R_1+2R_3}
 \begin{blockarray}{ccccccc}
@@ -71,6 +79,7 @@ x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \end{block}
 \end{blockarray}
 \end{equation*}
+%
 \begin{equation*}
 \xrightarrow{R_2 \rightarrow -1R_2}
 \begin{blockarray}{ccccccc}
@@ -82,6 +91,7 @@ x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \end{block}
 \end{blockarray}
 \end{equation*}
+%
 \begin{equation*}
 \xrightarrow{R_1 \rightarrow R_1+R_2}
 \begin{blockarray}{ccccccc}
@@ -93,13 +103,19 @@ x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \end{block}
 \end{blockarray}
 \end{equation*}
+%
 Herefter kan løsninger opskrives:
+%
 \begin{align*}
-x_1-x_5&=-2 &\iff x_1&=x_5-2 \\
-x_3-3x_5&=3 &\iff x_3&=-3x_5+3 \\
-x_4+2x_5&=-1 &\iff x_4&=-2x_5-1 \\
+\begin{array}{rrcll}
+x_1-x_5     =&-2   &\iff &x_1   =&x_5-2 \\
+x_3-3x_5    =&3    &\iff &x_3   =&-3x_5+3 \\
+x_4+2x_5    =&-1   &\iff &x_4   =&-2x_5-1 
+\end{array}
 \end{align*}
+%
 Parameterfremstillingen for løsningen i $\R^5$ bliver således:
+%
   \begin{align*}
     \mathbf{x} &= \begin{bmatrix}
            x_{1} \\
@@ -130,54 +146,79 @@ Parameterfremstillingen for løsningen i $\R^5$ bliver således:
            1 \\
          \end{bmatrix}
   \end{align*} 
+%
 \label{eks_gauss}
-%frie variable
+%
+% Frie variable
+%
 \end{eks}
 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                           %%
+%%    Rang og nullitet       %%
+%%                           %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 \subsection{Rang og nullitet}
-%her skal der stå et eller andet
+% 
+her skal der stå et eller andet
+%
 \begin{defn}{}{}
 \textbf{Rangen} af en matrix $A$ er antallet af pivotindgange, noteret $\text{rang}(A)$. \\
 \textbf{Nulliteten} af $A$ er antallet af søjler uden pivotindgange, noteret $\text{null}(A)$.
 \end{defn}
 %
 I en $m \times n$-matrix er $\text{rang}(A)+\text{null}(A)=n$
-
+%
 Med udgangspunkt i eksempel \ref{eks_gauss} bliver rang og nullitet i 
-$$A=\begin{blockarray}{ccccccc}
+
+%
+\begin{align*}
+A=\begin{blockarray}{ccccccc}
 x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \begin{block}{[ccccc|c]c}
   1 & 0 & 0 & 0 & -1 & -2 \\
   0 & 0 & 1 & 0 & 3 & 3 \\
   0 & 0 & 0 & 1 & 2 & -1 \\
 \end{block}
-\end{blockarray}$$ 
+\end{blockarray}
+\end{align*}
 således $\text{rang}(A)=3$ og $\text{null}(A)=3$. 
 %
 % Hvilket er heldigt når der er 6 søjler
+%
 \begin{thm}{Konsistens}{konsistens}
+%
 Følgende udsagn er ækvivalente:
-\begin{enumerate}
+%
+\begin{enumerate}[label=(\alph*)]
 \item Matricen $A\mathbf{x}=\mathbf{b}$ er \textbf{konsistent}.
 \item Vektoren $\mathbf{b}$ er en linearkombination af søjlerne i $A$.
 \item Den reducerede trappeform af totalmatrixen $[A|\mathbf{b}]$ har ingen rækker af formen $[ 0 \ldots 0 | d  ]$, hvor $d \neq 0$.
 \end{enumerate}
+%
 \end{thm}
 %
 \begin{proof}
+%
 Lad $A$ være en $n \times m$ matrix og lad $\mathbf{b}$ være i $\R^m$ ud fra definition \ref{defn:mvp} følger det, at der eksisterer en vektor 
-$$    \mathbf{v} = \begin{bmatrix}
+%
+\begin{align*}
+       \mathbf{v} = \begin{bmatrix}
 		v_{1} \\
         v_{2} \\
         \vdots \\
         v_{n} 
-        \end{bmatrix} $$
+        \end{bmatrix}  
+\end{align*}
+%
 i $\R^n$, der opfylder, at $A\mathbf{v}=\mathbf{b}$, hvis og kun hvis $$v_1 \mathbf{a}_1+v_2 \mathbf{a}_2 + \ldots + v_n \mathbf{a}_n$$ hvilket er linearkombinationen af matricen og vektoren. 
-Det følger derfor at udsagn $(1)$ og udsagn $(2)$ er ækvivalente.
-Herefter bevises at $(1)$ og $(3)$ er ækvivalente. 
-Hvis udsagn $(3)$ er falsk følger det at  $$0 x_1+0 x_2 + \ldots + 0x_n =d$$ hvor $d\neq0$, da dette ikke har nogen løsning følger det, at ligningssystemet således bliver inkonsistent. 
+Det følger derfor at udsagn $(a)$ og udsagn $(b)$ er ækvivalente.
+Herefter bevises at $(1)$ og $(c)$ er ækvivalente. 
+Hvis udsagn $(c)$ er falsk følger det at  $$0 x_1+0 x_2 + \ldots + 0x_n =d$$ hvor $d\neq0$, da dette ikke har nogen løsning følger det, at ligningssystemet således bliver inkonsistent. 
 Såfremt dette er sandt gælder omvendt, at alle rækker i den reducerede trappeform indeholder en løsning, som også er løsning til $A\mathbf{x}=\mathbf{b}$. 
-Således er $(1)$ og $(3)$ ækvivalente.
+Således er $(a)$ og $(c)$ ækvivalente.
+%
 \end{proof}
 \\\\
 %
@@ -193,5 +234,7 @@ x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \end{block}
 \end{blockarray} 
 \end{align*}
+%
 Hvor $d \neq 0$ er i indgang $a_{3,6}$. 
 Det følger derfor også, at man ikke kan opnå dette $b$, da det ikke kan laves som linear kombination af søjlerne. 
+%
