@@ -2,7 +2,7 @@
 \label{gauss}
 % 1.4
 % Sætning 1.4 kan vi bevise den
-En algoritme til løsninge af lineære ligningssystemer er  \textbf{rækkereduktionsalgoritmen}, som reducerer en totalmatrix til reduceret trappeform.
+En algoritme til løsning af lineære ligningssystemer er  \textbf{rækkereduktionsalgoritmen}, som reducerer en totalmatrix til reduceret trappeform.
 Når den bruges til at løse lineære ligningssystemer, kaldes denne process for \textbf{Gauss-elimination}.
 I algoritmen bruges de elementære rækkeoperationer til at omdanne en matrix $A$ til trappeform. 
 Herefter benyttes rækkeoperationerne til at reducere matricen til reduceret trappeform.
@@ -12,7 +12,7 @@ Algoritmen gennemgår således følgende skridt:
 \item Find første ikke-nulsøjle i $A$ fra venstre.
 \item Ved rækkeombytning placeres en ikke-nulindgang øverst i pivot-søjlen.
 \item Skab nuller under pivotindgangen ved hjælp af rækkeudskiftning.
-\item Øverste række markeres som afsluttet og trin $1-3$ gennemføres nu på den næste række.
+\item Øverste række markeres som afsluttet og trin $1-4$ gennemføres nu på den næste række. Indtil alle rækker er markeret som afsluttet.
 \item Alle rækker med pivotindgange skaleres, så alle pivotindgange er lig $1$.
 \item Ved rækkeudskiftning sikres nu $0$'er over og under pivotindgangene.
 \end{enumerate}
@@ -20,7 +20,7 @@ Algoritmen gennemgår således følgende skridt:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Eksempel
 \begin{eks}
-Lad
+Betragt ligningssystemet 
 %
 \begin{align*}
 \begin{array}{rlr}
@@ -70,7 +70,7 @@ x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \end{blockarray}
 \end{equation*}
 %
-Algoritmen omdanner totalmatricen til reduceret trappeform.
+Det fortsættes nu med henblik på at opnå totalmatricen fra trappeform til reduceret trappeform.
 %
 \begin{equation*}
 \xrightarrow[R_2 \rightarrow R_2+2R_3]{R_1 \rightarrow R_1+2R_3}
@@ -169,13 +169,14 @@ For at beskrive en matrices egenskaber i forhold til pivotindgange er der brug f
 %
 \begin{defn}{}{rangnull}
 \textbf{Rangen} af en matrix $A$ er antallet af pivotindgange, hvilket noteres $\text{rang}(A)$. \\
-\textbf{Nulliteten} af $A$ er antallet af søjler uden pivotindgange, hvilket noteres $\text{null}(A)$.
+\textbf{Nulliteten} af $A$ er antallet af søjler uden pivotindgang, hvilket noteres $\text{null}(A)$.
 \end{defn}
 %
 \noindent
-I en $m \times n$ matrix er $\text{rang}(A)+\text{null}(A)=n$. 
+Bemærk, at der for en $m \times n$ matrix gælder, at $\text{rang}(A)+\text{null}(A)=n$. 
+% . 
 %
-Med udgangspunkt i eksempel \ref{eks_gauss} bliver rang og nullitet i 
+Med udgangspunkt i matrix $A$ på reduceret trappeform fra eksempel \ref{eks_gauss} bliver rang og nullitet i 
 %
 \begin{align*}
 A=\begin{blockarray}{ccccccc}
@@ -185,7 +186,7 @@ x_1 & x_2 & x_3 & x_4 & x_5 & b \\
   0 & 0 & 1 & 0 & 3 & 3 \\
   0 & 0 & 0 & 1 & 2 & -1 \\
 \end{block}
-\end{blockarray}
+\end{blockarray},
 \end{align*}
 således $\text{rang}(A)=3$ og $\text{null}(A)=3$. 
 %
@@ -196,7 +197,7 @@ således $\text{rang}(A)=3$ og $\text{null}(A)=3$.
 Følgende udsagn er ækvivalente:
 %
 \begin{enumerate}[label=(\alph*)]
-\item Matricen $A\mathbf{x}=\mathbf{b}$ er \textbf{konsistent}.
+\item Matricen $A\mathbf{x}=\mathbf{b}$ er konsistent.
 \item Vektoren $\mathbf{b}$ er en linearkombination af søjlerne i $A$.
 \item Den reducerede trappeform af totalmatricen $[A|\mathbf{b}]$ har ingen rækker på formen $[ 0 \ldots 0 | d  ]$, hvor $d \neq 0$.
 \end{enumerate}
@@ -216,9 +217,9 @@ Lad $A$ være en $n \times m$ matrix og $\mathbf{b} \in \R^m$. Jævnfør definit
         \end{bmatrix},  
 \end{align*}
 %
-i $\R^n$, der opfylder, at $A\mathbf{v}=\mathbf{b}$, hvis og kun, hvis $$v_1 \mathbf{a}_1+v_2 \mathbf{a}_2 + \ldots + v_n \mathbf{a}_n \text{, }$$ hvilket er linearkombinationen af matricen og vektoren. 
+i $\R^n$, der opfylder, at $A\mathbf{v}=\mathbf{b}$, hvis og kun hvis $$v_1 \mathbf{a}_1+v_2 \mathbf{a}_2 + \ldots + v_n \mathbf{a}_n \text{, }$$ hvilket er linearkombinationen af matricen og vektoren. 
 Det følger derfor, at (a) og (b) er ækvivalente.
-Herefter bevises, at (a) og (c) er ækvivalente. \\
+Herefter bevises, at (a) og (c) er ækvivalente. 
 Hvis (c) er falsk, følger det, at  $$0 x_1+0 x_2 + \ldots + 0x_n =d,$$ hvor $d\neq0$. Da dette ikke har nogen løsning, følger det, at ligningssystemet således bliver inkonsistent. 
 Såfremt (c) er sandt, gælder der omvendt, at alle rækker i den reducerede trappeform indeholder en løsning, som også er løsning til $A\mathbf{x}=\mathbf{b}$. 
 Således er (a) og (c) ækvivalente.
@@ -226,10 +227,10 @@ Således er (a) og (c) ækvivalente.
 \end{proof}
 \\
 %
-Med udgangspunkt i eksempel \ref{eks_gauss} ses derfor, at den er konsistent, da $d$ ikke er en pivotindgang. Såfremt ligningssystemet skulle være inkonsistent, kunne den have formen
+Med udgangspunkt i eksempel \ref{eks_gauss} ses derfor, at $A$ er konsistent, da $d$ ikke er en pivotindgang. Såfremt ligningssystemet skulle være inkonsistent, kunne den have formen
 %
 \begin{align*}
-A=\begin{blockarray}{ccccccc}
+B=\begin{blockarray}{ccccccc}
 x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \begin{block}{[ccccc|c]c}
   1 & 0 & 0 & 0 & -1 & -2 \\
@@ -239,6 +240,6 @@ x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \end{blockarray},
 \end{align*}
 %
-hvor $d \neq 0$ er i indgang $a_{3,6}$. 
-Det følger derfor også, at man ikke kan opnå dette $b$, da det ikke kan laves som linearkombination af søjlerne. 
+hvor $d \neq 0$ er i indgang $b_{3,6}$. 
+Det følger derfor også, at der ikke kan opnås dette $b$, da det ikke kan laves som linearkombination af søjlerne. 
 %
