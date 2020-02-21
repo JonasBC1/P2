@@ -85,7 +85,7 @@ $$
 %
 A kaldes for \textbf{koefficientmatricen}. 
 %efter hårdt sammenleje bliver A matricen og b til totalmatricen
-\textbf{Totalmatrixen} dannes ved at kombinere koefficientmatricen med vektoren \textbf{b}.
+\textbf{Totalmatrixen} $[A \text{    } | \mathbf{b}]$ dannes ved at kombinere koefficientmatricen med vektoren \textbf{b}.
 Totalmatrixen indeholder alle informationer, der skal bruges til at løse et lineært ligningssystem.
 Ligningssystemet fra eksempel \ref{ekslignsys} skrives som totalmatricen
 \begin{equation*}
@@ -100,9 +100,7 @@ a_{m,1} & a_{m,2} & \cdots & a_{m,n} & b_{m}\\
 \end{block}
 \end{blockarray}.
 \end{equation*}
-
-
-
+%
 \begin{eks}
 Med udgangspunkt i ligningssystemet fra eksempel \ref{ekslignsys} følger det at
 $$A=
@@ -120,18 +118,17 @@ x_3\\
 x_4\\
 x_5
 \end{bmatrix}
-\text{og }
+\text{, }
 \textbf{b}=\begin{bmatrix}
 -3\\
 5\\
 -9
-\end{bmatrix}.
+\end{bmatrix}
 $$
-
-
-
+%
+og
 \begin{equation*}
-  A=
+  [A \text{    } | \mathbf{b}] =
 \begin{blockarray}{ccccccc}
 x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \begin{block}{[ccccc|c]c}
