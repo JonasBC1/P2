@@ -2,39 +2,40 @@
 %  
 % Noget indledningsvist - hvorfor er matricer/vektorer vigtige? 
 %
-I forbindelse med løsning af lineære ligningssystemer og optimeringsproblemer er det nødvendigt at redegøre for \textbf{matricer} og tilhørende notation. 
+I forbindelse med løsning af lineære ligningssystemer og optimeringsproblemer er det nødvendigt at introducere \textbf{matricer} og tilhørende notation. 
 %
 \begin{defn}{}{}
 En matrix er en rektangulær tabel, hvis elementer er \textbf{skalarer}, der er $k \in \R$. 
 En matrix med $m$ rækker og $n$ søjler har størrelsen $m \times n$.
-Hvis $m=n$, er matricen kvadratisk. 
+Hvis $m=n$, er matricen kvadratisk, noteret $n \times n$.
 Elementet $a_{i,j}$ i $i$'te række og $j$'te søjle kaldes den $(i,j)$'te-indgang i matricen. 
 \end{defn}
 \noindent
 %
-På figur \ref{fig:matrix_gen_eks} ses et generelt eksempel på en $m \times n$ matrix $A$.
+På figur \ref{fig:matrix_gen_eks} ses en $m \times n$ matrix $A$.
 %
 \begin{figure}[H]
 	\begin{center}
 $$
 A=
 \begin{bmatrix}
-a_{1,1} & a_{1,2} & \ldots & a_{1,j} \\
-a_{2,1} & a_{2,2} & \ldots & a_{2,j} \\
+a_{1,1} & a_{1,2} & \ldots & a_{1,n} \\
+a_{2,1} & a_{2,2} & \ldots & a_{2,n} \\
 \vdots  & \vdots  & \ddots & \vdots \\
-a_{i,1} & a_{i,2} & \ldots & a_{i,j} \\
+a_{m,1} & a_{m,2} & \ldots & a_{m,n} \\
 \end{bmatrix}
 $$
 	\end{center}
-	\caption{En generel $m \times n$ matrix $A$.}
+	\caption{En $m \times n$ matrix $A$.}
 	\label{fig:matrix_gen_eks}
 \end{figure}
 \noindent
 %
-Enhver række $i$ eller søjle $j$ er en \textbf{vektor}. 
+Enhver række $i$ eller søjle $j$ kan betragtes som en \textbf{vektor}. 
 En matrix med én række kaldes en \textbf{rækkevektor}, og en matrix med én søjle kaldes en \textbf{søjlevektor}. 
+Med mindre andet er angivet opereres der med søjlevektorer.
 I denne rapport noteres vektorer med små, fede bogstaver, såsom $\textbf{a}$ og $\textbf{b}$. 
-Søjlevektorer noteres desuden ofte med et indeks tilsvarende søjlen i matricen, således 
+Søjlevektorer noteres ofte med et indeks tilsvarende søjlen i matricen, eksempelvis:
 %
 $$
 \textbf{a}_j= 

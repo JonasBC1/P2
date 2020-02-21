@@ -1,16 +1,23 @@
-\subsection{Matrixsum og skalarmultiplikation}
-%Blev vi ikke enige om skalering? Skal der ikke stå det samme i underafsnitstitlen som i definitionen, eller er det ligemeget? 
+\subsection{Matrixsum og skalering}
+% 
+Der er behov for at lave opperationer på en matrix i forbindelse med løsning af lineære programmeringsproblemer. 
+To af disse er \textbf{matrixsum} og \textbf{skalering}.
+%
 \begin{defn}{}{mxsum}
 Lad $A$ og $B$ være $m \times n$ matricer.
-\textbf{Summen} af $A$ og $B$ er $m \times n$ matricen $A + B$, hvor de $(i,j)$'te indgange er $a_{i,j} + b_{i,j}$.
-Ligeledes er subtraktion mellem matricerne $A$ og $B$ muligt og indgangene i den resulterende matrix er $a_{i,j} - b_{i,j}$.
+Summen af $A$ og $B$ er $m \times n$ matricen $A + B$, hvor den $(i,j)$'te indgang er $a_{i,j} + b_{i,j}$.
+Ligeledes er subtraktion mellem matricerne $A$ og $B$ muligt, og indgangene i den resulterende matrix er $a_{i,j} - b_{i,j}$.
+\\
 Lad nu $k$ være en skalar.
-\textbf{Skalering} af $A$, noteret $kA$, er en $m \times n$ matrix, hvor de $(i,j)$'te indgange er $ka_{i,j}$.
-Bemærk, at $1A = A$, $-1A = -A$ og $0A = O$.
+Skalering, også kaldet skalarmultiplikation, af $A$, noteret $kA$, er en $m \times n$ matrix, hvor den $(i,j)$'te indgang er $ka_{i,j}$.
 \end{defn}
+\noindent
+%
+Bemærk, at $1A = A$, $-1A = -A$ og $0A = O$.
+\\
 %
 \begin{eks}
-Lad
+Lad 
 \begin{align*}
 A= 
 \begin{bmatrix}
@@ -24,7 +31,7 @@ B=
 5	&	3	&	2
 \end{bmatrix}.
 \end{align*}
-Jævnfør definition \ref{defn:mxsum} haves
+Jævnfør definition \ref{defn:mxsum} er
 \begin{align*}
 3A= 
 \begin{bmatrix}
@@ -76,11 +83,12 @@ Så har matricer følgende egenskaber:
 %
 \begin{proof}
 Lad $A$, $B$ og $C$ være $m \times n$ matricer, og lad $k$ og $s$ være skalarer.
-Betragt $A + B$ og $B + A$ og bemærk jævnfør \ref{defn:mxsum}, at de $(i,j)$'te indgange bliver henholdsvis $a_{i,j} + b_{i,j}$ og $b_{i,j} + a_{i,j}$, hvilket beviser (a).
+Betragt $A + B$ og $B + A$ og bemærk jævnfør definition \ref{defn:mxsum}, at de $(i,j)$'te indgange bliver henholdsvis $a_{i,j} + b_{i,j}$ og $b_{i,j} + a_{i,j}$, hvilket beviser (a).
 Ligeledes ses det, at $(a_{i,j} + b_{i,j}) + c_{i,j} = a_{i,j} + (b_{i,j} + c_{i,j})$, hvilket beviser (b).
 Endvidere kan $0$ isoleres i $a_{i,j} + 0 = a_{i,j}$, således $a_{i,j} + (-a_{i,j}) = 0$, hvilket beviser (c) og (d), da alle indgange i en nulmatrix er $0$.
-\\\\%I linje 83: Kan man godt bare sige "... og så $s$ ..."? :-)
-(e) Betragt skaleringen af $A$ med skalaren $ks$, som er et produkt af skalarene $k$ og $s$, og skaleringen af $A$ med $k$ og så $s$.
+\\\\
+%
+Betragt skaleringen af $A$ med skalaren $ks$, som er et produkt af skalarene $k$ og $s$, og skaleringen af $A$ med $k$ og herefter $s$.
 For indgangene i disse skaleringer findes ligheden $(ks)a_{i,j} = s(ka_{i,j})$, hvilket beviser (e).
 Betragt ligeledes (f) og bemærk, at $k(a_{i,j} + b_{i,j}) = ka_{i,j} + kb_{i,j}$, hvilket beviser (f).
 Det samme gøres for ligheden i (g), hvor ligheden $(k + s)a_{i,j} = ka_{i,j} + sa_{i,j}$ opstilles, hvilket beviser (g).
@@ -88,4 +96,6 @@ Det samme gøres for ligheden i (g), hvor ligheden $(k + s)a_{i,j} = ka_{i,j} + 
 \noindent
 \\
 %
-Da vektorer er matricer med enten én række eller én søjle er samme operationer mulige og opfylder samme egenskaber.
+Da vektorer er matricer med enten én række eller én søjle er samme operationer mulige og besidder samme egenskaber.
+%
+% Mere sssssssssssssssssssssssssssssssssssss

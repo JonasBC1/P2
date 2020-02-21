@@ -1,15 +1,23 @@
 \subsection{Matrixtransponering}
+%
+\textbf{Matrixtransponering} er i nogen henseender brugbart. 
+%
+% Henseender = Sammenhænge 
+%
+% \textbf{Matrixtransponering} er faktisk rimelig unødvendigt xD 
+%
 \begin{defn}{}{mxtrans}
-Lad $A$ være en $m \times n$ matrix. \textbf{Transponeringen} til $A$, er en $n \times m$ matrix, noteret $A^T$, hvor $A$'s $(i,j)$'te indgang er den $(j,i)$'te indgang i $A^T$.
+Lad $A$ være en $m \times n$ matrix. Transponeringen af $A$, er en $n \times m$ matrix, noteret $A^T$, hvor $A$'s $(i,j)$'te indgang er den $(j,i)$'te indgang i $A^T$.
 \end{defn}
 \noindent
-En transponering af en matrix resulterer i en ny matrix, hvor rækkerne i den oprindelige matrice er søjlerne i den transponerede matrice.
+%
+En transponering af en matrix resulterer i en ny matrix, hvor rækkerne i den oprindelige matrix er søjlerne i den transponerede matrix.
 \\
 %
 \begin{eks}
 \label{eks:trans}
 %
-Betragt nu $A^T$ og $(A+B)^T$, hvor 
+Lad 
 %
 \begin{align*}
 A= 
@@ -25,7 +33,7 @@ B=
 \end{bmatrix}.
 \end{align*}
 %
-Jævnfør definition \ref{defn:mxtrans} haves
+Så er
 %
 \begin{align*}
 A^T =
@@ -68,7 +76,7 @@ Så har matricerne følgende egenskaber:
 Lad $A$ og $B$ være $m \times n$ matricer og lad $k$ være en skalar.
 Det vides, at indgangene i $A+B$ er $a_{i,j} + b_{i,j}$, og transponeringen af dette resulterer i en $n \times m$ matrix med indgangende $a_{j,i} + b_{j,i}$.
 Det ses, at  $A^T + B^T$ også er en $n \times m$ matrix med indgangene $a_{i,j} + b_{i,j}$, hvilket beviser (a).
-Ved skalering og transponering af en matrix ses, at forskellig rækkefølge på operationerne er uden betydning for slutresultatet.
+Ved skalering og transponering af en matrix ses, at opperationernes rækkefølge er uden betydning for slutresultatet.
 Dette tydeliggøres ved at betragte $kA^T$ og $(kA)^T$.
 For $kA^T$ er indgangene $ka_{j,i}$, og indgangene i $kA$ er $ka_{i,j}$, som efter transponering er $ka_{j,i}$, hvilket beviser (b).
 Transponeres $A$ to gange vil resultatet være $A$.
