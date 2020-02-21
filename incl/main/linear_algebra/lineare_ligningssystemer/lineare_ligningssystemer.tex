@@ -58,7 +58,53 @@ Et system der har én eller flere løsninger kaldes \textbf{konsistent}; ellers 
 %
 %
 \subsection{Ligningssystemer og matricer}
-Med udgangspunkt i eksempel \ref{ekslignsys} kan et lineært ligningssystem opstilles som en matrixligning $A\textbf{x}=\textbf{b}$, hvor
+Et lineært ligningssystem kan opstilles som en matrixligning $A\textbf{x}=\textbf{b}$, hvor
+$$A=
+\begin{bmatrix}
+a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+\end{bmatrix}
+\text{, } 
+\textbf{x}=
+\begin{bmatrix}
+x_1\\
+x_2\\
+\vdots\\
+x_n\\
+\end{bmatrix}
+\text{og }
+\textbf{b}=\begin{bmatrix}
+b_1\\
+b_2\\
+\vdots\\
+b_m
+\end{bmatrix}.
+$$
+%
+A kaldes for \textbf{koefficientmatricen}. 
+%efter hårdt sammenleje bliver A matricen og b til totalmatricen
+\textbf{Totalmatrixen} dannes ved at kombinere koefficientmatricen med vektoren \textbf{b}.
+Totalmatrixen indeholder alle informationer, der skal bruges til at løse et lineært ligningssystem.
+Ligningssystemet fra eksempel \ref{ekslignsys} skrives som totalmatricen
+\begin{equation*}
+  A=
+\begin{blockarray}{cccccc}
+x_1 & x_2 & \cdots & x_n & b \\
+\begin{block}{[cccc|c]c}
+a_{1,1} & a_{1,2} & \cdots & a_{1,n} & b_1 \\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n} & b_2 \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n} & b_{m}\\
+\end{block}
+\end{blockarray}.
+\end{equation*}
+
+
+
+\begin{eks}
+Med udgangspunkt i ligningssystemet fra eksempel \ref{ekslignsys} følger det at
 $$A=
 \begin{bmatrix}
 1 & 0 & -1 & -2 & -8\\
@@ -81,12 +127,9 @@ x_5
 -9
 \end{bmatrix}.
 $$
-%
-A kaldes for \textbf{koefficientmatricen}. 
-%efter hårdt sammenleje bliver A matricen og b til totalmatricen
-\textbf{Totalmatrixen} dannes ved at kombinere koefficientmatricen med vektoren \textbf{b}.
-Totalmatrixen indeholder alle informationer, der skal bruges til at løse et lineært ligningssystem.
-Ligningssystemet fra eksempel \ref{ekslignsys} skrives som totalmatricen
+
+
+
 \begin{equation*}
   A=
 \begin{blockarray}{ccccccc}
@@ -98,3 +141,5 @@ x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \end{block}
 \end{blockarray}.
 \end{equation*}
+
+\end{eks}
