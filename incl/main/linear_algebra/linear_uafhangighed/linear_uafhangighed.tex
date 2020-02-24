@@ -1,15 +1,18 @@
 \subsection{Lineær uafhængighed}
 % 1.7
-Et sæt af vektorer er \textbf{lineært afhængig}, hvis en af vektorerne kan skrives som en linearkombination af de andre vektorer. Hvis ingen af vektorerne kan skrives som en linearkombination af de andre vektorer, så er sættet \textbf{lineært uafhængige}. Det kan derfor siges, at hvis mindst en af vektorerne \textit{afhænger} af de andre vektorer, er samlingen \textit{lineært afhængig}, og dette leder frem til følgende definition. 
+Et sæt af vektorer er \textbf{lineært afhængig}, hvis en af vektorerne kan skrives som en linearkombination af de andre vektorer. 
+Hvis ingen af vektorerne kan skrives som en linearkombination af de andre vektorer, så er sættet \textbf{lineært uafhængige}. 
+Det kan derfor siges, at hvis mindst en af vektorerne afhænger af de andre vektorer, er samlingen lineært afhængig, og dette leder frem til følgende definition. 
 % 
 \begin{defn}{Lineær afhængighed og lineær uafhængighed}{}
-Et sæt af vektorerne $\mathbf{v}_1, \ldots , \mathbf{v}_k$ i $\R^n$ kaldes \textbf{lineært uafhængige}, hvis der eksisterer skalarer $x_1,x_2, \ldots , x_l$, sådan at ligningen 
+Et sæt af vektorerne $\mathbf{v}_1, \ldots , \mathbf{v}_k$ i $\R^n$ kaldes lineært uafhængige, hvis der eksisterer skalarer $x_1,x_2, \ldots , x_l$, sådan at ligningen 
 \begin{align*}
 x_1\mathbf{v}_1 + \ldots + x_k \mathbf{v}_k = \mathbf{0}, 
 \end{align*}
 kun har løsningen $c_1 = \ldots = c_k = 0$.
-Ellers kaldes vektorerne \textbf{lineært afhængige}.
-\end{defn}
+Ellers kaldes vektorerne lineært afhængige.
+\end{defn}  
+%
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Eksempel
@@ -26,9 +29,10 @@ Lad et sæt af vektorer være
            3 \\
            2 \\
 \end{bmatrix}
-\right\}
+\right\}.
 \end{align*}
 \noindent
+% Skal skrives om fra et spørgsmål 
 Bestem om vektorerne er lineært uafhængige ved ligningen, altså hvis $x_1$ og $x_2 = 0$
 \begin{align*}
 x_1+
@@ -41,9 +45,9 @@ x_1+
            3 \\
            2 \\
 \end{bmatrix}
-=0 \\
+=0 
 \end{align*}
-
+%
 Ligningerne udskrives
 \noindent
 \begin{align*}
@@ -56,13 +60,15 @@ x_1+2x_2=0\\
 x_1+2x_2=0 - x_1+3/2x_2=0\\
 1/2c_2=0\\
 c_2=0\\
-c_1=0\\
+c_1=0
 \end{align*}
+%
 Da $c_1$ og $c_2 = 0$, så er sættet $\S$ lineært uafhængigt.
 \\
 \\
 \noindent
 Lad et sæt af vektorer være 
+%
 \begin{align*}
 \S &= \left\{
 \begin{bmatrix}
@@ -79,7 +85,7 @@ Lad et sæt af vektorer være
            1 \\
            2 \\
 \end{bmatrix}
-\right\}
+\right\}.
 \end{align*}
 \noindent
 Bestem om vektorerne er lineært afhængige ved ligningen, altså hvis $x_1$, $x_2$ og $x_3 \neq 0$
@@ -99,16 +105,18 @@ x_1+
            1 \\
            2 \\
 \end{bmatrix}
-=0 \\
+=0.
 \end{align*}
+%
 Ligningerne udskrives 
-
+%
 \begin{align*}
 2x_1+3x_2+c_3=0\\
-x_1+2x_2+2c_3=0 \\
+x_1+2x_2+2c_3=0 
 \end{align*}
 \noindent
-Nu findes en linearkombination, som ikke er nul. Vi sætter tilfældigt $x_3 = -1$ og forsøger om ligningen kan løses
+Nu findes en linearkombination, som ikke er nul. 
+Vi sætter tilfældigt $x_3 = -1$ og forsøger om ligningen kan løses
 \begin{align*}
 2x_1+3x_2-1=0\\
 x_1+2x_2-2=0\\
@@ -123,9 +131,11 @@ x_2=3\\
 \\
 x_1+6+2\\
 x_1+4=0\\
-x_1=-4\\
+x_1=-4
 \end{align*}
+%
 Linearkombinationen er derfor
+%
 \begin{align*}
 -4+
 \begin{bmatrix}
@@ -142,12 +152,17 @@ Linearkombinationen er derfor
            1 \\
            2 \\
 \end{bmatrix}
-=0 \\
+=0
 \end{align*}
+%
 Derfor har vi minimum fundet én linearkombination som er ikke-nul, som giver os nulvektoren, og derfor er det bevist at vektorsættet lineært afhængig.
 \end{eks}
-I eksempel \ref{lineu} viste en af måderne hvorpå man kunne bestemme om et bestemt set $\S$ var lineært afhængigt eller uafhængigt. Der findes flere måder at bestemme dette på. Denne følgende sætning viser en lignende teknik til bestemmelse heraf. 
-
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+I eksempel \ref{lineu} viste en af måderne hvorpå man kunne bestemme om et bestemt set $\S$ var lineært afhængigt eller uafhængigt. 
+Der findes flere måder at bestemme dette på. Denne følgende sætning viser en lignende teknik til bestemmelse heraf. 
+%
 \begin{thm}{}{}
 %
 Lad $A$ være en $m \times n$ matrix.
@@ -169,29 +184,30 @@ Følgende udsagn er ækvivalente:
 \noindent
 Det er forudsagt, at (a) og (f), samt (f) og (g) er ækvivalente, så for at færdiggøre beviset for denne sætning, skal det vises, at(b) $\rightarrow$ (c), (c) $\rightarrow$ (d),(d) $\rightarrow$ (e),(e) $\rightarrow$ (f), (f) $\rightarrow$ (b).
 %
-
-\itemize 
-\item (b) $\rightarrow$ (c) 
-Idet, at $\mathbf{0}$ er en løsning til $A\mathbf{x}=\mathbf{b}$, så forudsætter (b) at $A\mathbf{x}=\mathbf{b}$ har ingen ikke-nul løsninger, da den generelle løsning ingen frie variable, har. Da antallet af frie variable er nulliteten i A og dette er 0, så beviser det (b) $\rightarrow$ (c). 
-
-\item (c) $\rightarrow$ (d)
+(b) $\rightarrow$ (c) 
+Idet, at $\mathbf{0}$ er en løsning til $A\mathbf{x}=\mathbf{b}$, så forudsætter (b) at $A\mathbf{x}=\mathbf{b}$ har ingen ikke-nul løsninger, da den generelle løsning ingen frie variable, har. 
+Da antallet af frie variable er nulliteten i A og dette er 0, så beviser det (b) $\rightarrow$ (c). 
+\\\\
+%
+(c) $\rightarrow$ (d)
 Idet, at $\text{rang}(A)+\text{null}(A)=n$, så medfører det øjeblikkeligt, at (c) $\rightarrow$ (d).
-
-
-\item (d) $\rightarrow$ (e)
-Hvis $\text{rang}(A)=n$, så betyder det, at enhver søjle i A har en pivotindgang i søjlen, som derfor betyder, at den reducerede trappeform indeholder udelukkende standard vektorer. Disse standardvektorer er nødvendigvis forskellige, da hver søjle indeholder den første ikke-nul indgang i hver række. Dette beviser (d) $\rightarrow$ (e)
-
-
-\item (e) $\rightarrow$ (f)
+\\\\
+%
+(d) $\rightarrow$ (e)
+Hvis $\text{rang}(A)=n$, så betyder det, at enhver søjle i A har en pivotindgang i søjlen, som derfor betyder, at den reducerede trappeform indeholder udelukkende standard vektorer. Disse standardvektorer er nødvendigvis forskellige, da hver søjle indeholder den første ikke-nul indgang i hver række. Dette beviser (d) $\rightarrow$ (e).
+%
+\\\\
+(e) $\rightarrow$ (f)
 Lad $R$ være den reducerede trappeform af matricen $A$. Hvis søjlerne i $R$ er forskellige standardvektorer i $R^m$, så er $R=\mathbf{e_1}, mathbf{e_2}, \ldots, mathbf{e_n}]$. Det er givet, at den eneste løsning til $R\mathbf{x}=\mathbf{0}$, er 0, og idet at $A\mathbf{x}=\mathbf{0}$, er ækvivalent til $R\mathbf{x}=\mathbf{0}$, så er den $\mathbf{0}$ eneste løsning til A$\mathbf{x}=\mathbf{0}$. Dette beviser (e) $\rightarrow$ (f).
- 
-\item (f) $\rightarrow$ (b)
+\\\\
+%
+(f) $\rightarrow$ (b)
 Lad $\mathbf{u}, \mathbf{v}$ være løsninger til $A\mathbf{x}=\mathbf{b}$.
 % Sætning 1.3
 Jævnfør sætning \ref{fisk}, følger det at $A(\mathbf{u}-\mathbf{v})=A\mathbf{u}-A\mathbf{v}=\mathbf{b}-\mathbf{b}=\mathbf{0}$, hvilket tilsvarer $\mathbf{u}-\mathbf{v}=\mathbf{0}
 \rightarrow  
 \mathbf{u} =\mathbf{v}$, hvilket beviser (f) $\rightarrow$ (b)
-
+%
 \end{proof}
 %
 %Lad $\mathbf{b}=\mathbf{0}$. 
