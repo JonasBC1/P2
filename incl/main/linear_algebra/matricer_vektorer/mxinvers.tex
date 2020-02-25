@@ -22,7 +22,7 @@ $leftarrow$
 Antag nu at den reducerede trappeform af $A$=$I_n$. 
 Så gælder det fra sætning, at der eksister en invertibel $n \times n$ matrix $P$ hvorom det gælder at $PA=I_n$.
 $$A=I_nA=(P^{-1}P)A=^{-1}(PA)=P^{-1}$$
-Fra sætning fremgår det at $P^{-1}$ er en invertibel matrix, og det er hermed bevist at $A$ er invertibel da $A=P^{-1}$
+Fra sætning fremgår det at $P^{-1}$ er en invertibel matrix, og det er hermed bevist at $A$ er invertibel da $A=P^{-1}$.
 
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -52,15 +52,25 @@ Derfor er $A^T$ en invertibel matrix med inversen $(A{-1})^T$ og $(A^T)^{-1}A=(A
 %
 %
 \begin{thm}{}{mxinvers2}
-Givet to $m \times n$ matricer $A$ og $B$, så gælder, at
+%Givet to $m \times n$ matricer $A$ og $B$, så gælder, at (det er bare leftover aye?)
+Lad $A$ være en $n \times n$ matrix. 
+Da er følgende udsagn ækvivalente.
 \begin{enumerate}[label=(\alph*)]
-\item 
-\item 
-\item 
-\item 
-\item 
-\item 
-\item 
+\item $A$ er invertibel.
+\item Den reducerede trappeform af $A$ er $I_n$.
+\item rang$(A)=n$.
+\item Spannet af søjlerne i $A$ er $R^n$.
+\item ligningssystemet $A\textbf{x}=\textbf{b}$ er konsistent for alle $\textbf{b}$ i $R^n$.
+\item null$(A)$=0.
+\item Søjlerne i $A$ er liniært uafhængige.
+\item den eneste løsning for $A\textbf{x}=\textbf{O}$ er $\textbf{O}$.
+\item Der eksisterer en $n \times n$ matrix $B$ så $BA=I_n$.
+\item Der eksister en $n \times n$ matrix $C$ så $AC=I_n$
+\item $A$ er et produkt af elementærmatricer.
+%hvis vi tager det sidste punkt med er vi også nødt til at redegøre for det. 
 
 \end{enumerate}
 \end{thm}
+\begin{proof}
+(a) og (b) er ækvivalente som konsekvens af sætning \ref{thm:mxinvertibel}. Da $A$ er en $n \times n$ matrix er dette ligeledes ækvivalent med $c$, $d$ og $e$ som følger af sætning ??
+\end{proof}
