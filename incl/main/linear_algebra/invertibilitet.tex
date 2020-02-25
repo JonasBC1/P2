@@ -7,6 +7,16 @@ Hvis en funktion er både injektiv og surjektiv så er funktionen \textbf{bijekt
 
 \subsection{Invertibilitet af funktioner}
 
+Bemærk at notationen for inverse funktioner $f^{-1}$ ikke skal forstås som $\dfrac{1}{f}$, men blot notation som betegner den inverse funktion af $f$.
+Givet en funktion $T:\R^n \rightarrow \R^n$ som er en lineær afbildning med standard matricen $A$.
+Så er T invertibel, hvis og kun hvis, $A$ er invertibel. Lad A være en $n \times n$ invertibel matrix. 
+Så haves der at for alle $\textbf{v}$ at
+$$T_AT_{A^-1}(\textbf{v})=T_A(T_{A^-1}(\textbf{v}))=T_A(A^{-1}\textbf{v})=A(A^{-1}\textbf{v})=AA^{-1}\textbf{v}=I_n\textbf{b}=\textbf{v}$$ dertil er
+$$T_{A^-1}T_A(\textbf{v})=\textbf{v}$$
+\noindent
+Dette medfører $T^{-1}=T_{A^{-1}}$, og som følge deraf er $T^{-1}$ linear og dens standard matrix er $A^{-1}$.
+
+
 
 
 \begin{eks}
