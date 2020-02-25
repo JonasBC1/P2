@@ -13,8 +13,17 @@ $A$ er invertibel, hvis og kun hvis den reducerede trappeform af $A$ er $I_n$.
 \end{thm}
 %
 \begin{proof}
-Antag, at $n\times n$ matricen $A$ er invertibel, og at der findes en vektor \textbf{v} i $R^n$, så $A\textbf{v}=\textbf{0}$. 
-Deraf følger, at $\textbf{v}=A^{-1}\textbf{0}=\textbf{0}$, da det gælder for en invertibel matrix, at .........
+$\rightarrow$ Antag, at $n\times n$ matricen $A$ er invertibel, og at der findes en vektor \textbf{v} i $R^n$, så $A\textbf{v}=\textbf{0}$. 
+Deraf følger, at $\textbf{v}=A^{-1}\textbf{0}=\textbf{0}$, da $A$ er en invertibel matrix gælder det for ethvert $B \in \R^n$, at $A\textbf{x}=B$ har løsningen $A^{-1}B$ og derfor er $\textbf{v}=A^{-1}\textbf{0}=\textbf{0}$. 
+Den eneste løsning til problemet er derfor $0$-vektoren $\textbf{0}$. 
+Såfremt $A$ er invertibel gælder det derfor $rank(A)=n$(tjeck lige notationen).
+Det følger derfor fra sætning (den er i liniær uafhængihedsafsnittet forstod ikke helt lablet) at $A$ på reducerettrappeform er $I_n$.
+$leftarrow$
+Antag nu at den reducerede trappeform af $A$=$I_n$. 
+Så gælder det fra sætning, at der eksister en invertibel $n \times n$ matrix $P$ hvorom det gælder at $PA=I_n$.
+$$A=I_nA=(P^{-1}P)A=^{-1}(PA)=P^{-1}$$
+Fra sætning fremgår det at $P^{-1}$ er en invertibel matrix, og det er hermed bevist at $A$ er invertibel da $A=P^{-1}$
+
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Inverse matricer har en række egenskaber, som formuleret i sætning \ref{thm:mxinvers} og \ref{thm:mxinvers2}. 
