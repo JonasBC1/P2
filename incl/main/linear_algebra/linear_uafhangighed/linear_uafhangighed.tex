@@ -167,17 +167,15 @@ Ligeså findes der en række egenskaber vedrørende mængder der er lineært afh
 \begin{thm}{}{inspektion}
 %
 Vektorerne $\mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_k$ i $\R^n$ er lineært afhængige, 
-hvis og kun hvis, $\mathbf{u}_1=\mathbf{0}$, hvor $\mathbf{u}_1$ er en vilkårlig vektor, 
-eller hvis der findes $i \geq 2$ således $\mathbf{u}_i \in \text{span} \{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}$.
+hvis og kun hvis, $\mathbf{u}_1=\mathbf{0}$, eller hvis der findes $i \geq 2$ således $\mathbf{u}_i \in \text{span} \{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}$.
 %
 \end{thm}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \begin{proof}
-%
-Lad $\mathbf{u}_1=\mathbf{0}$, så er sætningen bevist. 
-Antag nu, at $\mathbf{u}_1 \neq \mathbf{0}$. 
+% 
+Antag, at $\mathbf{u}_1 \neq \mathbf{0}$, da løsningen ellers er triviel. 
 Der findes skalarer, hvor koefficienterne ikke alle er nul, således at
 % 
 \begin{align*}
@@ -188,20 +186,34 @@ Lad $i$ være det største index $i$, hvor $x_i \neq 0$, sådan at
 \begin{align*}
 c_1 \mathbf{u}_1 + c_2 \mathbf{u}_2 + \ldots + c_i \mathbf{u}_i = \mathbf{0}.
 \end{align*}
-Løses denne i forhold til $\mathbf{u}_i$, ses det at
+Bemærk, at $i\geq2$, da udtrykket ellers ville blive reduceret til
+%
 \begin{align*}
-\mathbf{u}_i = - \frac{c_1}{c_i} \mathbf{u}_1 - \frac{c_2}{c_i} \mathbf{u}_2 - \ldots - \frac{c_{p-1}}{c_i} \mathbf{u}_{i-1}.
+c_1\textbf{u}_1=0,
+\end{align*}
+%
+hvilket går imod tidligere antagelser.
+Løses udtrykket i forhold til $\mathbf{u}_i$, ses det at
+\begin{align*}
+\mathbf{u}_i = - \frac{c_1}{c_i} \mathbf{u}_1 - \frac{c_2}{c_i} \mathbf{u}_2 - \cdots - \frac{c_{i-1}}{c_i} \mathbf{u}_{i-1}.
 \end{align*}
 Hvilket vil sige at 
 \begin{align*}
-\mathbf{u}_i \in \text{span}\{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_k \},
+\mathbf{u}_i \in \text{span}\{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}.
 \end{align*}
 %
-og sætningen er hermed bevist.
+Antag nu at $\mathbf{u}_i \in \text{span}\{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}$ for $i \geq 2$.
+Da $\text{span}\{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}$ er mængden af alle linearkombinationer af vektorerne $\mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1}$ haves, at der eksisterer skalarer $c_1, c_2, \ldots c_{i-1}$ således, at
 %
-\\\\
-Antag nu at $\ldots$ MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADS
-\textcolor{red}{Mangler beviset modsat (da det er en hvis og kun hvis)}
+\begin{align*}
+\textbf{u}_i=c_1\mathbf{u}_1 + c_2 \mathbf{u}_2 + \cdots + c_{i-1}\mathbf{u}_{i-1}.
+\end{align*}
+%
+For $k \geq i$ haves, at $\mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_k$ er lineært afhængig, da 
+\begin{align*}
+\textbf{u} -c_1\textbf{u}_1 - c_2\textbf{u}_2 - \cdots - c_{i-1}\textbf{u}_{i-1} = \textbf{0}
+\end{align*} 
+er en løsning anderledes fra den trivielle løsning, hvor $c_1, c_2,\ldots,c_k=0$.
 %
 \end{proof}
 \\
