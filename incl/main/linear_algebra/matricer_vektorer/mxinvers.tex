@@ -3,12 +3,22 @@
 \begin{defn}{}{mxinvers}
 En $n \times n$ matrix $A$ er \textbf{invertibel}, hvis en $n \times n$ matrix $B$ eksisterer, så $AB=BA=I_n$. $B$ er i så fald $A$'s invers. 
 \end{defn}
-
-Det er dog ikke altid, der findes en matrix $B$, så definition \ref
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Det er dog ikke altid, der findes en matrix $B$, så kriterierne i definition \ref{defn:mxinvers} opfyldes. 
+Såfremt $A$ er en invertibel $n \times n$ matrix, gælder det for ethvert $B \in \R^n$, at $A\textbf{x}=B$ har løsningen $A^{-1}B$.
+%
+\begin{thm}{}{mxinvertibel}
+Lad $A$ være en $n \times n$ matrix. 
+$A$ er invertibel, hvis og kun hvis den reducerede trappeform af $A$ er $I_n$.
+\end{thm}
+%
+\begin{proof}
+Antag, at $n\times n$ matricen $A$ er invertibel, og at der findes en vektor \textbf{v} i $R^n$, så $A\textbf{v}=\textbf{0}$. 
+Deraf følger, at $\textbf{v}=A^{-1}\textbf{0}=\textbf{0}$, da det gælder for en invertibel matrix, at 
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Inverse matricer har en række egenskaber, som formuleret i sætning \ref{thm:mxinvers} og \ref{thm:mxinvers2}.
-
-
+%
 \begin{thm}{}{mxinvers}
 Givet to $m \times n$ matricer $A$ og $B$, så gælder, at
 \begin{enumerate}[label=(\alph*)]

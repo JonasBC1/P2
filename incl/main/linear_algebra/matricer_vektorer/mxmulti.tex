@@ -125,17 +125,24 @@ Lad $A$ og $B$ være $k \times m$ matricer, $C$ være en $m \times n$ matrix, og
 \end{thm}
 \begin{proof}
 Lad $A$ og $B$ være $k \times m$ matricer, $C$ være en $m \times n$ matrix, og $P$ og $Q$ være $n \times p$ matricer. 
+
 (a) Den $(i,j)$'te indgang i matrixprodukterne $s(AC)$ og $(sA)C$ har formen $sa_{i,1}c_{1,j} + sa_{i,2}c_{2,j} + \cdots + sa_{i,m}c_{m,j}$, hvilket er det samme som $a_{i,1}sc_{1,j} + a_{i,2}sc_{2,j} + \cdots + a_{i,m}sc_{m,j}$, der er en indgang i $A(sC)$. 
 Da indgangene er ens, er matrixproduktet det samme i de tre tilfælde.
+
 (b) Bemærk, at $A$ ikke kan multipliceres med $P$, mens $C$ kan multipliceres med begge. 
 Derfor kan matrixprodukterne $AC$ og $CP$ betragtes som to matricer, således at både $A(CP)$ og $(AC)P$ er $k \times p$ matricer. 
 At komponenten i den $(i,j)$'te indgang i $A(CP)$ er ækvivalent med komponenten i den $(i,j)$'te indgang $(AC)P$ fås ved samme fremgangsmåde som vist i (a). 
 %Måske er (b) ikke helt nok? 
+
 (c) Lad $\textbf{c}_j$ være en vilkårlig søjle i $C$. 
 Det følger deraf, at $(A+B)\textbf{c}_j=A\textbf{c}_j+B\textbf{c}_j$ jævnfør sætning \ref{thm:mxvpro}. 
+
 (d) Lad $\textbf{p}_j$ og $\textbf{q}_j$ være søjler i henholdvis $P$ og $Q$. Det følger deraf, at $C(\textbf{p}_j+\textbf{q}_j)=C\textbf{p}_j+C\textbf{q}_j$ jævnfør sætning \ref{thm:mxvpro}. 
+
 (e) Da $I_k$ og $I_m$ henholdsvis korresponderer til antallet af rækker og søjler i $A$, er matrixprodukterne $I_kA$ og $AI_m$ defineret. 
 Da $I_k\textbf{a}_j=\textbf{a}_j$ og $I_m\textbf{a}_i=I_m\textbf{a}_i$, er $I_kA=A$ og $AI_m=A$, hvormed $I_kA=AI_m$.
+
 (f) Er triviel, da enhver komponent i en vilkårlig matrix multipliceret med $0$ er $0$. 
+
 (g) Den $(i,j)$'te indgang i $(AC)^T$ er den $(j,i)$'te indgang i $AC$. De to udtryks ækvivalens vises ved sammen fremgangsmåde som i (a).
 \end{proof}
