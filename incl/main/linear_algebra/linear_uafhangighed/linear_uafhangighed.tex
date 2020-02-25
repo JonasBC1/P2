@@ -216,149 +216,162 @@ Hvis man ikke ved hjælp af inspektion kan afgøre hvorvidt en matrix er lineær
 Hvis der er pivot-indgange i alle søjlerne er mængden af vektorer lineært uafhængige, hvorimod hvis der er frie variable er mængden af vektorer lineært afhængige.
 \\\\
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Eksempel
 \begin{eks}\label{lineu}
-Lad et sæt af vektorer være
+Lad en mængde af vektorer være
 \begin{align*}
 \S &= \left\{
 \begin{bmatrix}
-           2 \\
+           4 \\
            1 \\
 \end{bmatrix}
 ,
 \begin{bmatrix}
-           3 \\
-           2 \\
+           -3 \\
+           0 \\
+\end{bmatrix}
+,
+\begin{bmatrix}
+           1 \\
+           -2 \\
 \end{bmatrix}
 \right\}.
 \end{align*}
 \noindent
 % Skal skrives om fra et spørgsmål 
-Bestem om vektorerne er lineært uafhængige ved ligningen, altså hvis $x_1$ og $x_2 = 0$
+Afgør om vektorerne er lineært uafhængige, altså hvis $x_1$ og $x_2 = 0$, er den eneste løsning til linearkombination.
 \begin{align*}
 x_1+
 \begin{bmatrix}
-           2 \\
+           4 \\
            1 \\
 \end{bmatrix}
 + x_2
 \begin{bmatrix}
-           3 \\
-           2 \\
-\end{bmatrix}
-=0 
-\end{align*}
-%
-Ligningerne udskrives
-\noindent
-\begin{align*}
-2x_1+3x_2=0\\
-x_1+2x_2=0\\
-\\
-x_1+3/2x_2=0\\
-x_1+2x_2=0\\
-\\
-x_1+2x_2=0 - x_1+3/2x_2=0\\
-1/2c_2=0\\
-c_2=0\\
-c_1=0
-\end{align*}
-%
-Da $c_1$ og $c_2 = 0$, så er sættet $\S$ lineært uafhængigt.
-\\
-\\
-\noindent
-Lad et sæt af vektorer være 
-%
-\begin{align*}
-\S &= \left\{
-\begin{bmatrix}
-           2 \\
-           1 \\
-\end{bmatrix}
-,
-\begin{bmatrix}
-           3 \\
-           2 \\
-\end{bmatrix}
-,
-\begin{bmatrix}
-           1 \\
-           2 \\
-\end{bmatrix}
-\right\}.
-\end{align*}
-\noindent
-Bestem om vektorerne er lineært afhængige ved ligningen, altså hvis $x_1$, $x_2$ og $x_3 \neq 0$
-\begin{align*}
-x_1+
-\begin{bmatrix}
-           2 \\
-           1 \\
-\end{bmatrix}
-+ x_2
-\begin{bmatrix}
-           3 \\
-           2 \\
+           -3 \\
+           0 \\
 \end{bmatrix}
 + x_3
 \begin{bmatrix}
            1 \\
-           2 \\
+           -2 \\
+\end{bmatrix}
+=0 
+\end{align*}
+%
+Totalmatricen opkrives 
+\noindent
+\begin{align*}
+A=
+\begin{blockarray}{cccc}
+x_1 & x_2 & x_3 & b \\
+\begin{block}{[ccc|c]}
+4 & -3 & 1 & 0\\
+1 & 0 & -2 & 0 \\
+\end{block}
+\end{blockarray}
+\xrightarrow[R_2 \rightarrow R_2+(-1R_1)]{R_1 \rightarrow \frac{1}{4}R_1} 
+\begin{blockarray}{cccc}
+x_1 & x_2 & x_3 & b \\ 
+\begin{block}{[ccc|c]}
+1 & \frac{-3}{4} & \frac{1}{4} & 0\\
+0 & \frac{3}{4} & \frac{-9}{4} & 0 \\
+\end{block}
+\end{blockarray}
+\xrightarrow[R_1 \rightarrow R_1+(\frac{3}{4} R_2)]{R_2 \rightarrow \frac{4}{3} \times R_2} 
+\begin{blockarray}{cccc}
+x_1 & x_2 & x_3 & b \\
+\begin{block}{[ccc|c]}
+\hlight{1} & 1 & -2 & 0\\
+0 & \hlight{1} & -3 & 0\\
+\end{block}
+\end{blockarray}
+\end{align*}
+%
+Da tolalmatricen ikke har nogle frie variable, har den kun en løsning og derfor lineært uafhængig.
+\\
+\\
+\noindent
+Lad i stedet en mængde af vektorer være 
+%
+\begin{align*}
+\S &= \left\{
+\begin{bmatrix}
+           4 \\
+           1 \\
+           -2 \\
+\end{bmatrix}
+,
+\begin{bmatrix}
+           -3 \\
+           0 \\
+           1 \\
+\end{bmatrix}
+,
+\begin{bmatrix}
+           1 \\
+           -2 \\
+           1 \\
+\end{bmatrix}
+\right\}.
+\end{align*}
+\noindent
+Afgør om vektorerne er lineært uafhængige, altså hvis $x_1$, $x_2$ og $x_3 = 0$, er den eneste løsning til linearkombinationen.
+\begin{align*}
+x_1+
+\begin{bmatrix}
+           4 \\
+           1 \\
+           -2 \\
+\end{bmatrix}
++ x_2
+\begin{bmatrix}
+          -3 \\
+           0 \\
+           1 \\
+\end{bmatrix}
++ x_3
+\begin{bmatrix}
+           1 \\
+           -2 \\
+           1 \\
 \end{bmatrix}
 =0.
 \end{align*}
 %
-Ligningerne udskrives 
+Totalmatricen opskrives 
 %
 \begin{align*}
-2x_1+3x_2+c_3=0\\
-x_1+2x_2+2c_3=0 
+A=
+\begin{blockarray}{cccc}
+x_1 & x_2 & x_3 & b \\
+\begin{block}{[ccc|c]}
+4 & -3 & 1 & 0\\
+1 & 0 & -2 & 0 \\
+-2 & 1 & 1 & 0 \\
+\end{block}
+\end{blockarray}
+&\xrightarrow[R_2\rightarrow R_2+(-4R_1)]{R_1 \leftrightarrow R_2}
+\begin{blockarray}{cccc}
+x_1 & x_2 & x_3 & b \\
+\begin{block}{[ccc|c]}
+1 & 0 & -2 & 0\\
+0 & -3 & 9 & 0\\
+-2 & 1 & 1 & 0 \\
+\end{block}
+\end{blockarray}
+\xrightarrow[R_3 \rightarrow R_3+\frac{1}{3}R_2]{R_3 \rightarrow R_3+2R_1}
+\begin{blockarray}{cccc}
+x_1 & x_2 & x_3 & b \\
+\begin{block}{[ccc|c]}
+\hlight{1} & 0 & -2 & 0\\
+0 & -3 & 9 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{block}
+\end{blockarray}
 \end{align*}
 \noindent
-Nu findes en linearkombination, som ikke er nul. 
-Vi sætter tilfældigt $x_3 = -1$ og forsøger om ligningen kan løses
-%
-\begin{align*}
-2x_1+3x_2-1=0\\
-x_1+2x_2-2=0\\
-\\
-2x_1+3x_2-1=0\\
-2x_1+4x_2-4=0\\
-\\	 
-2x_1+3x_2-1=0 - 2x_1+4x_2-4=0 \\
--x_2+3=0\\
--x_2=-3\\
-x_2=3\\
-\\
-x_1+6+2\\
-x_1+4=0\\
-x_1=-4
-\end{align*}
-%
-Linearkombinationen er derfor
-%
-\begin{align*}
--4+
-\begin{bmatrix}
-           2 \\
-           1 \\
-\end{bmatrix}
-+ 3
-\begin{bmatrix}
-           3 \\
-           2 \\
-\end{bmatrix}
-+ -1
-\begin{bmatrix}
-           1 \\
-           2 \\
-\end{bmatrix}
-=0
-\end{align*}
-%
-Derfor har vi minimum fundet én linearkombination som er ikke-nul, som giver os nulvektoren, og derfor er det bevist at vektorsættet lineært afhængig.
+Dette betyder, at der findes en ikke-triviel lineær kombination, som giver nulvektoren. Derfor har vi minimum fundet én linearkombination som er ikke-nul og derfor er det bevist at vektorsættet lineært afhængigt.
 \end{eks}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -530,4 +543,145 @@ Dermed kan spannet af $\S$ vælges til
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-
+%\begin{eks}\label{lineu}
+%Lad et sæt af vektorer være
+%\begin{align*}
+%\S &= \left\{
+%\begin{bmatrix}
+%           2 \\
+%           1 \\
+%\end{bmatrix}
+%,
+%\begin{bmatrix}
+%           3 \\
+%           2 \\
+%\end{bmatrix}
+%\right\}.
+%\end{align*}
+%\noindent
+%Bestem om vektorerne er lineært uafhængige ved ligningen, altså hvis $x_1$ og $x_2 = 0$
+%\begin{align*}
+%x_1+
+%\begin{bmatrix}
+%           2 \\
+%           1 \\
+%\end{bmatrix}
+%+ x_2
+%\begin{bmatrix}
+%           3 \\
+%           2 \\
+%\end{bmatrix}
+%=0 
+%\end{align*}
+%%
+%Ligningerne udskrives
+%\noindent
+%\begin{align*}
+%2x_1+3x_2=0\\
+%x_1+2x_2=0\\
+%\\
+%x_1+3/2x_2=0\\
+%x_1+2x_2=0\\
+%\\
+%x_1+2x_2=0 - x_1+3/2x_2=0\\
+%1/2c_2=0\\
+%c_2=0\\
+%c_1=0
+%\end{align*}
+%%
+%Da $c_1$ og $c_2 = 0$, så er sættet $\S$ lineært uafhængigt.
+%\\
+%\\
+%\noindent
+%Lad et sæt af vektorer være 
+%%
+%\begin{align*}
+%\S &= \left\{
+%\begin{bmatrix}
+%           2 \\
+%           1 \\
+%\end{bmatrix}
+%,
+%\begin{bmatrix}
+%           3 \\
+%           2 \\
+%\end{bmatrix}
+%,
+%\begin{bmatrix}
+%           1 \\
+%           2 \\
+%\end{bmatrix}
+%\right\}.
+%\end{align*}
+%\noindent
+%Bestem om vektorerne er lineært afhængige ved ligningen, altså hvis $x_1$, $x_2$ og $x_3 \neq 0$
+%\begin{align*}
+%x_1+
+%\begin{bmatrix}
+%           2 \\
+%           1 \\
+%\end{bmatrix}
+%+ x_2
+%\begin{bmatrix}
+%           3 \\
+%           2 \\
+%\end{bmatrix}
+%+ x_3
+%\begin{bmatrix}
+%           1 \\
+%           2 \\
+%\end{bmatrix}
+%=0.
+%\end{align*}
+%%
+%Ligningerne udskrives 
+%%
+%\begin{align*}
+%2x_1+3x_2+c_3=0\\
+%x_1+2x_2+2c_3=0 
+%\end{align*}
+%\noindent
+%Nu findes en linearkombination, som ikke er nul. 
+%Vi sætter tilfældigt $x_3 = -1$ og forsøger om ligningen kan løses
+%%
+%\begin{align*}
+%2x_1+3x_2-1=0\\
+%x_1+2x_2-2=0\\
+%\\
+%2x_1+3x_2-1=0\\
+%2x_1+4x_2-4=0\\
+%\\	 
+%2x_1+3x_2-1=0 - 2x_1+4x_2-4=0 \\
+%-x_2+3=0\\
+%-x_2=-3\\
+%x_2=3\\
+%\\
+%x_1+6+2\\
+%x_1+4=0\\
+%x_1=-4
+%\end{align*}
+%%
+%Linearkombinationen er derfor
+%%
+%\begin{align*}
+%-4+
+%\begin{bmatrix}
+%           2 \\
+%           1 \\
+%\end{bmatrix}
+%+ 3
+%\begin{bmatrix}
+%           3 \\
+%           2 \\
+%\end{bmatrix}
+%+ -1
+%\begin{bmatrix}
+%           1 \\
+%           2 \\
+%\end{bmatrix}
+%=0
+%\end{align*}
+%%
+%Derfor har vi minimum fundet én linearkombination som er ikke-nul, som giver os nulvektoren, og derfor er det bevist at vektorsættet lineært afhængig.
+%\end{eks}
+%
