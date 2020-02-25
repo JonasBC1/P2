@@ -1,6 +1,6 @@
 \subsection{Lineær uafhængighed}
 % 1.7
-I forbindelse med en mængde af vektorer kan de være \textbf{lineært afhængige} eller \textbf{lineært uafhængige}.
+En mængde af vektorer i $\R^n$ kan være \textbf{lineært afhængige} eller \textbf{lineært uafhængige}.
 %
 %En mængde af vektorer er \textbf{lineært afhængig}, hvis alle vektorerne kan skrives som en linearkombination af de andre vektorer. 
 %Hvis ikke alle vektorerne kan skrives som en linearkombination af de andre vektorer, så er mængden \textbf{lineært uafhængige}. 
@@ -9,7 +9,7 @@ I forbindelse med en mængde af vektorer kan de være \textbf{lineært afhængig
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
 \begin{defn}{Lineær afhængighed og lineær uafhængighed}{}
-Et sæt af vektorerne $\mathbf{v}_1, \ldots , \mathbf{v}_k$ i $\R^n$ kaldes lineært uafhængige, hvis der eksisterer skalarer $x_1,x_2, \ldots , x_l$, sådan at ligningen 
+En mængde af vektorer $\mathbf{v}_1, \ldots , \mathbf{v}_k \in \R^n$ kaldes lineært uafhængige, hvis der eksisterer skalarer $x_1,x_2, \ldots , x_l$, sådan at ligningen 
 \begin{align*}
 x_1\mathbf{v}_1 + \ldots + x_k \mathbf{v}_k = \mathbf{0}, 
 \end{align*}
@@ -53,7 +53,7 @@ x_1
 \end{align*}
 %
 Denne er kun opfyldt, hvis $x_1=x_2=0$. 
-Eftersom alle koefficienterne er nul er spannet af $\S_1$ lineært uafhængigt.
+Eftersom alle koefficienterne er $o$, er spannet af $\S_1$ lineært uafhængigt.
 \\\\
 Havde spannet været 
 \begin{align*}
@@ -84,10 +84,10 @@ x_1
            4 \\
            2 \\
 \end{bmatrix}
-= \mathbf{0},
+= \mathbf{0}
 \end{align*}
 %
-være opfyldt, hvis $x_1=x_2=0$ eller $x_1=-2$ og $x_2=1$, og spannet er derfor lineært afhængig, fordi der er flere løsninger end den trivielle.
+være opfyldt, hvis $x_1=x_2=0$ eller $x_1=-2$ og $x_2=1$. Spannet er derfor lineært afhængigt, fordi der er flere løsninger end den trivielle.
 %
 \end{eks}
 %
@@ -96,11 +96,11 @@ være opfyldt, hvis $x_1=x_2=0$ eller $x_1=-2$ og $x_2=1$, og spannet er derfor 
 %I eksempel \ref{lineu} viste en af måderne hvorpå man kunne bestemme om et bestemt set $\S$ var lineært afhængigt eller uafhængigt. 
 %Der findes flere måder at bestemme dette på. Denne følgende sætning viser en lignende teknik til bestemmelse heraf. 
 %
-Egenskaberne ved mængder, der er lineært uafhængighed kan udtrykkes på forskellige måder, hvilket leder til følgende sætning:
+Egenskaber af lineær uafhængighed kan udtrykkes på forskellige måder, hvilket leder til sætning \ref{thm:mxlinuaf}.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-\begin{thm}{}{}
+%Brug \ref når i refererer til sætninger, i stedet for at skrive "følgende sætning.." (syns jeg). 
+\begin{thm}{}{mxlinuaf}
 %
 Lad $A$ være en $m \times n$ matrix.
 Følgende udsagn er ækvivalente:
@@ -121,34 +121,35 @@ Følgende udsagn er ækvivalente:
 %
 \begin{proof}
 \noindent
-Det er forudsagt, at (a) og (f), samt (f) og (g) er ækvivalente, så for at færdiggøre beviset for denne sætning, skal det vises, at (b) $\rightarrow$ (c), (c) $\rightarrow$ (d), (d) $\rightarrow$ (e), (e) $\rightarrow$ (f) og (f) $\rightarrow$ (b).
+%Forudsagt? Mangler der en ref til et tidligere bevis her, eller er I spåkællinger? (nedenstående) 
+Det er forudsagt, at (a) og (f), samt (f) og (g) er ækvivalente, så for at færdiggøre beviset for denne sætning skal det vises, at (b) $\rightarrow$ (c), (c) $\rightarrow$ (d), (d) $\rightarrow$ (e), (e) $\rightarrow$ (f) og (f) $\rightarrow$ (b).
 \\\\
-%
+%Er de pile korrekt notation, eller skal vi bruge \equiv? (ovenstående)
 % (b) $\rightarrow$ (c). 
-Idet, at $\mathbf{0}$ er en løsning til $A\mathbf{x}=\mathbf{b}$, så forudsætter (b) at $A\mathbf{x}=\mathbf{b}$ har ingen ikke-nul løsninger, da den generelle løsning ingen frie variable, har. 
-Da antallet af frie variable er nul, og dermed at nulliteten i A er nul, er (b) $\rightarrow$ (c) hermed bevist. 
+Idet $\mathbf{0}$ er en løsning til $A\mathbf{x}=\mathbf{b}$, så forudsætter (b), at $A\mathbf{x}=\mathbf{b}$ ikke har ikke-nul løsninger, da den generelle løsning ingen frie variable har. 
+Eftersom antallet af frie variable er $0$, og at nulliteten i A dermed er nul, er (b) $\rightarrow$ (c) hermed bevist. 
 \\\\
-%
+%Der skal ikke komma efter "idet". 
 % (c) $\rightarrow$ (d).
-Idet, at $\text{rang}(A)+\text{null}(A)=n$, så medfører det, at (c) $\rightarrow$ (d) er bevist.
+Idet $\text{rang}(A)+\text{null}(A)=n$, så er (c) $\rightarrow$ (d) bevist.
 \\\\
 %
 % (d) $\rightarrow$ (e).
-Hvis $\text{rang}(A)=n$, så betyder det, at enhver søjle i A har en pivotindgang i søjlen, hvilket betyder, at den reducerede trappeform indeholder udelukkende standard vektorer. 
+Hvis $\text{rang}(A)=n$, så indeholder enhver søjle i $A$ en pivotindgang, hvormed den reducerede trappeform udelukkende indeholder standardvektorer. 
 Disse standardvektorer er nødvendigvis forskellige, da hver søjle indeholder den første ikke-nul indgang i hver række. 
 Dette beviser (d) $\rightarrow$ (e).
 %
 \\\\
 % (e) $\rightarrow$ (f).
 Lad $R$ være den reducerede trappeform af matricen $A$. Hvis søjlerne i $R$ er forskellige standardvektorer i $R^m$, så er $R= [ \mathbf{e}_1, \mathbf{e}_2, \ldots, \mathbf{e}_n]$. 
-Det er givet, at den eneste løsning til $R\mathbf{x}=\mathbf{0}$, er nul, og idet at $A\mathbf{x}=\mathbf{0}$, er ækvivalent til $R\mathbf{x}=\mathbf{0}$, så er den $\mathbf{0}$ eneste løsning til A$\mathbf{x}=\mathbf{0}$. 
+Det er givet, at den eneste løsning til $R\mathbf{x}=\mathbf{0}$ er $0$, og idet $A\mathbf{x}=\mathbf{0}$ er ækvivalent med $R\mathbf{x}=\mathbf{0}$, så er $\mathbf{0}$ eneste løsning til A$\mathbf{x}=\mathbf{0}$. 
 Dette beviser (e) $\rightarrow$ (f).
 \\\\
 %
 % (f) $\rightarrow$ (b).
-Lad $\mathbf{u}, \mathbf{v}$ være løsninger til $A\mathbf{x}=\mathbf{b}$.
+Lad $\mathbf{u}$ og $\mathbf{v}$ være løsninger til $A\mathbf{x}=\mathbf{b}$.
 % Sætning 1.3
-Jævnfør sætning \ref{thm:mxvpro}, følger det at $A(\mathbf{u}-\mathbf{v})=A\mathbf{u}-A\mathbf{v}=\mathbf{b}-\mathbf{b}=\mathbf{0}$, hvilket tilsvarer $\mathbf{u}-\mathbf{v}=\mathbf{0}
+Jævnfør sætning \ref{thm:mxvpro} følger det, at $A(\mathbf{u}-\mathbf{v})=A\mathbf{u}-A\mathbf{v}=\mathbf{b}-\mathbf{b}=\mathbf{0}$, hvilket tilsvarer $\mathbf{u}-\mathbf{v}=\mathbf{0}
 \rightarrow  
 \mathbf{u} =\mathbf{v}$, hvilket beviser (f) $\rightarrow$ (b).
 \\\\
@@ -161,14 +162,14 @@ Ligningssystemet $A\mathbf{x}=\mathbf{b}$ har altid løsningen $\mathbf{x}=\math
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Ligeså findes der en række egenskaber vedrørende mængder der er lineært afhængige, som er belyst i sætning \ref{thm:inspektion}.
+Ligeså findes der en række egenskaber vedrørende mængder, der er lineært afhængige, som er belyst i sætning \ref{thm:inspektion}.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \begin{thm}{}{inspektion}
 %
-Vektorerne $\mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_k$ i $\R^n$ er lineært afhængige, 
-hvis og kun hvis, $\mathbf{u}_1=\mathbf{0}$, eller hvis der findes $i \geq 2$ således $\mathbf{u}_i \in \text{span} \{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}$.
+Vektorerne $\mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_k \in\R^n$ er lineært afhængige, 
+hvis og kun hvis $\mathbf{u}_1=\mathbf{0}$, eller hvis der findes $i \geq 2$, således $\mathbf{u}_i \in \text{span} \{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}$.
 %
 \end{thm}
 %
@@ -177,7 +178,7 @@ hvis og kun hvis, $\mathbf{u}_1=\mathbf{0}$, eller hvis der findes $i \geq 2$ s�
 \begin{proof}
 % 
 Antag, at $\mathbf{u}_1 \neq \mathbf{0}$, da løsningen ellers er triviel. 
-Der findes skalarer, hvor koefficienterne ikke alle er nul, således at
+Der findes skalarer, hvor koefficienterne ikke alle er $0$, således at
 % 
 \begin{align*}
 c_1 \mathbf{u}_1 + c_2 \mathbf{u}_2 + \ldots + c_k \mathbf{u}_k = \mathbf{0}.
@@ -187,6 +188,7 @@ Lad $i$ være det største index $i$, hvor $x_i \neq 0$, sådan at
 \begin{align*}
 c_1 \mathbf{u}_1 + c_2 \mathbf{u}_2 + \ldots + c_i \mathbf{u}_i = \mathbf{0}.
 \end{align*}
+%Synes det ovenstående lyder lidt mærkeligt (det med i, i og x_i). 
 Bemærk, at $i\geq2$, da udtrykket ellers ville blive reduceret til
 %
 \begin{align*}
@@ -194,17 +196,17 @@ c_1\textbf{u}_1=0,
 \end{align*}
 %
 hvilket går imod tidligere antagelser.
-Løses udtrykket i forhold til $\mathbf{u}_i$, ses det at
+Løses udtrykket i forhold til $\mathbf{u}_i$, ses det, at
 \begin{align*}
 \mathbf{u}_i = - \frac{c_1}{c_i} \mathbf{u}_1 - \frac{c_2}{c_i} \mathbf{u}_2 - \cdots - \frac{c_{i-1}}{c_i} \mathbf{u}_{i-1}.
 \end{align*}
-Hvilket vil sige at 
+Hvilket vil sige, at 
 \begin{align*}
 \mathbf{u}_i \in \text{span}\{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}.
 \end{align*}
 %
 Antag nu, at $\mathbf{u}_i \in \text{span}\{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}$ for $i \geq 2$.
-Da $\text{span}\{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}$ er mængden af alle linearkombinationer af vektorerne $\mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1}$ haves, at der eksisterer skalarer $c_1, c_2, \ldots c_{i-1}$ således, at
+Da $\text{span}\{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}$ er mængden af alle linearkombinationer af vektorerne $\mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1}$, eksisterer der skalarer $c_1, c_2, \ldots c_{i-1}$, således at
 %
 \begin{align*}
 \textbf{u}_i=c_1\mathbf{u}_1 + c_2 \mathbf{u}_2 + \cdots + c_{i-1}\mathbf{u}_{i-1}.
@@ -221,17 +223,17 @@ er en løsning anderledes fra den trivielle løsning, hvor $c_1, c_2,\ldots,c_k=
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Man kan i nogle tilfælde afgøre ved inspektion, hvorvidt en mængde vektorer $\mathbf{v},\mathbf{v}_2,\ldots ,\mathbf{v}_k$ er lineær afhængige. 
-Jævnfør sætning \ref{thm:inspektion}, er mængden af vektorer afhængige, hvis $\mathbf{0}$ er en af dem, hvis 2 af vektorerne er parallelle eller, hvis der er flere vektorer end deres antal af koordinater. 
-Med udgangspunkt i eksempel \ref{fisk}, ses det, at de to vektorer er paralelle, og de er derfor lineært afhængige. 
+Man kan i nogle tilfælde afgøre ved inspektion, hvorvidt en mængde vektorer $\mathbf{v},\mathbf{v}_2,\ldots ,\mathbf{v}_k$ er lineært afhængige. 
+Jævnfør sætning \ref{thm:inspektion} er mængden af vektorer afhængige, hvis $\mathbf{0}$ er en af dem, hvis 2 af vektorerne er parallelle, eller hvis der er flere vektorer end hver vektors antal af koordinater. 
+Med udgangspunkt i eksempel \ref{fisk} ses det, at de to vektorer er parallelle og derfor er lineært afhængige. 
 \\\\
-Hvis man ikke ved hjælp af inspektion kan afgøre, hvorvidt en matrix er lineært afhængig eller lineært uafhængig, kan det undersøges ved at opstille totalmatricen af mængden af vektorer, hvor det derefter med rækkeopperationer laves på trappeform. 
-Hvis der er pivot-indgange i alle søjlerne, er mængden af vektorer lineært uafhængige, hvorimod hvis der er frie variable, er mængden af vektorer lineært afhængige.
+Hvis man ikke ved hjælp af inspektion kan afgøre, om en matrix er lineært afhængig eller lineært uafhængig, kan det undersøges ved at opstille totalmatricen af mængden af vektorer, hvor matricen derefter via rækkeopperationer laves til trappeform. 
+Hvis der er pivotindgange i alle søjlerne, er mængden af vektorer lineært uafhængige. Hvis der er frie variable, er mængden af vektorer derimod lineært afhængige.
 \\\\
 %
 % Eksempel
 \begin{eks}\label{lineu}
-Lad en mængde af vektorer være
+Lad
 \begin{align*}
 \S &= \left\{
 \begin{bmatrix}
@@ -252,7 +254,7 @@ Lad en mængde af vektorer være
 \end{align*}
 \noindent
 %
-Hvis vektorerne er lineært uafhængige, altså hvis $x_1 = x_2 = x_3= 0$, er den eneste løsning til linearkombination
+Hvis vektorerne er lineært uafhængige, altså hvis $x_1 = x_2 = x_3= 0$, er den eneste løsning linearkombinationen
 %
 \begin{align*}
 x_1+
@@ -273,7 +275,7 @@ x_1+
 =0.
 \end{align*}
 %
-Totalmatricen opkrives 
+Totalmatricen opkrives:
 %
 \noindent
 \begin{align*}
@@ -303,11 +305,11 @@ x_1 & x_2 & x_3 & b \\
 \end{blockarray}
 \end{align*}
 %
-Da tolalmatricen ikke har nogle frie variable, har den kun en løsning og derfor lineært uafhængig.
+Da totalmatricen ikke har nogle frie variable, har den kun en løsning og er derfor lineært uafhængig.
 \\
 \\
 \noindent
-Lad i stedet en mængde af vektorer være 
+Lad nu
 %
 \begin{align*}
 \S &= \left\{
@@ -331,7 +333,8 @@ Lad i stedet en mængde af vektorer være
 \right\}.
 \end{align*}
 \noindent
-Afgør om vektorerne er lineært uafhængige, altså hvis $x_1$, $x_2$ og $x_3 = 0$, er den eneste løsning til linearkombinationen.
+Afgør, om vektorerne er lineært uafhængige, altså hvis $x_1$, $x_2$ og $x_3 = 0$, er den eneste løsning til linearkombinationen.
+%Dette er skrevet lidt som en opgave, hvilket er underligt.
 \begin{align*}
 x_1+
 \begin{bmatrix}
@@ -386,13 +389,13 @@ x_1 & x_2 & x_3 & b \\
 \end{blockarray}
 \end{align*}
 \noindent
-Dette betyder, at der findes en ikke-triviel lineær kombination, som giver nulvektoren. Derfor har vi minimum fundet én linearkombination som er ikke-nul og derfor er det bevist at vektorsættet lineært afhængigt.
+Dette betyder, at der findes en ikke-triviel linearkombination, som resulterer i nulvektoren. Derfor har vi fundet mindst én linearkombination, som ikke er $0$, og derfor er det bevist, at vektormængden er lineært afhængig.
 \end{eks}
-%
+%Der bliver stadig skrevet "sæt" rigtig meget.. :-( 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % SKAL MÅSKE FLYTTES
-I forbindelse med et givet mængde vektorer kan færre vektorer udvælges for at få en mere effektiv beskrivelse af spannet. Dette gøres ved at tage spannet af pivot-søjlerne i koefficientmatricen.
+I forbindelse med en given mængde vektorer kan færre vektorer udvælges for at få en mere effektiv beskrivelse af spannet. Dette gøres ved at finde spannet af pivotsøjlerne i koefficientmatricen.
 \\\\
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -503,7 +506,7 @@ opstilles koefficientmatricen.
 %
 \end{align*}
 %
-Hermed er den sidste vektor i spannet en lineær kombination af de andre vektorer:
+Hermed er den sidste vektor i spannet en linearkombination af de andre vektorer:
 %
   \begin{align*}
     \begin{bmatrix}
@@ -528,7 +531,7 @@ Hermed er den sidste vektor i spannet en lineær kombination af de andre vektore
            3 \\
            0 \\
            1 \\
-         \end{bmatrix}
+         \end{bmatrix}.
   \end{align*} 
 %
 Dermed kan spannet af $\S$ vælges til
