@@ -8,9 +8,76 @@ En funktion $f$ fra $\S_1$ til $\S_2$, noteret $f:\S_1\rightarrow\S_2$, tildeler
 Vektoren $f(\textbf{v})$ kaldes en \textbf{afbildning} af $\textbf{v}$.
 $\S_1$ er domænet for funktionen $f$ mens $\S_2$ kaldes codomænet til $f$.
 \textbf{Billedmængden} for $f$ er defineret som mængden af afbildninger, $f(\textbf{v})$, for alle $\textbf{v}\in \S_1$.
-\end{defn}
+\end{defn}\noindent
 %
 I figur \ref{fig:afbild} ses at både $\textbf{u}$ og $\textbf{v}$ har $\textbf{w}$ som afbildning, da $f(\textbf{u})=f(\textbf{v})=\textbf{w}$.
 %Lav flot figur som 2.9 på side 167.
 \input{fig/tikz/dom}
 %
+\\
+For funktioner, som er et matrix-vektor produkt introduceres notationen $T_A$.
+%
+\begin{defn}{}{}
+Lad $A$ være en $m \times n$ matrix.
+Funktionen $T_A:\R^n \rightarrow \R^m$ defineret ved $T_A(\textbf{x}) = A\textbf{x}$ for alle $\textbf{x} \in \R^n$ kaldes \textbf{matrix afbildning med $A$}.
+\end{defn}\noindent
+%
+Direkte fra sætning \ref{thm:mxvpro} ses det, at $T_A$ har egenskaberne $T_A(\textbf{u}+\textbf{v})=T_A(\textbf{u}) + T_A(\textbf{v})$ og $cT_A(\textbf{u}) = T_A(c\textbf{u})$.
+Funktioner der opfylder disse egenskaber får deres egen definition.
+%
+\begin{defn}{}{}
+Funktionen $T: \R^n \rightarrow \R^m$ kaldes en \textbf{lineær afbildning}, hvis følgende vilkår gør sig gældende for alle $\textbf{u},\textbf{v} \in \R^n$ og alle skalarer $c$:
+\begin{enumerate}[label=(\alph*)]
+\item $T_A(\textbf{u}+\textbf{v})=T_A(\textbf{u}) + T_A(\textbf{v})$.
+\item $cT_A(\textbf{u}) = T_A(c\textbf{u})$.
+\end{enumerate}
+\end{defn}\noindent
+%
+Da matrix afbildning har disse egenskaber er alle matrix afbildninger lineære.
+Følgende sætning viser nogle af egenskaberne ved lineær afbildning.
+%
+\begin{thm}{}{afbegen}
+Lad $\textbf{u}, \textbf{v}$ være vektorer i $\R^n$ og lad $c$ og $k$ være skalarer.
+For enhver lineær afbildning $T: \R^n \rightarrow \R^m$ er følgende udsagn sande:
+\begin{enumerate}[label = (\alph*)]
+\item $T(\textbf{0}) = \textbf{0}$.
+\item $T(-\textbf{u}) = -T(\textbf{u})$.
+\item $T(\textbf{u}-\textbf{v}) = T(\textbf{u})-T(\textbf{v})$.
+\item $T(c\textbf{u} + k\textbf{v}) = cT(\textbf{u}) + kT(\textbf{u})$.
+\end{enumerate}
+\end{thm}
+%
+\begin{proof}
+Lad $\textbf{u}, \textbf{v}$ være vektorer i $\R^n$, lad $c$ og $k$ være skalarer og lad $T: \R^n \rightarrow \R^m$ være en lineær transformation.
+Da $T$ bevarer vektoraddition haves at
+%
+\begin{align*}
+T(\textbf{0}) = T(\textbf{0} + \textbf{0}) = T(\textbf{0}) + T(\textbf{0}).
+\end{align*}
+%
+Trækkes $T(\textbf{0})$ fra begge sider haves $\textbf{0} = T(\textbf{0})$, hvilket viser det ønskede.
+%
+Da $T$ bevarer skalering haves
+% 
+\begin{align*}
+T(-\textbf{u}) = T((-1)\textbf{u}) = (-1)T(\textbf{u}) = -T(\textbf{u}).
+\end{align*}
+%
+Ved kombination af at $T$ bevarer vektor addition og (b) haves
+%
+\begin{align*}
+T(\textbf{u}-\textbf{v}) = T(\textbf{u}+(-\textbf{v})) = T(\textbf{u})+T(-\textbf{v}) = T(\textbf{u}) - T(\textbf{v}).
+\end{align*}
+%
+Da $T$ både bevarer både vektor addition og skalering haves 
+%
+\begin{align*}
+T(c\textbf{u} + k\textbf{v}) = T(c\textbf{u}) + T(k\textbf{v}) = cT(\textbf{u}) + kT(\textbf{u}).
+\end{align*}
+\end{proof}
+%
+Sætning \ref{thm:afbegen}(d) kan generaliseres til at vise at lineær afbildning bevarer lineær kombinationer.
+%
+\begin{lem}{}{}
+
+\end{lem}
