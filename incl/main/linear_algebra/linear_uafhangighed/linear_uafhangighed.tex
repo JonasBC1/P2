@@ -33,9 +33,9 @@ Givet
            1 \\
            3 \\
 \end{bmatrix}
-\right\}.
+\right\},
 \end{align*}
-Den trivielle løsning opskrives 
+opstilles den trivielle løsning  
 %
 \begin{align*}
 x_1 
@@ -51,7 +51,7 @@ x_1
 = \mathbf{0}.
 \end{align*}
 %
-Denne er kun opfyldt hvis $x_1=x_2=0$. 
+Denne er kun opfyldt, hvis $x_1=x_2=0$. 
 Eftersom alle koefficienterne er nul er spannet af $\S_1$ lineært uafhængigt.
 \\\\
 Havde spannet været 
@@ -86,7 +86,7 @@ x_1
 = \mathbf{0},
 \end{align*}
 %
-være opfyldt hvis $x_1=x_2=0$ eller $x_1=-2$ og $x_2=1$, og spannet er derfor lineært afhængig, fordi der er flere løsninger end den trivielle.
+være opfyldt, hvis $x_1=x_2=0$ eller $x_1=-2$ og $x_2=1$, og spannet er derfor lineært afhængig, fordi der er flere løsninger end den trivielle.
 %
 \end{eks}
 %
@@ -94,7 +94,8 @@ være opfyldt hvis $x_1=x_2=0$ eller $x_1=-2$ og $x_2=1$, og spannet er derfor l
 %
 %I eksempel \ref{lineu} viste en af måderne hvorpå man kunne bestemme om et bestemt set $\S$ var lineært afhængigt eller uafhængigt. 
 %Der findes flere måder at bestemme dette på. Denne følgende sætning viser en lignende teknik til bestemmelse heraf. 
-Egenskaberne ved mængder der er lineært uafhængighed kan udtrykkes på forskellige måder, hvilket leder til følgende sætning:
+%
+Egenskaberne ved mængder, der er lineært uafhængighed kan udtrykkes på forskellige måder, hvilket leder til følgende sætning:
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -119,34 +120,34 @@ Følgende udsagn er ækvivalente:
 %
 \begin{proof}
 \noindent
-Det er forudsagt, at (a) og (f), samt (f) og (g) er ækvivalente, så for at færdiggøre beviset for denne sætning, skal det vises, at (b) $\rightarrow$ (c), (c) $\rightarrow$ (d), (d) $\rightarrow$ (e), (e) $\rightarrow$ (f), (f) $\rightarrow$ (b).
+Det er forudsagt, at (a) og (f), samt (f) og (g) er ækvivalente, så for at færdiggøre beviset for denne sætning, skal det vises, at (b) $\rightarrow$ (c), (c) $\rightarrow$ (d), (d) $\rightarrow$ (e), (e) $\rightarrow$ (f) og (f) $\rightarrow$ (b).
 \\\\
 %
-(b) $\rightarrow$ (c). 
+% (b) $\rightarrow$ (c). 
 Idet, at $\mathbf{0}$ er en løsning til $A\mathbf{x}=\mathbf{b}$, så forudsætter (b) at $A\mathbf{x}=\mathbf{b}$ har ingen ikke-nul løsninger, da den generelle løsning ingen frie variable, har. 
-Da antallet af frie variable er nulliteten i A og dette er 0, så beviser det (b) $\rightarrow$ (c). 
+Da antallet af frie variable er nul, og dermed at nulliteten i A er nul, er (b) $\rightarrow$ (c) hermed bevist. 
 \\\\
 %
-(c) $\rightarrow$ (d).
-Idet, at $\text{rang}(A)+\text{null}(A)=n$, så medfører det øjeblikkeligt, at (c) $\rightarrow$ (d).
+% (c) $\rightarrow$ (d).
+Idet, at $\text{rang}(A)+\text{null}(A)=n$, så medfører det, at (c) $\rightarrow$ (d) er bevist.
 \\\\
 %
-(d) $\rightarrow$ (e).
-Hvis $\text{rang}(A)=n$, så betyder det, at enhver søjle i A har en pivotindgang i søjlen, som derfor betyder, at den reducerede trappeform indeholder udelukkende standard vektorer. 
+% (d) $\rightarrow$ (e).
+Hvis $\text{rang}(A)=n$, så betyder det, at enhver søjle i A har en pivotindgang i søjlen, hvilket betyder, at den reducerede trappeform indeholder udelukkende standard vektorer. 
 Disse standardvektorer er nødvendigvis forskellige, da hver søjle indeholder den første ikke-nul indgang i hver række. 
 Dette beviser (d) $\rightarrow$ (e).
 %
 \\\\
-(e) $\rightarrow$ (f).
+% (e) $\rightarrow$ (f).
 Lad $R$ være den reducerede trappeform af matricen $A$. Hvis søjlerne i $R$ er forskellige standardvektorer i $R^m$, så er $R= [ \mathbf{e}_1, \mathbf{e}_2, \ldots, \mathbf{e}_n]$. 
-Det er givet, at den eneste løsning til $R\mathbf{x}=\mathbf{0}$, er 0, og idet at $A\mathbf{x}=\mathbf{0}$, er ækvivalent til $R\mathbf{x}=\mathbf{0}$, så er den $\mathbf{0}$ eneste løsning til A$\mathbf{x}=\mathbf{0}$. 
+Det er givet, at den eneste løsning til $R\mathbf{x}=\mathbf{0}$, er nul, og idet at $A\mathbf{x}=\mathbf{0}$, er ækvivalent til $R\mathbf{x}=\mathbf{0}$, så er den $\mathbf{0}$ eneste løsning til A$\mathbf{x}=\mathbf{0}$. 
 Dette beviser (e) $\rightarrow$ (f).
 \\\\
 %
-(f) $\rightarrow$ (b).
+% (f) $\rightarrow$ (b).
 Lad $\mathbf{u}, \mathbf{v}$ være løsninger til $A\mathbf{x}=\mathbf{b}$.
 % Sætning 1.3
-Jævnfør sætning \ref{fisk}, følger det at $A(\mathbf{u}-\mathbf{v})=A\mathbf{u}-A\mathbf{v}=\mathbf{b}-\mathbf{b}=\mathbf{0}$, hvilket tilsvarer $\mathbf{u}-\mathbf{v}=\mathbf{0}
+Jævnfør sætning \ref{thm:mxvpro}, følger det at $A(\mathbf{u}-\mathbf{v})=A\mathbf{u}-A\mathbf{v}=\mathbf{b}-\mathbf{b}=\mathbf{0}$, hvilket tilsvarer $\mathbf{u}-\mathbf{v}=\mathbf{0}
 \rightarrow  
 \mathbf{u} =\mathbf{v}$, hvilket beviser (f) $\rightarrow$ (b).
 \\\\
@@ -155,24 +156,11 @@ Lad $\mathbf{b}=\mathbf{0}$.
 Ligningssystemet $A\mathbf{x}=\mathbf{b}$ har altid løsningen $\mathbf{x}=\mathbf{0}$, der derfor er den eneste løsning til $A\mathbf{x}=\mathbf{0}$, hvilket beviser (b) $\rightarrow$ (e).
 %
 \end{proof}
-%
-%
 \\
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Motiverende tekst 
-\\
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Eksempel
-\begin{eks}
-\textcolor{green}{En eksemepel XD}
-\end{eks}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-\textcolor{red}{Motiverende tekst til næste sætning}
+Ligeså findes der en række egenskaber vedrørende mængder der er lineært afhængige, som er belyst i sætning \ref{thm:inspektion}.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -212,6 +200,7 @@ Hvilket vil sige at
 og sætningen er hermed bevist.
 %
 \\\\
+Antag nu at $\ldots$ MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADS
 \textcolor{red}{Mangler beviset modsat (da det er en hvis og kun hvis)}
 %
 \end{proof}
@@ -221,34 +210,12 @@ og sætningen er hermed bevist.
 %
 Man kan derfor i nogle tilfælde afgøre ved inspektion, hvorvidt en mængde vektorer $\mathbf{v},\mathbf{v}_2,\ldots ,\mathbf{v}_k$ er lineær afhængige. 
 Jævnfør sætning \ref{thm:inspektion}, er mængden af vektorer afhængige hvis $\mathbf{0}$ er en af dem, hvis 2 af vektorerne er parallelle eller hvis der er flere vektorer end deres antal af koordinater. 
+Med udgangspunkt i eksempel \ref{fisk}, ses det at de to vektorer er paralelle, og de er derfor lineært afhængige. 
+\\\\
+Hvis man ikke ved hjælp af inspektion kan afgøre hvorvidt en matrix er lineært afhængig eller lineært uafhængig kan det undersøges det ved at opstilles totalmatricen af mængden af vektorer, hvor det derefter med rækkeopperationer laves på trappeform. 
+Hvis der er pivot-indgange i alle søjlerne er mængden af vektorer lineært uafhængige, hvorimod hvis der er frie variable er mængden af vektorer lineært afhængige.
+\\\\
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Eksempel
-\begin{eks}
-\textcolor{green}{En godt eksemepel XD} 
-\\
-
-\end{eks}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-\textcolor{green}{Mere motiverende tekst}\\\\
-Hvis man undersøger om en mængde vektorer er lineært afhængige eller lineært uafhængige opstilles totalmatricen af mængden af vektorer, hvor det derefter med rækkeopperationer laves på trappeform. 
-Hvis der er pivot-indgange i alle søjlerne er mængden af vektorer lineært uafhængige, hvorimod hvis der er frie variable er mængden af vektorer lineært afhængige. 
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Eksempel
-\begin{eks}
-\textcolor{green}{En godt eksemepel XD} 
-\\
-Noget med udvælg færre vektrorer for at få en effektiv beskrivelse af $\text{span}\{\S\}$.
-\end{eks}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Eksempel
 \begin{eks}\label{lineu}
@@ -396,3 +363,171 @@ Derfor har vi minimum fundet én linearkombination som er ikke-nul, som giver os
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
+% SKAL MÅSKE FLYTTES
+I forbindelse med et givet mængde vektorer kan færre vektorer udvælges for at få en mere effektiv beskrivelse af spannet. Dette gøres ved at tage spannet af pivot-søjlerne i koefficientmatricen.
+\\\\
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Eksempel
+\begin{eks}
+Givet 
+\begin{align*}
+\S &= \left\{
+\begin{bmatrix}
+           1 \\
+           2 \\
+           0 \\
+\end{bmatrix}
+,
+\begin{bmatrix}
+           -1 \\
+           2 \\
+           4 \\
+\end{bmatrix}
+,
+\begin{bmatrix}
+           3 \\
+           0 \\
+           1 \\
+\end{bmatrix}
+,
+\begin{bmatrix}
+           1 \\
+           0 \\
+           5 \\
+\end{bmatrix}
+\right\},
+\end{align*}
+%
+opstilles koefficientmatricen. 
+%
+\begin{align*}
+\begin{blockarray}{ccccc}
+\begin{block}{[cccc]c}
+  1 & -1 & 3 & 1 \\
+  2 & 2 & 0 & 0 \\
+  0 & 4 & 1 & 5 \\
+\end{block}
+\end{blockarray} 
+%
+\xrightarrow{R_2 \rightarrow R_2-2R_1}
+\begin{blockarray}{ccccc}
+\begin{block}{[cccc]c}
+  1 & -1 & 3 & 1 \\
+  0 & 4 & -6 & -2 \\
+  0 & 4 & 1 & 5 \\
+\end{block}
+\end{blockarray} 
+%
+\xrightarrow{R_3 \rightarrow R_3-R_2}
+\begin{blockarray}{ccccc}
+\begin{block}{[cccc]c}
+  1 & -1 & 3 & 1 \\
+  0 & 4 & -6 & -2 \\
+  0 & 0 & 7 & 7 \\
+\end{block}
+\end{blockarray} \\
+%
+\xrightarrow{R_3 \rightarrow 1/7 R_3}
+\begin{blockarray}{ccccc}
+\begin{block}{[cccc]c}
+  1 & -1 & 3 & 1 \\
+  0 & 4 & -6 & -2 \\
+  0 & 0 & 1 & 1 \\
+\end{block}
+\end{blockarray} 
+%
+\xrightarrow{R_2 \rightarrow R_2+6R_3}
+\begin{blockarray}{ccccc}
+\begin{block}{[cccc]c}
+  1 & -1 & 3 & 1 \\
+  0 & 4 & 0 & 4 \\
+  0 & 0 & 1 & 1 \\
+\end{block}
+\end{blockarray} 
+%
+\xrightarrow{R_1 \rightarrow R_1-3R_3}
+\begin{blockarray}{ccccc}
+\begin{block}{[cccc]c}
+  1 & -1 & 0 & -2 \\
+  0 & 4 & 0 & 4 \\
+  0 & 0 & 1 & 1 \\
+\end{block}
+\end{blockarray} \\
+%
+\xrightarrow{R_2 \rightarrow 1/4R_2}
+\begin{blockarray}{ccccc}
+\begin{block}{[cccc]c}
+  1 & -1 & 0 & -2 \\
+  0 & 1 & 0 & 1 \\
+  0 & 0 & 1 & 1 \\
+\end{block}
+\end{blockarray} 
+%
+\xrightarrow{R_1 \rightarrow R_1+R_2}
+\begin{blockarray}{ccccc}
+\begin{block}{[cccc]c}
+  1 & 0 & 0 & -1 \\
+  0 & 1 & 0 & 1 \\
+  0 & 0 & 1 & 1 \\
+\end{block}
+\end{blockarray}.
+%
+\end{align*}
+%
+Hermed er den sidste vektor i spannet en lineær kombination af de andre vektorer:
+%
+  \begin{align*}
+    \begin{bmatrix}
+           -1 \\
+           1 \\
+           1 \\
+         \end{bmatrix}
+         = 
+         -1 \begin{bmatrix}
+           1 \\
+           2 \\
+           0 \\
+         \end{bmatrix}
+         +1
+         \begin{bmatrix}
+           -1 \\
+           2 \\
+           4 \\
+         \end{bmatrix}
+          +1
+         \begin{bmatrix}
+           3 \\
+           0 \\
+           1 \\
+         \end{bmatrix}
+  \end{align*} 
+%
+Dermed kan spannet af $\S$ vælges til
+%
+\begin{align*}
+\S &= \left\{
+\begin{bmatrix}
+           1 \\
+           2 \\
+           0 \\
+\end{bmatrix}
+,
+\begin{bmatrix}
+           -1 \\
+           2 \\
+           4 \\
+\end{bmatrix}
+,
+\begin{bmatrix}
+           3 \\
+           0 \\
+           1 \\
+\end{bmatrix}
+\right\}.
+\end{align*}
+\end{eks}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
