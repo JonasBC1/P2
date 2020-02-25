@@ -92,7 +92,7 @@ Lemmaet følger direkte af sætning \ref{thm:afbegen}.
 \end{proof}
 \\
 %
-Bemærk, at sætning \ref{thm:afbegen} (a) i nogle tilfælde kan bruges til at vise, hvorvidt en funktion er ikke-lineær, hvis den ikke opfylder betingelsen. 
+Bemærk, at sætning \ref{thm:afbegen}(a) i nogle tilfælde kan bruges til at vise, hvorvidt en funktion er ikke-lineær, hvis den ikke opfylder betingelsen. 
 Det kan dog forekomme en at en funktion opfylder betingelsen, og stadig er ikke-lineær.
 % 
 \\\\
@@ -120,7 +120,7 @@ Den lineær afbildning af $\mathbf{v}$ er
 T(\mathbf{v})= T(v_1 \mathbf{e}_1+v_2 \mathbf{e}_2+ \ldots + v_n \mathbf{e}_n).
 \end{align*}
 %
-Jævnfør sætning \ref{thm:afbegen} (d) er
+Jævnfør sætning \ref{thm:afbegen}(d) er
 %
 \begin{align*}
 T(\mathbf{v})= v_1 T( \mathbf{e}_1)+ v_2 T( \mathbf{e}_2) + \ldots + v_n T( \mathbf{e}_n),
@@ -141,13 +141,13 @@ T(\mathbf{v})= T_A (\mathbf{v}).
 %
 Lad $B$ være en $m \times n$ matrix. 
 For at bevise entydigheden, lad $T_A=T_B$. 
-Jævnfør sætning \ref{thm:mxvpro} (e) gælder det at $A=B$, eftersom $A \mathbf{v}=B \mathbf{v}$ for alle $\mathbf{v}$ i $\R^n$.
+Jævnfør sætning \ref{thm:mxvpro}(e) gælder det at $A=B$, eftersom $A \mathbf{v}=B \mathbf{v}$ for alle $\mathbf{v}$ i $\R^n$.
 \end{proof}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{eks}\label{entydigeks}
 %
-Lad $T: R^3 \rightarrow R^2$ være defineret ved $T=\left(
+Lad $T: R^3 \rightarrow R^2$ være defineret ved $T\left(
 \begin{bmatrix}
 x_1\\
 x_2\\
@@ -155,33 +155,36 @@ x_3
 \end{bmatrix}
 \right)
 =
-\begin{blockarray}{c}
-\begin{block}{[c]}
+%\begin{blockarray}{c}
+\begin{bmatrix}%{[c]}
 5x_1+x_2\\
-3x_2+2x_3\\
-\end{block}
-\end{blockarray}
+3x_2+2x_3
+\end{bmatrix}
+%\end{blockarray}
 $. \\
-For at danne standardmatricen for $T$, dannes søjlerne $T(\mathbf{e}_1=
+For at danne standardmatricen for $T$, dannes søjlerne 
+\begin{align*}
+T(\mathbf{e}_1)=
 \begin{bmatrix}
 5\\
-0\\
-\end{bmatrix}$,
-$T(\mathbf{e}_2=
+0
+\end{bmatrix}\text{, }
+T(\mathbf{e}_2)=
 \begin{bmatrix}
 1\\
-3\\
-\end{bmatrix}$, 
-$T(\mathbf{e}_3=
+3
+\end{bmatrix}\text{ og }
+T(\mathbf{e}_3)=
 \begin{bmatrix}
 0\\
-2\\
-\end{bmatrix}$. \\
-Derfor er standardmatricen for $T$ \\
-\begin{center}
-$\begin{bmatrix}
+2
+\end{bmatrix}.
+\end{align*}
+Derfor er standardmatricen for $T$
+\begin{align*}
+\begin{bmatrix}
 5 & 1 & 0\\
-0 & 3 & 2\\
-\end{bmatrix}$
-\end{center}
+0 & 3 & 2
+\end{bmatrix}.
+\end{align*}
 \end{eks}
