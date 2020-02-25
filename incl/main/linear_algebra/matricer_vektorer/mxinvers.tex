@@ -5,3 +5,26 @@ En $n \times n$ matrix $A$ er \textbf{invertibel}, hvis en $n \times n$ matrix $
 \end{defn}
 
 
+\begin{thm}{}{mxinvers}
+Givet to $m \times n$ matricer $A$ og $B$, så gælder, at
+\begin{enumerate}[label=(\alph*)]
+\item Hvis $A$ er invertibel, så er $A^{-1}$ invertibel, og $(A^{-1})^{-1}=A$.
+\item Hvis $A$ og $B$ er invertible, så er $AB$ invertibel, og $(AB)^{-1}=A^{-1}B^{-1}$.
+\item Hvis $A$ er invertibel, så er $A^T$ invertibel, og $(A^T)^{-1}=(A^{-1})^T$.
+\end{enumerate}
+\end{thm}
+
+
+\begin{proof}
+Punkt (a) følger af definition \ref{thm:mxinvers}. 
+(b) Antag, at $A$ og $B$ er invertibel matricer, så $(AB)(B^{-1}A^{-1})=A(BB^{-1})A^{-1}=AI_nA^{-1}=AA^{-1}=I_n$. 
+Det kan gennem lignende operationer vises at $(B^{-1}A^{-1})(AB)=I_n$.
+Dermed er $AB$ en invertibel matrix, hvis invers er $A^{-1}B^{-1}$ altså er $AB^{-1}=A^{-1}B^{-1}$.
+
+(c) Antag at A er invertibel. Det følger fra definition ??? at $A^{-1}A=I_n$. 
+Fra punkt (g) i sætning \ref{thm:mxmulti} følger det hermed, at $A^T(A^{-1})^T=(A^{-1}A)^T=I_n^T=I_n$. 
+Ligeledes kan det vises, at $(A^{-1})^TA^T=I_n$. 
+Derfor er $A^T$ en invertibel matrix med inversen $(A{-1})^T$ og $(A^T)^{-1}A=(A^{-1})^T$.
+
+\end{proof}
+
