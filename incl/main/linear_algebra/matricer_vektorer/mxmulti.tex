@@ -1,7 +1,7 @@
 \subsection{Matrixmultiplikation}
 
 Det er ofte nødvendigt at multiplicere matricer med andre matricer. 
-\begin{defn}{}{}\label{def:mxmulti}
+\begin{defn}{}{mxmulti}
 Matrixproduktet $AB$ af en $m \times n$ matrix $A$ og en $n \times p$ matrix $B$ er en $m \times p$ matrix $C$, 
 $$
 C=
@@ -15,7 +15,12 @@ hvor $A\textbf{b}_j$ er den $j$'te række i $C$.
 %
 Som det fremgår af definition \ref{def:mxmulti}, skal antallet af søjler i $A$ tilsvare antallet af rækker i $B$, for at $AB$ er defineret og matrixmultiplikation dermed er muligt. 
 Bemærk, at selvom $AB$ er defineret, er $BA$ ikke nødvendigvis defineret. 
-Hvis både $AB$ og $BA$ er defineret, er de desuden ikke nødvendigvis lig hinanden.\\\\
+Hvis både $AB$ og $BA$ er defineret, er de desuden ikke nødvendigvis lig hinanden. 
+For at beregne værdien af komponenterne i matrixproduktet $AB$ kan følgende sammenhæng mellem den $i$'te række i $A$ og den $j$'te række i $B$ betragtes: 
+$$
+a_{i1}b_{1j} + a_{i2}b_{2j} + \cdots + a_{in}b_{nj}
+\text{. }$$
+\\\\
 %
 \begin{eks}
 Lad 
@@ -119,5 +124,14 @@ Lad $A$ og $B$ være $k \times m$ matricer, $C$ være en $m \times n$ matrix, og
 \end{enumerate}
 \end{thm}
 \begin{proof}
-asdf
+Lad $A$ og $B$ være $k \times m$ matricer, $C$ være en $m \times n$ matrix, og $P$ og $Q$ være $n \times p$ matricer. 
+(a) Den $(i,j)$'te indgang i matrixprodukterne $s(AC)$ og $(sA)C$ har formen $sa_{i,1}c_{1,j} + sa_{i,2}c_{2,j} + \cdots + sa_{i,m}c_{m,j}$, hvilket er det samme som $a_{i,1}sc_{1,j} + a_{i,2}sc_{2,j} + \cdots + a_{i,m}sc_{m,j}$, der er en indgang i $A(sC)$. 
+Da indgangene er ens, er matrixproduktet det samme i de tre tilfælde, hvormed (a) er bevist. 
+(b) Bemærk, at $A$ ikke kan multipliceres med $P$, mens $C$ kan multipliceres med begge. 
+Derfor kan matrixprodukterne $AC$ og $CP$ betragtes som to matricer, således at både $A(CP)$ og $(AC)P$ er $k \times p$ matricer. 
+At komponenten i den $(i,j)$'te indgang i $A(CP)$ er ækvivalent med komponenten i den $(i,j)$'te indgang $(AC)P$ fås ved samme fremgangsmåde som vist i (a), hvormed (b) er bevist. 
+%Måske er (b) ikke helt nok? 
+(c) Lad $\textbf{c}_j$ være en vilkårlig søjle i $C$. Det følger deraf, at $(A+B)\textbf{c}_j=A\textbf{c}_j+B\textbf{c}_j$ jævnfør sætning \ref{}
+
+
 \end{proof}
