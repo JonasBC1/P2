@@ -14,6 +14,7 @@ Et sæt af vektorerne $\mathbf{v}_1, \ldots , \mathbf{v}_k$ i $\R^n$ kaldes line
 x_1\mathbf{v}_1 + \ldots + x_k \mathbf{v}_k = \mathbf{0}, 
 \end{align*}
 kun har den trivielle løsningen $c_1 = \ldots = c_k = 0$.
+\\
 Ellers kaldes vektorerne lineært afhængige.
 \end{defn}  
 %
@@ -202,7 +203,7 @@ Hvilket vil sige at
 \mathbf{u}_i \in \text{span}\{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}.
 \end{align*}
 %
-Antag nu at $\mathbf{u}_i \in \text{span}\{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}$ for $i \geq 2$.
+Antag nu, at $\mathbf{u}_i \in \text{span}\{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}$ for $i \geq 2$.
 Da $\text{span}\{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}$ er mængden af alle linearkombinationer af vektorerne $\mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1}$ haves, at der eksisterer skalarer $c_1, c_2, \ldots c_{i-1}$ således, at
 %
 \begin{align*}
@@ -220,12 +221,12 @@ er en løsning anderledes fra den trivielle løsning, hvor $c_1, c_2,\ldots,c_k=
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Man kan derfor i nogle tilfælde afgøre ved inspektion, hvorvidt en mængde vektorer $\mathbf{v},\mathbf{v}_2,\ldots ,\mathbf{v}_k$ er lineær afhængige. 
-Jævnfør sætning \ref{thm:inspektion}, er mængden af vektorer afhængige hvis $\mathbf{0}$ er en af dem, hvis 2 af vektorerne er parallelle eller hvis der er flere vektorer end deres antal af koordinater. 
-Med udgangspunkt i eksempel \ref{fisk}, ses det at de to vektorer er paralelle, og de er derfor lineært afhængige. 
+Man kan i nogle tilfælde afgøre ved inspektion, hvorvidt en mængde vektorer $\mathbf{v},\mathbf{v}_2,\ldots ,\mathbf{v}_k$ er lineær afhængige. 
+Jævnfør sætning \ref{thm:inspektion}, er mængden af vektorer afhængige, hvis $\mathbf{0}$ er en af dem, hvis 2 af vektorerne er parallelle eller, hvis der er flere vektorer end deres antal af koordinater. 
+Med udgangspunkt i eksempel \ref{fisk}, ses det, at de to vektorer er paralelle, og de er derfor lineært afhængige. 
 \\\\
-Hvis man ikke ved hjælp af inspektion kan afgøre hvorvidt en matrix er lineært afhængig eller lineært uafhængig kan det undersøges det ved at opstilles totalmatricen af mængden af vektorer, hvor det derefter med rækkeopperationer laves på trappeform. 
-Hvis der er pivot-indgange i alle søjlerne er mængden af vektorer lineært uafhængige, hvorimod hvis der er frie variable er mængden af vektorer lineært afhængige.
+Hvis man ikke ved hjælp af inspektion kan afgøre, hvorvidt en matrix er lineært afhængig eller lineært uafhængig, kan det undersøges ved at opstille totalmatricen af mængden af vektorer, hvor det derefter med rækkeopperationer laves på trappeform. 
+Hvis der er pivot-indgange i alle søjlerne, er mængden af vektorer lineært uafhængige, hvorimod hvis der er frie variable, er mængden af vektorer lineært afhængige.
 \\\\
 %
 % Eksempel
@@ -250,8 +251,9 @@ Lad en mængde af vektorer være
 \right\}.
 \end{align*}
 \noindent
-% Skal skrives om fra et spørgsmål 
-Afgør om vektorerne er lineært uafhængige, altså hvis $x_1$ og $x_2 = 0$, er den eneste løsning til linearkombination.
+%
+Hvis vektorerne er lineært uafhængige, altså hvis $x_1 = x_2 = x_3= 0$, er den eneste løsning til linearkombination
+%
 \begin{align*}
 x_1+
 \begin{bmatrix}
@@ -268,10 +270,11 @@ x_1+
            1 \\
            -2 \\
 \end{bmatrix}
-=0 
+=0.
 \end{align*}
 %
 Totalmatricen opkrives 
+%
 \noindent
 \begin{align*}
 A=
@@ -289,7 +292,7 @@ x_1 & x_2 & x_3 & b \\
 1 & \frac{-3}{4} & \frac{1}{4} & 0\\
 0 & \frac{3}{4} & \frac{-9}{4} & 0 \\
 \end{block}
-\end{blockarray}
+\end{blockarray} \\
 \xrightarrow[R_1 \rightarrow R_1+(\frac{3}{4} R_2)]{R_2 \rightarrow \frac{4}{3} \times R_2} 
 \begin{blockarray}{cccc}
 x_1 & x_2 & x_3 & b \\
