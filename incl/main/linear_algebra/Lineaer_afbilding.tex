@@ -10,14 +10,14 @@ $\S_1$ er domænet for funktionen $f$ mens $\S_2$ kaldes codomænet til $f$.
 \textbf{Billedmængden} for $f$ er defineret som mængden af afbildninger, $f(\textbf{v})$, for alle $\textbf{v}\in \S_1$.
 \end{defn}\noindent
 %
-I figur \ref{fig:afbild} ses at både $\textbf{u}$ og $\textbf{v}$ har $\textbf{w}$ som afbildning, da $f(\textbf{u})=f(\textbf{v})=\textbf{w}$.
+På figur \ref{fig:afbild} ses at både $\textbf{u}$ og $\textbf{v}$ har $\textbf{w}$ som afbildning, da $f(\textbf{u})=f(\textbf{v})=\textbf{w}$.
 %Lav flot figur som 2.9 på side 167.
 \input{fig/tikz/dom}
 %
 \\
 For funktioner, som er et matrix-vektor produkt introduceres notationen $T_A$.
 %
-\begin{defn}{}{}
+\begin{defn}{}{fisk3}
 Lad $A$ være en $m \times n$ matrix.
 Funktionen $T_A:\R^n \rightarrow \R^m$ defineret ved $T_A(\textbf{x}) = A\textbf{x}$ for alle $\textbf{x} \in \R^n$ kaldes \textbf{matrix afbildning med $A$}.
 \end{defn}\noindent
@@ -90,3 +90,59 @@ T(a_1\textbf{u}_1 + a_2\textbf{u}_2 + \cdots + a_k\textbf{u}_k) = T(a_1\textbf{u
 \begin{proof}
 Lemmaet følger direkte af sætning \ref{thm:afbegen}.
 \end{proof}
+\\
+%
+Bemærk, at sætning \ref{thm:afbegen} (a) i nogle tilfælde kan bruges til at vise, hvorvidt en funktion er ikke-lineær, hvis den ikke opfylder betingelsen. 
+Det kan dog forekomme en at en funktion opfylder betingelsen, og stadig er ikke-lineær.
+% 
+\\\\
+% 
+Hvis afbildningen T er lineær kan en tilsvarende matrix $A$ opstilles, sådan at $T=T_A$, hvilket er belyst i sætning \ref{thm:fisk2}.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+\begin{thm}{}{fisk2}
+Lad $T: \R^n \rightarrow \R^m$ være lineær. 
+Så findes der en entydig $m \times n$ matrix
+\begin{align*}
+A= [T(\mathbf{e}_1)\text{    } T(\mathbf{e}_2) \text{    } \ldots \text{    } T(\mathbf{e}_n)],
+\end{align*}
+hvor søjlerne er afbildninger af $T$ ud fra standardvektorene i $\R^n$, så det gælder at $T(\mathbf{v})=A \mathbf{v}$  $\forall \mathbf{v} \in \R^n$.
+\end{thm}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{proof}
+Lad $A= [T(\mathbf{e}_1)\text{    } T(\mathbf{e}_2) \text{    } \ldots \text{    } T(\mathbf{e}_n)]$. 
+Den lineær afbildning af $\mathbf{v}$ er
+%
+\begin{align*}
+T(\mathbf{v})= T(v_1 \mathbf{e}_1+v_2 \mathbf{e}_2+ \ldots + v_n \mathbf{e}_n).
+\end{align*}
+%
+Jævnfør sætning \ref{thm:afbegen} (d) er
+%
+\begin{align*}
+T(\mathbf{v})= v_1 T( \mathbf{e}_1)+ v_2 T( \mathbf{e}_2) + \ldots + v_n T( \mathbf{e}_n),
+\end{align*}
+%
+hvilket kan erstattes med elementerne i matrix A
+%
+\begin{align*}
+T(\mathbf{v})&= v_1 \mathbf{a}_1+ v_2 \mathbf{a}_2 + \ldots + v_n \mathbf{a}_n. \\
+&= A \mathbf{v}.
+\end{align*}
+%
+hvilket, jævnfør \ref{defn:fisk3} beviser at
+%
+\begin{align*}
+T(\mathbf{v})= T_A (\mathbf{v}).
+\end{align*}
+%
+Lad $B$ være en $m \times n$ matrix. 
+For at bevise entydigheden, lad $T_A=T_B$. 
+Jævnfør sætning \ref{thm:mxvpro} (e) gælder det at $A=B$, eftersom $A \mathbf{v}=B \mathbf{v}$ for alle $\mathbf{v}$ i $\R^n$.
+\end{proof}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
