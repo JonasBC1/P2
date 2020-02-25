@@ -1,4 +1,4 @@
-\section{Lineær transformation}
+\section{Lineær afbildning}
 %
 Vi definerer en funktion ved følgende:
 %
@@ -7,10 +7,16 @@ Lad $\S _1 \subset \R^n$ og $\S _2 \subset \R^m$.
 En funktion $f$ fra $\S_1$ til $\S_2$, noteret $f:\S_1\rightarrow\S_2$, tildeler enhver vektor $\textbf{v}$ i $\S_1$, en unik vektor $f(\textbf{v})$ i $\S_2$.
 Vektoren $f(\textbf{v})$ kaldes en \textbf{afbildning} af $\textbf{v}$.
 $\S_1$ er domænet for funktionen $f$ mens $\S_2$ kaldes codomænet til $f$.
-Værdimængden for $f$ er defineret som mængden af afbildninger, $f(\textbf{v})$, for alle $\textbf{v}\in \S_1$.
-\end{defn}
+\textbf{Billedmængden} for $f$ er defineret som mængden af afbildninger, $f(\textbf{v})$, for alle $\textbf{v}\in \S_1$.
+\end{defn}\noindent
 %
 I figur \ref{fig:afbild} ses at både $\textbf{u}$ og $\textbf{v}$ har $\textbf{w}$ som afbildning, da $f(\textbf{u})=f(\textbf{v})=\textbf{w}$.
 %Lav flot figur som 2.9 på side 167.
 \input{fig/tikz/dom}
 %
+\\
+For funktioner, som er et matrix-vektor produkt introduceres notationen $T_A$.
+%
+\begin{defn}{}{}
+Lad $A$ være en $m \times n$ matrix. Funktionen $T_A:\R^n \rightarrow \R^m$ defineret ved $T_A(\textbf{x}) = A\textbf{x}$ for alle $\textbf{x} \in \R^n$ kaldes \textbf{matrix afbildning med $A$}.
+\end{defn}
