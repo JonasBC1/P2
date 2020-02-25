@@ -1,0 +1,57 @@
+\\\\
+
+
+\begin{defn}{}{}
+En funktion $f:\R^n \rightarrow \R^m$ siges at være \textbf{surjektiv} hvis dens billedmængde er hele $\R^m$, altså at alle vektorer i $\R^m$ er en afbildning af mindst en vektor i $\R^n$.\\
+Funktionen siges at være \textbf{injektiv} hvis hver entydig vektor i $\R^n$ har en entydig vektor i $\R^m$ som afbildning.\\
+Hvis en funktion er både injektiv og surjektiv så er funktionen \textbf{bijektiv}.
+\end{defn}
+
+\subsection{invertibilitet}
+
+\begin{eks}
+Givet matricen 
+\begin{equation*}
+A=
+\begin{bmatrix}
+1 & 1 & 1\\
+1 & 2 & 2\\
+1 & 3 & 2
+\end{bmatrix}
+\end{equation*}  fra eksempel ''mangler ref'', sådan at:
+\begin{equation*}
+T_A
+\left(
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3
+\end{bmatrix}
+\right)
+=
+\begin{blockarray}{c}
+\begin{block}{[c]}
+x_1+x_2+x_3\\
+x_1+2x_2+2x_3\\
+x_1+3x_2+2x_3\\
+\end{block}
+\end{blockarray}
+\end{equation*}
+Er den inverse funktion:
+\begin{equation*}
+T_{A}^{-1}\left(
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3
+\end{bmatrix}
+\right)=
+\begin{blockarray}{c}
+\begin{block}{[c]}
+2x_1+-1x_2\\
+-x_2+x_3\\
+-x_1+2x_2-x_3\\
+\end{block}
+\end{blockarray}
+\end{equation*}
+\end{eks}
