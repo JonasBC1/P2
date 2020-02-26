@@ -35,6 +35,46 @@ og eftersom $h_1c_1,h_2c_2,\ldots,h_jc_j$ bare er skalarer så er $h\textbf{u}\i
 Hermed er det bevist at spannet af delmængde af $\R^n$ er et underrum til $\R^n$.
 \end{proof}
 
+\subsubsection{Underrum for matricer}
+I forbindelse med underrum er det nogle udvalgte typer af underrum som er relevante i forbindelse med matricer. Den første der vil blive nævnt er \textbf{nulrummet}.
+\begin{defn}{}{}
+Nulrummet til en matrix $A$ er løsningsmængden til matrixligningen $A\textbf{x}=\textbf{0}$. 
+\end{defn}
+Et eksempel nulrummet til en matrix ses i eksempel \ref{nulrum}
+
+\begin{eks}\label{nulrum}
+Nulrummet til matrixen
+$$A=\begin{bmatrix}
+2 & 3 & 2\\
+1 & -1 & 5
+\end{bmatrix}$$
+er løsningssættet til matrixligningen $A\textbf{x}=\textbf{0}$
+som kan opskrives som ligningssystemet
+\begin{align*}
+2x_1+3x_2+2x_3&=0\\
+1x_1-x_2+5x_3&=0
+\end{align*}
+\end{eks} 
+\begin{thm}{}{}
+Hvis A er en $m\times n$ matrice, så er nulrummet af A et underrum af $\R^n$.
+\end{thm}
+\begin{proof}
+Eftersom A er en $m\times n$ matrice så er vektorerne i nulrummet i $\R^n$, da det er løsningerne til $A\textbf{x}=\textbf{0}$. $\textbf{0}$ er en del af nulrummet da $A\textbf{0}=\textbf{0}$. Hvis $\textbf{u}$ og $\textbf{v}$ er i nulrummet så er $A\textbf{u}=\textbf{0}$ og $A\textbf{v}=\textbf{0}$. Deraf har vi at
+$$A(\textbf{u}+\textbf{v})=A\textbf{u}+A\textbf{v}=\textbf{0}+\textbf{0}=\textbf{0}.$$
+Deraf haves at $\textbf{u}+\textbf{v}$ er i nulrummet. For alle skalarer $c$ haves at
+$$A(c\textbf{u})=c(A\textbf{u})=c\textbf{0}=\textbf{0}.$$
+Dette viser at $c\textbf{u}$ er i nulrummet.
+Dette vises at nulrummet af A er et underrum af $\R^n$
+\end{proof}
+\noindent
+En anden type underrum er \textbf{rækkerum} og \textbf{søjlerum}.
+\begin{defn}{}{}
+Rækkerum er spannet som kommer af rækkerne i en matrice.\\
+Søjlerum er spannet af søjlerne i en matrice.
+\end{defn}
+\noindent
+Speciele underrum er også relevant i forbindelse med lineær afbildning.
+Billedmængden af en lineær afbildning er det samme som søjlerummet af dens standard matrix.
 
 \subsection{Basis}
 
