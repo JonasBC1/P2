@@ -117,23 +117,42 @@ $A$ er invertibel, hvis og kun hvis den reducerede trappeform af $A$ er $I_n$.
 \begin{proof}
 $\rightarrow$ Antag, at $n\times n$ matricen $A$ er invertibel, og at der findes en vektor \textbf{v} i $R^n$, så $A\textbf{v}=\textbf{0}$. 
 Deraf følger, at $\textbf{v}=A^{-1}\textbf{0}=\textbf{0}$, da $A$ er en invertibel matrix gælder det for ethvert $B \in \R^n$, at $A\textbf{x}=B$ har løsningen $A^{-1}B$ og derfor er $\textbf{v}=A^{-1}\textbf{0}=\textbf{0}$. 
-Den eneste løsning til problemet er derfor $0$-vektoren $\textbf{0}$. 
-Såfremt $A$ er invertibel gælder det derfor $rank(A)=n$(tjeck lige notationen).
-Det følger derfor fra sætning (den er i liniær uafhængihedsafsnittet forstod ikke helt lablet) at $A$ på reducerettrappeform er $I_n$.
+Den eneste løsning til problemet er derfor $\textbf{0}$. 
+Såfremt $A$ er invertibel følger det derfor fra sætning \ref{thm:mxlinuaf} at $rank(A)=n$.
+Det følger derfor at $A$ på reduceret trappeform er $I_n$.
 $\leftarrow$
 Antag nu at den reducerede trappeform af $A$=$I_n$. 
-Så gælder det fra sætning, at der eksister en invertibel $n \times n$ matrix $P$ hvorom det gælder at $PA=I_n$. 
+Så følger det fra sætning \ref{thm:mxinvertibel}, at der eksister en invertibel $n \times n$ matrix $P$ hvorom det gælder at $PA=I_n$. 
 %
 \begin{align*}
-A=I_nA=(P^{-1}P)A=^{-1}(PA)=P^{-1}.
+A=I_nA=(P^{-1}P)A=P^{-1}(PA)=P^{-1}.
 \end{align*}
 %
-Fra sætning fremgår det at $P^{-1}$ er en invertibel matrix, og det er hermed bevist at $A$ er invertibel da $A=P^{-1}$.
+Fra sætning \ref{thm:mxinvers} fremgår det at $P^{-1}$ er en invertibel matrix, og det er hermed bevist at $A$ er invertibel da $A=P^{-1}$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %find begin example
+\\\\
+Det er fordelagtigt at benytte algoritmer til at invertere matricer. Lad $A$ være en $n \times n$ matrix. 
+Givet et input
+$
+\begin{bmatrix}
+A & I_n
+\end{bmatrix}
+$
+skal algoritmen udføre elementære rækkeoperationer på $A$, således algoritmens output bliver
+$
+\begin{bmatrix}
+R & B
+\end{bmatrix}
+$,
+hvor $R$ er $A$ på reduceret trappeform. 
+Hvis $R=I_n$, er $A$ invertibel og $B=A^{-1}$.
+Hvis $R \neq I_n$, er $A$ ikke invertibel. 
+%
+% 
 \begin{eks}
-givet en matrix $A$ ønskes at finde dennes invers $A^{-1}$.
+Givet en matrix $A$ ønskes at finde dennes invers $A^{-1}$.
 \begin{align*}
 A=\begin{blockarray}{ccc}
 \begin{block}{[ccc]}
@@ -153,7 +172,7 @@ A=\begin{blockarray}{cccccc}
 \end{block}
 \end{blockarray}
 \end{align*}
-Ved hjælp af rækkereduktion omdannes $A$ til reduceret trappeform.
+Ved at udføre rækkeoperationer omdannes $A$ til reduceret trappeform.
 
 \begin{align*}
 A= &
@@ -213,7 +232,7 @@ A= &
 \end{block}
 \end{blockarray}
 \end{align*}
-Det fremgår derfor at $A$ er invertibel da den reducerede trappeform er $I_3$. $B$ siden hvor $I_3$ før var er nu:
+Det fremgår derfor, at $A$ er invertibel, da dens reducerede trappeform er $I_3$. $B$-siden, hvor $I_3$ før var, er nu
 \begin{align*}
 B=\begin{blockarray}{ccc}
 \begin{block}{[ccc]}
