@@ -96,10 +96,11 @@ En række i en matrix kaldes en \textbf{nulrække}, hvis alle indgange er nul, o
 Dette bruges til definitionen af \textbf{trappeform}.
 \begin{defn}{}{}
 En matrix er på trappeform, hvis den opfylder følgende kriterier:
-\itemize
+\begin{enumerate}[label=(\alph*)]
 \item Enhver ikke-nulrække ligger over alle nul rækker.
 \item Den første ikke-nulindgang i en ikke-nulrække ligger i en søjle til højre for første ikke-nulindgange i forrige række.
 \item Hvis en søjle har den første ikke-nulindgang i en række, så er alle indgangene i søjlen under den $0$.
+\end{enumerate}
 \end{defn}
 \begin{eks}
 Betragt $A$ og $B$. $A$ er på trappeform, mens $B$ ikke er på trappeform, da $b_{3,2} \neq 0$. 
@@ -133,9 +134,10 @@ Trappeformen kan reduceres yderligere.
 %
 \begin{defn}{}{redtrap}
 En matrix er på \textbf{reduceret trappeform}, hvis den opfylder følgende kriterier:
-\itemize
+\begin{enumerate}[label=(\alph*)]
 \item Hvis en søjle har den første ikke-nulindgang i en række, så er alle indgange i søjlen $0$.
 \item Den første indgang i hver ikke-nulrække er $1$. 
+\end{enumerate}
 \end{defn}
 \noindent
 Et lineært ligningssystem, som ikke står på trappeform, kan laves om til trappeform og derefter reduceret trappeform, hvilket gør løsningen af systemet mere simpel.
