@@ -1,7 +1,6 @@
 \subsection{Underrum}
 Det kan ofte være belejligt at studere vektorer i en mindre del af $\R^n$, dertil kan der gøres brug af \textbf{underum}.
-
-\begin{defn}{}{}
+\begin{defn}{}{underrum}
 En mængde $W$ bestående af vektorer i $\R^n$ er et underrum til $\R^n$ hvis den opfylder følgende betingelser:	
 \begin{enumerate}[label=(\alph*)]
 	\item  $\textbf{0}\in W$.
@@ -11,6 +10,30 @@ En mængde $W$ bestående af vektorer i $\R^n$ er et underrum til $\R^n$ hvis de
 \end{defn}
 \noindent
 Mængden $\R^n$ er et underrum til sig selv, da summen af enhver 2 vektorer i $\R^n$ tilhører $\R^n$, enhver vektor ganget med en skalar er også i $\R^n$ og $\textbf{0}$ er i $\R^n$. Mængden $\{\textbf{0}\}$ er også et underrum til $\R^n$, og kaldes \textbf{nul-underrummet}.
+
+
+\begin{thm}{}{}
+Spanet af et tælleligt ikke tomt delmængde af $\R^n$ er et underrum af $\R^n$
+\end{thm}
+\begin{proof}
+Lad spannet af en tællelig ikke tom mængde være 
+$\S=\{\textbf{w}_1 , \textbf{w}_2 , \ldots , \textbf{w}_j\}$.
+Eftersom at der kan opskrives en linearkombination $$0\textbf{w}_1 + 0\textbf{w}_2 + \cdots + 0\textbf{w}_j=\textbf{0},$$ så er $\textbf{0}$ i  $\S$, hvilket opfylder betingelse (a) i definition \ref{defn:underrum}.\\
+Lad $\textbf{u}$ og $\textbf{v}$ tilhøre $\S$. Så er\\
+$\textbf{u}=c_1\textbf{w}_1+c_2\textbf{w}_2+\cdots+c_j\textbf{w}_j$ og $\textbf{v}=k_1\textbf{w}_1+k_2\textbf{w}_2+\cdots+k_j\textbf{w}_j$, for nogle skalarer $c_1,c_2,\ldots,c_j$ og $k_1,k_2,\ldots,k_j$. Så kan det omskrives til en linearkombination
+\begin{align*}
+\textbf{u}+\textbf{v}&=(c_1\textbf{w}_1+c_2\textbf{w}_2+\cdots+c_j\textbf{w}_j)+(k_1\textbf{w}_1+k_2\textbf{w}_2+\cdots+k_j\textbf{w}_j)\\
+&=(c_1+k_1)\textbf{w}_1+(c_2+k_2)\textbf{w}_2+\cdots+(c_j+k_j)\textbf{w}_j
+\end{align*}
+hvilket viser at $\textbf{u}+\textbf{v}\in \S$, hvilket opfylder (b) i definition \ref{defn:underrum}.\\
+For enhver skalar $h$, gælder
+\begin{align*}
+h\textbf{u}&=h(c_1\textbf{w}_1+c_2\textbf{w}_2+\cdots+c_j\textbf{w}_j)\\
+&=(h_1c_1)\textbf{w}_1+(h_2c_2)\textbf{w}_2+\cdots+(h_jc_j)\textbf{w}_j,
+\end{align*}
+og eftersom $h_1c_1,h_2c_2,\ldots,h_jc_j$ bare er skalarer så er $h\textbf{u}\in \S$ hvilket opfylder (c) i definition \ref{defn:underrum}.
+Hermed er det bevist at spannet af delmængde af $\R^n$ er et underrum til $\R^n$.
+\end{proof}
 
 
 \subsection{Basis}
