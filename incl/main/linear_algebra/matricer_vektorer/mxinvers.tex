@@ -1,11 +1,87 @@
-\subsection{Inverse matricer}
+\subsection{Elementære og inverse matricer}
+%Den nedenstående, første periode er måske unødvendig, tænker jeg. 
+Inden definitionen af \textbf{inverse matricer} er det relevant at redegøre for \textbf{elementære matricer}. 
+At multiplicere en matrix $A$ med en $n \times n$ elementær matrix $E$ svarer til at udføre én rækkeoperation på $A$. 
+Dermed kan enhver rækkeoperation udføres gennem matrixmultiplikation. 
+En $n \times n$ matrix $E$ er elementær, hvis én rækkeoperation udført på $I_n$ resulterer i $E$. 
+%Eksempel? 
 
+Lad nu $A$ være en $m \times n$ matrix og $E$ en elementær $m \times m$ matrix, der er resultatet af én rækkeoperation udført på $I_m$. 
+Matrixproduktet $EA$ kan opnås ved at udføre én rækkeoperation på $A$. 
+Enhver elementær matrix er desuden invertibel, og dens invers er også en elementær matrix. 
+%
+\begin{thm}{}{eleinv}
+Lad $A$ være en $m \times n$ matrix, og $R$ den reducerede trappeform af $A$. 
+Så eksisterer der en invertibel $m \times n$ matrix $P$, så $PA=R$.
+\end{thm}
+%
+\begin{proof}
+Lad $P$ være en invertibel matrix, så 
+$
+\begin{bmatrix}
+A & \textbf{b}
+\end{bmatrix}
+=
+\begin{bmatrix}
+R & \textbf{c}
+\end{bmatrix}
+$.
+Så gælder der, at 
+$$
+\begin{bmatrix}
+PA & P\textbf{b}
+\end{bmatrix}
+=P
+\begin{bmatrix}
+A & \textbf{b}
+\end{bmatrix}
+=
+\begin{bmatrix}
+R & \textbf{c}
+\end{bmatrix}
+\text{, }
+$$
+hvormed $PA=R$ og $P\textbf{b}=\textbf{c}$.
+Heraf følger, at $A=P^{-1}R$ og $\textbf{b}=P^{-1}\textbf{c}$, da $P$ er invertibel. 
+
+Antag, at $\textbf{v}$ er en løsning til $A\textbf{x}=\textbf{b}$. Så er
+$$
+R\textbf{v}=(PA)\textbf{v}=P(A\textbf{v})=P\textbf{b}=\textbf{c},
+$$
+hvormed $\textbf{v}$ er en løsning til $R\textbf{x}=\textbf{c}$. 
+Antag nu i stedet, at $\textbf{v}$ er en løsning til $R\textbf{x}=\textbf{c}$. Så er
+$$
+A\textbf{v}=(P^{-1}R)\textbf{v}=P^{-1}(R\textbf{v})=P^{-1}\textbf{c}=\textbf{b},
+$$
+hvormed $\textbf{v}$ er en løsning til $A\textbf{x}=b$. Dermed er det bevist, at $A\textbf{x}=b$ og $R\textbf{x}=c$ har samme løsning.
+\end{proof}
+%
+\noindent
+Sætning \ref{thm:eleinv} medfører desuden korollar \ref{kor:eleinv}.
+%måske noget mere her (at det er vigtigt for rækkeoperationer?).  
+\begin{kor}{}{eleinv}
+Matrixligningerne $A\textbf{x}=\textbf{b}$ og $R\textbf{x}=\textbf{c}$ har samme løsninger, hvor 
+$
+\begin{bmatrix}
+R & \textbf{c}
+\end{bmatrix}
+$
+er den reducerede trappeform af den udvidede matrix 
+$
+\begin{bmatrix}
+A & \textbf{b}
+\end{bmatrix}
+$.
+\end{kor}
+Beviset for korollar \ref{kor:eleinv} følger af beviset for sætning \ref{thm:eleinv} med tilføjelsen, at hvis $\textbf{b}=\textbf{0}$, så er $\textbf{c}=\textbf{0}$, hvilket resulterer i nulvektoren i begge udtryk. 
+%
+%
 \begin{defn}{}{mxinvers}
 En $n \times n$ matrix $A$ er \textbf{invertibel}, hvis en $n \times n$ matrix $B$ eksisterer, så $AB=BA=I_n$. $B$ er i så fald $A$'s invers. 
 \end{defn}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Det er dog ikke altid, der findes en matrix $B$, så kriterierne i definition \ref{defn:mxinvers} opfyldes. 
-Såfremt $A$ er en invertibel $n \times n$ matrix, gælder det for ethvert $B \in \R^n$, at $A\textbf{x}=B$ har løsningen $A^{-1}B$.
+Såfremt $A$ er en invertibel $n \times n$ matrix, gælder det for ethvert $B \in \R^n$, at $A\textbf{x}=B$ har den entydige løsning $A^{-1}B$.
 %
 \begin{thm}{}{mxinvertibel}
 Lad $A$ være en $n \times n$ matrix. 
@@ -18,12 +94,15 @@ Deraf følger, at $\textbf{v}=A^{-1}\textbf{0}=\textbf{0}$, da $A$ er en inverti
 Den eneste løsning til problemet er derfor $0$-vektoren $\textbf{0}$. 
 Såfremt $A$ er invertibel gælder det derfor $rank(A)=n$(tjeck lige notationen).
 Det følger derfor fra sætning (den er i liniær uafhængihedsafsnittet forstod ikke helt lablet) at $A$ på reducerettrappeform er $I_n$.
-$leftarrow$
+$\leftarrow$
 Antag nu at den reducerede trappeform af $A$=$I_n$. 
-Så gælder det fra sætning, at der eksister en invertibel $n \times n$ matrix $P$ hvorom det gælder at $PA=I_n$.
-$$A=I_nA=(P^{-1}P)A=^{-1}(PA)=P^{-1}$$
+Så gælder det fra sætning, at der eksister en invertibel $n \times n$ matrix $P$ hvorom det gælder at $PA=I_n$. 
+%
+\begin{align*}
+A=I_nA=(P^{-1}P)A=^{-1}(PA)=P^{-1}.
+\end{align*}
+%
 Fra sætning fremgår det at $P^{-1}$ er en invertibel matrix, og det er hermed bevist at $A$ er invertibel da $A=P^{-1}$.
-
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Inverse matricer har en række egenskaber, som formuleret i sætning \ref{thm:mxinvers} og \ref{thm:mxinvers2}. 
@@ -62,15 +141,23 @@ Da er følgende udsagn ækvivalente.
 \item Spannet af søjlerne i $A$ er $R^n$.
 \item ligningssystemet $A\textbf{x}=\textbf{b}$ er konsistent for alle $\textbf{b}$ i $R^n$.
 \item null$(A)$=0.
-\item Søjlerne i $A$ er liniært uafhængige.
+\item Søjlerne i $A$ er lineært uafhængige.
 \item den eneste løsning for $A\textbf{x}=\textbf{O}$ er $\textbf{O}$.
 \item Der eksisterer en $n \times n$ matrix $B$ så $BA=I_n$.
 \item Der eksister en $n \times n$ matrix $C$ så $AC=I_n$
-\item $A$ er et produkt af elementærmatricer.
+\item $A$ er et produkt af elementarmatricer.
 %hvis vi tager det sidste punkt med er vi også nødt til at redegøre for det. 
-
 \end{enumerate}
 \end{thm}
 \begin{proof}
-(a) og (b) er ækvivalente som konsekvens af sætning \ref{thm:mxinvertibel}. Da $A$ er en $n \times n$ matrix er dette ligeledes ækvivalent med $c$, $d$ og $e$ som følger af sætning ??
+Jævnfør sætning \ref{thm:mxinvertibel} er (a) og (b) ækvivalente. 
+Da $A$ er kvadratisk, er (b) ligeledes ækvivalent med (c), (d) og (e) jævnfør sætning \ref{thm:spaneqv}. 
+Jævnfør sætning \ref{thm:mxlinuaf} er (b) desuden ækvivalent med (f), (g) og (h). 
+Eftersom (a) er ækvivalent med (b), er (a) også ækvivalent med (c), (d), (e), (f), (g) og (h). 
+
+At (a) og (k) er ækvivalente, bevises i to skridt. 
+(1) Bemærk, at hvis $A$ er invertibel, så er $I_n$ er den reducerede trappeform af $A$. 
+%Der skal skrives om elementarmatricer, før vi kan lave resten af beviset ordentligt. 
 \end{proof}
+
+
