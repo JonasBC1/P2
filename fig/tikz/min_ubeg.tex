@@ -5,27 +5,22 @@
 	axis lines = left,
 	xlabel = $x_1$,
 	ylabel = {$x_2$},
-	legend style={at={(0.8,0.05)},anchor=south west},
+	legend style={at={(0.45,0.025)},anchor=south west},
 ]
-	\addplot[name path=b, domain={0:1}, color=myblue, style=very thick,samples=2]{2*x+10};
+	\addplot[name path=b, domain={0:5}, color=myblue, style=very thick,samples=2]{2*x+10};
 	\addlegendentry{$2x_1-x_2 \leq -10$}
-	\addplot[name path=a, domain={0:13.5}, color=mygreen, style=very thick, samples=2]{x-7};
+	\addplot[name path=a, domain={0:15}, color=mygreen, style=very thick, samples=2]{x-7};
 	\addlegendentry{$x_1-x_2 \geq 7$}
-	\addplot[domain=0:15,samples=2,color=myred, style=very thick]{-x+20};
-	\addlegendentry{$x_1 + x_2 \leq 20$}
-	\addplot[name path=c, domain={1:8}, color=black, style=very thick,samples=2]{12};
-	\addlegendentry{$x_2 \leq 12$}
+	\addplot[name path=c, domain={5:15}, color=white, style=very thick,samples=2]{20};
 	
 	\tikzfillbetween [of=a and b]{myblue!15}
 	\tikzfillbetween [of=c and a]{myblue!15}
 	
-	\addplot[domain=0:15,samples=2,color=myred, style=very thick]{-x+20};
 	\addplot[domain=0:5,samples=2,color=myblue, style=very thick]{2*x+10};
 	\addplot[domain=0:15,samples=2,color=mygreen, style=very thick]{x-7};
-	\addplot[domain=0:15,samples=2,color=black, style=very thick]{12};
 
 \end{axis}
 \end{tikzpicture}
 \caption{Betingelserne, der danner mulighedsområdet, markeret med blå, for minimeringsproblemet.}
-\label{sammenligning_kompleks}
+\label{fig:min_ubeg}
 \end{figure}
