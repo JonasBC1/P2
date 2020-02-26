@@ -210,5 +210,62 @@ $$
 Et eller andet om hvilke egenskaber matrixvektorprodukt har.
 
 \begin{thm}{}{mxvpro}
-Sætning 1.3
+Lad $A$ og $B$ være $m \times n$ matricer, og lad $u$ og $v$ være vektorer i $R^n$. Så gælder at
+\begin{enumerate}
+\item $A(\mathbf{u}+\mathbf{v})=A\mathbf{u}+A\mathbf{v}$.
+\item $A(c\mathbf{u})=c(A\mathbf{u})=(cA)\mathbf{u}$ for enhver skalar c
+\item $(A+B)\mathbf{u}=A\mathbf{u}+B\mathbf{u}$.
+\item $A\mathbf{e}_j=\mathbf{a}_j$ for $j=1,2,\ldots,n$ hvor $\mathbf{e}_j$ er den j'te standardvektor i $R^n$.
+\item Hvis $B$ er en $m \times n$ matrix der opfylder at $B\mathbf{w}=A\mathbf{w}$ for alle $\mathbf{w}$ i $R^n$ så gælder at $B=A$.
+\item $A\mathbf{0}$ er $m \times 1$ nulvektoren.
+\item hvis $O$ er $m \times n$ nulmatricen, så gælder at $O\mathbf{v}$ er $m \times 1$ nulvektoren.
+\item $I_n\mathbf{v}=\mathbf{v}$.
+\end{enumerate}
 \end{thm}
+\begin{proof}
+(a)\\
+Da den i'te komponent af $\textbf{u}$ og $\textbf{v}$ er $u_i$ og $v_i$ kan det opskrives som
+\begin{align*}
+A(\mathbf{u}+\mathbf{v})&=(u_1+v_1)\mathbf{a}_1+(u_2+v_2)\mathbf{a}_2+\cdots + (u_n+v_n)\mathbf{a}_n \\
+&=(u_1\mathbf{a}_1+u_2\mathbf{a}_2+\cdots+u_n\mathbf{a}_n)+(v_1\mathbf{a}_1+v_2\mathbf{a}_2+\cdots+v_n\mathbf{a}_n) \\
+&=A\mathbf{u}+A\mathbf{v}
+\end{align*}
+(b)\\
+\begin{align*}
+A(c \textbf{u})&=\textbf{A}_1(cu_1)+\textbf{A}_2(cu_2) + \cdots + \textbf{A}_n(cu_n) \\
+&=\textbf{A}_1cu_1+\textbf{A}_2cu_2 + \cdots + \textbf{A}_ncu_n \\
+&=c(\textbf{A}_1u_1)+c(\textbf{A}_2u_2)+\cdots+c(\textbf{A}_1u_1)
+=c(A \textbf{u}) \\
+&= u_1(c\textbf{A}_1)+u_1(c\textbf{A}_2)+\cdots+u_n(c\textbf{A}_n)=\textbf{u}(Ac)
+\end{align*}
+(c)\\
+\begin{align*}
+(A+B)\textbf{u}&=(\textbf{A}_1+\textbf{b}_1)u_1 +(\textbf{A}_2+\textbf{B}_2)u_2 \cdots (\textbf{A}_n+\textbf{B}_n)u_n \\
+&=(\textbf{A}_1u_1+\textbf{A}_2u_2+ \cdots + \textbf{A}_nu_n)+(\textbf{B}_1u_1+\textbf{B}_2u_2+ \cdots + \textbf{B}_nu_n) \\
+&=A\textbf{u}+B\textbf{u}
+\end{align*}
+(d)\\
+den $a_j$'te søjle multipliceres med $1$ mens de resterende multipliceres med $0$ og derfor er resultatet af $A\mathbf{e}_j=\mathbf{a}_j$ \\
+(e)\\
+\begin{align*}
+B\textbf{w}&=A\textbf{w} \rightarrow\\  \frac{\textbf{b}_1u_1+\textbf{b}_2u_2+\cdots+\textbf{b}_nu_n}{u_1+u_2+\cdots+u_n} &=\frac{\textbf{a}_1u_1+\textbf{a}_2u_2+\cdots+\textbf{a}_nu_n}{u_1+u_2+\cdots+u_n} \rightarrow\\   B&=A 
+\end{align*}
+(f) \\
+dette kan opskrives som: 
+\begin{align*}
+0\textbf{A}_1+0\textbf{A}_2+\cdots+0\textbf{A}_n
+\end{align*}
+resultatet er 0-vektoren med samme antal rækker som $A$ altså $m$ \\
+(g) \\
+Produktet af en vektor og en $m \times n$ matrix er en vektor med størelsen $1 \times m$, da alle indgange i matricen er $0$ bliver produktet netop en $1 \times m$ nulvektor. 
+\\
+(h) \\
+Værdien af komponenterne i produktet af $I_n\mathbf{v}$ har følgende form 
+$\begin{bmatrix}
+1v_1 \\
+1v_2 \\
+\vdots \\
+1v_n  \\
+\end{bmatrix}$
+det følger derfor at $I_n\mathbf{v}=v$
+\end{proof}
