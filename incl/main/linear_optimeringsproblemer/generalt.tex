@@ -1,33 +1,44 @@
 \chapter{Lineær optimeringsproblemer}
-% God arbejdslyst 
-Bare lige noter til opstart xD 
+%
+Lineære programmering er en problemstilling, hvor det ønskes at optimere et problem bestående af en lineære funktion og \textbf{lineære betingelser}.
+Funktionen som optimeres for kaldes \textbf{objektfunktionen}.
+Objektfunktionen kan enten optimeres for maksimum eller minimum og er begrænset af de lineære betingelser.
+Findes der et maksimum eller minimum inde for begrænsningerne kaldes dette for den problemets optimale værdi.
 \\\\
-*Generel definition på optimering 
-- Lineær programmering er? 
-*Alle tingene er lineære 
-- funktion, som ønskes optimeret, begrænsininger (betingelser) 
-
-* Objektfunktion 
-- objektfunktionens maksimum = optimale værdi 
-
-Standart form 
-- Maksimering og mininmering 
-
-Består af 
-- objektfunktion 
-- betingelser (ligheds og ulighedsbetingelser)
-	Lineære betingelser 
-- Ikke-negativitetsbetingelser
-
-maksimere noget 
-i forhold til 
-og 
-
-- Geometrisk tolkning 
-- plot i 2d 
-
-- Ubegrænset og begrænset 
-- konsistent og inkonsistent
-
-
-slack variabler 
+Et generelt lineært maksimeringsproblem kan opstilles som følgende:
+%
+\begin{align*}
+\begin{array}{lrll}
+\text{Maksimer}		&\textbf{c}^T\textbf{x}	&			&\\
+\text{begrænset af}	&\textbf{a}^T\textbf{x}	&\geq b_i,	&i \in M_1,\\
+					&\textbf{a}^T\textbf{x}	&\leq b_i,	&i \in M_2,\\
+					&\textbf{a}^T\textbf{x}	& = b_i,	&i \in M_3,\\
+					&x_j					&\geq 0,	&j \in N_1,\\
+					&x_j					&\leq 0,	&j \in N_2,
+\end{array}
+\end{align*}
+%
+hvor $M_1, M_2, M_3, N_1, N_2$ er endelige mængder med indexer.
+\textbf{Mulighedsområdet} betegner mængden af vektorer, som opfylder alle betingelserne.
+Vektorer indeholdt i mulighedsområdet kaldes for \textbf{løsningsvektorer}.
+Hvis mulighedsområdet er uendeligt stor kaldes optimeringsproblemet for \textbf{ubegrænset}.
+Ellers kaldes det \textbf{begrænset}.\\\\
+%
+\begin{eks}
+Betragt minimeringsproblem
+%
+\begin{align*}
+\begin{array}{lrrlr}
+\text{Minimer}		&	\multicolumn{2}{c}{4x_1-3x_2}  &\\
+\text{begrænset af}	&2x_1& - x_2			&\leq 	&-10,\\
+					&x_1& - x_2				&\geq	& 7,\\
+					&x_1& + x_2				&\leq	& 20,\\
+					&x_1&					&\geq	& 0,\\
+					& &x_2					&\leq	& 12.
+\end{array}
+\end{align*}
+%
+På figur \ref{} kan mulighedsområdet, markeret med blå, for minimeringsproblemet ses.
+%
+\input{fig/tikz/min_beg}
+\end{eks}
