@@ -1,24 +1,33 @@
 \section{Standardform}
 % 
-
+Hvis et lineært optimeringsproblem er på formen
+%
 \begin{align*}
 \begin{array}{lrl}
 \text{Maksimer}		&\textbf{c}^T\textbf{x}	&				\\
-\text{begrænset af}	&\textbf{A}\textbf{x}	&=\mathbf{b},	\\
-					&\mathbf{x}				&\geq \mathbf{0},		
+\text{begrænset af}	&A\textbf{x}	&=\mathbf{b},	\\
+					&\mathbf{x}				&\geq \mathbf{0},
 \end{array}
 \end{align*}
-hvor 
+%
+er optimeringsproblemet på \textbf{standardform}.
+Bemærk at på standardform er problemet et minimeringsproblem og betingelserne er lighedsbetingelser og ikke-negativsbetingelser.\\\\
+%
+For at omskrive et minimumsproblem til et maksimumsproblem multipliceres objektfunktionen med $-1$.
+Uligheds-betingelserne ændres ligeledes fra $A_ix_i \geq b_i$ til $A_ix_i \leq b_i$.
+Derefter tilføjes der \textbf{slack-variabler} til venstre side af ulighederne for at gøre dem til ligheder.
+I denne rapport bliver $s_i$ benyttet om slack-variabler.
+Med denne fremgangsmåde kan alle lineære optimeringsproblemer omskrives til standardform.
+Det er derfor kun nødvendigt med en metode til at løse optimeringsproblemer på denne form.
+%
+%\begin{align*}
+%\sum^n_{i=1} \mathbf{A}_i x_i = \mathbf{b}.
+%\end{align*}
 
-\begin{align*}
-\begin{array}{lrl}
-\text{Minimer}		&\textbf{c}^T\textbf{x}	&				\\
-\text{begrænset af}	&\textbf{A}\textbf{x}	&=\mathbf{b},	\\
-					&\mathbf{x}				&\geq \mathbf{0},		
-\end{array}
-\end{align*}
-hvor 
-
-\begin{align*}
-\sum^n_{i=1} \mathbf{A}_i x_i = \mathbf{b}.
-\end{align*}
+%\begin{align*}
+%\begin{array}{lrl}
+%\text{Minimer}		&\textbf{c}^T\textbf{x}	&				\\
+%\text{begrænset af}	&\textbf{A}\textbf{x}	&=\mathbf{b},	\\
+%					&\mathbf{x}				&\geq \mathbf{0},		
+%\end{array}
+%\end{align*}
