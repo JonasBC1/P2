@@ -131,6 +131,100 @@ A=I_nA=(P^{-1}P)A=^{-1}(PA)=P^{-1}.
 Fra sætning fremgår det at $P^{-1}$ er en invertibel matrix, og det er hermed bevist at $A$ er invertibel da $A=P^{-1}$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%find begin example
+\begin{eks}
+givet en matrix $A$ ønskes at finde dennes invers $A^{-1}$.
+\begin{align*}
+A=\begin{blockarray}{ccc}
+\begin{block}{[ccc]}
+1 & 1 & 1  \\
+1 & 2 & 2  \\
+1 & 3 & 2  \\
+\end{block}
+\end{blockarray}
+\end{align*}
+Denne opskrives nu i totalmatricen $[A I_3]$
+\begin{align*}
+A=\begin{blockarray}{cccccc}
+\begin{block}{[ccc|ccc]}
+1 & 1 & 1 & 1 & 0 & 0 \\
+1 & 2 & 2 & 0 & 1 & 0 \\
+1 & 3 & 2 & 0 & 0 & 1 \\
+\end{block}
+\end{blockarray}
+\end{align*}
+Ved hjælp af rækkereduktion omdannes $A$ til reduceret trappeform.
+
+\begin{align*}
+A= &
+\begin{blockarray}{cccccc}
+\begin{block}{[ccc|ccc]}
+1 & 1 & 1 & 1 & 0 & 0 \\
+1 & 2 & 2 & 0 & 1 & 0 \\
+1 & 3 & 2 & 0 & 0 & 1 \\
+\end{block}
+\end{blockarray}	\\
+\xrightarrow{R_2 \rightarrow R_2-R_1} &
+\begin{blockarray}{cccccc}
+\begin{block}{[ccc|ccc]}
+1 & 1 & 1 & 1 & 0 & 0 \\
+0 & 1 & 1 & -1 & 1 & 0 \\
+1 & 3 & 2 & 0 & 0 & 1 \\
+\end{block}
+\end{blockarray}	\\
+\xrightarrow{R_3 \rightarrow R_3-R_1} &
+\begin{blockarray}{cccccc}
+\begin{block}{[ccc|ccc]}
+1 & 1 & 1 & 1 & 0 & 0 \\
+0 & 1 & 1 & -1 & 1 & 0 \\
+0 & 2 & 1 & -1 & 0 & 1 \\
+\end{block}
+\end{blockarray}	\\
+\xrightarrow{R_3 \rightarrow R_3-2R_2} &
+\begin{blockarray}{cccccc}
+\begin{block}{[ccc|ccc]}
+1 & 1 & 1 & 1 & 0 & 0 \\
+0 & 1 & 1 & -1 & 1 & 0 \\
+0 & 0 & -1 & 1 & -2 & 1 \\
+\end{block}
+\end{blockarray}	\\
+\xrightarrow{R_3 \rightarrow -1R_3} &
+\begin{blockarray}{cccccc}
+\begin{block}{[ccc|ccc]}
+1 & 1 & 1 & 1 & 0 & 0 \\
+0 & 1 & 1 & -1 & 1 & 0 \\
+0 & 0 & 1 & -1 & 2 & -1 \\
+\end{block}
+\end{blockarray}	\\
+\xrightarrow[R_1 \rightarrow R_1-R_3]{R_2 \rightarrow R_2-R_3} &
+\begin{blockarray}{cccccc}
+\begin{block}{[ccc|ccc]}
+1 & 1 & 0 & 2 & -2 & 1 \\
+0 & 1 & 0 & 0 & -1 & 1 \\
+0 & 0 & 1 & -1 & 2 & -1 \\
+\end{block}
+\end{blockarray}	\\
+\xrightarrow{R_1 \rightarrow R_1-R_2} &
+\begin{blockarray}{cccccc}
+\begin{block}{[ccc|ccc]}
+1 & 0 & 0 & 2 & -1 & 0 \\
+0 & 1 & 0 & 0 & -1 & 1 \\
+0 & 0 & 1 & -1 & 2 & -1 \\
+\end{block}
+\end{blockarray}
+\end{align*}
+Det fremgår derfor at $A$ er invertibel da den reducerede trappeform er $I_3$. $B$ siden hvor $I_3$ før var er nu:
+\begin{align*}
+B=\begin{blockarray}{ccc}
+\begin{block}{[ccc]}
+2 & -1 & 0 \\
+0 & -1 & 1 \\
+-1 & 2 & -1 \\
+\end{block}
+\end{blockarray}=A^{-1}
+\end{align*}
+\end{eks}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Sætning \ref{thm:mxinvers2} redegør for nogle yderligere egenskaber for invertible matricer. 
 %
 \begin{thm}{}{mxinvers2}
