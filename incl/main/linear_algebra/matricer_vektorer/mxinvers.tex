@@ -116,19 +116,19 @@ $A$ er invertibel, hvis og kun hvis den reducerede trappeform af $A$ er $I_n$.
 %
 \begin{proof}
 $\rightarrow$ Antag, at $n\times n$ matricen $A$ er invertibel, og at der findes en vektor \textbf{v} i $R^n$, så $A\textbf{v}=\textbf{0}$. 
-Deraf følger, at $\textbf{v}=A^{-1}\textbf{0}=\textbf{0}$, da $A$ er en invertibel matrix gælder det for ethvert $B \in \R^n$, at $A\textbf{x}=B$ har løsningen $A^{-1}B$ og derfor er $\textbf{v}=A^{-1}\textbf{0}=\textbf{0}$. 
+Deraf følger, at $\textbf{v}=A^{-1}\textbf{0}=\textbf{0}$. Da $A$ er en invertibel matrix, gælder det for ethvert $B \in \R^n$, at $A\textbf{x}=B$ har løsningen $A^{-1}B$ og derfor er $\textbf{v}=A^{-1}\textbf{0}=\textbf{0}$. 
 Den eneste løsning til problemet er derfor $\textbf{0}$. 
-Såfremt $A$ er invertibel følger det derfor fra sætning \ref{thm:mxlinuaf} at $rank(A)=n$.
-Det følger derfor at $A$ på reduceret trappeform er $I_n$.
+Såfremt $A$ er invertibel, følger det derfor fra sætning \ref{thm:mxlinuaf}, at $rank(A)=n$.
+Det følger derfor, at $A$ på reduceret trappeform er $I_n$.
 $\leftarrow$
-Antag nu at den reducerede trappeform af $A$=$I_n$. 
-Så følger det fra sætning \ref{thm:mxinvertibel}, at der eksister en invertibel $n \times n$ matrix $P$ hvorom det gælder at $PA=I_n$. 
+Antag nu, at den reducerede trappeform af $A$=$I_n$. 
+Så følger det fra sætning \ref{thm:mxinvertibel}, at der eksister en invertibel $n \times n$ matrix $P$, hvorom det gælder, at $PA=I_n$. 
 %
 \begin{align*}
 A=I_nA=(P^{-1}P)A=P^{-1}(PA)=P^{-1}.
 \end{align*}
 %
-Fra sætning \ref{thm:mxinvers} fremgår det at $P^{-1}$ er en invertibel matrix, og det er hermed bevist at $A$ er invertibel da $A=P^{-1}$.
+Fra sætning \ref{thm:mxinvers} fremgår det, at $P^{-1}$ er en invertibel matrix, og det er hermed bevist, at $A$ er invertibel, da $A=P^{-1}$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %find begin example
