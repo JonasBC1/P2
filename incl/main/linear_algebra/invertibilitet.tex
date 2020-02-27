@@ -1,24 +1,23 @@
-
 \begin{defn}{}{}
-En funktion $f:\R^n \rightarrow \R^m$ siges at være \textbf{surjektiv} hvis dens billedmængde er hele $\R^m$, altså at alle vektorer i $\R^m$ er en afbildning af mindst en vektor i $\R^n$.\\
-Funktionen siges at være \textbf{injektiv} hvis hver entydig vektor i $\R^n$ har en entydig vektor i $\R^m$ som afbildning.\\
-Hvis en funktion er både injektiv og surjektiv så er funktionen \textbf{bijektiv}.
+En funktion $f:\R^n \rightarrow \R^m$ siges at være \textbf{surjektiv}, hvis dens værdimængde er hele $\R^m$, tilsvarende at alle vektorer i $\R^m$ er en afbildning af mindst én vektor i $\R^n$.\\
+Funktionen siges at være \textbf{injektiv}, hvis hver entydig vektor i $\R^n$ har en entydig vektor i $\R^m$, som afbildning.\\
+Hvis en funktion er både injektiv og surjektiv, så er funktionen \textbf{bijektiv}.
 \end{defn}
-%Hvorfor står ovenstående uden for subsection? :0)
+%
+% EKSEMPEL! tilføjes 
+%
 \subsection{Invertibilitet af funktioner}
-
-Bemærk at notationen for inverse funktioner $f^{-1}$ ikke skal forstås som $\dfrac{1}{f}$, men blot notation som betegner den inverse funktion af $f$.
-Givet en funktion $T:\R^n \rightarrow \R^n$ som er en lineær afbildning med standard matricen $A$.
-Så er T invertibel, hvis og kun hvis, $A$ er invertibel. Lad A være en $n \times n$ invertibel matrix. 
-Så haves der at for alle $\textbf{v}$ at
-$$T_AT_{A^-1}(\textbf{v})=T_A(T_{A^-1}(\textbf{v}))=T_A(A^{-1}\textbf{v})=A(A^{-1}\textbf{v})=AA^{-1}\textbf{v}=I_n\textbf{b}=\textbf{v}$$ dertil er
-$$T_{A^-1}T_A(\textbf{v})=\textbf{v}$$
-\noindent
-Dette medfører $T^{-1}=T_{A^{-1}}$, og som følge deraf er $T^{-1}$ linear og dens standard matrix er $A^{-1}$.
-
-
-
-
+%
+Bemærk, at notationen for inverse funktioner $f^{-1}$ ikke skal forstås som $\dfrac{1}{f}$, men blot notation, der betegner den inverse funktion af $f$.
+Givet en funktion $T:\R^n \rightarrow \R^n$, som er en lineær afbildning med standardmatricen $A$, så er $T$ invertibel, hvis og kun hvis $A$ er invertibel. 
+Lad A være en $n \times n$ invertibel matrix. 
+Så haves for alle $\textbf{v}$, at
+$$T_AT_{A^-1}(\textbf{v})=T_A(T_{A^-1}(\textbf{v}))=T_A(A^{-1}\textbf{v})=A(A^{-1}\textbf{v})=AA^{-1}\textbf{v}=I_n\textbf{v}=\textbf{v}.$$ Dertil er
+$$T_{A^-1}T_A(\textbf{v})=\textbf{v}.$$
+%
+Dette medfører $T^{-1}=T_{A^{-1}}$. 
+Som følge deraf er $T^{-1}$ linear og dens standard matrix er $A^{-1}$.
+%
 \begin{eks}
 Givet matricen 
 \begin{equation*}
@@ -28,7 +27,8 @@ A=
 1 & 2 & 2\\
 1 & 3 & 2
 \end{bmatrix}
-\end{equation*}  fra eksempel ''mangler ref'', sådan at:
+\end{equation*}  
+fra eksempel \ref{eks:fisk5}, sådan at:
 \begin{equation*}
 T_A
 \left(
@@ -45,7 +45,7 @@ x_1+x_2+x_3\\
 x_1+2x_2+2x_3\\
 x_1+3x_2+2x_3\\
 \end{block}
-\end{blockarray}
+\end{blockarray}.
 \end{equation*}
 Er den inverse funktion:
 \begin{equation*}
@@ -62,6 +62,6 @@ x_3
 -x_2+x_3\\
 -x_1+2x_2-x_3\\
 \end{block}
-\end{blockarray}
+\end{blockarray}.
 \end{equation*}
 \end{eks}

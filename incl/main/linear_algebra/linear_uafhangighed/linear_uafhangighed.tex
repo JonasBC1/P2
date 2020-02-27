@@ -9,11 +9,11 @@ En mængde af vektorer i $\R^n$ kan være \textbf{lineært afhængige} eller \te
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
 \begin{defn}{Lineær afhængighed og lineær uafhængighed}{}
-En mængde af vektorer $\mathbf{v}_1, \ldots , \mathbf{v}_k \in \R^n$ kaldes lineært uafhængige, hvis der eksisterer skalarer $x_1,x_2, \ldots , x_l$, sådan at ligningen 
+En mængde af vektorer $\mathbf{v}_1, \mathbf{v}_2, \ldots , \mathbf{v}_k \in \R^n$ kaldes lineært uafhængige, hvis der eksisterer skalarer $x_1, x_2, \ldots , x_k$, sådan at ligningen 
 \begin{align*}
-x_1\mathbf{v}_1 + \ldots + x_k \mathbf{v}_k = \mathbf{0}, 
+x_1\mathbf{v}_1 + x_2\mathbf{v}_2 + \cdots + x_k \mathbf{v}_k = \mathbf{0}, 
 \end{align*}
-kun har den trivielle løsningen $c_1 = \ldots = c_k = 0$.
+kun har den trivielle løsning $x_1 = x_2 = \cdots = x_k = 0$.
 \\
 Ellers kaldes vektorerne lineært afhængige.
 \end{defn}  
@@ -36,7 +36,7 @@ Givet
 \end{bmatrix}
 \right\},
 \end{align*}
-opstilles den trivielle løsning  
+opstilles ligningen  
 %
 \begin{align*}
 x_1 
@@ -52,8 +52,8 @@ x_1
 = \mathbf{0}.
 \end{align*}
 %
-Denne er kun opfyldt, hvis $x_1=x_2=0$. 
-Eftersom alle koefficienterne er $o$, er spannet af $\S_1$ lineært uafhængigt.
+Denne ligning er kun opfyldt, hvis $x_1=x_2=0$. 
+Eftersom alle koefficienterne er $0$, er vektorerne i $\S_1$ lineært uafhængige.
 \\\\
 Havde spannet været 
 \begin{align*}
@@ -71,7 +71,7 @@ Havde spannet været
 \right\},
 \end{align*}
 %
-kunne den trivielle løsning 
+ville ligningen 
 %
 \begin{align*}
 x_1 
@@ -87,7 +87,8 @@ x_1
 = \mathbf{0}
 \end{align*}
 %
-være opfyldt, hvis $x_1=x_2=0$ eller $x_1=-2$ og $x_2=1$. Spannet er derfor lineært afhængigt, fordi der er flere løsninger end den trivielle.
+være opfyldt, hvis $x_1=x_2=0$ eller $x_1=-2$ og $x_2=1$. 
+Vektorerne i $\S_2$ er derfor lineært afhængige, fordi der er flere løsninger end den trivielle.
 %
 \end{eks}
 %
@@ -120,14 +121,14 @@ Følgende udsagn er ækvivalente:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \begin{proof}
-\noindent
 %Forudsagt? Mangler der en ref til et tidligere bevis her, eller er I spåkællinger? (nedenstående) 
-Det er forudsagt, at (a) og (f), samt (f) og (g) er ækvivalente, så for at færdiggøre beviset for denne sætning skal det vises, at (b) $\rightarrow$ (c), (c) $\rightarrow$ (d), (d) $\rightarrow$ (e), (e) $\rightarrow$ (f) og (f) $\rightarrow$ (b).
+Lad $A$ være en $m \times n$ matrix.
+Det er åbenlyst, at (a) og (f), samt (f) og (g) er ækvivalente, så for at færdiggøre beviset for denne sætning skal det vises, at (b) $\rightarrow$ (c), (c) $\rightarrow$ (d), (d) $\rightarrow$ (e), (e) $\rightarrow$ (f) og (f) $\rightarrow$ (b).
 \\\\
 %Er de pile korrekt notation, eller skal vi bruge \equiv? (ovenstående)
 % (b) $\rightarrow$ (c). 
 Idet $\mathbf{0}$ er en løsning til $A\mathbf{x}=\mathbf{b}$, så forudsætter (b), at $A\mathbf{x}=\mathbf{b}$ ikke har ikke-nul løsninger, da den generelle løsning ingen frie variable har. 
-Eftersom antallet af frie variable er $0$, og at nulliteten i A dermed er nul, er (b) $\rightarrow$ (c) hermed bevist. 
+Eftersom antallet af frie variable er $0$, og $\text{null}(A)$ dermed er nul, er (b) $\rightarrow$ (c) hermed bevist. 
 \\\\
 %Der skal ikke komma efter "idet". 
 % (c) $\rightarrow$ (d).
@@ -141,8 +142,8 @@ Dette beviser (d) $\rightarrow$ (e).
 %
 \\\\
 % (e) $\rightarrow$ (f).
-Lad $R$ være den reducerede trappeform af matricen $A$. Hvis søjlerne i $R$ er forskellige standardvektorer i $R^m$, så er $R= [ \mathbf{e}_1, \mathbf{e}_2, \ldots, \mathbf{e}_n]$. 
-Det er givet, at den eneste løsning til $R\mathbf{x}=\mathbf{0}$ er $0$, og idet $A\mathbf{x}=\mathbf{0}$ er ækvivalent med $R\mathbf{x}=\mathbf{0}$, så er $\mathbf{0}$ eneste løsning til A$\mathbf{x}=\mathbf{0}$. 
+Lad $R$ være den reducerede trappeform af matricen $A$. Hvis søjlerne i $R$ er forskellige standardvektorer i $\R^m$, så er $R= [ \mathbf{e}_1, \mathbf{e}_2, \ldots, \mathbf{e}_n]$. 
+Det er givet, at den eneste løsning til $R\mathbf{x}=\mathbf{0}$ er $\mathbf{0}$, og idet $A\mathbf{x}=\mathbf{0}$ er ækvivalent med $R\mathbf{x}=\mathbf{0}$, så er $\mathbf{0}$ eneste løsning til A$\mathbf{x}=\mathbf{0}$. 
 Dette beviser (e) $\rightarrow$ (f).
 \\\\
 %
@@ -151,7 +152,7 @@ Lad $\mathbf{u}$ og $\mathbf{v}$ være løsninger til $A\mathbf{x}=\mathbf{b}$.
 % Sætning 1.3
 Jævnfør sætning \ref{thm:mxvpro} følger det, at $A(\mathbf{u}-\mathbf{v})=A\mathbf{u}-A\mathbf{v}=\mathbf{b}-\mathbf{b}=\mathbf{0}$, hvilket tilsvarer $\mathbf{u}-\mathbf{v}=\mathbf{0}
 \rightarrow  
-\mathbf{u} =\mathbf{v}$, hvilket beviser (f) $\rightarrow$ (b).
+\mathbf{u} =\mathbf{v}$. Dette beviser (f) $\rightarrow$ (b).
 \\\\
 %
 Lad $\mathbf{b}=\mathbf{0}$. 
@@ -178,13 +179,13 @@ hvis og kun hvis $\mathbf{u}_1=\mathbf{0}$, eller hvis der findes $i \geq 2$, s�
 \begin{proof}
 % 
 Antag, at $\mathbf{u}_1 \neq \mathbf{0}$, da løsningen ellers er triviel. 
-Der findes skalarer, hvor koefficienterne ikke alle er $0$, således at
+Der findes skalarer, hvor variablerne ikke alle er $0$, således at
 % 
 \begin{align*}
 c_1 \mathbf{u}_1 + c_2 \mathbf{u}_2 + \ldots + c_k \mathbf{u}_k = \mathbf{0}.
 \end{align*}
 %
-Lad $i$ være det største index $i$, hvor $x_i \neq 0$, sådan at 
+Lad $i$ være det største index $i$, hvor $c_i \neq 0$, sådan at 
 \begin{align*}
 c_1 \mathbf{u}_1 + c_2 \mathbf{u}_2 + \ldots + c_i \mathbf{u}_i = \mathbf{0}.
 \end{align*}
@@ -192,7 +193,7 @@ c_1 \mathbf{u}_1 + c_2 \mathbf{u}_2 + \ldots + c_i \mathbf{u}_i = \mathbf{0}.
 Bemærk, at $i\geq2$, da udtrykket ellers ville blive reduceret til
 %
 \begin{align*}
-c_1\textbf{u}_1=0,
+c_1\textbf{u}_1=\mathbf{0},
 \end{align*}
 %
 hvilket går imod tidligere antagelser.
@@ -214,7 +215,7 @@ Da $\text{span}\{ \mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_{i-1} \}$ er mæ
 %
 For $k \geq i$ haves, at $\mathbf{u}_1,\mathbf{u}_2, \ldots ,\mathbf{u}_k$ er lineært afhængig, da 
 \begin{align*}
-\textbf{u} -c_1\textbf{u}_1 - c_2\textbf{u}_2 - \cdots - c_{i-1}\textbf{u}_{i-1} = \textbf{0}
+\textbf{u}_1 -c_1\textbf{u}_1 - c_2\textbf{u}_2 - \cdots - c_{i-1}\textbf{u}_{i-1} = \textbf{0}
 \end{align*} 
 er en løsning anderledes fra den trivielle løsning, hvor $c_1, c_2,\ldots,c_k=0$.
 %
@@ -223,11 +224,11 @@ er en løsning anderledes fra den trivielle løsning, hvor $c_1, c_2,\ldots,c_k=
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Man kan i nogle tilfælde afgøre ved inspektion, hvorvidt en mængde vektorer $\mathbf{v},\mathbf{v}_2,\ldots ,\mathbf{v}_k$ er lineært afhængige. 
-Jævnfør sætning \ref{thm:inspektion} er mængden af vektorer afhængige, hvis $\mathbf{0}$ er en af dem, hvis 2 af vektorerne er parallelle, eller hvis der er flere vektorer end hver vektors antal af koordinater. 
-Med udgangspunkt i eksempel \ref{fisk} ses det, at de to vektorer er parallelle og derfor er lineært afhængige. 
+Det kan i nogle tilfælde afgøres ved inspektion, hvorvidt en mængde vektorer $\mathbf{v},\mathbf{v}_2,\ldots ,\mathbf{v}_k$ er lineært afhængige. 
+Jævnfør sætning \ref{thm:inspektion} er mængden af vektorer afhængige, hvis $\mathbf{0}$ er en af dem, hvis to af vektorerne er parallelle, eller hvis der er flere vektorer end hver vektors antal af koordinater. 
+Med udgangspunkt i eksempel \ref{fisk} ses det, at de to vektorer i $\S_2$ er parallelle og derfor er lineært afhængige. 
 \\\\
-Hvis man ikke ved hjælp af inspektion kan afgøre, om en matrix er lineært afhængig eller lineært uafhængig, kan det undersøges ved at opstille totalmatricen af mængden af vektorer, hvor matricen derefter via rækkeopperationer laves til trappeform. 
+Hvis det ikke ved hjælp af inspektion kan afgøres, om en matrix er lineært afhængig eller lineært uafhængig, kan det undersøges ved at opstille totalmatricen af mængden af vektorer, hvor matricen derefter via rækkeopperationer laves til trappeform. 
 Hvis der er pivotindgange i alle søjlerne, er mængden af vektorer lineært uafhængige. Hvis der er frie variable, er mængden af vektorer derimod lineært afhængige.
 \\\\
 %
@@ -258,10 +259,10 @@ Lad
 \end{align*}
 \noindent
 %
-Hvis vektorerne er lineært uafhængige, altså hvis $x_1 = x_2 = x_3= 0$, er den eneste løsning linearkombinationen
+Hvis vektorerne er lineært uafhængige er den trivielle løsning den eneste løsning til
 %
 \begin{align*}
-x_1+
+x_1
 \begin{bmatrix}
            4 \\
            1 \\
@@ -279,10 +280,10 @@ x_1+
            -2 \\
            1 \\
 \end{bmatrix}
-=0.
+=\mathbf{0}.
 \end{align*}
 %
-Totalmatricen opkrives:
+Ved hjælp af rækkeoperationerne omskrives totalmatricen til reduceret trappeform:
 %
 \noindent
 \begin{align*}
@@ -342,7 +343,7 @@ x_1 & x_2 & x_3 & b \\
 \end{blockarray} \\
 \end{align*}
 %
-Da totalmatricen ikke har nogle frie variable, har den kun en løsning og er derfor lineært uafhængig.
+Eftersom totalmatricen ikke har nogle frie variable, har den kun en løsning og er derfor lineært uafhængig.
 \\
 \\
 \noindent
@@ -369,9 +370,9 @@ Lad nu
 \end{bmatrix}
 \right\}.
 \end{align*}
-\noindent
-Afgør, om vektorerne er lineært uafhængige, altså hvis $x_1$, $x_2$ og $x_3 = 0$, er den eneste løsning til linearkombinationen.
-%Dette er skrevet lidt som en opgave, hvilket er underligt.
+%
+Nu afgøres, om den trivielle løsning er den eneste løsning til linearkombinationen.
+%
 \begin{align*}
 x_1+
 \begin{bmatrix}
@@ -394,10 +395,10 @@ x_1+
 =0.
 \end{align*}
 %
-Totalmatricen opskrives 
+Ved hjælp af rækkeoperationerne omskrives totalmatricen til reduceret trappeform:
 %
 \begin{align*}
-A=
+A=&
 \begin{blockarray}{cccc}
 x_1 & x_2 & x_3 & b \\
 \begin{block}{[ccc|c]}
@@ -405,8 +406,8 @@ x_1 & x_2 & x_3 & b \\
 1 & 0 & -2 & 0 \\
 -2 & 1 & 1 & 0 \\
 \end{block}
-\end{blockarray}
-&\xrightarrow[R_2\rightarrow R_2+(-4R_1)]{R_1 \leftrightarrow R_2}
+\end{blockarray}\\
+\xrightarrow[R_2\rightarrow R_2+(-4R_1)]{R_1 \leftrightarrow R_2}&
 \begin{blockarray}{cccc}
 x_1 & x_2 & x_3 & b \\
 \begin{block}{[ccc|c]}
@@ -414,8 +415,8 @@ x_1 & x_2 & x_3 & b \\
 0 & -3 & 9 & 0\\
 -2 & 1 & 1 & 0 \\
 \end{block}
-\end{blockarray}
-\xrightarrow[R_3 \rightarrow R_3+\frac{1}{3}R_2]{R_3 \rightarrow R_3+2R_1}
+\end{blockarray}\\
+\xrightarrow[R_3 \rightarrow R_3+\frac{1}{3}R_2]{R_3 \rightarrow R_3+2R_1}&
 \begin{blockarray}{cccc}
 x_1 & x_2 & x_3 & b \\
 \begin{block}{[ccc|c]}
@@ -425,7 +426,7 @@ x_1 & x_2 & x_3 & b \\
 \end{block}
 \end{blockarray}
 \end{align*}
-\noindent
+%
 Dette betyder, at der findes en ikke-triviel linearkombination, som resulterer i nulvektoren. Derfor har vi fundet mindst én linearkombination, som ikke er $0$, og derfor er det bevist, at vektormængden er lineært afhængig.
 \end{eks}
 %Der bliver stadig skrevet "sæt" rigtig meget.. :-( 
@@ -467,45 +468,45 @@ Givet
 \right\},
 \end{align*}
 %
-opstilles koefficientmatricen. 
+opstilles koefficientmatricen, som omdannes til reduceret trappeform. 
 %
 \begin{align*}
-\begin{blockarray}{ccccc}
+&\begin{blockarray}{ccccc}
 \begin{block}{[cccc]c}
   1 & -1 & 3 & 1 \\
   2 & 2 & 0 & 0 \\
   0 & 4 & 1 & 5 \\
 \end{block}
-\end{blockarray} 
+\end{blockarray}
 %
-\xrightarrow{R_2 \rightarrow R_2-2R_1}
+& \xrightarrow{R_2 \rightarrow R_2-2R_1}&
 \begin{blockarray}{ccccc}
 \begin{block}{[cccc]c}
   1 & -1 & 3 & 1 \\
   0 & 4 & -6 & -2 \\
   0 & 4 & 1 & 5 \\
 \end{block}
-\end{blockarray} 
+\end{blockarray} \\
 %
-\xrightarrow{R_3 \rightarrow R_3-R_2}
+\xrightarrow{R_3 \rightarrow R_3-R_2}&
 \begin{blockarray}{ccccc}
 \begin{block}{[cccc]c}
   \hlight{1} & -1 & 3 & 1 \\
   0 & \hlight{4} & -6 & -2 \\
   0 & 0 & \hlight{7} & 7 \\
 \end{block}
-\end{blockarray} \\
+\end{blockarray} 
 %
-\xrightarrow{R_3 \rightarrow 1/7 R_3}
+&\xrightarrow{R_3 \rightarrow 1/7 R_3}&
 \begin{blockarray}{ccccc}
 \begin{block}{[cccc]c}
   1 & -1 & 3 & 1 \\
   0 & 4 & -6 & -2 \\
   0 & 0 & 1 & 1 \\
 \end{block}
-\end{blockarray} 
+\end{blockarray} \\
 %
-\xrightarrow{R_2 \rightarrow R_2+6R_3}
+\xrightarrow{R_2 \rightarrow R_2+6R_3}&
 \begin{blockarray}{ccccc}
 \begin{block}{[cccc]c}
   1 & -1 & 3 & 1 \\
@@ -514,7 +515,7 @@ opstilles koefficientmatricen.
 \end{block}
 \end{blockarray} 
 %
-\xrightarrow{R_1 \rightarrow R_1-3R_3}
+&\xrightarrow{R_1 \rightarrow R_1-3R_3}&
 \begin{blockarray}{ccccc}
 \begin{block}{[cccc]c}
   1 & -1 & 0 & -2 \\
@@ -523,7 +524,7 @@ opstilles koefficientmatricen.
 \end{block}
 \end{blockarray} \\
 %
-\xrightarrow{R_2 \rightarrow 1/4R_2}
+\xrightarrow{R_2 \rightarrow 1/4R_2}&
 \begin{blockarray}{ccccc}
 \begin{block}{[cccc]c}
   1 & -1 & 0 & -2 \\
@@ -532,7 +533,7 @@ opstilles koefficientmatricen.
 \end{block}
 \end{blockarray} 
 %
-\xrightarrow{R_1 \rightarrow R_1+R_2}
+&\xrightarrow{R_1 \rightarrow R_1+R_2}&
 \begin{blockarray}{ccccc}
 \begin{block}{[cccc]c}
   \hlight{1} & 0 & 0 & -1 \\
@@ -546,12 +547,6 @@ opstilles koefficientmatricen.
 Hermed er den sidste vektor i spannet en linearkombination af de andre vektorer:
 %
   \begin{align*}
-    \begin{bmatrix}
-           -1 \\
-           1 \\
-           1 \\
-         \end{bmatrix}
-         = 
          -1 \begin{bmatrix}
            1 \\
            2 \\
@@ -568,6 +563,12 @@ Hermed er den sidste vektor i spannet en linearkombination af de andre vektorer:
            3 \\
            0 \\
            1 \\
+         \end{bmatrix}
+         =
+         \begin{bmatrix}
+           1 \\
+           0 \\
+           5 \\
          \end{bmatrix}.
   \end{align*} 
 %

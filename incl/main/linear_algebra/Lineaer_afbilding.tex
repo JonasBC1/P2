@@ -1,14 +1,14 @@
 \section{Lineær afbildning}
 %
-%Vi definerer en funktion ved følgende:
-%Synes ovenstående er unødvendigt, så har udkommenteret det. 
+En matrix kan betragtes som en funktion, der afbilder en vektor i et rum.
+%
 \begin{defn}{}{}
 Lad $\S _1 \subset \R^n$ og $\S _2 \subset \R^m$.
 En funktion $f$ fra $\S_1$ til $\S_2$, noteret $f:\S_1\rightarrow\S_2$, tildeler enhver vektor $\textbf{v}$ i $\S_1$ en entydig vektor $f(\textbf{v})$ i $\S_2$.
 Vektoren $f(\textbf{v})$ kaldes en \textbf{afbildning} af $\textbf{v}$.
 %Hedder det codomænet på dansk? Lyder underligt. 
-$\S_1$ er domænet for funktionen $f$, mens $\S_2$ kaldes codomænet til $f$.
-\textbf{Billedmængden} for $f$ er defineret som mængden af afbildninger $f(\textbf{v})$ for alle $\textbf{v}\in \S_1$.
+$\S_1$ er \textbf{domænet} for funktionen $f$, mens $\S_2$ kaldes \textbf{codomænet} til $f$.
+\textbf{Værdimængden} for $f$ er defineret som mængden af afbildninger $f(\textbf{v})$ for alle $\textbf{v}\in \S_1$.
 \end{defn}\noindent
 %
 På figur \ref{fig:afbild} ses, at både $\textbf{u}$ og $\textbf{v}$ har $\textbf{w}$ som afbildning, da $f(\textbf{u})=f(\textbf{v})=\textbf{w}$.
@@ -20,7 +20,7 @@ For funktioner, som er matrix-vektorprodukter, introduceres notationen $T_A$.
 %
 \begin{defn}{}{fisk3}
 Lad $A$ være en $m \times n$ matrix.
-Funktionen $T_A:\R^n \rightarrow \R^m$, defineret ved $T_A(\textbf{x}) = A\textbf{x}$ for alle $\textbf{x} \in \R^n$, kaldes \textbf{matrix afbildning med $A$}.
+Funktionen $T_A:\R^n \rightarrow \R^m$, defineret ved $T_A(\textbf{x}) = A\textbf{x}$ for alle $\textbf{x} \in \R^n$, kaldes \textbf{matrixafbildning fremkaldt af $\mathbf{A}$.}
 \end{defn}\noindent
 %
 Direkte fra sætning \ref{thm:mxvpro} ses det, at $T_A$ har egenskaberne $T_A(\textbf{u}+\textbf{v})=T_A(\textbf{u}) + T_A(\textbf{v})$ og $cT_A(\textbf{u}) = T_A(c\textbf{u})$.
@@ -49,14 +49,16 @@ For enhver lineær afbildning $T: \R^n \rightarrow \R^m$ er følgende udsagn san
 \end{thm}
 %
 \begin{proof}
-Lad $\textbf{u}, \textbf{v}$ være vektorer i $\R^n$, $c$ og $k$ være skalarer og lad $T: \R^n \rightarrow \R^m$ være en lineær transformation.
+(a) 
+Lad $\textbf{u}, \textbf{v}$ være vektorer i $\R^n$, $c$ og $k$ være skalarer og lad $T: \R^n \rightarrow \R^m$ være en lineær afbildning.
 Da $T$ bevarer vektoraddition haves, at
 %
 \begin{align*}
 T(\textbf{0}) = T(\textbf{0} + \textbf{0}) = T(\textbf{0}) + T(\textbf{0}).
 \end{align*}
 %
-Trækkes $T(\textbf{0})$ fra begge sider haves, at $\textbf{0} = T(\textbf{0})$, hvilket viser det ønskede.
+(b) 
+Trækkes $T(\textbf{0})$ fra begge sider haves, at $\textbf{0} = T(\textbf{0})$, hvilket viser (b).
 %
 Da $T$ bevarer skalering haves
 % 
@@ -64,12 +66,14 @@ Da $T$ bevarer skalering haves
 T(-\textbf{u}) = T((-1)\textbf{u}) = (-1)T(\textbf{u}) = -T(\textbf{u}).
 \end{align*}
 %
-Ved kombination af at $T$ bevarer vektor addition og (b) haves, at
+(c) 
+Ved kombination af, at $T$ bevarer vektor addition og (b), haves, at
 %
 \begin{align*}
 T(\textbf{u}-\textbf{v}) = T(\textbf{u}+(-\textbf{v})) = T(\textbf{u})+T(-\textbf{v}) = T(\textbf{u}) - T(\textbf{v}).
 \end{align*}
 %
+(d) 
 Da $T$ både bevarer både vektor addition og skalering haves, at 
 %
 \begin{align*}
@@ -77,6 +81,7 @@ T(c\textbf{u} + k\textbf{v}) = T(c\textbf{u}) + T(k\textbf{v}) = cT(\textbf{u}) 
 \end{align*}
 \end{proof}
 %
+\\
 Sætning \ref{thm:afbegen}(d) kan generaliseres til at vise, at lineær afbildning bevarer linearkombinationer.
 %Linearkombinationer
 \begin{lem}{}{}
@@ -149,7 +154,8 @@ Jævnfør sætning \ref{thm:mxvpro}(e) gælder det, at $A=B$, eftersom $A \mathb
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{eks}\label{entydigeks}
 %
-Lad $T: R^3 \rightarrow R^2$ være defineret ved $T\left(
+Lad $T: R^3 \rightarrow R^2$ være defineret ved 
+$$T\left(
 \begin{bmatrix}
 x_1\\
 x_2\\
@@ -162,8 +168,8 @@ x_3
 5x_1+x_2\\
 3x_2+2x_3
 \end{bmatrix}
-%\end{blockarray}
-$. \\
+%\end{blockarray}.
+$$ \\
 For at danne standardmatricen for $T$, dannes søjlerne 
 \begin{align*}
 T(\mathbf{e}_1)=
@@ -182,8 +188,9 @@ T(\mathbf{e}_3)=
 2
 \end{bmatrix}.
 \end{align*}
-Derfor er standardmatricen for $T$
+Derfor er standardmatricen for
 \begin{align*}
+T=
 \begin{bmatrix}
 5 & 1 & 0\\
 0 & 3 & 2
