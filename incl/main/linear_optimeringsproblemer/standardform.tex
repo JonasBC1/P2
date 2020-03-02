@@ -15,9 +15,9 @@ Bemærk at på standardform er problemet et minimeringsproblem og betingelserne 
 %
 For at omskrive et minimumsproblem til et maksimumsproblem multipliceres objektfunktionen med $-1$.
 Uligheds-betingelserne ændres ligeledes fra $A_ix_i \geq b_i$ til $A_ix_i \leq b_i$.
-Derefter tilføjes der \textbf{slack-variabler} til venstre side af ulighederne for at gøre dem til ligheder.
+Derefter tilføjes \textbf{slack-variabler} til venstre side af ulighederne for at gøre dem til ligheder.
 I denne rapport bliver $s_i$ benyttet om slack-variabler.
-Variabler som ikke har en ikke-negativsbegrænsning opdeles i $x_i^+$ og $x_i^-$, da alle reelle tal kan skrives som to positive tal trukket fra hinanden.
+Variabler, der ikke har en ikke-negativsbegrænsning opdeles i $x_i^+$ og $x_i^-$, da alle reelle tal kan skrives som to positive tal trukket fra hinanden.
 Med denne fremgangsmåde kan alle lineære optimeringsproblemer omskrives til standardform.
 Det er derfor kun nødvendigt med en metode til at løse optimeringsproblemer på denne form.
 %
@@ -42,9 +42,10 @@ Minimumsproblemet fra eksempel \ref{eks:min_lin} er her omskrevet til standardfo
 \text{begrænset af}	&2x_1	&-	&x_2		&+	&s_1&	&	&	&	&	&	&= 		&-10,\\
 					&-x_1	&+	&x_2		&	&	&+	&s_2&	&	&	&	&=		& -7,\\
 					&x_1	&+	&x_2		&	&	&	&	&+	&s_3&	&	&=		& 20,\\
-					& 		&	&x_2^+-x_2^-	&	&	&	&	&	&	&+	&s_4&=		& 12,\\
+					& 		&	&x_2^+-x_2^-&	&	&	&	&	&	&+	&s_4&=		& 12,\\
 					&x_1	&	&			&	&	&	&	&	&	&	&	&\geq	& 0,\\
 					&		&	&x_2^+,x_2^-&	&	&	&	&	&	&	&	&\geq	& 0.\\
 \end{array}
 \end{align*}
 \end{eks}
+%
