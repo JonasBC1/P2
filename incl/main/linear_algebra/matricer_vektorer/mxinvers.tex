@@ -9,10 +9,29 @@ Matrixproduktet $EA$ kan opnås ved at udføre én rækkeoperation på $A$.
 Enhver elementær matrix er desuden \textbf{invertibel}, og dens \textbf{invers} er også en elementær matrix. 
 %
 \begin{defn}{}{mxinvers}
-En $n \times n$ matrix $A$ er invertibel, hvis en $n \times n$ matrix $B$ eksisterer, så $AB=BA=I_n$. $B=A^{-1}$ er i så fald $A$'s invers. 
+En $n \times n$ matrix $A$ er invertibel, hvis en $n \times n$ matrix $B$ eksisterer, så $AB=BA=I_n$. 
 \end{defn}
 \noindent
-Såfremt $A$ er en invertibel $n \times n$ matrix, gælder det for ethvert $\mathbf{b} \in \R^n$, at $A\textbf{x}=\mathbf{b}$ har den entydige løsning $A^{-1}\mathbf{b}$. 
+%
+Det er endvidere relevant, hvorvidt denne er entydig.
+\begin{thm}{}{mxinversent}
+Såfremt en matrix $A$ er invertibel findes der en entydig matrix $B$, som er dennes invers.
+\end{thm}
+%
+\begin{proof}
+Antag at der findes to matricer  $B$ og $C$, som begge er $n \times n$, hvorom det gælder, at disse er inverse til $n \times n$ matricen $A$.
+Det gælder derfor fra definition \ref{defn:mxinvers}, at $A$ er inversen til $B$ og $C$.
+Derfor haves at $AB=BA=I_{n}$, samt at $AC=CA=I_{n}$. 
+Fra sætning \ref{thm:mxmulti} haves derfor at:
+\begin{align*}
+B=BI_n&=B(AC) \\
+&=(BA)C \\
+&=I_nC=C
+\end{align*} 
+Altså er $B=C$ og $A$'s invers er derfor entydig, denne kaldes $A^{-1}$.
+\end{proof} \\
+%
+Såfremt $A$ er en invertibel $n \times n$ matrix, gælder det for ethvert $\mathbf{b} \in \R^n$, at $A\textbf{x}=\mathbf{b}$ har den entydige løsning $A^{-1}\mathbf{b}$. \\\\
 %
 Inverse matricer har en række egenskaber, hvoraf nogle centrale er formuleret i sætning \ref{thm:mxinvers}. 
 %
@@ -46,7 +65,7 @@ Derfor er $A^T$ en invertibel matrix med inversen $(A{-1})^T$ og $(A^T)^{-1}A=(A
 %
 \begin{thm}{}{eleinv}
 Lad $A$ være en $m \times n$ matrix, og $R$ den reducerede trappeform af $A$. 
-Så eksisterer der en invertibel $m \times n$ matrix $P$, så $PA=R$.
+Så eksisterer der en invertibel $m \times m$ matrix $P$, så $PA=R$.
 \end{thm}
 %
 \begin{proof}
