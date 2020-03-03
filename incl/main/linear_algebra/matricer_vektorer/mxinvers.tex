@@ -13,13 +13,13 @@ En $n \times n$ matrix $A$ er invertibel, hvis en $n \times n$ matrix $B$ eksist
 \end{defn}
 \noindent
 %
-Det er endvidere relevant, hvorvidt denne er entydig.
+Det er endvidere relevant, hvorvidt inversen er entydig.
 \begin{thm}{}{mxinversent}
 Såfremt en matrix $A$ er invertibel findes der en entydig matrix $B$, som er dennes invers.
 \end{thm}
 %
 \begin{proof}
-Antag at der findes to matricer  $B$ og $C$, som begge er $n \times n$, hvorom det gælder, at disse er inverse til $n \times n$ matricen $A$.
+Antag at der findes to matricer  $B$ og $C$, som begge har størelsen $n \times n$, hvorom det gælder, at disse er inverse til $n \times n$ matricen $A$.
 Det gælder derfor fra definition \ref{defn:mxinvers}, at $A$ er inversen til $B$ og $C$.
 Derfor haves at $AB=BA=I_{n}$, samt at $AC=CA=I_{n}$. 
 Fra sætning \ref{thm:mxmulti} haves derfor at:
@@ -153,8 +153,11 @@ Fra sætning \ref{thm:mxinvers} fremgår det, at $P^{-1}$ er en invertibel matri
 %find begin example
 \\
 Det er fordelagtigt at benytte algoritmer til at invertere matricer. Lad $A$ være en $n \times n$ matrix. 
-Givet et input $[A \text{   } I_n]$, skal algoritmen udføre elementære rækkeoperationer på $A$, således algoritmens output bliver
-$[R \text{   } B]
+Givet et input
+$[A \text{   } I_n].
+$
+skal algoritmen udføre elementære rækkeoperationer på $A$, således algoritmens output bliver
+$[R \text{   } B].
 $,
 hvor $R$ er $A$ på reduceret trappeform. 
 Hvis $R=I_n$, er $A$ invertibel og $B=A^{-1}$.
