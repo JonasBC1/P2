@@ -1,5 +1,25 @@
-
-
-
-
 \subsection{Dimension}
+I forlængelse af underrum og basis kan der introduceres 
+$\mathbf{dimension}$. 
+%
+\begin{defn}{}{dimension}
+Mængden af vektorer, som udgør en basis for et givent ikke-nul undderrum $V$ i $\R^n$ betegnes som dimensionen af V, noteret dim$V$. 
+%Det er dertil fordelagtigt at definere dimensionen af nulrummet i $\R^n$ til at være 0. Nødvendigt?? 
+\end{defn}
+\noindent
+Det betyder derfor generelt, at standard basen for $\R^n$ indeholder $n$ vektorer og derfor er dim$\R^n = n$. Dertil kan man betragte bestemte underrum associeret med matricer samt deres dimensioner. Det gælder følgende for dimensionerne af underrummet for en $m \times n$ matrix, at \\ 
+\begin{center}
+ \begin{tabular}{||c c c||} 
+ \hline
+ Underrum & Indeholder rum & Dimension\\
+ \hline\hline
+ Søj $A$ & $\R^m$ & rang($A$)\\ 
+ \hline
+ Nul $A$ & $\R^n$ & null(A)= $n-\text{rang}(A)$\\
+ \hline
+ Ræk $A$ & $\R^n$ & rang($A$)\\
+ \hline
+\end{tabular}
+\end{center}
+\noindent
+Pivotsøjlerne i enhver matrix danner en basis for dens søjlerum. Derfor er dim$\text{Søj}\text{  } A$ lig med mængden af pivotsøjler i en matrix $A$ og derfor lig med $\text{rang}(A)$. Nulrummets dimension for en matrix 
