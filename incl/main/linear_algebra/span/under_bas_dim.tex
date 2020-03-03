@@ -1,90 +1,92 @@
 \section{Underrum}
-Det kan ofte være belejligt at studere vektorer i en mindre del af $\R^n$, dertil kan der gøres brug af \textbf{underum}.
+Det kan ofte være belejligt at studere vektorer i en mindre del af $\R^n$. Dertil kan der gøres brug af \textbf{underum}.
 \begin{defn}{}{underrum}
-En mængde $W$ bestående af vektorer i $\R^n$ er et underrum til $\R^n$ hvis den opfylder følgende betingelser:	
+En mængde $W$ bestående af vektorer i $\R^n$ er et underrum til $\R^n$, hvis den opfylder følgende betingelser:	
 \begin{enumerate}[label=(\alph*)]
-	\item  $\textbf{0}\in W$.
+	\item $\textbf{0}\in W$.
 	\item $\textbf{u}$,$\textbf{v} \in W \rightarrow \textbf{u}+\textbf{v} \in W $.
-	\item $\textbf{u} \in W$ og $c$ er en skalar så er $\textbf{u}c \in W$.
+	\item $\textbf{u} \in W$ og $c$ er en skalar, så er $\textbf{u}c \in W$.
 \end{enumerate}
 \end{defn}
 \noindent
-Mængden $\R^n$ er et underrum til sig selv, da summen af enhver 2 vektorer i $\R^n$ tilhører $\R^n$, enhver vektor multipliciteret med en skalar er også i $\R^n$ og $\textbf{0}$ er i $\R^n$. Mængden $\{\textbf{0}\}$ er også et underrum til $\R^n$, og kaldes \textbf{nul-underrummet}.
+Mængden $\R^n$ er et underrum til sig selv, da summen af to vilkårlige vektorer i $\R^n$ tilhører $\R^n$, enhver vektor multipliciteret med en skalar også er i $\R^n$, og $\textbf{0}$ er i $\R^n$. Mængden $\{\textbf{0}\}$ er ligeledes et underrum til $\R^n$ og kaldes \textbf{nul-underrummet}.
 
 
 \begin{thm}{}{}
-Spanet af et tælleligt ikke tomt delmængde af $\R^n$ er et underrum af $\R^n$
+Spannet af en tællelig ikke-tom delmængde af $\R^n$ er et underrum af $\R^n$.
 \end{thm}
 \begin{proof}
 Lad spannet af en tællelig ikke tom mængde være 
 $\S=\{\textbf{w}_1 , \textbf{w}_2 , \ldots , \textbf{w}_j\}$.
-Eftersom at der kan opskrives en linearkombination $$0\textbf{w}_1 + 0\textbf{w}_2 + \cdots + 0\textbf{w}_j=\textbf{0},$$ så er $\textbf{0}$ i  $\S$, hvilket opfylder betingelse (a) i definition \ref{defn:underrum}.\\
+Eftersom der kan opskrives en linearkombination $$0\textbf{w}_1 + 0\textbf{w}_2 + \cdots + 0\textbf{w}_j=\textbf{0},$$ så er $\textbf{0}$ i  $\S$, hvilket opfylder betingelse (a) i definition \ref{defn:underrum}.\\
 Lad $\textbf{u}$ og $\textbf{v}$ tilhøre $\S$. Så er\\
-$\textbf{u}=c_1\textbf{w}_1+c_2\textbf{w}_2+\cdots+c_j\textbf{w}_j$ og $\textbf{v}=k_1\textbf{w}_1+k_2\textbf{w}_2+\cdots+k_j\textbf{w}_j$, for nogle skalarer $c_1,c_2,\ldots,c_j$ og $k_1,k_2,\ldots,k_j$. Så kan det omskrives til en linearkombination
+$\textbf{u}=c_1\textbf{w}_1+c_2\textbf{w}_2+\cdots+c_j\textbf{w}_j$ og $\textbf{v}=k_1\textbf{w}_1+k_2\textbf{w}_2+\cdots+k_j\textbf{w}_j$, for nogle skalarer $c_1,c_2,\ldots,c_j$ og $k_1,k_2,\ldots,k_j$. Dette kan omskrives til linearkombinationen
 \begin{align*}
 \textbf{u}+\textbf{v}&=(c_1\textbf{w}_1+c_2\textbf{w}_2+\cdots+c_j\textbf{w}_j)+(k_1\textbf{w}_1+k_2\textbf{w}_2+\cdots+k_j\textbf{w}_j)\\
-&=(c_1+k_1)\textbf{w}_1+(c_2+k_2)\textbf{w}_2+\cdots+(c_j+k_j)\textbf{w}_j
+&=(c_1+k_1)\textbf{w}_1+(c_2+k_2)\textbf{w}_2+\cdots+(c_j+k_j)\textbf{w}_j,
 \end{align*}
-hvilket viser at $\textbf{u}+\textbf{v}\in \S$, hvilket opfylder (b) i definition \ref{defn:underrum}.\\
-For enhver skalar $h$, gælder
+hvilket viser, at $\textbf{u}+\textbf{v}\in \S$, hvormed (b) i definition \ref{defn:underrum} er opfyldt.\\
+For enhver skalar $h$ gælder, at
 \begin{align*}
 h\textbf{u}&=h(c_1\textbf{w}_1+c_2\textbf{w}_2+\cdots+c_j\textbf{w}_j)\\
 &=(h_1c_1)\textbf{w}_1+(h_2c_2)\textbf{w}_2+\cdots+(h_jc_j)\textbf{w}_j,
 \end{align*}
-og eftersom $h_1c_1,h_2c_2,\ldots,h_jc_j$ bare er skalarer så er $h\textbf{u}\in \S$ hvilket opfylder (c) i definition \ref{defn:underrum}.
-Hermed er det bevist at spannet af delmængde af $\R^n$ er et underrum til $\R^n$.
+og eftersom $h_1c_1,h_2c_2,\ldots,h_jc_j$ er skalarer, så er $h\textbf{u}\in \S$, hvilket opfylder (c) i definition \ref{defn:underrum}.
+Hermed er det bevist, at spannet af en delmængde af $\R^n$ er et underrum til $\R^n$.
 \end{proof}
 
 \subsubsection{Underrum for matricer}
-I forbindelse med underrum er det nogle udvalgte typer af underrum som er relevante i forbindelse med matricer. Den første der vil blive nævnt er \textbf{nulrummet}.
+Det er nogle bestemte typer af underrum, som er relevante i forbindelse med matricer. Den første type, der beskrives, er \textbf{nulrummet}.
 \begin{defn}{}{}
 Nulrummet til en matrix $A$ er løsningsmængden til matrixligningen $A\textbf{x}=\textbf{0}$ og noteres $\text{nul}(A)$. 
 \end{defn}
-Et eksempel nulrummet til en matrix ses i eksempel \ref{nulrum}
+Et eksempel på nulrummet til en matrix ses i eksempel \ref{nulrum}.
 
 \begin{eks}\label{nulrum}
-Nulrummet til matrixen
+Nulrummet til matricen
 $$A=\begin{bmatrix}
 2 & 3 & 2\\
 1 & -1 & 5
 \end{bmatrix}$$
-er løsningssættet til matrixligningen $A\textbf{x}=\textbf{0}$
-som kan opskrives som ligningssystemet
+er løsningssættet til matrixligningen $A\textbf{x}=\textbf{0}$,
+der kan opskrives som ligningssystemet
 \begin{align*}
 2x_1+3x_2+2x_3&=0\\
-1x_1-x_2+5x_3&=0
+1x_1-x_2+5x_3&=0.
 \end{align*}
 \end{eks} 
 \begin{thm}{}{}
-Hvis A er en $m\times n$ matrice, så er nulrummet af A et underrum af $\R^n$.
+Hvis A er en $m\times n$ matrix, så er nulrummet af A et underrum af $\R^n$.
 \end{thm}
 \begin{proof}
-Eftersom A er en $m\times n$ matrice så er vektorerne i nulrummet i $\R^n$, da det er løsningerne til $A\textbf{x}=\textbf{0}$. $\textbf{0}$ er en del af nulrummet da $A\textbf{0}=\textbf{0}$. Hvis $\textbf{u}$ og $\textbf{v}$ er i nulrummet så er $A\textbf{u}=\textbf{0}$ og $A\textbf{v}=\textbf{0}$. Deraf har vi at
+Eftersom A er en $m\times n$ matrice, så er vektorerne i nulrummet i $\R^n$, da det er løsningerne til $A\textbf{x}=\textbf{0}$. $\textbf{0}$ er en del af nulrummet, da $A\textbf{0}=\textbf{0}$. Hvis $\textbf{u}$ og $\textbf{v}$ er i nulrummet, så er $A\textbf{u}=\textbf{0}$ og $A\textbf{v}=\textbf{0}$. Deraf har vi, at
 $$A(\textbf{u}+\textbf{v})=A\textbf{u}+A\textbf{v}=\textbf{0}+\textbf{0}=\textbf{0}.$$
-Deraf haves at $\textbf{u}+\textbf{v}$ er i nulrummet. For alle skalarer $c$ haves at
+Deraf haves, at $\textbf{u}+\textbf{v}$ er i nulrummet. For alle skalarer $c$ haves, at
 $$A(c\textbf{u})=c(A\textbf{u})=c\textbf{0}=\textbf{0}.$$
-Dette viser at $c\textbf{u}$ er i nulrummet.
-Dette vises at nulrummet af A er et underrum af $\R^n$
-\end{proof}
+Dette viser, at $c\textbf{u}$ er i nulrummet.
+Dette vises, at nulrummet af A er et underrum af $\R^n$
+\end{proof}\\
 \noindent
-En anden type underrum er \textbf{rækkerum} og \textbf{søjlerum}.
+Andre relevante typer underrum er \textbf{rækkerum} og \textbf{søjlerum}.
 \begin{defn}{}{}
-Rækkerum er spannet som kommer af rækkerne i en matrice noteret $\text{ræk}(A)$.\\
-Søjlerum er spannet af søjlerne i en matrice, noteret $\text{søj}(A)$.
+%Til nedenstående "Rækkerum er spannet af rækkerne i en matrix" - right? 
+Rækkerum er spannet, som kommer af rækkerne i en matrix, og noteres $\text{ræk}(A)$.\\
+Søjlerum er spannet af søjlerne i en matrix, og noteres $\text{søj}(A)$.
 \end{defn}
 \noindent
-Speciele underrum er også relevant i forbindelse med lineær afbildning.
-Billedmængden af en lineær afbildning er det samme som søjlerummet af dens standard matrix.
+Specielle underrum er også relevante i forbindelse med lineær afbildning.
+Billedmængden af en lineær afbildning er det samme som søjlerummet af dens standardmatrix.
 
 \subsection{Basis}
-Mens at et underrum kan beskrives med en given mængde vektorer, så er det smartere at beskrive det med så få vektorer som muligt. Denne mængde kaldes \textbf{basis} for underrummet.
-\begin{defn}{}{}
+Mens et underrum kan beskrives med en given mængde vektorer, så er det smartere at beskrive det med så få vektorer som muligt. Denne mængde kaldes \textbf{basis} for underrummet.
+\begin{defn}{}{basisunderrum}
 Lad $\mathcal{P}$ være et ikke-nul-underrum af $\R^n$. En basis for $\mathcal{P}$ er en lineært uafhængig mængde af generatorer for $\mathcal{P}$.
 \end{defn}
 \noindent
-Eksempelvis kan en mængde af standard vektorer $\{\textbf{e}_1,\textbf{e}_2,\ldots,\textbf{e}_n\}$bruges som basis for $\R^n$.
+Eksempelvis kan en mængde af standardvektorer $\{\textbf{e}_1,\textbf{e}_2,\ldots,\textbf{e}_n\}$ bruges som basis for $\R^n$.
 Denne type basis kaldes for \textbf{standard basis}, men er ikke den eneste måde at skrive basis for et underrum.\\\\
-Pivot søjlerne i en matrix udgør basis for dens søjlerum. Dette følger af bevis "bevis mangler sætning 2.4 i bogen, bevis er i appendiks E".
+%Hvilke andre måder er der? Hvorfor nævnes det? :-) 
+Pivotsøjlerne i en matrix udgør basis for dens søjlerum. Dette følger af bevis "bevis mangler sætning 2.4 i bogen, bevis er i appendiks E".
 \\\\
 
 

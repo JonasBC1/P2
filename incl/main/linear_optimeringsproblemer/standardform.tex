@@ -4,20 +4,20 @@ Hvis et lineært optimeringsproblem er på formen
 %
 \begin{align*}
 \begin{array}{lrl}
-\text{Maksimer}		&\textbf{c}^T\textbf{x}	&				\\
+\text{Maksimér}		&\textbf{c}^T\textbf{x}	&				\\
 \text{begrænset af}	&A\textbf{x}	&=\mathbf{b},	\\
 					&\mathbf{x}				&\geq \mathbf{0},
 \end{array}
 \end{align*}
 %
 er optimeringsproblemet på \textbf{standardform}.
-Bemærk at på standardform er problemet et minimeringsproblem og betingelserne er lighedsbetingelser og ikke-negativsbetingelser.\\\\
+Bemærk, at på standardform er problemet et minimeringsproblem, og betingelserne er lighedsbetingelser og ikke-negativsbetingelser.\\\\
 %
 For at omskrive et minimumsproblem til et maksimumsproblem multipliceres objektfunktionen med $-1$.
-Uligheds-betingelserne ændres ligeledes fra $A_ix_i \geq b_i$ til $A_ix_i \leq b_i$.
+Ulighedsbetingelserne ændres ligeledes fra $A_ix_i \geq b_i$ til $A_ix_i \leq b_i$.
 Derefter tilføjes \textbf{slack-variabler} til venstre side af ulighederne for at gøre dem til ligheder.
-I denne rapport bliver $s_i$ benyttet om slack-variabler.
-Variabler, der ikke har en ikke-negativsbegrænsning opdeles i $x_i^+$ og $x_i^-$, da alle reelle tal kan skrives som to positive tal trukket fra hinanden.
+I denne rapport notes slack-variabler $s_i$.
+Variabler, der ikke har en ikke-negativsbegrænsning, opdeles i $x_i^+$ og $x_i^-$, da alle reelle tal kan skrives som differensen mellem to positive tal.
 Med denne fremgangsmåde kan alle lineære optimeringsproblemer omskrives til standardform.
 Det er derfor kun nødvendigt med en metode til at løse optimeringsproblemer på denne form.
 %
@@ -34,11 +34,11 @@ Det er derfor kun nødvendigt med en metode til at løse optimeringsproblemer p�
 %\end{align*}
 %
 \begin{eks}
-Minimumsproblemet fra eksempel \ref{eks:min_lin} er her omskrevet til standardform.
+Minimumsproblemet fra eksempel \ref{eks:min_lin} er her omskrevet til standardform:
 %
 \begin{align*}
 \begin{array}{lrcccrcrcrcrcrcr}
-\text{Maksimer}		&	\multicolumn{2}{c}{-4x_1 + 3x_2}\\
+\text{Maksimér}		&	\multicolumn{2}{c}{-4x_1 + 3x_2}\\
 \text{begrænset af}	&2x_1	&-	&x_2		&+	&s_1&	&	&	&	&	&	&= 		&-10,\\
 					&-x_1	&+	&x_2		&	&	&+	&s_2&	&	&	&	&=		& -7,\\
 					&x_1	&+	&x_2		&	&	&	&	&+	&s_3&	&	&=		& 20,\\
