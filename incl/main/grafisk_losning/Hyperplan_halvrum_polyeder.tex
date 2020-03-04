@@ -1,0 +1,33 @@
+I henhold til geometriske fremstillinger af liniære programeringsproblemer er det nødvendigt at definere en række begreber.
+Disse er \textbf{hyperplan}, \textbf{halvrum} og \textbf{polyeder}.
+
+\begin{defn}{}{}
+Lad $A$ være en $m \times n$ matrix, og lad $\mathbf{b}$ være en vektor i  $\R^m$.
+Et polyedron er en mængde der kan beskrives som $\{x\in \R^n \mid A\mathbf{x}\geq b\}$.
+\end{defn}
+
+Som det fremgår fra definitionen, er et polyedron således mængden af mulige løsninger $\mathbf{x}$ af et ligningsystem.
+Det gælder endvidere at en mængde af formen $ \{x \in \R^n \mid A\textbf{x}=b,x \geq 0 \}$, hvilket kaldes et \textbf{polyede på standardform}. 
+%lidt forskellige muligheder her, enten kan det relateres til simplex eller blive introduceret her
+Det gælder endvidere for ployeder at dissse både kan være \textbf{begrænsede} og \textbf{ubegrænsede}.
+\begin{defn}{}{}
+En mængde $S \subset \R^n$ er begrænset såfremt der eksister en konstant $k$, hvorom det gælder at den absolutte værdi af alle komponenteter i alle elementer i $S$ er $\leq k$. 
+Såfremt en sådan konstant ikke eksiterer er mængden ubegrænset. 
+\end{defn}
+%alternativt værdien af ..... $\leq k$ eller $\geq$
+I henhold til liniære programeringsproblemer vil dette ofte være begrænset.
+Dette er eksempelvis tilfældet, hvis problemet er af en sådan karakter, at ingen af variabelene i karakterligningen kan have negative værdier.
+%er det rigtigt det jeg skriver i ovenstående?
+Ligeledes er det en fordel at definere polyeder, som er begrænset af kun én liniærbegrænsning. 
+%skal der laves en definition på et polyede?
+\begin{defn}{}{}
+Lad $\mathbf{a} \neq \mathbf{0}$ være en vektor i $\R^n$ og lad $b$ være en skalar.
+\begin{enumerate}[label=(\alph*)]
+\item mængden $\{x \in \R^n \mid \mathbf{a}^T=b\}$ kaldes et \textbf{hyperplan}.
+\item mængden $\{x \in \R^n \mid \mathbf{a}^T \geq b\}$ kaldes et \textbf{delrum}.
+\end{enumerate}
+\end{defn}
+Det gælder her at hyperplanet er grænsen for et tilsvarende delrum.
+I $\R^2$$ vil hyperplanet således være en ret linje der afskære en del af rummet.
+Et polyhedron er derfor en samling af polyeder der til sammen skaber en geometrisk figur i et givet vektorrum.
+%ligeldes bør der nævnes noget med at a står vinkelret på linjen 
