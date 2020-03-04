@@ -31,8 +31,7 @@ B=BI_n&=B(AC) \\
 Altså er $B=C$ og $A$'s invers er derfor entydig, denne kaldes $A^{-1}$.
 \end{proof} \\
 %
-Såfremt $A$ er en invertibel $n \times n$ matrix, gælder det for ethvert $\mathbf{b} \in \R^n$, at $A\textbf{x}=\mathbf{b}$ har den entydige løsning $A^{-1}\mathbf{b}$. \\\\
-%
+Såfremt $A$ er en invertibel $n \times n$ matrix, gælder det for ethvert $\mathbf{b} \in \R^n$, at $A\textbf{x}=\mathbf{b}$ har den entydige løsning $A^{-1}\mathbf{b}$.
 Inverse matricer har en række egenskaber, hvoraf nogle centrale er formuleret i sætning \ref{thm:mxinvers}. 
 %
 \begin{thm}{}{mxinvers}
@@ -81,7 +80,7 @@ $[R \text{   }| \textbf{c}]$
 er den reducerede trappeform af den udvidede matrix 
 $[A \text{   }| \textbf{b}].
 $
-\end{kor}
+\end{kor}\noindent
 %
 %\begin{proof}
 %Lad $P$ være en invertibel matrix, så 
@@ -152,19 +151,20 @@ Fra sætning \ref{thm:mxinvers} fremgår det, at $P^{-1}$ er en invertibel matri
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %find begin example
 \\
-Det er fordelagtigt at benytte algoritmer til at invertere matricer. Lad $A$ være en $n \times n$ matrix. 
-Givet et input
-$[A \text{   } I_n].
-$
-skal algoritmen udføre elementære rækkeoperationer på $A$, således algoritmens output bliver
-$[R \text{   } B].
-$,
-hvor $R$ er $A$ på reduceret trappeform. 
-Hvis $R=I_n$, er $A$ invertibel og $B=A^{-1}$.
-Hvis $R \neq I_n$, er $A$ ikke invertibel. 
+Det er fordelagtigt at benytte algoritmer til at invertere matricer.
+Jævnfør definition \ref{defn:mxinvers} opfylder en $n \times n$ matrices inverse matrix $AA^{-1}=I_n$.
+Med dette kan ligningen $A[\textbf{x}_1\text{  }\textbf{x}_2\text{  }\ldots\text{  }\textbf{x}_n ] = [\textbf{e}_1\text{  }\textbf{e}_2\text{  }\ldots\text{  }\textbf{e}_n ]$ opstilles.
+Da den inverse matrix er entydig kan søjlerne findes ved at løse $A\textbf{x}_i = \textbf{e}_i$.
+Det gøres ved Gauss-elimination på $[A\textbf{ }|\textbf{ }\textbf{e}_i]$.
+Kombinationen af rækkeoperationer for at få $A$ på reduceret trappeform er kun afhængig af $A$.
+Dette betyder, at hver ligning løses med samme rækkeoperationer og alle søjler kan findes samtidigt.
+Dette gøres med Gauss-elimination på $[A\textbf{ }|\textbf{ }I_n]$, hvor resultatet bliver $[I_n\textbf{ }|\textbf{ }A^{-1}]$, hvis $A$ er invertibel.\\
 %
-% 
-\\
+%Lad $A$ være en $n \times n$ matrix. 
+%Givet et input $[A \text{   } I_n]$ skal algoritmen udføre elementære rækkeoperationer på $A$, således algoritmens output bliver $[R \text{   } B]$, hvor $R$ er $A$ på reduceret trappeform. 
+%Hvis $R=I_n$, er $A$ invertibel og $B=A^{-1}$.
+%Hvis $R \neq I_n$, er $A$ ikke invertibel.\\
+%
 \begin{eks}
 \label{eks:fisk5}
 Lad
