@@ -1,3 +1,4 @@
+#Metode til invers matrix. Mellem bevis 3.16 og eks 3.19.
 obj = "4*x1+6*x2+x3"
 bet = [
 	"12*x1-x2<=15",
@@ -7,21 +8,26 @@ neg = [
 	"x2>=0",
 	"x3>=0"]
 
-def findx(st):
+def findx(l):
 	xi	= True
+	xii	= True
 	i 	= 0
 
 	while xi == True:
 		xi = "x" + str(i+1)
 
-		if xi in st:
-			xi = True
-			i += 1
-		else:
-			xi = False
+		for st in l:
+			if xi in st:
+				xi = True
+				
+			else:
+				xi = False
 
+		i += 1
 
 	print(i)
+
+
 
 #def split(f=bet):
 #	split = []
@@ -42,5 +48,4 @@ def findx(st):
 	
 #split()
 
-findx(bet[0])
-findx(bet[1])
+findx(bet)
