@@ -3,29 +3,45 @@ I forlængelse af underrum og basis introduceres nu
 $\mathbf{dimension}$. 
 %
 \begin{defn}{}{dimension}
-Mængden af vektorer, som udgør en basis for et givent ikke-nul-undderrum $V$ i $\R^n$, betegnes som dimensionen af V, hvilket noteres $\text{dim}V$. 
-%Det er dertil fordelagtigt at definere dimensionen af nulrummet i $\R^n$ til at være 0. Nødvendigt?? 
+Mængden af vektorer, der udgør en basis for et givent ikke-nul-undderrum $V$ i $\R^n$, betegnes som dimensionen af $V$, hvilket noteres $\text{dim}(V)$. 
+%Det er dertil fordelagtigt at definere dimensionen af nulrummet i $\R^n$ til at være 0. Nødvendigt?? NEEEEEEEEEEEEEEEEEEEEEEJ
 \end{defn}
 \noindent
-Det betyder derfor generelt, at standardbasen for $\R^n$ indeholder $n$ vektorer, og derfor er $\text{dim}\R^n = n$. Dertil kan man betragte bestemte underrum associeret med matricer samt deres dimensioner. Der gælder for dimensionerne af underrummet for en $m \times n$ matrix, at \\ 
+Det betyder derfor generelt, at standardbasen for $\R^n$ indeholder $n$ vektorer, og derfor er $\text{dim}(\R^n) = n$. 
+Dertil kan man betragte bestemte underrum associeret med matricer samt deres dimensioner. 
+Der gælder for dimensionerne af underrummet for en $m \times n$ matrix, at pivotsøjlerne i enhver matrix danner en basis for dens søjlerum. 
+Derfor er $\text{dim}(\text{søj}(A))$ lig med mængden af pivotsøjler i en matrix $A$ og dermed lig med $\text{rang}(A)$. 
+Nulrummets dimension for en matrix er givet ved nulliteten af matricen $A$, altså $n-\text{rang}(A)$. 
+\\\\
+%
+\begin{table}[h!]
 \begin{center}
  \begin{tabular}{||c c c||} 
  \hline
  Underrum & Indeholder rum & Dimension\\
  \hline\hline
- Søj$(A)$ & $\R^m$ & rang($A$)\\ 
+ søj$(A)$ & $\R^m$ & rang($A$)\\ 
  \hline
- Nul$(A)$ & $\R^n$ & null(A)= $n-\text{rang}(A)$\\
+ nrum$(A)$ & $\R^n$ & null(A)= $n-\text{rang}(A)$\\
  \hline
- Ræk$(A)$ & $\R^n$ & rang($A$)\\
+ ræk$(A)$ & $\R^n$ & rang($A$)\\
  \hline
 \end{tabular}
+\caption{Oversigt over dimensioner af bestemte underrum for en $m \times n$ matrix.}
 \end{center}
-\noindent
-%Skal der være paranteser eller ej? Mads og jeg synes ja. (altså: Søj(A) eller Søj A?) 
-Pivotsøjlerne i enhver matrix danner en basis for dens søjlerum. Derfor er dim$\text{Søj}(A)$ lig med mængden af pivotsøjler i en matrix $A$ og dermed lig med $\text{rang}(A)$. Nulrummets dimension for en matrix er givet ved nulliteten af matricen $A$, altså $n-\text{rang} (A)$. Til sidst er det gældende for rækkerummet for en matrix $A$, at dens dimension ligeledes er lig med matricens rang. Da rækkerummet og søjlerummet har samme dimension gælder, at\\
-\begin{equation}
-\text{dim}(\text{Ræk}\text{  } A)=\text{dim}(\text{Søj}\text{  } A)=\text{dim}(\text{Ræk}\text{  } A^T).
-\end{equation}
-Det følger derfor, at rangen af en enhver matrix er lig med rangen af dens transponerede. 
+\end{table}
+%Skal der være paranteser eller ej? Mads og jeg synes ja. (altså: Søj(A) eller Søj A?) Alle synes søj(A)
+%
 
+
+%
+\noindent
+Slutteligt er det gældende for rækkerummet for en matrix $A$, at dens dimension ligeledes er lig med matricens rang. 
+Da rækkerummet og søjlerummet har samme dimension gælder, at
+%
+\begin{align*}
+\text{dim}(\text{ræk}(A))=\text{dim}(\text{søj}(A))=\text{dim}(\text{ræk}(A^T)).
+\end{align*}
+%
+Det følger derfor, at rangen af enhver matrix er lig med rangen af matricens transponerede. 
+%

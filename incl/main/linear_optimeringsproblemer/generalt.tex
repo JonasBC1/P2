@@ -3,9 +3,10 @@
 Lineære programmering er en problemstilling, hvor det ønskes at optimere et problem bestående af en lineær funktion og \textbf{lineære betingelser}.
 Funktionen, som optimeres, kaldes \textbf{objektfunktionen}.
 Objektfunktionen kan enten optimeres for maksimum eller minimum og er begrænset af de lineære betingelser.
-Findes et maksimum eller minimum inden for begrænsningerne, kaldes dette for problemets optimale værdi.
-\\\\%skal ovenstående ikke være fed? optimale værdi
-Et generelt lineært maksimumsproblem kan opstilles som følgende:
+Findes et maksimum eller minimum inden for begrænsningerne, kaldes dette for problemets \textbf{optimale værdi}.
+\\\\
+%
+Et lineært maksimumsproblem kan opstilles som følgende:
 %
 \begin{align*}
 \begin{array}{lrll}
@@ -18,9 +19,9 @@ Et generelt lineært maksimumsproblem kan opstilles som følgende:
 \end{array}
 \end{align*}
 %
-hvor $M_1, M_2, M_3, N_1, N_2$ er endelige mængder med indekser.
-\textbf{Mulighedsområdet} betegner mængden af vektorer, som opfylder alle betingelserne.
-Vektorer indeholdt i mulighedsområdet kaldes for \textbf{løsningsvektorer}.
+hvor $\textbf{c}^T\textbf{x}$ er objektfunktionen og $\textbf{a}^T\textbf{x}$ er de lineære betingelser samt $M_1, M_2, M_3, N_1, N_2$ er endelige mængder med indekser.
+\textbf{Løsningsmængden} betegner mængden af vektorer, som opfylder alle betingelserne.
+Vektorer indeholdt i løsningsmængden kaldes for \textbf{løsningsvektorer}.
 Hvis mulighedsområdet er uendeligt stort, kaldes optimeringsproblemet for \textbf{ubegrænset}; ellers kaldes det \textbf{begrænset}.\\\\
 %
 \begin{eks}
@@ -38,7 +39,7 @@ Betragt minimumsproblemet
 \end{array}
 \end{align*}
 %
-På figur \ref{fig:min_beg} kan løsningsområdet, markeret med blå, for minimumsproblemet ses.
+På figur \ref{fig:min_beg} kan løsningsområdet, markeret med gråblå, for minimumsproblemet ses.
 %
 \input{fig/tikz/min_beg}
 \noindent
@@ -56,7 +57,7 @@ Havde minimumsproblemet i stedet været
 \end{array}
 \end{align*}
 havde minimumsproblemet været ubegrænset, da $x_1$ og $x_2$ kunne blive uendeligt store. 
-Løsningsområdet for minimumsproblemet ses på figur \ref{fig:min_ubeg}, hvor det er markeret med blå.
+Et undsit af løsningsområdet for minimumsproblemet ses på figur \ref{fig:min_ubeg}, hvor det er markeret med blå.
 %
 \input{fig/tikz/min_ubeg}
 %
