@@ -4,9 +4,7 @@ Disse er \textit{hyperplan}, \textit{halvrum} og \textit{polytop}.
 \begin{defn}{}{Polytop}
 Lad $A$ være en $m \times n$ matrix, og lad $\mathbf{b}$ være en vektor i  $\R^m$.
 En \textbf{polytop} er en mængde, der kan beskrives som 
-\begin{align*}
-\{x\in \R^n \mid A\mathbf{x}\geq b\}.
-\end{align*}
+$\{x\in \R^n \mid A\mathbf{x}\geq b\}.$
 %
 \end{defn}
 \noindent
@@ -94,10 +92,17 @@ På figur \ref{fig:Graf123} ses et udsnit af hyperplanet, som afskærer et halvr
   \label{fig:NEJ}
 \end{center}
 % 
-
 %Et polyhedron er derfor en samling af polyeder der til sammen skaber en geometrisk figur i et givet vektorrum.
-%ligeldes bør der nævnes noget med at a står vinkelret på linjen 
-
+%
 \begin{thm}{}{}
-Lad $\mathbf{a}$ være en vektor i $\R^n$, hvor $\mathbf{a} \neq \mathbf{0}$
+Lad $\mathbf{a}$ være en vektor i $\R^n$, hvor 
+$\mathbf{a} \neq \mathbf{0}.$
+For hyperplanet 
+$\{x \in \R^n \mid \mathbf{a}^T \mathbf{x}=b\},$ 
+vil $\mathbf{a}$ være ortogonal med hyperplanet.
 \end{thm}
+% 
+\begin{proof}
+Lad $\mathbf{x}$ og $\mathbf{x}$ tilhører det samme hyperplan, så er $\mathbf{a}^Tx=\mathbf{a}^Ty.$
+Dermed er $\mathbf{a}^T(x-y)=0$, og så er $\mathbf{a}$ ortogonal til alle vektorer i hyperplanet. 
+\end{proof}
