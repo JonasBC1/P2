@@ -37,41 +37,67 @@ Ligeledes er det en fordel at definere polytope, der er begrænset af kun én li
 \begin{defn}{}{}
 Lad $\mathbf{a}$ være en vektor i $\R^n$, hvor $\mathbf{a} \neq \mathbf{0}$ og lad $b$ være en skalar.
 \begin{enumerate}[label=(\alph*)]
-\item Mængden $\{x \in \R^n \mid \mathbf{a}^T=b\}$ kaldes et \textbf{hyperplan}.
-\item Mængden $\{x \in \R^n \mid \mathbf{a}^T \geq b\}$ kaldes et \textbf{halvrum}.
+\item Mængden $\{x \in \R^n \mid \mathbf{a}^T \mathbf{x}=b\}$ kaldes et \textbf{hyperplan}.
+\item Mængden $\{x \in \R^n \mid \mathbf{a}^T \mathbf{x} \geq b\}$ kaldes et \textbf{halvrum}.
 \end{enumerate}
 \end{defn}
 \noindent
 %
 Det gælder her, at hyperplanet er grænsen for et tilsvarende halvrum.
-I $\R^2$ vil hyperplanet således være en ret linje der afskære en del af rummet, og der vil dermed være et halvrum på hvad side af hyperplanet.
-
-\ref{fig:Graf123}
+I $\R^2$ vil hyperplanet således være en ret linje, som afskære en del af rummet, og der vil dermed være et halvrum på hvad side af hyperplanet.
+På figur \ref{fig:Graf123} ses et udsnit af hyperplanet, som afskærer et halvrum markeret med gråblå og et halvrum markeret med orangerød. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}
-  \begin{tikzpicture}
-    \tikzset{punkt/.style={circle, thick, draw=black, minimum width=0.5cm,inner sep=0}}
-    \node[punkt] at (0,0)      (v1){$v_1$};
-    \node[punkt] at (2,0)      (v2){$v_2$};
-    \node[punkt] at (0,-2)     (v3){$v_3$};
-    \node[punkt] at (2,-2)      (v4){$v_4$};
-    
-    \draw [-, thick, draw=black] (v1) -- (v2);
-    \draw [<-, thick, draw=black] (v1) -- (v3);
-    \draw [-, thick, draw=black] (v2) -- (v4);
-    \draw [<-, thick, draw=black] (v3) -- (v4);
-    \draw [-, thick, draw=black] (v1) to[bend left] (v2);
-    \draw [-, thick, draw=black] (v3) to[bend right] (v4);
-    \draw [<-, thick, draw=black] (v3) to[bend left] (v4);
-    \path  (v2)  edge[->, out=10,in=75,looseness=6, thick, draw=black] (v2);
-    \path  (v3)  edge[->, out=200,in=265,looseness=6, thick, draw=black] (v3);
-  \end{tikzpicture}
-  \captionof{figure}{En blandet graf.}
+\begin{tikzpicture}
+% Den øverste linje
+\draw[name path=b,-, white, thick] (0,3.5) -- (6,3.5);
+%
+% Den nederste linje
+\draw[name path=c,-, white, thick] (0,-1) -- (6,-1);
+%
+% Den mellemste linje
+\draw[name path=a,-, white, thick] (0,0) -- (6,3);
+%
+% Farvning 
+\tikzfillbetween [of=a and b]{myblue!5}
+\tikzfillbetween [of=a and c]{myred!5}
+%
+% Linjen mellem 
+\draw[-, black, very thick] (0,0) -- (6,3);
+\draw[->, black, thick] (2.4,1.2) -- (2,2);
+\filldraw[black] (0.2,-0.3) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x}=b$};
+\filldraw[black] (3,2.6) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x} > b$};
+\filldraw[black] (3,1.3) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x} < b$};
+\filldraw[black] (1.6,2.2) circle (0pt) node[anchor=west] {$\mathbf{a}$};
+\end{tikzpicture}
+  \captionof{figure}{Et hyperplan og to halvrum, markeret med henholdsvis gråblå for $\mathbf{a}^T \mathbf{x} < b$ og orangerød for $\mathbf{a}^T \mathbf{x} > b$.}
   \label{fig:Graf123}
 \end{center}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Flot graf alla Julie     %%%
+%%% Soooom ikke er færdig    %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+\addplot3[
+    surf,
+]
+{0.5*x};
+\end{axis}
+\end{tikzpicture}
+  \captionof{figure}{FUCK DET HER LORT XD}
+  \label{fig:NEJ}
+\end{center}
+% 
+
 %Et polyhedron er derfor en samling af polyeder der til sammen skaber en geometrisk figur i et givet vektorrum.
 %ligeldes bør der nævnes noget med at a står vinkelret på linjen 
+
+\begin{thm}{}{}
+Lad $\mathbf{a}$ være en vektor i $\R^n$, hvor $\mathbf{a} \neq \mathbf{0}$
+\end{thm}
