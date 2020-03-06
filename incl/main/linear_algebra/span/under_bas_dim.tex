@@ -1,7 +1,8 @@
 \section{Underrum}
-Det kan ofte være belejligt at undersøge vektorer i en begrænset del af $\R^n$. Den begrænsede del kaldes et \textbf{underum}.
+Det kan ofte være belejligt at undersøge vektorer i en begrænset del af $\R^n$. Den begrænsede del kaldes et \textit{underum}.
+%
 \begin{defn}{}{underrum}
-En mængde $W$, bestående af vektorer i $\R^n$, er et underrum af $\R^n$, hvis den opfylder følgende betingelser:	
+En mængde $W$, bestående af vektorer i $\R^n$, er et \textbf{underrum} af $\R^n$, hvis den opfylder følgende betingelser:	
 \begin{enumerate}[label=(\alph*)]
 	\item $\textbf{0}\in W$.
 	\item $\textbf{u}$,$\textbf{v} \in W \rightarrow \textbf{u}+\textbf{v} \in W $.
@@ -10,8 +11,8 @@ En mængde $W$, bestående af vektorer i $\R^n$, er et underrum af $\R^n$, hvis 
 \end{defn}
 \noindent
 Mængden $\R^n$ er et underrum til sig selv, da summen af to vilkårlige vektorer i $\R^n$ tilhører $\R^n$.
-Enhver vektor multipliciteret med en skalar er i $\R^n$, og $\textbf{0}$ er ligeledes i $\R^n$. 
-Mængden $\{\textbf{0}\}$ er ligeså et underrum til $\R^n$, kaldet \textbf{nul-underrummet}.
+Enhver vektor multipilciteret med en skalar er i $\R^n$, og $\textbf{0}$ er ligeledes i $\R^n$. 
+Mængden $\{\textbf{0}\}$ er ligeså et underrum til $\R^n$, kaldet \textit{nul-underrummet}.
 %
 %
 \begin{thm}{}{}
@@ -51,10 +52,10 @@ Hermed er det bevist, at spannet af en delmængde af $\R^n$ er et underrum til $
 \end{proof}
 
 \subsection{Underrum for matricer}
-Der findes bestemte typer af underrum, som er relevante i forbindelse med matricer. Den første type, der beskrives, er \textbf{nulrummet}.
+Der findes bestemte typer af underrum, som er relevante i forbindelse med matricer. Den første type, der beskrives, er \textit{nulrummet}.
 %
 \begin{defn}{}{}
-Nulrummet til en matrix $A$, noteret $\text{nrum}(A)$, er løsningsmængden til matrixligningen $A\textbf{x}=\textbf{0}$. 
+\textbf{Nulrummet} til en matrix $A$, noteret $\text{nrum}(A)$, er løsningsmængden til matrixligningen $A\textbf{x}=\textbf{0}$. 
 \end{defn}
 %
 \noindent
@@ -94,12 +95,13 @@ Dette viser, at $c\textbf{u}$ er i nulrummet, hvilket viser, at nulrummet af $A$
 \end{proof}
 \\
 \noindent
-Andre relevante typer underrum er \textbf{rækkerum} og \textbf{søjlerum}.
+Andre relevante typer underrum er \textit{rækkerum} og \textit{søjlerum}.
+%
 \begin{defn}{}{}
 %Til nedenstående "Rækkerum er spannet af rækkerne i en matrix" - right? 
-Rækkerum er spannet, som kommer af rækkerne i en matrix, og noteres $\text{ræk}(A)$.
+\textbf{Rækkerum} er spannet, som kommer af rækkerne i en matrix, og noteres $\text{ræk}(A)$.
 \\
-Søjlerum er spannet af søjlerne i en matrix, og noteres $\text{søj}(A)$.
+\textbf{Søjlerum} er spannet af søjlerne i en matrix, og noteres $\text{søj}(A)$.
 \end{defn}
 \noindent
 Underrum med særegne karakteristika er også relevante i forbindelse med lineær afbildning.
@@ -107,15 +109,15 @@ Værdimængden af en lineær afbildning er det samme som søjlerummet af dens st
 %
 \subsection{Basis}
 Mens et underrum kan beskrives med en given mængde vektorer, så er det fordelagtigt at beskrive det med så få vektorer som muligt. 
-Denne mængde kaldes \textbf{basis} for underrummet.
+Denne mængde kaldes \textit{basis} for underrummet.
 %
 \begin{defn}{}{basisunderrum}
 Lad $\mathcal{P}$ være et ikke-nul-underrum af $\R^n$. 
-En basis for $\mathcal{P}$ er en lineært uafhængig mængde af generatorer for $\mathcal{P}$.
+En \textbf{basis} for $\mathcal{P}$ er en lineært uafhængig mængde af generatorer for $\mathcal{P}$.
 \end{defn}
 \noindent
 Eksempelvis kan en mængde af standardvektorer $\{\textbf{e}_1,\textbf{e}_2,\ldots,\textbf{e}_n\}$ bruges som basis for $\R^n$.
-Denne type basis kaldes for \textbf{standard basis}.
+Denne type basis kaldes for \textit{standard basis}.
 Der findes dog flere mulige baser for det samme underrum.
 \\\\
 %
