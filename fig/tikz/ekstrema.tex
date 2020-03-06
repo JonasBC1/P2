@@ -2,41 +2,40 @@
 \begin{figure}[h!]
   \centering
   \begin{tikzpicture}
-    \tikzset{punkt/.style={point, draw=black}}\draw[color=black](1,-2) circle (2.5);
-	\draw[color=black](7,-2) circle (2.5);  
-	\draw[color=black, fill=myblue!15](7,-2) circle (1.5);  
+    \tikzset{punkt/.style={point, draw=black}}
+    
+    
 %Punkter
-	\draw  node[fill,circle,inner sep=0pt,minimum size=3pt] at (1,-2.65)  (v1) {};
-	\draw  node[fill,circle,inner sep=0pt,minimum size=3pt] at (1,-1.35)  (v2) {};
-	\draw  node[fill,circle,inner sep=0pt,minimum size=3pt] at (7,-2)  (v3) {};
 
-%Labels
-	\draw  node at (0.75,-2.55)  {$\textbf{u}$};
-	\draw  node at (0.75,-1.25)  {$\textbf{v}$};
-	\draw  node at (7.25,-1.85)  {$\textbf{w}$};
+	\node at (4,4)	(1){};
+	\node at (-4,4)	(4){};
+	\node at (4,-4)	(2){};
+	\node at (-4,-4) (3){};
+
+
+	\filldraw[black, fill=blue!5] (2) rectangle (4);
+	\node at (0,0) (P){$P$};
 	
-	
-	
-	%Navn på cirklerne 
-	\draw[black, fill=black] (1.25,1) circle (0pt) node[anchor=west] {$\S_1$};    
-	\draw[black, fill=black] (6.75,1) circle (0pt) node[anchor=west] {$\S_2$};
-	%Navn på punkter 
+	\filldraw [black] (2,4) circle (2pt);
+	\filldraw [black] (4,4) circle (2pt);
+	\filldraw [black] (6,4) circle (2pt);
+	\filldraw [black] (-4,2) circle (2pt);
+	\filldraw [black] (-4,0) circle (2pt);
+	\filldraw [black] (-4,-2) circle (2pt);	
+	\node at (2,4.25)	 (y){$\textbf{y}$};
+	\node at (4,4.25)	 (x){$\textbf{x}$};
+	\node at (6,4.25)	 (z){$\textbf{z}$};
+	\node at (-3.75,2)  (v){$\textbf{v}$};
+	\node at (-3.75,0)	 (w){$\textbf{w}$};
+	\node at (-3.75,-2) (u){$\textbf{u}$};
 
-	\draw[black, fill=black] (4,1.5) circle (0pt) node[anchor=west] {$f$};
-	
-	\draw [->,thick, draw=black] (2,1) -- (6.5,1);
 
-	 \draw [->, thick, draw=red] ([xshift=5pt, yshift=-1pt]v1.north) -- ([xshift=-5pt, yshift=1pt]v3.south);
-     \draw [->, thick, draw=black] ([xshift=5pt, yshift=1pt]v2.south) -- ([xshift=-5pt, yshift=-1pt]v3.north);
+	\draw[-, dashed,black,ultra thick] (6,4) -- (2,4);
+	\draw[-, dashed,black,ultra thick] (-4,2) -- (-4,-2);
 
-
-	\draw[black, fill=black] (0,-5) circle (0pt) node[anchor=west] {Domæne};
-	\draw[black, fill=black] (6,-5) circle (0pt) node[anchor=west] {Codomæne};
-	\draw[black, fill=black] (5.5,-2.5) circle (0pt) node[anchor=west] {Værdimængde};    
-	%Streger mellem punkterne
   \end{tikzpicture}
-  \caption{En funktion fra $\S_1$ til $\S_2$, hvor $f(\textbf{v})=\textbf{w}$ og f$(\textbf{u})=\textbf{w}$. }
-  \label{fig:afbild}
+  \caption{En afgrænset polytop $P$ hvor $\textbf{x}$ er et ekstramapunkt da der ikke findes vektorer $\textbf{y}$ og $\textbf{z}$ sådan at $\mathbf{x}=\lambda\mathbf{y}+(1-\lambda)z$. $\textbf{w}$ er i modsætning ikke et ekstremapunkt da der findes $\textbf{v}$ og $\textbf{u}$ sådan at $\mathbf{w}=\lambda\mathbf{v}+(1-\lambda)u$.}
+  \label{fig:ekstrema}
 \end{figure}
 %
 %
