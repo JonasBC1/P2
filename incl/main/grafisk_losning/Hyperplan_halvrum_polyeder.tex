@@ -74,31 +74,25 @@ På figur \ref{fig:Graf123} ses et udsnit af hyperplanet, som afskærer et halvr
   \captionof{figure}{Et hyperplan og to halvrum, markeret med henholdsvis gråblå for $\mathbf{a}^T \mathbf{x} < b$ og orangerød for $\mathbf{a}^T \mathbf{x} > b$.}
   \label{fig:Graf123}
 \end{center}
-
+%
+%\begin{center}
+%\begin{tikzpicture}
+%\begin{axis}
+%\addplot3[
+%    surf,
+%]
+%{0.5*x};
+%\end{axis}
+%\end{tikzpicture}
+%  \captionof{figure}{FUCK DET HER LORT XD}
+%  \label{fig:NEJ}
+%\end{center}
+% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
-%%% Soooom ikke er færdig    %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 \begin{center}
-\begin{tikzpicture}
-\begin{axis}
-\addplot3[
-    surf,
-]
-{0.5*x};
-\end{axis}
-\end{tikzpicture}
-  \captionof{figure}{FUCK DET HER LORT XD}
-  \label{fig:NEJ}
-\end{center}
-% 
-\begin{center}
-% \usepackage{3dplot} 			   
-%Angle Definitions
-%-----------------
-%set the plot display orientation
-%\tdplotsetmaincoords{60}{110}
-
 %start tikz picture, and use the tdplot_main_coords style to implement the display 
 %coordinate transformation provided by 3dplot
 \begin{tikzpicture}[scale=5]%[scale=5,tdplot_main_coords]
@@ -109,18 +103,30 @@ På figur \ref{fig:Graf123} ses et udsnit af hyperplanet, som afskærer et halvr
 \coordinate (X) at (1,0,-0.3);
 \coordinate (Z) at (-0.3,0,1);
 \coordinate (Y) at (-0.3,0,-0.3);
-
+%
+\coordinate (XZa) at (1,0.5,1);
+\coordinate (Xa) at (1,0.5,-0.3);
+\coordinate (Za) at (-0.3,0.5,1);
+\coordinate (Ya) at (-0.3,0.5,-0.3);
+%
+\coordinate (Na) at (0.8,0.5,0.5);
+\coordinate (Pa) at (0.8,0.7,0.5);
+%
 \coordinate (N) at (0.5,0,0.5);
 \coordinate (P) at (0.5,0.5,0.5);
-
+%
+\draw[black] (0.3,0.5,0.5) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x}=b$};
+\draw[black] (0.3,1,0.5) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x} > b$};
+\draw[black] (0.3,0.1,0.5) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x} < b$};
+%
 %draw figure contents
 %--------------------
-\draw [thick,->] (N) -- (P) node[anchor=south west]{$P$};
-\draw [thick, dashed] (N) -- (0.5,-0.3,0.5);
-
+\draw [thick,->] (Na) -- (Pa) node[anchor=south west]{$a$};
+\draw [thick, dashed] (Na) -- (0.8,0.25,0.5);
+%
 \filldraw [fill=red,opacity=0.3] 
-         (Y) -- (X) -- (XZ) -- (Z) -- cycle;
-
+         (Ya) -- (Xa) -- (XZa) -- (Za) -- cycle;
+%
 %draw the main coordinate system axes
 \draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=south east]{$x$};
 \draw[thick] (0,0,0) -- (-0.3,0,0);
@@ -129,10 +135,10 @@ På figur \ref{fig:Graf123} ses et udsnit af hyperplanet, som afskærer et halvr
 \draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south east]{$z$};
 \draw[thick] (0,0,0) -- (0,0,-0.3);
 \end{tikzpicture}
-  \captionof{figure}{Måske den her - Heller ikke sikker}
+  \captionof{figure}{Et hyperplan i $\R^3$ og to halvrum.}
   \label{fig:mm}
 \end{center}
-
+%
 %Et polyhedron er derfor en samling af polyeder der til sammen skaber en geometrisk figur i et givet vektorrum.
 %
 \begin{thm}{}{}
