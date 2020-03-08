@@ -15,7 +15,7 @@ En $n \times n$ matrix $A$ er \textbf{invertibel}, hvis en $n \times n$ matrix $
 %
 Det er endvidere relevant, hvorvidt inversen er entydig.
 \begin{thm}{}{mxinversent}
-Såfremt en matrix $A$ er invertibel findes der en entydig matrix $B$, som er dennes invers.
+Såfremt en matrix $A$ er invertibel, findes der en entydig matrix $B$, som er dennes invers.
 \end{thm}
 %
 \begin{proof}
@@ -69,7 +69,24 @@ Så eksisterer der en invertibel $m \times m$ matrix $P=E_kE_{k-1} \cdots E_1$, 
 \end{thm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HER
 \begin{proof}
-\textbf{Beviset kommer senere }
+Lad $A$ være en $m \times n$ matrix og $P=E_kE_{k-1} \cdots E_1$ være en $m \times m$ matrix. 
+$P$ er dermed et produkt af elementære matricer, hvormed $P$ er invertibel. 
+Jævnfør definition \ref{defn:mxmulti} haves, at 
+$$
+PA=
+\begin{bmatrix}
+P\textbf{a}_1 & P\textbf{a}_2 & \ldots P\textbf{a}_m
+\end{bmatrix}. 
+$$
+Antag, at række $5$ i $A$ skal multipliceres med en skalar $c$. 
+Lad $p_{5,5}=c$, og resten af indgangene i $\textbf{p}_5$ være $0$. 
+Dermed haves, at række $5$ i $PA$ er 
+$$
+\begin{bmatrix}
+c
+\end{bmatrix}
+$$
+........... %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% hjælp
 \end{proof}
 %
 \\
