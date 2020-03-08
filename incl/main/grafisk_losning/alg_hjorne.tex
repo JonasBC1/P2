@@ -1,0 +1,21 @@
+\begin{defn}{}{algh}
+Hvis en vektor $\textbf{x}$ opfylder $\textbf{a}^T_i\textbf{x}= b_i$ for $i \in M_1, M_2 \text{ eller } M_3$, så siges den tilsvarende betingelse at være \textbf{bindende} ved $\textbf{x}$.
+\end{defn}\noindent
+%
+Følgende sætning giver anledning til hvordan disse bindende betingelser kan føres i relation til løsninger af lineære optimeringsproblemer.
+%
+\begin{thm}{}{}
+
+Lad $\textbf{x}$ være et element i $\R^n$ og lad $I=\{i|\textbf{a}^T_i\textbf{x}=b_i\}$ være en mængde af indexer på betingelser, der er bindende ved $\textbf{x}$.
+Så er følgende udsagn ækvivalente.
+%
+\begin{enumerate}[label=(\alph*)]
+\item Der eksisterer $n$ vektorer i mængden $\{\textbf{a}_i|i \in I \}$, som er lineært uafhængige.
+\item Spannet af vektorerne $\textbf{a}_i$, for $i$ i $I$, dækker hele $\R^n$.
+\item Ligningssystemet $\textbf{a}^T_i\textbf{x}= b_i$, for $i \in I$, har en entydig løsning.
+\end{enumerate}
+\end{thm}
+%
+\begin{proof}
+Smukt bevis INC.
+\end{proof}

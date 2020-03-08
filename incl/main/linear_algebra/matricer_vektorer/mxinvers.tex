@@ -1,15 +1,15 @@
 \section{Elementære og inverse matricer}
-At multiplicere en matrix $A$ med en $n \times n$ \textbf{elementær matrix} $E$ svarer til at udføre én rækkeoperation på $A$. 
+At multiplicere en matrix $A$ med en $n \times n$ \textit{elementær matrix} $E$ svarer til at udføre én rækkeoperation på $A$. 
 Dermed kan enhver rækkeoperation udføres gennem matrixmultiplikation. 
 En $n \times n$ matrix $E$ er elementær, hvis én rækkeoperation udført på $I_n$ resulterer i $E$. 
 %Eksempel? 
 \\\\
 Lad nu $A$ være en $m \times n$ matrix og $E$ en elementær $m \times m$ matrix, der er resultatet af én rækkeoperation udført på $I_m$. 
 Matrixproduktet $EA$ kan opnås ved at udføre én rækkeoperation på $A$. 
-Enhver elementær matrix er desuden \textbf{invertibel}, og dens \textbf{invers} er også en elementær matrix. 
+Enhver elementær matrix er desuden \textit{invertibel}, og dens \textit{invers} er også en elementær matrix. 
 %
 \begin{defn}{}{mxinvers}
-En $n \times n$ matrix $A$ er invertibel, hvis en $n \times n$ matrix $B$ eksisterer, så $AB=BA=I_n$. 
+En $n \times n$ matrix $A$ er \textbf{invertibel}, hvis en $n \times n$ matrix $B$ eksisterer, så $AB=BA=I_n$. 
 \end{defn}
 \noindent
 %
@@ -55,7 +55,7 @@ Dermed er $AB^{-1}=A^{-1}B^{-1}$.
 \\\\
 (c) Antag at A er invertibel. 
 Det følger fra definition \ref{defn:mxinvers}, at $A^{-1}A=I_n$. 
-Jævnfør sætning punkt (g) i  \ref{thm:mxmulti} følger det hermed, at $A^T(A^{-1})^T=(A^{-1}A)^T=I_n^T=I_n$. 
+Jævnfør sætning \ref{thm:mxmulti}(g) følger det hermed, at $A^T(A^{-1})^T=(A^{-1}A)^T=I_n^T=I_n$. 
 Ligeledes kan det vises, at $(A^{-1})^TA^T=I_n$. 
 Derfor er $A^T$ en invertibel matrix med inversen $(A{-1})^T$ og $(A^T)^{-1}A=(A^{-1})^T$.
 \end{proof}\\

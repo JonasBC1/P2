@@ -28,13 +28,15 @@
 \theoremstyle{definition}          	% Title med fed, opretstående tekst
 %\newtheorem{defn}[thm]{Definition} % Definitioner, nummereret ligesom sætninger
 \newcounter{example}[chapter]
-\def\theexample{\thechapter.\arabic{example}}
-\newenvironment{eks}{\phantom{.}\newline\noindent\refstepcounter{example}\textbf{Eksempel~\theexample}\phantom{.}\newline\noindent\textcolor{myblue!25}{\rule{\textwidth}{1pt}}}
+\def\theexample{eksempel \thechapter.\arabic{example}}
+\def\theExample{Eksempel \thechapter.\arabic{example}}
+\newenvironment{eks}{\phantom{.}\newline\noindent\refstepcounter{example}\textbf{\theExample}\phantom{.}\newline\noindent\textcolor{myblue!25}{\rule{\textwidth}{1pt}}}
 {\phantom{.}\newline\textcolor{myblue!25}{\rule{\textwidth}{1pt}}\bigskip}  
 
 \newcounter{proof}[chapter]
-\def\theproof{\thechapter.\arabic{proof}}
-\renewenvironment{proof}{\phantom{.}\newline\noindent\refstepcounter{proof}\textbf{Bevis~\theproof}\phantom{.}\newline\noindent}
+\def\theproof{bevis \thechapter.\arabic{proof}}
+\def\theProof{Bevis \thechapter.\arabic{proof}}
+\renewenvironment{proof}{\phantom{.}\newline\noindent\refstepcounter{proof}\textbf{\theProof}\phantom{.}\newline\noindent}
 {\qed\newline}  
 
 %farvet-commands

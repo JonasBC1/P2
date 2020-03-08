@@ -92,17 +92,19 @@ Slutteligt laves en udskiftning på $R_3$, hvor skaleringen $3R_1$ adderes med $
 % Jeg kunne personligt godt tænke mig mere "matematik" i disse subsections, men jeg ved jo godt, at det er smag og behag. 
 %
 \subsection{Trappeform og reduceret trappeform}
-En række i en matrix kaldes en \textbf{nulrække}, hvis alle indgange er nul, og en \textbf{ikke-nulrække}, hvis mindst én indgang i rækken er forskellig fra nul.
-Dette bruges til definitionen af \textbf{trappeform}.
+En række i en matrix kaldes en \textit{nulrække}, hvis alle indgange er nul, og en \textit{ikke-nulrække}, hvis mindst én indgang i rækken er forskellig fra nul.
+Dette bruges til definitionen af \textit{trappeform}.
+%
 \begin{defn}{}{}
-En matrix er på trappeform, hvis den opfylder følgende kriterier:
+En matrix er på \textbf{trappeform}, hvis den opfylder følgende kriterier:
 \begin{enumerate}[label=(\alph*)]
-\item Enhver ikke-nulrække ligger over alle nul rækker.
+\item Enhver \textbf{ikke-nulrække} ligger over alle nul rækker.
 \item Den første ikke-nulindgang i en ikke-nulrække ligger i en søjle til højre for første ikke-nulindgange i forrige række.
 \item Hvis en søjle har den første ikke-nulindgang i en række, så er alle indgangene i søjlen under den $0$.
 \end{enumerate}
 \end{defn}
-\begin{eks}
+%
+\begin{eks}\label{eks:trappe}
 Betragt $A$ og $B$. $A$ er på trappeform, mens $B$ ikke er på trappeform, da $b_{3,2} \neq 0$. 
 Hvis der foretages en ombytning på række to og tre, så ville matrix $B$ også være på trappeform
 %
@@ -144,7 +146,7 @@ Den reducerede trappeform af en matrix $A$ noteres  $R$. Et lineært ligningssys
 Metoden til at gøre dette ses i afsnit \ref{gauss}.
 \\
 %
-\begin{eks}\label{eks:trappe}
+\begin{eks}
 Betragt matricen $A$.
 \begin{align*}
 A=
@@ -218,6 +220,5 @@ Dette vil blive gjort første gang en matrice bliver lavet til trappeform eller 
 %\end{eks}
 Hvis der er pivotindgang i den sidste søjle, så har ligningssystemet ingen løsning.
 %
-De variables søjler, der indeholder pivotindgange, kaldes for \textbf{faste variable}, mens de, som ikke indholder pivotindgange, kaldes for \textbf{frie variable}. 
+De variables søjler, der indeholder pivotindgange, kaldes for \textit{faste variable}, mens de, som ikke indholder pivotindgange, kaldes for \textit{frie variable}. 
 Ligningssystemet kan løses for de faste variable udtrykt ved de frie variable. 
-
