@@ -92,6 +92,47 @@ På figur \ref{fig:Graf123} ses et udsnit af hyperplanet, som afskærer et halvr
   \label{fig:NEJ}
 \end{center}
 % 
+\begin{center}
+% \usepackage{3dplot} 			   
+%Angle Definitions
+%-----------------
+%set the plot display orientation
+%\tdplotsetmaincoords{60}{110}
+
+%start tikz picture, and use the tdplot_main_coords style to implement the display 
+%coordinate transformation provided by 3dplot
+\begin{tikzpicture}[scale=5]%[scale=5,tdplot_main_coords]
+%set up some coordinates 
+%-----------------------
+\coordinate (O) at (0,0,0);
+\coordinate (XZ) at (1,0,1);
+\coordinate (X) at (1,0,-0.3);
+\coordinate (Z) at (-0.3,0,1);
+\coordinate (Y) at (-0.3,0,-0.3);
+
+\coordinate (N) at (0.5,0,0.5);
+\coordinate (P) at (0.5,0.5,0.5);
+
+%draw figure contents
+%--------------------
+\draw [thick,->] (N) -- (P) node[anchor=south west]{$P$};
+\draw [thick, dashed] (N) -- (0.5,-0.3,0.5);
+
+\filldraw [fill=red,opacity=0.3] 
+         (Y) -- (X) -- (XZ) -- (Z) -- cycle;
+
+%draw the main coordinate system axes
+\draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=south east]{$x$};
+\draw[thick] (0,0,0) -- (-0.3,0,0);
+\draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+\draw[thick,dashed] (0,0,0) -- (0,-0.3,0);
+\draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south east]{$z$};
+\draw[thick] (0,0,0) -- (0,0,-0.3);
+\end{tikzpicture}
+  \captionof{figure}{Måske den her - Heller ikke sikker}
+  \label{fig:mm}
+\end{center}
+
 %Et polyhedron er derfor en samling af polyeder der til sammen skaber en geometrisk figur i et givet vektorrum.
 %
 \begin{thm}{}{}
