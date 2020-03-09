@@ -15,7 +15,7 @@ Det gælder endvidere, at en mængde af formen $ \{x \in \R^n \mid A\textbf{x}=b
 % Eventuelt med et eksempel 
 %lidt forskellige muligheder her, enten kan det relateres til simplex eller blive introduceret her
 %
-Med udgangspunkt i eksempel \ref{eks:min_lin} er polyeden markeret med det blå område på figur \ref{fig:min_beg}. 
+Med udgangspunkt i eksempel \ref{eks:min_lin} er polyeden   det markerede blå område på figur \ref{fig:min_beg}. 
 Ligeledes ses på figur \ref{fig:nej2} en polyede $\mathcal{P}$, der er markeret med blå i $\R^2$. 
 På figur \ref{fig:nej3} ses en polyede $\mathcal{P}$ markeret med blå i $\R^3$. 
 %
@@ -34,7 +34,8 @@ $
 %
 \textit{Polygonet} er begrænsningerne, som afgrænser polyeden fra resten af rummet. 
 Dermed er polygonet på figur \ref{fig:nej2} linjerne, der afgrænser $\mathcal{P}$ fra resten af $\R^2$.
-Polygonet på figur \ref{fig:nej4} er derimod udsnittet af fladerne, der udgør kuben, som afgrænser $\mathcal{P}$ fra resten af $\R^3$.
+Polygonet på figur \ref{fig:nej3} er derimod udsnittet af fladerne, der udgør kuben, som afgrænser $\mathcal{P}$ fra resten af $\R^3$.
+\\\\
 %
 Det gælder endvidere for polyeder at disse både kan være \textit{begrænsede} og \textit{ubegrænsede}.
 %
@@ -43,6 +44,8 @@ En mængde $S \subset \R^n$ er \textbf{begrænset} såfremt der eksister en kons
 Såfremt en sådan konstant ikke eksisterer er mængden \textbf{ubegrænset}. 
 \end{defn}
 \noindent
+% 
+\textbf{Eksemplet fra lineær optimeringsproblemer}
 %
 %alternativt værdien af ..... $\leq k$ eller $\geq$
 %
@@ -50,8 +53,6 @@ I henhold til lineære programmeringsproblemer vil dette ofte være begrænset.
 % Dette er eksempelvis tilfældet, hvis problemet er af en sådan karakter, at ingen af variabelene i karakterligningen kan have negative værdier.
 %er det rigtigt det jeg skriver i ovenstående?
 Ligeledes er det en fordel at definere polyeder, der er begrænset af kun én lineær betingelse. 
-%
-%skal der laves en definition på et polyede?
 %
 \begin{defn}{}{}
 Lad $\mathbf{a}$ være en vektor i $\R^n$, hvor $\mathbf{a} \neq \mathbf{0}$ og lad $b$ være en skalar.
@@ -71,8 +72,8 @@ På figur \ref{fig:Graf123} ses et udsnit af hyperplanet, som afskærer det øvr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{fig/tikz/geometri/hyperplan}
 %
-Med udgangspunkt i polyeden $\mathcal{P}$ på figur \ref{fig:nej2} består polyeden af fire hyperplaner. 
-Fællesmængden for de øvre halvrum udgør polygonet.
+Med udgangspunkt i polyeden $\mathcal{P}$ på figur \ref{fig:nej2} består polyegonen af fire hyperplaner. 
+Fællesmængden for de øvre halvrum udgør polyeden.
 På figur \ref{fig:nej5} er de fire hyperplaner markeret. 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,6 +83,9 @@ På figur \ref{fig:nej5} er de fire hyperplaner markeret.
 \input{fig/tikz/geometri/hyperplan_eks}
 %
 På figur \ref{fig:min_beg} udgør begrænsningerne hver sin hypeplan, hvor fællesmængden for de øvre halvrum udgør polyeden.
+\\\\
+% 
+Ligeledes 
 
 %
 %\begin{center}
