@@ -10,12 +10,12 @@ $\{x\in \R^n \mid A\mathbf{x}\geq b\}.$
 \noindent
 %
 Som det fremgår fra definitionen, er en polyede således mængden af mulige løsninger $\mathbf{x}$ af et ligningssystem, altså værdimængden.
-Det gælder endvidere, at en mængde af formen $ \{x \in \R^n \mid A\textbf{x}=b,x \geq 0 \}$, hvilket kaldes en \textit{polyede på standardform}, hvilket vil blive beskrevet dybere i afsnit \ref{afsnit:fisk}.
+Det gælder endvidere, at en mængde af formen $ \{x \in \R^n \mid A\textbf{x}=b,x \geq 0 \}$, kaldet en \textit{polyede på standardform}, hvilket vil blive beskrevet dybere i afsnit \ref{afsnit:fisk}.
 % Kommentar til at der her er derfor det er rellevant og at det vil blive uddybet senere 
 % Eventuelt med et eksempel 
 %lidt forskellige muligheder her, enten kan det relateres til simplex eller blive introduceret her
 %
-Med udgangspunkt i eksempel \ref{eks:min_lin} er polyeden markeret med det blå område på figur \ref{fig:min_beg}. 
+Med udgangspunkt i eksempel \ref{eks:min_lin} er polyeden   det markerede blå område på figur \ref{fig:min_beg}. 
 Ligeledes ses på figur \ref{fig:nej2} en polyede $\mathcal{P}$, der er markeret med blå i $\R^2$. 
 På figur \ref{fig:nej3} ses en polyede $\mathcal{P}$ markeret med blå i $\R^3$. 
 %
@@ -34,7 +34,8 @@ $
 %
 \textit{Polygonet} er begrænsningerne, som afgrænser polyeden fra resten af rummet. 
 Dermed er polygonet på figur \ref{fig:nej2} linjerne, der afgrænser $\mathcal{P}$ fra resten af $\R^2$.
-Polygonet på figur \ref{fig:nej4} er derimod udsnittet af fladerne, der udgør kuben, som afgrænser $\mathcal{P}$ fra resten af $\R^3$.
+Polygonet på figur \ref{fig:nej3} er derimod udsnittet af fladerne, der udgør kuben, som afgrænser $\mathcal{P}$ fra resten af $\R^3$.
+\\\\
 %
 Det gælder endvidere for polyeder at disse både kan være \textit{begrænsede} og \textit{ubegrænsede}.
 %
@@ -43,6 +44,8 @@ En mængde $S \subset \R^n$ er \textbf{begrænset} såfremt der eksister en kons
 Såfremt en sådan konstant ikke eksisterer er mængden \textbf{ubegrænset}. 
 \end{defn}
 \noindent
+% 
+\textbf{Eksemplet fra lineær optimeringsproblemer}
 %
 %alternativt værdien af ..... $\leq k$ eller $\geq$
 %
@@ -50,8 +53,6 @@ I henhold til lineære programmeringsproblemer vil dette ofte være begrænset.
 % Dette er eksempelvis tilfældet, hvis problemet er af en sådan karakter, at ingen af variabelene i karakterligningen kan have negative værdier.
 %er det rigtigt det jeg skriver i ovenstående?
 Ligeledes er det en fordel at definere polyeder, der er begrænset af kun én lineær betingelse. 
-%
-%skal der laves en definition på et polyede?
 %
 \begin{defn}{}{}
 Lad $\mathbf{a}$ være en vektor i $\R^n$, hvor $\mathbf{a} \neq \mathbf{0}$ og lad $b$ være en skalar.
@@ -69,76 +70,22 @@ På figur \ref{fig:Graf123} ses et udsnit af hyperplanet, som afskærer det øvr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{center}
-\begin{tikzpicture}
-% Den øverste linje
-\draw[name path=b,-, white, thick] (0,3.5) -- (6,3.5);
+\input{fig/tikz/geometri/hyperplan}
 %
-% Den nederste linje
-\draw[name path=c,-, white, thick] (0,-1) -- (6,-1);
-%
-% Den mellemste linje
-\draw[name path=a,-, white, thick] (0,0) -- (6,3);
-%
-% Farvning 
-\tikzfillbetween [of=a and b]{myblue!5}
-\tikzfillbetween [of=a and c]{myred!5}
-%
-% Linjen mellem 
-\draw[-, black, very thick] (0,0) -- (6,3);
-\draw[->, black, thick] (2.4,1.2) -- (2,2);
-\filldraw[black] (0.2,-0.3) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x}=b$};
-\filldraw[black] (3,2.6) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x} > b$};
-\filldraw[black] (3,1.3) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x} < b$};
-\filldraw[black] (1.6,2.2) circle (0pt) node[anchor=west] {$\mathbf{a}$};
-\end{tikzpicture}
-  \captionof{figure}{Et hyperplan og to halvrum, markeret med henholdsvis blå for den øvre halvrum $\mathbf{a}^T \mathbf{x} < b$ og rød for den nedre halvrum $\mathbf{a}^T \mathbf{x} > b$.}
-  \label{fig:Graf123}
-\end{center}
-%
-Med udgangspunkt i polyeden $\mathcal{P}$ på figur \ref{fig:nej2} består polyeden af fire hyperplaner. 
-Fællesmængden for de øvre halvrum udgør polygonet.
+Med udgangspunkt i polyeden $\mathcal{P}$ på figur \ref{fig:nej2} består polyegonen af fire hyperplaner. 
+Fællesmængden for de øvre halvrum udgør polyeden.
 På figur \ref{fig:nej5} er de fire hyperplaner markeret. 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-\begin{center}
-%start tikz picture, and use the tdplot_main_coords style to implement the display 
-%coordinate transformation provided by 3dplot
-\begin{tikzpicture}[scale=5]%[scale=5,tdplot_main_coords]
-%set up some coordinates 
-%-----------------------
-\coordinate (a) at (1.2,1.2,0.7);
-\coordinate (b) at (0.7,1.2,0.7);
-\coordinate (c) at (0.7,1.2,1.2);
-\coordinate (d) at (1.2,1.2,1.2);
-\coordinate (f) at (1.2,0.7,0.7);
-\coordinate (g) at (1.2,0.7,1.2);
-\coordinate (h) at (0.7,0.7,1.2);
-%
-%draw figure contents
-%--------------------
-\filldraw[fill=myblue,opacity=0.3, thick](c)--(d)--(g)--(h)--(c);
-  \draw[thick](d)--(g);
-  \draw[thick,->](1.2,0.95,1.2)--(1.1,0.95,1.2);
-  \draw[thick](d)--(c);
-  \draw[thick](g)--(h);
-  \draw[thick](h)--(c);
-%
-\draw[black] (0.91,0.96,1.2) circle (0pt) node[anchor=west] {$\mathcal{P}$};
-%draw the main coordinate system axes
-\draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=south east]{$x$};
-\draw[thick] (0,0,0) -- (-0.2,0,0);
-\draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
-\draw[thick] (0,0,0) -- (0,-0.2,0);
-\end{tikzpicture}
-  \captionof{figure}{En polyede $\mathcal{P}$ markeret med blå i $\R^2$.}
-  \label{fig:nej5}
-\end{center}
+\input{fig/tikz/geometri/hyperplan_eks}
 %
 På figur \ref{fig:min_beg} udgør begrænsningerne hver sin hypeplan, hvor fællesmængden for de øvre halvrum udgør polyeden.
+\\\\
+% 
+Ligeledes 
 
 %
 %\begin{center}
