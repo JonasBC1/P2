@@ -1,7 +1,7 @@
 \begin{center}
-\begin{tikzpicture}[scale=6]%[scale=5,tdplot_main_coords]
-%set up some coordinates 
-%-----------------------
+\begin{tikzpicture}[scale=7]
+% Koordinater
+% -------------------------------------------------------
 \coordinate (a) at (1.2,1.2,0.7);
 \coordinate (b) at (0.7,1.2,0.7);
 \coordinate (c) at (0.7,1.2,1.2);
@@ -10,25 +10,35 @@
 \coordinate (g) at (1.2,0.7,1.2);
 \coordinate (h) at (0.7,0.7,1.2);
 %
-%draw figure contents
-%--------------------
-\filldraw[fill=myblue,opacity=0.3, thick](c)--(d)--(g)--(h)--(c);
-  \draw[thick](d)--(g);
-  \draw[thick,->](1.2,0.95,1.2)--(1.1,0.95,1.2) node[anchor=south east]{$a_4$};
-  \draw[thick](d)--(c);
-  \draw[thick,->](0.95,1.2,1.2)--(0.95,1.1,1.2) node[anchor=north east]{$a_3$};
-  \draw[thick](g)--(h);
-  \draw[thick,->](0.95,0.7,1.2)--(0.95,0.8,1.2) node[anchor=south west]{$a_2$};
-  \draw[thick](h)--(c);
-  \draw[thick,->](0.7,0.95,1.2)--(0.8,0.95,1.2) node[anchor=north west]{$a_1$};
+% Tegning af figur og kommentarer
+% -------------------------------------------------------
 %
+% Farve 
+% -------------------------------------------------------
+\filldraw[fill=myblue,opacity=0.3, thick](c)--(d)--(g)--(h)--(c);
+%
+% Linjer og navne
+% -------------------------------------------------------
+% a_1
+\draw[gray,thick,dashed](0.7,0.5,1.2)--(0.7,1.5,1.2);
+\draw[thick](h)--node[left]{$\mathbf{a}_1^T \mathbf{x}=b_1$} (c);
+\draw[thick,->](0.7,0.95,1.2)--(0.8,0.95,1.2) node[right]{$a_1$};
+%
+% a_2
+\draw[thick](d)--node[above]{$\mathbf{a}_2^T \mathbf{x}=b_2$} (c);
+\draw[thick,->](0.95,1.2,1.2)--(0.95,1.1,1.2) node[below]{$a_2$};
+%
+% a_3
+\draw[thick](d)--node[right] {$\mathbf{a}_3^T \mathbf{x}=b_3$} (g);
+\draw[thick,->](1.2,0.95,1.2)--(1.1,0.95,1.2) node[left]{$a_3$};
+%
+% a_4  
+  \draw[thick](g)--node[below]{$\mathbf{a}_4^T \mathbf{x}=b_4$} (h);
+  \draw[thick,->](0.95,0.7,1.2)--(0.95,0.8,1.2) node[above]{$a_4$};
+% Navn til polyeden
 \draw[black] (0.91,0.96,1.2) circle (0pt) node[anchor=west] {$\mathcal{P}$};
-%draw the main coordinate system axes
-\draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=south east]{$x$};
-\draw[thick] (0,0,0) -- (-0.2,0,0);
-\draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
-\draw[thick] (0,0,0) -- (0,-0.2,0);
+%
 \end{tikzpicture}
-  \captionof{figure}{En polyede $\mathcal{P}$ markeret med blå i $\R^2$.}
+  \captionof{figure}{Fællesmængden for den øvre halvrum for hyperplanerne udgør polyeden $\mathcal{P}$ markeret med blå i $\R^2$.}
   \label{fig:nej5}
 \end{center}
