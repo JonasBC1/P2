@@ -1,12 +1,5 @@
-\begin{minipage}[b]{0.45\textwidth}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Flot graf alla Julie     %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
 \begin{center}
-%start tikz picture, and use the tdplot_main_coords style to implement the display 
-%coordinate transformation provided by 3dplot
-\begin{tikzpicture}[scale=5]%[scale=5,tdplot_main_coords]
+\begin{tikzpicture}[scale=6]%[scale=5,tdplot_main_coords]
 %set up some coordinates 
 %-----------------------
 \coordinate (a) at (1.2,1.2,0.7);
@@ -21,12 +14,15 @@
 %--------------------
 \filldraw[fill=myblue,opacity=0.3, thick](c)--(d)--(g)--(h)--(c);
   \draw[thick](d)--(g);
+  \draw[thick,->](1.2,0.95,1.2)--(1.1,0.95,1.2) node[anchor=south east]{$a_4$};
   \draw[thick](d)--(c);
+  \draw[thick,->](0.95,1.2,1.2)--(0.95,1.1,1.2) node[anchor=north east]{$a_3$};
   \draw[thick](g)--(h);
+  \draw[thick,->](0.95,0.7,1.2)--(0.95,0.8,1.2) node[anchor=south west]{$a_2$};
   \draw[thick](h)--(c);
+  \draw[thick,->](0.7,0.95,1.2)--(0.8,0.95,1.2) node[anchor=north west]{$a_1$};
 %
 \draw[black] (0.91,0.96,1.2) circle (0pt) node[anchor=west] {$\mathcal{P}$};
-\draw[black] (0,0,0.7) circle (0pt);
 %draw the main coordinate system axes
 \draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=south east]{$x$};
 \draw[thick] (0,0,0) -- (-0.2,0,0);
@@ -34,6 +30,5 @@
 \draw[thick] (0,0,0) -- (0,-0.2,0);
 \end{tikzpicture}
   \captionof{figure}{En polyede $\mathcal{P}$ markeret med blå i $\R^2$.}
-  \label{fig:nej2}
+  \label{fig:nej5}
 \end{center}
-\end{minipage}
