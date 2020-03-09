@@ -1,20 +1,22 @@
 \section{Polyeder på standardform}
 \label{afsnit:fisk}
+%
 Som det bliver beskrevet i afsnit \ref{sec:standard} kan optimeringsproblemer opskrives på standardform.
-Dette korosponderer med polyeder der ligeledes kan opskrives på standardform: $P=\{\mathbf{x} \in \R^n \mid A\mathbf{x}=\mathbf{b},x \geq 0}$ hvor er $A$ er en $m \times n$ matrix.
+Dette korosponderer med polyeder der ligeledes kan opskrives på standardform: 
+$P=\{ \mathbf{x} \in \R^n \mid A\mathbf{x}=\mathbf{b},x \geq 0 \}$, hvor er $A$ er en $m \times n$ matrix.
 $P$ bliver er her et \textbf{polyede på standardform}.
-I de fleste tilfælde er det en fordel at antage at de $m$ rækker i $A$ er liniært uafhængige.
+I de fleste tilfælde er det en fordel at antage at de $m$ rækker i $A$ er lineært uafhængige.
 %I sætning \ref{something something} vil det endvidere blive vist at rækker der ikke er uafhængige kan udelukkes fra løsningen.
 som det ses i (ref til basale mulige løsninger) skal der være $n$ aktive-begrænsninger i spil for at finde en basal mulig løsning.
 såfremt $m \neq n$, skal der derfor vælges $n-m$ variable $x_i$ med henblik på, at sætte disse $x_i=0$, hvilket gør begrænsningerne $x_i \geq 0$ aktive.
-%ovenstående 53 i bogen har behov for andre læser så vi kan diskutere hvad det betyder.
-Det er dog ikke uvæsentligt hvilke af disse variable der omdannes til $0$ hvilket belyses af sætning \ref{thm:polystd}
+ovenstående 53 i bogen har behov for andre læser så vi kan diskutere hvad det betyder.
+Det er dog ikke uvæsentligt hvilke af disse variable der omdannes til $0$ hvilket belyses af sætning \ref{thm:polystd}.
 \begin{thm}{}{polystd}
 Ved begrænsningerne $A\mathbf{x}=\mathbf{b}$ og $\mathbf{x}\geq 0$.
-Antag at $A$ er en $m \times n$ og har liniært uafhængige rækker.
+Antag at $A$ er en $m \times n$ og har lineært uafhængige rækker.
 $\mathbf{x} \in \R^n$ er en basal løsning hvis og kun hvis: $A\mathbf{x}=\mathbf{b}$ og der eksisterer indexer $B(1),\ldots,B(m)$ hvorom det gælder:
 \begin{enumerate}[label=(\alph*)]
-\item Søjlerne $\mathbf{A}_{B(1)},\ldots,\mathbf{A}_{B(m)}$ er liniært uafhængige.
+\item Søjlerne $\mathbf{A}_{B(1)},\ldots,\mathbf{A}_{B(m)}$ er lineært uafhængige.
 \item Hvis $i \neq \mathbf{A}_{B(1)},\ldots,\mathbf{A}_{B(m)}$, så er $x_i=0$.
 \end{enumerate}
 \end{thm}
@@ -23,24 +25,19 @@ Betragt et $x \in \R^n$ og antag at der eksiterer indexer $\mathbf{A}_{B(1)},\ld
 Da gælder om de aktive begrænsninger at $x_i=0$, når $i\neq B(1),\ldots,B(m)$, samt at $A\mathbf{x}=\mathbf{b}$.
 Dette implicere, da liniært afhængige løsninger sættes lig $0$,  at 
 $$\sum_{i=1}^{m}\textbf{A}_{B(i)}x_{B(i)}=\sum_{i=1}^{n}\textbf{A}_ix_i=A\textbf{x}=\textbf{b}$$.
-Da søjlerne $\textbf{A}_{B(i)}x_{B(i)$ for $i=1,\ldots,m$ er liniært uafhængige, kan $x_{B(1)},\ldots,x_{B(m)}$ bestemmes entydigt. 
+Da søjlerne $\textbf{A}_{B(i)}x_{B(i)}$ for $i=1,\ldots,m$ er lineært uafhængige, kan $x_{B(1)},\ldots,x_{B(m)}$ bestemmes entydigt. 
 Altså har ligningssystemet skabt af de aktive begrænsninger en entydig løsning.
 Fra sætning (MAAADS), følger at der er $n$ aktive begrænsninger, hvorfor $\mathbf{x}$ er en basal løsning. 
 Antag nu at $\mathbf{x}$ er en basal løsning, det skal nu vises at (a) og (b) da er opfyldt.
 Lad $x_{B_1},\ldots,x_{B_k}$ være ikke-nul komponenter i $\textbf{x}$.
-Da $\mathbf{x}$ er en basal løsning, følger nu at ligningssytemet givet ved de aktive begrænsninger $x_i=0$, når $i\neq B(1),\ldots,B(k)$, samt  $\sum_{i=1}^{n}\mathbf{A}_ix_i=\mathbf{b}$, har en entydig løsning. 
+Da $\mathbf{x}$ er en basal løsning, følger nu at ligningssysemet givet ved de aktive begrænsninger $x_i=0$, når $i\neq B(1),\ldots,B(k)$, samt  $\sum_{i=1}^{n}\mathbf{A}_ix_i=\mathbf{b}$, har en entydig løsning. 
 Det samme må derfor gøre sig gældende for $\sum_{i=1}^{k}\mathbf{A}_{B(i)}x_{B(i)}=\mathbf{b}$.
-Det følger derfor at søjlerne i $A_{B(1)},\ldots,A_{B(k)}$ er liniært uafhængige.
-Hvis dette ikke var tilfældet ville der findes løsninger til $\sum_{i=1}^{k}\mathbf{A}_{B(i)}x_{B(i)}=\mathbf{0}$ udover den trivielle, hvilket betyder løsningen $\mathbf{x}$ ikke er entydig, dette er i modstrid til at denne er en basal løsning.
-$\mathbf{A_{B(1)},\ldots ,\mathbf{A_{B(k)}$ er således liniært uafhænige og $k \leq m$.
-Da $A$ har $m$ liniært uafhængige rækker, er der ligeledes $m$ liniært uafhængige søjler.
+Det følger derfor at søjlerne i $A_{B(1)},\ldots,A_{B(k)}$ er lineært uafhængige.
+Hvis dette ikke var tilfældet ville der findes løsninger til $\sum_{i=1}^{k}\mathbf{A}_{B(i)} x_{B(i)}=\mathbf{0}$ udover den trivielle, hvilket betyder løsningen $\mathbf{x}$ ikke er entydig, dette er i modstrid til at denne er en basal løsning.
+$\mathbf{A}_{B(1)},\ldots ,\mathbf{A}_{B(k)}$ er således lineært uafhængige og $k \leq m$.
+Da $A$ har $m$ lineært uafhængige rækker, er der ligeledes $m$ lineært uafhængige søjler.
 %her kommer noget der følger fra sætning 1.3 i sektion 1.5 tror ikke vi har noget tilsvarende.
-Der kan derfor findes $m-k$ søjler $A_{B(k+1)},\ldots,A_{B(m)}$ hvorom det gælder at søjlerne $\mathbf{A}_{B(i)$ med $i=1,\ldots,m$, er liniært uafhængige.
+Der kan derfor findes $m-k$ søjler $A_{B(k+1)},\ldots,A_{B(m)}$ hvorom det gælder at søjlerne $\mathbf{A}_{B(i)}$ med $i=1,\ldots,m$, er lineært uafhængige.
 Da $k \leq m$ gælder det hvis $i \neq B(1),\ldots,B(m)$ at $i \neq B(1),\ldots,B(k)$ og $x_i=0$.
 \end{proof}
 %der skal flere igennem det her bevis, tænker det er svært for andre end mig.
-
-
-
-
-

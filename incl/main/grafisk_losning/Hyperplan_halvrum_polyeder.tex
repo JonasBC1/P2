@@ -45,7 +45,7 @@ Såfremt en sådan konstant ikke eksisterer er mængden \textbf{ubegrænset}.
 \end{defn}
 \noindent
 % 
-\textbf{Eksemplet fra lineær optimeringsproblemer}
+\textbf{Eksemplet fra lineær optimeringsproblemer} \\\\
 %
 %alternativt værdien af ..... $\leq k$ eller $\geq$
 %
@@ -64,13 +64,12 @@ mængden $\{x \in \R^n \mid \mathbf{a}^T \mathbf{x} \leq b\}$ kaldes det \textbf
 \noindent
 %
 Det gælder her, at hyperplanet er grænsen mellem de tilsvarende øvre og nedre halvrum.
-I $\R^2$ vil hyperplanet således være en ret linje, som afskære en del af rummet, og der vil dermed være et halvrum på hver side af hyperplanet.
-På figur \ref{fig:Graf123} ses et udsnit af hyperplanet, som afskærer det øvre halvrum markeret med blå og det nedre halvrum markeret med rød. 
-
+I $\R^2$ vil hyperplanet således være en ret linje, som afskære en del af rummet, og der vil dermed være et halvrum på hver side af hyperplanet, hvilket er illustreret på figur \ref{fig:Graf123}, hvor det øvre halvrum er markeret med blå og det nedre halvrum er markeret med rød. 
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{fig/tikz/geometri/hyperplan}
+\input{fig/tikz/geometri/hyperplan_r2}
 %
 Med udgangspunkt i polyeden $\mathcal{P}$ på figur \ref{fig:nej2} består polyegonen af fire hyperplaner. 
 Fællesmængden for de øvre halvrum udgør polyeden.
@@ -81,12 +80,7 @@ På figur \ref{fig:nej5} er de fire hyperplaner markeret.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \input{fig/tikz/geometri/hyperplan_eks}
-%
-På figur \ref{fig:min_beg} udgør begrænsningerne hver sin hypeplan, hvor fællesmængden for de øvre halvrum udgør polyeden.
-\\\\
 % 
-Ligeledes 
-
 %
 %\begin{center}
 %\begin{tikzpicture}
@@ -100,57 +94,19 @@ Ligeledes
 %  \captionof{figure}{FUCK DET HER LORT XD}
 %  \label{fig:NEJ}
 %\end{center}
-% 
+%
+Ligeledes ses et hyperplan i $\R^3$ på figur \ref{fig:nej6}, der afskærer den øvre og nedre halvrum.
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-\begin{center}
-%start tikz picture, and use the tdplot_main_coords style to implement the display 
-%coordinate transformation provided by 3dplot
-\begin{tikzpicture}[scale=5]%[scale=5,tdplot_main_coords]
-%set up some coordinates 
-%-----------------------
-\coordinate (O) at (0,0,0);
-\coordinate (XZ) at (1,0,1);
-\coordinate (X) at (1,0,-0.3);
-\coordinate (Z) at (-0.3,0,1);
-\coordinate (Y) at (-0.3,0,-0.3);
+\input{fig/tikz/geometri/hyperplan_r3}
 %
-\coordinate (XZa) at (1,0.5,1);
-\coordinate (Xa) at (1,0.5,-0.3);
-\coordinate (Za) at (-0.3,0.5,1);
-\coordinate (Ya) at (-0.3,0.5,-0.3);
 %
-\coordinate (Na) at (0.8,0.5,0.5);
-\coordinate (Pa) at (0.8,0.7,0.5);
+Hyperplanerne på figur \ref{fig:nej3} danner dermed polygonet og fællesmængden for den øvre halrum udgør polyeden. 
+\\\\
 %
-\coordinate (N) at (0.5,0,0.5);
-\coordinate (P) at (0.5,0.5,0.5);
-%
-\draw[black](0.3,0.5,0.5) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x}=b$};
-\draw[black] (0.3,1,0.5) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x} > b$};
-\draw[black] (0.3,0.1,0.5) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x} < b$};
-%
-%draw figure contents
-%--------------------
-\draw [thick,->] (Na) -- (Pa) node[anchor=south west]{$a$};
-\draw [thick, dashed] (Na) -- (0.8,0.25,0.5);
-%
-\filldraw [fill=myblue,opacity=0.3] 
-         (Ya) -- (Xa) -- (XZa) -- (Za) -- cycle;
-%
-%draw the main coordinate system axes
-\draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=south east]{$x$};
-\draw[thick] (0,0,0) -- (-0.3,0,0);
-\draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
-\draw[thick,dashed] (0,0,0) -- (0,-0.3,0);
-\draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south east]{$z$};
-\draw[thick] (0,0,0) -- (0,0,-0.3);
-\end{tikzpicture}
-  \captionof{figure}{Et hyperplan i $\R^3$ og to halvrum.}
-  \label{fig:mm}
-\end{center}
 %
 %Et polyhedron er derfor en samling af polyeder der til sammen skaber en geometrisk figur i et givet vektorrum.
 %
