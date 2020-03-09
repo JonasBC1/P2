@@ -1,0 +1,50 @@
+\begin{center}
+\begin{tikzpicture}[scale=5]
+% Koordinater 
+% ------------------------------------------------------
+\coordinate (O) at (0,0,0);
+\coordinate (XZ) at (1,0,1);
+\coordinate (X) at (1,0,-0.3);
+\coordinate (Z) at (-0.3,0,1);
+\coordinate (Y) at (-0.3,0,-0.3);
+%
+\coordinate (XZa) at (1,0.5,1);
+\coordinate (Xa) at (1,0.5,-0.3);
+\coordinate (Za) at (-0.3,0.5,1);
+\coordinate (Ya) at (-0.3,0.5,-0.3);
+%
+\coordinate (Na) at (0.8,0.5,0.5);
+\coordinate (Pa) at (0.8,0.7,0.5);
+%
+\coordinate (N) at (0.5,0,0.5);
+\coordinate (P) at (0.5,0.5,0.5);
+%
+% Hyperplan og de to halvrum
+% -------------------------------------------------------
+\draw[black](0.3,0.5,0.5) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x}=b$};
+\draw[black] (0.3,1,0.5) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x} > b$};
+\draw[black] (0.3,0.1,0.5) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x} < b$};
+%
+% Vektor a 
+%--------------------------------------------------------
+\draw [thick,->] (Na) -- (Pa) node[anchor=south west]{$a$};
+\draw [thick, dashed] (Na) -- (0.8,0.25,0.5);
+%
+% Planet - Hyperplanet
+% -------------------------------------------------------
+\filldraw [fill=myblue,opacity=0.3] 
+         (Ya) -- (Xa) -- (XZa) -- (Za) -- cycle;
+%
+% Koordinatsystemet 
+% -------------------------------------------------------
+\draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=south east]{$x$};
+\draw[thick] (0,0,0) -- (-0.3,0,0);
+\draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+\draw[thick,dashed] (0,0,0) -- (0,-0.3,0);
+\draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south east]{$z$};
+\draw[thick] (0,0,0) -- (0,0,-0.3);
+% 
+\end{tikzpicture}
+  \captionof{figure}{Et hyperplan $\mathbf{a}^T \mathbf{x} = b$ i $\R^3$ og det øvre halvrum $\mathbf{a}^T \mathbf{x} > b$ og det nedre halvrum $\mathbf{a}^T \mathbf{x} < b$.}
+  \label{fig:nej6}
+\end{center}
