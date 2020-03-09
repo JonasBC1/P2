@@ -1,5 +1,5 @@
-I henhold til geometriske fremstillinger af lineære programmeringsproblemer er det nødvendigt at definere en række begreber.
-Disse er \textit{hyperplan}, \textit{halvrum} og \textit{polyede}.
+I henhold til geometriske fremstillinger af lineære programmeringsproblemer, er det nødvendigt at definere en række begreber.
+Disse er \textit{hyperplan}, \textit{halvrum} og \textit{polyeder}.
 %
 \begin{defn}{}{Polyede}
 Lad $A$ være en $m \times n$ matrix, og lad $\mathbf{b}$ være en vektor i  $\R^m$.
@@ -9,11 +9,114 @@ $\{x\in \R^n \mid A\mathbf{x}\geq b\}.$
 \end{defn}
 \noindent
 %
-Som det fremgår fra definitionen, er en polyetop således mængden af mulige løsninger $\mathbf{x}$ af et ligningssystem.
-Det gælder endvidere, at en mængde af formen $ \{x \in \R^n \mid A\textbf{x}=b,x \geq 0 \}$, hvilket kaldes en \textit{polyede på standardform}. 
+Som det fremgår fra definitionen, er en polyede således mængden af mulige løsninger $\mathbf{x}$ af et ligningssystem, altså værdimængden.
+Det gælder endvidere, at en mængde af formen $ \{x \in \R^n \mid A\textbf{x}=b,x \geq 0 \}$, hvilket kaldes en \textit{polyede på standardform}, hvilket vil blive beskrevet dybere i afsnit \ref{afsnit:fisk}.
 % Kommentar til at der her er derfor det er rellevant og at det vil blive uddybet senere 
 % Eventuelt med et eksempel 
 %lidt forskellige muligheder her, enten kan det relateres til simplex eller blive introduceret her
+%
+Med udgangspunkt i \ref{eks:min_lin} er værdimængden, og dermed polyeden markeret med det blå område på figur \ref{fig:min_beg}.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Flot graf alla Julie     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{center}
+%start tikz picture, and use the tdplot_main_coords style to implement the display 
+%coordinate transformation provided by 3dplot
+\begin{tikzpicture}[scale=5]%[scale=5,tdplot_main_coords]
+%set up some coordinates 
+%-----------------------
+\coordinate (O) at (0,0,0);
+\coordinate (XZ) at (1,0,1);
+\coordinate (X) at (1,0,-0.3);
+\coordinate (Z) at (-0.3,0,1);
+\coordinate (Y) at (-0.3,0,-0.3);
+%
+\coordinate (XZa) at (1,0.5,1);
+\coordinate (Xa) at (1,0.5,-0.3);
+\coordinate (Za) at (-0.3,0.5,1);
+\coordinate (Ya) at (-0.3,0.5,-0.3);
+%
+\coordinate (Na) at (0.8,0.5,0.5);
+\coordinate (Pa) at (0.8,0.7,0.5);
+%
+\coordinate (N) at (0.5,0,0.5);
+\coordinate (P) at (0.5,0.5,0.5);
+%
+%draw figure contents
+%--------------------
+\draw[thick](0.2,0.2,0)--(0,0.2,0)--(0,0.2,0.2)--(0.2,0.2,0.2)--(0.2,0.2,0)--(0.2,0,0)--(0.2,0,0.2)--(0,0,0.2)--(0,0.2,0.2);
+  \draw[thick](0.2,0.2,0.2)--(0.2,0,0.2);
+  \draw[gray](2,0,0)--(0,0,0)--(0,2,0);
+  \draw[gray](0,0,0)--(0,0,2);
+  \draw(1,1,2) node{1};
+  \draw(1,2,1) node{2};
+  \draw(2,1,1) node{3};
+  \draw[gray!20](1,0,1) node{4};
+  \draw[gray!20](0,1,1) node{5};
+  \draw[gray!20](1,1,0) node{6};
+%
+%draw the main coordinate system axes
+\draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=south east]{$x$};
+\draw[thick] (0,0,0) -- (-0.3,0,0);
+\draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+\draw[thick,dashed] (0,0,0) -- (0,-0.3,0);
+\draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south east]{$z$};
+\draw[thick] (0,0,0) -- (0,0,-0.3);
+\end{tikzpicture}
+  \captionof{figure}{Et hyperplan i $\R^3$ og to halvrum.}
+  \label{fig:mm}
+\end{center}
+%
+%
+\begin{tikzpicture}
+  \draw[thick](2,2,0)--(0,2,0)--(0,2,2)--(2,2,2)--(2,2,0)--(2,0,0)--(2,0,2)--(0,0,2)--(0,2,2);
+  \draw[thick](2,2,2)--(2,0,2);
+  \draw[gray](2,0,0)--(0,0,0)--(0,2,0);
+  \draw[gray](0,0,0)--(0,0,2);
+  \draw(1,1,2) node{1};
+  \draw(1,2,1) node{2};
+  \draw(2,1,1) node{3};
+  \draw[gray!20](1,0,1) node{4};
+  \draw[gray!20](0,1,1) node{5};
+  \draw[gray!20](1,1,0) node{6};
+\end{tikzpicture}
+%
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+	axis lines = left,
+	xlabel = $x_1$,
+	ylabel = {$x_2$},
+	legend style={at={(0.45,0.025)},anchor=south west},
+]
+	\addplot[name path=b, domain={0:1}, color=myblue, style=very thick,samples=2]{2*x+10};
+	\addlegendentry{$2x_1-x_2 \leq -10$}
+	\addplot[name path=a, domain={0:13.5}, color=mygreen, style=very thick, samples=2]{x-7};
+	\addlegendentry{$x_1-x_2 \geq 7$}
+	\addplot[domain=0:15,samples=2,color=myred, style=very thick]{-x+20};
+	\addlegendentry{$x_1 + x_2 \leq 20$}
+	\addplot[name path=c, domain={1:8}, color=black, style=very thick,samples=2]{12};
+	\addlegendentry{$x_2 \leq 12$}
+	
+	\tikzfillbetween [of=a and b]{myblue!15}
+	\tikzfillbetween [of=c and a]{myblue!15}
+	
+	\addplot[domain=0:15,samples=2,color=myred, style=very thick]{-x+20};
+	\addplot[domain=0:5,samples=2,color=myblue, style=very thick]{2*x+10};
+	\addplot[domain=0:15,samples=2,color=mygreen, style=very thick]{x-7};
+	\addplot[domain=0:15,samples=2,color=black, style=very thick]{12};
+	
+	\addplot[domain=0:15, samples=2, color=black, dotted, thick]{0};
+
+\end{axis}
+\end{tikzpicture}
+\caption{En polyede}
+\label{fig:nej}
+\end{figure}
+%
 %
 Det gælder endvidere for polyeder at disse både kan være \textit{begrænsede} og \textit{ubegrænsede}.
 %
@@ -34,10 +137,10 @@ Ligeledes er det en fordel at definere polyeder, der er begrænset af kun én li
 %
 \begin{defn}{}{}
 Lad $\mathbf{a}$ være en vektor i $\R^n$, hvor $\mathbf{a} \neq \mathbf{0}$ og lad $b$ være en skalar.
-\begin{enumerate}[label=(\alph*)]
-\item Mængden $\{x \in \R^n \mid \mathbf{a}^T \mathbf{x}=b\}$ kaldes et \textbf{hyperplan}.
-\item Mængden $\{x \in \R^n \mid \mathbf{a}^T \mathbf{x} \geq b\}$ kaldes et \textbf{halvrum}.
-\end{enumerate}
+Mængden $\{x \in \R^n \mid \mathbf{a}^T \mathbf{x}=b\}$ kaldes et \textbf{hyperplan}.
+%
+Mængden $\{x \in \R^n \mid \mathbf{a}^T \mathbf{x} \geq b\}$ kaldes det \textbf{øvre halvrum}, og
+mængden $\{x \in \R^n \mid \mathbf{a}^T \mathbf{x} \leq b\}$ kaldes det \textbf{nedre halvrum}.
 \end{defn}
 \noindent
 %
