@@ -15,108 +15,26 @@ Det gælder endvidere, at en mængde af formen $ \{x \in \R^n \mid A\textbf{x}=b
 % Eventuelt med et eksempel 
 %lidt forskellige muligheder her, enten kan det relateres til simplex eller blive introduceret her
 %
-Med udgangspunkt i \ref{eks:min_lin} er værdimængden, og dermed polyeden markeret med det blå område på figur \ref{fig:min_beg}.
+Med udgangspunkt i eksempel \ref{eks:min_lin} er polyeden markeret med det blå område på figur \ref{fig:min_beg}. 
+Ligeledes ses på figur \ref{fig:nej2} en polyede $\mathcal{P}$, der er markeret med blå i $\R^2$. 
+På figur \ref{fig:nej3} ses en polyede $\mathcal{P}$ markeret med blå i $\R^3$. 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \begin{center}
-%start tikz picture, and use the tdplot_main_coords style to implement the display 
-%coordinate transformation provided by 3dplot
-\begin{tikzpicture}[scale=5]%[scale=5,tdplot_main_coords]
-%set up some coordinates 
-%-----------------------
-\coordinate (O) at (0,0,0);
-\coordinate (XZ) at (1,0,1);
-\coordinate (X) at (1,0,-0.3);
-\coordinate (Z) at (-0.3,0,1);
-\coordinate (Y) at (-0.3,0,-0.3);
-%
-\coordinate (XZa) at (1,0.5,1);
-\coordinate (Xa) at (1,0.5,-0.3);
-\coordinate (Za) at (-0.3,0.5,1);
-\coordinate (Ya) at (-0.3,0.5,-0.3);
-%
-\coordinate (Na) at (0.8,0.5,0.5);
-\coordinate (Pa) at (0.8,0.7,0.5);
-%
-\coordinate (N) at (0.5,0,0.5);
-\coordinate (P) at (0.5,0.5,0.5);
-%
-%draw figure contents
-%--------------------
-\draw[thick](0.2,0.2,0)--(0,0.2,0)--(0,0.2,0.2)--(0.2,0.2,0.2)--(0.2,0.2,0)--(0.2,0,0)--(0.2,0,0.2)--(0,0,0.2)--(0,0.2,0.2);
-  \draw[thick](0.2,0.2,0.2)--(0.2,0,0.2);
-  \draw[gray](2,0,0)--(0,0,0)--(0,2,0);
-  \draw[gray](0,0,0)--(0,0,2);
-  \draw(1,1,2) node{1};
-  \draw(1,2,1) node{2};
-  \draw(2,1,1) node{3};
-  \draw[gray!20](1,0,1) node{4};
-  \draw[gray!20](0,1,1) node{5};
-  \draw[gray!20](1,1,0) node{6};
-%
-%draw the main coordinate system axes
-\draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=south east]{$x$};
-\draw[thick] (0,0,0) -- (-0.3,0,0);
-\draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
-\draw[thick,dashed] (0,0,0) -- (0,-0.3,0);
-\draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south east]{$z$};
-\draw[thick] (0,0,0) -- (0,0,-0.3);
-\end{tikzpicture}
-  \captionof{figure}{Et hyperplan i $\R^3$ og to halvrum.}
-  \label{fig:mm}
+$
+\begin{array}{cc}
+\input{fig/tikz/geometri/polyede2}&
+\input{fig/tikz/geometri/polyede3}
+\end{array}
+$
 \end{center}
 %
-%
-\begin{tikzpicture}
-  \draw[thick](2,2,0)--(0,2,0)--(0,2,2)--(2,2,2)--(2,2,0)--(2,0,0)--(2,0,2)--(0,0,2)--(0,2,2);
-  \draw[thick](2,2,2)--(2,0,2);
-  \draw[gray](2,0,0)--(0,0,0)--(0,2,0);
-  \draw[gray](0,0,0)--(0,0,2);
-  \draw(1,1,2) node{1};
-  \draw(1,2,1) node{2};
-  \draw(2,1,1) node{3};
-  \draw[gray!20](1,0,1) node{4};
-  \draw[gray!20](0,1,1) node{5};
-  \draw[gray!20](1,1,0) node{6};
-\end{tikzpicture}
-%
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-	axis lines = left,
-	xlabel = $x_1$,
-	ylabel = {$x_2$},
-	legend style={at={(0.45,0.025)},anchor=south west},
-]
-	\addplot[name path=b, domain={0:1}, color=myblue, style=very thick,samples=2]{2*x+10};
-	\addlegendentry{$2x_1-x_2 \leq -10$}
-	\addplot[name path=a, domain={0:13.5}, color=mygreen, style=very thick, samples=2]{x-7};
-	\addlegendentry{$x_1-x_2 \geq 7$}
-	\addplot[domain=0:15,samples=2,color=myred, style=very thick]{-x+20};
-	\addlegendentry{$x_1 + x_2 \leq 20$}
-	\addplot[name path=c, domain={1:8}, color=black, style=very thick,samples=2]{12};
-	\addlegendentry{$x_2 \leq 12$}
-	
-	\tikzfillbetween [of=a and b]{myblue!15}
-	\tikzfillbetween [of=c and a]{myblue!15}
-	
-	\addplot[domain=0:15,samples=2,color=myred, style=very thick]{-x+20};
-	\addplot[domain=0:5,samples=2,color=myblue, style=very thick]{2*x+10};
-	\addplot[domain=0:15,samples=2,color=mygreen, style=very thick]{x-7};
-	\addplot[domain=0:15,samples=2,color=black, style=very thick]{12};
-	
-	\addplot[domain=0:15, samples=2, color=black, dotted, thick]{0};
-
-\end{axis}
-\end{tikzpicture}
-\caption{En polyede}
-\label{fig:nej}
-\end{figure}
-%
+\textit{Polygonet} er begrænsningerne, som afgrænser polyeden fra resten af rummet. 
+Dermed er polygonet på figur \ref{fig:nej2} linjerne, der afgrænser $\mathcal{P}$ fra resten af $\R^2$.
+Polygonet på figur \ref{fig:nej4} er derimod udsnittet af fladerne, der udgør kuben, som afgrænser $\mathcal{P}$ fra resten af $\R^3$.
 %
 Det gælder endvidere for polyeder at disse både kan være \textit{begrænsede} og \textit{ubegrænsede}.
 %
@@ -144,9 +62,9 @@ mængden $\{x \in \R^n \mid \mathbf{a}^T \mathbf{x} \leq b\}$ kaldes det \textbf
 \end{defn}
 \noindent
 %
-Det gælder her, at hyperplanet er grænsen for et tilsvarende halvrum.
+Det gælder her, at hyperplanet er grænsen mellem de tilsvarende øvre og nedre halvrum.
 I $\R^2$ vil hyperplanet således være en ret linje, som afskære en del af rummet, og der vil dermed være et halvrum på hver side af hyperplanet.
-På figur \ref{fig:Graf123} ses et udsnit af hyperplanet, som afskærer et halvrum markeret med gråblå og et halvrum markeret med orangerød. 
+På figur \ref{fig:Graf123} ses et udsnit af hyperplanet, som afskærer det øvre halvrum markeret med blå og det nedre halvrum markeret med rød. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
@@ -174,9 +92,54 @@ På figur \ref{fig:Graf123} ses et udsnit af hyperplanet, som afskærer et halvr
 \filldraw[black] (3,1.3) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x} < b$};
 \filldraw[black] (1.6,2.2) circle (0pt) node[anchor=west] {$\mathbf{a}$};
 \end{tikzpicture}
-  \captionof{figure}{Et hyperplan og to halvrum, markeret med henholdsvis gråblå for $\mathbf{a}^T \mathbf{x} < b$ og orangerød for $\mathbf{a}^T \mathbf{x} > b$.}
+  \captionof{figure}{Et hyperplan og to halvrum, markeret med henholdsvis blå for den øvre halvrum $\mathbf{a}^T \mathbf{x} < b$ og rød for den nedre halvrum $\mathbf{a}^T \mathbf{x} > b$.}
   \label{fig:Graf123}
 \end{center}
+%
+Med udgangspunkt i polyeden $\mathcal{P}$ på figur \ref{fig:nej2} består polyeden af fire hyperplaner. 
+Fællesmængden for de øvre halvrum udgør polygonet.
+På figur \ref{fig:nej5} er de fire hyperplaner markeret. 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Flot graf alla Julie     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{center}
+%start tikz picture, and use the tdplot_main_coords style to implement the display 
+%coordinate transformation provided by 3dplot
+\begin{tikzpicture}[scale=5]%[scale=5,tdplot_main_coords]
+%set up some coordinates 
+%-----------------------
+\coordinate (a) at (1.2,1.2,0.7);
+\coordinate (b) at (0.7,1.2,0.7);
+\coordinate (c) at (0.7,1.2,1.2);
+\coordinate (d) at (1.2,1.2,1.2);
+\coordinate (f) at (1.2,0.7,0.7);
+\coordinate (g) at (1.2,0.7,1.2);
+\coordinate (h) at (0.7,0.7,1.2);
+%
+%draw figure contents
+%--------------------
+\filldraw[fill=myblue,opacity=0.3, thick](c)--(d)--(g)--(h)--(c);
+  \draw[thick](d)--(g);
+  \draw[thick,->](1.2,0.95,1.2)--(1.1,0.95,1.2);
+  \draw[thick](d)--(c);
+  \draw[thick](g)--(h);
+  \draw[thick](h)--(c);
+%
+\draw[black] (0.91,0.96,1.2) circle (0pt) node[anchor=west] {$\mathcal{P}$};
+%draw the main coordinate system axes
+\draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=south east]{$x$};
+\draw[thick] (0,0,0) -- (-0.2,0,0);
+\draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+\draw[thick] (0,0,0) -- (0,-0.2,0);
+\end{tikzpicture}
+  \captionof{figure}{En polyede $\mathcal{P}$ markeret med blå i $\R^2$.}
+  \label{fig:nej5}
+\end{center}
+%
+På figur \ref{fig:min_beg} udgør begrænsningerne hver sin hypeplan, hvor fællesmængden for de øvre halvrum udgør polyeden.
+
 %
 %\begin{center}
 %\begin{tikzpicture}
@@ -218,7 +181,7 @@ På figur \ref{fig:Graf123} ses et udsnit af hyperplanet, som afskærer et halvr
 \coordinate (N) at (0.5,0,0.5);
 \coordinate (P) at (0.5,0.5,0.5);
 %
-\draw[black] (0.3,0.5,0.5) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x}=b$};
+\draw[black](0.3,0.5,0.5) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x}=b$};
 \draw[black] (0.3,1,0.5) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x} > b$};
 \draw[black] (0.3,0.1,0.5) circle (0pt) node[anchor=west] {$\mathbf{a}^T \mathbf{x} < b$};
 %
@@ -227,7 +190,7 @@ På figur \ref{fig:Graf123} ses et udsnit af hyperplanet, som afskærer et halvr
 \draw [thick,->] (Na) -- (Pa) node[anchor=south west]{$a$};
 \draw [thick, dashed] (Na) -- (0.8,0.25,0.5);
 %
-\filldraw [fill=red,opacity=0.3] 
+\filldraw [fill=myblue,opacity=0.3] 
          (Ya) -- (Xa) -- (XZa) -- (Za) -- cycle;
 %
 %draw the main coordinate system axes
