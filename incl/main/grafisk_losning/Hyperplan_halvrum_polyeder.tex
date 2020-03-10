@@ -1,4 +1,4 @@
-I henhold til geometriske fremstillinger af lineære programmeringsproblemer, er det nødvendigt at definere en række begreber.
+I henhold til geometriske fremstillinger af lineære programmeringsproblemer er det nødvendigt at definere en række begreber.
 Disse er \textit{hyperplan}, \textit{halvrum} og \textit{polyeder}.
 %
 \begin{defn}{}{Polyede}
@@ -9,15 +9,15 @@ $\{x\in \R^n \mid A\mathbf{x}\geq b\}.$
 \end{defn}
 \noindent
 %
-Som det fremgår fra definitionen, er en polyede således mængden af mulige løsninger $\mathbf{x}$ af et ligningssystem, altså værdimængden.
-Det gælder endvidere, at en mængde af formen $ \{x \in \R^n \mid A\textbf{x}=b,x \geq 0 \}$, kaldet en \textit{polyede på standardform}, hvilket vil blive beskrevet dybere i afsnit \ref{afsnit:fisk}.
+Som det fremgår af definition \ref{defn:Polyede}, er en polyede mængden af mulige løsninger $\mathbf{x}$ af et ligningssystem, hvilket også kaldes værdimængden.
+Det gælder endvidere, at en mængde af formen $ \{x \in \R^n \mid A\textbf{x}=b,x \geq 0 \}$ kaldes en \textit{polyede på standardform}, hvilket vil blive beskrevet yderligere i afsnit \ref{afsnit:fisk}.
 % Kommentar til at der her er derfor det er rellevant og at det vil blive uddybet senere 
 % Eventuelt med et eksempel 
 %lidt forskellige muligheder her, enten kan det relateres til simplex eller blive introduceret her
 %
-Med udgangspunkt i eksempel \ref{eks:min_lin} er polyeden   det markerede blå område på figur \ref{fig:min_beg}. 
+Betragt eksempel \ref{eks:min_lin}. Polyeden er det blå område på figur \ref{fig:min_beg}. 
 Ligeledes ses på figur \ref{fig:nej2} en polyede $\mathcal{P}$, der er markeret med blå i $\R^2$. 
-På figur \ref{fig:nej3} ses en polyede $\mathcal{P}$ markeret med blå i $\R^3$. 
+På figur \ref{fig:nej3} ses en polyede $\mathcal{P}$, markeret med blå i $\R^3$. 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
@@ -37,11 +37,11 @@ Dermed er polygonet på figur \ref{fig:nej2} linjerne, der afgrænser $\mathcal{
 Polygonet på figur \ref{fig:nej3} er derimod udsnittet af fladerne, der udgør kuben, som afgrænser $\mathcal{P}$ fra resten af $\R^3$.
 \\\\
 %
-Det gælder endvidere for polyeder at disse både kan være \textit{begrænsede} og \textit{ubegrænsede}.
+Det gælder endvidere for polyeder, at de enten kan være \textit{begrænsede} eller \textit{ubegrænsede}.
 %
 \begin{defn}{}{}
-En mængde $S \subset \R^n$ er \textbf{begrænset} såfremt der eksister en konstant $c$, hvorom det gælder, at den absolutte værdi af alle komponenter i alle elementer i $S$ er $\leq c$. 
-Såfremt en sådan konstant ikke eksisterer er mængden \textbf{ubegrænset}. 
+En mængde $S \subset \R^n$ er \textbf{begrænset}, såfremt der eksister en konstant $c$, således den absolutte værdi af alle komponenter i alle elementer i $S$ er $\leq c$. 
+Såfremt en sådan konstant ikke eksisterer, er mængden \textbf{ubegrænset}. 
 \end{defn}
 \noindent
 % 
@@ -51,7 +51,7 @@ Såfremt en sådan konstant ikke eksisterer er mængden \textbf{ubegrænset}.
 I henhold til lineære programmeringsproblemer vil dette ofte være begrænset.
 % Dette er eksempelvis tilfældet, hvis problemet er af en sådan karakter, at ingen af variabelene i karakterligningen kan have negative værdier.
 %er det rigtigt det jeg skriver i ovenstående?
-Ligeledes er det en fordel at definere polyeder, der er begrænset af kun én lineær betingelse. 
+Ligeledes er det en fordel at definere polyeder, der er begrænset af én lineær betingelse. 
 %
 \begin{defn}{}{}
 Lad $\mathbf{a}$ være en vektor i $\R^n$, hvor $\mathbf{a} \neq \mathbf{0}$ og lad $b$ være en skalar.
@@ -63,14 +63,16 @@ mængden $\{x \in \R^n \mid \mathbf{a}^T \mathbf{x} \leq b\}$ kaldes det \textbf
 \noindent
 %
 Det gælder her, at hyperplanet er grænsen mellem de tilsvarende øvre og nedre halvrum.
-I $\R^2$ vil hyperplanet således være en ret linje, som afskære en del af rummet, og der vil dermed være et halvrum på hver side af hyperplanet, hvilket er illustreret på figur \ref{fig:Graf123}, hvor det øvre halvrum er markeret med blå og det nedre halvrum er markeret med rød. 
+I $\R^2$ vil hyperplanet således være en ret linje, som afskærer en del af rummet. 
+Der vil dermed være et halvrum på hver side af hyperplanet, hvilket er illustreret på figur \ref{fig:Graf123}, hvor det øvre halvrum er markeret med blå, og det nedre halvrum er markeret med rød. 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{fig/tikz/geometri/hyperplan_r2}
 %
-Med udgangspunkt i polyeden $\mathcal{P}$ på figur \ref{fig:nej2} består polyegonen af fire hyperplaner. 
+Betragt polyeden $\mathcal{P}$ på figur \ref{fig:nej2}. 
+Polygonen består af fire hyperplaner. 
 Fællesmængden for de øvre halvrum udgør polyeden.
 På figur \ref{fig:nej5} er de fire hyperplaner markeret. 
 %
@@ -103,7 +105,7 @@ Ligeledes ses et hyperplan i $\R^3$ på figur \ref{fig:nej6}, der afskærer den 
 \input{fig/tikz/geometri/hyperplan_r3}
 %
 %
-Hyperplanerne på figur \ref{fig:nej3} danner dermed polygonet og fællesmængden for den øvre halrum udgør polyeden. 
+Hyperplanerne på figur \ref{fig:nej3} danner dermed polygonen, og fællesmængden for det øvre halvrum udgør polyeden. 
 \\\\
 %
 %
@@ -118,6 +120,7 @@ vil $\mathbf{a}$ være ortogonal med hyperplanet.
 \end{thm}
 % 
 \begin{proof}
-Lad $\mathbf{x}$ og $\mathbf{y}$ tilhører det samme hyperplan, så er $\mathbf{a}^Tx=\mathbf{a}^Ty.$
+Lad $\mathbf{x}$ og $\mathbf{y}$ tilhøre det samme hyperplan. 
+Så er $\mathbf{a}^Tx=\mathbf{a}^Ty.$
 Dermed er $\mathbf{a}^T(x-y)=0$, og så er $\mathbf{a}$ ortogonal til alle vektorer i hyperplanet. 
 \end{proof}
