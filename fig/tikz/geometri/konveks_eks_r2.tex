@@ -1,0 +1,42 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Flot graf alla Julie     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{center}
+% 
+\begin{tikzpicture}[scale=6]
+% Koordinater
+% -------------------------------------------------------
+\coordinate (c) at (0.7,1.2,1.2);
+\coordinate (d) at (1.2,1.2,1.2);
+\coordinate (g) at (1.2,0.7,1.2);
+\coordinate (h) at (0.7,0.7,1.2);
+\coordinate (b) at (2,1.2,1.2);
+\coordinate (f) at (1.5,0.7,1.2);
+%
+% Tegning af vektorer
+% -------------------------------------------------------
+  \draw[very thick,color=myblue](b)--(c);  
+  \draw[thick,->](f)--(b);
+  \draw[thick,->](f)--(c);
+  \draw[thick,->, dashed](f)--(1.35,1.2,1.2);
+%
+% Punkter og linje 
+% -------------------------------------------------------
+\filldraw[black] (0.95,1,1.2) circle (0pt) node[left] {$\mathbf{x}$};
+\filldraw[black] (1.7,1,1.2) circle (0pt) node[right] {$\mathbf{y}$};
+\filldraw[black] (1.1,1,1.2) circle (0pt) node[right] {$\frac{1}{2} \mathbf{x}+\frac{1}{2} \mathbf{y}$};
+%
+%% Koordinatssystem
+%% ------------------------------------------------------
+%\draw[thick,->] (0,0,-0.5) -- (1.5,0,-0.5) node[anchor=south east]{$x$};
+%\draw[thick] (0,0,-0.5) -- (-0.2,0,-0.5);
+%\draw[thick,->] (0,0,-0.5) -- (0,0.8,-0.5) node[anchor=north west]{$y$};
+%\draw[thick] (0,0,-0.5) -- (0,-0.2,-0.5);
+%%
+%
+\end{tikzpicture}
+  \captionof{figure}{Vektorerne $\mathbf{x}$ og $ \mathbf{y}$, samt den konvekse kombination af dem, hvor $\lambda_x = \lambda_y = \frac{1}{2}$, og den konvekse hylster af vektorerne, der er markeret med blå.}
+  \label{fig:neej}
+\end{center}
+%
