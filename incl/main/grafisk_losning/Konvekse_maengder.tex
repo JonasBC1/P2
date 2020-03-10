@@ -55,7 +55,17 @@ Det haves, at $ \lambda \textbf{x} + (1 - \lambda )\textbf{y} \in S_i$, eftersom
 Antag, at $\textbf{x}$ og $\textbf{y}$ henholdsvis opfylder, at $\textbf{a}^T \textbf{x} \geq b$ og $\textbf{a}^T \textbf{y} \geq b$, således de tilhører samme halvrum. 
 Så er $\textbf{a}^T (\lambda \textbf{x} + (1 - \lambda) \textbf{y} ) \geq \lambda b + (1 - \lambda ) b = b$, hvilket beviser, at $ \lambda \textbf{x} + (1 - \lambda )\textbf{y}$ tilhører samme halvrum, hvormed halvrummet er konvekst.
 Bemærk, at en polyhedron er fællesmængden af et endeligt antal halvrum, og at (b) dermed er bevist jævnfør (a). 
-	\item Hmmmm
+	\item  Dette punkt bevises ved induktions bevis.
+Per definitionen af konvekse mængder, ligger en konveks kombination af to elementer i en konveks mængde i mængden.
+Som induktionsantagelse antager vi at en konveks kombination af $c$ elementer i en konveks mængde også er i mængden.
+Dernæst undersøges $c+1$ elementer $x_1,x_2,\ldots,x_c+1$ i en konveks mængde $S$. 
+Lad $\lambda_1,\ldots,\lambda_{k+1}$ være ikke negative skalarer som hvis sum er $1$. 
+Det antages at $\lambda_{k+1}\neq1$. 
+Så haves at
+$$\sum^{k+1}_{i=1}\lambda_i\textbf{x}_i=\lambda_{k+1}\textbf{x}_{k+1}+(1-\lambda_{k+1})\sum^{k}_{i=1}\dfrac{\lambda_i}{1-\lambda_{k+1}}\textbf{x}_i.$$
+Koefficienterne $\lambda_i/(1-\lambda_{k+1})$, for $i=1,\ldots,k$, er ikke negative og summerer til 1. Ved induktionsantagelsen gælder,  $\sum^{k}_{i=1}\lambda_i\textbf{x}_i/(1-\lambda_{k+1})\in S$. Da $S$ er konveks fåes det at $
+\sum^{k+1}_{i=1}\lambda_i\textbf{x}_i\in S$. 
+%	\input{incl/main/grafisk_losning/konveks_bevis_c}
 	\item Lad $S$ være et konvekst hylster af $\textbf{x}_1, \textbf{x}_2, \ldots, \textbf{x}_k$, samt lad $\textbf{y} = \sum_{i=1}^{k} \zeta_i \textbf{x}^i$, $\textbf{z} = \sum_{i=1}^{k} \theta_i \textbf{x}^i$ være to elementer i $S$, hvor $ \zeta_i \geq 0$, $ \theta_i \geq 0$, og $ \sum_{i=1}^{k} \zeta_i = \sum_{i=1}^{k} \theta_i = 1$. 
 	Lad $ \lambda = [0,1]$. Så er $$\lambda \textbf{y} + (1 - \lambda ) \textbf{z} = \lambda \sum_{i=1}^k \zeta_i \textbf{x}^i + (1 - \lambda) \sum_{i=1}^k \theta_i \textbf{x}^i = \sum_{i=1}^k (\lambda \zeta_i + (1-\lambda )\theta_i ) \textbf{x}^i.$$
 Bemærk, at koefficienterne $ \lambda \zeta_i + (1 - \lambda) \theta_i$, $i = 1, \ldots, k$, summerer til $1$ og ikke er negative. Dermed er $ \lambda \textbf{y} + (1 - \lambda ) \textbf{z}$ en konveks kombination af vektorerne $\textbf{x}^1, \ldots, \textbf{x}^k$, og tilhører derfor mængden $S$, hvormed (d) er bevist. 
