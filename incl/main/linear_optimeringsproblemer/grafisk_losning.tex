@@ -18,11 +18,16 @@ Betragt minimumsproblemet
 \end{array}
 \end{align*}
 %
-På figur \ref{eks:min_loes} kan løsningsområdet - markeret med gråblå - for minimumsproblemet ses.
+Grafisk illustreret ved 
 %
 \input{fig/tikz/min_loes}
 \end{eks}
 \noindent
 Løsningsmængden er det skraverede område på figur \ref{fig:min_loes}. For at finde den optimale løsning findes enhver given skalar $k$ og løsningsmængden med alle punkter overvejes, hvor objektfunktionen $\textbf{c}^T\textbf{x}$ er lig med $k$. Dette illustreres ved den linje, der er beskrevet af ligningen $-x_l-x_2=k$. Dette betyder, at den optimale løsning som enten maksimerer eller minimerer værdien
-af objektfunktionen kan findes grafisk ved at indtegne niveaukurver $f(x1, x2)=k$ og forskyde disse niveaukurver i den retning, der optimerer værdien af objektfunktionen, indtil den optimale løsning opnås.  Bemærk, i det følgende eksempel, at denne linje er vinkelret på vektoren $\textbf{v}$ med koordinaterne $\textbf{v}=(-1,-1)$.
-Forskellige værdier for $k$ fører til forskellige linjer, hvor  alle linjer er parallelle med hinanden samt vinkelret med vektoren $\textbf{v}$. Hvis værdien af $k$ øges, svarer det til at bevæge linjen $z=x_l-x_2$ langs retningen af vektoren $\textbf{v}$. For at finde den optimale løsning for dette eksempel, er det interessante at minimere $k$, og dermed bevæge linjen så meget som muligt i retning af $-\textbf{v}$ uden at forlade løsningsmængden. Det mest optimale er derfor $k = -4$, hvormed vektor $\textbf{x}=(2,2)$ er den mest optimale løsning i løsningsmængden. 
+af objektfunktionen kan findes grafisk ved at indtegne niveaukurver $f(x1, x2)=k$ og forskyde disse niveaukurver i den retning, der optimerer værdien af objektfunktionen, indtil den optimale løsning opnås.  Bemærk, i det følgende eksempel, at denne linje er vinkelret på vektoren $\textbf{v}$ med koordinaterne $\textbf{v}=(1,1)$.
+Forskellige værdier for $k$ fører til forskellige linjer, hvor  alle linjer er parallelle med hinanden samt vinkelret med vektoren $\textbf{v}$. Hvis værdien af $k$ øges, svarer det til at bevæge linjen $z=x_l-x_2$ langs retningen af vektoren $\textbf{v}$. For at finde den optimale løsning for dette eksempel, er det interessante at maksimere $k$, og dermed bevæge linjen så meget som muligt i retning af $\textbf{v}$ uden at forlade løsningsmængden. Det mest optimale er derfor $k = -4$, hvormed vektor $\textbf{x}=(2,2)$ er den mest optimale løsning i løsningsmængden. \\\\
+%%%%%
+Det hjørnepunkt, som er den optimale løsning i forudgående eksempel, som i forudgående tilfælde maksimere værdien
+af objektfunktionen repræsenterer præcis én
+løsning til maksimeringsproblemet. I følgende eksempel introduceres et eksempel, hvor der matematisk set findes et uendeligt antal løsninger, der
+maksimerer værdien af objektfunktionen.
