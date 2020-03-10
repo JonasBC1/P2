@@ -5,7 +5,7 @@ Hvis en vektor $\textbf{x}$ opfylder $\textbf{a}^T_i\textbf{x}= b_i$ for $i \in 
 %
 Følgende sætning giver anledning til hvordan disse bindende betingelser kan føres i relation til løsninger af lineære optimeringsproblemer.
 %
-\begin{thm}{}{}
+\begin{thm}{}{betingi}
 
 Lad $\textbf{x}$ være et element i $\R^n$ og lad $I=\{i|\textbf{a}^T_i\textbf{x}=b_i\}$ være en mængde af indexer på betingelser, der er bindende ved $\textbf{x}$.
 Så er følgende udsagn ækvivalente.
@@ -18,6 +18,60 @@ Så er følgende udsagn ækvivalente.
 \end{thm}
 %
 \begin{proof}
-Smukt bevis INC.
+Antag, at $\text{span}\{a_i|i \in I\}= \R^n$.
+Dette span har dimensionen $n$ og jævnfør sætning (1.3(a) i bertsimas) kan et basis for spannet dannes med $n$ af vektorerne, som vil være lineært uafhængige.
+%
+Hvis der ligeledes eksisterer $n$ vektorer i $\{a_i|i \in I\}$, som er lineært uafhængige, må disse udspænde hele $\R^n$.
+Dette viser, at (a) og (b) er ækvivalente.\\\\
+%
+Antag at ligningssystemet $\textbf{a}^T_i\textbf{x}=b_i$, $i \in I$, har løsningerne $\textbf{x}_1$ og $\textbf{x}_2$.
+Så skal ikke-nulvektoren $\textbf{d} = \textbf{x}_1 - \textbf{x}_2$ opfylde, at $\textbf{a}^T_i\textbf{d}=0$ for alle $i \in I$.
+Dette kræver, at $\textbf{d}$ er ortogonal med alle $\textbf{a}_i$, $i \in I$ og dermed ikke er en linearkombination af disse vektorer.
+Dette medfører, at $\text{span}\{a_i|i \in I\} \neq \R^n$.
+%
+Antag nu, at vektorerne $\textbf{a}_i$, $i \in I$ ikke spænder over $\R^n$.
+Så er det muligt , at vælge en ikke-nulvektor $\textbf{d}$, som er ortogonal med underrummet, som vektorerne spænder over.
+Hvis $\textbf{x}$ opfylder  $\textbf{a}^T_i\textbf{x}= b_i$, for alle $i \in I$, så haves, at $\textbf{a}^T_i(\textbf{x}+\textbf{d})= b_i$, for alle $i \in I$, og der er dermed adskillige løsninger.
+Dermed er det vist, at (b) og (c) er ækvivalente.
+\end{proof}\\
+%
+Med udgangspunkt i betingelsers tilsvarende vektorer kan givne betingelser siges at være lineært uafhængige, hvis de tilsvarende vektorer er lineært uafhængige.
+Med dette og sætning \ref{thm:betingi}(a) kan hjørnepunkterne defineres som mulige løsninger, hvor $n$ lineært uafhængige betingelser er bindende.
+Bemærk, at alle betingelser skal være opfyldt, for at et givent punkt kan være en mulig løsning og, at et punkt i ikke behøver at opfylde alle betingelser for at kunne have $n$ bindende betingelser.
+%
+\begin{defn}{}{}
+Lad $P$ være en polyede defineret med lineære lighed- og ulighedsbetingelser og lad $\textbf{x}$ være en vektorer i $\R^n$.
+%
+\begin{enumerate}[label=(\alph*)]
+\item Vektoren $\textbf{x}$ er en \textbf{basal løsning}, hvis:
+%
+\begin{enumerate}[label=(\roman*)]
+\item Alle lighedsbetingelser er opfyld;
+\item Af de bindende betingelser er der $n$ af dem, som er lineært uafhængige.
+\end{enumerate}
+%
+\item Vektoren $\textbf{x}$ er en \textbf{basal mulig løsning}, hvis $\textbf{x}$ er en \textit{basal løsning} og alle betingelser er opfyldt.
+\end{enumerate}
+\end{defn}
+%
+Bemærk, at hvis en polyede er defineret med $m$ lineære betingelser og $m<n$, så eksisterer der ikke et punkt med $n$ bindende betingelser.
+Dette medfører, at der hverken er \textit{bassale løsninger} eller \textit{basale mulige løsninger}.\\\\
+%
+Tre definitioner, som ønsker at beskrive det samme, er blevet givet.
+Det er muligt at skifte mellem definitionerne efter ønske, da de er ækvivalente.
+%
+\begin{thm}{}{hjorneeq}
+Lad $P$ være en ikke tom polyede og lad $\textbf{x}\in P$.
+Så er følgende udsagn ækvivalente:
+%
+\begin{enumerate}[label=(\alph*)]
+\item $\textbf{x}$ er et \textit{ekstremumpunkt}.
+\item $\textbf{x}$ er et \textit{hjørnepunkt}.
+\item $\textbf{x}$ er en \textit{basal mulig løsning}.
+\end{enumerate}
+%
+\end{thm}
+%
+\begin{proof}
+To be continued...
 \end{proof}
-\noindent
