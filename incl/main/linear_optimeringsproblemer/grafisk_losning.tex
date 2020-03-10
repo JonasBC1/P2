@@ -1,16 +1,16 @@
 \section{Mathias}
-% God arbejdslyst - tak julle :))
+\label{heeeeejjulle}
 
 I forhold til grafisk at løse lignende lineære programmeringsproblemer forhenstående, så vil følgende eksempel illustrere hvordan. 
 %Mit forslag til ovenstående: Eksempel \ref{eks:min_loes} illustrerer, hvordan lineære programmeringsproblemer løses i nærværende rapport.
 
 \begin{eks}
 \label{eks:min_loes}
-Betragt minimumsproblemet
+Betragt maskimumproblemet
 %
 \begin{align*}
 \begin{array}{lrrlr}
-\text{Minimér}		&	\multicolumn{2}{c}{x_1-x_2}  &\\
+\text{Maksimër}		&	\multicolumn{2}{c}{x_1+x_2}  &\\
 \text{begrænset af}	&x_1& + 2x_2			&\leq 	& 6,\\
 					&2x_1& + x_2			&\leq	& 6,\\
 					&x_1&    				&\geq	& 0,\\
@@ -32,3 +32,8 @@ Det hjørnepunkt, som er den optimale løsning i forudgående eksempel, som i fo
 af objektfunktionen repræsenterer præcis én
 løsning til maksimeringsproblemet. I følgende eksempel introduceres et eksempel, hvor der matematisk set findes et uendeligt antal løsninger, der
 maksimerer værdien af objektfunktionen.
+%
+\input{fig/tikz/optimering/opti_loes2}
+%
+Antag nu, at den ene koefficient i objektfunktion er rykket eller at den ene begrænsning er skiftet, så den ligger parallelt med niveaukurven, som ligger vinkelret med vektoren $\textbf{v}$, så betyder dette, at der findes uendeligt mange optimale løsninger til maksimeringsproblemmet. 
+
