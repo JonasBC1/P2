@@ -4,7 +4,7 @@
 Som det bliver beskrevet i afsnit \ref{sec:standard} kan optimeringsproblemer opskrives på standardform.
 Dette korosponderer med polyeder der ligeledes kan opskrives på standardform: 
 $P=\{ \mathbf{x} \in \R^n \mid A\mathbf{x}=\mathbf{b},x \geq 0 \}$, hvor er $A$ er en $m \times n$ matrix.
-$P$ bliver er her et \textbf{polyede på standardform}.
+$P$ bliver er her et \textit{polyede på standardform}.
 I de fleste tilfælde er det en fordel at antage at de $m$ rækker i $A$ er lineært uafhængige.
 %I sætning \ref{something something} vil det endvidere blive vist at rækker der ikke er uafhængige kan udelukkes fra løsningen.
 som det ses i (ref til basale mulige løsninger) skal der være $n$ aktive-begrænsninger i spil for at finde en basal mulig løsning.
@@ -24,7 +24,9 @@ $\mathbf{x} \in \R^n$ er en basal løsning hvis og kun hvis: $A\mathbf{x}=\mathb
 Betragt et $x \in \R^n$ og antag at der eksiterer indexer $\mathbf{A}_{B(1)},\ldots,\mathbf{A}_{B(m)}$ der opfylder (a) og (b).
 Da gælder om de aktive begrænsninger at $x_i=0$, når $i\neq B(1),\ldots,B(m)$, samt at $A\mathbf{x}=\mathbf{b}$.
 Dette implicere, da liniært afhængige løsninger sættes lig $0$,  at 
-$$\sum_{i=1}^{m}\textbf{A}_{B(i)}x_{B(i)}=\sum_{i=1}^{n}\textbf{A}_ix_i=A\textbf{x}=\textbf{b}$$.
+%
+$$\sum_{i=1}^{m}\textbf{A}_{B(i)}x_{B(i)}=\sum_{i=1}^{n}\textbf{A}_ix_i=A\textbf{x}=\textbf{b}.$$
+%
 Da søjlerne $\textbf{A}_{B(i)}x_{B(i)}$ for $i=1,\ldots,m$ er lineært uafhængige, kan $x_{B(1)},\ldots,x_{B(m)}$ bestemmes entydigt. 
 Altså har ligningssystemet skabt af de aktive begrænsninger en entydig løsning.
 Fra sætning (MAAADS), følger at der er $n$ aktive begrænsninger, hvorfor $\mathbf{x}$ er en basal løsning. 

@@ -1,20 +1,32 @@
-%vis at løsningerne findes i hjørnene af en polytop, der er også lidt rod med den danske oversættelse af vertex, som egentligt betyder hjørne måske er der en fagterm???
+\section{Ekstremer, hjørnepunkter og basale løsninger}
+%
+\textit{vis at løsningerne findes i hjørnene af en polytop.}
 Som det fremgår i ovenstående, vil en optimal løsning være i hjørnerne af en polyede.
 Der er derfor behov for måder at definere disse hjørner på.
-
+%
 \begin{defn}{}{ekstrema}
-Lad $P$ være en polyede. 
-En vektor $\mathbf{x} \in P$ kaldes et \textbf{ekstremumspunkt} i $P$, hvis der ikke eksisterer to vektorer $\mathbf{y},\mathbf{z} \in P$, $\mathbf{y} \land \mathbf{z} \neq \mathbf{x}$, samt en skalar $\lambda \in [0,1]$ hvorom det gælder: $\mathbf{x}=\lambda\mathbf{y}+(1-\lambda)\textbf{z}$.
+Lad $\mathcal{P}$ være en polyede. 
+En vektor $\mathbf{x} \in \mathcal{P}$ kaldes et \textbf{ekstremumspunkt} i $\mathcal{P}$, hvis der ikke eksisterer to vektorer $\mathbf{y},\mathbf{z} \in \mathcal{P}$, $\mathbf{y} \land \mathbf{z} \neq \mathbf{x}$, 
+samt en skalar $\lambda \in [0,1]$, hvorom det gælder: $\mathbf{x}=\lambda\mathbf{y}+(1-\lambda)\textbf{z}$.
 \end{defn}
 \noindent
+%
+%
 Et hjørne kan beskrives ud fra denne definition idet der såfremt $\mathbf{x}=\lambda\mathbf{y}+(1-\lambda)z$, og alle vektorene findes i $P$, gælder at $\mathbf{x}$ er en konveks kombination af $\mathbf{y}$ og $\mathbf{z}$.
 Hvis $\mathbf{x}=\lambda\mathbf{y}+(1-\lambda)\textbf{z}$ og $\mathbf{x}$ er et ekstremumspunkt må det derfor gælde at $\mathbf{y}\notin P$ eller $\mathbf{z}\notin P$ eller $\mathbf{x}=\mathbf{z}$ eller $\mathbf{x}=\mathbf{y}$. 
 Det skal her nævnes at denne definition er strengt geometrisk.
-
+%
 \input{fig/tikz/ekstrema}
-
-En alternativ geometrisk defintion relatere sig til \textit{hjørner}, som er den entydige optimale løsning til et givet lineært programeringsproblem med den mulige løsningsmængde $P$.
+\\\\
+%
+En alternativ geometrisk definition relatere sig til \textit{hjørne punkter}, som er den entydige optimale løsning til et givet lineært programmeringsproblem med den mulige løsningsmængde $\mathcal{P}$.
+%
 \begin{defn}{}{hjoerner}
-Lad $P$ være en polyede. En vektor $\mathbf{x}\in P$ siges at være et \textbf{hjørne} hvis der esksiterer en vektor $\mathbf{c}$ hvorom det gælder at $\mathbf{c}^T\mathbf{x}<\mathbf{c}^T\mathbf{y}$ for alle $\mathbf{y}$ som opfylder $\mathbf{y} \in P$ samt $\mathbf{y}\neq\mathbf{x}$.
+Lad $P$ være en polyede. 
+En vektor $\mathbf{x}\in P$ siges at være et \textbf{hjørne punkt}, hvis der esksiterer en vektor $\mathbf{c}$, hvorom det gælder at $\mathbf{c}^T\mathbf{x}<\mathbf{c}^T\mathbf{y}$ for alle $\mathbf{y}$, som opfylder $\mathbf{y} \in P$ samt $\mathbf{y}\neq\mathbf{x}$.
 \end{defn}
-Dette kan ligeledes beskrives som at $\mathbf{x}$ er et hjørne i $P$ såfremt $P$ er på den ene side af et hyperplan der skærer $P$ i $\mathbf{x}$. Jævnfør definitionen har dette hyperplan ligningen $y \mid \mathbf{c}^T\mathbf{x}=\mathbf{c}^T\mathbf{y}$
+\noindent
+%
+%
+Dette kan ligeledes beskrives som at $\mathbf{x}$ er et hjørne i $P$ såfremt $P$ er på den ene side af et hyperplan der skærer $P$ i $\mathbf{x}$. 
+Jævnfør definitionen har dette hyperplan ligningen $y \mid \mathbf{c}^T\mathbf{x}=\mathbf{c}^T\mathbf{y}$
