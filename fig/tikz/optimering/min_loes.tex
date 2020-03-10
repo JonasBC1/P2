@@ -20,20 +20,23 @@
   ymax=4]
 	legend style={at={(0.45,0.025)},anchor=south west},
 ]
-%
-%
+\addplot[name path=c, domain=0:3,samples=2,color=black, style=very thin]{0};
+%%%
+%%%
 \addplot[name path=b, domain={0:6}, color=myblue, style=very thick,samples=2]{6-2*x};
-	\addlegendentry{$2x_1+x_2 \leq 6$}
-	\addplot[name path=a, domain={0:6}, color=myred, style=very thick, samples=2]{3-0.5*x};
-	\addlegendentry{$x_1+2x_2 \leq 6$}
+\addlegendentry{$2x_1+x_2 \leq 6$}
+\addplot[name path=a, domain={0:6}, color=myred, style=very thick, samples=2]{3-0.5*x};
+\addlegendentry{$x_1+2x_2 \leq 6$}
+
+
+
+
+\addplot[fill=myblue!15,opacity=0.4] fill between [of=a and c, soft clip={domain=0:2}];
+\addplot[fill=myblue!15,opacity=0.4] fill between [of=b and c, soft clip={domain=2:3}];
+ 
+
 %
-%
-	\addplot[name path=c, domain=0:6, samples=2, color=myred, style=very thick]{((6-2*x};
-	\addplot[name path=d, domain=0:6,samples=2,color=myblue, style=very thick]{3-0.5*x};
-%
-	
-	%\tikzfillbetween [of=d and c]{myblue!15}
-	%\tikzfillbetween [of=c and a]{myblue!15}
+
 %	
 \addplot[domain=-1:6, samples=2, color=black, dotted, thick]{-x};
 \addplot[domain=-1:6, samples=2, color=black, dotted, thick]{2-x};
@@ -45,3 +48,4 @@
 %
 \label{fig:min_loes}
 \end{figure}
+
