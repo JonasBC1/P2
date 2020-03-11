@@ -6,7 +6,7 @@ Dette korosponderer med polyeder der ligeledes kan opskrives på standardform:
 $P=\{ \mathbf{x} \in \R^n \mid A\mathbf{x}=\mathbf{b},x \geq 0 \}$, hvor er $A$ er en $m \times n$ matrix.
 $P$ bliver er her et \textit{polyede på standardform}.
 I de fleste tilfælde er det en fordel at antage at de $m$ rækker i $A$ er lineært uafhængige.
-%I sætning \ref{something something} vil det endvidere blive vist at rækker der ikke er uafhængige kan udelukkes fra løsningen.
+I sætning \ref{something something} vil det endvidere blive vist at antagelsen af at rækkerne er uafhængige kan fortages, da de svarer til overflødige betingelser som kan udelades.
 som det ses i (ref til basale mulige løsninger) skal der være $n$ aktive-begrænsninger i spil for at finde en basal mulig løsning.
 såfremt $m \neq n$, skal der derfor vælges $n-m$ variable $x_i$ med henblik på, at sætte disse $x_i=0$, hvilket gør begrænsningerne $x_i \geq 0$ aktive.
 ovenstående 53 i bogen har behov for andre læser så vi kan diskutere hvad det betyder.
@@ -43,3 +43,27 @@ Der kan derfor findes $m-k$ søjler $A_{B(k+1)},\ldots,A_{B(m)}$ hvorom det gæl
 Da $k \leq m$ gælder det hvis $i \neq B(1),\ldots,B(m)$ at $i \neq B(1),\ldots,B(k)$ og $x_i=0$.
 \end{proof}
 %der skal flere igennem det her bevis, tænker det er svært for andre end mig.
+\\
+\noindent
+Som følge af sætning \ref{thm:polystd} kan basale løsninger konstrueres ved hjælp af følgende procedure.
+\begin{enumerate}
+\item Vælg $m$ lineært uafhængige søjler $\textbf{A}_{B(1)},\ldots,\textbf{A}_{B(m)}$
+\item Lad $x_i=0$ for $i \neq B(1),\ldots,B(m)$
+\item Løs ligningssystemet med de $m$ ligninger, $A\textbf{x}=\textbf{b}$ for $x_{B(1)}, \ldots , x_{B(m)} $
+\end{enumerate}
+Hvis løsningen der er konstrueret af denne procedure er ikke-negativ, så er løsningen en basal mulig løsning.
+\\\\
+\noindent
+Det bevises nu at antagelsen om at rækkerne var lineært uafhængige kunne fortages.
+\begin{thm}{}{}
+Lad $P=\{\textbf{x}|A\textbf{x}=\textbf{b},x\geq 0\}$ være en ikke-tom polyede, hvor $A$ er en $m \times n$ matrix, med rækker $\textbf{a}^{T}_{1},\ldots,\textbf{a}^{T}_{m}$.
+Antag at rang$(A)=k<m$ og at rækkerne $\textbf{a}^T_{i1},\ldots,\textbf{a}^T_{ik}$ lineært uafhængig. Givet polyeden 
+$$Q=\{x|\textbf{a}^T_{i1}x=b_{i1},\ldots,\textbf{a}^T_{ik}x=b_{ik}, x \geq 0  \}$$ 
+så er $Q=P$
+\end{thm}
+\begin{proof}
+Det bevises i tilfældet hvor $i_1=1,\ldots,i_k=k$, som er tilfældet hvor de første k rækker er lineært uafhængige. Alle andre tilfælder kan omskrives til dette tilfælde ved rækkeombytning. Det gælder at $P$ er en delmængde af $Q$, da alle elementer i $P$ opfylder $Q$'s betingelser.
+
+%still work in progress
+
+\end{proof}
