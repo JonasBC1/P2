@@ -20,6 +20,9 @@
   ymax=4]
 	legend style={at={(0.45,0.025)},anchor=south west},
 ]
+
+
+\addplot[name path=d, domain=0:6,samples=2,color=white, style=ultra thin]{6};
 \addplot[name path=c, domain=0:3,samples=2,color=black, style=very thin]{0};
 %%%
 %%%
@@ -31,8 +34,8 @@
 
 
 
-\addplot[fill=myblue!15,opacity=0.4] fill between [of=a and c, soft clip={domain=0:2}];
-\addplot[fill=myblue!15,opacity=0.4] fill between [of=b and c, soft clip={domain=2:3}];
+\addplot[fill=myblue!15,opacity=0.4] fill between [of=d and b, soft clip={domain=0:2}];
+\addplot[fill=myblue!15,opacity=0.4] fill between [of=d and a, soft clip={domain=2:4}];
  
 
 %
@@ -43,9 +46,9 @@
 \addplot[domain=0:6, samples=2, color=black, dotted, thick]{4-x};
 \addplot[mark=*] coordinates {(2,2)};
 \end{axis}
+\draw[->] (1.4,1.2) -- (2.75,2.35);
 \end{tikzpicture}
-\caption{Grafisk løsning til problemet i \ref{eks:min_loes}.}
+\caption{Grafisk illustration, hvor den optimale løsning er $\infty$ til problemet i \ref{eks:min_loes}.}
 %
-\label{fig:min_loes}
+\label{fig:opti_loes4}
 \end{figure}
-
