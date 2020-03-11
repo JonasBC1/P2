@@ -1,10 +1,12 @@
+\begin{minipage}[b]{0.45\textwidth}
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
+%
 \begin{center}
-% 
-\begin{tikzpicture}[scale=6]
+\begin{tikzpicture}[scale=3]
 % Koordinater
 % -------------------------------------------------------
 \coordinate (c) at (0.7,1.2,1.2);
@@ -15,17 +17,22 @@
 \coordinate (f) at (1.5,0.7,1.2);
 %
 % Tegning af vektorer
-% -------------------------------------------------------
-  \draw[very thick,color=myblue](b)--(c);  
+% ------------------------------------------------------- 
   \draw[thick,->](f)--(b);
   \draw[thick,->](f)--(c);
-  \draw[thick,->, dashed](f)--(1.35,1.2,1.2);
+  \draw[thick,->](f)--(1.7,1.2,1.6);
 %
 % Punkter og linje 
 % -------------------------------------------------------
 \filldraw[black] (0.95,1,1.2) circle (0pt) node[left] {$\mathbf{x}$};
 \filldraw[black] (1.7,1,1.2) circle (0pt) node[right] {$\mathbf{y}$};
-\filldraw[black] (1.1,1,1.2) circle (0pt) node[right] {$\frac{1}{2} \mathbf{x}+\frac{1}{2} \mathbf{y}$};
+\filldraw[black] (1.4,1,1.2) circle (0pt) node[right] {$\mathbf{z}$};
+%
+% Planet - Hyperplanet
+% -------------------------------------------------------
+\filldraw [fill=myblue,opacity=0.3] 
+         (b) -- (c) -- (1.7,1.2,1.6) -- cycle;
+%
 %
 %% Koordinatssystem
 %% ------------------------------------------------------
@@ -33,10 +40,14 @@
 %\draw[thick] (0,0,-0.5) -- (-0.2,0,-0.5);
 %\draw[thick,->] (0,0,-0.5) -- (0,0.8,-0.5) node[anchor=north west]{$y$};
 %\draw[thick] (0,0,-0.5) -- (0,-0.2,-0.5);
+%\draw[thick,->] (0,0,-0.5) -- (0,0,0.3) node[anchor=south east]{$z$};
+%\draw[thick] (0,0,-0.5) -- (0,0,-0.8);
 %%
 %
 \end{tikzpicture}
-  \captionof{figure}{Vektorerne $\mathbf{x}$ og $ \mathbf{y}$, samt den konvekse kombination af dem, hvor $\lambda_x = \lambda_y = \frac{1}{2}$, og den konvekse hylster af vektorerne, der er markeret med blå.}
-  \label{fig:neej2}
+  \captionof{figure}{Nej}
+  \label{fig:mmmm2}
 \end{center}
 %
+%
+\end{minipage}

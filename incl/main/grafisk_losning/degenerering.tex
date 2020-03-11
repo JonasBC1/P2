@@ -1,6 +1,63 @@
 \section{Degenerering}
+% idonnotknow
+Ud fra definition \ref{defn:basal} vides det at der skal være $n$ aktive betingelser for at $\mathbf{x}$ er en basal løsning. 
+Nedenstående defineres tilfælde, hvor der er flere en $n$ aktive betingelser. 
 %
 \begin{defn}{}{}
-fisk
+En basal løsning $\mathbf{x} \in \R^n$ kaldes \textbf{degenereret}, hvis der er mere end $n$ aktive betingelser for $\mathbf{x}$.
 \end{defn}
+\noindent
+%
+En degeneret basal løsning har altså mere end de nødvendige $n$ aktive betingelser.
+% 
+I $\R^2$ er en degenereret løsning i et skæringspunkt af tre eller flere linjer. 
+Ligeså er en degenereret løsning i $\R^3$ i et skæringspunkt af fire eller flere flader. 
+På figur \ref{fig:mmmm2} ses $\mathbf{x}$, som er en degenereret basal løsning i $\R^2$, og på figur  \ref{fig:mmmm3} ses $\mathbf{x}$, som er en degenereret basal løsning i $\R^3$.
+Generaliseret vil en degenereret løsning dermed opstå i skæringspunktet med mindst $n+1$ hyperplaner i $\R^n$.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Flot graf alla Julie     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{center}
+$
+\begin{array}{cc}
+\input{fig/tikz/geometri/degenerering_r2}&
+\input{fig/tikz/geometri/degenerering_r3}
+\end{array}
+$
+\end{center}
+%
+%
+Ligeledes findes en definition for en degenereret basal løsning for polyeder på standardform. 
+Jævnfør definition \ref{} skal der være $m$ aktive betingelser, og $n-m$ aktive ikke-negativitetsbetingelserne. Dermed skal en polyede på standardform have flere end $m-n$ ikke-negativitetsbetingelserne, for at have en degenereret basal løsning, hvilket er defineret nedenstående:
+%
+\begin{defn}{}{}
+Lad $\mathcal{P}$ være en polyede på standardform
+$P=\{ \mathbf{x} \in \R^n \mid A\mathbf{x}=\mathbf{b},x \geq 0 \}$, og lad $m$ være antallet af rækker i $A$.
+En basal løsning $\mathbf{x}$ for $\mathcal{P}$ kaldes degenereret, hvis der er mere end $n-m$ af komponenterne i $\mathbf{x}=0$.
+\end{defn}
+\noindent
+%
+% Noget overgangstekst og et eksempel xD
+%
+%
+Figur \ref{fig:jegerikkesyg}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Flot graf alla Julie     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\input{fig/tikz/geometri/degenerering_std}
+%
+
+
+
+
+
+
+
+
+
+
 
