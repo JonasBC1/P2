@@ -30,11 +30,11 @@ $
 %
 %
 Ligeledes findes en definition for en degenereret basal løsning for polyeder på standardform. 
-Jævnfør definition \ref{} skal der være $m$ aktive betingelser, og $n-m$ aktive ikke-negativitetsbetingelserne. Dermed skal en polyede på standardform have flere end $m-n$ ikke-negativitetsbetingelserne, for at have en degenereret basal løsning, hvilket er defineret nedenstående:
+Jævnfør definition \ref{afsnit:fisk} skal der være $m$ aktive betingelser, og $n-m$ aktive ikke-negativitetsbetingelserne. Dermed skal en polyede på standardform have flere end $m-n$ ikke-negativitetsbetingelserne, for at have en degenereret basal løsning, hvilket er defineret nedenstående:
 %
 \begin{defn}{}{}
 Lad $\mathcal{P}$ være en polyede på standardform
-$P=\{ \mathbf{x} \in \R^n \mid A\mathbf{x}=\mathbf{b},x \geq 0 \}$, og lad $m$ være antallet af rækker i $A$.
+$P=\{ \mathbf{x} \in \R^n \mid A \mathbf{x}=\mathbf{b},x \geq 0 \}$, og lad $m$ være antallet af rækker i $A$.
 En basal løsning $\mathbf{x}$ for $\mathcal{P}$ kaldes degenereret, hvis der er mere end $n-m$ af komponenterne i $\mathbf{x}=0$.
 \end{defn}
 \noindent
@@ -42,22 +42,23 @@ En basal løsning $\mathbf{x}$ for $\mathcal{P}$ kaldes degenereret, hvis der er
 % Noget overgangstekst og et eksempel xD
 %
 %
-Figur \ref{fig:jegerikkesyg}
+Ved en lille ændring af en overflødig aktiv begrænsning, vil en degenereret basal løsning kunne undgås. 
+Figur \ref{fig:jegerikkesyg} ses $\mathbf{a}_1 \mathbf{x} = b_1$, der er en overflødig aktiv betingelse, der medfører en degenereret basal løsning.
+En lille ændring vil ændre den degenererede basale løsning til en basal løsning, hvilket kan ses på figur \ref{fig:mmmjegerikkesyg}, hvor $\mathbf{a}_1 \mathbf{x} = b_1 - \epsilon$
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-\input{fig/tikz/geometri/degenerering_std}
+\begin{center}
+$
+\begin{array}{cc}
+\input{fig/tikz/geometri/degenerering_std1}&
+\input{fig/tikz/geometri/degenerering_std2}
+\end{array}
+$
+\end{center}
 %
-
-
-
-
-
-
-
-
-
-
-
+%
+I praktiske problemer, viser det sig dog ofte af $A$ og $\mathbf{b}$ har specifikke værdier og dermed er degenererede basale løsninger mere hyppigt.
+%
