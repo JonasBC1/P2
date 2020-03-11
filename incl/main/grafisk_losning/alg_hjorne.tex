@@ -3,12 +3,12 @@
 Hvis en vektor $\textbf{x}$ opfylder $\textbf{a}^T_i\textbf{x}= b_i$ for $i \in M_1, M_2 \text{ eller } M_3$, så siges den tilsvarende betingelse at være \textbf{bindende} ved $\textbf{x}$.
 \end{defn}\noindent
 %
-Følgende sætning giver anledning til hvordan disse bindende betingelser kan føres i relation til løsninger af lineære optimeringsproblemer.
+Følgende sætning giver anledning til, at disse bindende betingelser kan føres i relation til løsninger af lineære optimeringsproblemer.
 %
 \begin{thm}{}{betingi}
 
-Lad $\textbf{x}$ være et element i $\R^n$ og lad $I=\{i|\textbf{a}^T_i\textbf{x}=b_i\}$ være en mængde af indexer på betingelser, der er bindende ved $\textbf{x}$.
-Så er følgende udsagn ækvivalente.
+Lad $\textbf{x}$ være et element i $\R^n$ og lad $I=\{i|\textbf{a}^T_i\textbf{x}=b_i\}$ være en mængde af indekser på betingelser, der er bindende ved $\textbf{x}$.
+Så er følgende udsagn ækvivalente:
 %
 \begin{enumerate}[label=(\alph*)]
 \item Der eksisterer $n$ vektorer i mængden $\{\textbf{a}_i|i \in I \}$, som er lineært uafhængige.
@@ -19,7 +19,7 @@ Så er følgende udsagn ækvivalente.
 %
 \begin{proof}
 Antag, at $\text{span}\{a_i|i \in I\}= \R^n$.
-Dette span har dimensionen $n$ og jævnfør sætning (1.3(a) i bertsimas) kan et basis for spannet dannes med $n$ af vektorerne, som vil være lineært uafhængige.
+Dette span har dimensionen $n$ og jævnfør sætning (1.3(a) i bertsimas) kan en basis for spannet dannes med $n$ af vektorerne, som vil være lineært uafhængige.
 %
 Hvis der ligeledes eksisterer $n$ vektorer i $\{a_i|i \in I\}$, som er lineært uafhængige, må disse udspænde hele $\R^n$.
 Dette viser, at (a) og (b) er ækvivalente.\\\\
@@ -30,38 +30,38 @@ Dette kræver, at $\textbf{d}$ er ortogonal med alle $\textbf{a}_i$, $i \in I$ o
 Dette medfører, at $\text{span}\{a_i|i \in I\} \neq \R^n$.
 %
 Antag nu, at vektorerne $\textbf{a}_i$, $i \in I$ ikke spænder over $\R^n$.
-Så er det muligt , at vælge en ikke-nulvektor $\textbf{d}$, som er ortogonal med underrummet, som vektorerne spænder over.
+Så er det muligt at vælge en ikke-nulvektor $\textbf{d}$, der er ortogonal med underrummet, som vektorerne spænder over.
 Hvis $\textbf{x}$ opfylder  $\textbf{a}^T_i\textbf{x}= b_i$, for alle $i \in I$, så haves, at $\textbf{a}^T_i(\textbf{x}+\textbf{d})= b_i$, for alle $i \in I$, og der er dermed adskillige løsninger.
 Dermed er det vist, at (b) og (c) er ækvivalente.
 \end{proof}\\
 %
 Med udgangspunkt i betingelsers tilsvarende vektorer kan givne betingelser siges at være lineært uafhængige, hvis de tilsvarende vektorer er lineært uafhængige.
 Med dette og sætning \ref{thm:betingi}(a) kan hjørnepunkterne defineres som mulige løsninger, hvor $n$ lineært uafhængige betingelser er bindende.
-Bemærk, at alle betingelser skal være opfyldt, for at et givent punkt kan være en mulig løsning og, at et punkt i ikke behøver at opfylde alle betingelser for at kunne have $n$ bindende betingelser.
+Bemærk, at alle betingelser skal være opfyldt, for at et givent punkt kan være en mulig løsning, samt at et punkt ikke behøver at opfylde alle betingelser for at kunne have $n$ bindende betingelser.
 %
 \begin{defn}{}{basal}
-Lad $P$ være en polyede defineret med lineære lighed- og ulighedsbetingelser og lad $\textbf{x}$ være en vektorer i $\R^n$.
+Lad $P$ være en polyede defineret med lineære ligheds- og ulighedsbetingelser og lad $\textbf{x}$ være en vektor i $\R^n$.
 %
 \begin{enumerate}[label=(\alph*)]
 \item Vektoren $\textbf{x}$ er en \textbf{basal løsning}, hvis:
 %
 \begin{enumerate}[label=(\roman*)]
-\item Alle lighedsbetingelser er opfyld;
+\item Alle lighedsbetingelser er opfyldt.
 \item Af de bindende betingelser er der $n$ af dem, som er lineært uafhængige.
 \end{enumerate}
 %
-\item Vektoren $\textbf{x}$ er en \textbf{basal mulig løsning}, hvis $\textbf{x}$ er en \textit{basal løsning} og alle betingelser er opfyldt.
+\item Vektoren $\textbf{x}$ er en \textbf{basal mulig løsning}, hvis $\textbf{x}$ er en \textit{basal løsning}, og alle betingelser er opfyldt.
 \end{enumerate}
 \end{defn}\noindent
 %
 Bemærk, at hvis en polyede er defineret med $m$ lineære betingelser og $m<n$, så eksisterer der ikke et punkt med $n$ bindende betingelser.
-Dette medfører, at der hverken er \textit{bassale løsninger} eller \textit{basale mulige løsninger}.\\\\
+Dette medfører, at der hverken er \textit{basale løsninger} eller \textit{basale mulige løsninger}.\\\\
 %
 Tre definitioner, som ønsker at beskrive det samme, er blevet givet.
 Det er muligt at skifte mellem definitionerne efter ønske, da de er ækvivalente.
 %
 \begin{thm}{}{hjorneeq}
-Lad $P$ være en ikke tom polyede og lad $\textbf{x}\in P$.
+Lad $P$ være en ikke-tom polyede og lad $\textbf{x}\in P$.
 Så er følgende udsagn ækvivalente:
 %
 \begin{enumerate}[label=(\alph*)]
@@ -73,57 +73,57 @@ Så er følgende udsagn ækvivalente:
 \end{thm}
 %
 \begin{proof}
-Lad $P$ være en polyede defineret ve betingelser på formen $\textbf{a}_i^T\textbf{x} \geq b_i$ og $\textbf{a}_i^T\textbf{x} = b_i$.\\\\
+Lad $P$ være en polyede defineret ved betingelser på formen $\textbf{a}_i^T\textbf{x} \geq b_i$ og $\textbf{a}_i^T\textbf{x} = b_i$.\\\\
 %
-Lad $\textbf{x} \in P$ være et hjørnepunkt. Jævnfør definition \ref{defn:hjoerner} eksisterer der så et $\textbf{c} \in \R^n$ således, at $\textbf{c}^T\textbf{x} < \textbf{c}^T\textbf{y}$ for alle $\textbf{y}$, som opfylder $\textbf{y} \in P$ og $\textbf{y} \neq \textbf{x}$.
+Lad $\textbf{x} \in P$ være et hjørnepunkt. Jævnfør definition \ref{defn:hjoerner} eksisterer der så et $\textbf{c} \in \R^n$, således at $\textbf{c}^T\textbf{x} < \textbf{c}^T\textbf{y}$ for alle $\textbf{y}$, som opfylder $\textbf{y} \in P$ og $\textbf{y} \neq \textbf{x}$.
 Hvis $\textbf{y} \in P$, $\textbf{z} \in P$, $\textbf{y} \neq \textbf{x}$, $\textbf{z} \neq \textbf{x}$ og $0 \leq \lambda \leq 1$, så $\textbf{c}^T\textbf{x} < \textbf{c}^T\textbf{y}$ og $\textbf{c}^T\textbf{x} < \textbf{c}^T\textbf{z}$.
 Dette medfører, at $\textbf{c}^T\textbf{x} < \textbf{c}^T(\lambda \textbf{y} + (1-\lambda)\textbf{z})$, som betyder, at $\textbf{x}^T \neq \lambda \textbf{y} + (1 - \lambda)\textbf{z}$.
-Derfor kan $\textbf{x}$ ikke bliv udtrykt som en kombination af to andre elementer i $P$, hvilket betyder, at $\textbf{x}$ er et ekstremumspunkt ifølge definition \ref{defn:ekstrema}.\\\\
+Derfor kan $\textbf{x}$ ikke blive udtrykt som en kombination af to andre elementer i $P$, hvilket betyder, at $\textbf{x}$ er et ekstremumspunkt ifølge definition \ref{defn:ekstrema}.\\\\
 %
 Antag, at $\textbf{x} \in P$ ikke er en \textit{basal mulig løsning} og lad $I = \{ i | \textbf{a}_i^T \textbf{x} = b_i\}$.
-Da $\textbf{x}$ ikke er en \textit{basal mulig løsning} må der ikke eksistere $n$ lineært uafhængige vektorer af typen $\textbf{a}_i$, $i \in I$.
-Derfor må vektorerne $\textbf{a}_i$, $i \in I$ ligge i et ægte underrum af $\R^n$ og der eksisterer derfor en ikke-nulvektor $\textbf{d} \in \R^n$ sådan, at $\textbf{a}_i^T\textbf{d} = 0$ for alle $i \in I$.
-Lad $\epsilon$ være et lille positivt tal og betragt vektorerne $\textbf{y} = \textbf{x} + \epsilon\textbf{d}$ og $\textbf{y} = \textbf{x} - \epsilon\textbf{d}$.
+Da $\textbf{x}$ ikke er en \textit{basal mulig løsning}, må der ikke eksistere $n$ lineært uafhængige vektorer af typen $\textbf{a}_i$, $i \in I$.
+Derfor må vektorerne $\textbf{a}_i$, $i \in I$, ligge i et ægte underrum af $\R^n$ og der eksisterer derfor en ikke-nulvektor $\textbf{d} \in \R^n$, således at $\textbf{a}_i^T\textbf{d} = 0$ for alle $i \in I$.
+Lad $\epsilon$ være et lille, positivt tal, og betragt vektorerne $\textbf{y} = \textbf{x} + \epsilon\textbf{d}$ og $\textbf{y} = \textbf{x} - \epsilon\textbf{d}$.
 Bemærk, at $\textbf{a}_i^T \textbf{y} = \textbf{a}_i^T \textbf{x} = b_i$, for $i \in I$.
-Endvidere haves, at $\textbf{a}_i^T \textbf{x} > b_i$ for $i \notin I$ og givet, at $\epsilon$ er lille nok haves $\textbf{a}_i^T \textbf{y} > b_i$ for $i \notin I$.
-Det er her tilstrækkeligt at vælge $\epsilon$ således, at $\epsilon |\textbf{a}_i^T\textbf{d}| < \textbf{a}_i^T\textbf{x} - b_i$, for alle $i \notin I$.
-Når $\epsilon$ er lille nok haves $\textbf{y} \in P$ og med samme argumentering haves $\textbf{z} \in P$.
+Endvidere haves, at $\textbf{a}_i^T \textbf{x} > b_i$ for $i \notin I$ og givet, at $\epsilon$ er lille nok, haves $\textbf{a}_i^T \textbf{y} > b_i$ for $i \notin I$.
+Det er her tilstrækkeligt at vælge $\epsilon$, således at $\epsilon |\textbf{a}_i^T\textbf{d}| < \textbf{a}_i^T\textbf{x} - b_i$ for alle $i \notin I$.
+Når $\epsilon$ er lille nok, haves det, at $\textbf{y} \in P$, og med samme argumentation haves, at $\textbf{z} \in P$.
 Dette betyder, at $\textbf{x}$ ikke er et ekstremumspunkt, da $\textbf{x} = \frac{\textbf{y} + \textbf{z}}{2}$.\\\\
 %
 Lad $\textbf{x}$ være en \textit{basal mulig løsning}, lad $I = \{i | \textbf{a}_i^T\textbf{x} = b_i \}$ og lad $\textbf{x}=\sum_{i \in I} \textbf{a}_i$.
-Så haves
+Så haves, at
 %
 \begin{align*}
 \textbf{c}^T\textbf{x} = \sum_{i\in I}\textbf{a}_i^T\textbf{x} = \sum_{i\in I}b_i.
 \end{align*}
 %
-Yderligere haves $\textbf{a}_i^T\textbf{x} \geq b_i$ for ethvert $\textbf{x} \in P$ og ethvert $i$ og 
+Yderligere haves, at $\textbf{a}_i^T\textbf{x} \geq b_i$ for ethvert $\textbf{x} \in P$ og ethvert $i$, og 
 %
 \begin{align}\label{eq:ulig}
 \textbf{c}^T\textbf{x} = \sum_{i\in I}\textbf{a}_i^T\textbf{x} \geq \sum_{i\in I}b_i.
 \end{align}
 %
-Dette viser, at $\textbf{x}$ er en optimal løsning minimumsproblemet $\textbf{c}^T\textbf{x}$ over $P$.
+Dette viser, at $\textbf{x}$ er en optimal løsning til minimumsproblemet $\textbf{c}^T\textbf{x}$ over $P$.
 Yderligere holder uligheden i ligning \ref{eq:ulig}, hvis og kun hvis $\textbf{a}_i^T\textbf{x} = b_i$ for alle $i \in I$.
-Da $\textbf{x}$ er en \textit{basal mulig løsning} er der $n$ lineært uafhængige betingelser, som er bindende i $x$ og $x$ er en entydig løsning til ligningssystemet $\textbf{a}_i^T\textbf{x} = b_i$, $i \in I$.
-Det følger derfor, at $\textbf{x}$ er et entydigt minimum til $\textbf{c}^T\textbf{x}$ over $P$ og dermed et hjørnepunkt til $P$.
+Da $\textbf{x}$ er en \textit{basal mulig løsning}, er der $n$ lineært uafhængige betingelser, som er bindende i $x$, og $x$ er en entydig løsning til ligningssystemet $\textbf{a}_i^T\textbf{x} = b_i$, $i \in I$.
+Det følger derfor, at $\textbf{x}$ er entydigt minimum til $\textbf{c}^T\textbf{x}$ over $P$ og dermed et hjørnepunkt til $P$.
 %
 \end{proof}\\
 %
 Da en vektor er en \textit{basal mulig løsning}, hvis og kun hvis det er et \textit{ekstremumspunkt} og da definitionen på et \textit{ekstremumspunkt} ikke refererer til en specifik repræsentation af polyeden, kan det konkluderes, at \textit{basale mulige løsninger} er uafhængige af den valgte repræsentation.
 %
 \begin{kor}{}{}
-Der kan kun være et endeligt antal af \textit{basale løsninger} og \textit{basale mulige løsninger}, givet, at der er et endeligt antal af lineære ulighedsbetingelser.
+Der kan kun være et endeligt antal af \textit{basale løsninger} og \textit{basale mulige løsninger}, givet der er et endeligt antal af lineære ulighedsbetingelser.
 \end{kor}
 %
 \begin{proof}
 Betragt et system af $m$ lineære ulighedsbetingelser for vektoren $\textbf{x} \in \R^n$.
 Ved enhver \textit{basal løsning} er der $n$ lineære ulighedsbetingelser, som er bindende.
-Da $n$ bindende lineære ulighedsbetingelser definere et entydigt punkt følger det, at en anden \textit{basal løsning} må have en anden mængde af $n$ bindende lineære ulighedsbetingelser.
-Dette betyder, at antallet af \textit{basale løsninger} har en øvre begrænsning, som afhænger af mængden af forskellige måder hvorpå $n$ betingelser kan udvælges af de $m$ betingelser.
+Da $n$ bindende lineære ulighedsbetingelser definerer et entydigt punkt, følger det, at en anden \textit{basal løsning} må have en anden mængde af $n$ bindende lineære ulighedsbetingelser.
+Dette betyder, at antallet af \textit{basale løsninger} har en øvre begrænsning, som afhænger af mængden af forskellige måder, hvorpå $n$ betingelser kan udvælges af de $m$ betingelser.
 \end{proof}
 %
 \subsection{Tilstødende mulige løsninger}
 %
-To forskellige \textit{basale løsninger} til samme mængde af lineære betingelser i $\R^n$ siges at være \textit{tilstødende}, hvis der findes $n-1$ lineært uafhængige betingelser, som er bindende ved begge.
-Hvis de to \textit{basale løsninger} er \textit{basale mulige løsninger}, så er linjestykket, som forbinder dem, en af løsningsmængdens kanter.
+To forskellige \textit{basale løsninger} til samme mængde af lineære betingelser i $\R^n$ siges at være \textit{tilstødende}, hvis der findes $n-1$ lineært uafhængige betingelser, som er bindende ved begge. 
+Hvis de to \textit{basale løsninger} er \textit{basale mulige løsninger}, så er det forbindende linjestykke en af løsningsmængdens kanter.
