@@ -75,10 +75,10 @@ Så er følgende udsagn ækvivalente:
 \begin{proof}
 Lad $P$ være en polyede defineret ve betingelser på formen $\textbf{a}_i^T\textbf{x} \geq b_i$ og $\textbf{a}_i^T\textbf{x} = b_i$.\\\\
 %
-Lad $\textbf{x} \in P$ være et ?punkt. Jævnfør definition \ref{} eksisterer der så et $\textbf{c} \in \R^n$ således, at $\textbf{c}^T\textbf{x} < \textbf{c}^T\textbf{y}$ for alle $\textbf{y}$, som opfylder $\textbf{y} \in P$ og $\textbf{y} \neq \textbf{x}$.
+Lad $\textbf{x} \in P$ være et hjørnepunkt. Jævnfør definition \ref{defn:hjoerner} eksisterer der så et $\textbf{c} \in \R^n$ således, at $\textbf{c}^T\textbf{x} < \textbf{c}^T\textbf{y}$ for alle $\textbf{y}$, som opfylder $\textbf{y} \in P$ og $\textbf{y} \neq \textbf{x}$.
 Hvis $\textbf{y} \in P$, $\textbf{z} \in P$, $\textbf{y} \neq \textbf{x}$, $\textbf{z} \neq \textbf{x}$ og $0 \leq \lambda \leq 1$, så $\textbf{c}^T\textbf{x} < \textbf{c}^T\textbf{y}$ og $\textbf{c}^T\textbf{x} < \textbf{c}^T\textbf{z}$.
 Dette medfører, at $\textbf{c}^T\textbf{x} < \textbf{c}^T(\lambda \textbf{y} + (1-\lambda)\textbf{z})$, som betyder, at $\textbf{x}^T \neq \lambda \textbf{y} + (1 - \lambda)\textbf{z}$.
-Derfor kan $\textbf{x}$ ikke bliv udtrykt som en kombination af to andre elementer i $P$, hvilket betyder, at $\textbf{x}$ er et ?punkt ifølge definition \ref{}.\\\\
+Derfor kan $\textbf{x}$ ikke bliv udtrykt som en kombination af to andre elementer i $P$, hvilket betyder, at $\textbf{x}$ er et ekstremumspunkt ifølge definition \ref{defn:ekstrema}.\\\\
 %
 Antag, at $\textbf{x} \in P$ ikke er en \textit{basal mulig løsning} og lad $I = \{ i | \textbf{a}_i^T \textbf{x} = b_i\}$.
 Da $\textbf{x}$ ikke er en \textit{basal mulig løsning} må der ikke eksistere $n$ lineært uafhængige vektorer af typen $\textbf{a}_i$, $i \in I$.
@@ -88,7 +88,7 @@ Bemærk, at $\textbf{a}_i^T \textbf{y} = \textbf{a}_i^T \textbf{x} = b_i$, for $
 Endvidere haves, at $\textbf{a}_i^T \textbf{x} > b_i$ for $i \notin I$ og givet, at $\epsilon$ er lille nok haves $\textbf{a}_i^T \textbf{y} > b_i$ for $i \notin I$.
 Det er her tilstrækkeligt at vælge $\epsilon$ således, at $\epsilon |\textbf{a}_i^T\textbf{d}| < \textbf{a}_i^T\textbf{x} - b_i$, for alle $i \notin I$.
 Når $\epsilon$ er lille nok haves $\textbf{y} \in P$ og med samme argumentering haves $\textbf{z} \in P$.
-Dette betyder, at $\textbf{x}$ ikke er et ?punkt, da $\textbf{x} = \frac{\textbf{y} + \textbf{z}}{2}$.\\\\
+Dette betyder, at $\textbf{x}$ ikke er et ekstremumspunkt, da $\textbf{x} = \frac{\textbf{y} + \textbf{z}}{2}$.\\\\
 %
 Lad $\textbf{x}$ være en \textit{basal mulig løsning}, lad $I = \{i | \textbf{a}_i^T\textbf{x} = b_i \}$ og lad $\textbf{x}=\sum_{i \in I} \textbf{a}_i$.
 Så haves
@@ -106,6 +106,24 @@ Yderligere haves $\textbf{a}_i^T\textbf{x} \geq b_i$ for ethvert $\textbf{x} \in
 Dette viser, at $\textbf{x}$ er en optimal løsning minimumsproblemet $\textbf{c}^T\textbf{x}$ over $P$.
 Yderligere holder uligheden i ligning \ref{eq:ulig}, hvis og kun hvis $\textbf{a}_i^T\textbf{x} = b_i$ for alle $i \in I$.
 Da $\textbf{x}$ er en \textit{basal mulig løsning} er der $n$ lineært uafhængige betingelser, som er bindende i $x$ og $x$ er en entydig løsning til ligningssystemet $\textbf{a}_i^T\textbf{x} = b_i$, $i \in I$.
-Det følger derfor, at $\textbf{x}$ er et entydigt minimum til $\textbf{c}^T\textbf{x}$ over $P$ og dermed et ?punkt til $P$.
+Det følger derfor, at $\textbf{x}$ er et entydigt minimum til $\textbf{c}^T\textbf{x}$ over $P$ og dermed et hjørnepunkt til $P$.
 %
+\end{proof}\\
+%
+Da en vektor er en \textit{basal mulig løsning}, hvis og kun hvis det er et \textit{ekstremumspunkt} og da definitionen på et \textit{ekstremumspunkt} ikke refererer til en specifik repræsentation af polyeden, kan det konkluderes, at \textit{basale mulige løsninger} er uafhængige af den valgte repræsentation.
+%
+\begin{kor}{}{}
+Der kan kun være et endeligt antal af \textit{basale løsninger} og \textit{basale mulige løsninger}, givet, at der er et endeligt antal af lineære ulighedsbetingelser.
+\end{kor}
+%
+\begin{proof}
+Betragt et system af $m$ lineære ulighedsbetingelser for vektoren $\textbf{x} \in \R^n$.
+Ved enhver \textit{basal løsning} er der $n$ lineære ulighedsbetingelser, som er bindende.
+Da $n$ bindende lineære ulighedsbetingelser definere et entydigt punkt følger det, at en anden \textit{basal løsning} må have en anden mængde af $n$ bindende lineære ulighedsbetingelser.
+Dette betyder, at antallet af \textit{basale løsninger} har en øvre begrænsning, som afhænger af mængden af forskellige måder hvorpå $n$ betingelser kan udvælges af de $m$ betingelser.
 \end{proof}
+%
+\subsection{Tilstødende mulige løsninger}
+%
+To forskellige \textit{basale løsninger} til samme mængde af lineære betingelser i $\R^n$ siges at være \textit{tilstødende}, hvis der findes $n-1$ lineært uafhængige betingelser, som er bindende ved begge.
+Hvis de to \textit{basale løsninger} er \textit{basale mulige løsninger}, så er linjestykket, som forbinder dem, en af løsningsmængdens kanter.
