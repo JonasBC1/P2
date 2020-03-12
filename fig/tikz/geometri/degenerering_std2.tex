@@ -7,37 +7,38 @@
 %
 \begin{center}
 \begin{tikzpicture}[scale=6]
+%
 % Koordinater 
 % ------------------------------------------------------
 \coordinate (a) at (0.1,0.1,-0.1);
 \coordinate (b) at (0.5,0.1,-0.1);
-\coordinate (c) at (0.1,0.1,-0.5);
-\coordinate (d) at (0.5,0.1,-0.5);
-\coordinate (e) at (0.3,0.5,-0.3);
+\coordinate (aa) at (0.35,0.6,-0.1);
+\coordinate (bb) at (0.25,0.6,-0.1);
+\coordinate (c) at (0.17,0.46,-0.1);
+\coordinate (d) at (0.43,0.46,-0.1);
+\coordinate (cc) at (0.28,0.46,-0.1);
+\coordinate (dd) at (0.32,0.46,-0.1);
+\coordinate (e) at (0.3,0.5,-0.1);
 %
-% Planet - Hyperplanet
+% Polyeden
 % -------------------------------------------------------
-\filldraw [fill=myblue,opacity=0.3] 
-         (a) -- (b) -- (d) -- (c) -- (a);
-\filldraw [fill=myblue,opacity=0.3] 
-         (a) -- (e) -- (b) -- (a);
-\filldraw [fill=myblue,opacity=0.3] 
-         (b) -- (e) -- (d) -- (b);
-\filldraw [fill=myblue,opacity=0.3] 
-         (d) -- (e) -- (c) -- (d);
-\filldraw [fill=myblue,opacity=0.3] 
-         (c) -- (e) -- (a) -- (c);
+\filldraw [fill=myblue,opacity=0.5] 
+         (a) -- (b) -- (dd) -- (cc) -- (a);
 %        
 % Streger 
 % -------------------------------------------------------
-  \draw[thick](d)--(e);
-  \draw[thick](c)--(e);
-  \draw[thick](d)--(b);
   \draw[thick](d)--(c);
-  \draw[thick](a)--(c);
-  \draw[thick](b)--(e);
-  \draw[thick](a)--(e);
-  \draw[thick](a)--(b);
+  \draw[thick](a)--(b)--(e)--(a);
+  \draw[thick](e)--(aa);
+  \draw[thick](e)--(bb);
+%
+%
+% Punkt 
+% -------------------------------------------------------
+\filldraw [black] (e) circle (0.2pt);
+\node at (0.3,0.6,-0.1) (){$A$};
+\node at (0.6 ,0.5,-0.1) (){$\mathbf{a}_1 \mathbf{x} = b_1 - \epsilon$};
+% 
 %
 % Koordinatsystemet 
 % -------------------------------------------------------
@@ -47,9 +48,9 @@
 \draw[thick] (0,0,0) -- (0,-0.1,0);
 \draw[thick,->] (0,0,0) -- (0,0,0.5) node[anchor=south east]{$z$};
 \draw[thick] (0,0,0) -- (0,0,-0.1);
-% 
+%
 \end{tikzpicture}
-  \captionof{figure}{Nej har jeg sagt.}
+  \captionof{figure}{En lille ændring i den aktive betingelse $\mathbf{a}_1 \mathbf{x} = b_1- \epsilon$, der gør at $A$ ikke er en degenereret basal løsning.}
   \label{fig:mmmjegerikkesyg}
 \end{center}
 %

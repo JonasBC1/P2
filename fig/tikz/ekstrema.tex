@@ -2,13 +2,23 @@
   \centering
   \begin{tikzpicture}[scale=0.7]
     \tikzset{punkt/.style={point, draw=black}}
+%
+%
+% Koordinater
+% -------------------------------------------------------
+\coordinate (y) at (1,3);
+\coordinate (x) at (3,3);
+\coordinate (z) at (5,3);
+\coordinate (v) at (-3,2);
+\coordinate (w) at (-3,0);
+\coordinate (u) at (-3,-2);
 %    
 % Punkter
 % -------------------------------------------------------
-	\node at (4,4)	(1){};
-	\node at (-4,4)	(4){};
-	\node at (4,-4)	(2){};
-	\node at (-4,-4) (3){};
+	\node at (3,3)	(1){};
+	\node at (-3,3)	(4){};
+	\node at (3,-3)	(2){};
+	\node at (-3,-3) (3){};
 % 
 % Firkant 
 % -------------------------------------------------------
@@ -17,49 +27,22 @@
 %	
 % Punkter og tilhørende tekst
 % -------------------------------------------------------
-	\filldraw [black] (2,4) circle (2pt);
-	\filldraw [black] (4,4) circle (2pt);
-	\filldraw [black] (6,4) circle (2pt);
-	\filldraw [black] (-6,4) circle (0pt);
-	\filldraw [black] (-4,2) circle (2pt);
-	\filldraw [black] (-4,0) circle (2pt);
-	\filldraw [black] (-4,-2) circle (2pt);	
-	\node at (2,4.35)	 (y){$\textbf{y}$};
-	\node at (4,4.35)	 (x){$\textbf{x}$};
-	\node at (6,4.35)	 (z){$\textbf{z}$};
-	\node at (-3.65,2)  (v){$\textbf{v}$};
-	\node at (-3.65,0)	 (w){$\textbf{w}$};
-	\node at (-3.65,-2) (u){$\textbf{u}$};
+	\filldraw [black] (y) circle (2pt) node[above] {$\mathbf{y}$};
+	\filldraw [black] (x) circle (2pt) node[above] {$\mathbf{x}$};
+	\filldraw [black] (z) circle (2pt) node[above] {$\mathbf{z}$};
+	\filldraw [black] (v) circle (2pt) node[left] {$\mathbf{v}$};
+	\filldraw [black] (w) circle (2pt) node[left] {$\mathbf{w}$};
+	\filldraw [black] (u) circle (2pt) node[left] {$\mathbf{u}$};
 %
-% Treger mellem punkterne 
+% Streger mellem punkterne 
 % -------------------------------------------------------
-	\draw[-, dashed,black,ultra thick] (6,4) -- (2,4);
-	\draw[-, dashed,black,ultra thick] (-4,2) -- (-4,-2);
+	\draw[-,black, thick] (v) -- (w) -- (u);
+	\draw[-,black, thick] (y) -- (x);
+	\draw[-, dashed,black,ultra thick] (x) -- (z);
+%
 %
   \end{tikzpicture}
   \caption{En afgrænset polyede $\mathcal{P}$, hvor $\textbf{x}$ er et ekstremumspunkt, da der ikke findes vektorer $\textbf{y}$ og $\textbf{z}$ sådan at $\mathbf{x}=\lambda\mathbf{y}+(1-\lambda)z$. Vektor $\textbf{w}$ er i modsætning ikke et ekstremumspunkt, da der findes $\textbf{v}$ og $\textbf{u}$, sådan at $\mathbf{w}=\lambda\mathbf{v}+(1-\lambda)u$.}
   \label{fig:ekstrema}
 \end{figure}
 %
-%
-%    \node[punkt] at (-4,0.5)      (v1){$v_1$};
-%    \node[punkt] at (-2,0.5)      (v2){$v_2$};
-%    \node[punkt] at (-4,-1.5)     (v3){$v_3$};
-%    \node[punkt] at (-2,-1.5)     (v4){$v_4$};
-%    \node at (-3,2)     (v){$K_{4}$};
-%
-%
-%    \node[punkt] at (4.6,-0.2)      (k1){$v_3$};
-%    \node[punkt] at (1.4,-0.2)      (k2){$v_2$};
-%    \node[punkt] at (2,-2)     (k3){$v_4$};
-%    \node[punkt] at (4,-2)     (k4){$v_5$};
-%    \node[punkt] at (3,1)      (k5){$v_1$};
-%    \node at (3,2)      (k){$K_{5}$};
-%
-%
-%    \draw [-, thick, draw=black] (v1) -- (v2);
-%    \draw [-, thick, draw=black] (v1) -- (v3);
-%    \draw [-, thick, draw=black] (v1) -- (v4);
-%    \draw [-, thick, draw=black] (v2) -- (v3);
-%    \draw [-, thick, draw=black] (v2) -- (v4);
-%    \draw [-, thick, draw=black] (v3) -- (v4);

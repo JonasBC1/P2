@@ -6,46 +6,55 @@
 %
 %
 \begin{center}
-\begin{tikzpicture}[scale=3]
-% Koordinater
-% -------------------------------------------------------
-\coordinate (c) at (0.7,1.2,1.2);
-\coordinate (d) at (1.2,1.2,1.2);
-\coordinate (g) at (1.2,0.7,1.2);
-\coordinate (h) at (0.7,0.7,1.2);
-\coordinate (b) at (2,1.2,1.2);
-\coordinate (f) at (1.5,0.7,1.2);
-%
-% Tegning af vektorer
-% ------------------------------------------------------- 
-  \draw[thick,->](f)--(b);
-  \draw[thick,->](f)--(c);
-  \draw[thick,->](f)--(1.7,1.2,1.6);
-%
-% Punkter og linje 
-% -------------------------------------------------------
-\filldraw[black] (0.95,1,1.2) circle (0pt) node[left] {$\mathbf{x}$};
-\filldraw[black] (1.7,1,1.2) circle (0pt) node[right] {$\mathbf{y}$};
-\filldraw[black] (1.4,1,1.2) circle (0pt) node[right] {$\mathbf{z}$};
+\begin{tikzpicture}[scale=6]
+% Koordinater 
+% ------------------------------------------------------
+\coordinate (a) at (0.1,0.1,-0.1);
+\coordinate (b) at (0.5,0.1,-0.1);
+\coordinate (c) at (0.1,0.1,-0.5);
+\coordinate (d) at (0.5,0.1,-0.5);
+\coordinate (e) at (0.3,0.5,-0.3);
 %
 % Planet - Hyperplanet
 % -------------------------------------------------------
 \filldraw [fill=myblue,opacity=0.3] 
-         (b) -- (c) -- (1.7,1.2,1.6) -- cycle;
+         (a) -- (b) -- (d) -- (c) -- (a);
+\filldraw [fill=myblue,opacity=0.3] 
+         (a) -- (e) -- (b) -- (a);
+\filldraw [fill=myblue,opacity=0.3] 
+         (b) -- (e) -- (d) -- (b);
+\filldraw [fill=myblue,opacity=0.3] 
+         (d) -- (e) -- (c) -- (d);
+\filldraw [fill=myblue,opacity=0.3] 
+         (c) -- (e) -- (a) -- (c);
+%        
+% Streger 
+% -------------------------------------------------------
+  \draw[thick](d)--(e);
+  \draw[dashed, thick](c)--(e);
+  \draw[thick](d)--(b);
+  \draw[dashed,thick](d)--(c);
+  \draw[dashed, thick](a)--(c);
+  \draw[thick](b)--(e);
+  \draw[thick](a)--(e);
+  \draw[thick](a)--(b);
 %
 %
-%% Koordinatssystem
-%% ------------------------------------------------------
-%\draw[thick,->] (0,0,-0.5) -- (1.5,0,-0.5) node[anchor=south east]{$x$};
-%\draw[thick] (0,0,-0.5) -- (-0.2,0,-0.5);
-%\draw[thick,->] (0,0,-0.5) -- (0,0.8,-0.5) node[anchor=north west]{$y$};
-%\draw[thick] (0,0,-0.5) -- (0,-0.2,-0.5);
-%\draw[thick,->] (0,0,-0.5) -- (0,0,0.3) node[anchor=south east]{$z$};
-%\draw[thick] (0,0,-0.5) -- (0,0,-0.8);
-%%
-%
+% Punkt 
+% -------------------------------------------------------
+\filldraw [black] (e) circle (0.2pt) node[above] {$A$};
+% 
+% Koordinatsystemet 
+% -------------------------------------------------------
+\draw[thick,->] (0,0,0) -- (0.9,0,0) node[anchor=south east]{$x$};
+\draw[thick] (0,0,0) -- (-0.1,0,0);
+\draw[thick,->] (0,0,0) -- (0,0.7,0) node[anchor=north west]{$y$};
+\draw[thick] (0,0,0) -- (0,-0.1,0);
+\draw[thick,->] (0,0,0) -- (0,0,0.5) node[anchor=south east]{$z$};
+\draw[thick] (0,0,0) -- (0,0,-0.1);
+% 
 \end{tikzpicture}
-  \captionof{figure}{Nej}
+  \captionof{figure}{En polyede med en degenereret basal løsning $A$ i $\R^3$.}
   \label{fig:mmmm3}
 \end{center}
 %
