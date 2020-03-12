@@ -20,14 +20,18 @@
   ymax=4]
 	legend style={at={(0.45,0.025)},anchor=south west},
 ]
-\addplot[name path=c, domain=0:3,samples=2,color=black, style=very thin]{0};
+
 %%%
 %%%
 \addplot[name path=b, domain={0:6}, color=myblue, style=very thick,samples=2]{4-x};
+\addlegendentry{$x_1+x_2 \leq 4$}
 \addplot[name path=a, domain={0:6}, color=myred, style=very thick, samples=2]{3-0.5*x};
-
-\addplot[fill=myblue!15,opacity=0.4] fill between [of=a and c, soft clip={domain=0:2}];
-\addplot[fill=myblue!15,opacity=0.4] fill between [of=b and c, soft clip={domain=2:4}];
+\addlegendentry{$x_1+2x_2 \leq 6$}
+%%
+\addplot[name path=c, domain=0:3,samples=2,color=black, style=very thin]{0};
+%%
+\addplot[fill=myblue!15] fill between [of=a and c, soft clip={domain=0:2}];
+\addplot[fill=myblue!15] fill between [of=b and c, soft clip={domain=2:4}];
  
 %
 
@@ -36,9 +40,9 @@
 \addplot[domain=-1:6, samples=2, color=black, dotted, thick]{2-x};
 \addplot[domain=0:6, samples=2, color=black, dotted, ultra thick]{4-x};
 \end{axis}
-\draw[->] (1.4,1.2) -- (2.75,2.35);
+\draw[thick,->] (1.4,1.2) -- (2.75,2.35) node[above right] {$\mathbf{v}$};
 \end{tikzpicture}
-\caption{Grafisk illustration med uendeligt antal løsninger til problemet i \ref{eks:min_loes2}.}
+\caption{Grafisk illustration med uendeligt antal løsninger til problemet i \ref{eks:min_loes}.}
 %
 \label{fig:opti_loes2}
 \end{figure}
