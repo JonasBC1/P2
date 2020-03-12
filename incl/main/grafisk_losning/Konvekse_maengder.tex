@@ -1,6 +1,6 @@
 \section{Konvekse mængder}
 %
-I forbindelse med mængder af vektorer er det vigtigt at definere \textbf{konvekse mængder}.
+I forbindelse med mængder af vektorer er det vigtigt at definere \textit{konvekse mængder}.
 %
 \begin{defn}{}{konveks}
 En mængde $S \subset \R^n$ er \textbf{konveks}, hvis $\lambda \textbf{x} + (1- \lambda ) \textbf{y} \in S$ for ethvert $\textbf{x}, \textbf{y} \in S$ og ethvert $\lambda \in [0,1]$. 
@@ -13,11 +13,11 @@ På figur \ref{fig:neej1} ses eksempler på en konveks mængde, markeret med bl�
 \input{fig/tikz/geometri/konveks}
 %
 \begin{defn}{}{konvekskombihylster}
-Lad $\textbf{x}^1, \textbf{x}^2, \ldots, \textbf{x}^k \in \R^n$, og $\lambda_1, \lambda_2, \ldots, \lambda_k$ være ikke-negative skalarer, hvis sum er $1$. Da gælder:
+Lad $\textbf{x}_1, \textbf{x}_2, \ldots, \textbf{x}_k \in \R^n$, og $\lambda_1, \lambda_2, \ldots, \lambda_k$ være ikke-negative skalarer, hvis sum er $1$. Da gælder:
 %
 \begin{enumerate}[label=(\alph*)]
-	\item Vektoren $$\sum_{i=1}^{k} \lambda_i \textbf{x}^i$$ kaldes en \textbf{konveks kombination} af vektorerne $\textbf{x}^1, \textbf{x}^2, \ldots, \textbf{x}^k$. 
-	\item Det \textbf{konvekse hylster} af vektorerne $\textbf{x}^1, \textbf{x}^2, \ldots, \textbf{x}^k$ er mængden af alle konvekse kombinationer af disse vektorer. 
+	\item Vektoren $$\sum_{i=1}^{k} \lambda_i \textbf{x}_i$$ kaldes en \textbf{konveks kombination} af vektorerne $\textbf{x}_1, \textbf{x}_2, \ldots, \textbf{x}_k$. 
+	\item Det \textbf{konvekse hylster} af vektorerne $\textbf{x}_1, \textbf{x}_2, \ldots, \textbf{x}_k$ er mængden af alle konvekse kombinationer af disse vektorer. 
 \end{enumerate}
 %
 % Det hedder vel ikke konvekse skrog, hvad kalder vi det?
@@ -43,23 +43,23 @@ Af definition \ref{defn:konvekskombihylster} følger sætning \ref{thm:konveks}.
 	\item Fællesmængden for konvekse mængder er konvekst. 
 	\item Enhver polyhedron er en konveks mængde.
 	\item En konveks kombination af et endeligt antal elementer fra en konveks mængde tilhører også den mængde. 
-	\item Det konvekse skrog af et endeligt antal vektorer er en konveks mængde. 
+	\item Det konvekse hylster af et endeligt antal vektorer er en konveks mængde. 
 \end{enumerate}
 \end{thm}
 %
 %
 \begin{proof}
 \begin{enumerate}[label=(\alph*)]
-	\item Lad $I$ være en indeksmængde, lad $S_i$, $i \in I$, være et antal konvekse mængder, samt lad $ \lambda \in [0,1]$.
+	\item Lad $I$ være en indeksmængde, lad $S_i$, $i \in I$, være et antal konvekse mængder, og lad $ \lambda \in [0,1]$.
 Antag nu, at vektorerne $\textbf{x}$ og $\textbf{y}$ tilhører fællesmængden $ \bigcap_{i \in I} S_i$. 
 Det haves, at $ \lambda \textbf{x} + (1 - \lambda )\textbf{y} \in S_i$, eftersom enhver $S_i$ er konveks og  indeholder $\textbf{x}$ og $\textbf{y}$. Derfor er $ \bigcap_{i \in I} S_i$ konveks, da $ \lambda \textbf{x} + (1 - \lambda )\textbf{y} \in  \bigcap_{i \in I} S_i$, hvilket beviser (a). 
-	\item Lad $\textbf{a}$ være en vektor, lad $b$ være en skalar, samt lad $ \lambda \in [0,1]$. 
+	\item Lad $\textbf{a}$ være en vektor, lad $b$ være en skalar, og lad $ \lambda \in [0,1]$. 
 Antag, at $\textbf{x}$ og $\textbf{y}$ henholdsvis opfylder, at $\textbf{a}^T \textbf{x} \geq b$ og $\textbf{a}^T \textbf{y} \geq b$, således de tilhører samme halvrum. 
 Så er $\textbf{a}^T (\lambda \textbf{x} + (1 - \lambda) \textbf{y} ) \geq \lambda b + (1 - \lambda ) b = b$, hvilket beviser, at $ \lambda \textbf{x} + (1 - \lambda )\textbf{y}$ tilhører samme halvrum, hvormed halvrummet er konvekst.
-Bemærk, at en polyhedron er fællesmængden af et endeligt antal halvrum, og at (b) dermed er bevist jævnfør (a). 
+Bemærk, at en polyede er fællesmængden af et endeligt antal halvrum, og at (b) dermed er bevist jævnfør (a). 
 	\item  Dette punkt bevises ved induktion.
-Per definitionen ligger en konveks kombination af to elementer i en konveks mængde i mængden.
-Som induktionsantagelse antager vi, at en konveks kombination af $c$ elementer i en konveks mængde også er i mængden.
+Per definition \ref{defn:konvekskombihylster} ligger en konveks kombination af to elementer i en konveks mængde i mængden.
+Som induktionsantagelse antages det, at en konveks kombination af $c$ elementer i en konveks mængde også er i mængden.
 Dernæst undersøges $c+1$ elementer $x_1,x_2,\ldots,x_c+1$ i en konveks mængde $S$. 
 Lad $\lambda_1,\ldots,\lambda_{k+1}$ være ikke-negative skalarer, hvis sum er $1$. 
 Det antages, at $\lambda_{k+1}\neq1$. 
@@ -70,7 +70,9 @@ Ved induktionsantagelsen gælder, at $\sum^{k}_{i=1}\lambda_i\textbf{x}_i/(1-\la
 Da $S$ er konveks, fås 
 $\sum^{k+1}_{i=1}\lambda_i\textbf{x}_i\in S$, hvormed (c) er bevist. 
 	\item Lad $S$ være et konvekst hylster af $\textbf{x}_1, \textbf{x}_2, \ldots, \textbf{x}_k$, samt lad $\textbf{y} = \sum_{i=1}^{k} \zeta_i \textbf{x}^i$, $\textbf{z} = \sum_{i=1}^{k} \theta_i \textbf{x}^i$ være to elementer i $S$, hvor $ \zeta_i \geq 0$, $ \theta_i \geq 0$, og $ \sum_{i=1}^{k} \zeta_i = \sum_{i=1}^{k} \theta_i = 1$. 
-	Lad $ \lambda = [0,1]$. Så er $$\lambda \textbf{y} + (1 - \lambda ) \textbf{z} = \lambda \sum_{i=1}^k \zeta_i \textbf{x}^i + (1 - \lambda) \sum_{i=1}^k \theta_i \textbf{x}^i = \sum_{i=1}^k (\lambda \zeta_i + (1-\lambda )\theta_i ) \textbf{x}^i.$$
-Bemærk, at koefficienterne $ \lambda \zeta_i + (1 - \lambda) \theta_i$, $i = 1, \ldots, k$, summerer til $1$ og ikke er negative. Dermed er $ \lambda \textbf{y} + (1 - \lambda ) \textbf{z}$ en konveks kombination af vektorerne $\textbf{x}^1, \ldots, \textbf{x}^k$, og tilhører derfor mængden $S$, hvormed (d) er bevist. 
+	Lad $ \lambda = [0,1]$. 
+	Så er $$\lambda \textbf{y} + (1 - \lambda ) \textbf{z} = \lambda \sum_{i=1}^k \zeta_i \textbf{x}^i + (1 - \lambda) \sum_{i=1}^k \theta_i \textbf{x}^i = \sum_{i=1}^k (\lambda \zeta_i + (1-\lambda )\theta_i ) \textbf{x}^i.$$
+Bemærk, at koefficienterne $ \lambda \zeta_i + (1 - \lambda) \theta_i$, $i = 1, \ldots, k$, summerer til $1$ og ikke er negative. 
+Dermed er $ \lambda \textbf{y} + (1 - \lambda ) \textbf{z}$ en konveks kombination af vektorerne $\textbf{x}^1, \ldots, \textbf{x}^k$, og tilhører derfor mængden $S$, hvormed (d) er bevist. 
 \end{enumerate}
 \end{proof}

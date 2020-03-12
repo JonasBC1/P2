@@ -1,15 +1,17 @@
 \section{Løsninger til lineære programmeringsproblemer}
-%vil bare lige sige, at titlen før var "Løsninger til lineære løsningsproblemer", lol
+%
+% vil bare lige sige, at titlen før var "Løsninger til lineære løsningsproblemer", lol
 \label{heeeeejjulle}
-I forhold til grafisk at løse lignende lineære programmeringsproblemer forhenstående, så vil følgende eksempel illustrere hvordan. 
-%Mit forslag til ovenstående: Eksempel \ref{eks:min_loes} illustrerer, hvordan lineære programmeringsproblemer løses i nærværende rapport.
+% FUCK EN PÆN LABEL XD
+% I forhold til grafisk at løse lignende lineære programmeringsproblemer overstående, så vil følgende eksempel illustrere hvordan. 
+Eksempel \ref{eks:min_loes} illustrerer, hvordan lineære programmeringsproblemer løses i nærværende rapport.
 \\\\
 \begin{eks}\label{eks:min_loes}
-Betragt maskimumproblemet
+Betragt maksimumsproblemet
 %
 \begin{align*}
 \begin{array}{lrrlr}
-\text{Maksimër}		&	\multicolumn{2}{c}{x_1+x_2}  &\\
+\text{Maksimér}		&	\multicolumn{2}{c}{x_1+x_2}  &\\
 \text{begrænset af}	&x_1& + 2x_2			&\leq 	& 6,\\
 					&2x_1& + x_2			&\leq	& 6,\\
 					&x_1&    				&\geq	& 0,\\
@@ -17,46 +19,61 @@ Betragt maskimumproblemet
 \end{array}
 \end{align*}
 %
-Grafisk illustreret ved 
+Grafisk illustreret på figur \ref{fig:opti_loes}.
 %
 \input{fig/tikz/optimering/opti_loes}
 %
 \noindent
-Løsningsmængden er det skraverede område på figur \ref{fig:min_loes}. For at finde den optimale løsning findes enhver given skalar $k$ og løsningsmængden med alle punkter overvejes, hvor objektfunktionen $\textbf{c}^T\textbf{x}$ er lig med $k$. Dette illustreres ved den linje, der er beskrevet af ligningen $-x_l-x_2=k$. Dette betyder, at den optimale løsning som enten maksimerer eller minimerer værdien
-af objektfunktionen kan findes grafisk ved at indtegne niveaukurver $f(x1, x2)=k$ og forskyde disse niveaukurver i den retning, der optimerer værdien af objektfunktionen, indtil den optimale løsning opnås.  Bemærk, i det følgende eksempel, at denne linje er vinkelret på vektoren $\textbf{v}$ med koordinaterne $\textbf{v}=(1,1)$.
-Forskellige værdier for $k$ fører til forskellige linjer, hvor  alle linjer er parallelle med hinanden samt vinkelret med vektoren $\textbf{v}$. Hvis værdien af $k$ øges, svarer det til at bevæge linjen $z=x_l-x_2$ langs retningen af vektoren $\textbf{v}$. For at finde den optimale løsning for dette eksempel, er det interessante at maksimere $k$, og dermed bevæge linjen så meget som muligt i retning af $\textbf{v}$ uden at forlade løsningsmængden. Den mest optimale er derfor $k = -4$, hvormed vektor $\textbf{x}=(2,2)$ er den mest optimale løsning i løsningsmængden. Derfor er det den entydige optimale løsning. \\\\
-%%%%%
-Det hjørnepunkt, som er den optimale løsning i forudgående eksempel, som i forudgående tilfælde maksimere værdien
-af objektfunktionen repræsenterer præcis én
-løsning til maksimeringsproblemet. I følgende eksempel introduceres et eksempel, hvor der matematisk set findes et uendeligt antal løsninger, der
+Løsningsmængden er det markerede område på figur \ref{fig:opti_loes}. 
+For at finde den optimale løsning findes enhver given skalar $k$ og løsningsmængden med alle punkter overvejes, hvor objektfunktionen $\textbf{c}^T\textbf{x}$ er lig med $k$. 
+Ethvert punkt i en løsningsmængden, hvor objektfunktionen $\textbf{c}^T\textbf{x}$ er lig med $k$, undersøges for at finde den optimale løsning.
+Dette illustreres ved den linje, der er beskrevet af ligningen $-x_l-x_2=k$. 
+Dette betyder, at den optimale løsning, som enten maksimerer eller minimerer værdien af objektfunktionen kan findes grafisk ved at indtegne niveaukurver $f(x_1, x_2)=k$ og forskyde disse niveaukurver i den retning, der optimerer værdien af objektfunktionen, indtil den optimale løsning opnås.  
+Bemærk, i det følgende eksempel, at denne linje er vinkelret på vektoren $\textbf{v}$ med koordinaterne $\textbf{v}=(1,1)$.
+Forskellige værdier for $k$ fører til forskellige linjer, hvor  alle linjer er parallelle med hinanden samt vinkelret med vektoren $\textbf{v}$. Hvis værdien af $k$ øges, svarer det til at bevæge linjen $z=x_l-x_2$ langs retningen af vektoren $\textbf{v}$. For at finde den optimale løsning for dette eksempel, er det interessante at maksimere $k$, og dermed bevæge linjen så meget som muligt i retning af $\textbf{v}$ uden at forlade løsningsmængden. Den mest optimale er derfor $k = -4$, hvormed vektor $\textbf{x}=(2,2)$ er den mest optimale løsning i løsningsmængden. Derfor er det den entydige optimale løsning. 
+\\\\
+%
+%
+Betragt figur \ref{fig:opti_loes2}. 
+I det hjørne, hvor den optimale løsning findes, maksimeres værdien af objektfunktionen, der repræsenterer præcis én løsning til maksimumsproblemet. 
+På figur \ref{eks:min_loes} introduceres et eksempel, hvor der matematisk set findes et uendeligt antal løsninger, der
 maksimerer værdien af objektfunktionen.
 %
 \input{fig/tikz/optimering/opti_loes2}
 %
 \noindent
-Antag nu, at den ene koefficient i objektfunktion er rykket eller at den ene begrænsning er skiftet, så den ligger parallelt med niveaukurven, som ligger vinkelret med vektoren $\textbf{v}$, så betyder dette, at der findes uendeligt mange optimale løsninger til maksimeringsproblemmet. \\\\
+Antag nu, at den ene koefficient i objektfunktion er rykket eller at den ene begrænsning er skiftet, så den ligger parallelt med niveaukurven, som ligger vinkelret med vektoren $\textbf{v}$, så betyder dette, at der findes uendeligt mange optimale løsninger til maksimumsproblemet på figur \ref{eks:min_loes}. 
+\\\\
 %
 Forestil nu, at rent hypotetisk at løsningssområdet er en tom
-mængde, da der ikke findes en løsning, som opfylder betingelserne samtidig. Dette illustreres i følgende eksempel
+mængde, da der ikke findes en løsning, som opfylder betingelserne samtidig. 
+Dette illustreres på figur \ref{eks:min_loes3}.
 %
 \input{fig/tikz/optimering/opti_loes3}
 %
 \noindent
-Dette betyder, at for enhver mulig løsning $(Xl, X2)$, vil der ikke være løsning, der opfylder betingelserne. Derfor er ingen optimal løsning til det lineære programmeringsproblem. \\\\
-Til sidst, antag nu at det lineære programmeringsproblem i stedet er ubegrænset opadtil. Dette illustreres i følgende eksempel
+Dette betyder, at der ikke er nogle løsninger, som opfylder betingelserne, og dermed er der ingen optimal løsning til det lineære programmeringsproblem. 
+\\\\
+%
+Antag nu, at det lineære programmeringsproblem i stedet er ubegrænset opadtil.
+Dette illustreres på figur \ref{}. (figur 4.6)
 %
 \input{fig/tikz/optimering/opti_loes4}
 %
 \noindent
-Dette betyder, at betingelserne ikke begrænser, hvor stor
-værdien af objektfunktionen kan blive, og derfor det optimale maksimale løsning er $\infty$, som betyder at ingen optimal løsning ligger i løsningsområdet, som var givet af de to betingelser. \\\\
 %
-Som gennemgået i de forudgående eksempler, så findes følgende fire løsningsmuligheder, som er betinget af selve det lineære optimeringsproblems natur %(hjææææælp til andet ord end natur?)% 
-samt dets betingelser: 
+Dette betyder, at betingelserne ikke begrænser, hvor stor
+værdien af objektfunktionen kan blive. 
+Derfor er den optimale maksimale løsning $\infty$, hvilket betyder, at ingen optimal løsning ligger i løsningsområdet, som var givet af de to betingelser. 
+\\\\
+%
+Som gennemgået i de forudgående eksempler, så findes følgende fire løsningsmuligheder, der er betinget af det lineære optimeringsproblems form.
+%
 \begin{enumerate}
 \item Der findes én entydig optimal løsning.
 \item Der findes flere optimale løsninger i løsningsmængden.
 \item Løsningmængden for det lineære optimeringsproblem er tom. 
 \item De optimale løsninger er $\infty$, og ingen af de optimale løsninger ligger i løsningsmængden.
 \end{enumerate}
+%
 \end{eks}

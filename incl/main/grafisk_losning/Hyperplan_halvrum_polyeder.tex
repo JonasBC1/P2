@@ -3,21 +3,19 @@ Disse er \textit{hyperplan}, \textit{halvrum} og \textit{polyeder}.
 %
 \begin{defn}{}{Polyede}
 Lad $A$ være en $m \times n$ matrix, og lad $\mathbf{b}$ være en vektor i  $\R^m$.
-En \textbf{polyede} er en mængde, der kan beskrives som 
-$\{x\in \R^n \mid A\mathbf{x}\geq b\}.$
+En \textbf{polyede} $\mathcal{P}$ er en mængde, der kan beskrives som 
+$\mathcal{P} = \{x\in \R^n \mid A\mathbf{x}\geq b\}.$
 %
 \end{defn}
 \noindent
 %
 Som det fremgår af definition \ref{defn:Polyede}, er en polyede mængden af mulige løsninger $\mathbf{x}$ af et ligningssystem, hvilket også kaldes værdimængden.
-Det gælder endvidere, at en mængde af formen $ \{x \in \R^n \mid A\textbf{x}=b,x \geq 0 \}$ kaldes en \textit{polyede på standardform}, hvilket vil blive beskrevet yderligere i afsnit \ref{afsnit:fisk}.
-% Kommentar til at der her er derfor det er rellevant og at det vil blive uddybet senere 
-% Eventuelt med et eksempel 
-%lidt forskellige muligheder her, enten kan det relateres til simplex eller blive introduceret her
+Det gælder endvidere, at en mængde af formen $\mathcal{P} \{x \in \R^n \text{ } \mid \text{ } A\textbf{x} = b,x \geq 0 \}$ kaldes en \textit{polyede på standardform}, hvilket vil blive beskrevet yderligere i afsnit \ref{afsnit:fisk}.
 %
-Betragt \ref{eks:min_lin}. Polyeden er det blå område på figur \ref{fig:min_beg}. 
-Ligeledes ses på figur \ref{fig:nej2} en polyede $\mathcal{P}$, der er markeret med blå i $\R^2$. 
-På figur \ref{fig:nej3} ses en polyede $\mathcal{P}$, markeret med blå i $\R^3$. 
+%
+Betragt \ref{eks:min_lin}.
+Her er det blå område på figur \ref{fig:min_beg} en polyede. 
+Ligeledes ses på figur \ref{fig:nej2} en polyede $\mathcal{P}$, der er markeret med blå i $\R^2$, og på figur \ref{fig:nej3} ses en polyede $\mathcal{P}$, markeret med blå i $\R^3$. 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
@@ -34,7 +32,7 @@ $
 %
 \textit{Polygonet} er begrænsningerne, som afgrænser polyeden fra resten af rummet. 
 Dermed er polygonet på figur \ref{fig:nej2} linjerne, der afgrænser $\mathcal{P}$ fra resten af $\R^2$.
-Polygonet på figur \ref{fig:nej3} er derimod udsnittet af fladerne, der udgør kuben, som afgrænser $\mathcal{P}$ fra resten af $\R^3$.
+Polygonet på figur \ref{fig:nej3} er derimod udsnittet af fladerne, som udgør kuben, der afgrænser $\mathcal{P}$ fra resten af $\R^3$.
 \\\\
 %
 Det gælder endvidere for polyeder, at de enten kan være \textit{begrænsede} eller \textit{ubegrænsede}.
@@ -49,9 +47,7 @@ Såfremt en sådan konstant ikke eksisterer, er mængden \textbf{ubegrænset}.
 %alternativt værdien af ..... $\leq k$ eller $\geq$
 %
 I henhold til lineære programmeringsproblemer vil dette ofte være begrænset.
-% Dette er eksempelvis tilfældet, hvis problemet er af en sådan karakter, at ingen af variabelene i karakterligningen kan have negative værdier.
-%er det rigtigt det jeg skriver i ovenstående?
-Ligeledes er det en fordel at definere polyeder, der er begrænset af én lineær betingelse. 
+Endvidere er det en fordel at definere polyeder, der er begrænset af én lineær betingelse. 
 %
 \begin{defn}{}{}
 Lad $\mathbf{a}$ være en vektor i $\R^n$, hvor $\mathbf{a} \neq \mathbf{0}$ og lad $b$ være en skalar.
@@ -111,7 +107,9 @@ Hyperplanerne på figur \ref{fig:nej3} danner dermed polygonen, og fællesmængd
 %
 %Et polyhedron er derfor en samling af polyeder der til sammen skaber en geometrisk figur i et givet vektorrum.
 %
-\begin{thm}{}{}
+Sætning \ref{thm:juliexd} beskriver, hvornår en vektor er  ortogonal med et hyperplan. 
+%
+\begin{thm}{}{juliexd}
 Lad $\mathbf{a}$ være en vektor i $\R^n$, hvor 
 $\mathbf{a} \neq \mathbf{0}.$
 For hyperplanet 
