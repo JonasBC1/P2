@@ -72,8 +72,16 @@ $$Q=\{x|\textbf{a}^T_{i1}x=b_{i1},\ldots,\textbf{a}^T_{ik}x=b_{ik}, x \geq 0  \}
 så er $Q=P$
 \end{thm}
 \begin{proof}
-Det bevises i tilfældet hvor $i_1=1,\ldots,i_k=k$, som er tilfældet hvor de første k rækker er lineært uafhængige. Alle andre tilfælder kan omskrives til dette tilfælde ved rækkeombytning. Det gælder at $P$ er en delmængde af $Q$, da alle elementer i $P$ opfylder $Q$'s betingelser.
-
+Det bevises i tilfældet hvor $i_1=1,\ldots,i_k=k$, som er tilfældet hvor de første k rækker er lineært uafhængige. 
+Alle andre tilfælder kan omskrives til dette tilfælde ved rækkeombytning. 
+Det gælder at $P$ er en delmængde af $Q$, da alle elementer i $P$ opfylder $Q$'s betingelser. 
+Det skal dernæst vises at $Q$ er en delmængde af $P$.
+Da rang$(A)=k$, har rækkerummet af $A$ dimension $k$ og et basis bestående af søjlerne $\textbf{a}_1,\ldots,\textbf{a}_k$. Derfor kan kan alle rækker $\textbf{a}_i$ af $A$ blive udtrykt som linar kombination af de andre rækker ved $\textbf{a}_i=\sum^{k}_{j=1}\lambda_{ij}\textbf{a}_j$, for skalarer $\lambda_{ij}$. Lad $x$ være et element i $P$ så gældet
+$$b_i=\textbf{a}_ix=\sum^{k}_{j=1}\lambda_{ij}\textbf{a}_jx=\sum^{k}_{j=1}\lambda_{ij}b_j,$$
+for $i=1,\ldots,m.$
+Betragt så et element $y$ i $Q$. Dette vil også være tilhøre $P$ da
+$$ \textbf{a}_iy=\sum^{k}_{j=1}\lambda_{ij}\textbf{a}_jy=\sum^{k}_{j=1}\lambda_{ij}b_j=b_i.$$
+Hvilket viser at $Q$ er en delmængde til $P$. Dermed er $Q=P$
 %still work in progress
 
 \end{proof}
