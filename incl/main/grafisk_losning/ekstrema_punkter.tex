@@ -16,9 +16,9 @@ Et hjørne kan beskrives ud fra denne definition, idet der, såfremt $\mathbf{x}
 Hvis $\mathbf{x}=\lambda\mathbf{y}+(1-\lambda) \textbf{z}$ og $\mathbf{x}$ er et ekstremumspunkt, må det derfor gælde, at $\mathbf{y}\notin P$ eller $\mathbf{z}\notin P$ eller $\mathbf{x}=\mathbf{z}$ eller $\mathbf{x}=\mathbf{y}$. 
 Det skal her nævnes, at denne definition er strengt geometrisk. 
 % Kun gælder som geometrisk definition gælder ikke som algebrarisk definition xD
-På figur \ref{fig:ekstrema} ses en afgrænset polyede $\mathcal{P}$, hvor $\textbf{x}$ er et ekstremumspunkt, da der ikke findes vektorer $\textbf{y}$ og $\textbf{z}$ sådan at $\mathbf{x}=\lambda\mathbf{y}+(1-\lambda) \mathbf{z}$. Vektor $\textbf{w}$ er i modsætning ikke et ekstremumspunkt, da der findes $\textbf{v}$ og $\textbf{u}$, sådan at $\mathbf{w}=\lambda\mathbf{v}+(1-\lambda)u$.
+På figur \ref{fig:ekstrema} ses en polyede $\mathcal{P}$, hvor $\textbf{x}$ er et ekstremumspunkt, da der ikke findes vektorer $\textbf{y}$ og $\textbf{z}$ sådan at $\mathbf{x}=\lambda\mathbf{y}+(1-\lambda) \mathbf{z}$. Vektor $\textbf{w}$ er i modsætning ikke et ekstremumspunkt, da der findes $\textbf{v}$ og $\textbf{u}$, sådan at $\mathbf{w}=\lambda\mathbf{v}+(1-\lambda)u$.
 %
-\input{fig/tikz/ekstrema}
+\input{fig/tikz/geometri/ekstrema}
 \\\\
 %
 En alternativ geometrisk definition relaterer sig til \textit{hjørne punkter}, som er den entydige optimale løsning til et givet lineært programmeringsproblem med den mulige løsningsmængde $\mathcal{P}$.
@@ -28,6 +28,12 @@ Lad $\mathcal{P}$ være en polyede.
 En vektor $\mathbf{x}\in \mathcal{P}$ siges at være et \textbf{hjørne punkt}, hvis der eksisterer en vektor $\mathbf{c}$, hvorom det gælder, at $\mathbf{c}^T\mathbf{x}<\mathbf{c}^T\mathbf{y}$ for alle $\mathbf{y}$, som opfylder $\mathbf{y} \in \mathcal{P}$ samt $\mathbf{y}\neq\mathbf{x}$.
 \end{defn}
 \noindent
+%
+På figur \ref{fig:julieermegaseeeeeeeeeej} ses et eksempel på en polyede $\mathcal{P}$, hvor $\textbf{x}$ er et hjørnepunkt, da hyperplanet kun rammer $\mathcal{P}$ i $\mathbf{x}$. 
+Vektoren $\textbf{w}$ er i modsætning ikke hjørnepunkt, da hyperplanet rammer $\mathcal{P}$ i flere punkter end $\mathbf{w}$.
+%
+\input{fig/tikz/geometri/hjorne}
+\\\\
 %
 %
 Dette kan ligeledes beskrives som, at $\mathbf{x}$ er et hjørne i $\mathcal{P}$, såfremt $\mathcal{P}$ er på den ene side af et hyperplan, der skærer $\mathcal{P}$ i $\mathbf{x}$. 
