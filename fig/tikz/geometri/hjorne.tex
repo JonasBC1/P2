@@ -1,0 +1,49 @@
+\begin{figure}[h!]
+  \centering
+  \begin{tikzpicture}[scale=0.7]
+    \tikzset{punkt/.style={point, draw=black}}
+%
+%
+% Koordinater
+% -------------------------------------------------------
+\coordinate (y) at (1,4);
+\coordinate (x) at (3,3);
+\coordinate (z) at (5,2);
+\coordinate (v) at (-3,4);
+\coordinate (w) at (-3,2);
+\coordinate (u) at (-3,0);
+%    
+% Punkter
+% -------------------------------------------------------
+	\node at (3,3)	(1){};
+	\node at (-3,3)	(4){};
+	\node at (3,-1)	(2){};
+	\node at (-3,-1) (3){};
+% 
+% Firkant 
+% -------------------------------------------------------
+	\filldraw[mygrey, fill=myblue!30] (2) rectangle (4);
+	\node at (0,1) (P){$\mathcal{P}$};
+%	
+% Punkter og tilhørende tekst
+% -------------------------------------------------------
+	\filldraw [black] (5,2) circle (0pt) node[right] {$ \{ \mathbf{y} \text{  } | \text{  } \mathbf{c}^T \mathbf{y} = \mathbf{c}^T \mathbf{x} \}$};
+	\filldraw [black] (x) circle (2pt) node[above] {$\mathbf{x}$};
+	\filldraw [black] (-3,3.8) circle (0pt) node[left] {$ \{ \mathbf{y} \text{  } | \text{  } \mathbf{c}^T \mathbf{y} = \mathbf{c}^T \mathbf{w} \}$};
+	\filldraw [black] (w) circle (2pt) node[left] {$\mathbf{w}$};
+%
+% Streger mellem punkterne 
+% -------------------------------------------------------
+	\draw[-,black, thick] (v) -- (w) -- (u);
+	\draw[-,black, thick] (y) -- (x);
+	\draw[-,black, thick] (x) -- (z);
+	\draw[->,black, thick] (-3,1.5) -- (-4.3,1.5) node[left]  {$\mathbf{a}_w$};
+	\draw[->,black, thick] (4,2.5) -- (4.5,3.5) node[above] {$\mathbf{a}_x$};
+%
+\filldraw [black] (-9,2) circle (0pt);
+%
+  \end{tikzpicture}
+  \caption{En polyede $\mathcal{P}$, hvor $\textbf{x}$ er et hjørnepunkt, da hyperplanet kun rammer $\mathcal{P}$ i $\mathbf{x}$. Vektoren $\textbf{w}$ er i modsætning ikke hjørnepunkt, da hyperplanet rammer $\mathcal{P}$ i flere punkter end $\mathbf{w}$.}
+  \label{fig:julieermegaseeeeeeeeeej}
+\end{figure}
+%

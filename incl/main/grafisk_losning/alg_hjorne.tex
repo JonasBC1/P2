@@ -3,6 +3,15 @@
 Hvis en vektor $\textbf{x}$ opfylder $\textbf{a}^T_i\textbf{x}= b_i$ for $i \in M_1, M_2 \text{ eller } M_3$, så siges den tilsvarende betingelse at være \textbf{bindende} eller \textbf{aktive} ved $\textbf{x}$.
 \end{defn}\noindent
 %
+På figur \ref{fig:julieermegadeeeeeejliiiiig} ses en polyede $\mathcal{P}= \{ \mathbf{x} \in \R^3 \text{  } | \text{  } x + y + z = 1, \text{  } x , y, z \geq 0  \}$. 
+Punktet $\textbf{x}$ har tre aktive betingelser $x_1 + x_2 + x_3 = 1$, $z=0$ og $x=0$, og $\mathbf{y}$ har to aktive betingelser $x_1 + x_2 + x_3 = 1$ og $z=0$.
+%
+%
+\input{fig/tikz/geometri/aktiv}
+\\\\
+%
+%
+%
 Følgende sætning giver anledning til, at disse bindende betingelser kan føres i relation til løsninger af lineære optimeringsproblemer.
 %
 \begin{thm}{}{betingi}
@@ -58,13 +67,11 @@ Lad $\mathcal{P}$ være en polyede defineret med lineære ligheds- og ulighedsbe
 Bemærk, at hvis en polyede er defineret med $m$ lineære betingelser og $m<n$, så eksisterer der ikke et punkt med $n$ bindende betingelser.
 Dette medfører, at der hverken er basale løsninger eller basale mulige løsninger.\\\\
 %
-Tre definitioner, som ønsker at beskrive det samme, er blevet givet.
-Det er muligt at skifte mellem definitionerne efter ønske, da de er ækvivalente.
-%
 %
 \input{fig/tikz/geometri/basal}
-\\\\
 %
+Tre definitioner, som ønsker at beskrive det samme, er blevet givet.
+Det er muligt at skifte mellem definitionerne efter ønske, da de er ækvivalente.
 %
 \begin{thm}{}{hjorneeq}
 Lad $\mathcal{P}$ være en ikke-tom polyede og lad vektoren $\textbf{x}\in \mathcal{P}$.

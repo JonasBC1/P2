@@ -1,35 +1,49 @@
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}
+\begin{center}
+%
+\begin{tikzpicture}[scale=5]
+%
+% Koordinater
+% -------------------------------------------------------
+\coordinate (a) at (0,0,0); 
+\coordinate (b) at (0.7,0,0); 
+\coordinate (c) at (0.393,0.55,0); 
+\coordinate (d) at (0.252,0.805,0);
+\coordinate (e) at (0.066,0.434,0);
+\coordinate (f) at (0,0.41,0);
+\coordinate (g) at (0,0.305,0);
+\coordinate (h) at (-0.15,0,0); 
+%
+% Farvning
+% -------------------------------------------------------
+\filldraw[fill=myblue,opacity=0.6](a)--(b)--(c)--(e)--(g)--(a);
+  \draw[thick](-0.2,-0.1,0)--(0.3,0.9,0); % n -> d  
+  \draw[thick](0.2,0.9,0)--(0.757,-0.1,0); % d -> b
+  \draw[thick](-0.3,0.3,0)--(0.8,0.7,0); % f -> c
 % 
 %
-\begin{axis}[
-	axis lines = left,
-	xlabel = $x_1$,
-	ylabel = {$x_2$},
-	legend style={at={(0.45,0.025)},anchor=south west},
-]
-	\addplot[name path=b, domain={0:1}, color=myblue, style=very thick,samples=2]{2*x+10};
-	\addlegendentry{$2x_1-x_2 \leq -10$}
-	\addplot[name path=a, domain={0:13.5}, color=mygreen, style=very thick, samples=2]{x-7};
-	\addlegendentry{$x_1-x_2 \geq 7$}
-	\addplot[domain=0:15,samples=2,color=myred, style=very thick]{-x+20};
-	\addlegendentry{$x_1 + x_2 \leq 20$}
-	\addplot[name path=c, domain={1:8}, color=black, style=very thick,samples=2]{12};
-	\addlegendentry{$x_2 \leq 12$}
-	
-	\tikzfillbetween [of=a and b]{myblue!15}
-	\tikzfillbetween [of=c and a]{myblue!15}
-	
-	\addplot[domain=0:15,samples=2,color=myred, style=very thick]{-x+20};
-	\addplot[domain=0:5,samples=2,color=myblue, style=very thick]{2*x+10};
-	\addplot[domain=0:15,samples=2,color=mygreen, style=very thick]{x-7};
-	\addplot[domain=0:15,samples=2,color=black, style=very thick]{12};
-	
-	\addplot[domain=0:15, samples=2, color=black, dotted, thick]{0};
+% Punkterne 
+% -------------------------------------------------------
+\filldraw [black] (a) circle (0.2pt) node[anchor=north west] {$A$};
+\filldraw [black] (b) circle (0.2pt) node[anchor=north east] {$B$};
+\filldraw [black] (c) circle (0.2pt) node[anchor=south west] {$C$};
+\filldraw [black] (d) circle (0.2pt) node[anchor=west] {$D$};
+\filldraw [black] (e) circle (0.2pt) node[anchor=north west] {$E$};
+\filldraw [black] (f) circle (0.2pt) node[anchor=south east] {$F$};
+\filldraw [black] (g) circle (0.2pt) node[anchor=east] {$G$};
+\filldraw [black] (h) circle (0.2pt) node[anchor=north west] {$H$};
 %
-\end{axis}
+% 
+\filldraw [black] (0.27,0.17,0) circle (0pt) node[above] {$\mathcal{P}$};
+% 
+% Koordinatssystem 
+% -------------------------------------------------------
+\draw[thick] (0,0,0) -- (0.9,0,0);
+\draw[thick] (0,0,0) -- (-0.2,0,0);
+\draw[thick] (0,0,0) -- (0,0.9,0);
+\draw[thick] (0,0,0) -- (0,-0.2,0);
+%
 \end{tikzpicture}
-\caption{En begrænset løsningsmængde, markeret med gråblåt, afgrænset af lineære betingelser.}
-\label{fig:min_beg}
-\end{figure}
+  \captionof{figure}{Punkterne $A,B,C,D,E,F,G$ og $H$ er basal løsninger, hvoraf $A,B,C,E$ og $G$ alle er basal mulige løsninger.}
+  \label{fig:fig:basale}
+\end{center}
+%

@@ -14,6 +14,10 @@
 \coordinate (b) at (0.5,0.1,-0.1);
 \coordinate (aa) at (0.35,0.6,-0.1);
 \coordinate (bb) at (0.25,0.6,-0.1);
+\coordinate (a1) at (0.075,0.05,-0.1);
+\coordinate (b1) at (0.525,0.05,-0.1);
+\coordinate (a2) at (0.05,0.1,-0.1);
+\coordinate (b2) at (0.55,0.1,-0.1);
 \coordinate (c) at (0.17,0.46,-0.1);
 \coordinate (d) at (0.43,0.46,-0.1);
 \coordinate (cc) at (0.28,0.46,-0.1);
@@ -31,13 +35,19 @@
   \draw[thick](a)--(b)--(e)--(a);
   \draw[thick](e)--(aa);
   \draw[thick](e)--(bb);
+  \draw[thick](b)--(b1);
+  \draw[thick](a)--(a1);
+  \draw[thick](b)--(b2);
+  \draw[thick](a)--(a2);
 %
 %
 % Punkt 
 % -------------------------------------------------------
 \filldraw [black] (e) circle (0.2pt);
-\node at (0.3,0.6,-0.1) (){$A$};
+\node at (0.3,0.6,-0.1) (){$\mathbf{x}$};
 \node at (0.6 ,0.5,-0.1) (){$\mathbf{a}_1 \mathbf{x} = b_1 - \epsilon$};
+\filldraw [black] (0,0,0.5) circle (0.pt);
+% 
 % 
 %
 % Koordinatsystemet 
@@ -46,11 +56,9 @@
 \draw[thick] (0,0,0) -- (-0.1,0,0);
 \draw[thick,->] (0,0,0) -- (0,0.7,0) node[anchor=north west]{$y$};
 \draw[thick] (0,0,0) -- (0,-0.1,0);
-\draw[thick,->] (0,0,0) -- (0,0,0.5) node[anchor=south east]{$z$};
-\draw[thick] (0,0,0) -- (0,0,-0.1);
 %
 \end{tikzpicture}
-  \captionof{figure}{En lille ændring i den aktive betingelse $\mathbf{a}_1 \mathbf{x} = b_1- \epsilon$, der gør at $A$ ikke er en degenereret basal løsning.}
+  \captionof{figure}{En lille ændring i den aktive betingelse $\mathbf{a}_1 \mathbf{x} = b_1- \epsilon$, der gør at $\mathbf{x}$ ikke er en degenereret basal løsning.}
   \label{fig:mmmjegerikkesyg}
 \end{center}
 %

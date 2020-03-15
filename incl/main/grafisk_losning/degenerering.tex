@@ -35,16 +35,36 @@ Jævnfør definition \ref{afsnit:fisk} skal der være $m$ aktive betingelser, og
 \begin{defn}{}{}
 Lad $\mathcal{P}$ være en polyede på standardform
 $P=\{ \mathbf{x} \in \R^n \mid A \mathbf{x}=\mathbf{b},x \geq 0 \}$, og lad $m$ være antallet af rækker i $A$.
-En basal løsning $\mathbf{x}$ for $\mathcal{P}$ kaldes degenereret, hvis der er mere end $n-m$ af komponenterne i $\mathbf{x}=0$.
+En basal løsning $\mathbf{x}$ for $\mathcal{P}$ kaldes degenereret, hvis der er mere end $n-m$ af komponenterne i $\mathbf{x}$, der er lig nul.
 \end{defn}
-\noindent
 %
-% Noget overgangstekst og et eksempel xD
+\begin{eks}{}{}
+%
+% Hvis nogen har lyst (MADS? MATHIAS?) så må i gerne lave en figur til dette eksempel :D - Julie som er pro til tikz men ikke til disse former for tikz xD
+%
+Betragt en polyede $\mathcal{P}$ på standardform: 
+%
+\begin{align*}
+\mathcal{P} = \{ 
+\mathbf{x} \in \R^3 \text{  } | 
+\text{  } 2 x_1 + 4 x_2 = 0, 
+\text{  } 2 x_1 + 4 x_2 + 4 x_3 = 16, 
+\text{  } x_1 , x_2, x_3 \geq 0 \}
+\end{align*}
+%
+For $\mathcal{P}$ er $n=3$ dimensionen og $m=2$ aktive betingelser. 
+Løsningen $\mathbf{x}$ kaldes degenereret, hvis der er flere end $n-m=1$ af komponenterne i $\mathbf{x}$ der er lig nul.
+Løsningen $\mathbf{x}= [ \text{ } 0 \text{  } 0 \text{  } 4 \text{ } ]^T $ er en degenereret basal løsning, da der er flere end et komponent i $\mathbf{x}$ som er lig nul. 
+Derimod er  $\mathbf{x}= [ \text{ } 4 \text{  } 2 \text{  } 0 \text{ } ]^T $ er en basal løsning, da der er kun er et komponent i $\mathbf{x}$, som er lig nul. 
+%
+\end{eks}
+% 
 %
 %
-Ved en lille ændring af en overflødig aktiv begrænsning, vil en degenereret basal løsning kunne undgås. 
-Figur \ref{fig:jegerikkesyg} ses $\mathbf{a}_1 \mathbf{x} = b_1$, der er en overflødig aktiv betingelse, der medfører en degenereret basal løsning.
-En lille ændring vil ændre den degenererede basale løsning til en basal løsning, hvilket kan ses på figur \ref{fig:mmmjegerikkesyg}, hvor $\mathbf{a}_1 \mathbf{x} = b_1 - \epsilon$.
+I forbindelse med simplex-metoden har det vist sig at være problematisk med basale løsninger, der er degenereret, og man vil derfor gerne undgå disse.
+Ved en lille ændring $\epsilon$ i en overflødig aktiv betingelse, vil en degenereret basal løsning kunne undgås. 
+Figur \ref{fig:jegerikkesyg} ses $\mathbf{a}_1 \mathbf{x} = b_1$, som er en overflødig aktiv betingelse, der medfører en degenereret basal løsning $\mathbf{x}$.
+En lille ændring $\epsilon$ vil ændre den degenererede basale løsning til en basal løsning, hvilket kan ses på figur \ref{fig:mmmjegerikkesyg}, hvor $\mathbf{a}_1 \mathbf{x} = b_1 - \epsilon$.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
@@ -60,5 +80,5 @@ $
 \end{center}
 %
 %
-I praktiske problemer, viser det sig dog ofte af $A$ og $\mathbf{b}$ har specifikke værdier og dermed er degenererede basale løsninger mere hyppigt.
+I praktiske problemer, viser det sig dog ofte af $A$ og $\mathbf{b}$ har specifikke værdier og dermed er degenererede basale løsninger mere hyppigt end som så.
 %
