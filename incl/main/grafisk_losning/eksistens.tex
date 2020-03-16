@@ -1,3 +1,63 @@
 \section{Eksistens af ekstremumspunkter}
 %
-
+Dette afsnit vil belyse tilstrækkelige og nødvendige betingelser for, at en polyeder har mindst ét ekstremumspunkt, da ikke alle polyeder har.
+Dette vil blive gjort ved at undersøge om polyederet indeholder en \textit{uendelig linje}.
+%
+\begin{defn}{}{}
+En polyeder $\mathcal{P} \in \R^n$  indeholder en \textbf{uendelig linje}, hvis der eksisterer en vektor $\textbf{x} \in \mathcal{P}$ og en ikke-nulvektor $\textbf{d} \in \mathcal{P}$ således, at $\textbf{x} + \lambda \textbf{d} \in \mathcal{P}$ for alle skalarer $\lambda$.
+\end{defn}
+\noindent
+%
+Med denne definition kommer følgende sætning.
+%
+\begin{thm}{}{}
+Lad $\mathcal{P} = \{\textbf{x} \in \R^n | \textbf{a}_i^T\textbf{x} \geq b_i, i = 1,2,\ldots,m  \}$ være et ikke-tomt polyeder.
+Så er følgende udsagn ækvivalente.
+%
+\begin{enumerate}[label = (\alph*)]
+\item $\mathcal{P}$ har mindst et ekstremumspunkt.
+\item $\mathcal{P}$ indeholder ikke en uendelig linje.
+\item Der eksisterer $n$ vektorer i mængden $\{a_1, a_2, \ldots ,a_m \}$, som er lineært uafhængige.
+\end{enumerate}
+\end{thm}
+%
+\begin{proof}
+Lad $\textbf{x}$ være et element i $\mathcal{P}$ og lad $I = \{ i| \textbf{a}_i^T\textbf{x} = b_i \}$.
+Hvis $n$ af vektorerne  $\textbf{a}_i, i \in I$, svarende til de bindende betingelser, er lineært uafhængige, så er $\textbf{x}$ en basal mulig løsning og der eksisterer et ekstremumspunkt.
+Hvis dette ikke er tilfældet ligger alle vektorerne $\textbf{a}_i, i \in I$, i et ægte underrum af $\R^n$ og der eksisterer en ikke-nulvektor $\textbf{d} \in \R^n$ således, at $\textbf{a}_i^T\textbf{d} = 0$ for alle $i \in I$.
+Betragt linjen bestående af alle punkter på formen $\textbf{y} = \textbf{x} + \lambda \textbf{d}$, hvor $\lambda$ er en vilkårlig skalar.
+For $i \in I$ haves, at $\textbf{a}_i^T\textbf{y} = \textbf{a}_i^T\textbf{x} + \lambda \textbf{a}_i^T\textbf{d} = \textbf{a}_i^T\textbf{x} = b_i$.
+De betingelser, der er bindende i $\textbf{x}$, er således også bindende i alle punkter på linjen.
+Antages det, at $\mathcal{P}$ ikke indeholder en uendelig linje, må der eksistrer et $\lambda$, hvor en af betingelser ikke længere er opfyldt.
+I punktet, hvor betingelsen er ved at blive brudt, må en ny betingelse blive bindende.
+Derfor må der eksisterer et $\lambda_j$ og et $j \notin I$ således, at $\textbf{a}_j^T (\textbf{x} + \lambda_j\textbf{d}) = b_j$.\\\\
+%
+Det haves, at $\textbf{a}_j^T\textbf{x} \neq b_j$, da $j \notin I$, og $\textbf{a}_i^T (\textbf{x} + \lambda_j\textbf{d}) = b_j$.
+Derfor er $\textbf{a}_j^T\textbf{d} \neq 0$ og $\textbf{a}_i^T\textbf{d} = 0$ for alle $i \in I$.
+Derfor er $\textbf{d}$ ortogonal med alle linear-kombinationer af vektorerne $\textbf{a}_i, i\in I$.
+Da $\textbf{d}$ ikke er ortogonal med $\textbf{a}_j$ konkluderes det, at $\textbf{a}_j$ ikke er en linear-kombination af vektorerne $\textbf{a}_i, i \in I$.
+Det er derfor muligt at forøge antallet af bindende lineært uafhængige betingelser, med mindst en, ved at gå fra $\textbf{x}$ til $\textbf{x} + \lambda_j\textbf{d}$.
+Dette argument gentages et punkt er nået, hvor der er $n$ lineært uafhængige betingelser, som er bindende.
+Dette punkt vil således være en basal mulig løsning, da der er $n$ bindende betingelser og punktet er inde for $\mathcal{P}$, hvilket viser, at (b) $\rightarrow$ (a).\\\\
+%
+Hvis $\mathcal{P}$ har et ekstremumspunkt $\textbf{x}$, så er $\textbf{x}$ en basal mulig løsning og der eksisterer $n$ betingelser, som er bindende ved $\textbf{x}$.
+Betingelsernes tilsvarende vektorer $\textbf{a}_i$ er lineært uafhængige, hvilket giver, at (a) $\rightarrow$ (b).\\\\
+%
+Lad $n$ af vektorerne $\textbf{a}_i$ være lineært uafhængige og antag, at det er $\textbf{a}_1, \textbf{a}_2, \ldots , \textbf{a}_n$, som er lineært uafhængige.
+Antag, at $\mathcal{P}$ indeholder en linje $\textbf{x} + \lambda \textbf{d}$, hvor $\textbf{d}$ ikke er en nulvektor.
+Så haves, at $\textbf{a}_i^T (\textbf{x} + \lambda \textbf{d}) \geq b_i$ for alle $i$ og alle $\lambda$.
+Det konkluderes, at $\textbf{a}_i^T \textbf{d} = 0$ for alle $i$, da både  $\textbf{a}_i^T \textbf{d} < 0$ og  $\textbf{a}_i^T \textbf{d} > 0$ medfører, at der eksisterer et $\lambda$, som bryder betingelsen.
+Da vektorerne $\textbf{a}_i, i = 1, 2, \ldots, n,$ er lineært uafhængige, medfører det, at $\textbf{d}=\textbf{0}$.
+Dette giver en modstrid og derfor må (c) $\rightarrow$ (b).
+\end{proof}\\
+%
+Bemærk, at begrænsede polyeder ikke indeholder en uendelig linje.
+Ligeledes indeholder den positive kvadrant $\{ \textbf{x}|\textbf{x} \geq \textbf{0}\}$ ikke uendelige linjer og da polyeder på standardform befinder sig i den positive kvadrant, indeholder disse heller ikke uendelige linjer.
+%
+\begin{kor}{}{}
+Enhver begrænset ikke-tom polyeder og enhver ikke-tom polyeder på standardform har mindst en basal mulig løsning.
+\end{kor}
+%
+\begin{proof}
+Der er ikke noget bevis for korrorlaet i Bertsimas.
+\end{proof}
