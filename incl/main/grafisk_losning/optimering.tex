@@ -1,3 +1,53 @@
 \section{Optimering af ekstremumspunkter}
 %
-
+Så længe en optimal løsning til et lineært optimeringsproblem eksisterer, og løsningsmængden indeholder ét eller flere ekstremumspunkter, så findes en optimal løsning til det lineære programmeringsproblem blandt ekstremumspunkterne i løsningsmængden. 
+Sætning \ref{thm:optiekstrem1} fastslår dette for polyhedre på standardform og begrænsede polyhedre. 
+%
+\begin{thm}{}{optiekstrem1}
+Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et polyeder $P$. 
+Antag, at der i $P$ er mindst ét ekstremumspunkt, samt at en optimal løsning eksisterer. 
+Så eksisterer der en optimal løsning, som er et ekstremumspunkt i $P$.
+\end{thm}
+%
+%
+\begin{proof}
+Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et polyeder $P$. 
+Antag, at der i $P$ er mindst ét ekstremumspunkt, samt at en optimal løsning eksisterer. 
+Lad $Q \neq \emptyset $ være mængden af optimale løsninger, lad $P = \{\textbf{x} \in \R^n | \textbf{A}\textbf{x} \geq \textbf{b} \}$, og lad $v$ være den optimale værdi for $\textbf{c}^T \textbf{x}$. 
+Da $P$ er løsningsmængden, og $Q \subset P$, så er $Q = \{\textbf{x} \in \R^n | \textbf{A}\textbf{x} \geq \textbf{b} \text{, } \textbf{c}^T \textbf{x} = v \}$ og dermed også et polyeder. 
+Jævnfør sætning \ref{thm:ekstremums1} indeholder $P$ ingen linjer, hvormed $Q$ ikke indeholder linjer. 
+Jævnfør sætning \ref{thm:ekstremums1} indeholder $Q$ dermed et ekstremumspunkt. \\
+Lad nu den optimale løsning $\textbf{x}^*$ være et ekstremumspunkt i $Q$. 
+Ved hjælp af modstrid vises nu, at $\textbf{x}^*$ også er et ekstremumspunkt i $P$. 
+Antag derfor, at $\textbf{x}^*$ \textit{ikke} er et ekstremumspunkt i $P$. 
+Så eksisterer der $\textbf{y} \in P$, $\textbf{y} \neq \textbf{x}^*$, og $\textbf{z} \in P$, $\textbf{z} \neq \textbf{x}^*$, samt et $\lambda \in [0,1]$, således $ \textbf{x}^* = \lambda \textbf{y} + (1 - \lambda) \textbf{z}$. 
+Deraf følger, at $v = \textbf{c}^T \textbf{x}^* =  \lambda \textbf{c}^T \textbf{y} + (1 - \lambda) \textbf{c}^T \textbf{z}$. 
+Desuden må det gælde, at $\textbf{c}^T \textbf{y} \geq v$ og $\textbf{c}^T \textbf{z} \geq v$, da $v$ er den optimale værdi. 
+Dette medfører dog, at $ \textbf{c}^T \textbf{y} = \textbf{c}^T \textbf{z} = v$, samt at $\textbf{y} \in Q$ og $\textbf{y} \in Q$. 
+Derved opstår modstriden, da $\textbf{x}^*$ er et ekstremumspunkt i $Q$. 
+Således er det ved modstrid vist, at $\textbf{x}^*$ er et ekstremumspunkt i $P$, samt at det er en optimal løsning, da $\textbf{x}^* \in Q$. 
+\end{proof}\\
+%
+%
+%
+Som sagt gælder sætning \ref{thm:optiekstrem1} kun for polyedre på standard form og begrænsede polyedre. 
+Sætning \ref{thm:optiekstrem2} kan ses som en udvidelse af sætning \ref{thm:optiekstrem1} og viser, at der findes en optimal løsning, så længe den optimale cost-værdi (???) er endelig. 
+%HVAD KALDER VI COST??? 
+\begin{thm}{}{optiekstrem2}
+Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et polyeder $P$. 
+Antag, at der i $P$ er mindst ét ekstremumspunkt. 
+Så er den optimale cost-værdi lig $- \infty$, eller også findes et optimalt ekstremumspunkt. 
+\end{thm}
+%
+\begin{proof}
+Antag, at den optimale cost-værdi er endelig. 
+Lad et polyeder $P = \{\textbf{x} \in \R^n | \textbf{A}\textbf{x} \geq \textbf{b} \}$ og bemærk $\textbf{x} \in P$, hvor $\textbf{x}$ har $rang(k)$, $k < n$. 
+\end{proof}
+%
+læs igen igen igen igen igen
+\begin{kor}{}{optiekstrem2}
+Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et ikke-tomt polyeder.
+Så er den optimale cost-værdi lig $- \infty$, eller også findes en optimal løsning. 
+\end{kor}
+%
+%
