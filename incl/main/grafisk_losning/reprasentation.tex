@@ -1,3 +1,41 @@
 \section{Repræsentation af begrænset polyede}
 %
-
+En polyede har indtil videre i projektetrapporten været defineret ved uligheder. I dette afsnit vil der introduceres et alternativ til dette; nemlig at vise, at en begrænset polyede kan repræsenteres, som et konveks hylster af dens ekstrempunkter. Dette er givet ved følgende \\
+%%%%
+\begin{thm}{}{begraenspoly}
+En ikke-tom og begrænset polyede er givet ved det konvekse hylster af dens ekstremumspunkter.
+\end{thm}
+\begin{proof}
+Enhver konveks kombination af ekstrempunkterne er et element af polyeden, siden at polyeden er en konveks mængde. Derfor ønskes at bevise det omvendte og derfor bevise at ethvert element i en begrænset polyede kan repræsenteres ved en konveks kombination af ekstrempunkterne. \\
+%%%%%
+For at bevise dette, defineres dimensionen af et polyede $P \subset \R^n$, som det mindste heltal $k$, så polyeden $P$ er betinget af $k$-dimensionelle tilgrænsede underrum af $\R^n$. Beviset fortsættes dernæst ved at bevise dimensionen af $P$ ved induktion. Antag, at $P$ er nul-dimensionel, indeholder polyeden et enkelt punkt. Punktet er et ekstremumpunkt i $P$ og resultatet er derfor sandt. \\\\
+%%%%%
+Induktionsskridtet er dernæst at bevise, at det er sandt for alle polyeder med dimensionen mindre end $k$. Lad derfor $P = \{\textbf{x} \in \R^n \mid \mathbf{a}_{i}^{'} \textbf{x} \geq b_i, i=1,\ldots,m\}$ være en ikke-tom begrænset $k$-dimensionel polyede. Så er $P$ indrammmet i et tilgrænset  underrum $S$ i $\R^n$, som er givet ved følgende: \\
+%%%%%
+$$S = \{\textbf{x}^0+\lambda_1\textbf{x}^1+\cdots+\lambda_k\textbf{x}^k \mid \lambda_1,\ldots,\lambda_k \in \R\},$$
+hvor $\textbf{x}^1,\ldots,\textbf{x}^k$ er vektorer i $\R^n$. Lad $\textbf{f}_1,\ldots,\textbf{f}_n-k$ være lineære uafhængige vektorer, som er ortogonale med vektorerne $\textbf{x}^1,\ldots,\textbf{x}^k$. Lad dernæst $g_i=\mathbf{f}_{i}^{'}\textbf{x}^0$, gældende for $i=1,\ldots,n-k$, så det betyder, at ethvert element $\textbf{x}$ i $S$ tilfredsstiller følgende: \\
+%%%%%
+$$\mathbf{f}_{i}^{'}\textbf{x}=g_i, \text{     } \text{for} \text{     } i=1,\ldots,n-k.$$ \\
+Siden $P \subset S$, så skal det være sandt for ethvert element i $P$. \\
+%%%%%
+Lad $\textbf{z}$ være et tilfældigt element i $P$. Hvis det gælder for $\textbf{z}$, at punktet er et ekstremumspunkt i $P$, så er $\textbf{z}$ en triviel konveks kombination af ekstremumspunkterne i $P$, og beviset er derfor slut. Hvis $\textbf{z}$ derimod ikke er et ekstremumspunkt i $P$, skal det bevises, at $\textbf{z}$ er en konveks kombination af ekstremumspunkterne i $P$. \\
+%%%%%
+Lad derfor $\textbf{y}$ være et arbitrært ekstremumspunkt og dan derfor en halv-linje indeholdende alle punkter af formen $\textbf{z}+\lambda(\textbf{z}-\textbf{y})$, hvor $\lambda$ angiver en ikke-negativ skalar. Siden det gælder, at $P$ er en begrænset polyede, vil denne halv-linje utvivlsomt forlade $P$ og derfor overskride en vilkårlig begrænsning, $\mathbf{a}_{i^*}^{'} \textbf{x} \geq b_{i^*}$. Ved at anskue, hvad det vil resultere i, at bryde denne begrænsning, vil der findes et $\lambda^* \geq 0$, og $\textbf{u} \in P$, så det gælder: \\ 
+%%%%%
+$$\textbf{u}=\textbf{z}+\lambda*(\textbf{z}-\textbf{y}), \text{     } \text{og} \text{      } \mathbf{a}_{i^*}^{'} \textbf{u} = b_{i^*} $$
+Siden at begrænsningen $\mathbf{a}_{i}^{'} \textbf{x} \geq b_i$ overskrides, hvis $lambda$ vokser større end $\lambda^*$, så følger det, at $\mathbf{a}_{i^*}^{'}(\textbf{z}-\textbf{y}) <0.$ \\
+%%%%%
+Da dette gælder, lad derfor $Q$ være et polyede defineret ved 
+$$Q=\{\textbf{x} \in P \mid \mathbf{a}_{i^*}^{'} \textbf{x} =b_{i^*}\} = \{\textbf{x} \in \R^n \mid \mathbf{a}_{i}^{'} \textbf{x} \geq b_{i}\}, i=1,\ldots,m, \text{   } \mathbf{a}_{i^*}^{'} \textbf{x} =b_{i^*}\}.$$
+Siden, at $\textbf{z},\textbf{y} \in P$, så medfølger $\mathbf{f}_{i}^{'}\textbf{z}=g_i=\mathbf{f}_{i}^{'}\textbf{y}$, hvilket viser, at $\textbf{z}-\textbf{y}$ er ortogonal med enhver vektor $\mathbf{f}_{i}$, for alle $i=1,\ldots,n-k$. På den anden side, så er det vist, at $\mathbf{a}_{i^*}^{'}(\textbf{z}-\textbf{y}) <0$, så det gælder, at vektoren  $\mathbf{a}_{i^*}$, ikke er en linear kombination af vektorerne $\mathbf{f}_{i}$, og derfor ikke lineære uafhængige. Bemærk derfor at det gælder \\
+%%%%%
+$$Q \subset \{\textbf{x} \in \R^n \mid \mathbf{a}_{i^*}^{'} \textbf{x}=b_{i^*}, \text{  } \mathbf{f}_{i}^{'}\textbf{x}=g_i, \text{  } i=1,\ldots,n-k\},$$ 
+gældende for ethvert element i $P$. Mængden på den højre side er defineret ved $n-k+1$ lineære uafhængige lighedsbegrænsninger. Dette betyder derfor, at det tilgrænsede underrum har dimensionen givet ved $k$-1, som betyder, at polyeden $Q$ højest har dimensionen $k$-1. \\
+%%%%%
+Ved afslutningsvis at benytte induktionshypotesen på $Q$ og $\textbf{u}$, så kan $\textbf{u}$ udtrykkes ved følgende konvekse kombination
+$$\textbf{u}=\sum_{i}\lambda_{i}\textbf{v}^i$$
+af ekstremumspunkterne $\textbf{v}^i$ i polyeden $Q$, hvor $\lambda_i$ er ikke-negative skalarer, som summerer til én. Bemærk dernæst, at i et ekstremumspunkt $\textbf{v}$, skal det gælde $\mathbf{a}_{i}^{'} \textbf{v}=b_{i}$ for $n$ antal lineære uafhængige vektorer $\textbf{a}_i$. Derfor er  $\textbf{v}$ også et ekstremumspunkt i $P$. Ved brug af definitionen for $\lambda^*$, haves derfor 
+$$ \textbf{z}=\frac{\textbf{u}+\lambda^*\textbf{y}}{1+\lambda^*}.$$
+Derfor er det bevist, at $\textbf{z}$ er en konveks kombination af ekstremumspunkter i $P$, da det haves 
+$$\textbf{z}=\frac{\lambda^*\textbf{y}}{1+\lambda^*}+\sum_{}i\frac{\lambda_i}{1+\lambda_i}\textbf{v}^i$$
+\end{proof}
