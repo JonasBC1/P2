@@ -1,14 +1,28 @@
 \chapter{Simplex metoden}
+Som nævnt tidligere i rapporten, så findes der en optimal løsning til et lineært ligningssystem på standard form, så længe der findes mindst én basal mulig løsning. 
+Simplex metoden benytter sig af denne egenskab og forsøger at finde den optimale løsning. Før simplex metoden bliver præsenteret, skal nogle begreber introduceres.
 %
-Simplex-metoden er en metode til at løse lineære optimeringsproblemer.
-Metoden er bygget til at håndterer problemer på standardform.
-mOTIVERENDE Tkst\\\\
+\\\\
 %
-Simplex metoden udfører i grove træk følgende operationer:
+Når der undersøges om der findes en nabo punkt hvis løsning er bedre, så er det ikke nødvendigt at undersøge i retningen som leder ud af den basal mulige område.
+
+\begin{defn}{}{}
+Lad $\textbf{x}$ være et element af en polyede $P$.
+En vektor $\textbf{d}\in \R^n$ siges at være en mulig retning fra $\textbf{x}$, hvis der eksister en positiv skalar $\theta$, sådan at $x+\theta \textbf{d}\in P$
+\end{defn}
+%Simplex-metoden er en metode til at løse lineære optimeringsproblemer.
+%Metoden er bygget til at håndterer problemer på standardform.
+%mOTIVERENDE Tkst\\\\
+%%
+%Simplex metoden udfører i grove træk følgende operationer:
+%%
+%\begin{enumerate}
+%\item Et ekstremum $x$ vælges inde for løsningsmængden.
+%\item
+%\item
+%\end{enumerate}
 %
-\begin{enumerate}
-\item Et ekstremum $x$ vælges inde for løsningsmængden.
-\item
-\item
-\end{enumerate}
-%
+
+
+\subsection{implementering}
+Der er tre forskellige implementeringer af simplex metoden, den naive, den reviderede, og den fulde matrix implementering. 
