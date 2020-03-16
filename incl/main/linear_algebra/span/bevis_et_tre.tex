@@ -1,0 +1,18 @@
+\begin{thm}{}{span_dim}
+Antag at spannet $S$ af vektorene $x_1,\ldots,x_c$ har dimension $m$ så gælder:
+\begin{enumerate}[label=(\alph*)]
+\item Der eksisterer en base af $S$ bestående af $m$ af vektorene $\mathbf{x}_1,\ldots,\mathbf{x}_c$ 
+\item Hvis $k\leq m$ og $\mathbf{x}_1,\ldots,\mathbf{x}_k$ er liniært uafhængige kan der skabes en base $S$ ved $\mathbf{x}_1,\ldots,\mathbf{x}_k$ hvor der ligeldes vælges $m-k$ af vektorene $\mathbf{x}_{k+1},\ldots,x_c$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+(a) er et tilfælde af (b) hvor $k=0$. 
+Derfor er bevis for (b) tilstrækkeligt.
+Hvis alle vektorer $\mathbf{x}_{k+1},\ldots,x_c$ kan opnåes som linearkombination af $\mathbf{x}_1,\ldots,\mathbf{x}_k$, så er alle vektorer i $\mathbf{x}_{1},\ldots,x_c$ ligeledes en linearkombination af $\mathbf{x}_1,\ldots,\mathbf{x}_k$, hvor $\mathbf{x}_1,\ldots,\mathbf{x}_k$ udgører en base.
+Såfremt dette ikke er tilfældet gælder at en eller flere vektore i $\mathbf{x}_{k+1},\ldots,x_c$ er liniært uafhængige fra $\mathbf{x}_1,\ldots,\mathbf{x}_k$. 
+Der udvælges nu en linær uafhængig vektor i $\mathbf{x}_{k+1},\ldots,x_c$.
+Derved opnåes der en mængde bestående af $k+1$ liniært uafhængige vektorer fra $\mathbf{x}_{1},\ldots,x_c$.
+Den procces gentages $m-k$ gange og derved opnåes basen af $S$
+
+\end{proof}

@@ -1,2 +1,73 @@
 \section{Dualitet}
 % God arbejdslyst 
+%vi kan vælge at tage det med lagrange multiplier med også men tænker vi snakker om det jeg er personligt i tvivl og ville nødigt spilde tiden på det.
+
+
+Et vigtigt element af teorien vedrørende liniære optimerings problemer og simplex metodens brug, omhandler \textit{dualproblemer}.
+
+\begin{defn}{}{dualproblemer}
+givet maksimeringsproblemet: \\
+maksimer $z=\mathbf{c}^T \mathbf{x}$ begrænset af: $A\mathbf{x} \leq b$ og $\mathbf{x} \geq 0$ \\
+Da vil \textbf{dual minimumsproblemet} være: \\
+minimer $v=\mathbf{b}^T \mathbf{p}$ begrænset af $A^T \mathbf{p} \geq c$ og $\mathbf{p} \geq 0$
+\end{defn}
+Problemet:
+
+\begin{align*}
+\begin{array}{lrll}
+\text{Maksimér}		&\textbf{c}^T\textbf{x}	&			&\\
+\text{begrænset af}	&\textbf{a}_i^T\textbf{x}	&\geq b_i,	&i \in M_1,\\
+					&\textbf{a}_i^T\textbf{x}	&\leq b_i,	&i \in M_2,\\
+					&\textbf{a}_i^T\textbf{x}	& = b_i,	&i \in M_3,\\
+					&x_j					&\geq 0,	&j \in N_1,\\
+					&x_j					&\leq 0,	&j \in N_2,\\							&x_j					&\text{fri},	&j \in N_3,
+\end{array}
+\end{align*}
+
+Vil således have:
+
+
+\begin{align*}
+\begin{array}{lrll}
+\text{minimer}		&\textbf{p}^T\textbf{b}	&			&\\
+\text{begrænset af}	&p_i					&\geq 0,	&j \in M_1,\\
+					&p_i					&\leq 0,	&j \in M_2,\\
+					&p_i					&\text{fri},	&j \in M_3,\\
+					&\textbf{p}^T\textbf{A}_j	&\leq c_j,	&j \in N_1,\\
+					&\textbf{p}^T\textbf{A}_j	&\geq c_j,	&j \in N_2,\\
+					&\textbf{p}^T\textbf{A}_j	& = b_i,	&i \in N_3,
+\end{array}
+\end{align*}
+som sit dualproblem.
+%Ideer til en federe opsætning
+\\
+Det sker således at der for hver begrænsning i det oprindlige problem indføres en variable i dualproblemet, tilsvarende indføres der en begrænsning for hver variable. 
+Derudover skiftes som nævnt i definitionen fra et maksimerings til minimeringsproblem. \\
+Dette kan opsumeres i følgende tabel: \\
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{llll}
+Oprindelige  & maksimer   & minimer    & Dual         \\
+\hline
+Variable     & $\geq 0$   & $\geq b_i$ & Begræsninger \\
+             & $\leq 0$   & $\leq b_i$ &              \\
+             & fri        & $=b_i$     &              \\
+\hline
+Begræsninger & $\leq c_j$ & $\geq 0$   & Variable     \\
+             & $\geq c_j$ & $\leq 0$   &              \\
+             & $=c_j$     & fri        &             
+\end{tabular}
+\end{center}
+\end{table}
+
+%s 143 bertsimas
+
+
+%Transponering af simplex til at finde dualproblem som eksempel
+%Slack variable sætningen.
+
+%dualitetssætningen
+
+
+
+%42 min https://youtu.be/0TRxEvMRE7s definition
