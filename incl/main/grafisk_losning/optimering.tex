@@ -31,23 +31,46 @@ Således er det ved modstrid vist, at $\textbf{x}^*$ er et ekstremumspunkt i $P$
 %
 %
 Som sagt gælder sætning \ref{thm:optiekstrem1} kun for polyedre på standard form og begrænsede polyedre. 
-Sætning \ref{thm:optiekstrem2} kan ses som en udvidelse af sætning \ref{thm:optiekstrem1} og viser, at der findes en optimal løsning, så længe den optimale cost-værdi (???) er endelig. 
-%HVAD KALDER VI COST??? 
+Sætning \ref{thm:optiekstrem2} kan ses som en udvidelse af sætning \ref{thm:optiekstrem1} og viser, at der findes en optimal løsning, så længe den optimale værdi af objektfunktionen er endelig. 
 \begin{thm}{}{optiekstrem2}
 Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et polyeder $P$. 
 Antag, at der i $P$ er mindst ét ekstremumspunkt. 
-Så er den optimale cost-værdi lig $- \infty$, eller også findes et optimalt ekstremumspunkt. 
+Så er den optimale værdi af objektfunktionen lig $- \infty$, eller også findes et optimalt ekstremumspunkt. 
 \end{thm}
 %
 \begin{proof}
-Antag, at den optimale cost-værdi er endelig. 
-Lad et polyeder $P = \{\textbf{x} \in \R^n | \textbf{A}\textbf{x} \geq \textbf{b} \}$ og bemærk $\textbf{x} \in P$, hvor $\textbf{x}$ har $rang(k)$, $k < n$. 
-\end{proof}
+Bemærk indledningsvist, at et element $\textbf{x}$ i et polyder $P$ har $rang(k)$, hvis der findes præcis $k$ lineært uafhængige betingelser, der er aktive ved $\textbf{x}$. 
+Antag, at den optimale værdi af objektfunktionen er endelig. \\
+Lad et polyeder $P = \{\textbf{x} \in \R^n | \textbf{A}\textbf{x} \geq \textbf{b} \}$ og bemærk, at $\textbf{x} \in P$, hvor $\textbf{x}$ har $rang(k)$, $k < n$. 
+Lad $i = \{ i | \textbf{a}^T_i \textbf{x} = b_i \}$, hvor $\textbf{a}^T_i$ er den $i$'te række af $A$. 
+Da $k < n$, ligger vektorerne $\textbf{a}_i$, $i \in I$, i et ægte underrum af $ \R^n$, og der kan vælges en ikke-nul vektor $\textbf{d} \in \R$, som er ortogonal til hver $\textbf{a}_i$. 
+Det kan desuden antages, at $\textbf{c}^T \textbf{d} \leq \textbf{0}$, ved muligvis at tage negationen af $\textbf{d}$. \\
+Antag nu, at $\textbf{c}^T \textbf{d} < 0$, og lad $\textbf{y} = \textbf{x} + \lambda \textbf{d}$, $ \lambda \in \R^+$, være en halvlinje. 
+%Hvad er en halvlinje...?? 
+Alle punkter på denne halvlinje opfylder $\textbf{a}^T_i \textbf{y} = b_i$, som i beviset for sætning \ref{thm:ekstremums1}. 
+%Er ovenstående rigtigt?? 
+Hvis hele halvlinjen var indeholdt i $P$, havde den optimale værdi for objektfunktionen været $- \infty $; men det antages indledningsvist i dette bevis, at denne værdi er endelig. 
+Så er ikke hele halvlinjen indeholdt i $P$, og den udgår dermed fra $P$ på et tidspunkt. 
+Når halvlinjen er på grænsen af $P$, lige inden dens udgang derfra, er der et optimalt $ \lambda^* > 0$ og et $j \in I$, således at $\textbf{a}^T_i (\textbf{x} + \lambda^* \textbf{d} ) = b_j $.
+Lad nu $\textbf{y} = \textbf{x} + \lambda^* \textbf{d} $ og bemærk, at $ \textbf{c}^T \textbf{y} < \textbf{c}^T \textbf{x}$, da $ \lambda \in \R^+ $. 
+Det vides fra beviset for sætning \ref{thm:ekstremums1}, at $\textbf{a}_j$ er lineært uafhængig af $\textbf{a}_i$, samt at rangen af $\textbf{y}$ minimum er $k + 1$. \\
+Antag nu, at $\textbf{c}^T \textbf{d} = 0$, og lad en linje være $\textbf{y} = \textbf{x} + \lambda \textbf{d}$, hvor $ \lambda $ er en arbitrær skalar. 
+Eftersom $P$ ikke indeholder linjer, må linjen nødvendigvis udgå fra $P$ på et tidspunkt. 
+Som før haves nu igen en vektor $\textbf{y}$, hvis rang er højere end rangen af $\textbf{x}$. 
+Da $\textbf{c}^T \textbf{d} = 0$, haves desuden, at $\textbf{c}^T \textbf{y} = \textbf{c}^T \textbf{x}$. 
+Det er nu vist, at der i begge tilfælde findes et punkt $\textbf{y}$ med højere rang end $\textbf{x}$, således $\textbf{c}^T \textbf{y} \leq \textbf{c}^T \textbf{x}$. 
+Antag, at denne proces nu fortsættes.
+Så findes en vektor $w$ med $rang(n)$, hvormed den er en basal mulig løsning, således at $\textbf{c}^T \textbf{w} \leq \textbf{c}^T \textbf{x}$. 
+Lad $w_1, w_2, \ldots , w_r$ være de basale mulige løsninger i $P$, og lad $w^*$ være en basal mulig løsning, således at $\textbf{c}^T \textbf{w}^* \leq \textbf{c}^T \textbf{w}_i$ for alle $i$. 
+Eftersom der for alle $x$ findes et $i$, således at $\textbf{c}^T \textbf{w}_i \leq \textbf{c}^T \textbf{x}$, følger det, at $\textbf{c}^T \textbf{w}^* \leq \textbf{c}^T \textbf{x}$ for alle $\textbf{x} \in P$, hvormed vektoren $\textbf{w}^*$ er den optimale løsning. 
+\end{proof}\\
 %
-læs igen igen igen igen igen
+Eftersom ethvert lineært optimeringsproblem kan omskrives til et tilsvarende problem på standardform, kan sætning \ref{thm:optiekstrem2} siges at gælde generelt. 
+Deraf haves korollar \ref{kor:optiekstrem2}. 
+%
 \begin{kor}{}{optiekstrem2}
 Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et ikke-tomt polyeder.
-Så er den optimale cost-værdi lig $- \infty$, eller også findes en optimal løsning. 
+Så er den optimale værdi af objektfunktionen lig $- \infty$, eller også findes en optimal løsning. 
 \end{kor}
 %
 %
