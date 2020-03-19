@@ -1,6 +1,6 @@
 \section{Eksistens af ekstremumspunkter}
 %
-Dette afsnit belyser tilstrækkelige og nødvendige betingelser for, at et polyeder har mindst ét ekstremumspunkt, da ikke alle polyedre har nogen.
+Dette afsnit belyser tilstrækkelige og nødvendige betingelser for, at et polyeder har mindst ét ekstremumspunkt, da dette ikke er tilfældet for alle polyedre. 
 Dette gøres ved at undersøge, om polyederet indeholder en \textit{uendelig linje}.
 %
 \begin{defn}{}{}
@@ -11,18 +11,18 @@ Et polyeder $\mathcal{P} \in \R^n$ indeholder en \textbf{uendelig linje}, hvis d
 Af denne definition kommer følgende sætning.
 %
 \begin{thm}{}{ekstremums1}
-Lad $\mathcal{P} = \{\textbf{x} \in \R^n | \textbf{a}_i^T\textbf{x} \geq b_i, i = 1,2,\ldots,m  \}$ være et ikke-tomt polyeder.
+Lad $\mathcal{P} = \{\textbf{x} \in \R^n \mid \textbf{a}_i^T\textbf{x} \geq b_i, i = 1,2,\ldots,m  \}$ være et ikke-tomt polyeder.
 Så er følgende udsagn ækvivalente.
 %
 \begin{enumerate}[label = (\alph*)]
 \item $\mathcal{P}$ har mindst ét ekstremumspunkt.
 \item $\mathcal{P}$ indeholder ikke en uendelig linje.
-\item Der eksisterer $n$ vektorer i mængden $\{a_1, a_2, \ldots ,a_m \}$, som er lineært uafhængige.
+\item Der eksisterer $n$ vektorer i mængden $\{\mathbf{a}_1, \mathbf{a}_2, \ldots , \mathbf{a}_m \}$, som er lineært uafhængige.
 \end{enumerate}
 \end{thm}
 %
 \begin{proof}
-Lad $\textbf{x}$ være et element i $\mathcal{P}$ og lad $I = \{ i| \textbf{a}_i^T\textbf{x} = b_i \}$.
+Lad $\textbf{x}$ være et element i $\mathcal{P}$ og lad $I = \{ i \mid \textbf{a}_i^T\textbf{x} = b_i \}$.
 Hvis $n$ af vektorerne  $\textbf{a}_i, i \in I$, svarende til de bindende betingelser, er lineært uafhængige, så er $\textbf{x}$ en basal mulig løsning, og der eksisterer et ekstremumspunkt.
 Hvis dette ikke er tilfældet, ligger alle vektorerne $\textbf{a}_i, i \in I$, i et ægte underrum af $\R^n$, og der eksisterer en ikke-nulvektor $\textbf{d} \in \R^n$, således at $\textbf{a}_i^T\textbf{d} = 0$ for alle $i \in I$.
 Betragt linjen bestående af alle punkter på formen $\textbf{y} = \textbf{x} + \lambda \textbf{d}$, hvor $\lambda$ er en vilkårlig skalar.
@@ -41,7 +41,8 @@ Dette argument gentages indtil et punkt er nået, hvor der er $n$ lineært uafh�
 Dette punkt vil således være en basal mulig løsning, da der er $n$ bindende betingelser og punktet er inde for $\mathcal{P}$, hvilket viser, at (b) $\rightarrow$ (a).\\\\
 %
 Hvis $\mathcal{P}$ har et ekstremumspunkt $\textbf{x}$, så er $\textbf{x}$ en basal mulig løsning og der eksisterer $n$ betingelser, som er bindende ved $\textbf{x}$.
-Betingelsernes tilsvarende vektorer $\textbf{a}_i$ er lineært uafhængige, hvilket giver, at (a) $\rightarrow$ (b).\\\\
+Betingelsernes tilsvarende vektorer $\textbf{a}_i$ er lineært uafhængige, hvilket giver, at (a) $\rightarrow$ (c).
+\\\\
 %
 Lad $n$ af vektorerne $\textbf{a}_i$ være lineært uafhængige og antag, at det er $\textbf{a}_1, \textbf{a}_2, \ldots , \textbf{a}_n$, som er lineært uafhængige.
 Antag, at $\mathcal{P}$ indeholder en linje $\textbf{x} + \lambda \textbf{d}$, hvor $\textbf{d}$ ikke er en nulvektor.
@@ -52,7 +53,7 @@ Dette giver en modstrid og derfor må (c) $\rightarrow$ (b).
 \end{proof}\\
 %
 Bemærk, at begrænsede polyeder ikke indeholder en uendelig linje.
-Ligeledes indeholder den positive kvadrant $\{ \textbf{x}|\textbf{x} \geq \textbf{0}\}$ ikke uendelige linjer og da polyeder på standardform befinder sig i den positive kvadrant, indeholder disse heller ikke uendelige linjer.
+Ligeledes indeholder den positive kvadrant $\{ \textbf{x} \mid \textbf{x} \geq \textbf{0}\}$ ikke uendelige linjer og da polyeder på standardform befinder sig i den positive kvadrant, indeholder disse heller ikke uendelige linjer.
 %
 \begin{kor}{}{}
 Ethvert begrænset ikke-tomt polyeder og ethvert ikke-tomt polyeder på standardform har mindst én basal mulig løsning.
