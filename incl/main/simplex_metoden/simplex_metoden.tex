@@ -1,16 +1,18 @@
 \chapter{Simplex metoden}
 \label{coronaaaaaaaaaaa}
 Som nævnt tidligere i rapporten, så findes der en optimal løsning til et lineært ligningssystem på standard form, så længe der findes mindst én basal mulig løsning. 
-Simplex metoden benytter sig af denne egenskab og forsøger at finde den optimale løsning. Før simplex metoden bliver præsenteret, skal nogle begreber introduceres.
+\textit{Simplex metoden} benytter sig af denne egenskab og forsøger at finde den optimale løsning for en lineært ligningssystem på standard form.
 %
-\\\\
+%Før simplex metoden bliver præsenteret, skal nogle begreber introduceres.
 %
-Når der undersøges om der findes en nabo punkt hvis løsning er bedre, så er det ikke nødvendigt at undersøge i retningen som leder ud af den basal mulige område.
-
-\begin{defn}{}{}
-Lad $\textbf{x}$ være et element af en polyede $P$.
-En vektor $\textbf{d}\in \R^n$ siges at være en mulig retning fra $\textbf{x}$, hvis der eksister en positiv skalar $\theta$, sådan at $x+\theta \textbf{d}\in P$
-\end{defn}
+%
+%Når der undersøges om der findes en nabo punkt hvis løsning er bedre, så er det ikke nødvendigt at undersøge i retningen som leder ud af den basal mulige område.
+%
+%\begin{defn}{}{}
+%Lad $\textbf{x}$ være et element af en polyede $P$.
+%En vektor $\textbf{d}\in \R^n$ siges at være en mulig retning fra $\textbf{x}$, hvis der eksister en positiv skalar $\theta$, sådan at $x+\theta \textbf{d}\in P$
+%\end{defn}
+%
 %Simplex-metoden er en metode til at løse lineære optimeringsproblemer.
 %Metoden er bygget til at håndterer problemer på standardform.
 %mOTIVERENDE Tkst\\\\
@@ -23,7 +25,220 @@ En vektor $\textbf{d}\in \R^n$ siges at være en mulig retning fra $\textbf{x}$,
 %\item
 %\end{enumerate}
 %
+%
+%\subsection{Implementering}
+%Der er tre forskellige implementeringer af simplex metoden, den naive, den reviderede, og den fulde matrix implementering. 
+%
+%
+\section{Pseudokode}
+% 
+% Noget introducerende 
+%
+\begin{enumerate}
+\item Opskriv optimeringsproblemet på standardform med slack variabler.  %1
+\item Opstil simplex-tabllen for optimeringsproblemet					 %2
+\item Tjek optimering og identificer en pivot-variabel					 %3
+\item Opstil en ny tabel ved hjælp af pivotering. 						 %4
+\item Kør 3 og 4 indtil den optimale løsning er fundet 					 %5
+\item Identificer den optimale løsning									 %6
+\end{enumerate}
+%
+% Motiverende overgang 
+%
+%
+\textcolor{myblue}{fisk}
+%
+\begin{align*}
+\begin{blockarray}{cccccccccc}
+x_1 & x_2 & \cdots & x_n & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{\cdots} & \textcolor{blue}{s_m} & b \\
+\begin{block}{[cccc|cccc|c]c}
+a_{1,1} & a_{1,2} & \cdots & a_{1,n} & 1 & 0 & \cdots & 0 & b_1 \\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n} & 0 & 1 & \cdots & 0 & b_2 \\
+\vdots & \vdots & \ddots & \vdots & \ldots & \vdots & \ddots & 0 & \vdots \\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n} & 0 & \vdots & 1 & 0 & b_{m}\\
+\cline{1-10}
+-c_1 & -c_2 & \cdots & -c_n & 0 & 0 & \cdots & 1 & v\\
+\end{block}
+\end{blockarray}.
+\end{align*}
+%
+%
+Givet optimeringsproblemet:
+%
+\begin{align*}
+\begin{array}{lrrlr}
+\text{Maksimer}		&	\multicolumn{2}{c}{z=5x_1+4x_2}  &\\
+\text{begrænset af}	&3x_1& +5x_2			&\leq 	&78,\\
+					&4x_1& + x_2				&\leq	& 36,\\
+					&x_1& , x_2				&\geq	& 0.
+\end{array}
+\end{align*}
+%
+%
+1. Opskriv optimeringsproblemet på standardform med slack variabler.
+%
+Slackvariablerne $s_1,s_2$ og $s_3$ tilføjes. 
+Generelt tager simplex modellen udgangspunkt i at alle variablerne er over positive, og som beskrevet i afsnit \ref{vedjegikke} så tilføjes $x_i^+$ og $x_i^-$ hvis der i optimeringsproblemet ikke er ikke-negativsbetingelse for variablen.
+%
+Optimeringsproblemet for, ser dermed ud på standardform:
+%
+\begin{align*}
+\begin{array}{lrrrrrlr}
+\text{Maksimer}		& -5x_1 &-4x_2 &&& + \textcolor{blue}{s_3} & =0\\
+\text{begrænset af}	&3x_1& +5x_2	& + \textcolor{blue}{s_1} 	&&&= 	&78,\\
+					&4x_1& + x_2	& & + \textcolor{blue}{s_2}	&&=	&	 36,\\
+\end{array}
+\end{align*}
+%& x_1,& x_2, & \textcolor{blue}{s_1}, & \textcolor{blue}{s_1}	&\geq	& 0.
+%
+2.  Opstil simplex-tabllen for optimeringsproblemet		
+% 
+Simplex-tabellen
+%
+\begin{align*}
+\begin{blockarray}{cccccc}
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+\begin{block}{[cc|ccc|c]}
+3 & 5 & 1 & 0 & 0 & 78 \\
+4 & 1 & 0 & 1 & 0 & 36 \\
+\cline{1-6}
+-5 & -4 & 0 & 0 & 1 & 0\\
+\end{block}
+\end{blockarray}.
+\end{align*}
+%
+3.  Tjek optimering og identificer en pivot-variabel
+%
+\begin{align*}
+\begin{blockarray}{cccccc}
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+\begin{block}{[cc|ccc|c]}
+3 & 5 & 1 & 0 & 0 & 78 \\
+4 & 1 & 0 & 1 & 0 & 36 \\
+\cline{1-6}
+\hlight{-5} & -4 & 0 & 0 & 1 & 0\\
+\end{block}
+\end{blockarray}.
+\end{align*}
+%
+\begin{align*}
+\frac{78}{3} =26 \text{  } \text{   } \frac{36}{4} =9
+\end{align*}
+%
+\begin{align*}
+\begin{blockarray}{cccccc}
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+\begin{block}{[cc|ccc|c]}
+3 & 5 & 1 & 0 & 0 & 78 \\
+\hlight{4} & 1 & 0 & 1 & 0 & 36 \\
+\cline{1-6}
+-5 & -4 & 0 & 0 & 1 & 0\\
+\end{block}
+\end{blockarray}.
+\end{align*}	
+%	
+4.  Opstil en ny tabel ved hjælp af pivotering. 
+%
+\begin{align*}
+& \begin{blockarray}{cccccc}
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+\begin{block}{[cc|ccc|c]}
+\hlight{3} & 5 & 1 & 0 & 0 & 78 \\
+4 & 1 & 0 & 1 & 0 & 36 \\
+\cline{1-6}
+\hlight{-5} & -4 & 0 & 0 & 1 & 0\\
+\end{block}
+\end{blockarray} \\
+\xrightarrow[]{R_2 \rightarrow \frac{1}{4} R_2} &
+\begin{blockarray}{cccccc}
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+\begin{block}{[cc|ccc|c]}
+3 & 5 & 1 & 0 & 0 & 78 \\
+1 & \frac{1}{4} & 0 & \frac{1}{4} & 0 & 9 \\
+\cline{1-6}
+-5 & -4 & 0 & 0 & 1 & 0\\
+\end{block}
+\end{blockarray} \\
+\xrightarrow[R_3 \rightarrow R_3 + 5 R_2 ]{R_1 \rightarrow R_1 -3 R_2} &
+\begin{blockarray}{cccccc}
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+\begin{block}{[cc|ccc|c]}
+0 & \frac{17}{4} & 1 & \frac{-3}{4} & 0 & 51 \\
+1 & \frac{1}{4} & 0 & \frac{1}{4} & 0 & 9 \\
+\cline{1-6}
+0 & \frac{-11}{4} & 0 & \frac{5}{4} & 1 & 45\\
+\end{block}
+\end{blockarray}.
+\end{align*}	
+%
+		
+5.  Kør 3 og 4 indtil den optimale løsning er fundet 	
+%
+\begin{align*}
+\begin{blockarray}{cccccc}
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+\begin{block}{[cc|ccc|c]}
+0 & \frac{17}{4} & 1 & \frac{-3}{4} & 0 & 51 \\
+1 & \frac{1}{4} & 0 & \frac{1}{4} & 0 & 9 \\
+\cline{1-6}
+0 & \hlight{\frac{-11}{4}} & 0 & \frac{5}{4} & 1 & 45\\
+\end{block}
+\end{blockarray}
+\end{align*}
 
+%
+\begin{align*}
+\frac{51}{\frac{17}{4}} =12 \text{  } \text{   } \frac{9}{\frac{1}{4}} =36
+\end{align*}
+%
+\begin{align*}
+\begin{blockarray}{cccccc}
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+\begin{block}{[cc|ccc|c]}
+0 & \hlight{\frac{17}{4}} & 1 & \frac{-3}{4} & 0 & 51 \\
+1 & \frac{1}{4} & 0 & \frac{1}{4} & 0 & 9 \\
+\cline{1-6}
+0 & \frac{-11}{4} & 0 & \frac{5}{4} & 1 & 45\\
+\end{block}
+\end{blockarray}
+\end{align*}
 
-\subsection{implementering}
-Der er tre forskellige implementeringer af simplex metoden, den naive, den reviderede, og den fulde matrix implementering. 
+\begin{align*}
+& \begin{blockarray}{cccccc}
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+\begin{block}{[cc|ccc|c]}
+0 & \frac{17}{4} & 1 & \frac{-3}{4} & 0 & 51 \\
+1 & \hlight{\frac{1}{4}} & 0 & \frac{1}{4} & 0 & 9 \\
+\cline{1-6}
+0 & \hlight{\frac{-11}{4}} & 0 & \frac{5}{4} & 1 & 45\\
+\end{block}
+\end{blockarray}\\
+\xrightarrow[]{R_1 \rightarrow \frac{4}{17} R_1} &
+\begin{blockarray}{cccccc}
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+\begin{block}{[cc|ccc|c]}
+0 & 1 & \frac{4}{17} & \frac{-3}{17} & 0 & 12 \\
+1 & \frac{1}{4} & 0 & \frac{1}{4} & 0 & 9 \\
+\cline{1-6}
+0 & \frac{-11}{4} & 0 & \frac{5}{4} & 1 & 45\\
+\end{block}
+\end{blockarray} \\
+\xrightarrow[R_3 \rightarrow R_3 + \frac{11}{4} R_2 ]{R_2 \rightarrow R_2 -\frac{11}{4} R_1} &
+\begin{blockarray}{cccccc}
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+\begin{block}{[cc|ccc|c]}
+0 & 1 & \frac{4}{17} & \frac{-3}{17} & 0 & 12 \\
+1 & 0 & \frac{-1}{17} & \frac{20}{17} & 0 & 6 \\
+\cline{1-6}
+0 & 0 & \frac{11}{17} & \frac{52}{17} & 1 & 78\\
+\end{block}
+\end{blockarray}.
+\end{align*}	
+%
+%
+6.  Identificer den optimale løsning	
+D	
+%
+* simplex-tabel
+* pivotering 
+cykling 
