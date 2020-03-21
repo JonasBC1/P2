@@ -18,9 +18,12 @@ Bemærk, at problemet på standardform er et maksimumsproblem, og betingelserne 
 For at omskrive et minimumsproblem til et maksimumsproblem multipliceres objektfunktionen med $-1$.
 Ulighedsbetingelserne ændres ligeledes fra $A_ix_i \geq b_i$ til $-A_ix_i \leq -b_i$.
 \\\\
-For at få et givet problem med ulighedsbetingelser på standardform tilføjes \textit{slack-variable} til venstre side af ulighederne for at gøre dem til ligheder.
+%
+For at få et givet problem med ulighedsbetingelser på standardform tilføjes \textit{slack-variable} til venstre side af ulighederne for at gøre dem til ligheder. 
+Hvis optimeringsproblemet har $m$ uligheder tilføjes $m$ slack-variabler.
 I denne rapport noteres slack-variabler $s_i$.
 Variabler, der ikke har en ikke-negativsbegrænsning, opdeles i $x_i^+$ og $x_i^-$, da alle reelle tal kan skrives som differensen mellem to positive tal.
+Dertil isoleres objektfunktionen så $z$ er positiv på ventre side af lighedstegnet og sættes lig nul.
 Med denne fremgangsmåde kan alle lineære optimeringsproblemer omskrives til standardform.
 Det er derfor kun nødvendigt med en metode til at løse optimeringsproblemer på denne form.
 %

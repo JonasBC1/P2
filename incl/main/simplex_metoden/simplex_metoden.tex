@@ -29,10 +29,12 @@ Som nævnt tidligere i rapporten, så findes der en optimal løsning til et line
 %\subsection{Implementering}
 %Der er tre forskellige implementeringer af simplex metoden, den naive, den reviderede, og den fulde matrix implementering. 
 %
+% -------------------------------------------------------------------------
+% Noget introducerende
 %
-\section{Pseudokode}
-% 
-% Noget introducerende 
+Simplex-metoden tager udgangspunkt i følgende steps: 
+%
+\begin{col}{}{}
 %
 \begin{enumerate}
 \item Opskriv optimeringsproblemet på standardform med slack variabler.  %1
@@ -43,27 +45,19 @@ Som nævnt tidligere i rapporten, så findes der en optimal løsning til et line
 \item Identificer den optimale løsning									 %6
 \end{enumerate}
 %
-% Motiverende overgang 
+\end{col}
+\noindent
 %
+I følgende afsnit vil disse punkter, samt tilhørende teori blive uddybet. 
+Dette gøres med udgangspunkt i følgende eksempel: 
 %
-\textcolor{myblue}{fisk}
+\\
 %
-\begin{align*}
-\begin{blockarray}{cccccccccc}
-x_1 & x_2 & \cdots & x_n & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{\cdots} & \textcolor{blue}{s_m} & b \\
-\begin{block}{[cccc|cccc|c]c}
-a_{1,1} & a_{1,2} & \cdots & a_{1,n} & 1 & 0 & \cdots & 0 & b_1 \\
-a_{2,1} & a_{2,2} & \cdots & a_{2,n} & 0 & 1 & \cdots & 0 & b_2 \\
-\vdots & \vdots & \ddots & \vdots & \ldots & \vdots & \ddots & 0 & \vdots \\
-a_{m,1} & a_{m,2} & \cdots & a_{m,n} & 0 & \vdots & 1 & 0 & b_{m}\\
-\cline{1-10}
--c_1 & -c_2 & \cdots & -c_n & 0 & 0 & \cdots & 1 & v\\
-\end{block}
-\end{blockarray}.
-\end{align*}
+\begin{eks}
+\label{haribooooo}
 %
-%
-Givet optimeringsproblemet:
+Haribos hindbær, brumbær blanding ønsker at finde det mest optimale forhold mellem de to vingummismage, med udgangspunkt i en række betingelser. 
+Optimeringsproblemet der dermed ud som følgende:
 %
 \begin{align*}
 \begin{array}{lrrlr}
@@ -74,30 +68,59 @@ Givet optimeringsproblemet:
 \end{array}
 \end{align*}
 %
+\end{eks}
+
+\subsubsection{1. Opskriv optimeringsproblemet på standardform med slack variabler.}
 %
-1. Opskriv optimeringsproblemet på standardform med slack variabler.
-%
-Slackvariablerne $s_1,s_2$ og $s_3$ tilføjes. 
-Generelt tager simplex modellen udgangspunkt i at alle variablerne er over positive, og som beskrevet i afsnit \ref{vedjegikke} så tilføjes $x_i^+$ og $x_i^-$ hvis der i optimeringsproblemet ikke er ikke-negativsbetingelse for variablen.
-%
-Optimeringsproblemet for, ser dermed ud på standardform:
+Generelt tager simplex modellen udgangspunkt i at alle variablerne er positive, og som beskrevet i afsnit \ref{sec:standard} så tilføjes $x_i^+$ og $x_i^-$, hvis der i optimeringsproblemet ikke er ikke-negativsbetingelser for variablen. 
+I dette tilfælde er begge variabler positive og der er derfor ikke nødvendigt at opdele variablen. 
+Med udgangspunkt i fremgangsmetoden fra afsnit \ref{sec:standard} så opstilles optimeringsproblemet derfor på standardform som
 %
 \begin{align*}
 \begin{array}{lrrrrrlr}
-\text{Maksimer}		& -5x_1 &-4x_2 &&& + \textcolor{blue}{s_3} & =0\\
+\text{Maksimer}		& -5x_1 &-4x_2 &&& + z & =0\\
 \text{begrænset af}	&3x_1& +5x_2	& + \textcolor{blue}{s_1} 	&&&= 	&78,\\
 					&4x_1& + x_2	& & + \textcolor{blue}{s_2}	&&=	&	 36,\\
 \end{array}
 \end{align*}
-%& x_1,& x_2, & \textcolor{blue}{s_1}, & \textcolor{blue}{s_1}	&\geq	& 0.
 %
-2.  Opstil simplex-tabllen for optimeringsproblemet		
+Slack-variablerne $s_1$ og $s_2$ er her markeret med blå, da de i sidste ende ikke tilføjes til løsningen. 
+%
+\subsubsection{2. Opstil simplex-tabllen for optimeringsproblemet}		
 % 
-Simplex-tabellen
+Nu opstilles \textit{simplex-tabellen} for optimeringsproblemet. 
+Med udgangspunkt i et generelt lineært optimeringsproblem på formen
+\begin{align*}
+\begin{array}{lrl}
+\text{Maksimér}		&-\textbf{c}^T\textbf{x} + z	& =v, \text{ hvor } v=0		\\
+\text{begrænset af}	&A\textbf{x}	&=\mathbf{b},	\\
+					&\mathbf{x}				&\geq \mathbf{0},
+\end{array}
+\end{align*}
+er simplex-tabellen en matrix, som indeholder de lineære betingelser, slack-variablerne og objektfunktionen. 
+Matrix $\mathbf{A}$ opskrives først, og derefter opskrives identitesmatricen $e_{m+1}$, hvor $m$ er lig mængden af slackvariabler plus en, og til sidst opskrives $\mathbf{b}$. 
+Under matrix $\mathbf{A}$ tilføjes matrix $- \mathbf{c}^T$. 
+En generelt formel på simplex-tabellen med udgangspunkt i forrige optimeringsproblem ser dermed ud som følgende:
+%
+\begin{align*}
+\begin{blockarray}{ccccccccccc}
+x_1 & x_2 & \cdots & x_n & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} &  \textcolor{blue}{\cdots} & \textcolor{blue}{s_m} & z & b \\
+\begin{block}{[cccc|ccccc|c]c}
+a_{1,1} & a_{1,2} & \cdots & a_{1,n} & 1 & 0 & \cdots & 0 & 0 & b_1 \\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n} & 0 & 1 & \cdots & 0 & 0 & b_2 \\
+\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n} & 0 & 0 & \cdots  & 1  & 0 & b_{m}\\
+\cline{1-10}
+-c_1 & -c_2 & \cdots & -c_n & 0 & 0 & \cdots & 0 & 1 & v\\
+\end{block}
+\end{blockarray}.
+\end{align*}
+%
+Optimeringsproblemet fra eksempel \ref{haribooooo} har dermed følgende simplex-tabel:
 %
 \begin{align*}
 \begin{blockarray}{cccccc}
-x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \begin{block}{[cc|ccc|c]}
 3 & 5 & 1 & 0 & 0 & 78 \\
 4 & 1 & 0 & 1 & 0 & 36 \\
@@ -107,11 +130,14 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3
 \end{blockarray}.
 \end{align*}
 %
-3.  Tjek optimering og identificer en pivot-variabel
+\subsubsection{3. Tjek optimering og identificer en pivot-variabel}
+%
+Først tjekkes der efter optimering, og dette gøres ved at finde den største negative tal i objektfunktionen, altså nederste række i simplex-tabellen. 
+Nedenstående er denne markeret:
 %
 \begin{align*}
 \begin{blockarray}{cccccc}
-x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \begin{block}{[cc|ccc|c]}
 3 & 5 & 1 & 0 & 0 & 78 \\
 4 & 1 & 0 & 1 & 0 & 36 \\
@@ -121,13 +147,19 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3
 \end{blockarray}.
 \end{align*}
 %
+Denne markerer \textit{pivot-søjlen}. 
+Herefter findes \textit{pivot-variablen} og \textit{pivot-rækken}, ved at finde den mindste $x_i$-værdi ud fra 
+\begin{align*}
+\frac{a_{i,j}}{b_j}=x_i
+\end{align*}
+%
 \begin{align*}
 \frac{78}{3} =26 \text{  } \text{   } \frac{36}{4} =9
 \end{align*}
 %
 \begin{align*}
 \begin{blockarray}{cccccc}
-x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \begin{block}{[cc|ccc|c]}
 3 & 5 & 1 & 0 & 0 & 78 \\
 \hlight{4} & 1 & 0 & 1 & 0 & 36 \\
@@ -141,7 +173,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3
 %
 \begin{align*}
 & \begin{blockarray}{cccccc}
-x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \begin{block}{[cc|ccc|c]}
 \hlight{3} & 5 & 1 & 0 & 0 & 78 \\
 4 & 1 & 0 & 1 & 0 & 36 \\
@@ -151,7 +183,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3
 \end{blockarray} \\
 \xrightarrow[]{R_2 \rightarrow \frac{1}{4} R_2} &
 \begin{blockarray}{cccccc}
-x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \begin{block}{[cc|ccc|c]}
 3 & 5 & 1 & 0 & 0 & 78 \\
 1 & \frac{1}{4} & 0 & \frac{1}{4} & 0 & 9 \\
@@ -161,7 +193,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3
 \end{blockarray} \\
 \xrightarrow[R_3 \rightarrow R_3 + 5 R_2 ]{R_1 \rightarrow R_1 -3 R_2} &
 \begin{blockarray}{cccccc}
-x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \begin{block}{[cc|ccc|c]}
 0 & \frac{17}{4} & 1 & \frac{-3}{4} & 0 & 51 \\
 1 & \frac{1}{4} & 0 & \frac{1}{4} & 0 & 9 \\
@@ -176,7 +208,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3
 %
 \begin{align*}
 \begin{blockarray}{cccccc}
-x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \begin{block}{[cc|ccc|c]}
 0 & \frac{17}{4} & 1 & \frac{-3}{4} & 0 & 51 \\
 1 & \frac{1}{4} & 0 & \frac{1}{4} & 0 & 9 \\
@@ -193,7 +225,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3
 %
 \begin{align*}
 \begin{blockarray}{cccccc}
-x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \begin{block}{[cc|ccc|c]}
 0 & \hlight{\frac{17}{4}} & 1 & \frac{-3}{4} & 0 & 51 \\
 1 & \frac{1}{4} & 0 & \frac{1}{4} & 0 & 9 \\
@@ -205,7 +237,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3
 
 \begin{align*}
 & \begin{blockarray}{cccccc}
-x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} &z & b \\
 \begin{block}{[cc|ccc|c]}
 0 & \frac{17}{4} & 1 & \frac{-3}{4} & 0 & 51 \\
 1 & \hlight{\frac{1}{4}} & 0 & \frac{1}{4} & 0 & 9 \\
@@ -215,7 +247,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3
 \end{blockarray}\\
 \xrightarrow[]{R_1 \rightarrow \frac{4}{17} R_1} &
 \begin{blockarray}{cccccc}
-x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \begin{block}{[cc|ccc|c]}
 0 & 1 & \frac{4}{17} & \frac{-3}{17} & 0 & 12 \\
 1 & \frac{1}{4} & 0 & \frac{1}{4} & 0 & 9 \\
@@ -225,7 +257,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3
 \end{blockarray} \\
 \xrightarrow[R_3 \rightarrow R_3 + \frac{11}{4} R_2 ]{R_2 \rightarrow R_2 -\frac{11}{4} R_1} &
 \begin{blockarray}{cccccc}
-x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3} & b \\
+x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \begin{block}{[cc|ccc|c]}
 0 & 1 & \frac{4}{17} & \frac{-3}{17} & 0 & 12 \\
 1 & 0 & \frac{-1}{17} & \frac{20}{17} & 0 & 6 \\
@@ -237,7 +269,13 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & \textcolor{blue}{s_3
 %
 %
 6.  Identificer den optimale løsning	
-D	
+Den optimale løsning er dermed 
+
+\begin{align*}
+x_1 & = 6 \\
+x_2 & = 12 \\
+z   & = 78.
+\end{align*}
 %
 * simplex-tabel
 * pivotering 
