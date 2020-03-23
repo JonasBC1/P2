@@ -79,8 +79,8 @@ Begræsninger & $\leq c_j$ & $\geq 0$   & Variable     \\
              & $=c_j$     & fri        &             
 \end{tabular}
 \end{center}
+\captionof{table}{Oversigt over egenskaber ved primærproblemet og dettes dual.} 
 %\captionof{tabular}{Fisk finder i på noget.}
-% Der mangler noget tabeltekst ved ikke lige hvordan spørg MADS xD
 \end{table}
 \noindent
 %
@@ -105,7 +105,7 @@ Dualproblemet vil således have denne form:
 	% Julie: Tænker v? var det ikke det du skrev i den forrige?
 \begin{align*}
 \begin{array}{lrrlr}
-\text{Minimer}		&	\multicolumn{2}{c}{z=78p_1+36_p2}  &\\
+\text{Minimer}		&	\multicolumn{2}{c}{z=78p_1+36p_2}  &\\
 \text{begrænset af}	&3p_1& +4p_2			&\geq 	&5,\\
 					&5p_1& + p_2				&\geq	& 4,\\
 					&p_1& , p_2				&\geq	& 0.
@@ -114,27 +114,28 @@ Dualproblemet vil således have denne form:
 Hvor problemet her istedet er at minimere indholdet af sukker og kulhydrater begrænset af forholdet mellem to typer slik i en slikpose.
 %?? Julie skal have lidt mere forklaring af dine begrænsninger for at komme i mål her.
 %
-Løses dette ved hjælp af simplex-algoritmen opnås følgende tabel:
-\begin{align*}
-\begin{blockarray}{cccccc}
-p_1 & p_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
-\begin{block}{[cc|ccc|c]}
-3 & 4 & 1 & 0 & 0 & 5 \\
-5 & 1 & 0 & 1 & 0 & 4 \\
-\cline{1-6}
-78 & 36 & 0 & 0 & 1 & 0\\
-\end{block}
-\end{blockarray}
-\end{align*}
+%Løses dette ved hjælp af simplex-algoritmen opnås følgende tabel:
+%\begin{align*}
+%\begin{blockarray}{cccccc}
+%p_1 & p_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
+%\begin{block}{[cc|ccc|c]}
+%3 & 4 & 1 & 0 & 0 & 5 \\
+%5 & 1 & 0 & 1 & 0 & 4 \\
+%\cline{1-6}
+%78 & 36 & 0 & 0 & 1 & 0\\
+%\end{block}
+%\end{blockarray}
+%\end{align*}
 %skal have lidt hjælp til at omskrive problemet til standardform simplex(det er bare fortegn jeg er i tvivl om, har et program der udføre algoritmen, så er good to go bagefter)
 %
 %her skal løst simplex smides ind
 %
-Som det fremgår findes minimum i samme punkt:
-$z=78$ hvor $p_1$ og $p_2$ slackvariable $s_1=6$ og $s_2=12$
+%Som det fremgår findes minimum i samme punkt:
+%$z=78$ hvor $p_1$ og $p_2$ slackvariable $s_1=6$ og $s_2=12$
 %
 \end{eks}
-Som det fremgår i eksemplet har løsningen på dualproblemet samme optimale løsning, hvor slackvariable her er løsningen på det oprindelige problem.
+%hvis nedenstående skal med skal simplex udføres på tabellen
+%Som det fremgår i eksemplet har løsningen på dualproblemet samme optimale løsning, hvor slackvariable her er løsningen på det oprindelige problem.
 Det gælder endvidere at der fra dualproblemet kan vendes tilbage til det oprindelige problem hvilket udtrykkes ved følgende sætning:
 \begin{thm}{}{dualitetsaet}
 Hvis dualproblemet omdannes til et ækvivalent minimumsproblem og dualproblemet af dette dannes, opnås det oprindelige problem.
