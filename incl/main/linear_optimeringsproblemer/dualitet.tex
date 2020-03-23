@@ -83,9 +83,11 @@ Begræsninger & $\leq c_j$ & $\geq 0$   & Variable     \\
 % Der mangler noget tabeltekst ved ikke lige hvordan spørg MADS xD
 \end{table}
 \noindent
-Dual problemet kan således opstilles som i eksempel \ref{eks:dual} \\
 %
-\begin{eks}{dual}{}
+Dual problemet kan således opstilles som i eksempel \ref{dual} \\
+%
+\begin{eks}
+\label{dual}
 %
 Betragt diæt problemet fra afsnittet om simplexmetoden:
 %
@@ -112,7 +114,7 @@ Dualproblemet vil således have denne form:
 Hvor problemet her istedet er at minimere indholdet af sukker og kulhydrater begrænset af forholdet mellem to typer slik i en slikpose.
 %?? Julie skal have lidt mere forklaring af dine begrænsninger for at komme i mål her.
 %
-Løses dette ved hjælp af simplex-algoritmen opnåes følgende tabel:
+Løses dette ved hjælp af simplex-algoritmen opnås følgende tabel:
 \begin{align*}
 \begin{blockarray}{cccccc}
 p_1 & p_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
@@ -133,9 +135,9 @@ $z=78$ hvor $p_1$ og $p_2$ slackvariable $s_1=6$ og $s_2=12$
 %
 \end{eks}
 Som det fremgår i eksemplet har løsningen på dualproblemet samme optimale løsning, hvor slackvariable her er løsningen på det oprindelige problem.
-Det gælder endvidere at der fra dualproblemet kan vendes tilbage til det oprindlige problem hvilket udtrykkes ved følgende sætning:
+Det gælder endvidere at der fra dualproblemet kan vendes tilbage til det oprindelige problem hvilket udtrykkes ved følgende sætning:
 \begin{thm}{}{dualitetsaet}
-Hvis dualproblemet omdannes til et ækvivalent minimumsproblem og dualproblemet af dette dannes, opnåes det oprindlige problem.
+Hvis dualproblemet omdannes til et ækvivalent minimumsproblem og dualproblemet af dette dannes, opnås det oprindelige problem.
 \end{thm}
 \begin{proof}
 Betragt problemet:
