@@ -7,10 +7,12 @@ For at garantere at simplex metoden stopper ved en optimal værdi, og ikke forts
 
 Før den \textit{lexicografiske} metode at vælge pivot søjler på introduceres, så er det nødvendigt at definere lexicografi
 \begin{defn}{}{}
-En vektor $\textbf{u}\in \R^n$ er \textbf{lexicografisk større}, eller mindre end en vektor $\textbf{v}\in \R^n$, hvis $\textbf{v} \neq \textbf{u}$ og den første ikke-nul indgang i $\textbf{u}-\textbf{v}$ er henholdsvis positiv eller negativ.
+En vektor $\textbf{u}\in \R^n$ er \textbf{lexicografisk større}, eller mindre end en vektor $\textbf{v}\in \R^n$, hvis $\textbf{v} \neq \textbf{u}$ og den første ikke-nul indgang i $\textbf{u}-\textbf{v}$ er henholdsvis positiv eller negativ. Dette noters\\
+\center
+$\textbf{u} >^L \textbf{v}$ eller $\textbf{u} <^L \textbf{v}$. 
 \end{defn}
 \noindent
-Et eksempel på lexicografi ses i eksempel \ref{eks:lexi}
+Hvis det første ikke-nul element af en vektor er positiv, så siges vektoren at være lexciografisk positiv, og negativ hvis den er negativ. Et eksempel på lexicografi ses i eksempel \ref{eks:lexi}
 
 \begin{eks}\label{eks:lexi}
 Givet vektorerne
@@ -46,9 +48,32 @@ Lad $\textbf{u}$ være den $j$'te søjle af tabulaen.
 \end{enumerate}
 Det følger at enhver valg af pivotering ved den lexicografiske metode er unik, da der ellers ville gælde at der var en anden række som var proportional med den valgte række. Dette er i strid med antagelsen om at rækkerne er lineært uafhængige, hvilket er bevist er tilfældet.
 
-
-%Der er en sætning som jeg nok skal lave, men jeg har bare brug for at diskutere med nogen hvad det vil sige at noget er lexigrafisk positiv
-
+\begin{thm}{}{}
+Antag at simplex metoden starter med at alle rækker af en simplex tabula, foruden den nulte række, er lexciografisk positiv. Hvis den lexicografiske metode at vælge pivotering er fulgt, så gælder:
+\begin{enumerate}[label=(\alph*)]
+\item Alle rækkerne, foruden den nulte række, forbliver lexciografiske positve gennem algoritmen.
+\item Den nulte række vokser strengt lexicografisk for hver iteration.
+\item Simplex metoden stopper efter et endeligt antal iterationer. 
+\end{enumerate}
+\end{thm}
+%
+\begin{proof}
+Antag at alle rækkerne af en simplex tabula, udover den nulte række, er lexicografisk positiv i begyndelsen af en iteration af simplex. 
+Antag dernæst at $x_j$ kommer ind i løsningen og pivot rækken er den $l$'te række, så gælder det per den lexciografiske metode at
+$$\dfrac{l\text{'te række}}{u_l}<^L \dfrac{i\text{'te række}}{u_i}, \text{  hvis } i\neq l \text{ og }u_i>0.$$
+For at bestemme den nye tabula, divideres den $l$'te række med den positive variabel $u_l$ og forbliver dermed lexciografisk positiv.
+For rækker $i$ hvor $u_i<0$, skal der ligges et positiv antal af pivot rækken til for at få den $i,j$'te indgang til at give nul. 
+Grundet begge rækkers lexciografiske positivitet, er den resulterende række også lexciografisk positiv.
+For rækker $i$ hvor $u_i>0$ og $i\neq l$, haves
+$$\text{(nye }i\text{'te række)}=\text{(gamle }i\text{'te række)}-\dfrac{u_i}{u_l}\text{(gamle }l\text{'te række)}.$$
+Grundet den tidligere ulighed som opfyldes af de gamle rækker, vides det at den nye $i$te række også er lexciografisk positiv.
+\\
+I begyndelsen af hver iteration, er pivot værdien i den nulte række negativ, så der skal ligges et positiv antal af pivot rækken til. 
+Da pivot rækken er lexciografisk postiv, stiger den nulte række lexciografisk.
+\\
+Eftersom den nulte rækker stige lexciografisk for hver iteration, kan den aldrig returnere til en tidligere værdi.
+Eftersom den nulte række er bestemt unik ud fra nuværende basis, så kan intet basis gentage sig selv, og derfor må simplex metoden stoppe efter en endelig antal iterationer.
+\end{proof}
 %Jeg tror ikke Bland's regel er relevant for os medmindre at vi skriver om den revidererde simpelx metode.
 %\subsection{Bland's regel}
 %En anden metode
