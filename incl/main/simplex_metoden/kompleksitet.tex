@@ -1,2 +1,24 @@
 \section{Kompleksitet}
 % he
+Det være interessant at kigge på hvor hurtigt det kan forventes, at simplex-metoden giver et resultat, altså simplex-metodens kompleksitet.
+Til at beskrive dette, vil der blive brugt \textit{store-$O$} notation.
+%
+\begin{defn}{}{}
+Lad $f(x)$ og $g(x)$ være vilkårlige funktioner. $f(x)$ er \textbf{store-$O$} af $g(x)$, hvis der eksisterer et $C$ og $k$ således, at $|f(x)| \leq C|g(x)|, x \geq k$. $C$ og $k$ kaldes \textbf{vidner}.
+\end{defn}\noindent
+%
+Der er flere måder at implementerer simplex-metoden, hver med sin egen kompleksitet.
+De to implementeringer der vil blive betragtet i dette afsnit er \textit{fuld tabel} og \textit{den reviderede} simplex-metode.
+%
+\subsection{Kompleksitet af en enkelt iteration}
+%
+Fuld tabel metoden kræver et konstant antal af operationer for at opdatere indgangene i simplex-matricen.
+Derfor er antallet af operationer proportionalt med størrelsen på matricen og kompleksiteten $O(mn)$.
+Den reviderede metode bruger lignende operationer, men opdaterer kun $O(m^2)$ indgange og har derfor kompleksiteten $O(m^2)$.
+Det kan dog forekomme, at metoden skal opdatere alle variabler.
+Hver udregning af en variable kræver $O(m)$ operationer, hvilket medfører, at i værste tilfælde bruges $O(mn)$ operationer.
+Da $m \leq n$ haves, at kompleksiteten i værste tilfælde er $O(mn)$ for begge metoder.
+Med dette konkluderes det, at den reviderede metode aldrig vil køre langsommere end fuld tabel metoden.
+Dog vil en iteration fra den reviderede metode være hurtigere i alle andre end det værste tilfælde.
+Endnu et vigtigt element, som er tiltalende ved den reviderede metode, er rumkompleksiteten på $O(m^2)$, hvor fuld tabel metodens er på $O(mn)$.
+Her kan der igen være en ret betydelig forskel afhængigt af størrelsen på $n$.
