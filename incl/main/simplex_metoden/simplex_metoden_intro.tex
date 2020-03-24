@@ -1,36 +1,10 @@
 Som nævnt tidligere i rapporten, så findes der en optimal løsning til et lineært ligningssystem på standard form, så længe der findes mindst én basal mulig løsning. 
 \textit{Simplex metoden} benytter sig af denne egenskab og forsøger at finde den optimale løsning for en lineært ligningssystem på standard form.
 %
-%Før simplex metoden bliver præsenteret, skal nogle begreber introduceres.
-%
-%
-%Når der undersøges om der findes en nabo punkt hvis løsning er bedre, så er det ikke nødvendigt at undersøge i retningen som leder ud af den basal mulige område.
-%
-%\begin{defn}{}{}
-%Lad $\textbf{x}$ være et element af en polyede $P$.
-%En vektor $\textbf{d}\in \R^n$ siges at være en mulig retning fra $\textbf{x}$, hvis der eksister en positiv skalar $\theta$, sådan at $x+\theta \textbf{d}\in P$
-%\end{defn}
-%
-%Simplex-metoden er en metode til at løse lineære optimeringsproblemer.
-%Metoden er bygget til at håndterer problemer på standardform.
-%mOTIVERENDE Tkst\\\\
-%%
-%Simplex metoden udfører i grove træk følgende operationer:
-%%
-%\begin{enumerate}
-%\item Et ekstremum $x$ vælges inde for løsningsmængden.
-%\item
-%\item
-%\end{enumerate}
-%
-%
-%\subsection{Implementering}
-%Der er tre forskellige implementeringer af simplex metoden, den naive, den reviderede, og den fulde matrix implementering. 
-%
 % -------------------------------------------------------------------------
 % Noget introducerende
 %
-\section{Simplex-metoden på praktisk problem}
+\section{Simplex metoden på praktisk problem}
 Simplex-metoden tager overordnet udgangspunkt i følgende steps: 
 %
 \begin{col}{}{}
@@ -202,7 +176,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 %	
 \subsubsection{4. Opstil en ny tabel ved hjælp af pivotering}
 %
-Med udgangspunkt i de elementære rækkeopperationer, se definition \ref{defn:element}, og Gauss-elimination, se afsnit \ref{gauss}, skaleres pivotindgangen til 1, og der skabes nuller under og over pivotindgangen ved hjælp af rækkeudskriftning. 
+Med udgangspunkt i de elementære rækkeopperationer, se definition \ref{defn:element}, og Gauss-elimination, se afsnit \ref{gauss}, skaleres pivotindgangen til 1, og der skabes nuller under og over pivotindgangen ved hjælp af rækkeudskriftning.
 Nedenstående ses dette gjort for eksemplet:
 %
 %& \begin{blockarray}{cccccc}
@@ -241,6 +215,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \subsubsection{5. Kør 3 og 4 indtil den optimale løsning er fundet}
 %
 Denne proces forsættes nu indtil der ikke er flere negative tal i objektfunktionen.
+\textit{Pivotering} er processen fra valget af den største negative værdi i objektfunktionen til at en ny værdi i objektfunktionen kan vælges. 
 Der tjekkes derfor efter optimering igen, og en ny pivotindgang er valgt ved det største negative værdi. 
 Denne er markeret i nedenstående matrix:	
 %
