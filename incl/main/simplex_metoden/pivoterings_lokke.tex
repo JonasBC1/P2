@@ -2,18 +2,20 @@
  Der er en risiko for ved degenererede basale løsninger, at simplex metoden blot skifter variabler ind og ud af basis, sådan at den sidder fast i en uendelig løkke.  
 For at garantere at simplex metoden stopper ved en optimal værdi, og ikke fortsætter med at pivotere uendeligt, så kan der indføres forskellige regler for hvilken variabel som skal komme ind i løsningen.
 
-\subsection{lexicografi}
+\subsection{Lexicografi}
 %ingen ide om det hedder lexicografi på dansk men skiver det indtil videre
 
 Før den \textit{lexicografiske} metode at vælge pivot søjler på introduceres, så er det nødvendigt at definere lexicografi
 \begin{defn}{}{}
-En vektor $\textbf{u}\in \R^n$ er \textbf{lexicografisk større}, eller mindre end en vektor $\textbf{v}\in \R^n$, hvis $\textbf{v} \neq \textbf{u}$ og den første ikke-nul indgang i $\textbf{u}-\textbf{v}$ er henholdsvis positiv eller negativ. Dette noters\\
-\center
-$\textbf{u} >^L \textbf{v}$ eller $\textbf{u} <^L \textbf{v}$. 
+En vektor $\textbf{u}\in \R^n$ er \textbf{lexicografisk større}, eller mindre end en vektor $\textbf{v}\in \R^n$, hvis $\textbf{v} \neq \textbf{u}$ og den første ikke-nul indgang i $\textbf{u}-\textbf{v}$ er henholdsvis positiv eller negativ. Dette noters
+\begin{align*}
+\textbf{u} >^L \textbf{v} \text{ eller } \textbf{u} <^L \textbf{v}.
+\end{align*} 
 \end{defn}
 \noindent
-Hvis det første ikke-nul element af en vektor er positiv, så siges vektoren at være lexciografisk positiv, og negativ hvis den er negativ. Et eksempel på lexicografi ses i eksempel \ref{eks:lexi}
-
+Hvis det første ikke-nul element af en vektor er positiv, så siges vektoren at være lexciografisk positiv, og negativ hvis den er negativ. Et eksempel på lexicografi ses i eksempel \ref{eks:lexi}.
+\\
+%
 \begin{eks}\label{eks:lexi}
 Givet vektorerne
 $$\textbf{u}=
@@ -67,10 +69,10 @@ Grundet begge rækkers lexciografiske positivitet, er den resulterende række og
 For rækker $i$ hvor $u_i>0$ og $i\neq l$, haves
 $$\text{(nye }i\text{'te række)}=\text{(gamle }i\text{'te række)}-\dfrac{u_i}{u_l}\text{(gamle }l\text{'te række)}.$$
 Grundet den tidligere ulighed som opfyldes af de gamle rækker, vides det at den nye $i$te række også er lexciografisk positiv.
-\\
+%
 I begyndelsen af hver iteration, er pivot værdien i den nulte række negativ, så der skal ligges et positiv antal af pivot rækken til. 
 Da pivot rækken er lexciografisk postiv, stiger den nulte række lexciografisk.
-\\
+%
 Eftersom den nulte rækker stige lexciografisk for hver iteration, kan den aldrig returnere til en tidligere værdi.
 Eftersom den nulte række er bestemt unik ud fra nuværende basis, så kan intet basis gentage sig selv, og derfor må simplex metoden stoppe efter en endelig antal iterationer.
 \end{proof}
