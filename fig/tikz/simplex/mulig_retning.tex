@@ -1,0 +1,73 @@
+\begin{center}
+%
+\begin{tikzpicture}[scale=8]
+%
+% Koordinater
+% -------------------------------------------------------
+\coordinate (a) at (0,0,0); 
+\coordinate (a1) at (0.084,0,0);
+\coordinate (a2) at (0,0.084,0);
+\coordinate (a3) at (0.07,0.07,0);
+%
+\coordinate (b) at (0.7,0,0); 
+\coordinate (c) at (0.393,0.55,0); 
+%
+\coordinate (e) at (0.066,0.434,0);
+\coordinate (e1) at (0.15,0.46,0);
+\coordinate (e2) at (0.025,0.35,0);
+\coordinate (e3) at (0.094,0.36,0);
+\coordinate (e4) at (0.14,0.4,0);
+%
+\coordinate (g) at (0,0.305,0);
+%
+\coordinate (m) at (0.35,0.15,0);
+\coordinate (m1) at (0.31,0.066,0);
+\coordinate (m2) at (0.31,0.234,0);
+\coordinate (m3) at (0.266,0.15,0);
+\coordinate (m4) at (0.434,0.15,0);
+\coordinate (m5) at (0.39,0.066,0);
+\coordinate (m6) at (0.39,0.234,0);
+%
+% Farvning
+% -------------------------------------------------------
+\filldraw[fill=myblue,opacity=0.3](a)--(b)--(c)--(e)--(g)--(a);
+%
+\draw[thick, color= myblue](a)--(b); 
+\draw[thick, color= myblue](c)--(b);
+\draw[thick, color= myblue](a)--(g);
+\draw[thick, color= myblue](c)--(e);
+\draw[thick, color= myblue](e)--(g);
+%
+% Punkt A
+% -------------------------------------------------------
+\draw[very thick,->](a)--(a1);
+\draw[very thick,->](a)--(a2);
+\draw[very thick,->](a)--(a3);
+%
+%
+% Punkt E
+% -------------------------------------------------------
+\draw[very thick,->](e)--(e1);
+\draw[very thick,->](e)--(e2);
+\draw[very thick,->](e)--(e3);
+\draw[very thick,->](e)--(e4);
+%
+% Punkt Mid
+% -------------------------------------------------------
+\draw[very thick,->](m)--(m1);
+\draw[very thick,->](m)--(m2);
+\draw[very thick,->](m)--(m3);
+\draw[very thick,->](m)--(m4);
+\draw[very thick,->](m)--(m5);
+\draw[very thick,->](m)--(m6);
+%
+% Punkterne 
+% -------------------------------------------------------
+\filldraw [black] (0.35,0.35,0) circle (0pt) node[above] {$\mathcal{P}$};
+%
+%
+\end{tikzpicture}
+  \captionof{figure}{Vektorerne $\mathbf{x}_1, \mathbf{x}_2$ og $\mathbf{x}_3$, samt tilhørende forskellige mulige retninger, som stadig er indholdt i polyederet $\mathcal{P}$.}
+  \label{fig:julieersmuuuuuk}
+\end{center}
+%
