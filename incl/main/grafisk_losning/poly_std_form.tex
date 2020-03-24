@@ -29,8 +29,9 @@ Dette implicerer, da det forrige gælder,  at
 %
 $$\sum_{i=1}^{m}\textbf{A}_{B(i)}x_{B(i)}=\sum_{i=1}^{n}\textbf{A}_ix_i=A\textbf{x}=\textbf{b}.$$
 %
-Da søjlerne $\textbf{A}_{B(i)}x_{B(i)}$ for $i=1,\ldots,m$ er lineært uafhængige, kan $x_{B(1)},\ldots,x_{B(m)}$ bestemmes entydigt. 
+Da søjlerne $\textbf{A}_{B(i)}$ for $i=1,\ldots,m$ er lineært uafhængige, kan $x_{B(1)},\ldots,x_{B(m)}$ bestemmes entydigt. 
 Altså har ligningssystemet skabt af de aktive begrænsninger en entydig løsning.
+%x_{B(i)} fra "da søjlerne ..." 
 Jævnfør sætning \ref{thm:betingi},
 % Ved ikke om denne reference er rigtig xD
 følger det, at der er $n$ aktive begrænsninger, hvoraf $\mathbf{x}$ er en basal løsning. 
@@ -68,8 +69,8 @@ Hvis løsningen, der er konstrueret af denne procedure, er ikke-negativ, så er 
 Det bevises nu, at antagelsen om at rækkerne var lineært uafhængige, kunne fortages.
 \begin{thm}{}{julieerfantalastisk}
 Lad $P=\{\textbf{x} \mid  A\textbf{x}=\textbf{b},x\geq 0\}$ være et ikke-tom polyeder, hvor $A$ er en $m \times n$ matrix med rækker $\textbf{a}^{T}_{1},\ldots,\textbf{a}^{T}_{m}$.
-Antag, at rang$(A)=k<m$ og at rækkerne $\textbf{a}^T_{i1},\ldots,\textbf{a}^T_{ik}$ er lineært uafhængige. Givet polyederet 
-$$Q=\{x \mid \textbf{a}^T_{i1}x=b_{i1},\ldots,\textbf{a}^T_{ik}x=b_{ik}, x \geq 0  \}$$ 
+Antag, at rang$(A)=k<m$ og at rækkerne $\textbf{a}^T_{i_1},\ldots,\textbf{a}^T_{i_k}$ er lineært uafhængige. Givet polyederet 
+$$Q=\{\textbf{x} \mid \textbf{a}^T_{i1}\textbf{x}=b_{i1},\ldots,\textbf{a}^T_{ik}\textbf{x}=b_{ik}, \textbf{x} \geq 0  \}$$ 
 så er $Q=P$.
 \end{thm}
 \begin{proof}
@@ -79,13 +80,14 @@ Det gælder, at $\mathcal{P}$ er en delmængde af $Q$, da alle elementer i $\mat
 Det skal dernæst vises, at $Q$ er en delmængde af $\mathcal{P}$.
 Da rang$(A)=k$, har rækkerummet af $A$ dimension $k$ og et basis bestående af søjlerne $\textbf{a}_1,\ldots,\textbf{a}_k$. 
 Derfor kan kan alle rækker $\textbf{a}_i$ af $A$ blive udtrykt som linearkombination af de andre rækker ved $\textbf{a}_i=\sum^{k}_{j=1}\lambda_{ij}\textbf{a}_j$ for skalarer $\lambda_{ij}$. 
-Lad $x$ være et element i $\mathcal{P}$. 
+Lad $\textbf{x}$ være et element i $\mathcal{P}$. 
+%Hvilke(t) x skal være med fed her?
 Så gælder
-$$b_i=\textbf{a}_ix=\sum^{k}_{j=1}\lambda_{ij}\textbf{a}_jx=\sum^{k}_{j=1}\lambda_{ij}b_j,$$
+$$b_i=\textbf{a}_i\textbf{x}=\sum^{k}_{j=1}\lambda_{ij}\textbf{a}_j\textbf{x}=\sum^{k}_{j=1}\lambda_{ij}b_j,$$
 for $i=1,\ldots,m.$
 Betragt nu et element $y$ i $Q$. 
 Dette vil også være tilhøre $\mathcal{P}$, da
-$$ \textbf{a}_iy=\sum^{k}_{j=1}\lambda_{ij}\textbf{a}_jy=\sum^{k}_{j=1}\lambda_{ij}b_j=b_i.$$
+$$ \textbf{a}_i\textbf{y}=\sum^{k}_{j=1}\lambda_{ij}\textbf{a}_j\textbf{y}=\sum^{k}_{j=1}\lambda_{ij}b_j=b_i.$$
 Dermed er det vist, at $Q$ er en delmængde til $\mathcal{P}$. 
 Dermed vist at $Q=\mathcal{P}$, da $\mathcal{P}$ ligeledes er en delmængde af $Q$.
 \end{proof} \\

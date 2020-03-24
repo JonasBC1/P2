@@ -1,18 +1,37 @@
 \section{Dualitet}
-% God arbejdslyst 
-%vi kan vælge at tage det med lagrange multiplier med også men tænker vi snakker om det jeg er personligt i tvivl og ville nødigt spilde tiden på det.
-%Jeg er iøvrigt bange for jeg er kommet til at skyde mig selv i foden, men umiddelbart giver det mening for mig, det snakker vi om.
-
-Et vigtigt element af teorien vedrørende liniære optimerings problemer og simplex metodens brug, omhandler \textit{dualproblemer}.
-
+% Vi kan vælge at tage det med lagrange multiplier med også men tænker vi snakker om det jeg er personligt i tvivl og ville nødigt spilde tiden på det.
+	% - Julie: Jeg synes ikke vi skal have det med 
+% Jeg er iøvrigt bange for jeg er kommet til at skyde mig selv i foden, men umiddelbart giver det mening for mig, det snakker vi om.
+	% - Julie: Jeg tror du har styr på det xD
+%
+Et vigtigt element af teorien vedrørende lineære optimerings problemer og Simplex metodens brug, omhandler \textit{dualproblemer}.
+%
 \begin{defn}{}{dualproblemer}
-givet maksimeringsproblemet: \\
-maksimer $z=\mathbf{c}^T \mathbf{x}$ begrænset af: $A\mathbf{x} \leq b$ og $\mathbf{x} \geq 0$ \\
+Givet maksimumsproblemet: 
+%
+\begin{align*}
+\begin{array}{lrl}
+\text{Maksimér}		&\textbf{c}^T\textbf{x}	& = z		\\
+\text{begrænset af}	&A\textbf{x}	&\leq \mathbf{b},	\\
+					&\mathbf{x}				&\geq \mathbf{0},
+\end{array}
+\end{align*}
+%
 Da vil \textbf{dual minimumsproblemet} være: \\
-minimer $v=\mathbf{b}^T \mathbf{p}$ begrænset af $A^T \mathbf{p} \geq c$ og $\mathbf{p} \geq 0$
+% Minimer $v=\mathbf{b}^T \mathbf{p}$ begrænset af $A^T \mathbf{p} \geq c$ og $\mathbf{p} \geq 0$
+%
+\begin{align*}
+\begin{array}{lrl}
+\text{Minimer}		&\textbf{b}^T\textbf{p}	& = v			\\
+\text{begrænset af}	&A^T \textbf{p}	&\leq \mathbf{c},	\\
+					&\mathbf{p}				&\geq \mathbf{0},
+\end{array}
+\end{align*}
+%
 \end{defn}
+%
 Problemet:
-
+%
 \begin{align*}
 \begin{array}{lrll}
 \text{Maksimér}		&\textbf{c}^T\textbf{x}	&			&\\
@@ -20,7 +39,7 @@ Problemet:
 					&\textbf{a}_i^T\textbf{x}	&\leq b_i,	&i \in M_2,\\
 					&\textbf{a}_i^T\textbf{x}	& = b_i,	&i \in M_3,\\
 					&x_j					&\geq 0,	&j \in N_1,\\
-					&x_j					&\leq 0,	&j \in N_2,\\							&x_j					&\text{fri},	&j \in N_3,
+					&x_j					&\leq 0,	&j \in N_2,\\							&x_j					&\text{fri},	&j \in N_3.
 \end{array}
 \end{align*}
 
@@ -38,12 +57,14 @@ Vil således have:
 					&\textbf{p}^T\textbf{A}_j	& = b_i,	&i \in N_3,
 \end{array}
 \end{align*}
+%
 som sit dualproblem.
 %Ideer til en federe opsætning
-\\
-Det sker således at der for hver begrænsning i det oprindlige problem indføres en variable i dualproblemet, tilsvarende indføres der en begrænsning for hver variable. 
-Derudover skiftes som nævnt i definitionen fra et maksimerings til minimeringsproblem. \\
-Dette kan opsumeres i følgende tabel: \\
+\\\\
+%
+Det sker således at der for hver begrænsning i det oprindelige problem indføres en variable i dualproblemet, tilsvarende indføres der en begrænsning for hver variable. 
+Derudover skiftes som nævnt i definitionen fra et maksimerings til minimeringsproblem. 
+Dette kan opsummeres i følgende tabel: \\
 \begin{table}[H]
 \begin{center}
 \begin{tabular}{llll}
@@ -58,11 +79,18 @@ Begræsninger & $\leq c_j$ & $\geq 0$   & Variable     \\
              & $=c_j$     & fri        &             
 \end{tabular}
 \end{center}
+\captionof{table}{Oversigt over egenskaber ved primærproblemet og dettes dual.} 
+%\captionof{tabular}{Fisk finder i på noget.}
 \end{table}
 \noindent
-Dual problemet kan således opstilles som følger:
+%
+Dual problemet kan således opstilles som i eksempel \ref{dual} \\
+%
 \begin{eks}
+\label{dual}
+%
 Betragt diæt problemet fra afsnittet om simplexmetoden:
+%
 \begin{align*}
 \begin{array}{lrrlr}
 \text{Maksimer}		&	\multicolumn{2}{c}{z=5x_1+4x_2}  &\\
@@ -73,42 +101,44 @@ Betragt diæt problemet fra afsnittet om simplexmetoden:
 \end{align*}
 \\
 Dualproblemet vil således have denne form:
-%hvilket bogstave foretrækker i istedet for z? hvis i vil ha z i standard notationen
+%hvilket bogstave foretrækker i istedet for z? hvis i vil ha z i standard notationen 
+	% Julie: Tænker v? var det ikke det du skrev i den forrige?
 \begin{align*}
 \begin{array}{lrrlr}
-\text{Minimer}		&	\multicolumn{2}{c}{z=78p_1+36_p2}  &\\
+\text{Minimer}		&	\multicolumn{2}{c}{z=78p_1+36p_2}  &\\
 \text{begrænset af}	&3p_1& +4p_2			&\geq 	&5,\\
 					&5p_1& + p_2				&\geq	& 4,\\
 					&p_1& , p_2				&\geq	& 0.
 \end{array}
 \end{align*}
-Hvor problemet her istedet er at minimere indholdet af sukker og kulhydrater begrænset af ?? 
+Hvor problemet her istedet er at minimere indholdet af sukker og kulhydrater begrænset af forholdet mellem to typer slik i en slikpose.
 %?? Julie skal have lidt mere forklaring af dine begrænsninger for at komme i mål her.
-
-Løses dette ved hjælp af simplex-algoritmen opnåes følgende tabel:
-\begin{align*}
-\begin{blockarray}{cccccc}
-p_1 & p_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
-\begin{block}{[cc|ccc|c]}
-3 & 4 & 1 & 0 & 0 & 5 \\
-5 & 1 & 0 & 1 & 0 & 4 \\
-\cline{1-6}
-78 & 36 & 0 & 0 & 1 & 0\\
-\end{block}
-\end{blockarray}
-\end{align*}
+%
+%Løses dette ved hjælp af simplex-algoritmen opnås følgende tabel:
+%\begin{align*}
+%\begin{blockarray}{cccccc}
+%p_1 & p_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
+%\begin{block}{[cc|ccc|c]}
+%3 & 4 & 1 & 0 & 0 & 5 \\
+%5 & 1 & 0 & 1 & 0 & 4 \\
+%\cline{1-6}
+%78 & 36 & 0 & 0 & 1 & 0\\
+%\end{block}
+%\end{blockarray}
+%\end{align*}
 %skal have lidt hjælp til at omskrive problemet til standardform simplex(det er bare fortegn jeg er i tvivl om, har et program der udføre algoritmen, så er good to go bagefter)
-
+%
 %her skal løst simplex smides ind
-
-Som det fremgår findes minimum i samme punkt:
-$z=78$ hvor $p_1$ og $p_2$ slackvariable $s_1=6$ og $s_2=12$
-
+%
+%Som det fremgår findes minimum i samme punkt:
+%$z=78$ hvor $p_1$ og $p_2$ slackvariable $s_1=6$ og $s_2=12$
+%
 \end{eks}
-Som det fremgår i eksemplet har løsningen på dualproblemet samme optimale løsning, hvor slackvariable her er løsningen på det oprindelige problem.
-Det gælder endvidere at der fra dualproblemet kan vendes tilbage til det oprindlige problem hvilket udtrykkes ved følgende sætning:
+%hvis nedenstående skal med skal simplex udføres på tabellen
+%Som det fremgår i eksemplet har løsningen på dualproblemet samme optimale løsning, hvor slackvariable her er løsningen på det oprindelige problem.
+Det gælder endvidere at der fra dualproblemet kan vendes tilbage til det oprindelige problem hvilket udtrykkes ved følgende sætning:
 \begin{thm}{}{dualitetsaet}
-Hvis dualproblemet omdannes til et ækvivalent minimumsproblem og dualproblemet af dette dannes, opnåes det oprindlige problem.
+Hvis dualproblemet omdannes til et ækvivalent minimumsproblem og dualproblemet af dette dannes, opnås det oprindelige problem.
 \end{thm}
 \begin{proof}
 Betragt problemet:
@@ -170,8 +200,5 @@ Hvilket har et ækvivalent minimumsproblem:
 \end{array}
 \end{align*}
 \end{proof}
-
-
-
-
+%
 %42 min https://youtu.be/0TRxEvMRE7s definition
