@@ -20,3 +20,60 @@ På figur \ref{fig:julieersmuuuuuk}, ses vektorerne $\mathbf{x}_1, \mathbf{x}_2$
 \input{fig/tikz/simplex/mulig_retning}
 %
 %
+%
+\begin{defn}{}{}
+Lad $\mathbf{x}$ være en basal løsning, til en basis matrix $B$ og objektfunktionen $c_B=[ c_{B(1)},c_{B(2)}, \cdots , c_{B(m)} ]^T.$
+For hver $j$'te basale retning, defineres den \textbf{reducerede objektfunktion} $c_j^*$, som
+\begin{align*}
+c_j^* = c_j - \mathbf{c}_B^T B^{-1}A_j.
+\end{align*} 
+%
+\end{defn}
+\noindent
+%
+Fisk
+%
+% Sætning 3.1 i Bertsimas 
+\begin{thm}{}{}
+Lad $\mathbf{x}$ være en basal mulig løsning, til en basis matrix $B$ og lad $\mathbf{c}^*$ være den reducerede objektfunktion. 
+\begin{enumerate}[label = (\alph*)]
+\item Hvis $\mathbf{c}^* \geq 0$, så er $\mathbf{x}$ optimal.
+\item Hvis $\mathbf{x}$ er optimal og ikke-degenereret, så er $\mathbf{c}^* \geq 0$.
+\end{enumerate}
+\end{thm}
+%
+\begin{proof}
+fisk
+\end{proof}
+\\
+%
+fisk
+%
+%
+% Definition 3.3 i Bertsimas
+\begin{defn}{}{}
+En basis matrix $B$ er optimal, hvis
+\begin{enumerate}[label = (\alph*)]
+\item $B^-1 \mathbf{b} \geq \mathbf{0}$, and
+\item ${\mathbf{c}^*}^T = \mathbf{c}^T - \mathbf{c}_B^T B^{-1} A \geq \mathbf{0}^T$.
+\end{enumerate}
+\end{defn}
+\noindent
+%
+%
+% 
+Afsnit 3.2 i bertsimas
+% Sætning 3.2 
+\begin{thm}{}{}
+\begin{enumerate}[label = (\alph*)]
+\item Søjlerne $A_{B(i)}$, $i \neq \mathcal{L}$ og $A_j$ er lineær uafhængige, og 
+\item Vektoren $\mathbf{y}=x+ \theta \mathbf{d}$ er en basal mulig løsning til basis matrix $B$.
+\end{enumerate}
+\end{thm}
+%
+\begin{proof}
+fisk
+\end{proof}
+\\
+%
+fisk
