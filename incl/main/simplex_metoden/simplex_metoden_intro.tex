@@ -4,41 +4,40 @@ Som nævnt tidligere i rapporten, så findes der en optimal løsning til et line
 % -------------------------------------------------------------------------
 % Noget introducerende
 %
-\section{Simplex metoden på praktisk problem}
-Simplex-metoden tager overordnet udgangspunkt i følgende steps: 
+\section{Praktisk anvendelse af Simplex-metoden}
+Simplex-metoden foretager som udgangspunkt følgende seks operationer, inden den afsluttes: 
 %
 \begin{col}{}{}
 %
 % Denne skal eventuelt beskrives mere i dybdegående - Tager kort tid.
 \begin{enumerate}
-\item Opskriv optimeringsproblemet på standardform med slack variabler.  %1
-\item Opstil simplex-tabllen for optimeringsproblemet					 %2
-\item Tjek optimering og identificer en pivotindgang					 %3
+\item Opskriv optimeringsproblemet på standardform med slack-variabler.  %1
+\item Opstil simplex-tabellen for optimeringsproblemet.					 %2
+\item Tjek optimering og identificér en pivotindgang.					 %3
 \item Opstil en ny tabel ved hjælp af pivotering. 						 %4
-\item Kør 3 og 4 indtil den optimale løsning er fundet 					 %5
-\item Identificer den optimale løsning									 %6
+\item Gentag operation 3 og 4, indtil den optimale løsning er fundet. 					 %5
+\item Identificér den optimale løsning.									 %6
 \end{enumerate}
 %
 \end{col}
 \noindent
 %
-I følgende afsnit vil disse punkter, samt tilhørende teori blive uddybet. 
-Dette gøres med udgangspunkt i følgende eksempel \ref{haribooooo}.
+I følgende afsnit uddybes ovenstående punkter, samt tilhørende teori, med udgangspunkt i eksempel \ref{haribooooo}.
 %
 \\
 %
 \begin{eks}
 \label{haribooooo}
-Haribo ønsker at finde det mest optimale forhold mellem de to vingummismage i $"$Vingummi hindbær og brumbær$"$-blandingen, der ses på figur \ref{mums}, med udgangspunkt i en række betingelser. 
-De ønsker at maksimere mængden af slik, begrænset af kulhydrat- og sukker-indholdet.
+Haribo ønsker at finde det mest optimale forhold mellem de to vingummismage i $"$Vingummi - Hindbær og Brombær$"$-blandingen, der ses på figur \ref{mums}, med udgangspunkt i en række betingelser: 
+De ønsker at maksimere mængden af slik, begrænset af kulhydrat- og sukkerindholdet.
 \\
 %
 \begin{minipage}[b]{0.55\textwidth}
 %
-Forholdet mellem de to typer af vingummi er $3 g$ og $5 g$ i forhold til kulhydrater, og $4 g$ og $1 g$ i forhold til sukker. 
-Dertil er forholdet mellem de to vingummi smage $5$stk. og $4$stk. i poserne, 
-Optimeringsproblemet der dermed ud som følgende:
-%
+Der er $3 g$ kulhydrat i hindbærvarianten og $5 g$ i brombærvarianten, mens sukkerindholdet henholdsvis er $4 g$ og $1 g$. 
+Dertil er der henholdsvis $5$ og $4$ stk. i poserne. 
+Optimeringsproblemet er dermed følgende:
+%Jeg er ikke heeeeelt med på ovenstående kriterier - Jens
 \begin{align*}
 \begin{array}{lrrlr}
 \text{Maksimer}		&	\multicolumn{2}{c}{z=5x_1+4x_2}  &\\
@@ -61,29 +60,29 @@ Optimeringsproblemet der dermed ud som følgende:
 %
 \end{eks}
 
-\subsubsection{1. Opskriv optimeringsproblemet på standardform med slack variabler.}
+\subsubsection{1. Opskriv optimeringsproblemet på standardform med slack-variabler.}
 %
-Generelt tager simplex modellen udgangspunkt i at alle variablerne er positive, og som beskrevet i afsnit \ref{sec:standard} så tilføjes $x_i^+$ og $x_i^-$, hvis der i optimeringsproblemet ikke er ikke-negativsbetingelser for variablen. 
-I dette tilfælde er begge variabler positive og der er derfor ikke nødvendigt at opdele variablen. 
-Med udgangspunkt i fremgangsmetoden fra afsnit \ref{sec:standard} så opstilles optimeringsproblemet derfor på standardform som
+Generelt tager simplex-modellen udgangspunkt i, at alle variablerne er positive. Jævnfør afsnit \ref{sec:standard} tilføjes $x_i^+$ og $x_i^-$, hvis der i optimeringsproblemet ikke er ikke-negativitetsbetingelser for variablerne. 
+I dette tilfælde er begge variabler positive, og det er derfor ikke nødvendigt at opdele variablerne. 
+Med udgangspunkt i metoden fra afsnit \ref{sec:standard} opstilles optimeringsproblemet derfor på standardform som
 %
 \begin{align*}
 \begin{array}{lrrrrrlr}
-\text{Maksimer}		& -5x_1 &-4x_2 &&& + z & =0\\
+\text{Maksimér}		& -5x_1 &-4x_2 &&& + z & =0\\
 \text{begrænset af}	&3x_1& +5x_2	& + \textcolor{blue}{s_1} 	&&&= 	&78,\\
 					&4x_1& + x_2	& & + \textcolor{blue}{s_2}	&&=	&	 36.\\
 \end{array}
 \end{align*}
-%
+%Hvor kommer 78 og 36 fra? 
 Dog er maksimeringsproblemet omskrevet med udgangspunkt i 
 \begin{align*}
 -\textbf{c}^T\textbf{x} + z	 =0,
 \end{align*}
-hvor z er den optimale værdi. 
+hvor $z$ er den optimale værdi. 
 %
 Slack-variablerne $s_1$ og $s_2$ er her markeret med blå, da de i sidste ende ikke tilføjes til løsningen. 
 %
-\subsubsection{2. Opstil simplex-tabllen for optimeringsproblemet}		
+\subsubsection{2. Opstil simplex-tabellen for optimeringsproblemet}		
 % 
 Nu opstilles \textit{simplex-tabellen} for optimeringsproblemet. 
 Med udgangspunkt i et generelt lineært optimeringsproblem på formen
@@ -97,9 +96,9 @@ Med udgangspunkt i et generelt lineært optimeringsproblem på formen
 \end{array}
 \end{align*}
 er simplex-tabellen en matrix, som indeholder de lineære betingelser, slack-variablerne og objektfunktionen. 
-Matrix $\mathbf{A}$ opskrives først, og derefter opskrives identitesmatricen $e_{m+1}$, hvor $m$ er lig mængden af slackvariabler samt den optimale løsning $z$, og til sidst opskrives $\mathbf{b}$. 
-Under matrix $\mathbf{A}$ tilføjes matrix $- \mathbf{c}^T$. 
-En generelt formel på simplex-tabellen med udgangspunkt i forrige optimeringsproblem ser dermed ud som følgende:
+Matricen $\mathbf{A}$ opskrives først, og derefter opskrives identitesmatricen $e_{m+1}$, hvor $m$ er mængden af slack-variabler, samt den optimale løsning $z$, og til sidst opskrives $\mathbf{b}$. 
+Under $\mathbf{A}$ tilføjes matricen $- \mathbf{c}^T$. 
+Med udgangspunkt i forrige optimeringsproblem ser en generel formel i simplex-tabellen dermed ud som følgende:
 %
 \begin{align*}
 \begin{blockarray}{ccccccccccc}
@@ -115,7 +114,7 @@ a_{m,1} & a_{m,2} & \cdots & a_{m,n} & 0 & 0 & \cdots  & 1  & 0 & b_{m}\\
 \end{blockarray}.
 \end{align*}
 %
-Optimeringsproblemet fra eksempel \ref{haribooooo} har dermed følgende simplex-tabel:
+Optimeringsproblemet fra \ref{haribooooo} har dermed følgende simplex-tabel:
 %
 \begin{align*}
 \begin{blockarray}{cccccc}
@@ -129,10 +128,9 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \end{blockarray}.
 \end{align*}
 %
-\subsubsection{3. Tjek optimering og identificer en pivotindgang}
+\subsubsection{3. Tjek optimering og identificér en pivotindgang}
 %
-Først tjekkes der efter optimering, og dette gøres ved at finde den største negative tal i objektfunktionen, altså nederste række i simplex-tabellen. 
-Nedenstående er denne markeret:
+Først tjekkes der efter optimering ved at finde det største negative tal i objektfunktionen, hvilket i dette tilfælde findes i nederste række i simplex-tabellen:
 %
 \begin{align*}
 \begin{blockarray}{cccccc}
@@ -153,14 +151,14 @@ Herefter findes pivotindgangen og \textit{pivot-rækken}, ved at finde den minds
 \end{align*}
 %
 i pivot-søjlen.
-For eksemplet findes pivotindgangen:
+For eksemplet findes pivotindgangen
 %
 \begin{align*}
 \frac{78}{3} =26 \text{  } \text{   } \frac{36}{4} =9.
 \end{align*}
 %
-Eftersom $9$ er den laveste værdi er $4$ pivotindgangen og rækken den er i pivot-rækken. 
-Nedenstående er pivotindgangen markeret:
+Eftersom $9$ er den laveste værdi, er $4$ pivotindgangen, mens den række, som den er i, er pivot-rækken. 
+I nedenstående er pivotindgangen markeret.
 %
 \begin{align*}
 \begin{blockarray}{cccccc}
@@ -176,8 +174,8 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 %	
 \subsubsection{4. Opstil en ny tabel ved hjælp af pivotering}
 %
-Med udgangspunkt i de elementære rækkeopperationer, se definition \ref{defn:element}, og Gauss-elimination, se afsnit \ref{gauss}, skaleres pivotindgangen til 1, og der skabes nuller under og over pivotindgangen ved hjælp af rækkeudskriftning.
-Nedenstående ses dette gjort for eksemplet:
+Med udgangspunkt i de elementære rækkeoperationer per definition \ref{defn:element}, samt Gauss-elimination jævnfør afsnit \ref{gauss}, skaleres pivotindgangen til $1$, og der skabes nuller under og over pivotindgangen ved hjælp af rækkeudskiftning.
+Nedenfor ses dette gjort for eksemplet.
 %
 %& \begin{blockarray}{cccccc}
 %x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
@@ -214,11 +212,11 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 %
 \subsubsection{5. Kør 3 og 4 indtil den optimale løsning er fundet}
 %
-Denne proces forsættes nu indtil der ikke er flere negative tal i objektfunktionen.
+Denne proces forsættes nu, indtil der ikke er flere negative tal i objektfunktionen.
 \textit{Pivotering} er processen fra valget af den største negative værdi i objektfunktionen til at en ny værdi i objektfunktionen kan vælges. 
-Der tjekkes derfor efter optimering igen, og en ny pivotindgang er valgt ved det største negative værdi. 
-Denne er markeret i nedenstående matrix:	
-%
+Der tjekkes derfor efter optimering igen, og en ny pivotindgang er valgt ved den største negative værdi. 
+Denne er markeret i nedenstående matrix.	
+%Jeg tænker, at ovenstående kan præciseres, men jeg er blank pt.... Så hvad ved jeg :0) 
 \begin{align*}
 \begin{blockarray}{cccccc}
 x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
@@ -231,13 +229,13 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \end{blockarray}
 \end{align*}
 %
-Pivotindgangen findes ved:
+Pivotindgangen findes ved
 %
 \begin{align*}
 \frac{51}{\frac{17}{4}} =12 \text{  } \text{   } \frac{9}{\frac{1}{4}} =36.
 \end{align*}
 %
-Pivotindgangen er $\frac{17}{4}$ da denne giver den mindste værdi på $12$, hvilket er markeret i nedenstående matrix:
+Pivotindgangen er $\frac{17}{4}$, da denne giver den mindste værdi på $12$, hvilket er markeret i nedenstående matrix.
 %
 \begin{align*}
 \begin{blockarray}{cccccc}
@@ -251,7 +249,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \end{blockarray}
 \end{align*}
 %
-Pivotindgangen skaleres til 1, og der skabes nuller under og over pivotindgangen, ved de elementære regneregler:
+Pivotindgangen skaleres til $1$, og der skabes nuller under og over pivotindgangen, ved de elementære regneregler:
 %& \begin{blockarray}{cccccc}
 %x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} &z & b \\
 %\begin{block}{[cc|ccc|c]}
@@ -286,11 +284,11 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \end{align*}	
 %
 %
-\subsubsection{6. Identificer den optimale løsning}
+\subsubsection{6. Identificér den optimale løsning}
 %
 Eftersom der ikke er flere negative værdier i objektfunktionen, er den optimale løsning nu fundet. 
-Denne løsning, kan aflæses direkte af simplex-tabellen. 
-Den optimale løsning for eksemplet er dermed:
+Denne løsning kan aflæses direkte af simplex-tabellen. 
+Den optimale løsning for eksemplet er dermed
 %
 \begin{align*}
 x_1 & = 6, \\
