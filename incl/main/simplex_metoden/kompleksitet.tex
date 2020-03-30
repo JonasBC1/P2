@@ -1,59 +1,23 @@
 \section{Kompleksitet}
+\label{kompleksitet}
 % he
-Det er interessant at undersøge simplex-metodens tidskompleksitet.
-Til beskrivelse af dette benyttes \textit{store-$O$} notation.
+Det være interessant at kigge på hvor hurtigt det kan forventes, at simplex-metoden giver et resultat, altså simplex-metodens kompleksitet.
+Til at beskrive dette, vil der blive brugt \textit{store-$O$} notation.
 %
 \begin{defn}{}{}
-Lad $f(x)$ og $g(x)$ være vilkårlige funktioner. $f(x)$ er \textbf{store-$O$} af $g(x)$, hvis der eksisterer et $C$ og $k$, således at $|f(x)| \leq C|g(x)|, x \geq k$. $C$ og $k$ kaldes \textbf{vidner}.
+Lad $f(x)$ og $g(x)$ være vilkårlige funktioner. $f(x)$ er \textbf{store-$O$} af $g(x)$, hvis der eksisterer et $C$ og $k$ således, at $|f(x)| \leq C|g(x)|, x \geq k$. $C$ og $k$ kaldes \textbf{vidner}.
 \end{defn}\noindent
 %
-Der er flere måder at implementere simplex-metoden på, der hver har sin egen kompleksitet.
-De to implementeringer, der vil blive betragtet i dette afsnit, er \textit{fuld tabel} og \textit{den reviderede} simplex-metode.
+Der er flere måder at implementerer simplex-metoden, hver med sin egen kompleksitet.
+De to implementeringer der vil blive betragtet i dette afsnit er \textit{fuld tabel} og \textit{den reviderede} simplex-metode.
 %
-"Fuld tabel"-metoden kræver et konstant antal af operationer for at opdatere indgangene i simplex-matricen.
-Derfor er antallet af operationer proportionelt med størrelsen på matricen og kompleksiteten $O(mn)$.
+Fuld tabel metoden kræver et konstant antal af operationer for at opdatere indgangene i simplex-matricen.
+Derfor er antallet af operationer proportionalt med størrelsen på matricen og kompleksiteten $O(mn)$.
 Den reviderede metode bruger lignende operationer, men opdaterer kun $O(m^2)$ indgange og har derfor kompleksiteten $O(m^2)$.
 Det kan dog forekomme, at metoden skal opdatere alle variabler.
-Hver udregning af en variabel kræver $O(m)$ operationer, hvilket medfører, at der i værste tilfælde bruges $O(mn)$ operationer.
-Da $m \leq n$, er kompleksiteten i værste tilfælde $O(mn)$ for begge metoder.
-Med dette konkluderes det, at den reviderede metode aldrig vil køre langsommere end "fuld tabel"-metoden.
-Dog vil en iteration fra den reviderede metode være hurtigere i alle andre tilfælde end det værste.
-Endnu et vigtigt element, som er tiltalende ved den reviderede metode, er rumkompleksiteten på $O(m^2)$, hvor "fuld tabel"-metodens er på $O(mn)$.
-Her kan der igen være en ret betydelig forskel, afhængigt af størrelsen på $n$.\\\\
-%
-Selvom antallet af basale mulige løsninger kan stige eksponentielt med antallet af variabler og betingelser, så har simplex-metoden typisk fundet en optimal løsning efter $O(m)$ iterationer.
-Dog eksisterer der polyeder, hvor antallet af pivoteringer påkrævet stiger eksponentielt.
-For ikke-degenererede problemer bevæger simplex-metoden sig altid fra et ekstremumspunkt til en af dets naboer og forbedre værdien af objektfunktionen.
-Betragt et polyeder med eksponentielt antal af ekstremumspunkter samt en sti der besøger alle ekstremumspunkter.
-Stien er lavet ved, fra et ekstremumspunkt, at besøge et ekstremumspunkt med mindre værdi.
-Med sådan et polyeder vil simplex-metoden, med en pivoteringsregl, som følger stien, kræve et eksponentielt antal af pivoteringer.
-%
-\begin{thm}{}{}
-Betragt det lineære programmeringsproblem, hvor objektfunktionen $-x_n$ minimeres med betingelserne $\epsilon \leq x_1 \leq 1$ og $\epsilon x_{i-1} \leq x_i \leq 1 - \epsilon x_{i-1}$ for $i = 2, 3, \ldots, n$ og $0 < \epsilon < \frac{1}{2}$.
-Så gælder det, at:
-%
-\begin{enumerate}[label=(\alph*)]
-\item Løsningsmængden har $2^n$ ekstremumspunkt.
-\item Ekstremumspunkterne kan arrangeres således, at hver er nabo til og har lavere værdi end den forrige.
-\item Der eksisterer en pivoteringsregl til simplex-metoden således, at den kræver $2^n-1$ pivoteringer før den er færdig.
-\end{enumerate}
-%
-\end{thm}
-%
-\begin{proof}
-%
-Lad $\mathcal{P}_n$ være et polyeder i $\R^n$ begrænset af betingelserne $\epsilon \leq x_1 \leq 1$ og $\epsilon x_{i-1} \leq x_i \leq 1 - \epsilon x_{i-1}$ for $i = 2, 3, \ldots, n$ og $0 < \epsilon < \frac{1}{2}$.\\\\
-%
-Ved induktion vises det, at $\mathcal{P}_n$ har $2^n$ ekstremumspunkter og basistrinnet, hvor $n=1$ følger trivielt.
-Antag nu, at resultatet gælder for $n=k$.
-Polyedret $\mathcal{P}_{k+1}$ er begrænset af samme betingelser som $\mathcal{P}_{k}$ med tilføjelse af betingelsen $\epsilon x_{k} \leq x_{k+1} \leq 1 - \epsilon x_{k}$.
-Den øvre og nedre begrænsning i $\epsilon x_{k} \leq x_{k+1} \leq 1 - \epsilon x_{k}$ ikke kan skære hinanden mens $ 0 \leq x_k \leq 1$ er opfyldt.
-Dette medfører, at hvert ekstremumspunkt i $\mathcal{P}_{k}$ giver anledning til to entydige ekstremumspunkter i $\mathcal{P}_{k+1}$, hvilket viser (a).\\\\
-%
-Med stærk induktion vises det, at ekstremumspunkterne i  $\mathcal{P}_n$ kan arrangeres således, at hvert ekstremumspunkt er nabo til og har mindre værdi end det forrige.
-%
-\\\\
-Jævnfør \ref{3.3} (måske sæt 3.3 fra bertsimas) bevæger simplex-metoden sig altid fra nabo til nabo, når problemet ikke er degenereret.
-Med udgangspunkt i (b) vides det, at der eksistere en udspændende sti, som ender i problemets optimale løsning og $\textbf{c}^T\textbf{x}_i \leq \textbf{c}^T\textbf{x}_{i-1}$ for $i = 2, 3, \ldots ,n$.
-Dette medfører, at en pivoteringsregl, som ønsker at minimere mindst muligt pr. pivotering følger den udspændende sti og besøger alle $2^n$ ekstremumspunkter, hvilket viser (c).
-\end{proof}
+Hver udregning af en variable kræver $O(m)$ operationer, hvilket medfører, at i værste tilfælde bruges $O(mn)$ operationer.
+Da $m \leq n$ haves, at kompleksiteten i værste tilfælde er $O(mn)$ for begge metoder.
+Med dette konkluderes det, at den reviderede metode aldrig vil køre langsommere end fuld tabel metoden.
+Dog vil en iteration fra den reviderede metode være hurtigere i alle andre end det værste tilfælde.
+Endnu et vigtigt element, som er tiltalende ved den reviderede metode, er rumkompleksiteten på $O(m^2)$, hvor fuld tabel metodens er på $O(mn)$.
+Her kan der igen være en ret betydelig forskel afhængigt af størrelsen på $n$.

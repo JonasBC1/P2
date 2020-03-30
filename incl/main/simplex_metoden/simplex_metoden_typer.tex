@@ -1,5 +1,42 @@
 %
 \section{Implementering}
-Der er tre forskellige implementeringer af simplex metoden, den naive, den reviderede, og den fulde matrix implementering. 
+Der findes tre forskellige implementeringer af simplex metoden, henholdvis den naive, den reviderede, og den fulde tabel implementering. Disse implementeringer vil blive gennemgået i følgende afsnit. 
 
-% Mathias dette var allerede skrevet fra Jonas af fra et par gange siden. Denne kan du passende kige videre på xD
+\subsection{Den naive implementering}
+Der lægges ud med den naive implementering af simplex metoden, hvor der ingen af de bærende elementer overgår fra en iteration til den næste iteration. Den typiske iteration, som der begyndes med, haves følgende indeks $B(1),\ldots,B(m)$ af de givne basisvariable. Derudfra kan der dannes en matrix $\mathbf{B}$ og beregne $\mathbf{p^T}=\mathbf{c^T}_{\text{B}}\mathbf{B}^{-1}$ ved at løse det lineære ligningssystem $\mathbf{p^T}\mathbf{B}=\mathbf{c^T}_{\text{B}}$ for den ukendte vektor $\mathbf{p}$. Hertil kan det ydermere nævnes, at $\mathbf{p}$ betegnes som den vektor bestående af de simplex multiplikationer, som tilknyttet med basen $\mathbf{B}$. Den reducerede objektfunktion $c_j^* = c_j - \mathbf{c}_B^T B^{-1}A_j$ for enhver variable $x_j$, er derfor givet ved følgende formel:
+%
+\begin{align*}
+c_j^* = c_j - \mathbf{p^{T}A}_j.
+\end{align*}
+%
+Afhængigt af om pivoteringsreglen er benyttet, er det nødvendigt at udregne alle de mulige recuderede opjektfunktionerne eller i så fald udregne indtil en negativ objektfunktion opstår. Når en søjle $\mathbf{A}_j$ er valgt til at være en del af basen, løses det lineære ligningssystem $\mathbf{Bu}=\mathbf{A}_j$ for at bestemme vektoren $\mathbf{u}=\mathbf{B}^{-1}\mathbf{A}_j$. Ved hjælp af dette vil der kunne konstrueres den retning, hvor man bevæger sig væk fra de nuværende basale mulige løsninger. Endeligt kan $\theta^*$ bestemmes, samt den variabel er endeligt gør at basen forlades og derved konstruere en ny basel mulig løsning. \\\\
+%%%%
+Det er gældende for den naive implementering, at den behøver $O(m^3)$ aritmetiske operationer for at løse systemerne $\mathbf{p^T}\mathbf{B}=\mathbf{c^T}_{\text{B}}$ og $\mathbf{Bu}=\mathbf{A}_j$. Ydermere kræver udregningen af den reducerede objektfunktion gældende for alle variabler, $O(mn)$ aritmetriske operationer, da det er nødvendigt at udregne de indre produkt af vekotren $\mathbf{p}$ for alle ikke-basis søjler i $\mathbf{A}_j$. Derfor er den samlede kompleksitet $O(m^3+mn)$ for den naive implementering. Kompleksitet vil ydermere blive uddybet i afsnit \ref{kompleksitet}
+\subsection{Den reviderede implementering}
+Problem ved den naive implementering er dens tunge beregningsmæssige ulempe, da den er nødsaget til at løse to sæt af lineære ligningssystemer. En alternativ implementering til dette, er den revidere implementering, som benytter matricen $\mathbf{B}^{-1}$ ved hver iteration, samt er  vektorerne $\mathbf{c^T}_{\text{B}}\mathbf{B}^{-1}$ og $\mathbf{B}^{-1}\mathbf{A}_j$ udregnet ved hjælp af matrix-vektor multiplikation. En iteration af den reviderede simplex implementering gennemløber følgende punkter: 
+\begin{enumerate}
+\item I en typisk iteration, startes med en basis indeholdende basissøjlerne $\mathbf{A}_B(1),\ldots,\mathbf{A}_B(m)$, en associeret basal mulig løsning $\mathbf{x}$ samt en invers $\mathbf{B}^{-1}$ af basismatricen. 
+\item Udregn rækkevektoren $\mathbf{p^T}=\mathbf{c^T}_{\text{B}}\mathbf{B}^{-1}$ og udregn dernæst den reducerede objektfunktion $c_j^* = c_j - \mathbf{p^{T}A}_j$. Hvis resultaterne alle er ikke-negative, vil det resultere i den givne basal mulige løsning er optimal, og algoritmen vil slutte ved dette punkt. Hvis dette ikke er tilfældet, så vælg ethvert $j$, hvor $c_j^* < 0$.
+\item Udregn $\mathbf{u}=\mathbf{B}^{-1}\mathbf{A}_j$. Hvis intet komponent i $\mathbf{u}$ er positivt, så er den optimale pris $-\infty$, og algoritmen vil slutte ved dette trin. 
+%
+% Cost er vel ligmed pris her?? Eller hvad? %
+%
+\item Hvis ethvert komponent i $\mathbf{u}$ er positivt, lad 
+\begin{align*}
+\theta^*=\underset{\{i=1,\ldots,m \mid u_i>0\}}{min}\frac{x_{B(i)}}{u_i}.
+\end{align*}
+\item Bestem $l$, så $\theta^*=\frac{x_{B(l)}}{u_l}$ er gældende. Bestem dernæst en ny base ved at udskifte $\mathbf{A}_{B(l)}$ med $\mathbf{A}_j$. Hvis $\mathbf{y}$ er den nye basal mulige løsning, så er værdierne for de nye basale værdier $y_j=\theta^*$ samt $y_{B(i)}=x_{B(i)}-\theta^*u_i$, hvor $i \neq l$.
+\item Bestem til slut den $m \times (m+1)$ matrix $\left [\mathbf{B}^{-1} \mid \mathbf{u} \right ]$. Tilføj enhver række et multiplum af den $l$-te række for at få den sidste søjle til at være lig med enhedsvektoren $\mathbf{e}_l$. De første $m$ søjler er resultatet af matricen $\mathbf{B}^{*\text{-1}}$.
+%Nogle der har en ide til at gøre dette pænere? Det er B-stjerne i -1% 
+\end{enumerate}
+Det er gældende for den reviderede implementering, at den behøver $O(m^2)$ aritmetiske operationer, og har derfor i bedste case en lavere kompleksitivitet end den naive implementering. Kompleksitet vil ydermere blive uddybet i afsnit \ref{kompleksitet}
+\subsection{Den fulde tabel implementering}
+Til slut er det interessant at beskrive den sidste implementering af simplex metoden, nemlig den såkaldte fulde tabel implementering. Det er gældende for den fulde tabel implementering, at den i stedet for at opretholde og opdatere matricen $\mathbf{B}^{-1}$ ved hver iteration, som i den reviderede implementering; så opretholder og opdaterer den $m \times (n+1)$ matricen, givet ved $\mathbf{B}^{-1} \left [ \mathbf{b} \mid \mathbf{A} \right ]$, med søjlerne $\mathbf{B}^{-1}\mathbf{b}$ og $\mathbf{B}^{-1}\mathbf{A}_1,\ldots,\mathbf{B}^{-1}\mathbf{A}_n$. Denne matrix betegnes som en simplex tabel. Bemærk, at søjlen $\mathbf{B}^{-1}\mathbf{b}$, betegnes som \textit{nulsøjlen} og indeholder værdierne for de basale variable. Søjlen $\mathbf{B}^{-1}\mathbf{A}_i$ betegnes som den $i$-te søjle af tabellen. Søjlen $\mathbf{u} = \mathbf{B}^{-1}\mathbf{A}_j$ er svarende til den variabel, som er i basen, er betegnet som \textit{pivotsøjlen}. Hvis den $l$-te basale variabel udgår fra basen, så er den $l$-te række, betegnet som \textit{pivotrækken}. Endelig er elementet, der tilhører både pivotrække og pivotsøjlen betegnet ved \textit{pivotelementet} og bemærk yderligere, at dette element er $u_l$ og altid er positivt. For at klarlægge hvordan den fulde tabel implementering fungerer, vil der i følgende bliver gennemgået en iteration af den fulde tabel implementering: 
+\begin{enumerate}
+\item I en typisk iteration, startes der med at opstille en tabel associeret med en basis matrix $\mathbf{B}$ og en tilsvarende basal mulig løsning $\mathbf{x}$
+\item Dernæst undersøges om den reducerede pris i nulrækken af tabellen. Hvis alle indgange er ikke-negative, så er den nuværende basal mulige løsning den optimale, og algoritmen vil slutte ved dette punkt. Hvis dette ikke er tilfældet, så vælg ethvert $j$, hvor $c_j^* < 0$.
+\item Overvej vektoren $\mathbf{u}=\mathbf{B}^{-1}\mathbf{A}_j$, hvor den $j$-te søjle (pivotsøjlen) i tabellen. Hvis intet komponent i $\mathbf{u}$ er positivt, så er den optimale pris $-\infty$, og algoritmen vil slutte ved dette trin. 
+\item For hvert $i$, hvor $u_i$ er positivt, udregn forholdet $\frac{x_{B(i)}}{u_i}$. Lad $l$ være det index  af en række, som tilsvarer det laveste forhold. Søjlen $\mathbf{A}_{B(l)}$ udgår fra basen og søjlen $\mathbf{A}_j$ indgår i basen. 
+\item Tilføj for hver række i tabellen en konstant multiplum af den $l$-te række (pivotrække), så $u_l$ (pivotelementet) bliver lig med $1$ og alle andre indgnge i pivotsøjlen bliver 0. 
+\end{enumerate}
+Det er gældende for den fulde tabel implementering, at den behøver $O(mn)$ aritmetiske operationer, og har derfor i den bedste case en lavere kompleksitivitet end både den naive og den reviderede implementering. Kompleksitet vil ydermere blive uddybet i afsnit \ref{kompleksitet}
