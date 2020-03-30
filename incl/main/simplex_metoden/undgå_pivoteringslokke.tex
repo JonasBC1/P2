@@ -9,6 +9,7 @@ vil den lokale optimale løsning være en global optimal løsning.
 %
 %Når der undersøges om der findes et nabo punkt, hvis løsning er bedre, så er det ikke nødvendigt at undersøge i retningen, som leder ud af den basal mulige område.
 %
+% Definition 3.1 i bert
 \begin{defn}{}{}
 Lad $\textbf{x}$ være et element af et polyeder $\mathcal{P}$.
 En vektor $\textbf{d}\in \R^n$ siges at være en  \textbf{mulig retning} fra $\textbf{x}$, hvis der eksisterer en positiv skalar $\theta$, således at $\textbf{x}+\theta \textbf{d}\in \mathcal{P}$.
@@ -21,13 +22,14 @@ På figur \ref{fig:julieersmuuuuuk}, ses vektorerne $\mathbf{x}_1, \mathbf{x}_2$
 %
 %
 %
-% Ikke skrevet rigtig endnu 
+% Definition 3.2 
 \begin{defn}{}{}
-Lad $\mathbf{x}$ være en basal løsning til en basis matrix $B$ og objektfunktionen $c_B=[ c_{B(1)},c_{B(2)}, \cdots , c_{B(m)} ]^T.$
+Lad $\mathbf{x}$ være en basal løsning til en basis matrix $B$ og tilhørende objektfunktionen $c_B=[ c_{B(1)},c_{B(2)}, \cdots , c_{B(m)} ]^T.$
 For hver $j$'te basale retning defineres den \textbf{reducerede objektfunktion} $c_j^*$ som
 \begin{align*}
 c_j^* = c_j - \mathbf{c}_B^T B^{-1}A_j.
 \end{align*} 
+% Nogle kalder den den reducerede omkostning.
 %
 \end{defn}
 \noindent
