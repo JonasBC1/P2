@@ -1,25 +1,27 @@
-
-Det skal nu vises hvordan simplex metoden kan udvikles udfra de geometriske repræsentationer.
-Altså hvordan der udvikles en metode til at gå fra en profitabel basal mulig løsning til en bedre basal mulig løsning.
-Det antages indtil videre at løsningen er ikke-degenereret.
-Antag at der ståes i punktet for den basale mulige løsning $\mathbf{x}$ og at den reducerede objektfunktion $c_j$ er udregnet, hvis alle viarable i denne er ikke-negative haves det fra sætning (3.1 i bertsimas) at løsningen er den optimale, og der behøves derfor ikke yderligere skridt.
-Såfremt dette ikke er tilfældet, altså når en af ikke-basal variabel $x_j$ i den reducerede objetfunktion er negativ, ville en bedre løsning potentielt forefindes i retningen $\mathbf{d}$ givet ved  $d_j=1$, $d_i=0$ for $i \neq B(1),\ldots,B(m),j$ og $\mathbf{d}_b=-B^{-1}A_j$.
-Hvis der foregår en bevægelse i retning $\mathbf{d}$ bliver $x_j$ positiv imens de øvrige ikke-basale variable forbliver $0$.
-Denne bevægelse kan beskrives med $\mathbf{x}+\theta \mathbf{d}$ da værdien af objektfunktionen er aftagende i retning $\mathbf{d}$ er det ønskværdigt at følge $\mathbf{d}$ så langt som muligt med henblik på at ende i punktet $\mathbf{x}+\theta^{*} \mathbf{d}$, hvilket kan udtrykkes som følger: $\theta^{*}=\text{max} \theta \geq 0 \mid \mathbf{x}+\theta \mathbf{d} \in \mathcal{P}$.
+Det skal nu vises, hvordan simplex-metoden kan udvikles ud fra geometriske repræsentationer.
+Altså, hvordan der udvikles en metode til at gå fra en profitabel basal mulig løsning til en bedre basal mulig løsning.
+Det antages indtil videre, at løsningen er ikke-degenereret.
+Antag, at der stås i punktet for den basale mulige løsning $\mathbf{x}$ og at den reducerede objektfunktion $c_j$ er udregnet, hvis alle variable i denne er ikke-negative, haves det fra sætning (3.1 i bertsimas), at løsningen er den optimale, og der behøves derfor ikke yderligere skridt.
+Såfremt dette ikke er tilfældet, altså når en ikke-basal variabel $x_j$ i den reducerede objektfunktion er negativ, ville en bedre løsning potentielt forefindes i retningen $\mathbf{d}$, givet ved  $d_j=1$, $d_i=0$ for $i \neq B(1),\ldots,B(m),j$ og $\mathbf{d}_b=-B^{-1}A_j$.
+Hvis der foregår en bevægelse i retning $\mathbf{d}$, bliver $x_j$ positiv, imens de øvrige ikke-basale variable forbliver $0$.
+Denne bevægelse kan beskrives med $\mathbf{x}+\theta \mathbf{d}$. 
+Da værdien af objektfunktionen er aftagende i retning $\mathbf{d}$, er det ønskværdigt at følge $\mathbf{d}$, så langt som muligt med henblik på at ende i punktet $\mathbf{x}+\theta^{*} \mathbf{d}$, hvilket kan udtrykkes som 
+$\theta^{*}=\text{max} \theta \geq 0 \mid \mathbf{x}+\theta \mathbf{d} \in \mathcal{P}$.
 Forandringen i objektfunktionen er således $\theta^{*}\mathbf{c}^T \mathbf{d}=\theta^{*}c_j$.
 Der skal herfra udledes en formel for $\theta^{*}$.
-Givet at $A\mathbf{d}=\mathbf{0}$ følger det at $A(\mathbf{x}+\theta \mathbf{d})=A\mathbf{x}=\mathbf{b}$ for alle $\theta$.
+Givet at $A\mathbf{d}=\mathbf{0}$, følger det, at $A(\mathbf{x}+\theta \mathbf{d})=A\mathbf{x}=\mathbf{b}$ for alle $\theta$.
 %and the equality constraints will never be violated. hvordan følger det af foregående??
-Det gælder således at $\mathbf{x}+\theta\mathbf{d}$ er en mulig løsning i alle tilfælde hvor ingen af $\mathbf{d}$'s komponenter er negative.
+Det gælder således, at $\mathbf{x}+\theta\mathbf{d}$ er en mulig løsning i alle tilfælde, hvor ingen af $\mathbf{d}$'s komponenter er negative.
 %usikker på om det er ds komponenter i ovenstående
-Der findes således et tilfælde hvor $\mathbf{d} \geq \mathbf{0}$, hvorfor $\mathbf{x} + \theta \mathbf{d} \geq \mathbf{0}$ for $\forall\theta \geq 0$, det gælder derfor $\mathbf{x} + \theta \mathbf{d} $ altid er en mulig løsning hvorfor $\theta^*=\infty$. \\
-Såfremt et index i $\mathbf{d}$, $d_i<0$ kan begrænsningen $x_i + \theta d_i \geq 0$ omskrives til $\theta \leq \frac-{x_i}{d_i}$ som skal opfyldes for alle $i$ hvorom det gælder at $d_i<0$.
-Derfor følger det at $\theta*=\text{min}_{i \mid d_i<0}(-\frac{x_i}{d_i}$.
+Der findes således et tilfælde, hvor $\mathbf{d} \geq \mathbf{0}$, hvorfor $\mathbf{x} + \theta \mathbf{d} \geq \mathbf{0}$ for $\forall\theta \geq 0$. 
+Det gælder derfor, at $\mathbf{x} + \theta \mathbf{d} $ altid er en mulig løsning, hvormed $\theta^*=\infty$. \\
+Såfremt et index i $\mathbf{d}$, $d_i<0$ kan begrænsningen $x_i + \theta d_i \geq 0$ omskrives til $\theta \leq \frac-{x_i}{d_i}$, som skal opfyldes for alle $i$, hvorom det gælder, at $d_i<0$.
+Derfor følger det, at $\theta*=\text{min}_{i \mid d_i<0}(-\frac{x_i}{d_i}$.
 Da $x_i$ ikke er en basal variabel 
 %her kommer det jeg virkeligt ikke fatter umiddelbart
 \begin{thm}{}{}
 \begin{enumerate}[label = (\alph*)]
-\item Søjlerne $A_{B(i)}$, $i \neq \mathcal{L}$ og $A_j$ er lineær uafhængige, og 
+\item Søjlerne $A_{B(i)}$, $i \neq \mathcal{L}$ og $A_j$ er lineært uafhængige, og 
 \item Vektoren $\mathbf{y}=x+ \theta \mathbf{d}$ er en basal mulig løsning til(associeret med??) basis matricen $B$.
 \end{enumerate}
 \end{thm}

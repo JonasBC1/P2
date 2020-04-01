@@ -1,0 +1,29 @@
+\begin{thm}{}{}
+Lad $\mathbf{x}$ være en basal mulig løsning, til en basis matrix $B$ og lad $\mathbf{c}^*$ være den reducerede objektfunktion. 
+\begin{enumerate}[label = (\alph*)]
+\item Hvis $\mathbf{c}^* \geq 0$, så er $\mathbf{x}$ optimal.
+\item Hvis $\mathbf{x}$ er optimal og ikke-degenereret, så er $\mathbf{c}^* \geq 0$.
+\end{enumerate}
+\end{thm}
+%
+\begin{proof}
+\begin{enumerate}[label = (\alph*)]
+\item Antag, at $\bar{\textbf{c}} \geq \textbf{0}$. Lad $\textbf{y}$ være en arbitrær mulig løsning, og $\textbf{d} = \textbf{y} - \textbf{x}$. Grundet de mulige løsninger, er $\textbf{A} \textbf{x} = \textbf{A} \textbf{y} = \textbf{b}$, hvormed $\textbf{A} \textbf{d} = \textbf{0}$. Sidstnævnte kan skrives som 
+$$\textbf{B} \textbf{d}_B + \sum_{i \in N} \textbf{A}_i d_i = \textbf{0},$$
+hvor $N$ er mængden af indekser, der svarer til de ikke-basale variabler i basen. %wtf fatter slet ikke det her lol
+$\textbf{B}$ er invertibel, hvormed det haves, at 
+$$\textbf{d}_B = -\sum_{i \in N} \textbf{B}^{-1} \textbf{A}_i d_i ,$$
+og
+$$\textbf{c}' \textbf{d} = \textbf{c}'_B \textbf{d}_B + \sum_{i \in N} c_i d_i = \sum_{i \in N} (c_i - \textbf{c}'_B \textbf{B}^{-1} \textbf{A}_i) d_i = \sum_{i \in N} \bar{c}_i d_i .$$
+%nanananana fatter intet, hvorfor har vi dette med? 
+For ethvert ikke-basalt indeks $i \in N$ må der eksistere et $x_i = 0$, samt et $y_i \geq 0$, da $\textbf{y}$ er en mulig løsning. 
+Deraf haves, at $d_i \geq 0$ og $\bar{c}_i d_i \geq 0$ for alle $i \in N$. 
+Dermed er $\textbf{c}' (\textbf{y} - \textbf{x} = \textbf{c}' \textbf{d} \geq 0$, og $\textbf{x}$ er en optimal løsning, eftersom $\textbf{y}$ er en arbitrær mulig løsning. 
+%
+%
+\item Antag, at $x$ er en ikke-degenereret basal mulig løsning, og at $\bar{c}_j < 0$ for et $j$. Eftersom den reducerede objektfunktion for en basal variabel altid er $0$, må $x_j$ være en ikke-basal variabel, og $\bar{c}_j$ må være ændringshastigheden for objektfunktionen i den $j$'te basale retning. 
+%Wtf er ovenstående for noget lort
+Da $\textbf{x}$ ikke er degenereret, er den $j$'te basale retning en mulig retning for mindskelse af objektfunktionen. 
+Der findes dermed mulige løsninger, hvis objektfunktion har lavere værdi end $\textbf{x}$'s, ved at bevæge sig i denne retning, hvormed $\textbf{x}$ ikke er optimal. 
+\end{enumerate}
+\end{proof}
