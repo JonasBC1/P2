@@ -7,8 +7,8 @@ En iteration af simplex metoden
 $$\theta^*= min_{ \{i=1,\ldots,m|u_i>0 \} }        \dfrac{x_{B(i)}}{u_i}$$
 \item Lad $l$ være indekset for $\theta^*=  \dfrac{x_{B(l)}}{u_l}$. Dan et nyt basis ved at udskifte $\textbf{A}_{B(l)}$ med $\textbf{A}_j$. Hvis $\textbf{y}$ er den nye basale mulige løsning, så er værdierne af de nye basale variable $y_j=\theta^*$ og $y_{B(i)}=x_{B(i)}-\theta^*u_i,i\neq l$
 \end{enumerate}
-
-
+%
+%
 I det ikke-degenererede tilfælde siger følgende sætning, at simplex-metoden fungerer og stopper efter et endeligt antal iterationer.
 % Sætning 3.3
 \begin{thm}{}{}
@@ -29,7 +29,7 @@ Hvis algoritmen stopper på grund af stopkriteriet i trin $3$, så er den nuvær
 Der findes desuden en ikke-basal variabel $x_j$, således at $c^*_j<0$, og den tilsvarende basale retning $\textbf{d}$ tilfredsstiller $\textbf{Ad}=\textbf{0}$ og $\textbf{d} \geq \textbf{0}$. 
 Dertil, at $x+\theta \textbf{d}\in P$ for alle $\theta>0$. 
 Eftersom $\textbf{c}^T\textbf{d}=c_j^*<0$, ved at tage et arbitrært stort $\theta$, fås en arbitrær negativ objektfunktion, og den optimale objektsværdi er $-\infty$.
-\\
+\\\\
 Ved hver iteration bevæger algoritmen sig en positiv værdi $\theta*$ langs en retning $\textbf{d}$, der ofylder $\textbf{c}^T\textbf{d}<0$. 
 Som følge af dette forbedres objektfunktionens værdi for hver basal mulig løsning simplex algoritmen undersøger, samt at den samme løsning ikke besøges mere end en gang. 
 Eftersom der er et endeligt antal basale mulige løsninger, terminerer algoritmen efter et endeligt antal iterationer.
