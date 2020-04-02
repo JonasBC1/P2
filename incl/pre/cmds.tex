@@ -28,15 +28,12 @@
 \theoremstyle{definition}          	% Title med fed, opretstående tekst
 %\newtheorem{defn}[thm]{Definition} % Definitioner, nummereret ligesom sætninger
 \newcounter{example}[chapter]
-\def\theexample{eksempel \thechapter.\arabic{example}}
-\def\theExample{Eksempel \thechapter.\arabic{example}}
-\newenvironment{eks}{\phantom{.}\newline\noindent\refstepcounter{example}\textbf{\theExample}\phantom{.}\newline\noindent\textcolor{myblue!25}{\rule{\textwidth}{1pt}}}
+\def\theexample{Eksempel \thechapter.\arabic{example}}
+\newenvironment{eks}{\phantom{.}\newline\noindent\refstepcounter{example}\textbf{\theexample}\phantom{.}\newline\noindent\textcolor{myblue!25}{\rule{\textwidth}{1pt}}}
 {\phantom{.}\newline\textcolor{myblue!25}{\rule{\textwidth}{1pt}}\bigskip}  
 
-\newcounter{proof}[chapter]
-\def\theproof{bevis \thechapter.\arabic{proof}}
-\def\theProof{Bevis \thechapter.\arabic{proof}}
-\renewenvironment{proof}{\phantom{.}\newline\noindent\refstepcounter{proof}\textbf{\theProof}\phantom{.}\newline\noindent}
+
+\renewenvironment{proof}{\phantom{.}\newline\noindent\textbf{Bevis}\newline\noindent}
 {\qed\newline}  
 
 %farvet-commands
@@ -44,58 +41,70 @@
 \definecolor{mygreen}{RGB}{157, 187, 29}
 \definecolor{myred}{RGB}{223, 103, 82}
 \definecolor{mygrey}{RGB}{222, 223, 226}
-\newtcbtheorem[auto counter, number within = chapter]
+
+\newcounter{defn}[chapter]
+\newtcbtheorem[use counter=defn]
 {defn}
-{Definition}
+{\thedefn}
 {
 colback		= myblue!15,
 colframe	= myblue!15,
 coltitle	= black,
 before skip	= 20pt plus 2pt,
 after skip	= 20pt plus 2pt,
-fonttitle	= \bfseries
+fonttitle	= \bfseries,
+theorem name
 }
 {defn}
+\def\thedefn{Definition \thechapter.\arabic{defn}}
 
-\newtcbtheorem[auto counter, number within = chapter]
+\newcounter{lem}[chapter]
+\newtcbtheorem[use counter=lem]
 {lem}
-{Lemma}
+{\thelem}
 {
 colback		= myblue!15,
 colframe	= myblue!15,
 coltitle	= black,
 before skip	= 20pt plus 2pt,
 after skip	= 20pt plus 2pt,
-fonttitle	= \bfseries
+fonttitle	= \bfseries,
+theorem name
 }
 {lem}
+\def\thelem{Lemma \thechapter.\arabic{lem}}
 
-
-\newtcbtheorem[auto counter, number within = chapter]
+\newcounter{kor}[chapter]
+\newtcbtheorem[use counter=kor]
 {kor}
-{Korollar}
+{\thekor}
 {
 colback		= myblue!15,
 colframe	= myblue!15,
 coltitle	= black,
 before skip	= 20pt plus 2pt,
 after skip	= 20pt plus 2pt,
-fonttitle	= \bfseries
+fonttitle	= \bfseries,
+theorem name
 }
 {kor}
+\def\thekor{Korollar \thechapter.\arabic{kor}}
 
-\newtcbtheorem[auto counter, number within = chapter]
+\newcounter{thm}[chapter]
+\newtcbtheorem[use counter=thm]
 {thm}
-{Sætning}
+{\thethm}
 {
 colback		= myblue!15,
 colframe	= myblue!15,
 coltitle	= black,
 before skip	= 20pt plus 2pt,
 after skip	= 20pt plus 2pt,
-fonttitle	= \bfseries
+fonttitle	= \bfseries,
+theorem name
 }
 {thm}
+\def\thethm{Sætning \thechapter.\arabic{thm}}
 
 \newtcbtheorem[no counter]
 {col}
