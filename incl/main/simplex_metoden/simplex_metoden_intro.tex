@@ -1,18 +1,18 @@
-Som nævnt tidligere i rapporten, så findes der en optimal løsning til et lineært ligningssystem på standard form, så længe der findes mindst én basal mulig løsning. 
+Som nævnt tidligere i rapporten, findes der en optimal løsning til et lineært ligningssystem på standard form, så længe der findes mindst én basal mulig løsning. 
 \textit{Simplex metoden} benytter sig af denne egenskab og forsøger at finde den optimale løsning for en lineært ligningssystem på standard form.
 %
 % -------------------------------------------------------------------------
 % Noget introducerende
 %
-\section{Praktisk anvendelse af Simplex-metoden}
-Simplex-metoden foretager som udgangspunkt følgende seks operationer, inden den afsluttes: 
+\section{Praktisk anvendelse af Simplexmetoden}
+Simplexmetoden foretager som udgangspunkt følgende seks operationer, inden den afsluttes: 
 %
 \begin{col}{}{}
 %
 % Denne skal eventuelt beskrives mere i dybdegående - Tager kort tid.
 \begin{enumerate}
-\item Opskriv optimeringsproblemet på standardform med slack-variabler.  %1
-\item Opstil simplex-tabellen for optimeringsproblemet.					 %2
+\item Omskriv optimeringsproblemet til standardform med slack-variabler.  %1
+\item Opstil simplextabellen for optimeringsproblemet.					 %2
 \item Tjek optimering og identificér en pivotindgang.					 %3
 \item Opstil en ny tabel ved hjælp af pivotering. 						 %4
 \item Gentag operation 3 og 4, indtil den optimale løsning er fundet. 					 %5
@@ -22,17 +22,19 @@ Simplex-metoden foretager som udgangspunkt følgende seks operationer, inden den
 \end{col}
 \noindent
 %
-I følgende afsnit uddybes ovenstående punkter, samt tilhørende teori, med udgangspunkt i eksempel \ref{haribooooo}.
+I følgende afsnit uddybes ovenstående punkter, samt tilhørende teori, med udgangspunkt i \ref{haribooooo}.
 %
 \\
 %
 \begin{eks}
 \label{haribooooo}
-Haribo har to typer slikblandinger $x_1$ og $x_2$, hvor profitten for disse er henholdsvis $3$ og $4$ enheder.
+Haribo har to typer slikblandinger $x_1$ og $x_2$, hvor profitten for disse henholdsvis er $5$ og $4$ enheder.
 %(her kunne der også skrives tusind/millioner whatever ingen anelse om realistisk skala i haribos profitmargin)
-Disse er begrænset af kapaciteten af lakridsproduktion, som har en begrænsning på $78$ enheder, og vingummi, der har en begrænsning på $36$ enheder, da disse indgår i begge slikblandinger.
+Disse er begrænset af produktionskapaciteten af lakrids og vingummi.
+Lakridsproduktion har en begrænsning på $78$ enheder, hvor der skal $3$ enheder lakrids i $x_1$ blandingen og $5$ enheder lakrids i $x_2$.
+Vingummiproduktionen har en begrænsning på $36$ enheder, hvor der skal $4$ enheder lakrids i $x_1$ blandingen og $1$ enheder lakrids i $x_2$. 
 %
-Optimeringsproblemet er dermed følgende:
+Disse betingelser danner følgende optimeringsproblemet:
 %
 \begin{align*}
 \begin{array}{lrrlr} 
@@ -47,7 +49,7 @@ Optimeringsproblemet er dermed følgende:
 
 \subsubsection{1. Opskriv optimeringsproblemet på standardform med slack-variabler.}
 %
-Generelt tager simplex-modellen udgangspunkt i, at alle variablerne er positive. Jævnfør afsnit \ref{sec:standard} tilføjes $x_i^+$ og $x_i^-$, hvis der i optimeringsproblemet ikke er ikke-negativitetsbetingelser for variablerne. 
+Generelt tager simplexmodellen udgangspunkt i, at alle variablerne er positive. Jævnfør afsnit \ref{sec:standard} tilføjes $x_i^+$ og $x_i^-$, hvis der i optimeringsproblemet ikke er ikke-negativitetsbetingelser for variablerne. 
 I dette tilfælde er begge variabler positive, og det er derfor ikke nødvendigt at opdele variablerne. 
 Med udgangspunkt i metoden fra afsnit \ref{sec:standard} opstilles optimeringsproblemet derfor på standardform som
 %
@@ -59,7 +61,7 @@ Med udgangspunkt i metoden fra afsnit \ref{sec:standard} opstilles optimeringspr
 \end{array}
 \end{align*}
 %Hvor kommer 78 og 36 fra? 
-Dog er maksimeringsproblemet omskrevet med udgangspunkt i 
+Dog er objektfunktionen omskrevet med udgangspunkt i 
 \begin{align*}
 -\textbf{c}^T\textbf{x} + z	 =0,
 \end{align*}
@@ -67,9 +69,9 @@ hvor $z$ er den optimale værdi.
 %
 Slack-variablerne $s_1$ og $s_2$ er her markeret med blå, da de i sidste ende ikke tilføjes til løsningen. 
 %
-\subsubsection{2. Opstil simplex-tabellen for optimeringsproblemet}		
+\subsubsection{2. Opstil simplextabellen for optimeringsproblemet}		
 % 
-Nu opstilles \textit{simplex-tabellen} for optimeringsproblemet. 
+Nu opstilles \textit{simplextabellen} for optimeringsproblemet. 
 Med udgangspunkt i et generelt lineært optimeringsproblem på formen
 %
 % & =v, \text{ hvor } v=0
@@ -80,9 +82,9 @@ Med udgangspunkt i et generelt lineært optimeringsproblem på formen
 					&\mathbf{x}				&\geq \mathbf{0},
 \end{array}
 \end{align*}
-er simplex-tabellen en matrix, som indeholder de lineære betingelser, slack-variablerne og objektfunktionen. 
-Matricen $\mathbf{A}$ opskrives først, og derefter opskrives identitesmatricen $e_{m+1}$, hvor $m$ er mængden af slack-variabler, samt den optimale løsning $z$, og til sidst opskrives $\mathbf{b}$. 
-Under $\mathbf{A}$ tilføjes matricen $- \mathbf{c}^T$. 
+er simplextabellen en matrix, som indeholder de lineære betingelser, slack-variablerne og objektfunktionen. 
+Matricen $\mathbf{A}$ opskrives først, og derefter opskrives identitesmatricen $e_{m+1}$, hvor $m$ er antallet af slack-variabler, samt den optimale løsning $z$, og til sidst opskrives $\mathbf{b}$. 
+Under $\mathbf{A}$ tilføjes objektfunktionen $- \mathbf{c}^T$. 
 Med udgangspunkt i forrige optimeringsproblem ser en generel formel i simplex-tabellen dermed ud som følgende:
 %
 \begin{align*}
@@ -129,20 +131,20 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \end{blockarray}.
 \end{align*}
 %
-Søjlen, hvori denne værdi er, kaldes \textit{pivot-søjlen}. 
-Herefter findes pivotindgangen og \textit{pivot-rækken}, ved at finde den mindste $x_i$-værdi ud fra 
+Søjlen, hvori denne værdi er, kaldes \textit{pivotsøjlen}. 
+Herefter findes \textit{pivoteringsindgangen} og \textit{pivotrækken}, ved at finde den mindste $u_i$-værdi ud fra 
 \begin{align*}
-\frac{a_{i,j}}{b_j}=x_i
+\frac{a_{i,j}}{b_j}=u_i
 \end{align*}
 %
 i pivot-søjlen.
-For eksemplet findes pivotindgangen
+Pivotindgangen for eksemplet findes ved
 %
 \begin{align*}
-\frac{78}{3} =26 \text{  } \text{   } \frac{36}{4} =9.
+\frac{78}{3} =26 \text{  } \text{ og } \text{   } \frac{36}{4} =9.
 \end{align*}
 %
-Eftersom $9$ er den laveste værdi, er $4$ pivotindgangen, mens den række, som den er i, er pivot-rækken. 
+Eftersom $9$ er den laveste værdi, er $a_{2,1}$ pivotindgangen, mens den række, som den er i, er pivot-rækken. 
 I nedenstående er pivotindgangen markeret.
 %
 \begin{align*}
@@ -217,10 +219,10 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 Pivotindgangen findes ved
 %
 \begin{align*}
-\frac{51}{\frac{17}{4}} =12 \text{  } \text{   } \frac{9}{\frac{1}{4}} =36.
+\frac{51}{\frac{17}{4}} =12 \text{  }  \text{ og }  \text{   } \frac{9}{\frac{1}{4}} =36.
 \end{align*}
 %
-Pivotindgangen er $\frac{17}{4}$, da denne giver den mindste værdi på $12$, hvilket er markeret i nedenstående matrix.
+Pivotindgangen er $a_{1,2}$, da denne giver den mindste værdi på $12$, hvilket er markeret i nedenstående matrix.
 %
 \begin{align*}
 \begin{blockarray}{cccccc}
@@ -234,7 +236,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \end{blockarray}
 \end{align*}
 %
-Pivotindgangen skaleres til $1$, og der skabes nuller under og over pivotindgangen, ved de elementære regneregler:
+Pivotindgangen skaleres til $1$, og der skabes nuller under og over pivotindgangen, ved de elementære rækkeoperationer:
 %& \begin{blockarray}{cccccc}
 %x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} &z & b \\
 %\begin{block}{[cc|ccc|c]}
@@ -272,8 +274,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \subsubsection{6. Identificér den optimale løsning}
 %
 Eftersom der ikke er flere negative værdier i objektfunktionen, er den optimale løsning nu fundet. 
-Denne løsning kan aflæses direkte af simplex-tabellen. 
-Den optimale løsning for eksemplet er dermed
+Denne løsning kan aflæses direkte af simplex-tabellen, og den optimale løsning for eksemplet er dermed
 %
 \begin{align*}
 x_1 & = 6, \\
@@ -281,3 +282,4 @@ x_2 & = 12, \\
 z   & = 78.
 \end{align*}
 %
+Haribos profit vil derfor være størst ved produktion af $6$ enheder af $x_1$ blandingen og $12$ enheder af $x_2$ blandingen. Dette giver en profit på $78$ enheder.
