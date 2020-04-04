@@ -1,9 +1,9 @@
 \subsection{Linearkombination}
-%
+% Det jo kinda en vigtig del for os 
 \textit{Linearkombination} er en central del af lineær algebra, da det benyttes i forbindelse med løsning af ligningssystemer. 
 %
 \begin{defn}{}{mxlinkom}
-Givet vektorer $\mathbf{u}_1, \mathbf{u}_2, \ldots, \mathbf{u}_k$ med størrelsen $m \times n$, så er \textbf{linearkombinationen} af $\mathbf{a}_1, \mathbf{u}_2, \ldots, \mathbf{u}_k$ en vektor $\mathbf{v}$ på formen 
+Givet vektorer $\mathbf{u}_1, \mathbf{u}_2, \ldots, \mathbf{u}_k$ med størrelsen $m \times n$, så er \textbf{linearkombinationen} af $\mathbf{u}_1, \mathbf{u}_2, \ldots, \mathbf{u}_k$ en vektor $\mathbf{v}$ på formen 
 %
 \begin{align*}
 c_1\mathbf{u}_1+c_2\mathbf{u}_2+\ldots+c_k\mathbf{u}_k=\sum\limits_{i=1}^k c_i\mathbf{u}_i=\mathbf{v},
@@ -47,7 +47,7 @@ $$
 \end{bmatrix},
 $$
 samt $c_a=-4$, $c_b=100$ og $c_c=2$. 
-Jævnfør definition \ref{defn:mxlinkom} er linearkombinationen af $\textbf{a}$, $\textbf{b}$ og $\textbf{c}$:
+Jævnfør \ref{defn:mxlinkom} er linearkombinationen af $\textbf{u}$, $\textbf{v}$ og $\textbf{w}$:
 $$
 (-4)
 \begin{bmatrix}
@@ -115,7 +115,7 @@ A\textbf{u} =u_1\textbf{a}_1 + u_2\textbf{a}_2 + \cdots + u_n\textbf{a}_n.
 \end{defn}
 \noindent
 For at $A\textbf{u}$ eksisterer, skal der være lige mange komponenter i \textbf{v}, som der er søjler i $A$. 
-Et eksempel på et matrix-vektorprodukt mellem en matrix $A$ og en vektor \textbf{u} ses i eksempel \ref{Matrix-vektor}.
+Et eksempel på et matrix-vektorprodukt mellem en matrix $A$ og en vektor \textbf{u} ses i \ref{Matrix-vektor}.
 \\
 %
 \begin{eks}
@@ -208,10 +208,23 @@ A\textbf{u}=
 $$
 \end{eks}
 % 
-En række egenskaber ved matrix-vektorprodukt beskrives i sætning \ref{thm:mxvpro}.
+En række egenskaber ved matrix-vektorprodukt beskrives i \ref{thm:mxvpro}.
+\\\\
+\phantom{  }
+\\\\
+\phantom{  }
+\\\\
+\phantom{  }
+\\\\
+\phantom{  }
+\\\\
+\phantom{  }
+\\\\
+\phantom{  }
+\\\\
 %
 \begin{thm}{}{mxvpro}
-Lad $A$ og $B$ være $m \times n$ matricer, og lad $\mathbf{u}, \mathbf{v}$ og $\mathbf{w}$ være vektorer i $R^n$. Så gælder at
+Lad $A$ og $B$ være $m \times n$ matricer, og lad $\mathbf{u}, \mathbf{v}$ og $\mathbf{w}$ være vektorer i $R^n$. Så gælder det at
 \begin{enumerate}[label=(\alph*)]
 \item $A(\mathbf{u}+\mathbf{v})=A\mathbf{u}+A\mathbf{v}$.
 \item $A(c\mathbf{u})=c(A\mathbf{u})=(cA)\mathbf{u}$ for enhver skalar c.
@@ -280,5 +293,5 @@ $$
 \end{bmatrix}.
 $$
 Det følger derfor, at $I_n\mathbf{v}=v$.
-Således er alle punkter i sætning \ref{thm:mxvpro} bevist. 
+Således er alle punkter i \ref{thm:mxvpro} bevist. 
 \end{proof}

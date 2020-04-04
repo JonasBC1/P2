@@ -29,12 +29,13 @@ s_n
 \end{bmatrix},
 $
 \end{center}
-i $\R ^n$, således at alle ligninger er opfyldt, når $x_i$ erstattes med $s_i$. Et eksempel på et lineært ligningssystem ses i eksempel \ref{eks:lignsys}.
+i $\R ^n$, således at alle ligninger er opfyldt, når $x_i$ erstattes med $s_i$. Et eksempel på et lineært ligningssystem ses i \ref{eks:lignsys}.
 %
-\\
+\\\\
+%
 \begin{eks}
 \label{eks:lignsys}
-Understående er et lineært ligningssystem, bestående af tre ligninger.
+Understående er et lineært ligningssystem, bestående af tre lineære ligninger.
 %
 \begin{align*}
 x_1-x_3-2x_4-8x_5&=-3 \\
@@ -42,13 +43,14 @@ x_1-x_3-2x_4-8x_5&=-3 \\
 3x_1-2x_3-3x_4-15x_5&=-9.
 \end{align*}
 %
-Løsningen på dette system ses i eksempel \ref{eks_gauss}.
+% Løsningen på dette system ses i \ref{eks_gauss}.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \end{eks}
+%
 Alle lineære ligningssystemer har enten ingen, én eller uendeligt mange løsninger.
-Ligninger i $\R^2$ kan repræsenteres ved linjer og i $\R^3$ kan de repræsenteres ved planer.
+Ligninger i $\R^2$ kan repræsenteres ved linjer, og ligninger i $\R^3$ kan repræsenteres ved planer.
 % Er det en eller et plan? Hess siger altid "en"... Hmmmmm.. 
 Hvis disse ligninger er parallelle og forskellige, har systemet ingen løsning.
 Hvis ligningerne er forskellige, så har systemet præcis én løsning, hvor ligningerne krydser hinanden. 
@@ -87,7 +89,7 @@ $$
 %
 A kaldes for \textit{koefficientmatricen}. 
 %efter hårdt sammenleje bliver A matricen og b til totalmatricen
-\textit{Totalmatrixen} $[A \text{    } | \mathbf{b}]$ dannes ved at kombinere koefficientmatricen med vektoren \textbf{b}.
+\textit{Totalmatrixen} $[A \mid \mathbf{b}]$ dannes ved at kombinere koefficientmatricen med vektoren \textbf{b}.
 Totalmatrixen indeholder alle informationer, der skal bruges til at løse et lineært ligningssystem.
 En matrixligning kan også opskrives ved
 %
@@ -96,8 +98,9 @@ En matrixligning kan også opskrives ved
 \end{align*}
 %
 Totalmatricen opskrives på formen:
+%
 \begin{equation*}
-  A=
+[A \mid \mathbf{b}]=
 \begin{blockarray}{cccccc}
 x_1 & x_2 & \cdots & x_n & b \\
 \begin{block}{[cccc|c]c}
@@ -110,10 +113,14 @@ a_{m,1} & a_{m,2} & \cdots & a_{m,n} & b_{m}\\
 \end{equation*}
 %
 \\
-Ligningssystemet fra eksempel \ref{eks:lignsys} opskrives som totalmatricen i eksempel \ref{eks:lig_mat}.
+Ligningssystemet fra \ref{eks:lignsys} opskrives som totalmatricen i \ref{eks:lig_mat}. 
+%
+\\\\
+\phantom{ }
+\\\\
 %
 \begin{eks}\label{eks:lig_mat}
-Med udgangspunkt i ligningssystemet fra eksempel \ref{eks:lignsys} følger det at
+Med udgangspunkt i ligningssystemet fra \ref{eks:lignsys} følger det at
 $$A=
 \begin{bmatrix}
 1 & 0 & -1 & -2 & -8\\
@@ -137,7 +144,8 @@ x_5
 \end{bmatrix}
 $$
 %
-og
+og totalmatricen 
+%
 \begin{equation*}
   [A \text{    } | \mathbf{b}] =
 \begin{blockarray}{ccccccc}
@@ -149,5 +157,5 @@ x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \end{block}
 \end{blockarray}.
 \end{equation*}
-
+%
 \end{eks}

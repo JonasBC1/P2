@@ -5,7 +5,7 @@ Det er ofte nødvendigt at multiplicere matricer med andre matricer.
 Lad $A$ være en $m \times n$ matrix og $B$ være en $n \times p$ matrix.
 \textbf{Matrixproduktet} $AB$  er en $m \times p$ matrix 
 $$
-C=
+AB=
 \begin{bmatrix}
 A\textbf{b}_1 & A\textbf{b}_2 & \ldots & A\textbf{b}_p
 \end{bmatrix}\text{,}
@@ -14,7 +14,7 @@ hvor $A\textbf{b}_j$ er den $j$'te søjle i $C$.
 \end{defn}
 \noindent
 %
-Som det fremgår af definition \ref{defn:mxmulti}, skal antallet af søjler i $A$ tilsvare antallet af rækker i $B$, for at $AB$ er defineret og matrixmultiplikation dermed er muligt. 
+Som det fremgår af \ref{defn:mxmulti}, skal antallet af søjler i $A$ tilsvare antallet af rækker i $B$, for at $AB$ er defineret og matrixmultiplikation dermed er muligt. 
 Bemærk, at selvom $AB$ er defineret, er $BA$ ikke nødvendigvis defineret. 
 Hvis både $AB$ og $BA$ er defineret, er de desuden ikke nødvendigvis lig hinanden. 
 For at beregne værdien af komponenterne i matrixproduktet $AB$ kan følgende sammenhæng mellem den $i$'te række i $A$ og den $j$'te søjle i $B$ betragtes: 
@@ -109,10 +109,11 @@ A\textbf{b}_1 & A\textbf{b}_2
 41 & 34
 \end{bmatrix}.
 $$
+% Eventuelt en kommentar omkring om BA er eksisterende 
 \end{eks}
 Da matricen $B$ inddeles i sine søjlevektorer, er grundprincippet i matrixmultiplikation at finde matrix-vektorprodukter.\\\\
-En række egenskaber gælder for matrixmultiplikation, hvilket er summeret i sætning \ref{thm:mxmulti}.
-
+En række egenskaber gælder for matrixmultiplikation, hvilket er summeret i \ref{thm:mxmulti}.
+%
 \begin{thm}{}{mxmulti}
 Lad $A$ og $B$ være $k \times m$ matricer, $C$ være en $m \times n$ matrix, og $P$ og $Q$ være $n \times p$ matricer. Følgende udsagn er dermed sande:
 \begin{enumerate}[label=(\alph*)]
@@ -137,12 +138,12 @@ At komponenten i den $(i,j)$'te indgang i $A(CP)$ er ækvivalent med komponenten
 % Måske er (b) ikke helt nok? 
 \\\\
 (c) Lad $\textbf{c}_j$ være en vilkårlig søjle i $C$. 
-Det følger deraf, at $(A+B)\textbf{c}_j=A\textbf{c}_j+B\textbf{c}_j$ jævnfør sætning \ref{thm:mxvpro}. 
+Det følger deraf, at $(A+B)\textbf{c}_j=A\textbf{c}_j+B\textbf{c}_j$ jævnfør \ref{thm:mxvpro}. 
 \\\\
-(d) Lad $\textbf{p}_j$ og $\textbf{q}_j$ være søjler i henholdvis $P$ og $Q$. Det følger deraf, at $C(\textbf{p}_j+\textbf{q}_j)=C\textbf{p}_j+C\textbf{q}_j$ jævnfør sætning \ref{thm:mxvpro}. 
+(d) Lad $\textbf{p}_j$ og $\textbf{q}_j$ være søjler i henholdvis $P$ og $Q$. Det følger deraf, at $C(\textbf{p}_j+\textbf{q}_j)=C\textbf{p}_j+C\textbf{q}_j$ jævnfør \ref{thm:mxvpro}. 
 \\\\
 (e) Da $I_k$ og $I_m$ henholdsvis korresponderer til antallet af rækker og søjler i $A$, er matrixprodukterne $I_kA$ og $AI_m$ defineret. 
-Da $I_k\textbf{a}_j=\textbf{a}_j$ og $I_m\textbf{a}_i=I_m\textbf{a}_i$, er $I_kA=A$ og $AI_m=A$, hvormed $I_kA=AI_m$.
+Da $I_k\textbf{a}_j=\textbf{a}_j$ og $\textbf{a}_iI_m=\textbf{a}_i$, er $I_kA=A$ og $AI_m=A$, hvormed $I_kA=AI_m$.
 \\\\
 (f) Eftersom enhver komponent i en vilkårlig matrix multipliceret med $0$ er $0$, følger udsagnet trivielt. 
 \\\\
