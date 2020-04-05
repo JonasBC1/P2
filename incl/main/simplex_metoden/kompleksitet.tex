@@ -9,21 +9,27 @@ Lad $f(x)$ og $g(x)$ være vilkårlige funktioner. $f(x)$ er \textbf{store-$O$} 
 \end{defn}
 \noindent
 %
-Som beskrevet i afsnit \ref{julieergudesmuk} findes der forskellige implementere af simplexmetoden. Disse har  hver har sin kompleksitet.
-% Kommenteres det er tidskompleksistet xD
-De to implementeringer, der vil blive betragtet i dette afsnit, er fuld tabel og den reviderede simplexmetode.
+Som beskrevet i afsnit \ref{julieergudesmuk} findes der forskellige implementere af simplexmetoden. Disse har  hver har sin tidskompleksitet og rumkompleksitet.
+%
+De tre implementeringer, der vil blive betragtet i dette afsnit, er fuld-tabel, den naive og den reviderede.\\\\
 %
 Fuld-tabel-metoden kræver et konstant antal af operationer for at opdatere indgangene i simplexmatricen.
-Derfor er antallet af operationer proportionelt med størrelsen på matricen og kompleksiteten $O(mn)$.
-Den reviderede metode bruger lignende operationer, men opdaterer kun $O(m^2)$ indgange og har derfor kompleksiteten $O(m^2)$.
+Derfor er antallet af operationer proportionelt med størrelsen på matricen og tidskompleksiteten er $O(mn)$ og rumkompleksiteten er $O(mn)$.\\\\
+%
+Den naive implementering behøver $O(m^3)$ aritmetiske operationer for at løse systemerne $\mathbf{p}^T B=\mathbf{c}_{\text{B}}^T$ og $B\mathbf{u}=\mathbf{A}_j$.
+Ydermere kræver udregningen af den reducerede objektfunktion gældende
+% for alle variabler, 
+$O(mn)$ aritmetiske operationer, da det er nødvendigt at udregne de indre produkt af vekotren $\mathbf{p}$ for alle ikke-basis søjler i $\mathbf{A}_j$.
+Derfor er den samlede tidskompleksitet $O(m^3+mn)$ for den naive implementering.\\\\
+%
+Den reviderede metode bruger samme operationer som fuld-tabel implementeringen, men opdaterer kun $O(m^2)$ indgange og har derfor en tidskompleksiteten $O(m^2)$.
 Det kan dog forekomme, at metoden skal opdatere alle variabler.
 Hver udregning af en variabel kræver $O(m)$ operationer, hvilket medfører, at der i værste tilfælde bruges $O(mn)$ operationer.
-Da $m \leq n$, er kompleksiteten i værste tilfælde $O(mn)$ for begge metoder.
-Med dette konkluderes det, at den reviderede metode aldrig vil kære langsommere end fuld-tabel metoden.
-Dog vil en iteration fra den reviderede metode være hurtigere i alle andre tilfælde end det værste.
-Endnu et vigtigt element, som er tiltalende ved den reviderede metode, er rumkompleksiteten på $O(m^2)$, hvor fuld-tabel metodens er på $O(mn)$.
-Her kan der igen være en ret betydelig forskel, afhængigt af størrelsen på $n$.
-\\\\
+Da $m \leq n$, er tidskompleksiteten i værste tilfælde $O(mn)$.
+Med dette konkluderes det, at den reviderede metode aldrig vil køre langsommere end fuld-tabel og den naive implementering.
+Samtidigt vil en iteration fra den reviderede metode være hurtigere end fuld-tabel i alle andre tilfælde end det værste.
+Endnu et vigtigt element, som er tiltalende ved den reviderede metode, er rumkompleksiteten på $O(m^2)$.
+Her kan der igen være en ret betydelig forskel, afhængigt af størrelsen på $n$.\\\\
 %
 Selvom antallet af basale mulige løsninger kan stige eksponentielt med antallet af variabler og betingelser, så har simplexmetoden typisk fundet en optimal løsning efter $O(m)$ iterationer.
 Dog eksisterer der polyeder, hvor antallet af pivoteringer påkrævet stiger eksponentielt.
@@ -67,9 +73,3 @@ Dette medfører, at en pivoteringsregl, som ønsker at minimere mindst muligt pr
 \end{enumerate}
 \end{proof}
 %
-% Den naive
-%Det er gældende for den naive implementering, at den behøver $O(m^3)$ aritmetiske operationer for at løse systemerne $\mathbf{p}^T B=\mathbf{c}_{\text{B}}^T$ og $B\mathbf{u}=\mathbf{A}_j$. Ydermere kræver udregningen af den reducerede objektfunktion gældende for alle variabler, $O(mn)$ aritmetriske operationer, da det er nødvendigt at udregne de indre produkt af vekotren $\mathbf{p}$ for alle ikke-basis søjler i $\mathbf{A}_j$. Derfor er den samlede kompleksitet $O(m^3+mn)$ for den naive implementering. 
-% Den revideret
-%Det er gældende for den reviderede implementering, at den behøver $O(m^2)$ aritmetiske operationer, og har derfor i bedste case en lavere kompleksitivitet end den naive implementering.
-% Fuld tabel 
-% Det er gældende for den fulde tabel implementering, at den behøver $O(mn)$ aritmetiske operationer, og har derfor i den bedste case en lavere kompleksitivitet end både den naive og den reviderede implementering. 
