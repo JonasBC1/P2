@@ -84,6 +84,7 @@ Med udgangspunkt i et generelt lineært optimeringsproblem på formen
 \end{align*}
 er simplextabellen en matrix, som indeholder de lineære betingelser, slack-variablerne og objektfunktionen. 
 Matricen $\mathbf{A}$ opskrives først, og derefter opskrives identitesmatricen $e_{m+1}$, hvor $m$ er antallet af slack-variabler, samt den optimale løsning $z$, og til sidst opskrives $\mathbf{b}$. 
+Identitetsmatricen $I_m$, som udgør antallet af slack-variabler danner basismatricen $B$.
 Under $\mathbf{A}$ tilføjes objektfunktionen $- \mathbf{c}^T$. 
 Med udgangspunkt i forrige optimeringsproblem ser en generel formel i simplex-tabellen dermed ud som følgende:
 %
@@ -117,7 +118,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 %
 \subsubsection{3. Tjek optimering og identificér en pivotindgang}
 %
-Først tjekkes der efter optimering ved at finde det største negative tal i objektfunktionen, hvilket i dette tilfælde findes i nederste række i simplex-tabellen:
+Først tjekkes der efter optimering ved at finde det mindste negative koefficient i objektfunktionen, hvilket i dette tilfælde findes i nederste række i simplex-tabellen:
 %
 \begin{align*}
 \begin{blockarray}{cccccc}
