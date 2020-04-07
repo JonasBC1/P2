@@ -1,2 +1,385 @@
-\section*{3.}
+\section*{3. Nulpunktbestemmelse}
+% Gennemgå bisektionsmetoden, Newtons metode og sekantmetoden til bestemmelse af nulpunkt af en funktion. 
+% Gennemgå iterationsmetoden til bestemmelse af x-punkt for en funktion.
+%
+Følgende metoder bestemmer nulpunktet for en funktion $f$.
+For $f:I\rightarrow\R$ kontinuert og $f(a)f(b)<0$, hvor $I=[a,b]$, er der jævnfør mellemværdi-sætningen mindst en løsning til $f(s)=0$.
 % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\subsection*{Bisektionsmetoden}
+\textbf{Bisektionsmetoden} bestemmer midtpunktet $m=\frac{a+b}{2}$ og sætter $b=m$, hvis $f(a)f(m)<0$, ellers sættes $a=m$. Denne procedure gentages indtil indervallet $b-a$ er mindre en en given tolerance. % Fx 10^-4
+Herefter bestemmes midtpunktet for dette interval og sættes lig $s$, for $f(s)=0$.
+På figur \ref{fig:bis} ses de første $3$ midtpunkter og funktionen $f(x)$.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Flot graf alla Julie     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{center}
+\begin{tikzpicture}[scale=10]
+%
+% Koordinater 
+% ------------------------------------------------------
+\coordinate (a) at (0.1,0.5);
+\coordinate (b) at (0.4,0.3);
+\coordinate (c) at (0.7,0.1);
+%
+%        
+% Streger 
+% -------------------------------------------------------
+  \draw[densely dotted](0.1,0.25) -- (a);
+  \draw[densely dotted](0.4,0.25) -- (b);
+  \draw[densely dotted](0.7,0.25) -- (c);
+  \draw[densely dotted](0.55,0.23) -- (0.55,0.15);
+  \draw[densely dotted](0.475,0.23) -- (0.475,0.21);
+  \draw[very thick, color=AAUblue2](a) parabola (b);
+  \draw[very thick, color=AAUblue2](b) parabola[bend at end] (c);
+  \draw[thick](0.1,0.23) -- (0.1,0.27); % (a)
+  \draw[thick](0.7,0.23) -- (0.7,0.27); % (b)
+  \draw[thick](0.4,0.23) -- (0.4,0.27); % (m_1)
+  \draw[thick](0.55,0.23) -- (0.55,0.27); % (m_2)
+  \draw[thick](0.475,0.23) -- (0.475,0.27); % (m_3)
+%
+%
+% Punkt 
+% -------------------------------------------------------
+\node at (0.1,0.2) (){$a$};
+\node at (0.7,0.3) (){$b$};
+\node at (0.4,0.2) (){$m_1$};
+\node at (0.55,0.3) (){$m_2$};
+\node at (0.475,0.3) (){$m_3$};
+% 
+%
+% Koordinatsystemet 
+% -------------------------------------------------------
+\draw[thick,->] (-0.1,0.25) -- (0.8,0.25) node[anchor=south east]{$x$};
+\draw[thick,->] (0,0) -- (0,0.6) node[anchor=north west]{$y$};
+%
+\end{tikzpicture}
+  \captionof{figure}{Illustration af bisektionsmetoden, hvor $m_1=\frac{a+b}{2}$, $m_2=\frac{m_1+b}{2}$, $m_3=\frac{m_1+m_2}{2}$.}
+  \label{fig:bis}
+\end{center}
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Integrationsmetoden}
+\textbf{Integrationsmetoden} omskriver, i modsætningen til de andre metoder, $f(x)=0$ til en \textbf{fixpunkt-ligning} $g(x)=x$, ved at isolere $x$ i udtrykket. Nulpunktet $f(s)=0$ bestemmes dermed ved en løsning $s$, der opfylder $g(s)=s$.
+
+Et vilkårlig $x_0$ vælges indenfor intervallet $I$, og $$x_n=g(x_{n-1})$$
+beregnes for de følgende $x$-værdier indtil skæringen mellem fixpunkt-ligningen og $y=x$ findes. 
+Hvis $x_n=s$ så gælder $g(x_{n-1}=s$, altså vil $s=g(S)$.
+På figur \ref{fig:iter} ses dette gjort for en fixpunkt-ligning $g(x)$, hvor de første $5$ $x$ er markeret. Dette er illustreret i et cobweb diagram. 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Flot graf alla Julie     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{center}
+\begin{tikzpicture}[scale=10]
+%
+% Koordinater 
+% ------------------------------------------------------
+\coordinate (a) at (0.05,0.5);
+\coordinate (b) at (0.65,0.05);
+\coordinate (c) at (0.1,0);			% 1
+\coordinate (d) at (0.1,0.497);		% 2
+\coordinate (e) at (0.497,0.497); 	% 3
+\coordinate (f) at (0.497,0.25);
+\coordinate (g) at (0.25,0.25);
+\coordinate (h) at (0.25,0.45);
+\coordinate (i) at (0.45,0.45);
+\coordinate (j) at (0.45,0.299);
+\coordinate (k) at (0.299,0.299);
+\coordinate (l) at (0.299,0.423);
+\coordinate (m) at (0.423,0.423);
+\coordinate (n) at (0.423,0.327);
+\coordinate (o) at (0.327,0.327);
+\coordinate (p) at (0.327,0.405);
+\coordinate (q) at (0.405,0.405);
+\coordinate (r) at (0.405,0.344);
+\coordinate (s) at (0.344,0.344);
+\coordinate (t) at (0.344,0.392);
+\coordinate (u) at (0.392,0.392);
+\coordinate (v) at (0.392,0.354);
+\coordinate (x) at (0.354,0.354);
+\coordinate (y) at (0.354,0.384);
+\coordinate (z) at (0.384,0.384);
+\coordinate (z1) at (0.384,0.363);
+\coordinate (z2) at (0.363,0.363);
+\coordinate (z3) at (0.363,0.376);
+\coordinate (z4) at (0.376,0.376);
+\coordinate (z5) at (0.376,0.368);
+\coordinate (z6) at (0.368,0.368);
+\coordinate (z7) at (0.372,0.372);
+%
+%        
+% Streger 
+% -------------------------------------------------------
+  \draw[very thick, color=AAUblue2](a) parabola (b);
+  \draw[very thick, color=AAUred] (-0.08,-0.08) -- (0.6,0.6);
+  
+  \draw[thick, color = AAUgreen](c) -- (d); 
+  \draw[thick, color = AAUgreen](d) -- (e); 
+  \draw[thick, color = AAUgreen](e) -- (f);
+  \draw[thick, color = AAUgreen](f) -- (g);
+  \draw[thick, color = AAUgreen](g) -- (h); 
+  \draw[thick, color = AAUgreen](h) -- (i); 
+  \draw[thick, color = AAUgreen](i) -- (j); 
+  \draw[thick, color = AAUgreen](j) -- (k); 
+  \draw[thick, color = AAUgreen](k) -- (l); 
+  \draw[thick, color = AAUgreen](l) -- (m); 
+  \draw[thick, color = AAUgreen](m) -- (n); 
+  \draw[thick, color = AAUgreen](n) -- (o); 
+  \draw[thick, color = AAUgreen](o) -- (p); 
+  \draw[thick, color = AAUgreen](p) -- (q); 
+  \draw[thick, color = AAUgreen](q) -- (r); 
+  \draw[thick, color = AAUgreen](r) -- (s);
+  \draw[thick, color = AAUgreen](s) -- (t); 
+  \draw[thick, color = AAUgreen](t) -- (u);   
+  \draw[thick, color = AAUgreen](u) -- (v);   
+  \draw[thick, color = AAUgreen](v) -- (x);   
+  \draw[thick, color = AAUgreen](x) -- (y);   
+  \draw[thick, color = AAUgreen](y) -- (z);
+  \draw[thick, color = AAUgreen](z) -- (z1);
+  \draw[thick, color = AAUgreen](z1) -- (z2);
+  \draw[thick, color = AAUgreen](z2) -- (z3);
+  \draw[thick, color = AAUgreen](z3) -- (z4);
+  \draw[thick, color = AAUgreen](z4) -- (z5);   
+  \draw[thick, color = AAUgreen](z5) -- (z6);   
+  \draw[thick, color = AAUgreen](z6) -- (z7);       
+  
+%
+% Punkter
+% -------------------------------------------------------
+%
+  \node at (0.7,0.05) (){$g(x)$};
+  \node at (0.67,0.6) (){$y=x$};
+  
+  \node at (0.1,-0.05) (){$x_1$};
+  \draw[densely dotted](0.497,0) -- (f);
+  \node at (0.497,-0.05) (){$x_2$}; 
+  \draw[densely dotted](0.25,0) -- (g);
+  \node at (0.25,-0.05) (){$x_3$}; 
+  \draw[densely dotted](0.45,0) -- (j);
+  \node at (0.45,-0.05) (){$x_4$};
+  \draw[densely dotted](0.299,0) -- (k);
+  \node at (0.299,-0.05) (){$x_5$};
+%  \draw[densely dotted](0.423,0) -- (n);
+%  \node at (0.423,-0.05) (){$x_6$};
+%  \draw[densely dotted](0.327,0) -- (o);
+%  \node at (0.327,-0.05) (){$x_7$};
+%
+%
+% Koordinatsystemet 
+% -------------------------------------------------------
+\draw[thick,->] (-0.1,0) -- (0.8,0) node[anchor=south east]{$x$};
+\draw[thick,->] (0,-0.1) -- (0,0.65) node[anchor=north west]{$y$};
+%
+\end{tikzpicture}
+  \captionof{figure}{Cobweb diagram for fixpunkt-ligningen $g(x)=x$, markeret med blå, og $y=x$ markeret med rød, hvor de første $5$ $x$ er markeret.}
+  \label{fig:iter}
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                                       %%%%
+%%%%%   %%  %                                               %%%%
+%%%%%   % % %                                               %%%%
+%%%%%   %  %%                                               %%%%
+%%%%%                                                       %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Newtons metode}
+Lad $f$ være differentialbel. For \textbf{newtons metode} vælges et vilkårlig $x_0$, og der gøres derefter brug af \textbf{Newtons iterationsformel}:
+\begin{align*}
+x_{n+1}=x_n- \frac{f(x_n)}{f'(x_n)},
+\end{align*} 
+der beregnes for de efterfølgende $x$-værdier indtil nulpunktet er fundet.  
+% måske noget om taylors formel xD
+På figur \ref{fig:new} ses de første $3$ $x$-værdier og tilhørende første ordens taylorudvikling. 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Flot graf alla Julie     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{center}
+\begin{tikzpicture}[scale=10]
+%
+% Koordinater 
+% ------------------------------------------------------
+\coordinate (a) at (0.05,-0.05);
+\coordinate (b) at (0.65,0.58);
+\coordinate (c) at (0.6,0.48);		% 1
+\coordinate (d) at (0.33,-0.05);	% a
+\coordinate (e) at (0.66,0.59); 	% b
+\coordinate (f) at (0.355,0.115);	% 2
+\coordinate (g) at (0.48,0.25);		% a
+\coordinate (h) at (0.21,-0.05);	% b
+\coordinate (i) at (0.254,0.022);	% 3
+\coordinate (j) at (0.32,0.07);		% a
+\coordinate (k) at (0.16,-0.05);	% b
+\coordinate (l) at (0.299,0.423);
+%
+%        
+% Streger 
+% -------------------------------------------------------
+  \draw[very thick, color=AAUblue2](a) parabola (b);
+   
+  \draw[thick, color = AAUgreen](d) -- (e); 
+  \draw[thick, color = AAUgreen](g) -- (h); 
+  \draw[thick, color = AAUgreen](j) -- (k);   
+%
+% Punkter
+% -------------------------------------------------------
+%
+  \node at (0.6,0.6) (){$f(x)$};
+  
+  \node at (0.6,-0.05) (){$x_1$};
+  \draw[densely dotted](0.6,0) -- (c);
+  \node at (0.355,-0.05) (){$x_2$}; 
+  \draw[densely dotted](0.355,0) -- (f);
+  \node at (0.254,-0.05) (){$x_3$}; 
+  \draw[densely dotted](0.254,0) -- (i);
+%
+%
+% Koordinatsystemet 
+% -------------------------------------------------------
+\draw[thick,->] (-0.1,0) -- (0.8,0) node[anchor=south east]{$x$};
+\draw[thick,->] (0,-0.1) -- (0,0.65) node[anchor=north west]{$y$};
+%
+\end{tikzpicture}
+  \captionof{figure}{Illustration af newtons metode.}
+  \label{fig:new}
+\end{center}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Sekantmetodenn}
+\textbf{Sekantmetoden} kan bruges hvis man ikke kender $f'(x)$ eller i tilfælde af at $f'(x)=0$. 
+To vilkårlig punkter $x_0$ og $x_1$ vælges, hvor $x_0x_1<0$, og \textbf{sekantmetodens iterationsformel}
+\begin{align*}
+x_{n+1}=x_n- \frac{x_n-x_{n-1}}{f(x_n)-f(x_{n-1})}f(x_n) ,
+\end{align*}
+beregnes for de efterfølgende $x$-værdier indtil nulpunktet er fundet. 
+På figur \ref{fig:sek} ses de første xxxxxxx.
+
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Flot graf alla Julie     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{center}
+\begin{tikzpicture}[scale=10]
+%
+% Koordinater 
+% ------------------------------------------------------
+\coordinate (a) at (0.1,0.5);
+\coordinate (b) at (0.4,0.3);
+\coordinate (c) at (0.7,0.1);
+%
+%        
+% Streger 
+% -------------------------------------------------------
+  \draw[densely dotted](0.1,0.25) -- (a);
+  \draw[densely dotted](0.4,0.25) -- (b);
+  \draw[densely dotted](0.7,0.25) -- (c);
+  \draw[densely dotted](0.55,0.23) -- (0.55,0.15);
+  \draw[densely dotted](0.475,0.23) -- (0.475,0.21);
+  \draw[very thick, color=AAUblue2](a) parabola (b);
+  \draw[very thick, color=AAUblue2](b) parabola[bend at end] (c);
+  \draw[thick](0.1,0.23) -- (0.1,0.27); % (a)
+  \draw[thick](0.7,0.23) -- (0.7,0.27); % (b)
+  \draw[thick](0.4,0.23) -- (0.4,0.27); % (m_1)
+  \draw[thick](0.55,0.23) -- (0.55,0.27); % (m_2)
+  \draw[thick](0.475,0.23) -- (0.475,0.27); % (m_3)
+%
+%
+% Punkt 
+% -------------------------------------------------------
+\node at (0.1,0.2) (){$a$};
+\node at (0.7,0.3) (){$b$};
+\node at (0.4,0.2) (){$m_1$};
+\node at (0.55,0.3) (){$m_2$};
+\node at (0.475,0.3) (){$m_3$};
+% 
+%
+% Koordinatsystemet 
+% -------------------------------------------------------
+\draw[thick,->] (-0.1,0.25) -- (0.8,0.25) node[anchor=south east]{$x$};
+\draw[thick,->] (0,0) -- (0,0.6) node[anchor=north west]{$y$};
+%
+\end{tikzpicture}
+  \captionof{figure}{Illustration af sekantmetoden.}
+  \label{fig:sek}
+\end{center}
+%
+
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Flot graf alla Julie     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{center}
+\begin{tikzpicture}[scale=10]
+%
+% Koordinater 
+% ------------------------------------------------------
+\coordinate (a) at (0.05,-0.05);
+\coordinate (b) at (0.65,0.58);
+\coordinate (c) at (0.6,0.48);		% 1
+\coordinate (d) at (0.07,-0.07);	% a
+\coordinate (e) at (0.66,0.59); 	% b
+\coordinate (f) at (0.355,0.115);	% 2
+\coordinate (g) at (0.48,0.25);		% a
+\coordinate (h) at (0.21,-0.05);	% b
+\coordinate (i) at (0.254,0.022);	% 3
+\coordinate (j) at (0.32,0.07);		% a
+\coordinate (k) at (0.16,-0.05);	% b
+\coordinate (l) at (0.299,0.423);
+%
+%        
+% Streger 
+% -------------------------------------------------------
+  \draw[very thick, color=AAUblue1](a) parabola (b);
+   
+  \draw[thick, color = AAUgreen](d) -- (e); 
+  \draw[thick, color = AAUred](g) -- (h); 
+  \draw[thick, color = AAUblue2](j) -- (k);   
+%
+% Punkter
+% -------------------------------------------------------
+%
+  \node at (0.6,0.6) (){$f(x)$};
+  
+  \node at (0.6,-0.05) (){$x_1$};
+  \draw[densely dotted](0.6,0) -- (c);
+  \node at (0.355,-0.05) (){$x_2$}; 
+  \draw[densely dotted](0.355,0) -- (f);
+  \node at (0.254,-0.05) (){$x_3$}; 
+  \draw[densely dotted](0.254,0) -- (i);
+%
+%
+% Koordinatsystemet 
+% -------------------------------------------------------
+\draw[thick,->] (-0.1,0.1) -- (0.8,0.1) node[anchor=south east]{$x$};
+\draw[thick,->] (0,-0.1) -- (0,0.65) node[anchor=north west]{$y$};
+%
+\end{tikzpicture}
+  \captionof{figure}{Illustration af sekantmetoden.}
+  \label{fig:sek}
+\end{center}
+
