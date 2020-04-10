@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# zero finding using bisection method
-
 import math
 
 def fun1(x):
@@ -22,7 +18,7 @@ def bisect(f, a, b, eps):
                 a=m
         return (a + b)/2.0, nit
 
-x=1
+x=100
 y=200
 myeps=1E-12
 

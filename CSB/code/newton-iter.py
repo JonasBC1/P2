@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# Newton's method
-
 import math
 
 def iter(f,df,xinit,tol):
@@ -20,7 +16,7 @@ def fun1(x):
 def dfun1(x):
 	return math.cosh(75/x)-75/x*math.sinh(75/x) - 1
 	
-sol, n = iter(fun1, dfun1, 100, 1E-9)
+sol, n = iter(fun1, dfun1, 100, 1E-12)
 
 print('Approximation is %8.7E' % sol)
 
