@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+
+# fixed point method for zero finding
+
+
 import numpy as np
 
 
@@ -16,9 +21,9 @@ def fun8(x):
 def fun7(x):
     (x+15)/(np.cosh(75/x))
     
-X = iter(fun8,100,100)
+X = iter(fun8,100,1000)
 
-print('Iteration Value')
+print('Iteration       Værdi')
 
 for i, fi in X:
     print('%5d      %5.8E' % (i, fi))
