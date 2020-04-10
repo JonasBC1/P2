@@ -1,16 +1,14 @@
-# Sekantmetoden 
-
 import math
 
 def iter(f,df,xinit,tol):
-	xold = xinit + 1.0 #Denne værdi er sat til at starte med til 1 større end xnew
+	xold = xinit + 1.0 
 	xnew = xinit
-	k = 0 # Den som tæller interations 
+	k = 0 
 	while abs(xnew - xold) > tol: 
-		k = k+1 # Tæller op 
-		xold = xnew #Sætter vores x gamel til at være lige den nye 
-		xnew = xold - f(xold) / df(xold) # Finder xnew til at tage xold 
-	return xnew, k # Returnerer xnew og tælleværdien 
+		k = k+1 
+		xold = xnew 
+		xnew = xold - f(xold) / df(xold) 
+	return xnew, k 
 		
 
 def fun1(x):

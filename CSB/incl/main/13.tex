@@ -14,6 +14,7 @@ For $f:I\rightarrow\R$ kontinuert og $f(a)f(b)<0$, hvor $I=[a,b]$, er der jævnf
 \textbf{Bisektionsmetoden} bestemmer midtpunktet $m=\frac{a+b}{2}$ og sætter $b=m$, hvis $f(a)f(m)<0$, ellers sættes $a=m$. Denne procedure gentages indtil indervallet $b-a$ er mindre en en given tolerance. % Fx 10^-4
 Herefter bestemmes midtpunktet for dette interval og sættes lig $s$, for $f(s)=0$.
 På figur \ref{fig:bis} ses de første $3$ midtpunkter og funktionen $f(x)$.
+Her ses det at $m_1$ sættes lig $a$, hvorefter $m_2$ sættes lig $b$, og $m_3$ sættes lig $b$.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
@@ -74,8 +75,8 @@ På figur \ref{fig:bis} ses de første $3$ midtpunkter og funktionen $f(x)$.
 
 Et vilkårlig $x_0$ vælges indenfor intervallet $I$, og $$x_n=g(x_{n-1})$$
 beregnes for de følgende $x$-værdier indtil skæringen mellem fixpunkt-ligningen og $y=x$ findes. 
-Hvis $x_n=s$ så gælder $g(x_{n-1}=s$, altså vil $s=g(S)$.
-På figur \ref{fig:iter} ses dette gjort for en fixpunkt-ligning $g(x)$, hvor de første $5$ $x$ er markeret. Dette er illustreret i et cobweb diagram. 
+Hvis $x_n=s$ så gælder $g(x_{n-1})=s$, altså vil $s=g(s)$.
+På figur \ref{fig:iter} ses dette gjort for en fixpunkt-ligning $g(x)$, hvor de første fem $x$-værdier er markeret. Dette er illustreret i et cobweb diagram. 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
@@ -198,7 +199,7 @@ På figur \ref{fig:iter} ses dette gjort for en fixpunkt-ligning $g(x)$, hvor de
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Newtons metode}
-Lad $f$ være differentialbel. For \textbf{newtons metode} vælges et vilkårlig $x_0$, og der gøres derefter brug af \textbf{Newtons iterationsformel}:
+Lad $f$ være differentialbel. For \textbf{newtons metode} vælges et vilkårlig $x_1$, og der gøres derefter brug af \textbf{Newtons iterationsformel}:
 \begin{align*}
 x_{n+1}=x_n- \frac{f(x_n)}{f'(x_n)},
 \end{align*} 
@@ -237,11 +238,11 @@ På figur \ref{fig:new} ses de første tre $x$-værdier og tilhørende første o
 %
   \node at (0.6,0.6) (){$f(x)$};
   
-  \node at (0.6,-0.05) (){$x_1$};
+  \node at (0.6,0.07) (){$x_1$};
   \draw[densely dotted](0.6,0.1) -- (c);
-  \node at (0.355,-0.05) (){$x_2$}; 
+  \node at (0.408,0.07) (){$x_2$}; 
   \draw[densely dotted](0.408,0.1) -- (f);
-  \node at (0.254,-0.05) (){$x_3$}; 
+  \node at (0.353,0.07) (){$x_3$}; 
   \draw[densely dotted](0.353,0.1) -- (i);
 %
 %
@@ -261,7 +262,7 @@ På figur \ref{fig:new} ses de første tre $x$-værdier og tilhørende første o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Sekantmetoden}
-\textbf{Sekantmetoden} kan bruges hvis man ikke kender $f'(x)$ eller i tilfælde af at $f'(x)=0$. 
+\textbf{Sekantmetoden} kan bruges, hvis man ikke kender $f'(x)$ eller i tilfælde af at $f'(x)=0$. 
 To vilkårlig punkter $x_0$ og $x_1$ vælges, hvor $x_0x_1<0$, og \textbf{sekantmetodens iterationsformel}
 \begin{align*}
 x_{n+1}=x_n- \frac{x_n-x_{n-1}}{f(x_n)-f(x_{n-1})}f(x_n) ,
