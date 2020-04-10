@@ -2,3 +2,14 @@
 % 
 %Sammenlig de forskellige metoder til bestemmelse af \lambda ud fra ligning (6). 
 % Sammenligningen skal omfatte både de konkrete tal og konvergenshastighed af metoderne.
+For at give et bedre sammenligningsgrundlag er alle metoderne kørt med tolerancen $1\cdot10^{-12}$.
+Dette betyder, at alle metoderne finder frem til grundlæggende samme resultat og at antallet af iterationer er det interessante.
+%
+$$\begin{array}{l|c|c}
+\text{Metode} & \text{Resultat} & \text{Iterationer}\\
+\hline
+\text{Bisektion}	& 189.94865 & 46\\
+\text{Newton}		& 189.94865 & 7\\
+\text{Sekant}		& 189.94865 & 9\\
+\text{Fikspunkt}	& 189.94865 & 345
+\end{array}$$

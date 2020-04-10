@@ -13,7 +13,7 @@ def secant(f,x0,x1,tol):
 def fun_test(x):
     return x*math.cosh(75/x) - x - 15
 
-x0 = 10
+x0 = 90
 x1 = 100
 tol = 1E-12
 
