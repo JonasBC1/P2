@@ -17,7 +17,7 @@ def cosh(x):
     return(0.5*(math.exp(x)+math.exp(-x)))
    
   
-x = np.array(range(int(-l/2),int((l/2)+1)))
+x = np.array(np.linspace(int(-l/2),int((l/2)),30))
 
 y = []
 for k in x:
