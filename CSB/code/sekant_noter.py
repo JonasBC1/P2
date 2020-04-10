@@ -1,27 +1,33 @@
 # Sekantmetoden 
+import numpy as np
 
-import math
+def secant(f,x0,x1,eps): # Funktionen 
+    count = 0  # Tæller op 
+    while abs(x0 - x1) > eps: # Numerisk værdi 
+        x_temp = x1-(f(x1)*(x1-x0))/(f(x1)-f(x0)) # Approksimerede løsning
+        x0 = x1 # Sætter x0 til x1 
+        x1 = x_temp # Sætter x1 til den nye værdi 
+        count += 1 # Tæller op for ntallet af iterationer 
+    return x1, count # Returnere 
 
-def iter(f,df,xinit,tol):
-	xold = xinit + 1.0 #Denne værdi er sat til at starte med til 1 større end xnew
-	xnew = xinit
-	k = 0 # Den som tæller interations 
-	while abs(xnew - xold) > tol: 
-		k = k+1 # Tæller op 
-		xold = xnew #Sætter vores x gamel til at være lige den nye 
-		xnew = xold - f(xold) / df(xold) # Finder xnew til at tage xold 
-	return xnew, k # Returnerer xnew og tælleværdien 
-		
+def fun_test(x):
+    return np.exp(x) - 5*x+2
 
-def fun1(x):
-	return 4*x**3-x**2-12*x+3
-	
-def dfun1(x):
-	return 4*3*x**2-2*x-12
+x0 = 2
+x1 = 3
+eps = 1E-12
 
-sol, n = iter(fun1, dfun1, 0, 1E-9)
+s,count = secant(fun_test, x0, x1, eps)
 
-	
-print('Approximation is %8.7E' % sol)
+print ('x0 = %g and x1 = %g' % (x0,x1))
+print ('A zero is located at: %19.7E' % s)
+print ('Number of interations used: %d' % count)
 
-print('Number of interations used is %d' % n)
+# plot
+import matplotlib.pyplot as plt 
+x = np.linspace(2,3,100,endpoint=True)
+plt.plot(x, fun_test(x))
+plt.grid(axis = 'both')
+plt.title('$e^x-5x+2$')
+plt.xlabel('x')
+plt.ylabel('y')

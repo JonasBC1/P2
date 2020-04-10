@@ -1,25 +1,31 @@
-import math
+import numpy as np
 
-def iter(f,df,xinit,tol):
-	xold = xinit + 1.0 
-	xnew = xinit
-	k = 0 
-	while abs(xnew - xold) > tol: 
-		k = k+1 
-		xold = xnew 
-		xnew = xold - f(xold) / df(xold) 
-	return xnew, k 
-		
+def secant(f,x0,x1,eps): 
+    count = 0  
+    while abs(x0 - x1) > eps:  
+        x_temp = x1-(f(x1)*(x1-x0))/(f(x1)-f(x0)) 
+        x0 = x1 
+        x1 = x_temp 
+        count += 1 
+    return x1, count  
 
-def fun1(x):
-	return 4*x**3-x**2-12*x+3
-	
-def dfun1(x):
-	return 4*3*x**2-2*x-12
+def fun_test(x):
+    return np.exp(x) - 5*x+2
 
-sol, n = iter(fun1, dfun1, 0, 1E-9)
+x0 = 2
+x1 = 3
+eps = 1E-12
 
-	
-print('Approximation is %8.7E' % sol)
+s,count = secant(fun_test, x0, x1, eps)
 
-print('Number of interations used is %d' % n)
+print ('x0 = %g and x1 = %g' % (x0,x1))
+print ('A zero is located at: %19.7E' % s)
+print ('Number of interations used: %d' % count)
+
+import matplotlib.pyplot as plt 
+x = np.linspace(2,3,100,endpoint=True)
+plt.plot(x, fun_test(x))
+plt.grid(axis = 'both')
+plt.title('$e^x-5x+2$')
+plt.xlabel('x')
+plt.ylabel('y')
