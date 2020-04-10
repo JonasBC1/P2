@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-
-# Denne er lavet om til sekant metoden
+# Sekantmetoden 
 
 import math
 
@@ -15,23 +13,6 @@ def iter(f,df,xinit,tol):
 	return xnew, k # Returnerer xnew og tælleværdien 
 		
 
-#Originale funktioner	
-#def fun1(x):
-#	return x**2-10.0
-	
-#def dfun1(x):
-#	return 2.0*x
-
-#Originalt    
-#sol, n = iter(fun1, dfun1, 1, 1E-9)
-
-    
-###############################################################################   
- 
-    # Resten laves i dokument sektant
-        
-###############################################################################   
-    
 def fun1(x):
 	return 4*x**3-x**2-12*x+3
 	
