@@ -1,4 +1,3 @@
-import numpy as np
 import math
 
 def secant(f,x0,x1,tol): 
@@ -14,7 +13,7 @@ def fun_test(x):
     return x*math.cosh(75/x) - x - 15
 
 x0 = 90
-x1 = 100
+x1 = 110
 tol = 1E-12
 
 s,count = secant(fun_test, x0, x1, tol)

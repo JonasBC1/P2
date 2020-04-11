@@ -1,7 +1,7 @@
 import math
 
 def fun1(x):
-    return x*1/2*(math.exp(75/x) + math.exp(-75/x)) - x - 15
+    return x*(math.cosh(75/x)) - x - 15
     
 def bisect(f, a, b, eps):
     if f(a) * f(b) > 0:
@@ -30,8 +30,5 @@ myeps=tol * 2
 res, nit = bisect(fun1,x,y,myeps)
 
 
-
-print('Finding zeroes in [%.2E, %.2E]' % (x, y))
 print('A zero is located at %8.7E' % res)
-print('Error is less than %.2E' % tol)
 print(f"Antal iterationer {nit:0}")

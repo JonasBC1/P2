@@ -1,4 +1,4 @@
-import numpy as np
+import math
 
 def iter(f, xinit, tol):
 	xold = 0
@@ -15,10 +15,10 @@ def iter(f, xinit, tol):
 	return xnew, n
 
 def fun7(x):
-    return (x+15)/(np.cosh(75/x))
+    return (x+15)/(math.cosh(75/x))
 
 def fun8(x):
-    return x*np.cosh(75/x)-15
+    return x*math.cosh(75/x)-15
 
 tol = 1E-12
 xinit = 100
