@@ -64,19 +64,22 @@ Antag, at simplex-metoden starter med, at alle rækker af en simplex-tabel, foru
 \end{thm}
 %
 \begin{proof}
+(a)
 Antag, at alle rækkerne af en simplex-tabel, udover den $0$'te række, er lexicografisk positive i begyndelsen af en iteration af simplex. 
 Antag dernæst, at $x_j$ kommer ind i løsningen, og at pivot-rækken er den $l$'te række. Så gælder der per den lexicografiske metode, at
 $$\dfrac{l\text{'te række}}{u_l}<^L \dfrac{i\text{'te række}}{u_i}, \text{  hvis } i\neq l \text{ og }u_i>0.$$
 For at bestemme den nye tabel divideres den $l$'te række med den positive variabel $u_l$ og forbliver dermed lexciografisk positiv.
 For rækker $i$, hvor $u_i<0$, skal der lægges et positivt multiplum af pivot-rækken til for at få den $i,j$'te indgang til at give nul. 
-Grundet begge rækkers lexciografiske positivitet er den resulterende række også lexicografisk positiv.
+Grundet begge rækkers lexciografiske positivitet er den resulterende række også lexicografisk positiv. 
 For rækker $i$, hvor $u_i>0$ og $i\neq l$, haves, at
 $$\text{(nye }i\text{'te række)}=\text{(gamle }i\text{'te række)}-\dfrac{u_i}{u_l}\text{(gamle }l\text{'te række)}.$$
-Grundet den tidligere ulighed, som opfyldes af de gamle rækker, vides det, at den nye $i$'te række også er lexicografisk positiv.
+Grundet den tidligere ulighed, som opfyldes af de gamle rækker, vides det, at den nye $i$'te række også er lexicografisk positiv.\\\\
+(b)
 %
 I begyndelsen af hver iteration, er pivotværdien i den $0$'te række negativ, så der skal ligges et positiv multiplum af pivot rækken til. 
-Da pivot rækken er lexicografisk positiv, stiger den $0$'te række lexicografisk.
+Da pivot rækken er lexicografisk positiv, stiger den $0$'te række lexicografisk.\\\\
 %
+(c)
 Eftersom den $0$'te række stiger lexicografisk for hver iteration, kan den aldrig returnere til en tidligere værdi.
 Eftersom den $0$'te række er bestemt entydig ud fra nuværende basis, så kan intet basis gentage sig selv, og derfor må simplexmetoden stoppe efter et endeligt antal iterationer.
 \end{proof}

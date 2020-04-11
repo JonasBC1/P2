@@ -82,16 +82,20 @@ Så har matricer følgende egenskaber:
 \end{thm}
 %
 \begin{proof} % Skal dette bevis være i punktform? det skal det jo vel egenlig 
-Lad $A$, $B$ og $C$ være $m \times n$ matricer, og lad $c$ og $k$ være skalarer.
-Betragt $A + B$ og $B + A$ og bemærk jævnfør \ref{defn:mxsum}, at de $(i,j)$'te indgange bliver henholdsvis $a_{i,j} + b_{i,j}$ og $b_{i,j} + a_{i,j}$, hvilket beviser (a).
-Ligeledes ses det, at $(a_{i,j} + b_{i,j}) + c_{i,j} = a_{i,j} + (b_{i,j} + c_{i,j})$, hvilket beviser (b).
-Endvidere kan $0$ isoleres i $a_{i,j} + 0 = a_{i,j}$, således $a_{i,j} + (-a_{i,j}) = 0$, hvilket beviser (c) og (d), da alle indgange i en nulmatrix er $0$.
+Lad $A$, $B$ og $C$ være $m \times n$ matricer, og lad $c$ og $k$ være skalarer.\\
+(a) Betragt $A + B$ og $B + A$ og bemærk jævnfør \ref{defn:mxsum}, at de $(i,j)$'te indgange bliver henholdsvis $a_{i,j} + b_{i,j}$ og $b_{i,j} + a_{i,j}$.\\\\
+(b)
+Ligeledes ses det, at $(a_{i,j} + b_{i,j}) + c_{i,j} = a_{i,j} + (b_{i,j} + c_{i,j})$.\\\\
+(c) \& (d)
+Endvidere kan $0$ isoleres i $a_{i,j} + 0 = a_{i,j}$, således $a_{i,j} + (-a_{i,j}) = 0$, da alle indgange i en nulmatrix er $0$.
 \\\\
 %
-Betragt skaleringen af $A$ med skalaren $ck$, som er et produkt af skalarene $c$ og $k$, og skaleringen af $A$ med $c$ og herefter $k$.
-For indgangene i disse skaleringer findes ligheden $(ck)a_{i,j} = k(ca_{i,j})$, hvilket beviser (e).
-Betragt ligeledes (f) og bemærk, at $c(a_{i,j} + b_{i,j}) = ca_{i,j} + cb_{i,j}$, hvilket beviser (f).
-Det samme gøres for ligheden i (g), hvor ligheden $(c + k)a_{i,j} = ca_{i,j} + ka_{i,j}$ opstilles, hvilket beviser (g).
+(e) Betragt skaleringen af $A$ med skalaren $ck$, som er et produkt af skalarene $c$ og $k$, og skaleringen af $A$ med $c$ og herefter $k$.
+For indgangene i disse skaleringer findes ligheden $(ck)a_{i,j} = k(ca_{i,j})$.\\\\
+(f)
+Betragt ligeledes (f) og bemærk, at $c(a_{i,j} + b_{i,j}) = ca_{i,j} + cb_{i,j}$.\\\\
+(g)
+Det samme gøres for ligheden i (g), hvor ligheden $(c + k)a_{i,j} = ca_{i,j} + ka_{i,j}$ opstilles.
 \end{proof}
 \noindent
 \\
