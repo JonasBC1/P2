@@ -1,0 +1,169 @@
+% cmds.tex : brugerdefinerede makroer og blokke
+% ------------------------------------------------------------------------------
+% Denne fil indeholder definitioner for egne makroer og blokke, der bruges som
+% genvejsfunktioner for ofte brugte kommandoer og tekst i rapporten.
+
+% Matematiske symboler ---------------------------------------------------------
+\newcommand{\N}{\mathbb{N}}          % naturlige tal
+\newcommand{\Z}{\mathbb{Z}}          % heltal
+\newcommand{\Q}{\mathbb{Q}}          % rationelle tal
+\newcommand{\R}{\mathbb{R}}          % reelle tal
+\newcommand{\C}{\mathbb{C}}          % komplekse tal
+\newcommand{\ind}{\mathbbm{1}}       % indikatorfunktion
+\newcommand{\bigO}{\mathcal{O}}      % store-O notation
+\renewcommand{\S}{\mathcal{S}}		 % Pænt S?
+\renewcommand{\vec}[1]{\bm{#1}}      % skriv vektorer med fed skrift
+\newcommand\hlight[1]{\tikz[overlay, remember picture,baseline=-\the\dimexpr\fontdimen22\textfont2\relax]\node[rectangle,fill=blue!50,rounded corners,fill opacity = 0.2,draw,thick,text opacity =1] {$#1$};}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+
+% Sætninger o.lign. ------------------------------------------------------------
+% http://www.ctex.org/documents/packages/math/amsthdoc.pdf
+\theoremstyle{plain}                % Titel med fed, tekst med skråskrift
+%\newtheorem{thm}{Sætning}[chapter] % Sætninger, nummereret efter kapitel
+%\newtheorem{lem}[thm]{Lemma}       % Lemmaer, nummereret ligesom sætninger
+%\newtheorem{prop}[thm]{Proposition}% Propositioner, nummereret ligesom sætninger
+%\newtheorem*{cor}{Korollar}        % Korollarer, unnumbered
+
+\theoremstyle{definition}          	% Title med fed, opretstående tekst
+%\newtheorem{defn}[thm]{Definition} % Definitioner, nummereret ligesom sætninger
+\newcounter{example}[chapter]
+\def\theexample{eksempel \thechapter.\arabic{example}}
+\def\theExample{Eksempel \thechapter.\arabic{example}}
+\newenvironment{eks}{\phantom{.}\newline\noindent\refstepcounter{example}\textbf{\theExample}\phantom{.}\newline\noindent\textcolor{myblue!25}{\rule{\textwidth}{1pt}}}
+{\phantom{.}\newline\textcolor{myblue!25}{\rule{\textwidth}{1pt}}\bigskip}  
+
+\newcounter{proof}[chapter]
+\def\theproof{bevis \thechapter.\arabic{proof}}
+\def\theProof{Bevis \thechapter.\arabic{proof}}
+\renewenvironment{proof}{\phantom{.}\newline\noindent\refstepcounter{proof}\textbf{\theProof}\phantom{.}\newline\noindent}
+{\qed\newline}  
+
+%farvet-commands
+\definecolor{myblue}{RGB}{89, 79, 191}
+\definecolor{mygreen}{RGB}{157, 187, 29}
+\definecolor{myred}{RGB}{223, 103, 82}
+\definecolor{mygrey}{RGB}{222, 223, 226}
+\newtcbtheorem[auto counter, number within = chapter]
+{defn}
+{Definition}
+{
+colback		= myblue!15,
+colframe	= myblue!15,
+coltitle	= black,
+before skip	= 20pt plus 2pt,
+after skip	= 20pt plus 2pt,
+fonttitle	= \bfseries
+}
+{defn}
+
+\newtcbtheorem[auto counter, number within = chapter]
+{lem}
+{Lemma}
+{
+colback		= myblue!15,
+colframe	= myblue!15,
+coltitle	= black,
+before skip	= 20pt plus 2pt,
+after skip	= 20pt plus 2pt,
+fonttitle	= \bfseries
+}
+{lem}
+
+
+\newtcbtheorem[auto counter, number within = chapter]
+{kor}
+{Korollar}
+{
+colback		= myblue!15,
+colframe	= myblue!15,
+coltitle	= black,
+before skip	= 20pt plus 2pt,
+after skip	= 20pt plus 2pt,
+fonttitle	= \bfseries
+}
+{kor}
+
+\newtcbtheorem[auto counter, number within = chapter]
+{thm}
+{Sætning}
+{
+colback		= myblue!15,
+colframe	= myblue!15,
+coltitle	= black,
+before skip	= 20pt plus 2pt,
+after skip	= 20pt plus 2pt,
+fonttitle	= \bfseries
+}
+{thm}
+
+\newtcbtheorem[no counter]
+{col}
+{}
+{
+colback		= myblue!15,
+colframe	= myblue!15,
+coltitle	= black,
+before skip	= 20pt plus 2pt,
+after skip	= 20pt plus 2pt,
+fonttitle	= \bfseries
+}
+{col}
+
+% Figur-makroer ----------------------------------------------------------------
+
+% imgfig ("image figure")
+% Makro til at indsætte et billede fra fig/img-mappen
+% Argumenter:
+%   * (valgfri) figurbredde; procent af sidebredde (standard: 0.75)
+%   * filnavn (uden fig/img/ eller filendelse); også brugt til label
+%   * figurteksten
+% Eksempler:
+%   \imgfig{filnavn}{Figurteksten skrives her}
+%   \imgfig[0.5]{filnavn}{Figurteksten skrives her}
+\newcommand{\imgfig}[3][0.75]{
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=#1\textwidth]{fig/img/#2}
+    \caption{#3}
+    \label{fig:#2}
+  \end{figure}
+}
+
+% dimgfig ("double image figure")
+% Makro til at indsætte to billeder ved siden af hinanden
+% Argumenter:
+%   * (valgfri) breddefordeling (standard: 0.5, dvs. lige fordeling)
+%   * filnavn for den venstre figur, uden fig/img/ eller filendelse
+%   * billedtekst for den venstre figur
+%   * filnavn for den højre figur, uden fig/img/ eller filendelse
+%   * billedtekst for den højre figur
+% Eksempler:
+%   \dimgfig{billede1}{Første billedtekst}{billede2}{Anden billedtekst}
+%   \dimgfig[0.3]{billede1}{Første billedtekst}{billede2}{Anden billedtekst}
+% Alterativt, se
+% https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Subfloats
+\newcommand{\dimgfig}[5][0.5]{
+  \ifx\dimgleftwidth\undefined
+    \newlength{\dimgleftwidth}
+    \newlength{\dimgrightwidth}
+  \fi
+  \setlength{\dimgleftwidth}{#1\textwidth-0.02\textwidth}
+  \setlength{\dimgrightwidth}{0.96\textwidth-\dimgleftwidth}
+  \begin{figure}[htbp]
+    \centering
+    \begin{minipage}[t]{\dimgleftwidth}
+      \centering
+      \includegraphics[width=\linewidth]{fig/img/#2}
+      \caption{#3}
+      \label{fig:#2}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{\dimgrightwidth}
+      \centering
+      \includegraphics[width=\linewidth]{fig/img/#4}
+      \caption{#5}
+      \label{fig:#4}
+    \end{minipage}
+  \end{figure}
+}

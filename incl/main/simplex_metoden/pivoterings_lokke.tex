@@ -4,16 +4,16 @@ For at garantere at simplex-metoden stopper ved en optimal værdi og ikke forts�
 
 \subsection{Lexicografi}
 %ingen ide om det hedder lexicografi på dansk men skiver det indtil videre
-
-Før den \textit{lexicografiske} metode til at vælge pivot-søjler på introduceres, så er det nødvendigt at definere lexicografi.
+%
+Før den \textit{lexicografiske} metode til at vælge pivot-søjler introduceres, er det nødvendigt at definere lexicografi.
 \begin{defn}{}{}
-En vektor $\textbf{u}\in \R^n$ er \textbf{lexicografisk større}, eller mindre end en vektor $\textbf{v}\in \R^n$, hvis $\textbf{v} \neq \textbf{u}$ og den første ikke-nul indgang i $\textbf{u}-\textbf{v}$ er henholdsvis positiv eller negativ. Dette noteres
+En vektor $\textbf{u}\in \R^n$ er \textbf{lexicografisk} større, eller mindre end en vektor $\textbf{v}\in \R^n$, hvis $\textbf{v} \neq \textbf{u}$ og den første ikke-nul indgang i $\textbf{u}-\textbf{v}$ er henholdsvis positiv eller negativ. Dette noteres
 \begin{align*}
 \textbf{u} >^L \textbf{v} \text{ eller } \textbf{u} <^L \textbf{v}.
 \end{align*} 
 \end{defn}
 \noindent
-Hvis det første ikke-nul element af en vektor er positiv, så siges vektoren at være lexciografisk positiv. Modsat siges den at være negativ, hvis det første ikke-nul element af en vektor er negativt. Et eksempel på lexicografi ses i eksempel \ref{eks:lexi}.
+Hvis det første ikke-nul element af en vektor er positiv, siges vektoren at være lexciografisk positiv. Modsat siges den at være lexciografisk negativ, hvis det første ikke-nul element af en vektor er negativt. Et eksempel på lexicografi ses i \ref{eks:lexi}.
 \\
 %
 \begin{eks}\label{eks:lexi}
@@ -39,9 +39,10 @@ $$\textbf{u}=
 2\\
 \end{bmatrix}
 .$$
-Så $\textbf{u}$ er lexicografisk større end $\textbf{v}$, da den første ikke-nul værdi af $\textbf{u}-\textbf{v}$ er $2$.
-Til gengæld er $\textbf{u}$ lexicografisk mindre end $\textbf{z}$, da den første ikke-nul værdi er $-1$
+Så er $\textbf{u}$  lexicografisk større end $\textbf{v}$, $\textbf{u} >^L \textbf{v}$, da den første ikke-nul værdi af $\textbf{u}-\textbf{v}$ er $2$, $\textbf{u} <^L \textbf{z}$.
+Til gengæld er $\textbf{u}$ lexicografisk mindre end $\textbf{z}$, da den første ikke-nul værdi er $-1$.
 \end{eks}
+%
 Følgende er en lexicografisk metode til at udvælge de rækker, der skal pivoteres.
 \begin{enumerate}
 \item Vælg en arbitrær søjle $\textbf{A}_j$ til at indgå i basis, så længe dens reducerede pris $c_j$ er negativ.
@@ -49,7 +50,8 @@ Lad $\textbf{u}$ være den $j$'te søjle af tabulaen.
 \item For hvert $i$ med $u_i>0$ divideres den $i$'te række med $u_i$, og den lexicografisk mindste række vælges. 
 Hvis rækken $L$ er den lexicografisk mindste række, så forlader den $L$'te basisvariabel $x_B(L)$ basen.
 \end{enumerate}
-Det følger, at ethvert valg af pivotering via den lexicografiske metode er unik, da der ellers ville være en anden række, som var proportional med den valgte række. 
+%
+Det følger, at ethvert valg af pivotering via den lexicografiske metode er entydig, da der ellers ville være en anden række, som var proportional med den valgte række. 
 Dette er i strid med antagelsen om, at rækkerne er lineært uafhængige, hvilket er tilfældet.
 %
 \begin{thm}{}{}
@@ -62,21 +64,24 @@ Antag, at simplex-metoden starter med, at alle rækker af en simplex-tabel, foru
 \end{thm}
 %
 \begin{proof}
+(a)
 Antag, at alle rækkerne af en simplex-tabel, udover den $0$'te række, er lexicografisk positive i begyndelsen af en iteration af simplex. 
 Antag dernæst, at $x_j$ kommer ind i løsningen, og at pivot-rækken er den $l$'te række. Så gælder der per den lexicografiske metode, at
 $$\dfrac{l\text{'te række}}{u_l}<^L \dfrac{i\text{'te række}}{u_i}, \text{  hvis } i\neq l \text{ og }u_i>0.$$
-For at bestemme den nye tabula divideres den $l$'te række med den positive variabel $u_l$ og forbliver dermed lexciografisk positiv.
+For at bestemme den nye tabel divideres den $l$'te række med den positive variabel $u_l$ og forbliver dermed lexciografisk positiv.
 For rækker $i$, hvor $u_i<0$, skal der lægges et positivt multiplum af pivot-rækken til for at få den $i,j$'te indgang til at give nul. 
-Grundet begge rækkers lexciografiske positivitet er den resulterende række også lexicografisk positiv.
+Grundet begge rækkers lexciografiske positivitet er den resulterende række også lexicografisk positiv. 
 For rækker $i$, hvor $u_i>0$ og $i\neq l$, haves, at
 $$\text{(nye }i\text{'te række)}=\text{(gamle }i\text{'te række)}-\dfrac{u_i}{u_l}\text{(gamle }l\text{'te række)}.$$
-Grundet den tidligere ulighed, som opfyldes af de gamle rækker, vides det, at den nye $i$'te række også er lexicografisk positiv.
+Grundet den tidligere ulighed, som opfyldes af de gamle rækker, vides det, at den nye $i$'te række også er lexicografisk positiv.\\\\
+(b)
 %
 I begyndelsen af hver iteration, er pivotværdien i den $0$'te række negativ, så der skal ligges et positiv multiplum af pivot rækken til. 
-Da pivot rækken er lexicografisk postiv, stiger den $0$'te række lexicografisk.
+Da pivot rækken er lexicografisk positiv, stiger den $0$'te række lexicografisk.\\\\
 %
-Eftersom den $0$'te række stiger lexciografisk for hver iteration, kan den aldrig returnere til en tidligere værdi.
-Eftersom den nulte række er bestemt entydig ud fra nuværende basis, så kan intet basis gentage sig selv, og derfor må simplex-metoden stoppe efter et endeligt antal iterationer.
+(c)
+Eftersom den $0$'te række stiger lexicografisk for hver iteration, kan den aldrig returnere til en tidligere værdi.
+Eftersom den $0$'te række er bestemt entydig ud fra nuværende basis, så kan intet basis gentage sig selv, og derfor må simplexmetoden stoppe efter et endeligt antal iterationer.
 \end{proof}
 %Jeg tror ikke Bland's regel er relevant for os medmindre at vi skriver om den revidererde simpelx metode.
 %\subsection{Bland's regel}

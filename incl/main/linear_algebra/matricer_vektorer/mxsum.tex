@@ -3,7 +3,7 @@
 Der er behov for at lave opperationer på en matrix i forbindelse med løsning af lineære programmeringsproblemer. 
 To af disse er \textit{matrixsum} og \textit{skalering}.
 %
-\begin{defn}{}{mxsum}
+\begin{defn}{}{mxsum} % Jeg synes substration skal være fed
 Lad $A$ og $B$ være $m \times n$ matricer.
 \textbf{Summen} af $A$ og $B$ er $m \times n$ matricen $A + B$, hvor den $(i,j)$'te indgang er $a_{i,j} + b_{i,j}$.
 Ligeledes er subtraktion mellem matricerne $A$ og $B$ muligt, og indgangene i den resulterende matrix er $a_{i,j} - b_{i,j}$.
@@ -31,7 +31,7 @@ B=
 5	&	3	&	2
 \end{bmatrix}.
 \end{align*}
-Jævnfør definition \ref{defn:mxsum} er
+Jævnfør \ref{defn:mxsum} er
 \begin{align*}
 3A= 
 \begin{bmatrix}
@@ -65,7 +65,7 @@ og
 \end{align*}
 \end{eks}
 %
-Ud fra disse operationer har matricer en række egenskaber, som ses i sætning \ref{thm:mxprop}.
+Ud fra disse operationer har matricer en række egenskaber, som ses i \ref{thm:mxprop}.
 %Nedenstående definition er ordret den samme som i bogen (s. 6), men vi kan jo nærmest ikke skrive den og lignende sætninger anderledes; skal vi ikke bare lige vende det med Horia, tror I? 
 \begin{thm}{}{mxprop}
 Lad $A$, $B$ og $C$ være $m \times n$ matricer, og lad $c$ og $k$ være skalarer.
@@ -81,21 +81,28 @@ Så har matricer følgende egenskaber:
 \end{enumerate}
 \end{thm}
 %
-\begin{proof}
-Lad $A$, $B$ og $C$ være $m \times n$ matricer, og lad $c$ og $k$ være skalarer.
-Betragt $A + B$ og $B + A$ og bemærk jævnfør definition \ref{defn:mxsum}, at de $(i,j)$'te indgange bliver henholdsvis $a_{i,j} + b_{i,j}$ og $b_{i,j} + a_{i,j}$, hvilket beviser (a).
-Ligeledes ses det, at $(a_{i,j} + b_{i,j}) + c_{i,j} = a_{i,j} + (b_{i,j} + c_{i,j})$, hvilket beviser (b).
-Endvidere kan $0$ isoleres i $a_{i,j} + 0 = a_{i,j}$, således $a_{i,j} + (-a_{i,j}) = 0$, hvilket beviser (c) og (d), da alle indgange i en nulmatrix er $0$.
+\begin{proof} % Skal dette bevis være i punktform? det skal det jo vel egenlig 
+Lad $A$, $B$ og $C$ være $m \times n$ matricer, og lad $c$ og $k$ være skalarer.\\
+(a) Betragt $A + B$ og $B + A$ og bemærk jævnfør \ref{defn:mxsum}, at de $(i,j)$'te indgange bliver henholdsvis $a_{i,j} + b_{i,j}$ og $b_{i,j} + a_{i,j}$.\\\\
+(b)
+Ligeledes ses det, at $(a_{i,j} + b_{i,j}) + c_{i,j} = a_{i,j} + (b_{i,j} + c_{i,j})$.\\\\
+(c) \& (d)
+Endvidere kan $0$ isoleres i $a_{i,j} + 0 = a_{i,j}$, således $a_{i,j} + (-a_{i,j}) = 0$, da alle indgange i en nulmatrix er $0$.
 \\\\
 %
-Betragt skaleringen af $A$ med skalaren $ck$, som er et produkt af skalarene $c$ og $k$, og skaleringen af $A$ med $c$ og herefter $k$.
-For indgangene i disse skaleringer findes ligheden $(ck)a_{i,j} = k(ca_{i,j})$, hvilket beviser (e).
-Betragt ligeledes (f) og bemærk, at $c(a_{i,j} + b_{i,j}) = ca_{i,j} + cb_{i,j}$, hvilket beviser (f).
-Det samme gøres for ligheden i (g), hvor ligheden $(c + k)a_{i,j} = ca_{i,j} + ka_{i,j}$ opstilles, hvilket beviser (g).
+(e) Betragt skaleringen af $A$ med skalaren $ck$, som er et produkt af skalarene $c$ og $k$, og skaleringen af $A$ med $c$ og herefter $k$.
+For indgangene i disse skaleringer findes ligheden $(ck)a_{i,j} = k(ca_{i,j})$.\\\\
+(f)
+Betragt ligeledes (f) og bemærk, at $c(a_{i,j} + b_{i,j}) = ca_{i,j} + cb_{i,j}$.\\\\
+(g)
+Det samme gøres for ligheden i (g), hvor ligheden $(c + k)a_{i,j} = ca_{i,j} + ka_{i,j}$ opstilles.
 \end{proof}
 \noindent
 \\
 %
-Da vektorer er matricer med enten én række eller én søjle er samme operationer mulige og besidder samme egenskaber.
+Da vektorer er matricer med enten én række eller én søjle er samme operationer mulige og vektorer besidder derfor de samme egenskaber.
 %
 % Mere sssssssssssssssssssssssssssssssssssss
+\\\\
+\phantom{Hejmeddig}
+\\\\

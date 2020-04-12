@@ -1,66 +1,75 @@
 \section{Kompleksitet}
 \label{kompleksitet}
 % he
-Det være interessant at kigge på hvor hurtigt det kan forventes, at simplex-metoden giver et resultat, altså simplex-metodens kompleksitet.
-Til at beskrive dette, vil der blive brugt \textit{store-$O$} notation.
+Det er interessant at undersøge simplexmetodens tidskompleksitet.
+Til beskrivelse af dette benyttes \textit{store-$O$} notation.
 %
 \begin{defn}{}{}
-Lad $f(x)$ og $g(x)$ være vilkårlige funktioner. $f(x)$ er \textbf{store-$O$} af $g(x)$, hvis der eksisterer et $C$ og $k$ således, at $|f(x)| \leq C|g(x)|, x \geq k$. $C$ og $k$ kaldes \textbf{vidner}.
-\end{defn}\noindent
+Lad $f(x)$ og $g(x)$ være vilkårlige funktioner. $f(x)$ er \textbf{store-$O$} af $g(x)$, hvis der eksisterer et $C$ og $k$, således at $|f(x)| \leq C|g(x)|, x \geq k$. $C$ og $k$ kaldes \textbf{vidner}.
+\end{defn}
+\noindent
 %
-Der er flere måder at implementerer simplex-metoden, hver med sin egen kompleksitet.
-De to implementeringer der vil blive betragtet i dette afsnit er \textit{fuld tabel} og \textit{den reviderede} simplex-metode.
+Som beskrevet i afsnit \ref{julieergudesmuk} findes der forskellige implementere af simplexmetoden. Disse har  hver har sin tidskompleksitet og rumkompleksitet.
 %
-Fuld tabel metoden kræver et konstant antal af operationer for at opdatere indgangene i simplex-matricen.
-Derfor er antallet af operationer proportionalt med størrelsen på matricen og kompleksiteten $O(mn)$.
-Den reviderede metode bruger lignende operationer, men opdaterer kun $O(m^2)$ indgange og har derfor kompleksiteten $O(m^2)$.
+De tre implementeringer, der vil blive betragtet i dette afsnit, er fuld-tabel, den naive og den reviderede.\\\\
+%
+Fuld-tabel-metoden kræver et konstant antal af operationer for at opdatere indgangene i simplexmatricen.
+Derfor er antallet af operationer proportionelt med størrelsen på matricen og tidskompleksiteten er $O(mn)$ og rumkompleksiteten er $O(mn)$.\\\\
+%
+Den naive implementering behøver $O(m^3)$ aritmetiske operationer for at løse systemerne $\mathbf{p}^T B=\mathbf{c}_{\text{B}}^T$ og $B\mathbf{u}=\mathbf{A}_j$.
+Ydermere kræver udregningen af den reducerede objektfunktion gældende
+% for alle variabler, 
+$O(mn)$ aritmetiske operationer, da det er nødvendigt at udregne de indre produkt af vekotren $\mathbf{p}$ for alle ikke-basis søjler i $\mathbf{A}_j$.
+Derfor er den samlede tidskompleksitet $O(m^3+mn)$ for den naive implementering.\\\\
+%
+Den reviderede metode bruger samme operationer som fuld-tabel implementeringen, men opdaterer kun $O(m^2)$ indgange og har derfor en tidskompleksiteten $O(m^2)$.
 Det kan dog forekomme, at metoden skal opdatere alle variabler.
-Hver udregning af en variable kræver $O(m)$ operationer, hvilket medfører, at i værste tilfælde bruges $O(mn)$ operationer.
-Da $m \leq n$ haves, at kompleksiteten i værste tilfælde er $O(mn)$ for begge metoder.
-Med dette konkluderes det, at den reviderede metode aldrig vil køre langsommere end fuld tabel metoden.
-Dog vil en iteration fra den reviderede metode være hurtigere i alle andre end det værste tilfælde.
-Endnu et vigtigt element, som er tiltalende ved den reviderede metode, er rumkompleksiteten på $O(m^2)$, hvor fuld tabel metodens er på $O(mn)$.
-Her kan der igen være en ret betydelig forskel afhængigt af størrelsen på $n$.\\\\
+Hver udregning af en variabel kræver $O(m)$ operationer, hvilket medfører, at der i værste tilfælde bruges $O(mn)$ operationer.
+Da $m \leq n$, er tidskompleksiteten i værste tilfælde $O(mn)$.
+Med dette konkluderes det, at den reviderede metode aldrig vil køre langsommere end fuld-tabel og den naive implementering.
+Samtidigt vil en iteration fra den reviderede metode være hurtigere end fuld-tabel i alle andre tilfælde end det værste.
+Endnu et vigtigt element, som er tiltalende ved den reviderede metode, er rumkompleksiteten på $O(m^2)$.
+Her kan der igen være en ret betydelig forskel, afhængigt af størrelsen på $n$.\\\\
 %
-Selvom antallet af basale mulige løsninger kan stige eksponentielt med antallet af variabler og betingelser, så har simplex-metoden typisk fundet en optimal løsning efter $O(m)$ iterationer.
+Selvom antallet af basale mulige løsninger kan stige eksponentielt med antallet af variabler og betingelser, så har simplexmetoden typisk fundet en optimal løsning efter $O(m)$ iterationer.
 Dog eksisterer der polyeder, hvor antallet af pivoteringer påkrævet stiger eksponentielt.
-For ikke-degenererede problemer bevæger simplex-metoden sig altid fra et ekstremumspunkt til en af dets naboer og forbedre værdien af objektfunktionen.
+For ikke-degenererede problemer bevæger simplexmetoden sig altid fra et ekstremumspunkt til en af dets naboer og forbedre værdien af objektfunktionen.
 Betragt et polyeder med eksponentielt antal af ekstremumspunkter samt en sti der besøger alle ekstremumspunkter.
 Stien er lavet ved, fra et ekstremumspunkt, at besøge et ekstremumspunkt med mindre værdi.
 Med sådan et polyeder vil simplex-metoden, med en pivoteringsregl, som følger stien, kræve et eksponentielt antal af pivoteringer.
-%
+%%
 \begin{thm}{}{}
-Betragt det lineære programmeringsproblem, hvor objektfunktionen $-x_n$ minimeres med betingelserne $\epsilon \leq x_1 \leq 1$ og $\epsilon x_{i-1} \leq x_i \leq 1 - \epsilon x_{i-1}$ for $i = 2, 3, \ldots, n$ og $0 < \epsilon < \frac{1}{2}$.
+Betragt det lineære programmeringsproblem, hvor objektfunktionen $-x_n$ minimeres med betingelserne $\varepsilon \leq x_1 \leq 1$ og $\varepsilon x_{i-1} \leq x_i \leq 1 - \varepsilon x_{i-1}$ for $i = 2, 3, \ldots, n$ og $0 < \varepsilon < \frac{1}{2}$.
 Så gælder det, at:
 %
 \begin{enumerate}[label=(\alph*)]
 \item Løsningsmængden har $2^n$ ekstremumspunkt.
-\item Ekstremumspunkterne kan arrangeres således, at hver er nabo til og har lavere værdi end den forrige.
-\item Der eksisterer en pivoteringsregl til simplex-metoden således, at den kræver $2^n-1$ pivoteringer før den er færdig.
+\item Ekstremumspunkterne kan arrangeres således, at hver er nabo til og har lavere værdi end det forrige ekstremumspunkt.
+\item Der eksisterer en pivoteringsregl til simplexmetoden således, at den kræver $2^n-1$ pivoteringer før den er færdig.
 \end{enumerate}
 %
 \end{thm}
 %
 \begin{proof}
 %
-Lad $\mathcal{P}_n$ være et polyeder i $\R^n$ begrænset af betingelserne $\epsilon \leq x_1 \leq 1$ og $\epsilon x_{i-1} \leq x_i \leq 1 - \epsilon x_{i-1}$ for $i = 2, 3, \ldots, n$ og $0 < \epsilon < \frac{1}{2}$.\\\\
+Lad $\mathcal{P}_n$ være et polyeder i $\R^n$ begrænset af betingelserne $\varepsilon \leq x_1 \leq 1$ og $\varepsilon x_{i-1} \leq x_i \leq 1 - \varepsilon x_{i-1}$ for $i = 2, 3, \ldots, n$ og $0 < \varepsilon < \frac{1}{2}$.
 %
-Ved induktion vises det, at $\mathcal{P}_n$ har $2^n$ ekstremumspunkter og basistrinnet, hvor $n=1$ følger trivielt.
+\begin{enumerate}[label = (\alph*)]
+\item Ved induktion vises det, at $\mathcal{P}_n$ har $2^n$ ekstremumspunkter. 
+Basistrinnet, hvor $n=1$ følger trivielt.
 Antag nu, at resultatet gælder for $n=k$.
-Polyedret $\mathcal{P}_{k+1}$ er begrænset af samme betingelser som $\mathcal{P}_{k}$ med tilføjelse af betingelsen $\epsilon x_{k} \leq x_{k+1} \leq 1 - \epsilon x_{k}$.
-Den øvre og nedre begrænsning i $\epsilon x_{k} \leq x_{k+1} \leq 1 - \epsilon x_{k}$ ikke kan skære hinanden mens $ 0 \leq x_k \leq 1$ er opfyldt.
-Dette medfører, at hvert ekstremumspunkt i $\mathcal{P}_{k}$ giver anledning til to entydige ekstremumspunkter i $\mathcal{P}_{k+1}$, hvilket viser (a).\\\\
-%
-Med induktion vises det, at ekstremumspunkterne i  $\mathcal{P}_n$ kan arrangeres således, at hvert ekstremumspunkt er nabo til og har mindre værdi end det forrige.
+Polyedret $\mathcal{P}_{k+1}$ er begrænset af samme betingelser som $\mathcal{P}_{k}$ med tilføjelse af betingelsen $\varepsilon x_{k} \leq x_{k+1} \leq 1 - \epsilon x_{k}$.
+Den øvre og nedre begrænsning i $\varepsilon x_{k} \leq x_{k+1} \leq 1 - \varepsilon x_{k}$ kan ikke skære hinanden mens $ 0 \leq x_k \leq 1$ er opfyldt.
+Dette medfører, at hvert ekstremumspunkt i $\mathcal{P}_{k}$ giver anledning til to entydige ekstremumspunkter i $\mathcal{P}_{k+1}$, hvilket viser (a).
+\item Med induktion vises det, at ekstremumspunkterne i $\mathcal{P}_n$ kan arrangeres således, at hvert ekstremumspunkt er nabo til og har mindre værdi end det forrige ekstremumspunkt.
 Basistrinnet for $n=1$ følger trivielt.
 Antag nu, at resultatet gælder for  $n = k$.
 $\mathcal{P}_{k+1}$ kan spittes i to $\mathcal{P}_{k}$ polyeder.
-En hvor $\epsilon x_{k} \leq x_{k+1}$ er aktiv og en hvor $x_{k+1} \leq 1 - \epsilon x_{k}$ er aktiv.
-Da er det muligt at finde den ønskede udspændende sti i $\mathcal{P}_{k+1}$ ved først at tage den udspændende sti i $\mathcal{P}_{k}$, hvor $\epsilon x_{k} \leq x_{k+1}$ er aktiv, skifte til $\mathcal{P}_{k}$, hvor $x_{k+1} \leq 1 - \epsilon x_{k}$ er aktiv og tage dennes udspændende sti i modsat rækkefølge.
+Et, hvor $\varepsilon x_{k} \leq x_{k+1}$ er aktiv og et, hvor $x_{k+1} \leq 1 - \varepsilon x_{k}$ er aktiv.
+Da er det muligt at finde den ønskede udspændende sti i $\mathcal{P}_{k+1}$ ved først at tage den udspændende sti i $\mathcal{P}_{k}$, hvor $\varepsilon x_{k} \leq x_{k+1}$ er aktiv, skifte til $\mathcal{P}_{k}$, hvor $x_{k+1} \leq 1 - \varepsilon x_{k}$ er aktiv og tage dennes udspændende sti i modsat rækkefølge.
 Dette viser (b), da $x_k$ er stærkt voksende i det første $\mathcal{P}_{k}$ og stærkt faldende i det andet $\mathcal{P}_{k}$, hvilket medfører, at $x_{k+1}$ er stærkt voksende hele stien.
-%
-\\\\
-Jævnfør \ref{3.3} (måske sæt 3.3 fra bertsimas) bevæger simplex-metoden sig altid fra nabo til nabo, når problemet ikke er degenereret.
-Med udgangspunkt i (b) vides det, at der eksistere en udspændende sti, som ender i problemets optimale løsning og $\textbf{c}^T\textbf{x}_i < \textbf{c}^T\textbf{x}_{i-1}$ for $i = 2, 3, \ldots ,n$.
+\item Jævnfør \ref{julieerfantalastiskogvidunderlig} bevæger simplex-metoden sig altid fra nabo til nabo, når problemet ikke er degenereret. Med udgangspunkt i (b) vides det, at der eksistere en udspændende sti, som ender i problemets optimale løsning og $\textbf{c}^T\textbf{x}_i < \textbf{c}^T\textbf{x}_{i-1}$ for $i = 2, 3, \ldots ,n$.
 Dette medfører, at en pivoteringsregl, som ønsker at minimere mindst muligt pr. pivotering følger den udspændende sti og besøger alle $2^n$ ekstremumspunkter, hvilket viser (c).
+\end{enumerate}
 \end{proof}
+%

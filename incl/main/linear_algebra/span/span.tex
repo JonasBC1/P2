@@ -134,7 +134,7 @@ Dette gøres ved at undersøge om en vektor kan konstrueres som linearkombinatio
 %
 \begin{eks}
 %
-Det skal undersøges, hvorvidt vektor $\mathbf{u}$ er i spannet for $\S_1$. 
+Det skal undersøges, hvorvidt vektoren $\mathbf{v}$ er i spannet for $\S_1$. 
 Givet
 \begin{align*}
 \mathbf{v}= \begin{bmatrix}
@@ -143,7 +143,7 @@ Givet
            3 \\
 \end{bmatrix} 
 \text{      }
-\text{span}\{\S \} =
+\text{span}\{\S_1 \} =
 \left\{ 
 \begin{bmatrix}
            1 \\
@@ -247,7 +247,7 @@ Lad $B$ være den reducerede trappeform af $A$, og $\mathbf{e}_m$ er standard ve
 %
 i $\R^m$. 
 Gennem rækkereduktionsalgoritmen kan $A$ transformeres til $B$. 
-Da disse række er reversible, følger det, at der findes en sekvens af rækkeopperationer, som kan transformere $B$ til $A$.
+Da disse rækkeopperationer er reversible, følger det, at der findes en sekvens af rækkeopperationer, som kan transformere $B$ til $A$.
 Hvis disse opperationer udføres på totalmatricen 
 $[B \text{    } \mathbf{e}_m]$ 
 for at konstruere matricen 
@@ -257,7 +257,7 @@ så følger det, at ligningssystemet $A\mathbf{x}=\mathbf{
 d}$ er ækvivalent med $B\mathbf{x}=\mathbf{e}_m$.
 \\\\
 Hvis (b) er sand, følger det, at de to ligningssystemer er konsistente. 
-Det følger derfor af sætning \ref{thm:konsistens}, at den sidste række ikke kan være en nulrække, da standardvektoren $\mathbf{e}_m$ vil have pivotindgang i sidste søjle og derfor vil ligningssystemet være inkonsistent.
+Det følger derfor af \ref{thm:konsistens}, at den sidste række ikke kan være en nulrække, da standardvektoren $\mathbf{e}_m$ vil have pivotindgang i sidste søjle og derfor vil ligningssystemet være inkonsistent.
 Dermed er $rang(A)=m$, hvilket leder til (c).
 % Dette kan eventuelt forklares dybere xD
 \\\\
@@ -274,7 +274,7 @@ Det følger derfor jævnfør sætning \ref{thm:konsistens}, at $A\mathbf{x}=\mat
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Når det skal afgøres, hvorvidt en vektor tilhører et givet span, gælder sætning \ref{thm:span}.
+Når det skal afgøres, hvorvidt en vektor tilhører et givet span, gælder \ref{thm:span}.
 %
 \begin{thm}{}{span}
 %

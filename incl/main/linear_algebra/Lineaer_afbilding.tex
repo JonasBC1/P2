@@ -5,7 +5,7 @@ En matrix kan betragtes som en funktion, der afbilder en vektor i et rum.
 \begin{defn}{}{}
 Lad $\S _1 \subset \R^n$ og $\S _2 \subset \R^m$.
 En funktion $f$ fra $\S_1$ til $\S_2$, noteret $f:\S_1\rightarrow\S_2$, tildeler enhver vektor $\textbf{u}$ i $\S_1$ en entydig vektor $f(\textbf{u})$ i $\S_2$.
-Vektoren $f(\textbf{u})$ kaldes en \textbf{afbildning} af $\textbf{v}$.
+Vektoren $f(\textbf{u})$ kaldes en \textbf{afbildning} af $\textbf{u}$.
 %Hedder det codomænet på dansk? Lyder underligt. 
 $\S_1$ er \textbf{domænet} for funktionen $f$, mens $\S_2$ kaldes \textbf{codomænet} til $f$.
 \textbf{Værdimængden} for $f$ er defineret som mængden af afbildninger $f(\textbf{u})$ for alle $\textbf{v}\in \S_1$.
@@ -24,7 +24,7 @@ Lad $A$ være en $m \times n$ matrix.
 Funktionen $T_A:\R^n \rightarrow \R^m$, defineret ved $T_A(\textbf{x}) = A\textbf{x}$ for alle $\textbf{x} \in \R^n$, kaldes \textbf{matrixafbildning fremkaldt af $\mathbf{A}$.}
 \end{defn}\noindent
 %
-Direkte fra sætning \ref{thm:mxvpro} ses det, at $T_A$ har egenskaberne $T_A(\textbf{u}+\textbf{v})=T_A(\textbf{u}) + T_A(\textbf{v})$ og $cT_A(\textbf{u}) = T_A(c\textbf{u})$.
+Direkte fra  \ref{thm:mxvpro} ses det, at $T_A$ har egenskaberne $T_A(\textbf{u}+\textbf{v})=T_A(\textbf{u}) + T_A(\textbf{v})$ og $cT_A(\textbf{u}) = T_A(c\textbf{u})$.
 Funktioner, der opfylder disse egenskaber, får deres egen definition.
 %
 \begin{defn}{}{}
@@ -58,9 +58,9 @@ Da $T$ bevarer vektoraddition haves, at
 T(\textbf{0}) = T(\textbf{0} + \textbf{0}) = T(\textbf{0}) + T(\textbf{0}).
 \end{align*}
 %
-(b) 
-Trækkes $T(\textbf{0})$ fra begge sider haves, at $\textbf{0} = T(\textbf{0})$, hvilket viser (b).
+Trækkes $T(\textbf{0})$ fra begge sider haves, at $\textbf{0} = T(\textbf{0})$.\\
 %
+(b)
 Da $T$ bevarer skalering haves
 % 
 \begin{align*}
@@ -83,7 +83,7 @@ T(c\textbf{u} + k\textbf{v}) = T(c\textbf{u}) + T(k\textbf{v}) = cT(\textbf{u}) 
 \end{proof}
 %
 \\
-Sætning \ref{thm:afbegen}(d) kan generaliseres til at vise, at lineær afbildning bevarer linearkombinationer.
+\ref{thm:afbegen}(d) kan generaliseres til at vise, at lineær afbildning bevarer linearkombinationer.
 %Linearkombinationer
 \begin{lem}{}{}
 Lad $T:\R^n \rightarrow \R^m$ være en lineær afbildning, $\textbf{u}_1,\textbf{u}_2,\ldots,\textbf{u}_k$ være vektorer i $\R^n$ og lad $a_1,a_2,\ldots,a_k$ være skalarer. 
@@ -96,16 +96,16 @@ T(a_1\textbf{u}_1 + a_2\textbf{u}_2 + \cdots + a_k\textbf{u}_k) = T(a_1\textbf{u
 \end{lem}
 %
 \begin{proof}
-Lemmaet følger direkte af sætning \ref{thm:afbegen}.
+Lemmaet følger direkte af \ref{thm:afbegen}.
 \end{proof}
 \\
 %
-Bemærk, at sætning \ref{thm:afbegen}(a) i nogle tilfælde kan bruges til at vise, hvorvidt en funktion er ikke-lineær, hvis den ikke opfylder betingelsen. 
+Bemærk, at \ref{thm:afbegen}(a) i nogle tilfælde kan bruges til at vise, hvorvidt en funktion er ikke-lineær, hvis den ikke opfylder betingelsen. 
 Det kan dog forekomme, at en funktion opfylder betingelsen og stadig er ikke-lineær.
 % 
 \\\\
 % 
-Hvis afbildningen $T$ er lineær, kan en tilsvarende matrix $A$ opstilles, sådan at $T=T_A$, hvilket er belyst i sætning \ref{thm:fisk2}.
+Hvis afbildningen $T$ er lineær, kan en tilsvarende matrix $A$ opstilles, sådan at $T=T_A$, hvilket er belyst i \ref{thm:fisk2}.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
@@ -128,7 +128,7 @@ Den lineære afbildning af $\mathbf{v}$ er
 T(\mathbf{v})= T(v_1 \mathbf{e}_1+v_2 \mathbf{e}_2+ \ldots + v_n \mathbf{e}_n).
 \end{align*}
 %
-Jævnfør sætning \ref{thm:afbegen}(d) er
+Jævnfør \ref{thm:afbegen}(d) er
 %
 \begin{align*}
 T(\mathbf{v})= v_1 T( \mathbf{e}_1)+ v_2 T( \mathbf{e}_2) + \ldots + v_n T( \mathbf{e}_n),
@@ -141,7 +141,7 @@ T(\mathbf{v})&= v_1 \mathbf{a}_1+ v_2 \mathbf{a}_2 + \ldots + v_n \mathbf{a}_n \
 &= A \mathbf{v},
 \end{align*}
 %Er det meningen, at ovenstående skal være på to linjer? 
-hvilket jævnfør definition \ref{defn:fisk3} beviser, at
+hvilket jævnfør \ref{defn:fisk3} beviser, at
 %
 \begin{align*}
 T(\mathbf{v})= T_A (\mathbf{v}).
@@ -149,7 +149,7 @@ T(\mathbf{v})= T_A (\mathbf{v}).
 %
 Lad $B$ være en $m \times n$ matrix. 
 For at bevise entydigheden, lad da $T_A=T_B$. 
-Jævnfør sætning \ref{thm:mxvpro}(e) gælder det, at $A=B$, eftersom $A \mathbf{v}=B \mathbf{v}$ for alle $\mathbf{v}$ i $\R^n$.
+Jævnfør \ref{thm:mxvpro}(e) gælder det, at $A=B$, eftersom $A \mathbf{v}=B \mathbf{v}$ for alle $\mathbf{v}$ i $\R^n$.
 \end{proof}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

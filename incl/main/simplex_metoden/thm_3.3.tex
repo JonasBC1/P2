@@ -1,36 +1,35 @@
 En iteration af simplex metoden
 \begin{enumerate}
 \item En normal iteration starter med et basis bestående af de basale rækker $\textbf{A}_{B(1)},\ldots,\textbf{A}_{B(m)}$ og den tilhørende basale mulige løsning $\textbf{x}$.
-\item Beregn den reducerede objektfunktion $c_j^* = c_j - \mathbf{c}_B^T \textbf{B}^{-1}A_j$ for alle ikke-basale indekser $j$. Hvis de alle er ikke-negative, så er den nuværende basale mulige løsning optimal; ellers vælges et indeks $j$, hvorom det gælder, at $c^*_j<0$
+\item Beregn den reducerede objektfunktion $c_j^* = c_j - \mathbf{c}_B^T \textbf{B}^{-1}A_j$ for alle ikke-basale indekser $j$. Hvis de alle er ikke-negative, så er den nuværende basale mulige løsning optimal; ellers vælges et indeks $j$, hvorom det gælder, at $c^*_j<0.$
 \item Udregn $\textbf{u}=\textbf{B}^{-1}\textbf{A}_j$. Hvis der ikke er nogen komponent af $\textbf{u}$, som er positiv, så er $\theta ^*=\infty$, den optimale løsnings værdi er $-\infty$, og algorithmen stopper.
 \item Hvis en komponent af $\textbf{u}$ er positiv, så lad 
-$$\theta^*= min_{ \{i=1,\ldots,m|u_i>0 \} }        \dfrac{x_{B(i)}}{u_i}$$
-\item Lad $l$ være indekset for $\theta^*=  \dfrac{x_{B(l)}}{u_l}$. Dan et nyt basis ved at udskifte $\textbf{A}_{B(l)}$ med $\textbf{A}_j$. Hvis $\textbf{y}$ er den nye basale mulige løsning, så er værdierne af de nye basale variable $y_j=\theta^*$ og $y_{B(i)}=x_{B(i)}-\theta^*u_i,i\neq l$
+$$\theta^*= min_{ \{i=1,\ldots,m|u_i>0 \} }        \dfrac{x_{B(i)}}{u_i}.$$
+\item Lad $l$ være indekset for $\theta^*=  \dfrac{x_{B(l)}}{u_l}$. Dan et nyt basis ved at udskifte $\textbf{A}_{B(l)}$ med $\textbf{A}_j$. Hvis $\textbf{y}$ er den nye basale mulige løsning, så er værdierne af de nye basale variable $y_j=\theta^*$ og $y_{B(i)}=x_{B(i)}-\theta^*u_i,i\neq l.$
 \end{enumerate}
-
-
+%
+%
 I det ikke-degenererede tilfælde siger følgende sætning, at simplex-metoden fungerer og stopper efter et endeligt antal iterationer.
 % Sætning 3.3
-\begin{thm}{}{}
+\begin{thm}{}{julieersmuuuuuuk}
 Antag, at løsningsmængden er ikke-tom og at enhver basal mulig løsning er ikke-degenereret.
 Så stopper simplex-metoden efter et endeligt antal iterationer. 
 Ved termineringen er der to muligheder:
 \begin{enumerate}[label = (\alph*)]
 \item Et optimalt basis $\textbf{B}$ er fundet, og den tilsvarende basale mulige løsning er optimal.
-\item Der findes en vektor $\textbf{d}$, der opfylder $\textbf{Ad}=0,\textbf{d}\geq 0,$ og $\textbf{c}^T\textbf{d}<0$, og den optimale værdi er $-\infty$
+\item Der findes en vektor $\textbf{d}$, der opfylder $A\textbf{d}= \mathbf{0},\textbf{d}\geq \mathbf{0},$ og $\textbf{c}^T\textbf{d}< 0$, og den optimale værdi er $-\infty$.
 \end{enumerate}
 \end{thm}
 %
 \begin{proof}
-%jeg ville ikke lige til at pille i det andet dokument hvis andre skrev i det pr sætning 6.1(3.1 i bertsima)
-Hvis algoritmen stopper i trin 2, så følger det af Sætning 6.1(mangler en ref), at $\textbf{B}$ er et optimalt basis og den nuværende basale mulige løsninger er optimal.
-\\
+Hvis algoritmen stopper i trin 2, så følger det af Sætning \ref{thm:julieervidunderlig}, at $\textbf{B}$ er et optimalt basis og den nuværende basale mulige løsninger er optimal.
+\\\\
 Hvis algoritmen stopper på grund af stopkriteriet i trin $3$, så er den nuværende basale mulige løsning $\textbf{x}$. 
-Der findes desuden en ikke-basal variabel $x_j$, således at $c^*_j<0$, og den tilsvarende basale retning $\textbf{d}$ tilfredsstiller $\textbf{Ad}=\textbf{0}$ og $\textbf{d} \geq \textbf{0}$. 
-Dertil, at $x+\theta \textbf{d}\in P$ for alle $\theta>0$. 
+Der findes desuden en ikke-basal variabel $x_j$, således at $c^*_j<0$, og den tilsvarende basale retning $\textbf{d}$ tilfredsstiller $A\textbf{d}=\textbf{0}$ og $\textbf{d} \geq \textbf{0}$. 
+Dertil, at $\mathbf{x} +\theta \textbf{d}\in P$ for alle $\theta>0$. 
 Eftersom $\textbf{c}^T\textbf{d}=c_j^*<0$, ved at tage et arbitrært stort $\theta$, fås en arbitrær negativ objektfunktion, og den optimale objektsværdi er $-\infty$.
-\\
-Ved hver iteration bevæger algoritmen sig en positiv værdi $\theta*$ langs en retning $\textbf{d}$, der ofylder $\textbf{c}^T\textbf{d}<0$. 
+\\\\
+Ved hver iteration bevæger algoritmen sig en positiv værdi $\theta^*$ langs en retning $\textbf{d}$, der opfylder $\textbf{c}^T\textbf{d}<0$. 
 Som følge af dette forbedres objektfunktionens værdi for hver basal mulig løsning simplex algoritmen undersøger, samt at den samme løsning ikke besøges mere end en gang. 
 Eftersom der er et endeligt antal basale mulige løsninger, terminerer algoritmen efter et endeligt antal iterationer.
 \end{proof}

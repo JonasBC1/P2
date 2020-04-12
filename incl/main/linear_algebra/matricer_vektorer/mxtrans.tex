@@ -1,6 +1,6 @@
 \subsection{Matrixtransponering}
 %
-\textit{Matrixtransponering} er i nogen henseender brugbart. 
+\textit{Matrixtransponering} er i nogen henseender brugbart, herunder i forbindelse med Simplexmetoden. 
 %
 % Henseender = Sammenhænge 
 %
@@ -60,7 +60,7 @@ A^T =
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Sætning \ref{thm:mxtranspo} viser, at transponering bevarer summering og skalering af matricer.
+\ref{thm:mxtranspo} viser, at transponering bevarer summering og skalering af matricer.
 %
 \begin{thm}{}{mxtranspo}
 Lad $A$ og $B$ være $m \times n$ matricer, og lad $c$ være en skalar.
@@ -73,12 +73,14 @@ Så har matricerne følgende egenskaber:
 \end{thm}
 %
 \begin{proof}
-Lad $A$ og $B$ være $m \times n$ matricer og lad $c$ være en skalar.
-Det vides, at indgangene i $A+B$ er $a_{i,j} + b_{i,j}$, og transponeringen af dette resulterer i en $n \times m$ matrix med indgangende $a_{j,i} + b_{j,i}$.
-Det ses, at  $A^T + B^T$ også er en $n \times m$ matrix med indgangene $a_{i,j} + b_{i,j}$, hvilket beviser (a).
+Lad $A$ og $B$ være $m \times n$ matricer og lad $c$ være en skalar.\\
+(a) Det vides, at indgangene i $A+B$ er $a_{i,j} + b_{i,j}$, og transponeringen af dette resulterer i en $n \times m$ matrix med indgangende $a_{j,i} + b_{j,i}$.
+Det ses, at  $A^T + B^T$ også er en $n \times m$ matrix med indgangene $a_{i,j} + b_{i,j}$.\\\\
+(b)
 Ved skalering og transponering af en matrix ses, at opperationernes rækkefølge er uden betydning for slutresultatet.
 Dette tydeliggøres ved at betragte $cA^T$ og $(cA)^T$.
-For $cA^T$ er indgangene $ca_{j,i}$, og indgangene i $cA$ er $ca_{i,j}$, som efter transponering er $ca_{j,i}$, hvilket beviser (b).
+For $cA^T$ er indgangene $ca_{j,i}$, og indgangene i $cA$ er $ca_{i,j}$, som efter transponering er $ca_{j,i}$.\\\\
+(c)
 Transponeres $A$ to gange vil resultatet være $A$.
 Første transponering resulterer i en $n \times m$ matrix med indgangene $a_{j,i}$ og anden transponering resulterer i en $m \times n$ matrix med indgangene $a_{i,j}$, hvilket beviser (c).
 \end{proof}

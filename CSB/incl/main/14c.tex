@@ -1,0 +1,23 @@
+\subsection*{(c) Fixpunktligningen}
+ Ligningen (6) kan omskrives til en fixpunktligning. Gør rede for de to omskrivninger her.\\
+Omskrivningerne kan fåes alt efter hvilket $\lambda$ der isolerers for
+\begin{align*}
+\lambda \cdot cosh(\dfrac{75}{\lambda})&=\lambda+15\\
+\lambda&=\dfrac{\lambda+15}{cosh(\dfrac{75}{\lambda})}
+\end{align*}
+og
+\begin{align*}
+\lambda \cdot cosh(\dfrac{75}{\lambda})&=\lambda+15\\
+\lambda \cdot cosh(\dfrac{75}{\lambda})-15 &=\lambda
+\end{align*}
+I de 2 programmer kan man finde ud af at den først omskrivning ikke vil fungere til at finde en løsning, mens den anden nærmer sig en løsning der er ca 189. Det ene program plotter visuelt hvad der sker mens den anden viser hver iteration.
+% 
+\\
+
+\colorbox{green}{Argumenter for andvendelsen i forhold til Turner}
+% 
+\lstset{style=mystyle}
+\lstinputlisting[language=Python]{code/1_4_c_1_8.py}
+geg
+\lstset{style=mystyle}
+\lstinputlisting[language=Python]{code/func-iter.py}
