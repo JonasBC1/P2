@@ -10,7 +10,7 @@ En mængde af vektorer i $\R^n$ kan være \textit{lineært afhængige} eller \te
 % 
 \begin{defn}{Lineær afhængighed og lineær uafhængighed}{}
 %En mængde af vektorer $\mathbf{u}_1, \mathbf{u}_2, \ldots , \mathbf{u}_k \in \R^n$ kaldes lineært uafhængige, hvis der eksisterer skalarer $x_1, x_2, \ldots , x_k$, sådan at ligningen 
-En mængde af vektorer $\mathbf{u}_1, \mathbf{u}_2, \ldots , \mathbf{u}_k \in \R^n$ kaldes \textbf{lineært uafhængige}, hvis der for alle skalarer $x_1, x_2, \ldots , x_k$, sådan at ligningen 
+En mængde af vektorer $\mathbf{u}_1, \mathbf{u}_2, \ldots , \mathbf{u}_k \in \R^n$ kaldes \textbf{lineært uafhængige}, hvis der eksisterer skalarer $x_1, x_2, \ldots , x_k$, sådan at ligningen 
 \begin{align*}
 x_1\mathbf{u}_1 + x_2\mathbf{u}_2 + \cdots + x_k \mathbf{u}_k = \mathbf{0}, 
 \end{align*}
@@ -54,7 +54,7 @@ x_1
 \end{align*}
 %
 Denne ligning er kun opfyldt, hvis $x_1=x_2=0$. 
-Eftersom alle koefficienterne er $0$, er vektorerne i $\S_1$ lineært uafhængige.
+Eftersom det kun eksisterer den triviele løsnig, er vektorerne i $\S_1$ lineært uafhængige.
 \\\\
 Havde spannet været 
 \begin{align*}
@@ -98,7 +98,7 @@ Vektorerne i $\S_2$ er derfor lineært afhængige, fordi der er flere løsninger
 %I eksempel \ref{lineu} viste en af måderne hvorpå man kunne bestemme om et bestemt set $\S$ var lineært afhængigt eller uafhængigt. 
 %Der findes flere måder at bestemme dette på. Denne følgende sætning viser en lignende teknik til bestemmelse heraf. 
 %
-Egenskaber af lineær uafhængighed kan udtrykkes på forskellige måder, hvilket leder til sætning \ref{thm:mxlinuaf}.
+Egenskaber af lineær uafhængighed kan udtrykkes på forskellige måder, hvilket leder til \ref{thm:mxlinuaf}.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Brug \ref når i refererer til sætninger, i stedet for at skrive "følgende sætning.." (syns jeg). 
@@ -151,7 +151,7 @@ Dette beviser (e) $\rightarrow$ (f).
 % (f) $\rightarrow$ (b).
 Lad $\mathbf{u}$ og $\mathbf{v}$ være løsninger til $A\mathbf{x}=\mathbf{b}$.
 % Sætning 1.3
-Jævnfør sætning \ref{thm:mxvpro} følger det, at $A(\mathbf{u}-\mathbf{v})=A\mathbf{u}-A\mathbf{v}=\mathbf{b}-\mathbf{b}=\mathbf{0}$, hvilket tilsvarer $\mathbf{u}-\mathbf{v}=\mathbf{0}
+Jævnfør sæ \ref{thm:mxvpro} følger det, at $A(\mathbf{u}-\mathbf{v})=A\mathbf{u}-A\mathbf{v}=\mathbf{b}-\mathbf{b}=\mathbf{0}$, hvilket tilsvarer $\mathbf{u}-\mathbf{v}=\mathbf{0}
 \rightarrow  
 \mathbf{u} =\mathbf{v}$. Dette beviser (f) $\rightarrow$ (b).
 \\\\
@@ -164,7 +164,7 @@ Ligningssystemet $A\mathbf{x}=\mathbf{b}$ har altid løsningen $\mathbf{x}=\math
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Ligeså findes der en række egenskaber vedrørende mængder, der er lineært afhængige, som er belyst i sætning \ref{thm:inspektion}.
+Ligeså findes der en række egenskaber vedrørende mængder, der er lineært afhængige, som er belyst i \ref{thm:inspektion}.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -226,7 +226,7 @@ er en løsning anderledes fra den trivielle løsning, hvor $x_1, x_2,\ldots,x_k=
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 Det kan i nogle tilfælde afgøres ved inspektion, hvorvidt en mængde vektorer $\mathbf{u},\mathbf{u}_2,\ldots ,\mathbf{u}_k$ er lineært afhængige. 
-Jævnfør sætning \ref{thm:inspektion} er mængden af vektorer afhængige, hvis $\mathbf{0}$ er en af dem, hvis to af vektorerne er parallelle, eller hvis der er flere vektorer end hver vektors antal af koordinater. 
+Jævnfør \ref{thm:inspektion} er mængden af vektorer afhængige, hvis $\mathbf{0}$ er en af dem, hvis to af vektorerne er parallelle, eller hvis der er flere vektorer end hver vektors antal af koordinater. 
 Med udgangspunkt i \ref{fisk} ses det, at de to vektorer i $\S_2$ er parallelle og derfor er lineært afhængige. 
 \\\\
 Hvis det ikke ved hjælp af inspektion kan afgøres, om en matrix er lineært afhængig eller lineært uafhængig, kan det undersøges ved at opstille totalmatricen af mængden af vektorer, hvor matricen derefter via rækkeopperationer laves til trappeform. 
