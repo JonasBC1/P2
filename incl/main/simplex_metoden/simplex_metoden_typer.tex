@@ -8,7 +8,7 @@ Først introduceres den naive implementering af simplexmetoden, hvor ingen af de
 For den indledende iteration, haves indekserne
 $B(1),\ldots,B(m)$ for de givne basisvariable. 
 Derudfra kan der dannes en basis matrix $B$ og beregne $\mathbf{p}^T=\mathbf{c}_{\text{B}}^T B^{-1}$ ved at løse det lineære ligningssystem $\mathbf{p}^T B=\mathbf{c}_{\text{B}}^T$ for den ukendte vektor $\mathbf{p}$. 
-Hertil kan det ydermere nævnes, at $\mathbf{p}$ betegnes som den vektor bestående af de simplex multiplikationer, som tilknyttet med basen $B$. 
+Hertil kan det ydermere nævnes, at $\mathbf{p}$ betegnes som den vektor bestående af de simplexmultiplikationer, som tilknyttet med basen $B$. 
 Den reducerede objektfunktion $c_j^* = c_j - \mathbf{c}_B^T B^{-1}A_j$ for enhver variable $x_j$, er derfor givet ved følgende formel:
 %
 \begin{align*}
@@ -19,7 +19,7 @@ Afhængigt af om pivoteringsreglen er benyttet, er det nødvendigt at udregne al
 %%%%
 %
 \subsection{Den reviderede implementering}
-Problem ved den naive implementering er dens tunge beregningsmæssige ulempe, da den er nødsaget til at løse to sæt af lineære ligningssystemer. En alternativ implementering til dette, er den revidere implementering, som benytter matricen $B^{-1}$ ved hver iteration, samt er  vektorerne $\mathbf{c}_{\text{B}}^T B^{-1}$ og $B^{-1} \mathbf{A}_j$ udregnet ved hjælp af matrix-vektor multiplikation. En iteration af den reviderede simplex implementering gennemløber følgende punkter: 
+Problem ved den naive implementering er dens tunge beregningsmæssige ulempe, da den er nødsaget til at løse to sæt af lineære ligningssystemer. En alternativ implementering til dette, er den revidere implementering, som benytter matricen $B^{-1}$ ved hver iteration, samt er  vektorerne $\mathbf{c}_{\text{B}}^T B^{-1}$ og $B^{-1} \mathbf{A}_j$ udregnet ved hjælp af matrix-vektor multiplikation. En iteration af den reviderede simpleximplementering gennemløber følgende punkter: 
 % 
 \begin{col}{}{}
 \begin{enumerate}

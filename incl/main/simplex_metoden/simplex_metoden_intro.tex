@@ -1,5 +1,5 @@
 Som nævnt tidligere i rapporten, findes der en optimal løsning til et lineært ligningssystem på standard form, så længe der findes mindst én basal mulig løsning. 
-\textit{Simplex metoden} benytter sig af denne egenskab og forsøger at finde den optimale løsning for en lineært ligningssystem på standard form.
+\textit{Simplexmetoden} benytter sig af denne egenskab og forsøger at finde den optimale løsning for en lineært ligningssystem på standard form.
 %
 % -------------------------------------------------------------------------
 % Noget introducerende
@@ -86,7 +86,7 @@ er simplextabellen en matrix, som indeholder de lineære betingelser, slack-vari
 Matricen $\mathbf{A}$ opskrives først, og derefter opskrives identitesmatricen $e_{m+1}$, hvor $m$ er antallet af slack-variabler, samt den optimale løsning $z$, og til sidst opskrives $\mathbf{b}$. 
 Under $\mathbf{A}$ tilføjes objektfunktionen $- \mathbf{c}^T$. 
 Identitetsmatricen $I_m$, som dannes med udgangspunkt i antallet af slack-variabler danner basismatricen $B$.
-Med udgangspunkt i forrige optimeringsproblem ser en generel formel i simplex-tabellen dermed ud som følgende:
+Med udgangspunkt i forrige optimeringsproblem ser en generel formel i simplextabellen dermed ud som følgende:
 %
 \begin{align*}
 \begin{blockarray}{ccccccccccc}
@@ -102,7 +102,7 @@ a_{m,1} & a_{m,2} & \cdots & a_{m,n} & 0 & 0 & \cdots  & 1  & 0 & b_{m}\\
 \end{blockarray}.
 \end{align*}
 %
-Optimeringsproblemet fra \ref{haribooooo} har dermed følgende simplex-tabel:
+Optimeringsproblemet fra \ref{haribooooo} har dermed følgende simplextabel:
 %
 \begin{align*}
 \begin{blockarray}{cccccc}
@@ -118,7 +118,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 %
 \subsubsection{3. Tjek optimering og identificér en pivotindgang}
 %
-Først tjekkes der efter optimering ved at finde det mindste negative koefficient i objektfunktionen, hvilket i dette tilfælde findes i nederste række i simplex-tabellen:
+Først tjekkes der efter optimering ved at finde det mindste negative koefficient i objektfunktionen, hvilket i dette tilfælde findes i nederste række i simplextabellen:
 %
 \begin{align*}
 \begin{blockarray}{cccccc}
@@ -138,14 +138,14 @@ Herefter findes \textit{pivoteringsindgangen} og \textit{pivotrækken}, ved at f
 \frac{a_{i,j}}{b_j}=u_i
 \end{align*}
 %
-i pivot-søjlen.
+i pivotsøjlen.
 Pivotindgangen for eksemplet findes ved
 %
 \begin{align*}
 \frac{78}{3} =26 \text{  } \text{ og } \text{   } \frac{36}{4} =9.
 \end{align*}
 %
-Eftersom $9$ er den laveste værdi, er $a_{2,1}$ pivotindgangen, mens den række, som den er i, er pivot-rækken. 
+Eftersom $9$ er den laveste værdi, er $a_{2,1}$ pivotindgangen, mens den række, som den er i, er pivotrækken. 
 I nedenstående er pivotindgangen markeret.
 %
 \begin{align*}
@@ -275,7 +275,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 \subsubsection{6. Identificér den optimale løsning}
 %
 Eftersom der ikke er flere negative værdier i objektfunktionen, er den optimale løsning nu fundet. 
-Denne løsning kan aflæses direkte af simplex-tabellen, og den optimale løsning for eksemplet er dermed
+Denne løsning kan aflæses direkte af simplextabellen, og den optimale løsning for eksemplet er dermed
 %
 \begin{align*}
 x_1 & = 6, \\

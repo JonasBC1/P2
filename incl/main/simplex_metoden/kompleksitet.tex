@@ -36,7 +36,7 @@ Dog eksisterer der polyeder, hvor antallet af pivoteringer påkrævet stiger eks
 For ikke-degenererede problemer bevæger simplexmetoden sig altid fra et ekstremumspunkt til en af dets naboer og forbedre værdien af objektfunktionen.
 Betragt et polyeder med eksponentielt antal af ekstremumspunkter samt en sti der besøger alle ekstremumspunkter.
 Stien er lavet ved, fra et ekstremumspunkt, at besøge et ekstremumspunkt med mindre værdi.
-Med sådan et polyeder vil simplex-metoden, med en pivoteringsregl, som følger stien, kræve et eksponentielt antal af pivoteringer.
+Med sådan et polyeder vil simplexmetoden, med en pivoteringsregl, som følger stien, kræve et eksponentielt antal af pivoteringer.
 %%
 \begin{thm}{}{}
 Betragt det lineære programmeringsproblem, hvor objektfunktionen $-x_n$ minimeres med betingelserne $\varepsilon \leq x_1 \leq 1$ og $\varepsilon x_{i-1} \leq x_i \leq 1 - \varepsilon x_{i-1}$ for $i = 2, 3, \ldots, n$ og $0 < \varepsilon < \frac{1}{2}$.
@@ -68,7 +68,7 @@ $\mathcal{P}_{k+1}$ kan spittes i to $\mathcal{P}_{k}$ polyeder.
 Et, hvor $\varepsilon x_{k} \leq x_{k+1}$ er aktiv og et, hvor $x_{k+1} \leq 1 - \varepsilon x_{k}$ er aktiv.
 Da er det muligt at finde den ønskede udspændende sti i $\mathcal{P}_{k+1}$ ved først at tage den udspændende sti i $\mathcal{P}_{k}$, hvor $\varepsilon x_{k} \leq x_{k+1}$ er aktiv, skifte til $\mathcal{P}_{k}$, hvor $x_{k+1} \leq 1 - \varepsilon x_{k}$ er aktiv og tage dennes udspændende sti i modsat rækkefølge.
 Dette viser (b), da $x_k$ er stærkt voksende i det første $\mathcal{P}_{k}$ og stærkt faldende i det andet $\mathcal{P}_{k}$, hvilket medfører, at $x_{k+1}$ er stærkt voksende hele stien.
-\item Jævnfør \ref{julieerfantalastiskogvidunderlig} bevæger simplex-metoden sig altid fra nabo til nabo, når problemet ikke er degenereret. Med udgangspunkt i (b) vides det, at der eksistere en udspændende sti, som ender i problemets optimale løsning og $\textbf{c}^T\textbf{x}_i < \textbf{c}^T\textbf{x}_{i-1}$ for $i = 2, 3, \ldots ,n$.
+\item Jævnfør \ref{julieerfantalastiskogvidunderlig} bevæger simplexmetoden sig altid fra nabo til nabo, når problemet ikke er degenereret. Med udgangspunkt i (b) vides det, at der eksistere en udspændende sti, som ender i problemets optimale løsning og $\textbf{c}^T\textbf{x}_i < \textbf{c}^T\textbf{x}_{i-1}$ for $i = 2, 3, \ldots ,n$.
 Dette medfører, at en pivoteringsregl, som ønsker at minimere mindst muligt pr. pivotering følger den udspændende sti og besøger alle $2^n$ ekstremumspunkter, hvilket viser (c).
 \end{enumerate}
 \end{proof}
