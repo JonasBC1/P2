@@ -10,6 +10,21 @@ Derfor omskrives ligning (bingbong) til
 hvorefter metoderne kan bruges til at bestemme et nulpunkt.
 Bisektionsmetoden når en tolerance på $1\cdot 10^{-12}$ efter $47$ iterationer.
 Med samme tolerance afsluttes Newtons metode efter kun $7$ iterationer.
-\\
+$$
+\begin{array}{l|c|c}
+\text{Metode} & \text{Resultat} & \text{Iterationer}\\
+\hline
+\text{Bisektion}	& 189.94865 & 46\\
+\text{Newton}		& 189.94865 & 7\\
+\end{array}
+$$
+I forhold til anvendelsen af de to metoder kan man i forbindelse med Newtons metode ikke på forhånd se om den giver et resultat, opfører sig kaotisk eller ikke giver er resultat. 
+Men i de tilfælde hvor den giver er resultat findes den eksakte værdi ved få iterationer og er derfor rigtig brugbar. 
+Den er nem og arbejde med og hurtig til at få et eksakt resultat. 
+%
+Modsat virker bisektionsmetoden altid, og den er god og stabil. Dog har den mange iterationer og er tung at arbejde med.
 
-\colorbox{green}{Argumenter for andvendelsen af de to metoder}
+I sammenligning med resultaterne ses det også her at Newtons metode bruger 7 iterationer, hvorimod bisektionsmetoden bruger 46. 
+%
+Man vil derfor kunne argumentere for at newtons metode er den bedste i de tilfælde den virker, hvorimod bisektionsmetoden altid giver et resultat. 
+%
