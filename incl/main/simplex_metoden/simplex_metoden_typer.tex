@@ -44,8 +44,11 @@ Problem ved den naive implementering er dens tunge beregningsmæssige ulempe, da
 \subsection{Fuld-tabel implementeringen}
 Slutteligt er det interessant at beskrive den sidste implementering af simplexmetoden, nemlig den fuld-tabel implementeringen. 
 Det er gældende for den fulde tabel implementering, at den i stedet for at opretholde og opdatere matricen $\mathbf{B}^{-1}$ ved hver iteration, som i den reviderede implementering; så opretholder og opdaterer den $m \times (n+1)$ matricen, givet ved $\mathbf{B}^{-1} \left [ \mathbf{b} \mid \mathbf{A} \right ]$, med søjlerne $\mathbf{B}^{-1}\mathbf{b}$ og $\mathbf{B}^{-1}\mathbf{A}_1,\ldots,\mathbf{B}^{-1}\mathbf{A}_n$. 
-Denne matrix betegnes som en simplextabel. Bemærk, at søjlen $\mathbf{B}^{-1}\mathbf{b}$, betegnes som \textit{nulsøjlen} og indeholder værdierne for de basale variable. 
-Søjlen $\mathbf{B}^{-1}\mathbf{A}_i$ betegnes som den $i$-te søjle af tabellen. Søjlen $\mathbf{u} = \mathbf{B}^{-1}\mathbf{A}_j$ er svarende til den variabel, som er i basen, er betegnet som pivotsøjlen. 
+Denne matrix betegnes som en simplextabel.
+Søjlen $\mathbf{B}^{-1}\mathbf{b}$, betegnes som \textit{nulsøjlen} og indeholder værdierne for de basale variable.
+Bemærk, at nulsøjlen i dette afsnit er den første søjle i simplextabellen, men ellers ikke vil være.
+Søjlen $\mathbf{B}^{-1}\mathbf{A}_i$ betegnes som den $i$-te søjle af tabellen.
+Søjlen $\mathbf{u} = \mathbf{B}^{-1}\mathbf{A}_j$ er svarende til den variabel, som er i basen, er betegnet som pivotsøjlen. 
 Hvis den $l$-te basale variabel udgår fra basen, så er den $l$-te række, betegnet som pivotrækken. 
 Endelig er elementet, der tilhører både pivotrække og pivotsøjlen betegnet ved pivoteringsindgangen og bemærk yderligere, at dette element er $u_l$ og altid er positivt. 
 For at klarlægge hvordan den fulde tabel implementering fungerer, vil der i følgende bliver gennemgået en iteration af den fulde tabel implementering: 
@@ -53,9 +56,12 @@ For at klarlægge hvordan den fulde tabel implementering fungerer, vil der i fø
 \begin{col}{}{}
 \begin{enumerate}
 \item I en typisk iteration, startes der med at opstille en tabel associeret med en basis matrix $\mathbf{B}$ og en tilsvarende basal mulig løsning $\mathbf{x}.$
-\item Dernæst undersøges om den reducerede pris i nulrækken af tabellen. Hvis alle indgange er ikke-negative, så er den nuværende basal mulige løsning den optimale, og algoritmen vil slutte ved dette punkt. Hvis dette ikke er tilfældet, så vælg ethvert $j$, hvor $c_j^* < 0$.
+\item Dernæst undersøges om den reducerede pris i nulrækken af tabellen.
+Hvis alle indgange er ikke-negative, så er den nuværende basal mulige løsning den optimale, og algoritmen vil slutte ved dette punkt.
+Hvis dette ikke er tilfældet, så vælg ethvert $j$, hvor $c_j^* < 0$.
 \item Overvej vektoren $\mathbf{u}=\mathbf{B}^{-1}\mathbf{A}_j$, hvor den $j$-te søjle, som er pivotsøjlen, i tabellen. Hvis intet komponent i $\mathbf{u}$ er positivt, så er den optimale pris $-\infty$, og algoritmen vil slutte ved dette trin. 
-\item For hvert $i$, hvor $u_i$ er positivt, udregn forholdet $\frac{x_{B(i)}}{u_i}$. Lad $l$ være det index  af en række, som tilsvarer det laveste forhold. Søjlen $\mathbf{A}_{B(l)}$ udgår fra basen og søjlen $\mathbf{A}_j$ indgår i basen. 
+\item For hvert $i$, hvor $u_i$ er positivt, udregn forholdet $\frac{x_{B(i)}}{u_i}$. Lad $l$ være det index  af en række, som tilsvarer det laveste forhold.
+Søjlen $\mathbf{A}_{B(l)}$ udgår fra basen og søjlen $\mathbf{A}_j$ indgår i basen. 
 \item Tilføj for hver række i tabellen en konstant multiplum af den $l$-te række, som er pivotrækken, så $u_l$, som er pivoteringsindgangen bliver lig med $1$ og alle andre indgange i pivotsøjlen bliver 0. 
 \end{enumerate}
 \end{col}
