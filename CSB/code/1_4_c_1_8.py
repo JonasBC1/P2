@@ -4,7 +4,6 @@ import numpy as np
 import pylab as py
 
 
-
 def g(x):
 	return (x+15)/(np.cosh(75/x))
 
@@ -17,7 +16,6 @@ x = np.linspace(a, b, abs(b-a)*100, endpoint=True)
 
 
 x_init = 160
-
 
 
 
