@@ -50,8 +50,8 @@ For enhver lineær afbildning $T: \R^n \rightarrow \R^m$ er følgende udsagn san
 \end{thm}
 %
 \begin{proof}
-(a) 
-Lad $\textbf{u}, \textbf{v}$ være vektorer i $\R^n$, $c$ og $k$ være skalarer og lad $T: \R^n \rightarrow \R^m$ være en lineær afbildning.
+\begin{enumerate}[label=(\alph*)]
+\item Lad $\textbf{u}, \textbf{v}$ være vektorer i $\R^n$, $c$ og $k$ være skalarer og lad $T: \R^n \rightarrow \R^m$ være en lineær afbildning.
 Da $T$ bevarer vektoraddition haves, at
 %
 \begin{align*}
@@ -60,26 +60,25 @@ T(\textbf{0}) = T(\textbf{0} + \textbf{0}) = T(\textbf{0}) + T(\textbf{0}).
 %
 Trækkes $T(\textbf{0})$ fra begge sider haves, at $\textbf{0} = T(\textbf{0})$.\\
 %
-(b)
-Da $T$ bevarer skalering haves
+\item Da $T$ bevarer skalering haves
 % 
 \begin{align*}
 T(-\textbf{u}) = T((-1)\textbf{u}) = (-1)T(\textbf{u}) = -T(\textbf{u}).
 \end{align*}
 %
-(c) 
-Ved kombination af, at $T$ bevarer vektor addition og (b), haves, at
+\item Ved kombination af, at $T$ bevarer vektor addition og (b), haves, at
 %
 \begin{align*}
 T(\textbf{u}-\textbf{v}) = T(\textbf{u}+(-\textbf{v})) = T(\textbf{u})+T(-\textbf{v}) = T(\textbf{u}) - T(\textbf{v}).
 \end{align*}
 %
-(d) 
-Da $T$ både bevarer både vektor addition og skalering haves, at 
+\item Da $T$ både bevarer både vektor addition og skalering haves, at 
 %
 \begin{align*}
 T(c\textbf{u} + k\textbf{v}) = T(c\textbf{u}) + T(k\textbf{v}) = cT(\textbf{u}) + kT(\textbf{u}).
 \end{align*}
+%
+\end{enumerate}
 \end{proof}
 %
 \\

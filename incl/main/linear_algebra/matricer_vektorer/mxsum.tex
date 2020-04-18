@@ -81,21 +81,24 @@ Så har matricer følgende egenskaber:
 \end{enumerate}
 \end{thm}
 %
-\begin{proof} % Skal dette bevis være i punktform? det skal det jo vel egenlig 
-Lad $A$, $B$ og $C$ være $m \times n$ matricer, og lad $c$ og $k$ være skalarer.\\
-(a) Betragt $A + B$ og $B + A$ og bemærk jævnfør \ref{defn:mxsum}, at de $(i,j)$'te indgange bliver henholdsvis $a_{i,j} + b_{i,j}$ og $b_{i,j} + a_{i,j}$.\\\\
-(b)
-Ligeledes ses det, at $(a_{i,j} + b_{i,j}) + c_{i,j} = a_{i,j} + (b_{i,j} + c_{i,j})$.\\\\
-(c) \& (d)
-Endvidere kan $0$ isoleres i $a_{i,j} + 0 = a_{i,j}$, således $a_{i,j} + (-a_{i,j}) = 0$, da alle indgange i en nulmatrix er $0$.
-\\\\
+\begin{proof}
+Lad $A$, $B$ og $C$ være $m \times n$ matricer, og lad $c$ og $k$ være skalarer.
+\begin{enumerate}[label=(\alph*)]
+\item Betragt $A + B$ og $B + A$ og bemærk jævnfør \ref{defn:mxsum}, at de $(i,j)$'te indgange bliver henholdsvis $a_{i,j} + b_{i,j}$ og $b_{i,j} + a_{i,j}$.
 %
-(e) Betragt skaleringen af $A$ med skalaren $ck$, som er et produkt af skalarene $c$ og $k$, og skaleringen af $A$ med $c$ og herefter $k$.
-For indgangene i disse skaleringer findes ligheden $(ck)a_{i,j} = k(ca_{i,j})$.\\\\
-(f)
-Betragt ligeledes (f) og bemærk, at $c(a_{i,j} + b_{i,j}) = ca_{i,j} + cb_{i,j}$.\\\\
-(g)
-Det samme gøres for ligheden i (g), hvor ligheden $(c + k)a_{i,j} = ca_{i,j} + ka_{i,j}$ opstilles.
+\item Ligeledes ses det, at $(a_{i,j} + b_{i,j}) + c_{i,j} = a_{i,j} + (b_{i,j} + c_{i,j})$.
+%
+\item Endvidere kan $0$ isoleres i $a_{i,j} + 0 = a_{i,j}$, således $a_{i,j} + (-a_{i,j}) = 0$, da alle indgange i en nulmatrix er $0$.
+% 
+\item Følger direkte af (c).
+%
+\item Betragt skaleringen af $A$ med skalaren $ck$, som er et produkt af skalarene $c$ og $k$, og skaleringen af $A$ med $c$ og herefter $k$.
+For indgangene i disse skaleringer findes ligheden $(ck)a_{i,j} = k(ca_{i,j})$.
+%
+\item Betragt ligeledes (f) og bemærk, at $c(a_{i,j} + b_{i,j}) = ca_{i,j} + cb_{i,j}$.
+%
+\item Det samme gøres for ligheden i (g), hvor ligheden $(c + k)a_{i,j} = ca_{i,j} + ka_{i,j}$ opstilles.
+\end{enumerate}
 \end{proof}
 \noindent
 \\
@@ -103,6 +106,3 @@ Det samme gøres for ligheden i (g), hvor ligheden $(c + k)a_{i,j} = ca_{i,j} + 
 Da vektorer er matricer med enten én række eller én søjle er samme operationer mulige og vektorer besidder derfor de samme egenskaber.
 %
 % Mere sssssssssssssssssssssssssssssssssssss
-\\\\
-\phantom{Hejmeddig}
-\\\\
