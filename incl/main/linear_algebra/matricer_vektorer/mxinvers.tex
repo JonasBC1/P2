@@ -22,7 +22,7 @@ Såfremt en matrix $A$ er invertibel, findes der en entydig matrix $B$, som er d
 Antag at der findes to matricer  $B$ og $C$, som begge har størelsen $n \times n$, hvorom det gælder, at disse er inverse til $n \times n$ matricen $A$.
 Det gælder derfor fra \ref{defn:mxinvers}, at $A$ er inversen til $B$ og $C$.
 Derfor haves at $AB=BA=I_{n}$, samt at $AC=CA=I_{n}$. 
-Fra sætning \ref{thm:mxmulti} haves derfor at:
+Fra \ref{thm:mxmulti} haves derfor at:
 \begin{align*}
 B=BI_n&=B(AC) \\
 &=(BA)C \\
@@ -32,7 +32,7 @@ Altså er $B=C$ og $A$'s invers er derfor entydig, denne kaldes $A^{-1}$.
 \end{proof} \\
 %
 Såfremt $A$ er en invertibel $n \times n$ matrix, gælder det for ethvert $\mathbf{b} \in \R^n$, at $A\textbf{x}=\mathbf{b}$ har den entydige løsning $A^{-1}\mathbf{b}$.
-Inverse matricer har en række egenskaber, hvoraf nogle centrale er formuleret i sætning \ref{thm:mxinvers}. 
+Inverse matricer har en række egenskaber, hvoraf nogle centrale er formuleret i \ref{thm:mxinvers}. 
 %
 \begin{thm}{}{mxinvers}
 Givet to $m \times n$ matricer $A$ og $B$, så gælder, at
@@ -55,7 +55,7 @@ Dermed er $AB^{-1}=A^{-1}B^{-1}$.
 \\\\
 (c) Antag at A er invertibel. 
 Det følger fra \ref{defn:mxinvers}, at $A^{-1}A=I_n$. 
-Jævnfør sætning \ref{thm:mxmulti}(g) følger det hermed, at $A^T(A^{-1})^T=(A^{-1}A)^T=I_n^T=I_n$. 
+Jævnfør \ref{thm:mxmulti}(g) følger det hermed, at $A^T(A^{-1})^T=(A^{-1}A)^T=I_n^T=I_n$. 
 Ligeledes kan det vises, at $(A^{-1})^TA^T=I_n$. 
 Derfor er $A^T$ en invertibel matrix med inversen $(A{-1})^T$ og $(A^T)^{-1}A=(A^{-1})^T$.
 \end{proof}\\
@@ -94,7 +94,7 @@ Det vides at gauss elimination omdanner en matrix til reduceret trappeform, ved 
 \end{proof}
 %
 \\
-Sætning \ref{thm:eleinv} medfører desuden korollar \ref{kor:eleinv}.
+\ref{thm:eleinv} medfører desuden \ref{kor:eleinv}.
 %måske noget mere her (at det er vigtigt for rækkeoperationer?).  
 \begin{kor}{}{eleinv}
 Matrixligningerne $A\textbf{x}=\textbf{b}$ og $R\textbf{x}=\textbf{c}$ har samme løsninger, hvor 
@@ -158,17 +158,17 @@ $A$ er invertibel, hvis og kun hvis den reducerede trappeform af $A$ er $I_n$.
 Antag, at $n\times n$ matricen $A$ er invertibel, og at der findes en vektor \textbf{u} i $\R^n$, så $A\textbf{v}=\textbf{0}$. 
 Da $A$ er en invertibel matrix, gælder det for ethvert $\mathbf{b} \in \R^n$, at $A\textbf{x}=\mathbf{b}$ har løsningen $A^{-1}\mathbf{b}$ og derfor er $\textbf{v}=A^{-1}\textbf{0}=\textbf{0}$. 
 Den eneste løsning til problemet er derfor $\textbf{0}$. 
-Såfremt $A$ er invertibel, følger det derfor fra sætning \ref{thm:mxlinuaf}, at $\text{ rang}(A)=n$.
+Såfremt $A$ er invertibel, følger det derfor fra \ref{thm:mxlinuaf}, at $\text{ rang}(A)=n$.
 Det følger derfor, at $A$ på reduceret trappeform er $I_n$.
 \\\\
 Antag nu, at den reducerede trappeform af $A$=$I_n$. 
-Jævnfør sætning \ref{thm:mxinvertibel} eksister der en invertibel $n \times n$ matrix $P$, hvorom det gælder, at $PA=I_n$. 
+Jævnfør \ref{thm:mxinvertibel} eksister der en invertibel $n \times n$ matrix $P$, hvorom det gælder, at $PA=I_n$. 
 %
 \begin{align*}
 A=I_nA=(P^{-1}P)A=P^{-1}(PA)=P^{-1}.
 \end{align*}
 %
-Fra sætning \ref{thm:mxinvers} fremgår det, at $P^{-1}$ er en invertibel matrix, og det er hermed bevist, at $A$ er invertibel, da $A=P^{-1}$.
+Fra \ref{thm:mxinvers} fremgår det, at $P^{-1}$ er en invertibel matrix, og det er hermed bevist, at $A$ er invertibel, da $A=P^{-1}$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %find begin example
@@ -282,7 +282,7 @@ B=A^{-1}=\begin{blockarray}{ccc}
 %
 \end{eks}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Sætning \ref{thm:mxinvers2} beskriver nogle yderligere egenskaber for invertible matricer. 
+\ref{thm:mxinvers2} beskriver nogle yderligere egenskaber for invertible matricer. 
 %
 \begin{thm}{}{mxinvers2}
 %Givet to $m \times n$ matricer $A$ og $B$, så gælder, at (det er bare leftover aye?)
@@ -305,14 +305,14 @@ Da er følgende udsagn ækvivalente.
 \end{thm}
 \begin{proof}
 Lad $A$ være en $n \times n$ matrix.
-Jævnfør sætning \ref{thm:mxinvertibel} er (a) og (b) ækvivalente. 
-Da $A$ er kvadratisk, er (b) ligeledes ækvivalent med (c), (d) og (e) jævnfør sætning \ref{thm:spaneqv}. 
-Jævnfør sætning \ref{thm:mxlinuaf} er (b) desuden ækvivalent med (f), (g) og (h). 
+Jævnfør \ref{thm:mxinvertibel} er (a) og (b) ækvivalente. 
+Da $A$ er kvadratisk, er (b) ligeledes ækvivalent med (c), (d) og (e) jævnfør \ref{thm:spaneqv}. 
+Jævnfør \ref{thm:mxlinuaf} er (b) desuden ækvivalent med (f), (g) og (h). 
 Eftersom (a) er ækvivalent med (b), er (a) også ækvivalent med (c), (d), (e), (f), (g) og (h). 
 \\\\
 At (a) og (k) er ækvivalente, bevises i to skridt. 
 Bemærk først, at hvis $A$ er invertibel, så er $I_n$ den reducerede trappeform af $A$. 
-Jævnfør sætning \ref{thm:eleinv} og \ref{thm:mxinvertibel} eksisterer der en invertibel matrix $P$, så at $PA=I_n$, hvormed $A=P^{-1}$. 
+Jævnfør \ref{thm:eleinv} og \ref{thm:mxinvertibel} eksisterer der en invertibel matrix $P$, så at $PA=I_n$, hvormed $A=P^{-1}$. 
 Da $P=E_kE_{k-1} \cdots E_1$, så er $P^{-1}=E_1^{-1} \cdots E_{k-1}^{-1}E_k^{-1}$.
 $A$ er dermed et produkt af elementære matricer, hvilket beviser, at (a) medfører (k). \\\\
 Antag nu, at $A$ er et produkt af elementære matricer. 
@@ -337,5 +337,5 @@ A\textbf{v} = A(C\textbf{b}) = (AC)\textbf{b} = I_n\textbf{b} = \textbf{b}.
 $$
 Bemærk, at (j) dermed medfører (e).
 Eftersom (e) er ækvivalent med (a), medfører (j) derfor også (a).
-Således er (j) og (a) ækvivalente, og alle punkter i sætning \ref{thm:mxinvers2} er dermed ækvivalente.
+Således er (j) og (a) ækvivalente, og alle punkter i \ref{thm:mxinvers2} er dermed ækvivalente.
 \end{proof}

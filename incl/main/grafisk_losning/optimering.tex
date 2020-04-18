@@ -1,7 +1,7 @@
 \section{Optimering af ekstremumspunkter}
 %
 Så længe en optimal løsning til et lineært optimeringsproblem eksisterer, og løsningsmængden indeholder ét eller flere ekstremumspunkter, så findes en optimal løsning til det lineære programmeringsproblem blandt ekstremumspunkterne i løsningsmængden. 
-Sætning \ref{thm:optiekstrem1} fastslår dette for polyedre på standardform og begrænsede polyedre. 
+\ref{thm:optiekstrem1} fastslår dette for polyedre på standardform og begrænsede polyedre. 
 %
 \begin{thm}{}{optiekstrem1}
 Lad et lineært optimeringsproblem være, at en objektfunktion $\textbf{c}^T \textbf{x}$ skal minimeres over et polyeder $\mathcal{P}$. 
@@ -15,8 +15,8 @@ Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal mini
 Antag, at der i $\mathcal{P}$ er mindst ét ekstremumspunkt, samt at en optimal løsning eksisterer. 
 Lad $Q \neq \emptyset $ være mængden af optimale løsninger, lad $\mathcal{P} = \{\textbf{x} \in \R^n | \textbf{A}\textbf{x} \geq \textbf{b} \}$, og lad $v$ være den optimale værdi for $\textbf{c}^T \textbf{x}$. 
 Da $\mathcal{P}$ er løsningsmængden, og $Q \subset \mathcal{P}$, så er $Q = \{\textbf{x} \in \R^n | \textbf{A}\textbf{x} \geq \textbf{b} \text{, } \textbf{c}^T \textbf{x} = v \}$ og dermed også et polyeder. 
-Jævnfør sætning \ref{thm:ekstremums1} indeholder $\mathcal{P}$ ingen linjer, hvormed $Q$ ikke indeholder linjer. 
-Jævnfør sætning \ref{thm:ekstremums1} indeholder $Q$ dermed et ekstremumspunkt. \\
+Jævnfør \ref{thm:ekstremums1} indeholder $\mathcal{P}$ ingen linjer, hvormed $Q$ ikke indeholder linjer. 
+Jævnfør \ref{thm:ekstremums1} indeholder $Q$ dermed et ekstremumspunkt. \\
 Lad nu den optimale løsning $\textbf{x}^*$ være et ekstremumspunkt i $Q$. 
 Ved hjælp af modstrid vises nu, at $\textbf{x}^*$ også er et ekstremumspunkt i $P$. 
 Antag derfor, at $\textbf{x}^*$ \textit{ikke} er et ekstremumspunkt i $\mathcal{P}$. 
@@ -30,8 +30,8 @@ Således er det ved modstrid vist, at $\textbf{x}^*$ er et ekstremumspunkt i $\m
 %
 %
 %
-Som nævnt gælder sætning \ref{thm:optiekstrem1} kun for polyedre på standard form og begrænsede polyedre. 
-Sætning \ref{thm:optiekstrem2} kan betragtes som en udvidelse af sætning \ref{thm:optiekstrem1} og viser, at der findes en optimal løsning, så længe den optimale værdi af objektfunktionen er endelig. 
+Som nævnt gælder \ref{thm:optiekstrem1} kun for polyedre på standard form og begrænsede polyedre. 
+\ref{thm:optiekstrem2} kan betragtes som en udvidelse af \ref{thm:optiekstrem1} og viser, at der findes en optimal løsning, så længe den optimale værdi af objektfunktionen er endelig. 
 %
 \begin{thm}{}{optiekstrem2}
 Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et polyeder $P$. 
@@ -52,14 +52,14 @@ Det kan desuden antages, at $\textbf{c}^T \textbf{d} \leq \textbf{0}$, ved mulig
 %
 Antag nu, at $\textbf{c}^T \textbf{d} < 0$, og lad $\textbf{y} = \textbf{x} + \lambda \textbf{d}$, $ \lambda \in \R^+$, være en halvlinje. 
 %Hvad er en halvlinje...?? 
-Alle punkter på denne halvlinje opfylder $\textbf{a}^T_i \textbf{y} = b_i$, som i beviset for sætning \ref{thm:ekstremums1}. 
+Alle punkter på denne halvlinje opfylder $\textbf{a}^T_i \textbf{y} = b_i$, som i beviset for \ref{thm:ekstremums1}. 
 %Er ovenstående rigtigt?? 
 Hvis hele halvlinjen var indeholdt i $\mathcal{P}$, havde den optimale værdi for objektfunktionen været $- \infty $; men det antages indledningsvist i dette bevis, at denne værdi er endelig. 
 Så er ikke hele halvlinjen indeholdt i $\mathcal{P}$, og den udgår dermed fra $\mathcal{P}$ på et tidspunkt. 
 Når halvlinjen er på grænsen af $\mathcal{P}$, lige inden dens udgang derfra, er der et optimalt $ \lambda^* > 0$ og et $j \in I$, således at $\textbf{a}^T_i (\textbf{x} + \lambda^* \textbf{d} ) = b_j $.
 \\\\%Se Horias noter fra tirsdag d. 24/3. Det gav så god mening, da han forklarede det, men nu kan jeg ikke huske, hvad han ville have. 
 Lad nu $\textbf{y} = \textbf{x} + \lambda^* \textbf{d} $ og bemærk, at $ \textbf{c}^T \textbf{y} < \textbf{c}^T \textbf{x}$, da $ \lambda \in \R^+ $. 
-Det vides fra beviset for sætning \ref{thm:ekstremums1}, at $\textbf{a}_j$ er lineært uafhængig af $\textbf{a}_i$, samt at rangen af $\textbf{y}$ minimum er $k + 1$. 
+Det vides fra beviset for \ref{thm:ekstremums1}, at $\textbf{a}_j$ er lineært uafhængig af $\textbf{a}_i$, samt at rangen af $\textbf{y}$ minimum er $k + 1$. 
 \\\\
 %
 Antag nu, at $\textbf{c}^T \textbf{d} = 0$, og lad en linje være $\textbf{y} = \textbf{x} + \lambda \textbf{d}$, hvor $ \lambda $ er en arbitrær skalar. 
@@ -73,8 +73,8 @@ Lad $w_1, w_2, \ldots , w_r$ være de basale mulige løsninger i $\mathcal{P}$, 
 Eftersom der for alle $\textbf{x}$ findes et $i$, således at $\textbf{c}^T \textbf{w}_i \leq \textbf{c}^T \textbf{x}$, følger det, at $\textbf{c}^T \textbf{w}^* \leq \textbf{c}^T \textbf{x}$ for alle $\textbf{x} \in \mathcal{P}$, hvormed vektoren $\textbf{w}^*$ er den optimale løsning. 
 \end{proof}\\
 %
-Eftersom ethvert lineært optimeringsproblem kan omskrives til et tilsvarende problem på standardform, kan sætning \ref{thm:optiekstrem2} siges at gælde generelt. 
-Deraf haves korollar \ref{kor:optiekstrem2}. 
+Eftersom ethvert lineært optimeringsproblem kan omskrives til et tilsvarende problem på standardform, kan \ref{thm:optiekstrem2} siges at gælde generelt. 
+Deraf haves \ref{kor:optiekstrem2}. 
 %
 \begin{kor}{}{optiekstrem2}
 Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et ikke-tomt polyeder.
