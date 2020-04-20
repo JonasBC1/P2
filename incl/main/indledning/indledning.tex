@@ -1,4 +1,5 @@
-\chapter{Indledning}
+\chapter*{Indledning}
+\addcontentsline{toc}{chapter}{\phantom{lol.}Indledning}
 %To til tre sider 
 %Vi skal argumentere det er interessant at kigge på lineær programmering
 %Kort beskrivelse af hvad vi har lavet 
@@ -6,17 +7,17 @@
 %   Kapitel 1: bla bla 
 %   Kapitel 2: bla bla 
 %   m.m.
-I denne rapport afdækkes lineær optimering, som også kaldes lineær programmering, med fokus på simplexmetoden.
+I denne rapport afdækkes lineær optimering, også kaldet lineær programmering, med fokus på simplexmetoden.
 Optimeringsproblemer er en fundamental del af matematikken, og i den anvendte matematik udgør disse en vægtig del af matematikeres virke. 
 Dele af forskningsfeltet betragter George Bernard Dantzig som værende  ophavsmand til behandlingen af optimeringsproblemer, som de betragtes i dag, samt til udarbejdelsen af simplexmetoden \citep[side 107]{refa} i 1947.
-%Ved ikke helt med det "fundamental", kan ikke lige finde på noget andet til gengæld... 
 Der er dog til stadighed diskussion om, hvor lineære programmeringsproblemer som matematisk felt stammer fra, da andre peger på Sovjetunionen og behovet for at optimere produktionen i en planøkonomisk kontekst som ophav \citep[side 155]{refb}.
-Forudsætningen for at Dantzig arbejdede med lineære programmeringsproblemer, var hans ansættelse ved Royal Airforce \citep[side 107]{refa}, samt en applikation blev i forbindelse med den vestligt kontrollerede sektor af Berlin.
-%Hvad betyder ovenstående? :-) 
+Forudsætningen for Dantzigs arbejde med lineære programmeringsproblemer, var hans ansættelse ved Royal Airforce \citep[side 107]{refa}.\\\\
+%
+En applikation af lineære programmeringsproblemer opstod i forbindelse med den vestligt kontrollerede sektor af Berlin.
 Vestberlin lå i Dantzigs samtid dybt inde i den sovjetisk kontrollerede sektor af Tyskland. 
 Som følge af spændingerne mellem Vesteuropa og Sovjetunionen besluttede Josef Stalin at lukke for forsyninger via land til Berlin.
-Det blev derfor nødvendigt for vestmagterne at etablere en luftbro til Berlin, der gjorde det muligt, trods de sovjetiske restriktioner, at indføre basale fornødenheder til de $2,5$ millioner mennesker, som levede i byen.
-Da en sådan måde at indføre varer på er ressourceintensiv, opstod derfor et behov for at gøre dette mest effektivt, underlagt de logistiske restriktioner.
+Det blev derfor nødvendigt for vestmagterne at etablere en luftbro til Berlin, der gjorde det muligt, trods de sovjetiske restriktioner, at indføre basale fornødenheder til de $2.5$ millioner mennesker, som levede i byen.
+Da en sådan måde at indføre varer på er ressourceintensiv, opstod der et behov for at gøre dette optimalt, underlagt de logistiske restriktioner.
 Det er derfor et matematisk felt, som i sin brug er nært bundet op på praktiske problemstillinger; dette værende økonomiske og logistiske.
 Det er ligeledes et felt, der har været nært knyttet op til militære problemstillinger, som Dantzigs ansættelsesforhold også antyder.
 Dantzigs bidrag til forskningsfeltet i form af simplexmetoden er dog stadig en fundamental del af løsning af lineære programmeringsproblemer i dag.
@@ -24,7 +25,6 @@ Dantzigs bidrag til forskningsfeltet i form af simplexmetoden er dog stadig en f
 Projektets primære arbejdsområde vil derfor omhandle simplexmetoden, samt den geometriske fremstilling af lineære programmeringsproblemer.
 Det skal dog nævnes, at der ligeledes findes optimeringsproblemer, som ikke kan beskrives igennem lineære sammenhænge. 
 Dog er indholdet af denne rapport afgrænset til at afdække løsning af lineære optimeringsproblemer.
-%
 Problemformuleringen, der ligger til grundlag for udarbejdelsen af rapporten, er: 
 %
 \begin{col}{}{}
@@ -33,20 +33,21 @@ Hvordan kan lineære programmeringsproblemer anskues geometrisk, og hvordan kan 
 % 
 \noindent
 %
-Nedenstående er en oversigt over indholdet af nærværende rapport. 
-\begin{itemize}[itemindent=4.6em]
-\item[\textbf{Kapitel 1:}] Er en introduktion til lineær algebra.
+Nedenstående er en oversigt over indholdet af nærværende rapport.
+%
+\begin{itemize}[itemindent=0em]
+\item[]\textbf{Kapitel 1} er en introduktion til lineær algebra.
 Afsnittet har til hensigt at indføre passende notation til anvendelse af matricer og vektorer, samt introducere væsentlige metoder og begreber til løsning af lineære ligningssystemer. 
 Desuden belyses nogle essentielle egenskaber ved lineære ligningssystemer. 
-\item[\textbf{Kapitel 2:}] Belyser lineære programmeringsproblemer og introducerer tilgange til løsning af disse, hvilket er projektets primære emneområde. 
+\item[]\textbf{Kapitel 2} belyser lineære programmeringsproblemer og introducerer tilgange til løsning af disse, hvilket er projektets primære emneområde. 
 Endvidere introduceres i dette kapitel, hvordan lineære programmeringsproblemer fremstilles matematisk, samt nogle interessante egenskaber ved dem. 
-\item[\textbf{Kapitel 3:}] Afdækker, hvad en grafisk løsning af lineære programmeringsproblemer indebærer. 
+\item[]\textbf{Kapitel 3} afdækker, hvad en grafisk løsning af lineære programmeringsproblemer indebærer. 
 Geometrisk fremstilling introduceres. 
 Begreber og sætninger, der er nødvendige for simplexmetoden, forefindes ligeledes i dette kapitel. 
-\item[\textbf{Kapitel 4:}] Er en undersøgelse og anvendelse af simplexmetoden. 
-Kapitlet indeholder en beskrivelse af samt bevis for simplexmetoden som løsningsalgoritme.
+\item[]\textbf{Kapitel 4} er en undersøgelse og anvendelse af simplexmetoden. 
+Kapitlet indeholder en beskrivelse af samt et eksempel på brug af simplexmetoden som løsningsalgoritme.
 \end{itemize}
 %
-Foruden ovennævnte kapitler findes bilag slutteligt i denne rapport.
+Foruden ovennævnte kapitler findes appendiks slutteligt i denne rapport.
 Kilder til indholdet af de enkelte afsnit angives i starten af hvert afsnit. 
 Alt i afsnittet er således fra disse kilder, medmindre andet er angivet. 
