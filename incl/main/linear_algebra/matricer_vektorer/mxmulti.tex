@@ -1,6 +1,7 @@
 \subsection{Matrixmultiplikation}
-
-Det er ofte nødvendigt at multiplicere matricer med andre matricer. 
+%
+Et nyttigt værktøj i arbejdet med lineær algebra er \textit{matrixmulitplikation}.
+%
 \begin{defn}{}{mxmulti}
 Lad $A$ være en $m \times n$ matrix og $B$ være en $n \times p$ matrix.
 \textbf{Matrixproduktet} $AB$  er en $m \times p$ matrix 
@@ -10,7 +11,7 @@ AB=
 A\textbf{b}_1 & A\textbf{b}_2 & \ldots & A\textbf{b}_p
 \end{bmatrix}\text{,}
 $$
-hvor $A\textbf{b}_j$ er den $j$'te søjle i $C$.
+hvor $A\textbf{b}_j$ er den $j$'te søjle i $AB$.
 \end{defn}
 \noindent
 %
@@ -19,7 +20,7 @@ Bemærk, at selvom $AB$ er defineret, er $BA$ ikke nødvendigvis defineret.
 Hvis både $AB$ og $BA$ er defineret, er de desuden ikke nødvendigvis lig hinanden. 
 For at beregne værdien af komponenterne i matrixproduktet $AB$ kan følgende sammenhæng mellem den $i$'te række i $A$ og den $j$'te søjle i $B$ betragtes: 
 \begin{align*}
-a_{i1}b_{1j} + a_{i2}b_{2j} + \cdots + a_{in}b_{nj}
+ab_{i,j} = a_{i,1}b_{1,j} + a_{i,2}b_{2,j} + \cdots + a_{i,n}b_{n,j}
 \text{.}
 \end{align*}
 %\\
@@ -71,7 +72,7 @@ A\textbf{b}_1=
 $$
 og
 $$
-A\textbf{b}_1=
+A\textbf{b}_2=
 \begin{bmatrix}
 7 & 9 & 1 \\
 4 & 0 & 0 \\
@@ -111,7 +112,7 @@ A\textbf{b}_1 & A\textbf{b}_2
 $$
 % Eventuelt en kommentar omkring om BA er eksisterende 
 \end{eks}
-Da matricen $B$ inddeles i sine søjlevektorer, er grundprincippet i matrixmultiplikation at finde matrix-vektorprodukter.\\\\
+Da matricen $B$ inddeles i søjlevektorer, er grundprincippet i matrixmultiplikation at finde matrix-vektorprodukter.
 En række egenskaber gælder for matrixmultiplikation, hvilket er summeret i \ref{thm:mxmulti}.
 %
 \begin{thm}{}{mxmulti}
@@ -150,6 +151,6 @@ Da $I_k\textbf{a}_j=\textbf{a}_j$ og $\textbf{a}_iI_m=\textbf{a}_i$, er $I_kA=A$
 %
 \item Eftersom enhver komponent i en vilkårlig matrix multipliceret med $0$ er $0$, følger udsagnet trivielt. 
 %
-\item Den $(i,j)$'te indgang i $(AC)^T$ er den $(j,i)$'te indgang i $AC$. De to udtryks ækvivalens vises ved sammen fremgangsmåde som i (a).
+\item Den $(i,j)$'te indgang i $(AC)^T$ er den $(j,i)$'te indgang i $AC$. De to udtryks ækvivalens vises ved samme fremgangsmåde som i (a).
 \end{enumerate}
 \end{proof}

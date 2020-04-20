@@ -1,10 +1,6 @@
 \subsection{Matrixtransponering}
 %
-\textit{Matrixtransponering} er i nogen henseender brugbart, herunder i forbindelse med Simplexmetoden. 
-%
-% Henseender = Sammenhænge 
-%
-% \textbf{Matrixtransponering} er faktisk rimelig unødvendigt xD 
+\textit{Matrixtransponering} er i nogen henseender brugbart, herunder i forbindelse med simplexmetoden. 
 %
 \begin{defn}{}{mxtrans}
 Lad $A$ være en $m \times n$ matrix. \textbf{Transponeringen} af $A$, er en $n \times m$ matrix, noteret $A^T$, hvor $A$'s $(i,j)$'te indgang er den $(j,i)$'te indgang i $A^T$.
@@ -75,10 +71,10 @@ Så har matricerne følgende egenskaber:
 \begin{proof}
 Lad $A$ og $B$ være $m \times n$ matricer og lad $c$ være en skalar.
 \begin{enumerate}[label=(\alph*)]
-\item Det vides, at indgangene i $A+B$ er $a_{i,j} + b_{i,j}$, og transponeringen af dette resulterer i en $n \times m$ matrix med indgangende $a_{j,i} + b_{j,i}$.
+\item Det vides, at indgangene i $A+B$ er $a_{i,j} + b_{i,j}$, og transponeringen af dette resulterer i en $n \times m$ matrix med indgangene $a_{j,i} + b_{j,i}$.
 Det ses, at  $A^T + B^T$ også er en $n \times m$ matrix med indgangene $a_{i,j} + b_{i,j}$.
 %
-\item Ved skalering og transponering af en matrix ses, at opperationernes rækkefølge er uden betydning for slutresultatet.
+\item Ved skalering og transponering af en matrix ses, at operationernes rækkefølge er uden betydning for slutresultatet.
 Dette tydeliggøres ved at betragte $cA^T$ og $(cA)^T$.
 For $cA^T$ er indgangene $ca_{j,i}$, og indgangene i $cA$ er $ca_{i,j}$, som efter transponering er $ca_{j,i}$.
 % 

@@ -1,26 +1,25 @@
 \subsection{Linearkombination}
 % Det jo kinda en vigtig del for os 
-\textit{Linearkombination} er en central del af lineær algebra, da det benyttes i forbindelse med løsning af ligningssystemer. 
+\textit{Linearkombinationer} er en central del af lineær algebra, da det benyttes i forbindelse med løsning af ligningssystemer. 
 %
 \begin{defn}{}{mxlinkom}
-Givet vektorer $\mathbf{u}_1, \mathbf{u}_2, \ldots, \mathbf{u}_k$ med størrelsen $m \times n$, så er \textbf{linearkombinationen} af $\mathbf{u}_1, \mathbf{u}_2, \ldots, \mathbf{u}_k$ en vektor $\mathbf{v}$ på formen 
+Givet vektorerne $\mathbf{u}_1, \mathbf{u}_2, \ldots, \mathbf{u}_k$ i $\R^n$, så er \textbf{linearkombinationen} af $\mathbf{u}_1, \mathbf{u}_2, \ldots, \mathbf{u}_k$ en vektor $\mathbf{v}$ på formen 
 %
 \begin{align*}
 c_1\mathbf{u}_1+c_2\mathbf{u}_2+\ldots+c_k\mathbf{u}_k=\sum\limits_{i=1}^k c_i\mathbf{u}_i=\mathbf{v},
 \end{align*}
 %
-med størrelsen $m \times n$, hvor $c_1, c_2, \ldots, c_k$ er skalarerne.
+i $\R^n$, hvor $c_1, c_2, \ldots, c_k$ er skalarerne.
 Skalarerne kaldes linearkombinationens koefficienter.
+%
 \end{defn}
 %
 % KILDE primært: https://www.statlect.com/matrix-algebra/linear-combinations
 %
 \noindent 
 %
-En linearkombination af én vektor er blot en skalering af vektoren.
+Bemærk at en linearkombination af én vektor er blot en skalering af vektoren.
 \\
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \begin{eks}
 Lad 
@@ -46,7 +45,7 @@ $$
 7
 \end{bmatrix},
 $$
-samt $c_a=-4$, $c_b=100$ og $c_c=2$. 
+samt $c_u=-4$, $c_v=100$ og $c_w=2$. 
 Jævnfør \ref{defn:mxlinkom} er linearkombinationen af $\textbf{u}$, $\textbf{v}$ og $\textbf{w}$:
 $$
 (-4)
@@ -94,28 +93,26 @@ a_n
 %
 i $\R^n$ kan skrives som linearkombination af $I_n$ i $\R^n$. 
 Givet to ikke-parallelle vektorer $\mathbf{u}$ og $\mathbf{v}$ i $\R^2$, så er enhver anden vektor i $\R^2$ en linearkombination af $\mathbf{u}$ og $\mathbf{v}$. 
-Hvis koefficienterne i en linearkombination er vektorer, så er der tale om et matrix-vektorprodukt.
-%
-%
-%
 %
 \subsection{Matrix-vektorprodukt}
 %
-Som udvidelse til linearkombinationen kan der tales om et \textit{matrix-vektorprodukt}.
+Hvis koefficienterne i en linearkombination er elementerne i en vektor, så er der tale om et \textit{matrix-vektorprodukt}.
 %
 %Altså, jeg vil måske mene, at nedenstående definition minder for meget om den i bogen (s. 19). Men igen... "Det er heller ikke ham, der har fundet på det." - Mads Vejleder, 2019. 
 %
 \begin{defn}{}{mvp}
 Lad $A$ være en $m \times n$ matrix og \textbf{u} være en $n \times 1$ vektor. 
-\textbf{Matrix-vektorproduktet} af $A$ og $\textbf{u}$ defineres som linearkombinationen af søjlerne i $A$, hvis koefficienter er de tilsvarende komponenter af $\textbf{u}$, hvilket noteres $A\textbf{u}$. 
+\textbf{Matrix-vektorproduktet} af $A$ og $\textbf{u}$, noteret $A\textbf{u}$, defineres som linearkombinationen af søjlerne i $A$, hvis koefficienter er de tilsvarende elementer i $\textbf{u}$. 
 Dermed er
+%
 \begin{align*}
 A\textbf{u} =u_1\textbf{a}_1 + u_2\textbf{a}_2 + \cdots + u_n\textbf{a}_n.
 \end{align*}
 \end{defn}
 \noindent
-For at $A\textbf{u}$ eksisterer, skal der være lige mange komponenter i \textbf{v}, som der er søjler i $A$. 
-Et eksempel på et matrix-vektorprodukt mellem en matrix $A$ og en vektor \textbf{u} ses i \ref{Matrix-vektor}.
+%
+For at $A\textbf{u}$ eksisterer, skal der være lige mange komponenter i $\textbf{u}$, som der er søjler i $A$. 
+Et eksempel på et matrix-vektorprodukt mellem en matrix $A$ og en vektor $\textbf{u}$ ses i \ref{Matrix-vektor}.
 \\
 %
 \begin{eks}
@@ -224,66 +221,66 @@ En række egenskaber ved matrix-vektorprodukt beskrives i \ref{thm:mxvpro}.
 \\\\
 %
 \begin{thm}{}{mxvpro}
-Lad $A$ og $B$ være $m \times n$ matricer, og lad $\mathbf{u}, \mathbf{v}$ og $\mathbf{w}$ være vektorer i $R^n$. Så gælder det at
+Lad $A$ og $B$ være $m \times n$ matricer, og lad $\mathbf{u}, \mathbf{v}$ og $\mathbf{w}$ være vektorer i $\R^n$. Så gælder det at
 \begin{enumerate}[label=(\alph*)]
 \item $A(\mathbf{u}+\mathbf{v})=A\mathbf{u}+A\mathbf{v}$.
-\item $A(c\mathbf{u})=c(A\mathbf{u})=(cA)\mathbf{u}$ for enhver skalar c.
+\item $A(c\mathbf{u})=c(A\mathbf{u})=(cA)\mathbf{u}$ for enhver skalar $c$.
 \item $(A+B)\mathbf{u}=A\mathbf{u}+B\mathbf{u}$.
-\item $A\mathbf{e}_j=\mathbf{a}_j$ for $j=1,2,\ldots,n$, hvor $\mathbf{e}_j$ er den j'te standardvektor i $R^n$.
-\item Hvis $B$ er en $m \times n$ matrix, der opfylder, at $B\mathbf{w}=A\mathbf{w}$ for alle $\mathbf{w}$ i $R^n$, så gælder, at $B=A$.
+\item $A\mathbf{e}_j=\mathbf{a}_j$ for $j=1,2,\ldots,n$, hvor $\mathbf{e}_j$ er den j'te standardvektor i $\R^n$.
+\item Hvis $B$ er en $m \times n$ matrix, der opfylder, at $B\mathbf{w}=A\mathbf{w}$ for alle $\mathbf{w}$ i $\R^n$, så gælder, at $B=A$.
 \item $A\mathbf{0}$ er $m \times 1$ nulvektoren.
 \item Hvis $O$ er $m \times n$ nulmatricen, så gælder, at $O\mathbf{v}$ er $m \times 1$ nulvektoren.
 \item $I_n\mathbf{v}=\mathbf{v}$.
 \end{enumerate}
 \end{thm}
+%
 \begin{proof}
-(a)
-Da de i'te komponenter af $\textbf{u}$ og $\textbf{v}$ er henholdsvis $u_i$ og $v_i$, kan det opskrives som
+\begin{enumerate}[label=(\alph*)]
+\item Da de i'te komponenter af $\textbf{u}$ og $\textbf{v}$ er henholdsvis $u_i$ og $v_i$, kan det opskrives som
 \begin{align*}
 A(\mathbf{u}+\mathbf{v})&=(u_1+v_1)\mathbf{a}_1+(u_2+v_2)\mathbf{a}_2+\cdots + (u_n+v_n)\mathbf{a}_n \\
 &=(u_1\mathbf{a}_1+u_2\mathbf{a}_2+\cdots+u_n\mathbf{a}_n)+(v_1\mathbf{a}_1+v_2\mathbf{a}_2+\cdots+v_n\mathbf{a}_n) \\
 &=A\mathbf{u}+A\mathbf{v}.
 \end{align*}
-(b) $A(c\mathbf{u})$ kan opskrives som
+%
+\item $A(c\mathbf{u})$ kan opskrives som
 \begin{align*}
-A(c \textbf{u})&=\textbf{A}_1(cu_1)+\textbf{A}_2(cu_2) + \cdots + \textbf{A}_n(cu_n) \\
-&=\textbf{A}_1cu_1+\textbf{A}_2cu_2 + \cdots + \textbf{A}_ncu_n \\
-&=c(\textbf{A}_1u_1)+c(\textbf{A}_2u_2)+\cdots+c(\textbf{A}_n u_n)
+A(c \textbf{u})&=\textbf{a}_1(cu_1)+\textbf{a}_2(cu_2) + \cdots + \textbf{a}_n(cu_n) \\
+&=\textbf{a}_1cu_1+\textbf{a}_2cu_2 + \cdots + \textbf{a}_ncu_n \\
+&=c(\textbf{a}_1u_1)+c(\textbf{a}_2u_2)+\cdots+c(\textbf{a}_n u_n)
 =c(A \textbf{u}) \\
-&=(c\textbf{A}_1)u_1+(c\textbf{A}_2)u_2+\cdots+(c\textbf{A}_n)u_n=(cA)\textbf{u}.
+&=(c\textbf{a}_1)u_1+(c\textbf{a}_2)u_2+\cdots+(c\textbf{a}_n)u_n=(cA)\textbf{u}.
 \end{align*}
 %
-(c) $(A+B)\mathbf{u}$ opskrives som
+\item $(A+B)\mathbf{u}$ opskrives som
 %
 \begin{align*}
-(A+B)\textbf{u}&=(\textbf{A}_1+\textbf{b}_1)u_1 +(\textbf{A}_2+\textbf{B}_2)u_2 \cdots (\textbf{A}_n+\textbf{B}_n)u_n \\
-&=(\textbf{A}_1u_1+\textbf{A}_2u_2+ \cdots + \textbf{A}_nu_n)+(\textbf{B}_1u_1+\textbf{B}_2u_2+ \cdots + \textbf{B}_nu_n) \\
+(A+B)\textbf{u}&=(\textbf{a}_1+\textbf{b}_1)u_1 +(\textbf{a}_2+\textbf{b}_2)u_2 + \cdots + (\textbf{a}_n+\textbf{b}_n)u_n \\
+&=(\textbf{a}_1u_1+\textbf{a}_2u_2+ \cdots + \textbf{a}_nu_n)+(\textbf{b}_1u_1+\textbf{b}_2u_2+ \cdots + \textbf{b}_nu_n) \\
 &=A\textbf{u}+B\textbf{u}.
 \end{align*}
-(d) 
-Søjlen $\mathbf{a}_j$ multipliceres med $1$, mens de resterende multipliceres med $0$. 
+%
+\item Søjlen $\mathbf{a}_j$ multipliceres med $1$, mens de resterende multipliceres med $0$. 
 Derfor er resultatet af $A\mathbf{e}_j=\mathbf{a}_j.$
-\\\\
-% Denne align skal eventuelt skrives om xD
-(e) Lad  $B\mathbf{w}=A\mathbf{w}$ for alle $\mathbf{w} \in \R^n$.
+%
+\item Lad $B\mathbf{w}=A\mathbf{w}$ for alle $\mathbf{w} \in \R^n$.
 Så gælder det, at $B=A$, da
 %
 \begin{align*}
-\textbf{b}_1w_1+\textbf{b}_2 w_2+\cdots+\textbf{b}_n w_n &=\textbf{a}_1 w_1+\textbf{a}_2 w_2+\cdots+\textbf{a}_n w_n \rightarrow\\   
+\textbf{b}_1w_1+\textbf{b}_2 w_2+\cdots+\textbf{b}_n w_n &=\textbf{a}_1 w_1+\textbf{a}_2 w_2+\cdots+\textbf{a}_n w_n \\
+&\downarrow\\
 B&=A.
 \end{align*}
 % \frac{\textbf{b}_1w_1+\textbf{b}_2 w_2+\cdots+\textbf{b}_n w_n}{w_1+ w_2+\cdots+ w_n} &=\frac{\textbf{a}_1 w_1+\textbf{a}_2 w_2+\cdots+\textbf{a}_n w_n}{w_1+ w_2+\cdots+ w_n} \rightarrow\\  
-(f)
-Dette kan opskrives som
+\item Dette kan opskrives som
 \begin{align*}
-0\textbf{A}_1+0\textbf{A}_2+\cdots+0\textbf{A}_n.
+0\textbf{a}_1+0\textbf{a}_2+\cdots+0\textbf{a}_n.
 \end{align*}
-Resultatet er $\textbf{0}$ med $m$ rækker. \\\\
-(g)
-Produktet af en vektor og en $m \times n$ matrix er en vektor på størrelsen $1 \times m$. Da alle indgange i matricen er $0$, bliver produktet netop en $1 \times m$ nulvektor. 
-\\\\
-(h)
-Værdien af komponenterne i produktet af $I_n\mathbf{v}$ har følgende form 
+Resultatet er $\textbf{0}$ med $m$ rækker.
+%
+\item Produktet af en $n \times 1$ vektor og en $m \times n$ nulmatrix er en nulvektor på størrelsen $m \times 1$. Da alle indgange i matricen er $0$, bliver produktet netop en $m \times 1$ nulvektor. 
+%
+\item Værdien af komponenterne i produktet af $I_n\mathbf{v}$ har formen
 $$
 \begin{bmatrix}
 1v_1 \\
@@ -292,6 +289,7 @@ $$
 1v_n  \\
 \end{bmatrix}.
 $$
-Det følger derfor, at $I_n\mathbf{v}=v$.
-Således er alle punkter i \ref{thm:mxvpro} bevist. 
+Det følger derfor, at $I_n\mathbf{v}=\textbf{v}$.
+%
+\end{enumerate}
 \end{proof}

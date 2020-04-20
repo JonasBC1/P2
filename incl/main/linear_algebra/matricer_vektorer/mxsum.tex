@@ -1,13 +1,13 @@
 \subsection{Matrixsum og skalering}
-% 
-Der er behov for at lave opperationer på en matrix i forbindelse med løsning af lineære programmeringsproblemer. 
-To af disse er \textit{matrixsum} og \textit{skalering}.
 %
-\begin{defn}{}{mxsum} % Jeg synes substration skal være fed
+For at kunne bruge matricer som matematisk værktøj er det nødvendigt at kunne foretage operationer på disse.
+To operationer er \textit{matrixsummering} og \textit{skalering}.
+%
+\begin{defn}{}{mxsum}
 Lad $A$ og $B$ være $m \times n$ matricer.
-\textbf{Summen} af $A$ og $B$ er $m \times n$ matricen $A + B$, hvor den $(i,j)$'te indgang er $a_{i,j} + b_{i,j}$.
-Ligeledes er subtraktion mellem matricerne $A$ og $B$ muligt, og indgangene i den resulterende matrix er $a_{i,j} - b_{i,j}$.
-\\
+\textbf{Matrixsummen} af $A$ og $B$ er $m \times n$ matricen $A + B$, hvor den $(i,j)$'te indgang er $a_{i,j} + b_{i,j}$.
+\textbf{Matrixsubtraktion} mellem $A$ og $B$ resulterer i $m \times n$ matrixen $A-B$, hvor den $(i,j)$'te indgang er $a_{i,j} - b_{i,j}$.
+\\\\
 Lad nu $c$ være en skalar.
 \textbf{Skalering}, også kaldet skalarmultiplikation, af $A$, noteret $cA$, er en $m \times n$ matrix, hvor den $(i,j)$'te indgang er $ca_{i,j}$.
 \end{defn}
@@ -65,11 +65,11 @@ og
 \end{align*}
 \end{eks}
 %
-Ud fra disse operationer har matricer en række egenskaber, som ses i \ref{thm:mxprop}.
-%Nedenstående definition er ordret den samme som i bogen (s. 6), men vi kan jo nærmest ikke skrive den og lignende sætninger anderledes; skal vi ikke bare lige vende det med Horia, tror I? 
+Via disse operationer kan en række egenskaber ved matricer udledes, som beskrevet i \ref{thm:mxprop}.
+%
 \begin{thm}{}{mxprop}
 Lad $A$, $B$ og $C$ være $m \times n$ matricer, og lad $c$ og $k$ være skalarer.
-Så har matricer følgende egenskaber:
+Så gælder følgende egenskaber:
 \begin{enumerate}[label=(\alph*)]
 \item $A + B = B + A$.
 \item $(A + B) + C = A + (B + C)$.
@@ -88,14 +88,14 @@ Lad $A$, $B$ og $C$ være $m \times n$ matricer, og lad $c$ og $k$ være skalare
 %
 \item Ligeledes ses det, at $(a_{i,j} + b_{i,j}) + c_{i,j} = a_{i,j} + (b_{i,j} + c_{i,j})$.
 %
-\item Endvidere kan $0$ isoleres i $a_{i,j} + 0 = a_{i,j}$, således $a_{i,j} + (-a_{i,j}) = 0$, da alle indgange i en nulmatrix er $0$.
+\item Da alle indgange i en nulmatrix er $0$ haves  $a_{i,j} + 0 = a_{i,j}$.
 % 
-\item Følger direkte af (c).
+\item Endvidere kan $0$ isoleres i $a_{i,j} + 0 = a_{i,j}$, således at $a_{i,j} + (-a_{i,j}) = 0$.
 %
 \item Betragt skaleringen af $A$ med skalaren $ck$, som er et produkt af skalarene $c$ og $k$, og skaleringen af $A$ med $c$ og herefter $k$.
 For indgangene i disse skaleringer findes ligheden $(ck)a_{i,j} = k(ca_{i,j})$.
 %
-\item Betragt ligeledes (f) og bemærk, at $c(a_{i,j} + b_{i,j}) = ca_{i,j} + cb_{i,j}$.
+\item Bemærk, at $c(a_{i,j} + b_{i,j}) = ca_{i,j} + cb_{i,j}$.
 %
 \item Det samme gøres for ligheden i (g), hvor ligheden $(c + k)a_{i,j} = ca_{i,j} + ka_{i,j}$ opstilles.
 \end{enumerate}
@@ -103,6 +103,4 @@ For indgangene i disse skaleringer findes ligheden $(ck)a_{i,j} = k(ca_{i,j})$.
 \noindent
 \\
 %
-Da vektorer er matricer med enten én række eller én søjle er samme operationer mulige og vektorer besidder derfor de samme egenskaber.
-%
-% Mere sssssssssssssssssssssssssssssssssssss
+Da vektorer er matricer med enten én række eller én søjle, er samme operationer mulige, og vektorer besidder derfor de samme egenskaber.
