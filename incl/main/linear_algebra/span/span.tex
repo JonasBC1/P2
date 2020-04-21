@@ -1,6 +1,6 @@
 \section{Span}
 % 1.6
-\textit{Spannet} er den del af vektorrummet, som linearkombinationen af en given mængde vektorer dækker over. 
+\textit{Spannet} er den del af $\R^n$, som linearkombinationen af en given mængde vektorer dækker over. 
 %
 \begin{defn}{}{}
 %
@@ -10,7 +10,7 @@ Denne mængde noteres $\text{span} \{ \S \}$ eller $\text{span}\{ \mathbf{u}_1, 
 \end{defn}
 %
 \noindent
-Mængden som indeholder vektorerne som udgør spannet kaldes for en \textit{mængde af generatorer}.
+Mængden, som indeholder vektorerne, der udgør spannet, kaldes for \textit{mængden af generatorer}.
 \\
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,11 +97,10 @@ Spannet for $\S_2$ er derfor
            1 \\
            2 \\
 \end{bmatrix}
-\right\}
-= \R^2,
+\right\}.
 \end{align*}
 %
-da den dækker alle punkter i planen. 
+Eftersom spannet dækker alle punkter i planen er $\text{span}\{\S_2\}=\R^2.$
 % Eventuelt planet xD
 Dette gør den, da det er muligt at besøge alle punkter ved at indføre passende værdier for $x_1$ og $x_2$.
 %
@@ -113,12 +112,12 @@ Dette gør den, da det er muligt at besøge alle punkter ved at indføre passend
   \draw[thin,gray!40] (-2.5,-2.5) grid (2.5,2.5);
   \draw[<->] (-2.5,0)--(2.5,0) node[right]{$x$};
   \draw[<->] (0,-2.5)--(0,2.5) node[above]{$y$};
-  \draw[line width=2pt,blue,-stealth](0,0)--(-1,1) node[anchor=south west]{$\boldsymbol{\mathbf{u}_1}$};
-  \draw[line width=2pt,red,-stealth](0,0)--(2,-2) node[anchor=north east]{$\boldsymbol{\mathbf{u}_2}$};
-  \draw[line width=2pt,green,-stealth](0,0)--(1,2) node[anchor=north east]{$\boldsymbol{\mathbf{u}_3}$};
+  \draw[line width=2pt,AAUblue1,-stealth](0,0)--(-1,1) node[anchor=south west]{$\boldsymbol{\mathbf{u}_1}$};
+  \draw[line width=2pt,AAUred,-stealth](0,0)--(2,-2) node[anchor=north east]{$\boldsymbol{\mathbf{u}_2}$};
+  \draw[line width=2pt,AAUgreen,-stealth](0,0)--(1,2) node[anchor=north east]{$\boldsymbol{\mathbf{u}_3}$};
 \end{tikzpicture}
 %
-\caption{Grafisk illustration af mængderne $\S_1 \subset \S_2$.}
+\caption{Grafisk repræsentation af vektorerne $\mathbf{u}_1, \mathbf{u}_2,  \mathbf{u}_3$.}
 \label{span_eks}
 \end{figure}
 %
@@ -126,8 +125,8 @@ Dette gør den, da det er muligt at besøge alle punkter ved at indføre passend
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Typisk bruges span til at undersøge, hvorvidt en given vektor er i spannet for en vektormængde. 
-Dette gøres ved at undersøge om en vektor kan konstrueres som linearkombination af vektorerne i mængden, hvilket undersøges ved hjælp af rækkereduktionsalgoritmen. 
+Typisk bruges spannet til at undersøge, hvorvidt en given vektor er en linearkombination af en vektormængde. 
+Dette gøres ved at undersøge, om en vektor kan konstrueres som linearkombination af vektorerne i mængden, hvilket undersøges ved hjælp af rækkereduktionsalgoritmen. 
 \\
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -142,7 +141,7 @@ Givet
            2 \\
            3 \\
 \end{bmatrix} 
-\text{      }
+\text{ og }
 \text{span}\{\S_1 \} =
 \left\{ 
 \begin{bmatrix}
@@ -162,10 +161,10 @@ Givet
            -1 \\
            -2 \\
 \end{bmatrix}
-\right\}.
+\right\},
 \end{align*}
 %
-Dette opskrives nu som total-matricen
+opskrives totalmatricen
 %
 \begin{align*}
 A=&
@@ -176,10 +175,10 @@ A=&
   2 & 1 & -1 & 2 \\
   1 & 0 & -2 & 3 \\
 \end{block}
-\end{blockarray} 
+\end{blockarray}.
 \end{align*}
 %
-Denne omskrives nu til trappeform
+Totalmatricen omskrives nu til trappeform.
 %
 \begin{align*}
 \xrightarrow[R_3 \rightarrow R_3-R_1]{R_2 \rightarrow R_2-2R_1}&
@@ -203,13 +202,13 @@ Denne omskrives nu til trappeform
 \end{blockarray} 
 \end{align*}
 %
-Ud fra dette ses det, at $\mathbf{v}$ er i $\text{span}\{\S \}$.
+Da ligningssystemet er konsistent haves, at $\mathbf{v}$ er i $\text{span}\{\S \}$.
 %
 \end{eks}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Egenskaberne vedrørende spannet kan udtrykkes på forskellige måder, hvilket leder til følgende sætning:
+\ref{thm:spaneqv} beskriver ækvivalente udsagn om span.
 % 
 \begin{thm}{}{spaneqv}
 %
@@ -228,16 +227,16 @@ De følgende udsagn om en $m \times n$ matrix $A$ er ækvivalente:
 %
 \begin{proof}
 %
-Udsagn (a) og (b) er ækvivalente, eftersom det er en forudsætning, at der kan skabes en linear kombination af $A\mathbf{x} =\mathbf{b}$ for ethvert $\mathbf{b}$ i $\R^m$, da det netop er definitionen af spannet, der dækker $\R^m$. 
+Udsagn (a) og (b) er ækvivalente, eftersom det er en forudsætning, at der kan skabes en linearkombination af $A\mathbf{x} =\mathbf{b}$ for ethvert $\mathbf{b}$ i $\R^m$, da det netop er definitionen af spannet, der dækker $\R^m$. 
 %
-Hvis der ikke er nogle nul-rækker i den reducerede trappeform, følger det, at $\text{rang}\{A\}$ er $m$, hvorfor (c) og (d) er ækvivalente. 
-Eftersom matrixen er på reduceret trappeform, er denne derfor ækvivalent med (e).
+Hvis der ikke er nogle nulrækker i den reducerede trappeform, følger det, at $\text{rang}\{A\} = m$, hvorfor (c) og (d) er ækvivalente. 
+Eftersom matricen er på reduceret trappeform, er denne derfor ækvivalent med (e).
 \\\\
 Det skal nu bevises at (b) og (c) er ækvivalente. 
-Lad $B$ være den reducerede trappeform af $A$, og $\mathbf{e}_m$ er standard vektoren
+Lad $B$ være den reducerede trappeform af $A$ og
 %
 \begin{align*}
-\mathbf{\mathbf{e}_m} = \begin{bmatrix}
+\mathbf{\mathbf{e}}_m = \begin{bmatrix}
 		0 \\
         \vdots \\
         0 \\
@@ -247,59 +246,60 @@ Lad $B$ være den reducerede trappeform af $A$, og $\mathbf{e}_m$ er standard ve
 %
 i $\R^m$. 
 Gennem rækkereduktionsalgoritmen kan $A$ transformeres til $B$. 
-Da disse rækkeopperationer er reversible, følger det, at der findes en sekvens af rækkeopperationer, som kan transformere $B$ til $A$.
-Hvis disse opperationer udføres på totalmatricen 
-$[B \text{    } \mathbf{e}_m]$ 
+Da disse rækkeoperationer er reversible, følger det, at der findes en sekvens af rækkeoperationer, som kan transformere $B$ til $A$.
+Hvis disse operationer udføres på totalmatricen 
+$[B \mid \mathbf{e}_m]$ 
 for at konstruere matricen 
-$[A \text{    } \mathbf{d}]$, 
+$[A \mid \mathbf{d}]$, 
 $\mathbf{d} \in \R^n$, 
 så følger det, at ligningssystemet $A\mathbf{x}=\mathbf{
 d}$ er ækvivalent med $B\mathbf{x}=\mathbf{e}_m$.
 \\\\
 Hvis (b) er sand, følger det, at de to ligningssystemer er konsistente. 
-Det følger derfor af \ref{thm:konsistens}, at den sidste række ikke kan være en nulrække, da standardvektoren $\mathbf{e}_m$ vil have pivotindgang i sidste søjle og derfor vil ligningssystemet være inkonsistent.
-Dermed er $rang(A)=m$, hvilket leder til (c).
+Det følger derfor af \ref{thm:konsistens}, at den sidste række ikke kan være en nulrække, da standardvektoren $\mathbf{e}_m$ har pivotindgang i sidste søjle, er ligningssystemet inkonsistent.
+Dermed er $\text{rang}(A)=m$, hvilket leder til (c).
 % Dette kan eventuelt forklares dybere xD
 \\\\
 Antag, at (c) er sand. 
-Lad $[B \text{    }| \mathbf{c}]$ 
+Lad $[B \mid \mathbf{c}]$ 
 være den reducerede trappeform af 
-$[A \text{    } | \mathbf{b}]$.
+$[A \mid \mathbf{b}]$.
 Eftersom $A$ har rangen $m$, følger det, at der ikke findes en nulrække i $B$.
-Derfor kan $[B \text{    } \mathbf{c}]$ ikke indeholde en nulrække, hvis eneste nulindgang er i sidste søjle. 
-Det følger derfor jævnfør \ref{thm:konsistens}, at $A\mathbf{x}=\mathbf{b}$ er konsistent $\forall \mathbf{b}$, hvilket beviser at (b) og (c) er ækvivalente.
+Derfor kan $[B \mid \mathbf{c}]$ ikke indeholde en nulrække, og der er derfor ikke pivot i sidste søjle.
+Det følger derfor jævnfør \ref{thm:konsistens}, at $A\mathbf{x}=\mathbf{b}$ er konsistent for alle $\mathbf{b}$, hvilket beviser, at (b) og (c) er ækvivalente.
 %
 \end{proof}
 \\
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Når det skal afgøres, hvorvidt en vektor tilhører et givet span, gælder \ref{thm:span}.
+\ref{thm:span} beskriver, hvornår en vektor tilhører et span.
 %
 \begin{thm}{}{span}
 %
 Lad $\S =  \{ \mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k \}$ være en mængde vektorer i $\R^n$, og lad $\mathbf{v}$ være en vektor i $\R^n$.
-Så er $\text{span}\{ \mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\} =\text{span}\{\S\}$, hvis og kun, hvis $\mathbf{v}$ tilhører $\text{span}\{\S\}$.
+Så er $\text{span}\{ \mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\} =\text{span}\{\S\}$, hvis og kun hvis $\mathbf{v}$ tilhører $\text{span}\{\S\}$.
 %
 \end{thm}
 %
 %
 \begin{proof}
 %
-Antag, at $\mathbf{v}$ er i $\text{span}\{\S\}$. Så er $\mathbf{v}$ en linearkombination af $\S$, hvilket kan opskrives som $\mathbf{v}=a_1\mathbf{u}_1+a_2\mathbf{u}_2+ \ldots + a_k\mathbf{u}_k$, hvor $a_1,a_2,\ldots, a_k$ er skalarer. 
+Antag, at $\mathbf{v}$ er i $\text{span}\{\S\}$. Så er $\mathbf{v}$ en linearkombination af $\S$, hvilket kan opskrives som $\mathbf{v}=c_1\mathbf{u}_1+c_2\mathbf{u}_2+ \ldots + c_k\mathbf{u}_k$, hvor $c_1,c_2,\ldots, c_k$ er skalarer. 
 Hvis en vektor $\mathbf{w}$ er i $\text{span}\{ \mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\}$, 
 kan denne opskrives $\mathbf{w}=c_1\mathbf{u}_1+c_2\mathbf{u}_2+ \ldots + c_k\mathbf{u}_k+b\mathbf{v}$, hvor $c_1,c_2,\ldots, c_k, b$ er skalarer.
-Ved substitution af $\mathbf{v}$ med $\{ \mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\}$ vides det, at $\mathbf{w}$ kan opskrives som en linearkombination af $\S$. 
+Ved substitution af $\mathbf{v}$ med $\{ \mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\}$ vides det, at $\mathbf{w}$ kan opskrives som en linearkombination af $\S$.
 Det gælder endvidere, at alle linearkombinationer i $\S$ også kan dannes fra vektorerne $\mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}$, hvis $\mathbf{v}$ multipliceres med skalaren $0$.
-Det følger derfor, at de to mængder har samme span. 
-Antag nu, at $v$ ikke er i $\text{span}\{\S\}$. 
+Det følger derfor, at de to mængder har samme span. \\\\
+%
+Antag nu, at $\textbf{v}$ ikke er i $\text{span}\{\S\}$. 
 Det følger herfra, at $\mathbf{v}$ er i spannet af 
 $\{ \mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\}$, da 
 $\mathbf{v}=0\mathbf{u}_1+0\mathbf{u}_2+ \ldots + 0\mathbf{u}_k+1\mathbf{v}$.
 Derfor er
-$\text{span}\{ \mathbf{u}_1,, \mathbf{u}_2 , \ldots , \mathbf{u}_k \}
+$$\text{span}\{ \mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k \}
 \neq
-\text{span}\{ \mathbf{u}_1,, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\}$, 
+\text{span}\{ \mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\},$$ 
 da mængderne ikke er ækvivalente, idet kun én af dem indeholder $\mathbf{v}$. 
 %
 \end{proof}
@@ -307,5 +307,5 @@ da mængderne ikke er ækvivalente, idet kun én af dem indeholder $\mathbf{v}$.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Som det fremgår af overstående gælder det derfor, at enhver løsning i et lineært optimeringsproblem skal findes i spannet for vektorerne i ligningssystemet. 
+Som det fremgår af ovenstående, gælder det derfor, at enhver løsning i et lineært optimeringsproblem skal findes i spannet for vektorerne i ligningssystemet. 
 %

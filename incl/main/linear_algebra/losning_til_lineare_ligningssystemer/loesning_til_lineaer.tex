@@ -1,9 +1,10 @@
 \section{Løsning til lineære ligningssystemer}
 %
-Disse ligningssystemer løses ved hjælp af forskellige operationer, og i det følgende vil det introduceres, hvordan dette udføres.
+Disse ligningssystemer kan løses ved hjælp af forskellige operationer,
+som introduceres i følgende afsnit.
 %
 \subsection{Elementære rækkeoperationer}
-Der eksisterer tre operationer, som kan udføres på rækker i et lineært ligningssystem.
+Der eksisterer tre operationer, som kan udføres på rækkerne i matricen til et lineært ligningssystem.
 %
 \begin{defn}{}{element}
 Ved \textbf{ombytning} bytter to rækker plads i ligningssystemet, hvilket noteres
@@ -11,8 +12,8 @@ Ved \textbf{ombytning} bytter to rækker plads i ligningssystemet, hvilket noter
 A \xrightarrow{R_i \leftrightarrow R_j} B, 
 \end{align*}
 hvor $A$ er matricen før rækkeoperationen udføres, og $B$ er matricen efter rækkeoperationen er udført. 
-$R_j$ og $R_i$ er rækker i $A$.\\\\
-Ved \textbf{skalering} multipliceres en række med et tal $c$, hvor $c \neq 0$, hvilket noteres
+$R_i$ og $R_j$ er rækker i $A$.\\\\
+Ved \textbf{skalering} multipliceres en række med en skalar $c$, hvor $c \neq 0$, hvilket noteres
 \begin{align*}
 A \xrightarrow{R_i \rightarrow cR_i} B.
 \end{align*}
@@ -23,7 +24,7 @@ A \xrightarrow{R_i \rightarrow R_i + cR_h} B.
 %
 \end{defn}
 \noindent
-Rækkeoperationerne kan udføres, når ligningssystemet er skrevet som en matrix. Eksempler på de elementære rækkeoperationer ses i \ref{eks1}.
+Rækkeoperationerne kan udføres, når ligningssystemet er skrevet som en matrix. Brug af de elementære rækkeoperationer kan ses i \ref{eks1}.
 \\
 %
 % Hvis vi bruger tilde skal den kommenteres hær
@@ -32,7 +33,7 @@ Rækkeoperationerne kan udføres, når ligningssystemet er skrevet som en matrix
 Først laves ombytning mellem $R_1$ og $R_3$ i matricen. 
 \begin{align*}
 \begin{blockarray}{ccc}
-\begin{block}{[cc|c]}
+\begin{block}{[ccc]}
 5 & 5 & 3 \\
 2 & 2 & 1\\
 3 & 4 & 8\\
@@ -40,7 +41,7 @@ Først laves ombytning mellem $R_1$ og $R_3$ i matricen.
 \end{blockarray}
 &\xrightarrow{R_1 \leftrightarrow R_3}
 \begin{blockarray}{ccc}
-\begin{block}{[cc|c]}
+\begin{block}{[ccc]}
 3 & 4 & 8\\
 2 & 2 & 1\\
 5 & 5 & 3\\
@@ -52,7 +53,7 @@ Derefter skaleres $R_2$ med $-2$.
 %
 \begin{align*}
 \begin{blockarray}{ccc}
-\begin{block}{[cc|c]}
+\begin{block}{[ccc]}
 3 & 4 & 8\\
 2 & 2 & 1\\
 5 & 5 & 3\\
@@ -60,7 +61,7 @@ Derefter skaleres $R_2$ med $-2$.
 \end{blockarray}
 &\xrightarrow{R_2 \rightarrow (-2)R_2}
 \begin{blockarray}{ccc}
-\begin{block}{[cc|c]}
+\begin{block}{[ccc]}
 3 & 4 & 8\\
 -4 & -4 & -2\\
 5 & 5 & 3\\
@@ -72,15 +73,15 @@ Slutteligt laves en udskiftning på $R_3$, hvor skaleringen $3R_1$ adderes med $
 %
 \begin{align*}
 \begin{blockarray}{ccc}
-\begin{block}{[cc|c]}
+\begin{block}{[ccc]}
 3 & 4 & 8\\
 -4 & -4 & -2\\
 5 & 5 & 3\\
 \end{block}
 \end{blockarray}
-&\xrightarrow{R_3 \rightarrow 3R_1+R_3}
+&\xrightarrow{R_3 \rightarrow R_3 + 3R_1}
 \begin{blockarray}{ccc}
-\begin{block}{[cc|c]}
+\begin{block}{[ccc]}
 3 & 4 & 8\\
 -4 & -4 & -2\\
 14 & 17 & 27\\
@@ -98,30 +99,30 @@ Dette bruges til definitionen af \textit{trappeform}.
 \begin{defn}{}{}
 En matrix er på \textbf{trappeform}, hvis den opfylder følgende kriterier:
 \begin{enumerate}[label=(\alph*)]
-\item Enhver \textbf{ikke-nulrække} ligger over alle nulrækker.
+\item Enhver ikke-nulrække ligger over alle nulrækker.
 \item Den første ikke-nulindgang i en ikke-nulrække ligger i en søjle til højre for første ikke-nulindgange i forrige række.
-\item Hvis en søjle har den første ikke-nulindgang i en række, så er alle indgangene i søjlen under den $0$.
+%
+\item Hvis en søjle har den første ikke-nulindgang i en række, så er alle understående indgange i søjlen nulindgange.
 \end{enumerate}
 \end{defn}
 %
 \begin{eks}\label{eks:trappe}
-Betragt $A$ og $B$. $A$ er på trappeform, mens $B$ ikke er på trappeform. 
-Hvis der foretages en ombytning på række to og tre, så ville matrix $B$ også være på trappeform
+Betragt matricerne
 %
 \begin{align*}
 A=
 \begin{blockarray}{cccc}
-\begin{block}{[ccc|c]}
+\begin{block}{[cccc]}
 2 & 4 & 8 & 2\\
 0 & 5 & -2 & 5\\
 0 & 0 & 2 & 7\\
 0 & 0 & 0 & 0\\
 \end{block}
 \end{blockarray}
-\text{ }
+\text{ og }
 B=
 \begin{blockarray}{cccc}
-\begin{block}{[ccc|c]}
+\begin{block}{[cccc]}
 2 & 4 & 8 & 2\\
 0 & 0 & -2 & 5\\
 0 & 4 & 2 & 7\\
@@ -130,26 +131,30 @@ B=
 \end{blockarray}.
 \end{align*}
 %
+$A$ er på trappeform, mens $B$ ikke er på trappeform. 
+Hvis der foretages en ombytning på række to og tre, da vil matrix $B$ ligeledes være på trappeform.
+%
 \end{eks}
 %
-Trappeformen kan reduceres yderligere.
+Matricer kan yderligere reduceres til \textit{reduceret trappeform}.
 %
 \begin{defn}{}{redtrap}
 En matrix er på \textbf{reduceret trappeform}, hvis den opfylder følgende kriterier:
 \begin{enumerate}[label=(\alph*)]
-\item Hvis en søjle har den første ikke-nulindgang i en række, så er alle indgange i søjlen $0$.
-\item Den første indgang i hver ikke-nulrække er $1$. 
+\item Matricen er på trappeform.
+\item Hvis en søjle har den første ikke-nulindgang i en række, så er alle øvrige indgange i søjlen $0$.
+\item Den første ikke-nulindgang i hver ikke-nulrække er lig $1$. 
 \end{enumerate}
 \end{defn}
 \noindent
-Den reducerede trappeform af en matrix $A$ noteres  $R$. Et lineært ligningssystem, som ikke står på trappeform, kan laves om til trappeform og derefter reduceret trappeform, hvilket gør løsningen af systemet mere simpel.
-Metoden til at gøre dette ses i afsnit \ref{gauss}.
+%
+Bemærk, at den reducerede trappeform af en matrix $A$ kan noteres $A_R$.
 \\
 %
 \begin{eks}
-Betragt matricen $A$.
+Jævnfør \ref{defn:redtrap} er
 \begin{align*}
-A=
+A_R=
 \begin{blockarray}{ccccc}
 \begin{block}{[cccc|c]}
 1 & 0 & 5 & 0 & 0\\
@@ -160,19 +165,21 @@ A=
 \end{blockarray}
 \end{align*}
 %
-Jævnfør \ref{defn:redtrap} er $A$ på reduceret trappeform.
+på reduceret trappeform.
 \end{eks}
 %
-%Motiverende tekst
-%
+Et lineært ligningssystem, som ikke står på trappeform, kan laves om til trappeform og derefter reduceret trappeform, hvilket gør løsningen af systemet mere simpel.
+Metoden til at gøre dette ses i afsnit \ref{gauss}.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \subsection{Pivotindgange}
+%
 \begin{defn}{}{}
 \textbf{Pivotindgange} betegnes som den første ikke-nulindgang i enhver række i en matrix på trappeform. 
 \end{defn}
 \noindent
+%
 \begin{eks}\label{eks:pivot}
 Betragt matrix $A$ fra \ref{eks:trappe}. Pivotindgangene i $A$ er her markeret med blåt.
 %
@@ -189,36 +196,9 @@ A=
 \end{align*}
 %
 \end{eks}
-Pivotindgange vil fremover blive markeret med blå, som set i \ref{eks:pivot}.
-Dette vil blive gjort første gang en matrice bliver lavet til trappeform eller reduceret trappeform.
-%\begin{eks}\label{eks:pivot}
-%Betragt eksempel \ref{trappe}. Det ses, at ligningssystemet ikke har nogen løsning, da den fjerde ligning ikke har nogen løsning.\\
-%\begin{minipage}{0.5\textwidth}
-%%
-%\begin{align*}
-%A=
-%\begin{blockarray}{ccccc}
-%x_1 & x_2 & x_3 & x_4 & b \\
-%\begin{block}{[cccc|c]}
-%\hlight{1} & 0 & 5 & 0 & 0\\
-%0 & \hlight{1} & 3 & 0 & 0\\
-%0 & 0 & 0 & \hlight{1} & 0\\
-%0 & 0 & 0 & 0 & \hlight{1}\\
-%\end{block}
-%\end{blockarray}.
-%\end{align*}
-%\end{minipage}
-%\begin{minipage}{0.5\textwidth}
-%\begin{align*}
-%x_1+5x_3&=0\\
-%x_2+3x_3&=0\\
-%x_4&=0\\
-%0&\neq 1
-%\end{align*}
-%\end{minipage}
-%%
-%\end{eks}
-Hvis der er pivotindgang i den sidste søjle, så har ligningssystemet ingen løsning.
 %
-De variables søjler, der indeholder pivotindgange, kaldes for \textit{faste variable}, mens de, som ikke indholder pivotindgange, kaldes for \textit{frie variable}. 
-Ligningssystemet kan løses for de faste variable udtrykt ved de frie variable. 
+Pivotindgange markeres fremover med blå første gang en matrice er på trappeform eller reduceret trappeform, som set i \ref{eks:pivot}.
+Hvis der er pivotindgang i den sidste søjle, så har ligningssystemet ingen løsning.
+Variable tilhørende en søjle, som indeholder en pivotindgang, betegnes som \textit{faste variable}.
+Hvis ikke betegnes disse variable som \textit{frie variable}.
+Ligningssystemer kan løses for de faste variable udtrykt ved de frie variable. 
