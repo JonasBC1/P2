@@ -30,7 +30,7 @@ Lad $R$ være en $m \times n$ matrix på reduceret trappeform. Så gælder følg
 \item Antag at $\textbf{r}_j$ ikke er en pivotsøjle i $R$, og at der er $k$ pivotsøjler i $R$ før $\textbf{r}_j$. Så gælder det, at $\textbf{r}_j$ er en linearkombination af de $k$ forudgående pivotsøjler og koefficienterne er de $k$-første indgange i $\textbf{r}_j$. 
 \end{enumerate}
 %
-Det forudgående kan opskrives som følgende sætning, som bruges til bevis \ref{entydigbevis}.
+Det forudgående kan opskrives som følgende sætning, som bruges til \ref{thm:entydig}.
 %
 \begin{thm}{}{pivotu}
 Følgende udsagn er sande for enhver matrix $A$: 
@@ -45,7 +45,6 @@ Enhver matrix kan, ved hjælp af elementære rækkeoperationer, kun blive omdann
 \end{thm}
 %
 \begin{proof}
-\label{entydigbevis}
 I følgende bevis refereres der til de tidligere egenskaber for en matrix på reduceret trappeform. \\\\
 Lad $A$ væære en matrix og $R$ være den reduceret trappeform af $A$. 
 Udfra egenskab (a), så gælder det, at en søjle i $R$ er en pivotsøjle i $R$, hvis og kun hvis, den er ikke-nul og ikke er en linearkombination af de forudgående pivotsøjler i $R$. 
