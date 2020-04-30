@@ -3,7 +3,7 @@
 En matrix kan betragtes som en funktion, der afbilder en vektor i et rum.
 %
 \begin{defn}{}{}
-Lad $\S _1 \subset \R^n$ og $\S _2 \subset \R^m$.
+Lad $\S _1 \subseteq \R^n$ og $\S _2 \subseteq \R^m$.
 En funktion $f$ fra $\S_1$ til $\S_2$, noteret $f:\S_1\rightarrow\S_2$, tildeler enhver vektor $\textbf{u}$ i $\S_1$ en entydig vektor $f(\textbf{u})$ i $\S_2$.
 Vektoren $f(\textbf{u})$ kaldes en \textbf{afbildning} af $\textbf{u}$.
 %Hedder det codomænet på dansk? Lyder underligt. 
@@ -11,7 +11,9 @@ $\S_1$ er \textbf{domænet} for funktionen $f$, mens $\S_2$ kaldes \textbf{codom
 \textbf{Værdimængden} for $f$ er defineret som mængden af afbildninger $f(\textbf{u})$ for alle $\textbf{v}\in \S_1$.
 \end{defn}\noindent
 %
-På figur \ref{fig:afbild} ses, at både $\textbf{u}$ og $\textbf{v}$ har $\textbf{w}$ som afbildning, da $f(\textbf{u})=f(\textbf{v})=\textbf{w}$.
+Bemærk, afbildning også kaldes transformation.
+%potentielt også det super ligegyldige funktionshokuspookus
+På figur \ref{fig:afbild} ses, at både $\textbf{u}$ og $\textbf{v}$ har $\textbf{w}$ som afbildning, da $f(\textbf{u})=f(\textbf{v})=\textbf{w}$. \\\\
 %
 % Lav flot figur som 2.9 på side 167.
 %
@@ -21,22 +23,22 @@ For funktioner, som er matrix-vektorprodukter, introduceres notationen $T_A$.
 %
 \begin{defn}{}{fisk3}
 Lad $A$ være en $m \times n$ matrix.
-Funktionen $T_A:\R^n \rightarrow \R^m$, defineret ved $T_A(\textbf{x}) = A\textbf{x}$ for alle $\textbf{x} \in \R^n$, kaldes \textbf{matrixafbildning fremkaldt af $\mathbf{A}$.}
+Funktionen $T_A:\R^n \rightarrow \R^m$, defineret ved $T_A(\textbf{x}) = A\textbf{x}$ for alle $\textbf{x} \in \R^n$, er en \textbf{matrixafbildning fremkaldt af $\mathbf{A}$.}
 \end{defn}\noindent
 %
 Direkte fra  \ref{thm:mxvpro} ses det, at $T_A$ har egenskaberne $T_A(\textbf{u}+\textbf{v})=T_A(\textbf{u}) + T_A(\textbf{v})$ og $cT_A(\textbf{u}) = T_A(c\textbf{u})$.
 Funktioner, der opfylder disse egenskaber, får deres egen definition.
 %
 \begin{defn}{}{}
-Funktionen $T: \R^n \rightarrow \R^m$ kaldes en \textbf{lineær afbildning}, hvis følgende vilkår gør sig gældende for alle $\textbf{u},\textbf{v} \in \R^n$ og alle skalarer $c$:
+Funktionen $T: \R^n \rightarrow \R^m$ er en \textbf{lineær afbildning}, hvis følgende vilkår gør sig gældende for alle $\textbf{u},\textbf{v} \in \R^n$ og alle skalarer $c$:
 \begin{enumerate}[label=(\alph*)]
 \item $T_A(\textbf{u}+\textbf{v})=T_A(\textbf{u}) + T_A(\textbf{v})$.
 \item $cT_A(\textbf{u}) = T_A(c\textbf{u})$.
 \end{enumerate}
 \end{defn}\noindent
 %
-Da matrixafbildning har disse egenskaber, er alle matrixafbildninger lineære.
-Følgende sætning viser nogle af egenskaberne ved lineær afbildning.
+Da matrixafbildninger har disse egenskaber, er alle matrixafbildninger lineære afbildninger.
+\ref{thm:afbegen} viser centrale egenskaber ved lineær afbildning.
 %Matrixafbildninger er ét ord. 
 \begin{thm}{}{afbegen}
 Lad $\textbf{u}, \textbf{v} \in \R^n$ og lad $c$ og $k$ være skalarer.
@@ -52,27 +54,27 @@ For enhver lineær afbildning $T: \R^n \rightarrow \R^m$ er følgende udsagn san
 \begin{proof}
 \begin{enumerate}[label=(\alph*)]
 \item Lad $\textbf{u}, \textbf{v}$ være vektorer i $\R^n$, $c$ og $k$ være skalarer og lad $T: \R^n \rightarrow \R^m$ være en lineær afbildning.
-Da $T$ bevarer vektoraddition haves, at
+Da $T$ bevarer vektoraddition, haves, at
 %
 \begin{align*}
 T(\textbf{0}) = T(\textbf{0} + \textbf{0}) = T(\textbf{0}) + T(\textbf{0}).
 \end{align*}
 %
-Trækkes $T(\textbf{0})$ fra begge sider haves, at $\textbf{0} = T(\textbf{0})$.\\
+Trækkes $T(\textbf{0})$ fra begge sider, haves, at $\textbf{0} = T(\textbf{0})$.\\
 %
-\item Da $T$ bevarer skalering haves
+\item Da $T$ bevarer skalering, haves
 % 
 \begin{align*}
 T(-\textbf{u}) = T((-1)\textbf{u}) = (-1)T(\textbf{u}) = -T(\textbf{u}).
 \end{align*}
 %
-\item Ved kombination af, at $T$ bevarer vektor addition og (b), haves, at
+\item Ved kombination af, at $T$ bevarer vektoraddition og (b), haves, at
 %
 \begin{align*}
 T(\textbf{u}-\textbf{v}) = T(\textbf{u}+(-\textbf{v})) = T(\textbf{u})+T(-\textbf{v}) = T(\textbf{u}) - T(\textbf{v}).
 \end{align*}
 %
-\item Da $T$ både bevarer både vektor addition og skalering haves, at 
+\item Da $T$ både bevarer vektoraddition og skalering, haves, at 
 %
 \begin{align*}
 T(c\textbf{u} + k\textbf{v}) = T(c\textbf{u}) + T(k\textbf{v}) = cT(\textbf{u}) + kT(\textbf{u}).
@@ -95,7 +97,7 @@ T(a_1\textbf{u}_1 + a_2\textbf{u}_2 + \cdots + a_k\textbf{u}_k) = T(a_1\textbf{u
 \end{lem}
 %
 \begin{proof}
-Lemmaet følger direkte af \ref{thm:afbegen}.
+Lemmaet følger direkte af \ref{thm:afbegen}(d).
 \end{proof}
 \\
 %
@@ -114,7 +116,7 @@ Så findes der en entydig $m \times n$ matrix
 \begin{align*}
 A= [T(\mathbf{e}_1)\text{    } T(\mathbf{e}_2) \text{    } \ldots \text{    } T(\mathbf{e}_n)],
 \end{align*}
-hvor søjlerne er afbildninger af $T$ ud fra standardvektorene i $\R^n$, så det gælder at $T(\mathbf{v})=A \mathbf{v}$  $\forall \mathbf{v} \in \R^n$.
+hvor søjlerne er afbildninger af $T$ ud fra standardvektorene i $\R^n$, så det gælder, at $T(\mathbf{v})=A \mathbf{v}$ for alle $\mathbf{v} \in \R^n$.
 \end{thm}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -133,18 +135,18 @@ Jævnfør \ref{thm:afbegen}(d) er
 T(\mathbf{v})= v_1 T( \mathbf{e}_1)+ v_2 T( \mathbf{e}_2) + \ldots + v_n T( \mathbf{e}_n),
 \end{align*}
 %
-hvilket kan erstattes med elementerne i matrix A
+hvilket kan erstattes med elementerne i matrix A, således, at
 %
 \begin{align*}
 T(\mathbf{v})&= v_1 \mathbf{a}_1+ v_2 \mathbf{a}_2 + \ldots + v_n \mathbf{a}_n \\
-&= A \mathbf{v},
+&= A \mathbf{v}.
 \end{align*}
 %Er det meningen, at ovenstående skal være på to linjer? 
-hvilket jævnfør \ref{defn:fisk3} beviser, at
+Jævnfør \ref{defn:fisk3} beviser dette, at
 %
 \begin{align*}
 T(\mathbf{v})= T_A (\mathbf{v}).
-\end{align*}
+\end{align*}\\\\
 %
 Lad $B$ være en $m \times n$ matrix. 
 For at bevise entydigheden, lad da $T_A=T_B$. 
@@ -163,12 +165,10 @@ x_3
 \end{bmatrix}
 \right)
 =
-%\begin{blockarray}{c}
 \begin{bmatrix}%{[c]}
 5x_1+x_2\\
 3x_2+2x_3
-\end{bmatrix}
-%\end{blockarray}.
+\end{bmatrix}.
 $$ \\
 For at danne standardmatricen for $T$, dannes søjlerne 
 \begin{align*}
