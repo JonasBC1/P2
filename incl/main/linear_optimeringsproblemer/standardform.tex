@@ -15,13 +15,12 @@ er optimeringsproblemet på \textit{standardform}.
 Bemærk, at problemet på standardform er et maksimumsproblem, og betingelserne er lighedsbetingelser og ikke-negativsbetingelser.
 \\\\
 %
-For at omskrive et minimumsproblem til et maksimumsproblem multipliceres objektfunktionen med $-1$.
-Ulighedsbetingelserne ændres ligeledes fra $A_ix_i \geq b_i$ til $-A_ix_i \leq -b_i$.
+For at omskrive et minimumsproblem til et maksimumsproblem multipliceres objektfunktionen med $-1$, og ulighedsbetingelserne ændres fra $A_ix_i \geq b_i$ til $-A_ix_i \leq -b_i$.
 \\\\
 %
 For at få et givet problem med ulighedsbetingelser på standardform tilføjes \textit{slack-variable} til venstre side af ulighederne for at gøre dem til ligheder. 
 Hvis optimeringsproblemet har $m$ uligheder tilføjes $m$ slack-variabler.
-I denne rapport noteres slack-variabler $s_i$.
+I denne rapport noteres slack-variabler $\textcolor{blue}{s_i}$, og markeres med blå.
 Variabler, der ikke har en ikke-negativsbegrænsning, opdeles i $x_i^+$ og $x_i^-$, da alle reelle tal kan skrives som differensen mellem to positive tal.
 Dertil isoleres objektfunktionen så $z$ er positiv på ventre side af lighedstegnet og sættes lig nul.
 Med denne fremgangsmåde kan alle lineære optimeringsproblemer omskrives til standardform.
@@ -40,15 +39,15 @@ Det er derfor kun nødvendigt med en metode til at løse optimeringsproblemer p�
 %\end{align*}
 %
 \begin{eks}
-Minimumsproblemet fra \ref{eks:min_lin} er her omskrevet til standardform:
+Minimumsproblemet fra \ref{eks:min_lin} omskrives til et maksimumsproblem på standartform, med udgangpsunkt i fremgangsmetoden ovenfor:
 %
 \begin{align*}
 \begin{array}{lrcccrcrcrcrcrcr}
 \text{Maksimér}		&	\multicolumn{2}{c}{-4x_1 + 3x_2}\\
-\text{begrænset af}	&2x_1	&-	&x_2^+-x_2^-		&+	&s_1&	&	&	&	&	&	&= 		&-10,\\
-					&-x_1	&+	&x_2^+-x_2^-		&	&	&+	&s_2&	&	&	&	&=		& -7,\\
-					&x_1	&+	&x_2^+-x_2^-		&	&	&	&	&+	&s_3&	&	&=		& 20,\\
-					& 		&	&x_2^+-x_2^-&	&	&	&	&	&	&+	&s_4&=		& 12,\\
+\text{begrænset af}	&2x_1	&-	&x_2^+-x_2^-		&+	&\textcolor{blue}{s_1}&	&	&	&	&	&	&= 		&-10,\\
+					&-x_1	&+	&x_2^+-x_2^-		&	&	&+	&\textcolor{blue}{s_2} &	&	&	&	&=		& -7,\\
+					&x_1	&+	&x_2^+-x_2^-		&	&	&	&	&+	&\textcolor{blue}{s_3}&	&	&=		& 20,\\
+					& 		&	&x_2^+-x_2^-&	&	&	&	&	&	&+	&\textcolor{blue}{s_4} &=		& 12,\\
 					&x_1	&	&			&	&	&	&	&	&	&	&	&\geq	& 0,\\
 					&		&	&x_2^+,x_2^-&	&	&	&	&	&	&	&	&\geq	& 0.\\
 \end{array}
