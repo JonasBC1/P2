@@ -4,21 +4,21 @@
 I forbindelse med mængder af vektorer er det vigtigt at definere \textit{konvekse mængder}.
 %
 \begin{defn}{}{konveks}
-En mængde $S \subset \R^n$ er \textbf{konveks}, hvis $\lambda \textbf{x} + (1- \lambda ) \textbf{y} \in S$ for ethvert $\textbf{x}, \textbf{y} \in S$ og ethvert $\lambda \in [0,1]$. 
+En mængde $S \subset \R^n$ er \textbf{konveks}, hvis $\lambda \textbf{u} + (1- \lambda ) \textbf{v} \in S$ for ethvert $\textbf{u}, \textbf{v} \in S$ og ethvert $\lambda \in [0,1]$. 
 \end{defn}
 \noindent
 %
-En mængde er med andre ord konveks, hvis ethvert element på en ret linje mellem to vilkårlige punkter $x$ og $y$ i mængden også tilhører mængden. 
+En mængde er med andre ord konveks, hvis ethvert element på en ret linje mellem to vilkårlige elementer i mængden også tilhører mængden. 
 På figur \ref{fig:neej1} ses eksempler på en konveks mængde, markeret med blå og ikke-konveks mængde markeret med rød. 
 %
 \input{fig/tikz/geometri/konveks}
 %
 \begin{defn}{}{konvekskombihylster}
-Lad $\textbf{x}_1, \textbf{x}_2, \ldots, \textbf{x}_k \in \R^n$, og $\lambda_1, \lambda_2, \ldots, \lambda_k$ være ikke-negative skalarer, hvis sum er $1$. Da gælder:
+Lad $\textbf{v}_1, \textbf{v}_2, \ldots, \textbf{v}_k \in \R^n$, og $\lambda_1, \lambda_2, \ldots, \lambda_k$ være ikke-negative skalarer, hvis sum er $1$. Da gælder:
 %
 \begin{enumerate}[label=(\alph*)]
-	\item Vektoren $$\sum_{i=1}^{k} \lambda_i \textbf{x}_i$$ kaldes en \textbf{konveks kombination} af vektorerne $\textbf{x}_1, \textbf{x}_2, \ldots, \textbf{x}_k$. 
-	\item Det \textbf{konvekse hylster} af vektorerne $\textbf{x}_1, \textbf{x}_2, \ldots, \textbf{x}_k$ er mængden af alle konvekse kombinationer af disse vektorer. 
+	\item Vektoren $$\sum_{i=1}^{k} \lambda_i \textbf{v}_i$$ kaldes en \textbf{konveks kombination} af vektorerne $\textbf{v}_1, \textbf{v}_2, \ldots, \textbf{v}_k$. 
+	\item Det \textbf{konvekse hylster} af vektorerne $\textbf{v}_1, \textbf{v}_2, \ldots, \textbf{v}_k$ er mængden af alle konvekse kombinationer af disse vektorer. 
 \end{enumerate}
 %
 % Det hedder vel ikke konvekse skrog, hvad kalder vi det?
@@ -26,13 +26,13 @@ Lad $\textbf{x}_1, \textbf{x}_2, \ldots, \textbf{x}_k \in \R^n$, og $\lambda_1, 
 %
 \end{defn}
 %
-På figur \ref{fig:neej2} ses to vektorer $\mathbf{x}$ og $\mathbf{y}$ i $\R^n$ og den konvekse kombination $\frac{1}{2} \mathbf{x}+\frac{1}{2} \mathbf{y}$, hvor $\lambda_x = \lambda_y = \frac{1}{2}$. 
+På figur \ref{fig:neej2} ses to vektorer $\mathbf{u}$ og $\mathbf{v}$ i $\R^n$ og den konvekse kombination $\frac{1}{2} \mathbf{u}+\frac{1}{2} \mathbf{v}$, hvor $\lambda_\textbf{u} = \lambda_\textbf{v} = \frac{1}{2}$. 
 Det konvekse hylster af vektorerne er en ret linje, der er markeret med blå. 
 \\\\
 %
 \input{fig/tikz/geometri/konveks_eks_r2}
 %
-På figur \ref{fig:neeej} ses derimod tre vektorer $\mathbf{x}$, $\mathbf{y}$ og $\mathbf{z}$ i $\R^3$. 
+På figur \ref{fig:neeej} ses derimod tre vektorer $\mathbf{u}$, $\mathbf{v}$ og $\mathbf{w}$ i $\R^3$. 
 Det konvekse hylster af vektorerne er på figuren markeret med blå.
 %
 \input{fig/tikz/geometri/konveks_eks_r3}
@@ -52,28 +52,28 @@ Af \ref{defn:konvekskombihylster} følger \ref{thm:konveks}.
 \begin{proof}
 \begin{enumerate}[label=(\alph*)]
 	\item Lad $I$ være en indeksmængde, lad $S_i$, $i \in I$, være et antal konvekse mængder, og lad $ \lambda \in [0,1]$.
-Antag nu, at vektorerne $\textbf{x}$ og $\textbf{y}$ tilhører fællesmængden $ \bigcap_{i \in I} S_i$. 
-Det haves, at $ \lambda \textbf{x} + (1 - \lambda )\textbf{y} \in S_i$, eftersom enhver $S_i$ er konveks og  indeholder $\textbf{x}$ og $\textbf{y}$. Derfor er $ \bigcap_{i \in I} S_i$ konveks, da $ \lambda \textbf{x} + (1 - \lambda )\textbf{y} \in  \bigcap_{i \in I} S_i$, hvilket beviser (a). 
+Antag nu, at vektorerne $\textbf{u}$ og $\textbf{v}$ tilhører fællesmængden $ \bigcap_{i \in I} S_i$. 
+Det haves, at $ \lambda \textbf{u} + (1 - \lambda )\textbf{v} \in S_i$, eftersom enhver $S_i$ er konveks og  indeholder $\textbf{u}$ og $\textbf{v}$. Derfor er $ \bigcap_{i \in I} S_i$ konveks, da $ \lambda \textbf{u} + (1 - \lambda )\textbf{v} \in  \bigcap_{i \in I} S_i$, hvilket beviser (a). 
 	\item Lad $\textbf{a}$ være en vektor, lad $b$ være en skalar, og lad $ \lambda \in [0,1]$. 
-Antag, at $\textbf{x}$ og $\textbf{y}$ henholdsvis opfylder, at $\textbf{a}^T \textbf{x} \geq b$ og $\textbf{a}^T \textbf{y} \geq b$, således de tilhører samme halvrum. 
-Så er $\textbf{a}^T (\lambda \textbf{x} + (1 - \lambda) \textbf{y} ) \geq \lambda b + (1 - \lambda ) b = b$, hvilket beviser, at $ \lambda \textbf{x} + (1 - \lambda )\textbf{y}$ tilhører samme halvrum, hvormed halvrummet er konvekst.
+Antag, at $\textbf{u}$ og $\textbf{v}$ henholdsvis opfylder, at $\textbf{a}^T \textbf{u} \geq b$ og $\textbf{a}^T \textbf{v} \geq b$, således de tilhører samme halvrum. 
+Så er $\textbf{a}^T (\lambda \textbf{u} + (1 - \lambda) \textbf{v} ) \geq \lambda b + (1 - \lambda ) b = b$, hvilket beviser, at $ \lambda \textbf{u} + (1 - \lambda )\textbf{v}$ tilhører samme halvrum, hvormed halvrummet er konvekst.
 Bemærk, at en polyede er fællesmængden af et endeligt antal halvrum, og at (b) dermed er bevist jævnfør (a). 
 	\item  Dette punkt bevises ved induktion.
-Per \ref{defn:konvekskombihylster} ligger en konveks kombination af to elementer i en konveks mængde i mængden.
+Jævnfør \ref{defn:konvekskombihylster} ligger en konveks kombination af to elementer i en konveks mængde i mængden.
 Som induktionsantagelse antages det, at en konveks kombination af $c$ elementer i en konveks mængde også er i mængden.
-Dernæst undersøges $c+1$ elementer $x_1,x_2,\ldots,x_c+1$ i en konveks mængde $S$. 
+Dernæst undersøges $c+1$ elementer $\textbf{u}_1,\textbf{u}_2,\ldots,\textbf{u}_{c+1}$ i en konveks mængde $S$. 
 Lad $\lambda_1,\ldots,\lambda_{k+1}$ være ikke-negative skalarer, hvis sum er $1$. 
 Det antages, at $\lambda_{k+1}\neq1$. 
 Så haves, at
-$$\sum^{k+1}_{i=1}\lambda_i\textbf{x}_i=\lambda_{k+1}\textbf{x}_{k+1}+(1-\lambda_{k+1})\sum^{k}_{i=1}\dfrac{\lambda_i}{1-\lambda_{k+1}}\textbf{x}_i.$$
+$$\sum^{k+1}_{i=1}\lambda_i\textbf{u}_i=\lambda_{k+1}\textbf{u}_{k+1}+(1-\lambda_{k+1})\sum^{k}_{i=1}\dfrac{\lambda_i}{1-\lambda_{k+1}}\textbf{u}_i.$$
 Koefficienterne $\lambda_i/(1-\lambda_{k+1})$, for $i=1,\ldots,k$, er ikke-negative og summerer til $1$. 
-Ved induktionsantagelsen gælder, at $\sum^{k}_{i=1}\lambda_i\textbf{x}_i/(1-\lambda_{k+1})\in S$. 
+Ved induktionsantagelsen gælder, at $\sum^{k}_{i=1}\lambda_i\textbf{u}_i/(1-\lambda_{k+1})\in S$. 
 Da $S$ er konveks, fås 
-$\sum^{k+1}_{i=1}\lambda_i\textbf{x}_i\in S$, hvormed (c) er bevist. 
-	\item Lad $S$ være et konvekst hylster af $\textbf{x}_1, \textbf{x}_2, \ldots, \textbf{x}_k$, samt lad $\textbf{y} = \sum_{i=1}^{k} \zeta_i \textbf{x}^i$, $\textbf{z} = \sum_{i=1}^{k} \theta_i \textbf{x}^i$ være to elementer i $S$, hvor $ \zeta_i \geq 0$, $ \theta_i \geq 0$, og $ \sum_{i=1}^{k} \zeta_i = \sum_{i=1}^{k} \theta_i = 1$. 
+$\sum^{k+1}_{i=1}\lambda_i\textbf{u}_i\in S$, hvormed (c) er bevist. 
+	\item Lad $S$ være et konvekst hylster af $\textbf{u}_1, \textbf{u}_2, \ldots, \textbf{u}_k$, samt lad $\textbf{v} = \sum_{i=1}^{k} \zeta_i \textbf{u}^i$, $\textbf{w} = \sum_{i=1}^{k} \theta_i \textbf{u}^i$ være to elementer i $S$, hvor $ \zeta_i \geq 0$, $ \theta_i \geq 0$, og $ \sum_{i=1}^{k} \zeta_i = \sum_{i=1}^{k} \theta_i = 1$. 
 	Lad $ \lambda = [0,1]$. 
-	Så er $$\lambda \textbf{y} + (1 - \lambda ) \textbf{z} = \lambda \sum_{i=1}^k \zeta_i \textbf{x}^i + (1 - \lambda) \sum_{i=1}^k \theta_i \textbf{x}^i = \sum_{i=1}^k (\lambda \zeta_i + (1-\lambda )\theta_i ) \textbf{x}^i.$$
+	Så er $$\lambda \textbf{v} + (1 - \lambda ) \textbf{w} = \lambda \sum_{i=1}^k \zeta_i \textbf{u}^i + (1 - \lambda) \sum_{i=1}^k \theta_i \textbf{u}^i = \sum_{i=1}^k (\lambda \zeta_i + (1-\lambda )\theta_i ) \textbf{u}^i.$$
 Bemærk, at koefficienterne $ \lambda \zeta_i + (1 - \lambda) \theta_i$, $i = 1, \ldots, k$, summerer til $1$ og ikke er negative. 
-Dermed er $ \lambda \textbf{y} + (1 - \lambda ) \textbf{z}$ en konveks kombination af vektorerne $\textbf{x}^1, \ldots, \textbf{x}^k$, og tilhører derfor mængden $S$, hvormed (d) er bevist. 
+Dermed er $ \lambda \textbf{v} + (1 - \lambda ) \textbf{w}$ en konveks kombination af vektorerne $\textbf{u}^1, \ldots, \textbf{u}^k$, og tilhører derfor mængden $S$, hvormed (d) er bevist. 
 \end{enumerate}
 \end{proof}
