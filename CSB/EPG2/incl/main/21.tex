@@ -3,9 +3,151 @@
 %
 \begin{color}{AAUblue2}
 %
-fisk
+Beskriv et trin i de fire metoder 
+% 
+\begin{itemize}
+\item Eulers metode 
+\item Korrigeret Euler metode 
+\item Modificeret Euler metode 
+\item Heuns metode 
+\end{itemize}
+% 
+til numerisk løsning af en første ordens differentialligning. 
+Lav tegninger, der angiver valgene, som man har gjort for at få metoderne.  
+\\\\
+Forklar, at den modificerede Euler metode anvendt på problemet 
+%
+\begin{align*}
+\frac{dy}{dx} = f(x), \phantom{heeej} y(a)= y_0,
+\end{align*}
+% 
+til approksimation af $y(b)$, er det samme som trapezmetoden anvendt til at approksimere 
+%
+\begin{align*}
+y_0 + fisk jeg gider ikke skrive dette ind :P
+\end{align*}
 % 
 \end{color}
-\\\\
+% 
 % 
 %
+\subsection*{Eulers metode}
+
+%
+\begin{align*}
+x_{n+1} & = x_n+h \\
+y_{n+1} & = y_n + h f(x_n,y_n)
+\end{align*}
+% 
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Flot graf alla Julie     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{center}
+\begin{tikzpicture}[scale=12]
+%
+% Koordinater 
+% ------------------------------------------------------
+\coordinate (a) at (0.1,0.35);
+\coordinate (b) at (0.4,0.3);
+\coordinate (c) at (0.7,0.1);
+%
+%        
+% Streger 
+% -------------------------------------------------------
+  \draw[densely dotted](0.1,0.25) -- (a);
+  \draw[densely dotted](0.4,0.25) -- (b);
+  \draw[densely dotted](0.55,0.23) -- (0.55,0.15);
+  \draw[densely dotted](0.475,0.23) -- (0.475,0.21);
+  \draw[very thick, color=AAUblue2](a) parabola (b);
+ % \draw[very thick, color=AAUblue2](a) parabola[bend at end] (b);
+  \draw[thick](0.1,0.23) -- (0.1,0.27); % (a)
+  \draw[thick](0.7,0.23) -- (0.7,0.27); % (b)
+  \draw[thick](0.4,0.23) -- (0.4,0.27); % (m_1)
+  \draw[thick](0.55,0.23) -- (0.55,0.27); % (m_2)
+  \draw[thick](0.475,0.23) -- (0.475,0.27); % (m_3)
+%
+%
+% Punkt 
+% -------------------------------------------------------
+\node at (0.1,0.2) (){$a$};
+\node at (0.7,0.3) (){$b$};
+\node at (0.4,0.2) (){$m_1$};
+\node at (0.55,0.3) (){$m_2$};
+\node at (0.475,0.3) (){$m_3$};
+% 
+%
+% Koordinatsystemet 
+% -------------------------------------------------------
+\draw[thick,->] (-0.1,0.25) -- (0.8,0.25) node[anchor=south east]{$x$};
+\draw[thick,->] (0,0.1) -- (0,0.6) node[anchor=north west]{$y$};
+%
+\end{tikzpicture}
+  \captionof{figure}{Illustration af bisektionsmetoden, hvor $m_1=\frac{a+b}{2}$, $m_2=\frac{m_1+b}{2}$, $m_3=\frac{m_1+m_2}{2}$.}
+  \label{fig:bis}
+\end{center}
+%
+
+
+
+%
+\subsection*{Korrigeret Eulers metode}
+% 
+først findes hældningen i begyndelsespunktet $x_0$
+så følger man langs tangentvektoren til et halt Eulerskridt $\frac{h}{2}$
+Her evalueres funktionen i punktet, hvor y dog er $ y_n = + \frac{h}{2} k_1$
+og  hældningen $k_2$ findes 
+så starter man i begyndelsespunktet $x_0$ og følger langs tangenvektoren med hældning $k_2$ hen til et fuldt Eulerskridt
+
+
+
+Et skridt i den korrigerede Eulers metode bruger hældningen $k_1$ i begyndelsespunktet $x_0$ og hældningen $k_2$ i punktet $x_0 + \frac{h}{2}$, hvor $h$ er skridtlængen mellem $x_0$ og $x_1$. Punktet $x_1$ findes nu ved at følge hældningen $k_2$
+%
+\begin{align*}
+k_1 & = f(x_n , y_n) \\
+k_2 & = f(x_n + \frac{h}{2} , y_n = + \frac{h}{2} k_1 )  \\
+x_{n+1} & = x_n+h \\
+y_{n+1} & = y_n + h k_2 
+\end{align*}
+% 
+
+
+
+
+%
+\subsection*{Modificeret Eulers metode}
+
+Først findes hældningen i begyndelsespunktet $x_0$ 
+så følger man langs tangetvektoren til et helt Eulerskridt
+Her evalueres funktionen i punktet, hvor y dog er $y_n = + h k_1$ og hældningen $k_2$ findes 
+Så findes gennemsnittet mellem $k_1 + k_2$ og følger langs denne tangentvektor til et fuldt eulerskridt 
+
+
+%
+\begin{align*}
+k_1 & = f(x_n , y_n) \\
+k_2 & = f(x_n + h , y_n = + h k_1 ) \\
+x_{n+1} & = x_n+h \\
+y_{n+1} & = y_n + \frac{h}{2} (k_1 + k_2 )
+\end{align*}
+% 
+
+
+\subsection*{Heuns metode}
+Først findes hældningen i begyndelsespunktet $x_0$ 
+så følger man langt tangentvektoren til en $\frac{2}{3}$ Eulerskridt 
+Her evalueres funktionen i puntket, hvor $y$ dog er $y_n = + \frac{2}{3} h k_1$ og hældningen $k_2$ findes 
+Så findes en ny hældning med udgangspunkt i 
+$\frac{h}{4} (k_1 + k_2 ) $ 
+
+%
+\begin{align*}
+k_1 & = f(x_n , y_n) \\
+k_2 & = f(x_n + \frac{2}{3} h , y_n = + \frac{2}{3} h k_1 ) \\
+x_{n+1} & = x_n+h \\
+y_{n+1} & = y_n + \frac{h}{4} (k_1 + k_2 )
+\end{align*}
+
+
