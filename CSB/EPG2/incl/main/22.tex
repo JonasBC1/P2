@@ -3,9 +3,26 @@
 %
 \begin{color}{AAUblue2}
 %
-fisk
+2. Beskriv den klassiske fjerde ordens Runge-kutta metode (RK4). forklar, at denne metode anvendt på
+$$\frac{dy}{dx}=f(x), \phantom{...}y(a)=y_0$$
+til approksimation af y(b), er det samme som Simpsons regel anvendt til approksimation af 
+$$y_0+\int^b_a f(x)dx. $$
 % 
 \end{color}
 \\\\
+RK4:\\
+\begin{align*}
+k_1&=f(x_n,y_n)\\
+k_2&=f(x_n+\frac{h}{2},y_n+\frac{h}{2}k_1)\\
+k_3&=f(x_n+\frac{h}{2},y_n+\frac{h}{2}k_2)\\
+k_4&=f(x_n+h,y_n+h k_3)\\
+x_{n+1}&=x_n+h\\
+y_{n+1}&=y_n+\frac{h}{6}(k_1+2k_2+2k_3+k_4)
+\end{align*}
+Der bruges mere udregning til gengæld for at en reducering i skridtlængden øger præcsisionen mere end de forrige ordens metoder.\\\\
 % 
 %
+Hvis denne metode bruges på eksmplet som vist, så kommer $k_2$ og $k_3$ til at være identisk da den kun afhænger af første kordinaten, og svarer til midtpunktet. $k_1$ og $k_4$ kommer til at være endepunkterne hvis alt dette indsættes så opfylder det simpsons regel som er 
+$$\int_a^bf(x)dx \approx \frac{b-a}{6}(f(a)+4f(a+b)/2)+f(b)$$
+
+%46:20 i CSB kursusgang 10
