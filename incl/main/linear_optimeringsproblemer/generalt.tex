@@ -1,16 +1,17 @@
 \chapter{Lineære optimeringsproblemer}
 %
-Lineær programmering er en problemstilling, hvor det ønskes at optimere et problem bestående af en lineær funktion og \textit{lineære betingelser}.
+I lineær programmering er målet at optimere en lineær funktion afgrænset af \textit{lineære betingelser}.
+Dette kapitel tager udgangspunkt i \citep[side 2-6, 21-24 og 139-146]{bert}, hvis ikke andet er angivet.
 Funktionen, som optimeres, kaldes \textit{objektfunktionen}.
-Objektfunktionen kan enten optimeres for maksimum eller minimum, og er begrænset af de lineære betingelser.
-Findes et maksimum eller minimum inden for begrænsningerne, kaldes dette for problemets \textit{optimale værdi}.
+Objektfunktionen kan enten maksimeres eller minimeres, og er begrænset af de lineære betingelser.
+Findes henholdsvis et maksimum eller minimum inden for begrænsningerne, er dette problemets \textit{optimale værdi}.
 \\\\
 %
 Et lineært maksimumsproblem kan opstilles som følgende:
 %
 \begin{align*}
 \begin{array}{lrll}
-\text{Maksimér}		&\textbf{c}^T\textbf{x}	&			&\\
+\text{Maksimér}		&\textbf{c}^T\textbf{x}	& = z		&\\
 \text{begrænset af}	&\textbf{a}^T\textbf{x}	&\geq b_i,	&i \in M_1,\\
 					&\textbf{a}^T\textbf{x}	&\leq b_i,	&i \in M_2,\\
 					&\textbf{a}^T\textbf{x}	& = b_i,	&i \in M_3,\\
@@ -22,7 +23,7 @@ Et lineært maksimumsproblem kan opstilles som følgende:
 hvor $\textbf{c}^T\textbf{x}$ er objektfunktionen og $\textbf{a}^T\textbf{x}$ er de lineære betingelser, samt $M_1, M_2, M_3, N_1, N_2$ er endelige mængder med indekser.
 \textit{Løsningsmængden} betegner mængden af vektorer, som opfylder alle betingelserne.
 Vektorer indeholdt i løsningsmængden kaldes for \textit{løsningsvektorer}.
-Hvis værdiområdet er uendeligt stort, kaldes optimeringsproblemet for \textit{ubegrænset}; ellers kaldes det \textit{begrænset}, hvilket vil blive defineret senere i rapporten. 
+Hvis værdiområdet er uendeligt stort, er optimeringsproblemet \textit{ubegrænset}; ellers er det \textit{begrænset}. 
 \\\\
 %
 \begin{eks}
@@ -31,7 +32,7 @@ Betragt minimumsproblemet
 %
 \begin{align*}
 \begin{array}{lrrlr}
-\text{Minimér}		&	\multicolumn{2}{c}{4x_1-3x_2}  &\\
+\text{Minimér}		&	\multicolumn{2}{c}{4x_1-3x_2}  &=	&z\\
 \text{begrænset af}	&2x_1& - x_2			&\leq 	&-10,\\
 					&x_1& - x_2				&\geq	& 7,\\
 					&x_1& + x_2				&\leq	& 20,\\
@@ -47,18 +48,18 @@ På figur \ref{fig:min_beg} kan løsningsmængden, markeret med blå, for minimu
 %
 Med udgangspunkt i figur \ref{fig:min_beg} kan det ses, at løsningsmængden er begrænset.
 % 
-Havde minimumsproblemet i stedet været 
+Løsningsmængden for minimumsproblemet
 %
 \begin{align*}
 \begin{array}{lrrlr}
-\text{Minimer}		&\multicolumn{2}{c}{4x_1-3x_2}  &\\
+\text{Minimer}		&\multicolumn{2}{c}{4x_1-3x_2}&=  &z\\
 \text{begrænset af}	&2x_1& - x_2			&\leq 	&-10,\\
 					&x_1& - x_2				&\geq	& 7,\\
 					&x_1&					&\geq	& 0,
 \end{array}
 \end{align*}
-havde minimumsproblemet været ubegrænset, da $x_1$ og $x_2$ kunne blive uendeligt store. 
-Et undsit af løsningsområdet for minimumsproblemet ses på figur \ref{fig:min_ubeg}, hvor det er markeret med blå.
+er derimod ubegrænset, da $x_1$ og $x_2$ kan blive uendeligt store. 
+Et udsnit af løsningsområdet for minimumsproblemet ses på figur \ref{fig:min_ubeg}, hvor det er markeret med blå.
 %
 \input{fig/tikz/min_ubeg}
 %

@@ -7,7 +7,7 @@
 % FUCK EN PÆN LABEL XD
 % I forhold til grafisk at løse lignende lineære programmeringsproblemer overstående, så vil følgende eksempel illustrere hvordan. 
 %
-I følgende afsnit uddybes, hvordan et lineæt programmeringsproblem kan løses grafisk, samt introducerende teori, med udgangspunkt i \ref{eks:min_loes}.
+I følgende afsnit uddybes, hvordan et lineært programmeringsproblem kan løses grafisk med udgangspunkt i \ref{eks:min_loes}.
 \\\\
 \begin{eks}
 \label{eks:min_loes}
@@ -15,7 +15,7 @@ Betragt maksimumsproblemet
 %
 \begin{align*}
 \begin{array}{lrrlr}
-\text{Maksimér}		&	\multicolumn{2}{c}{x_1+x_2}  &\\
+\text{Maksimér}		&	\multicolumn{2}{c}{x_1+x_2} &= &z\\
 \text{begrænset af}	&x_1& + 2x_2			&\leq 	& 6,\\
 					&2x_1& + x_2			&\leq	& 6,\\
 					&x_1&    				&\geq	& 0,\\
@@ -32,15 +32,32 @@ På figur \ref{fig:julieerikkedum} kan løsningsmængden, markeret med blå, for
 %
 % For at finde den optimale løsning findes enhver given skalar $k$ og løsningsmængden med alle punkter overvejes, hvor objektfunktionen $\textbf{c}^T\textbf{x}$ er lig med $k$. 
 %
-Ethvert punkt i en løsningsmængden, hvor objektfunktionen $\textbf{c}^T\textbf{x}$ er lig med $k$, undersøges for at finde den optimale løsning.
-Dette illustreres ved en linje, der er beskrevet af ligningen $-x_l-x_2=k$ for maksimumsproblemet i \ref{eks:min_loes}. 
+Ethvert punkt i løsningsmængden, hvor objektfunktionen $\textbf{c}^T\textbf{x}$ er lig med $k$, undersøges for at finde den optimale løsning.
+Dette illustreres ved en linje, der er beskrevet af ligningen $x_1+x_2=k$ for maksimumsproblemet i \ref{eks:min_loes}. 
 Dette betyder, at den optimale løsning, som enten maksimerer eller minimerer værdien af objektfunktionen kan findes grafisk ved at indtegne niveaukurver $f(x_1, x_2)=k$, og forskyde disse niveaukurver i den retning, der optimerer værdien af objektfunktionen, indtil den optimale løsning opnås.  
-Med udgangspunkt i \ref{eks:min_loes}, er denne linje vinkelret på vektoren $\textbf{v}$ med koordinaterne $\textbf{v}=(1,1)$.
-Forskellige værdier for $k$ fører til forskellige linjer, hvor alle linjer er parallelle med hinanden samt vinkelret med vektoren $\textbf{v}$. 
-Hvis værdien af $k$ øges, svarer det til at bevæge linjen $-x_l-x_2=k$ langs retningen af $\textbf{v}$. 
+Med udgangspunkt i \ref{eks:min_loes}, er denne linje vinkelret på vektoren 
+%
+$$
+\textbf{x}=
+\begin{bmatrix}
+1\\1
+\end{bmatrix}.
+$$
+%
+Forskellige værdier for $k$ fører til forskellige linjer, hvor alle linjer er parallelle med hinanden samt vinkelret på vektoren $\textbf{v}$. 
+Hvis værdien af $k$ øges, svarer det til at bevæge niveaukurven $x_1+x_2=k$ i retning af $\textbf{v}$.
 Eftersom \ref{eks:min_loes} er et maksimumsproblem, bevæges linjen i retningen af $\textbf{v}$ uden at forlade løsningsmængden. 
-Den optimale niveaukurve er derfor $k = -4$, hvormed vektor $\textbf{x}=(2,2)$ er den optimale løsning i løsningsmængden, og dermed en entydig optimale løsning. 
-På figur \ref{fig:opti_loes} ses enkelte niveaukurverne markert, vektoren $\mathbf{v}$, og den optimale løsning.
+Den optimale niveaukurve er derfor $k = 4$, hvormed vektor
+%
+$$
+\textbf{x}=
+\begin{bmatrix}
+2\\2
+\end{bmatrix}
+$$
+%
+er den optimale løsning i løsningsmængden, og dermed den entydige optimale løsning. 
+På figur \ref{fig:opti_loes} er enkelte niveaukurver, vektoren $\mathbf{v}$, og den optimale løsning markeret.
 %
 \begin{figure}[H]
 \centering
@@ -50,19 +67,12 @@ På figur \ref{fig:opti_loes} ses enkelte niveaukurverne markert, vektoren $\mat
 %
 % -------------------------------------------------------
 \begin{axis}[
-	 axis x line=center,
-  axis y line=center,
-  xtick={-5,-4,...,5},
-  ytick={-5,-4,...,5},
-  xlabel={$x_1$},
-  ylabel={$x_2$},
-  xlabel style={right},
-  ylabel style={above},
-  xmin=-1,
+axis lines = left,
+	xlabel = $x_1$,
+	ylabel = \rotatebox{-90}{$x_2$},
   xmax=4,
-  ymin=-1,
-  ymax=4]
-	legend style={at={(0.45,0.025)},anchor=south west},
+  ymax=4,
+	legend style={at={(1,1)},anchor=north east},
 ]
 %%%
 %%%
@@ -78,14 +88,15 @@ På figur \ref{fig:opti_loes} ses enkelte niveaukurverne markert, vektoren $\mat
 %
 %
 %	
-\addplot[domain=-1:6, samples=2, color=black, dotted, thick]{-x};
-\addplot[domain=-1:6, samples=2, color=black, dotted, thick]{2-x};
+\addplot[domain=0:6, samples=2, color=black, dotted, thick]{-x};
+\addplot[domain=0:6, samples=2, color=black, dotted, thick]{2-x};
 \addplot[domain=0:6, samples=2, color=black, dotted, thick]{4-x};
 \addplot[mark=*] coordinates {(2,2)};
+\addplot[mark=none] coordinates {(0,0) (0,3)};
+\addplot[mark=none, thick, ->] coordinates {(0,0) (1,1)} node[above right] {$\mathbf{v}$};
 \end{axis}
-\draw[thick,->] (1.4,1.2) -- (2.75,2.35) node[above right] {$\mathbf{v}$};
 \end{tikzpicture}
-\caption{Den begrænset løsningsmængde, markeret med blå til \ref{eks:min_loes}, hvor $\mathbf{v}$, og enkelte niveaukurver er market, samt den entydige løsning til problemet.}
+\caption{Løsningsmængden til \ref{eks:min_loes}, markeret med blå, hvor $\mathbf{v}$, og enkelte niveaukurver er market, samt den entydige løsning til problemet.}
 %
 \label{fig:opti_loes}
 \end{figure}
@@ -93,8 +104,9 @@ På figur \ref{fig:opti_loes} ses enkelte niveaukurverne markert, vektoren $\mat
 %
 Betragt figur \ref{fig:opti_loes}. 
 I det hjørne, hvor den optimale løsning findes, maksimeres værdien af objektfunktionen, der repræsenterer præcis én løsning til maksimumsproblemet. 
-Antag nu, at den ene koefficient i objektfunktion er rykket, eller at den ene begrænsning er skiftet, så den ligger parallelt med niveaukurven, som ligger vinkelret med vektoren $\textbf{v}$. Dette medfører at der findes uendeligt mange optimale løsninger til maksimumsproblemet, eftersom der er mange vektorer, som opfylder betingelserne ved niveaukurven.
-På figur \ref{fig:opti_loes2} introduceres sådan et eksempel, hvor der matematisk set findes et uendeligt antal løsninger, der
+Antag nu, at den ene koefficient i objektfunktion er rykket, eller at den ene begrænsning er skiftet, så den ligger parallelt med niveaukurven, og vinkelret på vektoren $\textbf{v}$.
+Dette medfører, at der findes uendeligt mange optimale løsninger til maksimumsproblemet, eftersom den optimale niveaukurve skærer løsningsmængden i uendeligt mange punkter.
+På figur \ref{fig:opti_loes2} introduceres et eksempel, hvor der findes et uendeligt antal løsninger, der
 maksimerer værdien af objektfunktionen. 
 %
 \input{fig/tikz/optimering/opti_loes2}
@@ -102,19 +114,18 @@ maksimerer værdien af objektfunktionen.
 \noindent
 %
 Betragt figur \ref{fig:opti_loes3}.
-Dette senarie, har ikke nogle løsninger, som opfylder betingelserne, og dermed er der ingen optimal løsning til det lineære programmeringsproblem. 
+Dette scenarie har ikke nogle løsninger, som opfylder betingelserne, og dermed er der ingen optimal løsning til det lineære programmeringsproblem. 
 %
 \input{fig/tikz/optimering/opti_loes3}
 %
 \noindent
 %
 Antag nu, at det lineære programmeringsproblem i stedet er ubegrænset opadtil.
-Dette senarie er illustreret på figur \ref{fig:opti_loes4}.
+Dette scenarie er illustreret på figur \ref{fig:opti_loes4}.
 %
 Dette betyder, at betingelserne ikke begrænser, hvor stor
 værdien af objektfunktionen kan blive. 
-Derfor er den optimale maksimale løsning $\infty$, hvilket betyder, at ingen optimal løsning ligger i løsningsområdet, som var givet af de to betingelser. 
-% Jeg vil gerne lige have forklaret det sidste tak xD 
+Derfor er den optimale løsning $\infty$.
 %
 \input{fig/tikz/optimering/opti_loes4}
 %
@@ -122,10 +133,10 @@ Derfor er den optimale maksimale løsning $\infty$, hvilket betyder, at ingen op
 %
 Som gennemgået i de forudgående eksempler, så findes følgende fire løsningsmuligheder, der er betinget af det lineære optimeringsproblems form.
 %
-\begin{enumerate}
-\item Der findes én entydig optimal løsning.
+\begin{itemize}
+\item Der findes en entydig optimal løsning.
 \item Der findes flere optimale løsninger i løsningsmængden.
 \item Løsningmængden for det lineære optimeringsproblem er tom. 
-\item De optimale løsninger er $\infty$, og ingen af de optimale løsninger ligger i løsningsmængden.
-\end{enumerate}
+\item Den optimale løsning er enten $\infty$ eller $-\infty$.
+\end{itemize}
 %

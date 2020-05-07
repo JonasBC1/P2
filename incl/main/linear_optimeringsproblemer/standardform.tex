@@ -5,7 +5,7 @@ Hvis et lineært optimeringsproblem er på formen
 %
 \begin{align*}
 \begin{array}{lrl}
-\text{Maksimér}		&\textbf{c}^T\textbf{x}	&				\\
+\text{Maksimér}		&z - \textbf{c}^T\textbf{x}	&	=0		\\
 \text{begrænset af}	&A\textbf{x}	&=\mathbf{b},	\\
 					&\mathbf{x}				&\geq \mathbf{0},
 \end{array}
@@ -19,10 +19,10 @@ For at omskrive et minimumsproblem til et maksimumsproblem multipliceres objektf
 \\\\
 %
 For at få et givet problem med ulighedsbetingelser på standardform tilføjes \textit{slack-variable} til venstre side af ulighederne for at gøre dem til ligheder. 
-Hvis optimeringsproblemet har $m$ uligheder tilføjes $m$ slack-variabler.
-I denne rapport noteres slack-variabler $\textcolor{blue}{s_i}$, og markeres med blå.
-Variabler, der ikke har en ikke-negativsbegrænsning, opdeles i $x_i^+$ og $x_i^-$, da alle reelle tal kan skrives som differensen mellem to positive tal.
-Dertil isoleres objektfunktionen så $z$ er positiv på ventre side af lighedstegnet og sættes lig nul.
+Hvis optimeringsproblemet har $m$ uligheder tilføjes $m$ slack-variable.
+I denne rapport noteres slack-variable $\textcolor{blue}{s_i}$, og markeres med blå.
+Variable, der ikke har en ikke-negativsbegrænsning, opdeles i $x_i^+$ og $x_i^-$, da alle reelle tal kan skrives som differencen mellem to positive tal.
+Dertil isoleres objektfunktionen, så $z$ er positiv på venstre side af lighedstegnet og sættes lig nul.
 Med denne fremgangsmåde kan alle lineære optimeringsproblemer omskrives til standardform.
 Det er derfor kun nødvendigt med en metode til at løse optimeringsproblemer på denne form.
 %
@@ -39,18 +39,18 @@ Det er derfor kun nødvendigt med en metode til at løse optimeringsproblemer p�
 %\end{align*}
 %
 \begin{eks}
-Minimumsproblemet fra \ref{eks:min_lin} omskrives til et maksimumsproblem på standartform, med udgangpsunkt i fremgangsmetoden ovenfor:
+Med udgangspunkt i fremgangsmetoden ovenfor er minimumsproblemet fra \ref{eks:min_lin} omskrevet til et maksimumsproblem på standardform.
 %
 \begin{align*}
 \begin{array}{lrcccrcrcrcrcrcr}
-\text{Maksimér}		&	\multicolumn{2}{c}{-4x_1 + 3x_2}\\
+\text{Maksimér}		&z-4x_1 &+& 3x_2& & & & & & & & & = & 0\\
 \text{begrænset af}	&2x_1	&-	&x_2^+-x_2^-		&+	&\textcolor{blue}{s_1}&	&	&	&	&	&	&= 		&-10,\\
 					&-x_1	&+	&x_2^+-x_2^-		&	&	&+	&\textcolor{blue}{s_2} &	&	&	&	&=		& -7,\\
 					&x_1	&+	&x_2^+-x_2^-		&	&	&	&	&+	&\textcolor{blue}{s_3}&	&	&=		& 20,\\
 					& 		&	&x_2^+-x_2^-&	&	&	&	&	&	&+	&\textcolor{blue}{s_4} &=		& 12,\\
 					&x_1	&	&			&	&	&	&	&	&	&	&	&\geq	& 0,\\
-					&		&	&x_2^+,x_2^-&	&	&	&	&	&	&	&	&\geq	& 0.\\
+					&		&	&x_2^+	&	&	&	&	&	&	&	&	&\geq	& 0,\\
+					&		&	&x_2^-	&	&	&	&	&	&	&	&	&\geq	& 0.\\
 \end{array}
 \end{align*}
 \end{eks}
-%

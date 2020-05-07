@@ -6,8 +6,8 @@
 \begin{axis}[
 	axis lines = left,
 	xlabel = $x_1$,
-	ylabel = {$x_2$},
-	legend style={at={(0.45,0.025)},anchor=south west},
+	ylabel = \rotatebox{-90}{$x_2$},
+	legend style={at={(1,0.05)},anchor=south east},
 ]
 	\addplot[name path=b, domain={0:1}, color=myblue, style=very thick,samples=2]{2*x+10};
 	\addlegendentry{$2x_1-x_2 \leq -10$}
@@ -27,6 +27,10 @@
 	\addplot[domain=0:15,samples=2,color=black, style=very thick]{12};
 	
 	\addplot[domain=0:15, samples=2, color=black, dotted, thick]{0};
+	\addplot[domain=0:15, samples=2, color=black, dotted, thick]{0};
+	\addplot[name path=c, domain=0:0.00003,samples=2,color=black, style=very thin]{10000*x};
+	\addplot[mark=none] coordinates {(0,-7) (0,10)};
+	
 %
 \end{axis}
 \end{tikzpicture}

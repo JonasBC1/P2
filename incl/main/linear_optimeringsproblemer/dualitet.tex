@@ -4,10 +4,41 @@
 % Jeg er iøvrigt bange for jeg er kommet til at skyde mig selv i foden, men umiddelbart giver det mening for mig, det snakker vi om.
 	% - Julie: Jeg tror du har styr på det xD
 %
-Et vigtigt element af teorien vedrørende lineære optimerings problemer og simplexmetodens brug, omhandler \textit{dualproblemer}.
+Et vigtigt element af teorien vedrørende lineære optimeringsproblemer og simplexmetodens brug omhandler \textit{dualproblemer}.
 %
 \begin{defn}{}{dualproblemer}
-Givet maksimumsproblemet: 
+Givet maksimumsproblemet
+%
+\begin{align*}
+\begin{array}{lrll}
+\text{Maksimér}		&\textbf{c}^T\textbf{x}	&=z			&\\
+\text{begrænset af}	&\textbf{a}_i^T\textbf{x}	&\geq b_i,	&i \in M_1,\\
+					&\textbf{a}_i^T\textbf{x}	&\leq b_i,	&i \in M_2,\\
+					&\textbf{a}_i^T\textbf{x}	& = b_i,	&i \in M_3,\\
+					&x_j					&\geq 0,	&j \in N_1,\\
+					&x_j					&\leq 0,	&j \in N_2,\\							&x_j					&\text{fri},	&j \in N_3.
+\end{array}
+\end{align*}
+%
+Da vil \textbf{dual minimumsproblemet} være
+% Minimer $v=\mathbf{b}^T \mathbf{p}$ begrænset af $A^T \mathbf{p} \geq c$ og $\mathbf{p} \geq 0$
+%
+\begin{align*}
+\begin{array}{lrll}
+\text{Minimér}		&\textbf{p}^T\textbf{b}	&=v			&\\
+\text{begrænset af}	&p_i					&\geq 0,	&i \in M_1,\\
+					&p_i					&\leq 0,	&i \in M_2,\\
+					&p_i					&\text{fri},	&i \in M_3,\\
+					&\textbf{p}^T\textbf{A}_j	&\leq c_j,	&j \in N_1,\\
+					&\textbf{p}^T\textbf{A}_j	&\geq c_j,	&j \in N_2,\\
+					&\textbf{p}^T\textbf{A}_j	& = c_j,	&j \in N_3.
+\end{array}
+\end{align*}
+%
+\end{defn}
+\noindent
+%
+Problemet
 %
 \begin{align*}
 \begin{array}{lrl}
@@ -17,71 +48,41 @@ Givet maksimumsproblemet:
 \end{array}
 \end{align*}
 %
-Da vil \textbf{dual minimumsproblemet} være: \\
-% Minimer $v=\mathbf{b}^T \mathbf{p}$ begrænset af $A^T \mathbf{p} \geq c$ og $\mathbf{p} \geq 0$
+vil således have
 %
 \begin{align*}
 \begin{array}{lrl}
-\text{Minimer}		&\textbf{b}^T\textbf{p}	& = v			\\
-\text{begrænset af}	&A^T \textbf{p}	&\leq \mathbf{c},	\\
-					&\mathbf{p}				&\geq \mathbf{0},
+\text{Minimér}		&\textbf{p}^T\textbf{b}	& = v			\\
+\text{begrænset af}	&\textbf{p}^TA	&\leq \mathbf{c},	\\
+					&\mathbf{b}				&\leq \mathbf{0}
 \end{array}
 \end{align*}
 %
-\end{defn}
-%
-Problemet:
-%
-\begin{align*}
-\begin{array}{lrll}
-\text{Maksimér}		&\textbf{c}^T\textbf{x}	&			&\\
-\text{begrænset af}	&\textbf{a}_i^T\textbf{x}	&\geq b_i,	&i \in M_1,\\
-					&\textbf{a}_i^T\textbf{x}	&\leq b_i,	&i \in M_2,\\
-					&\textbf{a}_i^T\textbf{x}	& = b_i,	&i \in M_3,\\
-					&x_j					&\geq 0,	&j \in N_1,\\
-					&x_j					&\leq 0,	&j \in N_2,\\							&x_j					&\text{fri},	&j \in N_3.
-\end{array}
-\end{align*}
-
-Vil således have:
-
-
-\begin{align*}
-\begin{array}{lrll}
-\text{Minimer}		&\textbf{p}^T\textbf{b}	&			&\\
-\text{begrænset af}	&p_i					&\geq 0,	&i \in M_1,\\
-					&p_i					&\leq 0,	&i \in M_2,\\
-					&p_i					&\text{fri},	&i \in M_3,\\
-					&\textbf{p}^T\textbf{A}_j	&\leq c_j,	&j \in N_1,\\
-					&\textbf{p}^T\textbf{A}_j	&\geq c_j,	&j \in N_2,\\
-					&\textbf{p}^T\textbf{A}_j	& = b_i,	&i \in N_3,
-\end{array}
-\end{align*}
-%
-som sit dualproblem.
+som dualproblem.
 %Ideer til en federe opsætning
 \\\\
 %
-Det sker således at der for hver begrænsning i det oprindelige problem indføres en variable i dualproblemet, tilsvarende indføres der en begrænsning for hver variable. 
-Derudover skiftes som nævnt i definitionen fra et maksimums til minimumsproblem.
-I tabel \ref{julieerfantalastiska} ses en oversigt over dualproblemer.\\
+For hver begrænsning i det oprindelige problem indføres således en variabel i dualproblemet.
+Tilsvarende indføres en begrænsning for hver variabel. 
+Derudover skiftes fra et maksimums- til minimumsproblem.
+I tabel \ref{juliedum} ses en oversigt over egenskaber ved primærproblemet og dettes dualproblem.\\
 %
 \begin{table}[H]
 \begin{center}
 \begin{tabular}{llll}
-Oprindelige  & Maksimer   & Minimer    & Dual         \\
+Primær  & Maksimér   & Minimér    & Dual         \\
 \hline
-Variable     & $\geq 0$   & $\geq b_i$ & Begræsninger \\
-             & $\leq 0$   & $\leq b_i$ &              \\
-             & fri        & $=b_i$     &              \\
-\hline
-Begræsninger & $\leq c_j$ & $\geq 0$   & Variable     \\
-             & $\geq c_j$ & $\leq 0$   &              \\
-             & $=c_j$     & fri        &             
+Begræsninger & $\leq b_i$ & $\geq 0$   & Variable     \\
+             & $\geq b_i$ & $\leq 0$   &              \\
+             & $=b_i$     & fri        &            \\ 
+\hline             
+Variable     & $\geq 0$   & $\geq c_j$ & Begræsninger \\
+             & $\leq 0$   & $\leq c_j$ &              \\
+             & fri        & $=c_j$     &  
 \end{tabular}
 \end{center}
-\label{julieerfantalastiska}
-\captionof{table}{Oversigt over egenskaber ved primærproblemet og dettes dual.} 
+\captionof{table}{Oversigt over egenskaber ved primærproblemet og dettes dual.}
+\label{juliedum}
 %\captionof{tabular}{Fisk finder i på noget.}
 \end{table}
 \noindent
@@ -91,104 +92,106 @@ Dualproblemet kan således opstilles som i \ref{dual}. \\
 \begin{eks}
 \label{dual}
 %
-Betragt diæt problemet:
+Betragt primærproblemet
 %
 \begin{align*}
 \begin{array}{lrrlr}
-\text{Maksimer}		&	\multicolumn{2}{c}{5x_1+4x_2}  & = & z\\
+\text{Maksimér}		&	\multicolumn{2}{c}{5x_1+4x_2}  & = & z\\
 \text{begrænset af}	&3x_1& +5x_2			&\leq 	&78,\\
 					&4x_1& + x_2				&\leq	& 36,\\
-					&x_1& , x_2				&\geq	& 0.
+					&x_1,&  x_2				&\geq	& 0.
 \end{array}
 \end{align*}
 \\
-Dualproblemet vil således have denne form:
+Dualproblemet vil således have formen
 %hvilket bogstave foretrækker i istedet for z? hvis i vil ha z i standard notationen 
 	% Julie: Tænker v? var det ikke det du skrev i den forrige?
 \begin{align*}
 \begin{array}{lrrlr}
-\text{Minimer}		&	\multicolumn{2}{c}{78p_1+36p_2}  & =  & z\\
+\text{Minimér}		&	\multicolumn{2}{c}{78p_1+36p_2}  & =  & v\\
 \text{begrænset af}	&3p_1& +4p_2			&\geq 	&5,\\
 					&5p_1& + p_2				&\geq	& 4,\\
-					&p_1& , p_2				&\geq	& 0.
+					&p_1,&  p_2				&\geq	& 0.
 \end{array}
 \end{align*}
 % 
-I afsnit \ref{coronaaaaaaaaaaa}, omkring simplex, vil dette eksempel blive belyst. Dualproblemet vil istedet minimere indholdet af sukker og kulhydrater begrænset af forholdet mellem to typer slik i en slikpose.
-%
+%I afsnit \ref{coronaaaaaaaaaaa} vil dette eksempel blive belyst. Dualproblemet vil istedet minimere indholdet af sukker og kulhydrater begrænset af forholdet mellem to typer slik i en slikpose.
 %
 \end{eks}
 %
 %Som det fremgår i eksemplet har løsningen på dualproblemet samme optimale løsning, hvor slackvariable her er løsningen på det oprindelige problem.
 %
-Det gælder endvidere at der fra dualproblemet kan vendes tilbage til det oprindelige problem, hvilket udtrykkes ved følgende \ref{thm:dualitetsaet}.
+Det gælder endvidere, at der fra dualproblemet kan vendes tilbage til det oprindelige problem, hvilket udtrykkes ved \ref{thm:dualitetsaet}.
 %
 \begin{thm}{}{dualitetsaet}
-Hvis dualproblemet omdannes til et ækvivalent minimumsproblem og dualproblemet af dette dannes, opnås det oprindelige problem.
+Hvis dualproblemet omdannes til et ækvivalent minimumsproblem og dualproblemet af minimumsproblemet dannes, opnås primærproblemet.
 \end{thm}
+%
 \begin{proof}
-Betragt problemet:
+Betragt problemet
 \begin{align*}
 \begin{array}{lrll}
-\text{Minimer}		&\textbf{p}^T\textbf{b}	&			&\\
-\text{begrænset af}	&p_i					&\geq 0,	&i \in M_1,\\
-					&p_i					&\leq 0,	&i \in M_2,\\
-					&p_i					&\text{fri},	&i \in M_3,\\
+\text{Minimér}		&\textbf{p}^T\textbf{b}		&= z		&\\
+\text{begrænset af}	&p_i						&\geq 0,	&i \in M_1,\\
+					&p_i						&\leq 0,	&i \in M_2,\\
+					&p_i						&\text{fri},&i \in M_3,\\
 					&\textbf{p}^T\textbf{A}_j	&\leq c_j,	&j \in N_1,\\
 					&\textbf{p}^T\textbf{A}_j	&\geq c_j,	&j \in N_2,\\
-					&\textbf{p}^T\textbf{A}_j	& = b_i,	&i \in N_3,
+					&\textbf{p}^T\textbf{A}_j	& = c_j,	&j \in N_3,
 \end{array}
 \end{align*}
-og dets dualproblem:
+og dets dualproblem
 \begin{align*}
 \begin{array}{lrll}
-\text{Maksimér}		&\textbf{c}^T\textbf{x}	&			&\\
+\text{Maksimér}		&\textbf{c}^T\textbf{x}		&= v		&\\
 \text{begrænset af}	&\textbf{a}_i^T\textbf{x}	&\geq b_i,	&i \in M_1,\\
 					&\textbf{a}_i^T\textbf{x}	&\leq b_i,	&i \in M_2,\\
 					&\textbf{a}_i^T\textbf{x}	& = b_i,	&i \in M_3,\\
-					&x_j					&\geq 0,	&j \in N_1,\\
-					&x_j					&\leq 0,	&j \in N_2,\\							&x_j					&\text{fri},	&j \in N_3,
+					&x_j						&\geq 0,	&j \in N_1,\\
+					&x_j						&\leq 0,	&j \in N_2,\\
+					&x_j						&\text{fri},&j \in N_3.
 \end{array}
 \end{align*}
-Dualproblemet omdannes til et ækvivalent minimumsproblem:
+Dualproblemet omdannes til det ækvivalente minimumsproblem
 \begin{align*}
 \begin{array}{lrll}
-\text{Minimer}		&-\textbf{c}^T\textbf{x}	&			&\\
+\text{Minimér}		&-\textbf{c}^T\textbf{x}	&=-v		&\\
 \text{begrænset af}	&-\textbf{a}_i^T\textbf{x}	&\leq -b_i,	&i \in M_1,\\
 					&-\textbf{a}_i^T\textbf{x}	&\geq -b_i,	&i \in M_2,\\
 					&-\textbf{a}_i^T\textbf{x}	& = -b_i,	&i \in M_3,\\
-					&x_j					&\geq 0,	&j \in N_1,\\
-					&x_j					&\leq 0,	&j \in N_2,\\							&x_j					&\text{fri},	&j \in N_3,
+					&x_j						&\geq 0,	&j \in N_1,\\
+					&x_j						&\leq 0,	&j \in N_2,\\
+					&x_j						&\text{fri},&j \in N_3.
 \end{array}
 \end{align*}
-Dualen til dette problem findes nu:
+Dualproblemet til dette er
 \begin{align*}
 \begin{array}{lrll}
-\text{Maksimer}		&-\textbf{p}^T\textbf{b}	&			&\\
+\text{Maksimér}		&-\textbf{p}^T\textbf{b}	&=-z		&\\
 \text{begrænset af}	&p_i					&\geq 0,	&i \in M_1,\\
 					&p_i					&\leq 0,	&i \in M_2,\\
 					&p_i					&\text{fri},	&i \in M_3,\\
 					&-\textbf{p}^T\textbf{A}_j	&\geq -c_j,	&j \in N_1,\\
 					&-\textbf{p}^T\textbf{A}_j	&\leq -c_j,	&j \in N_2,\\
-					&-\textbf{p}^T\textbf{A}_j	& = -b_i,	&i \in N_3,
+					&-\textbf{p}^T\textbf{A}_j	& = -c_j,	&j \in N_3,
 \end{array}
 \end{align*}
 %
-hvilket har et ækvivalent minimumsproblem:
+hvilket har det ækvivalente minimumsproblem
 %
 \begin{align*}
 \begin{array}{lrll}
-\text{Minimer}		&\textbf{p}^T\textbf{b}	&			&\\
+\text{Minimér}		&\textbf{p}^T\textbf{b}	&=z			&\\
 \text{begrænset af}	&p_i					&\geq 0,	&i \in M_1,\\
 					&p_i					&\leq 0,	&i \in M_2,\\
 					&p_i					&\text{fri},	&i \in M_3,\\
 					&\textbf{p}^T\textbf{A}_j	&\leq c_j,	&j \in N_1,\\
 					&\textbf{p}^T\textbf{A}_j	&\geq c_j,	&j \in N_2,\\
-					&\textbf{p}^T\textbf{A}_j	& = b_i,	&i \in N_3,
+					&\textbf{p}^T\textbf{A}_j	& = c_j,	&j \in N_3,
 \end{array}
 \end{align*}
 %
-hvilket er identisk med det oprindelige problem. 
+som er identisk med primærproblemet. 
 %
 \end{proof}
 %
