@@ -1,39 +1,36 @@
-\section{Ekstremer, hjørnepunkter og basale løsninger}
+\section{Ekstrema, hjørnepunkter og basale løsninger}
 %
 %\textit{Vis at løsningerne findes i hjørnene af en polytede.}
-Som det fremgår af afsnit \ref{heeeeejjulle}, vil en optimal løsning være tilbøjelige til at ligge i hjørnerne af en polyede.
-Der er derfor behov for måder at definere disse hjørner på.
+Som det fremgår i afsnit \ref{heeeeejjulle}, vil en optimal løsning oftest ligge i et hjørne på et polyeder.
+Det er derfor hensigtsmæssigt at definere disse hjørner.
 %
 \begin{defn}{}{ekstrema}
-Lad $\mathcal{P}$ være en polyede. 
-En vektor $\mathbf{u} \in \mathcal{P}$ kaldes et \textbf{ekstremumspunkt} i $\mathcal{P}$, hvis der ikke eksisterer to vektorer $\mathbf{v},\mathbf{w} \in \mathcal{P}$, $\mathbf{v} \land \mathbf{w} \neq \mathbf{u}$, 
-samt en skalar $\lambda \in [0,1]$, hvorom det gælder, at $\mathbf{u}=\lambda\mathbf{v}+(1-\lambda)\textbf{w}$.
+Lad $\mathcal{P}$ være et polyeder. 
+En vektor $\mathbf{u} \in \mathcal{P}$ kaldes et \textbf{ekstremumspunkt} i $\mathcal{P}$, hvis der ikke eksisterer to vektorer $\mathbf{v},\mathbf{w} \in \mathcal{P}$, $\mathbf{v} \land \mathbf{w} \neq \mathbf{u}$, samt en skalar $\lambda \in [0,1]$, hvorom det gælder, at $\mathbf{u}=\lambda\mathbf{v}+(1-\lambda)\textbf{w}$.
 \end{defn}
 \noindent
 %
-%
-Et hjørne kan beskrives ud fra denne definition, idet der, såfremt $\mathbf{u}=\lambda\mathbf{v}+(1-\lambda) \mathbf{w}$, og alle vektorene findes i $P$, gælder, at $\mathbf{u}$ er en konveks kombination af $\mathbf{v}$ og $\mathbf{w}$.
-Hvis $\mathbf{u}=\lambda\mathbf{v}+(1-\lambda) \textbf{w}$ og $\mathbf{u}$ er et ekstremumspunkt, må det derfor gælde, at $\mathbf{v}\notin P$ eller $\mathbf{w}\notin P$ eller $\mathbf{u}=\mathbf{w}$ eller $\mathbf{u}=\mathbf{v}$.
-Det skal her nævnes, at denne definition er strengt geometrisk. 
+Et hjørne kan beskrives ud fra \ref{defn:ekstrema}, idet der, såfremt $\mathbf{u}=\lambda\mathbf{v}+(1-\lambda) \mathbf{w}$, og alle vektorene findes i $\mathcal{P}$, gælder, at $\mathbf{u}$ er en konveks kombination af $\mathbf{v}$ og $\mathbf{w}$.
+Hvis $\mathbf{u}=\lambda \mathbf{v}+(1-\lambda) \textbf{w}$ og $\mathbf{u}$ er et ekstremumspunkt, må det derfor gælde, at $\mathbf{v}\notin \mathcal{P}$ eller $\mathbf{w}\notin \mathcal{P}$ eller $\mathbf{u}=\mathbf{w}$ eller $\mathbf{u}=\mathbf{v}$.
+Bemærk, at \ref{defn:ekstrema} er strengt geometrisk. 
 % Kun gælder som geometrisk definition gælder ikke som algebrarisk definition xD
-På figur \ref{fig:ekstrema} ses en polyede $\mathcal{P}$, hvor $\textbf{x}$ er et ekstremumspunkt, da der ikke findes vektorer $\textbf{y}$ og $\textbf{z}$ sådan at $\mathbf{x}=\lambda\mathbf{y}+(1-\lambda) \mathbf{z}$. Vektor $\textbf{w}$ er i modsætning ikke et ekstremumspunkt, da der findes $\textbf{v}$ og $\textbf{u}$, sådan at $\mathbf{w}=\lambda\mathbf{v}+(1-\lambda)u$.
+På figur \ref{fig:ekstrema} ses et polyeder $\mathcal{P}$, hvor $\textbf{x}$ er et ekstremumspunkt, da der ikke findes vektorer $\textbf{y}$ og $\textbf{z}$, sådan at $\mathbf{x}=\lambda\mathbf{y}+(1-\lambda) \mathbf{z}$.
+Vektor $\textbf{w}$ er derimod ikke et ekstremumspunkt, da der findes $\textbf{v}$ og $\textbf{u}$, sådan at $\mathbf{w}=\lambda\mathbf{v}+(1-\lambda)\textbf{u}$.
 %
 \input{fig/tikz/geometri/ekstrema}
 \\\\
 %
-En alternativ geometrisk definition relaterer sig til \textit{hjørne punkter}, som er den entydige optimale løsning til et givet lineært programmeringsproblem med den mulige løsningsmængde $\mathcal{P}$.
+En alternativ geometrisk definition relaterer sig til \textit{hjørnepunkter}.
+For et givet lineært programmeringsproblem er den optimale løsning i et af hjørnepunkterne.
 %
 \begin{defn}{}{hjoerner}
-Lad $\mathcal{P}$ være en polyede. 
-En vektor $\mathbf{u}\in \mathcal{P}$ siges at være et \textbf{hjørne punkt}, hvis der eksisterer en vektor $\mathbf{c}$, hvorom det gælder, at $\mathbf{c}^T\mathbf{u}<\mathbf{c}^T\mathbf{v}$ for alle $\mathbf{v}$, som opfylder $\mathbf{v} \in \mathcal{P}$ samt $\mathbf{v}\neq\mathbf{u}$.
+Lad $\mathcal{P}$ være et polyeder. 
+En vektor $\mathbf{u}\in \mathcal{P}$ siges at være et \textbf{hjørnepunkt}, hvis der eksisterer en vektor $\mathbf{c}$, hvorom det gælder, at $\mathbf{c}^T\mathbf{u}<\mathbf{c}^T\mathbf{v}$ for alle $\mathbf{v}$, som opfylder $\mathbf{v} \in \mathcal{P}$ samt $\mathbf{v}\neq\mathbf{u}$.
 \end{defn}
 \noindent
 %
-På figur \ref{fig:julieermegaseeeeeeeeeej} ses et eksempel på en polyede $\mathcal{P}$, hvor $\textbf{x}$ er et hjørnepunkt, da hyperplanet kun rammer $\mathcal{P}$ i $\mathbf{x}$. 
-Vektoren $\textbf{w}$ er i modsætning ikke hjørnepunkt, da hyperplanet rammer $\mathcal{P}$ i flere punkter end $\mathbf{w}$.
+På figur \ref{fig:julieermegaseeeeeeeeeej} ses et eksempel på et polyeder $\mathcal{P}$, hvor $\textbf{x}$ er et hjørnepunkt, da det er det eneste punkt, som både er i hyperplanet og $\mathcal{P}$.
+Vektoren $\textbf{w}$ er i modsætning ikke et hjørnepunkt, da hyperplanet skærer $\mathcal{P}$ i flere punkter end $\mathbf{w}$.
 %
 \input{fig/tikz/geometri/hjorne}
 \\\\
-%
-Dette kan ligeledes beskrives som, at $\mathbf{x}$ er et hjørne i $\mathcal{P}$, såfremt $\mathcal{P}$ er på den ene side af et hyperplan, der skærer $\mathcal{P}$ i $\mathbf{x}$. 
-Jævnfør \ref{defn:ekstrema} har dette hyperplan ligningen $y \mid \mathbf{c}^T\mathbf{x}=\mathbf{c}^T\mathbf{y}.$

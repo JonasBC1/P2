@@ -9,7 +9,9 @@ En mængde $S \subset \R^n$ er \textbf{konveks}, hvis $\lambda \textbf{u} + (1- 
 \noindent
 %
 En mængde er med andre ord konveks, hvis ethvert element på en ret linje mellem to vilkårlige elementer i mængden også tilhører mængden. 
-På figur \ref{fig:neej1} ses eksempler på en konveks mængde, markeret med blå og ikke-konveks mængde markeret med rød. 
+På figur \ref{fig:neej1} ses et eksempel på en konveks mængde, markeret med blå, og ikke-konveks mængde, markeret med rød.
+Den blå mængde er en konveks mængde grundet, at alle elementer mellem et vilkårligt $\textbf{u}$ og $\textbf{v}$ er indeholdt i mængden.
+Tilsvarende er den røde mængde ikke en konveks mængde grundet, at ikke alle elementer mellem et vilkårligt $\textbf{u}$ og $\textbf{v}$ er indeholdt i mængden.\\
 %
 \input{fig/tikz/geometri/konveks}
 %
@@ -41,8 +43,8 @@ Af \ref{defn:konvekskombihylster} følger \ref{thm:konveks}.
 %
 \begin{thm}{}{konveks}
 \begin{enumerate}[label=(\alph*)]
-	\item Fællesmængden for konvekse mængder er konvekst. 
-	\item Enhver polyhedron er en konveks mængde.
+	\item Fællesmængden for konvekse mængder er konveks. 
+	\item Ethvert polyeder er en konveks mængde.
 	\item En konveks kombination af et endeligt antal elementer fra en konveks mængde tilhører også den mængde. 
 	\item Det konvekse hylster af et endeligt antal vektorer er en konveks mængde. 
 \end{enumerate}
@@ -51,29 +53,45 @@ Af \ref{defn:konvekskombihylster} følger \ref{thm:konveks}.
 %
 \begin{proof}
 \begin{enumerate}[label=(\alph*)]
-	\item Lad $I$ være en indeksmængde, lad $S_i$, $i \in I$, være et antal konvekse mængder, og lad $ \lambda \in [0,1]$.
-Antag nu, at vektorerne $\textbf{u}$ og $\textbf{v}$ tilhører fællesmængden $ \bigcap_{i \in I} S_i$. 
-Det haves, at $ \lambda \textbf{u} + (1 - \lambda )\textbf{v} \in S_i$, eftersom enhver $S_i$ er konveks og  indeholder $\textbf{u}$ og $\textbf{v}$. Derfor er $ \bigcap_{i \in I} S_i$ konveks, da $ \lambda \textbf{u} + (1 - \lambda )\textbf{v} \in  \bigcap_{i \in I} S_i$, hvilket beviser (a). 
-	\item Lad $\textbf{a}$ være en vektor, lad $b$ være en skalar, og lad $ \lambda \in [0,1]$. 
+\item Lad $I$ være en indeksmængde, lad $\S_i$, $i \in I$, være konvekse mængder, og lad $ \lambda \in [0,1]$.
+Antag nu, at vektorerne $\textbf{u}$ og $\textbf{v}$ tilhører fællesmængden $ \bigcap_{i \in I} \S_i$. 
+Det haves, at $ \lambda \textbf{u} + (1 - \lambda )\textbf{v} \in \S_i$, eftersom enhver $\S_i$ er konveks og  indeholder $\textbf{u}$ og $\textbf{v}$. Derfor er $ \bigcap_{i \in I} S_i$ konveks, da $ \lambda \textbf{u} + (1 - \lambda )\textbf{v} \in  \bigcap_{i \in I} \S_i$, hvilket beviser (a).
+%
+\item Lad $\textbf{a}$ være en vektor, lad $b$ være en skalar, og lad $ \lambda \in [0,1]$. 
 Antag, at $\textbf{u}$ og $\textbf{v}$ henholdsvis opfylder, at $\textbf{a}^T \textbf{u} \geq b$ og $\textbf{a}^T \textbf{v} \geq b$, således de tilhører samme halvrum. 
 Så er $\textbf{a}^T (\lambda \textbf{u} + (1 - \lambda) \textbf{v} ) \geq \lambda b + (1 - \lambda ) b = b$, hvilket beviser, at $ \lambda \textbf{u} + (1 - \lambda )\textbf{v}$ tilhører samme halvrum, hvormed halvrummet er konvekst.
-Bemærk, at en polyede er fællesmængden af et endeligt antal halvrum, og at (b) dermed er bevist jævnfør (a). 
-	\item  Dette punkt bevises ved induktion.
+Bemærk, at et polyeder er fællesmængden af et endeligt antal halvrum, og at (b) dermed er bevist jævnfør (a).
+%
+\item  Dette bevises ved induktion.
 Jævnfør \ref{defn:konvekskombihylster} ligger en konveks kombination af to elementer i en konveks mængde i mængden.
-Som induktionsantagelse antages det, at en konveks kombination af $c$ elementer i en konveks mængde også er i mængden.
-Dernæst undersøges $c+1$ elementer $\textbf{u}_1,\textbf{u}_2,\ldots,\textbf{u}_{c+1}$ i en konveks mængde $S$. 
+Som induktionsantagelse antages det, at en konveks kombination af $k$ elementer i en konveks mængde også er i mængden.
+Dernæst undersøges om en konveks kombination af $k+1$ elementer $\textbf{u}_1,\textbf{u}_2,\ldots,\textbf{u}_{k+1}$ i en konveks mængde $\S$ også er i mængden.
 Lad $\lambda_1,\ldots,\lambda_{k+1}$ være ikke-negative skalarer, hvis sum er $1$. 
 Det antages, at $\lambda_{k+1}\neq1$. 
 Så haves, at
+%
 $$\sum^{k+1}_{i=1}\lambda_i\textbf{u}_i=\lambda_{k+1}\textbf{u}_{k+1}+(1-\lambda_{k+1})\sum^{k}_{i=1}\dfrac{\lambda_i}{1-\lambda_{k+1}}\textbf{u}_i.$$
-Koefficienterne $\lambda_i/(1-\lambda_{k+1})$, for $i=1,\ldots,k$, er ikke-negative og summerer til $1$. 
-Ved induktionsantagelsen gælder, at $\sum^{k}_{i=1}\lambda_i\textbf{u}_i/(1-\lambda_{k+1})\in S$. 
-Da $S$ er konveks, fås 
-$\sum^{k+1}_{i=1}\lambda_i\textbf{u}_i\in S$, hvormed (c) er bevist. 
-	\item Lad $S$ være et konvekst hylster af $\textbf{u}_1, \textbf{u}_2, \ldots, \textbf{u}_k$, samt lad $\textbf{v} = \sum_{i=1}^{k} \zeta_i \textbf{u}^i$, $\textbf{w} = \sum_{i=1}^{k} \theta_i \textbf{u}^i$ være to elementer i $S$, hvor $ \zeta_i \geq 0$, $ \theta_i \geq 0$, og $ \sum_{i=1}^{k} \zeta_i = \sum_{i=1}^{k} \theta_i = 1$. 
-	Lad $ \lambda = [0,1]$. 
-	Så er $$\lambda \textbf{v} + (1 - \lambda ) \textbf{w} = \lambda \sum_{i=1}^k \zeta_i \textbf{u}^i + (1 - \lambda) \sum_{i=1}^k \theta_i \textbf{u}^i = \sum_{i=1}^k (\lambda \zeta_i + (1-\lambda )\theta_i ) \textbf{u}^i.$$
+%
+Koefficienterne 
+%
+$$\frac{\lambda_i}{1-\lambda_{k+1}}, \phantom{i} \text{ for } i=1,\ldots,k,$$
+%
+er ikke-negative og summerer til $1$. 
+Ved induktionsantagelsen gælder, at
+%
+$$\sum^{k}_{i=1}\frac{\lambda_i\textbf{u}_i}{1-\lambda_{k+1}}\in \S.$$
+%
+Da $\S$ er konveks, fås 
+$\sum^{k+1}_{i=1}\lambda_i\textbf{u}_i\in \S$, hvormed (c) er bevist. 
+%
+\item Lad $\S$ være et konvekst hylster af $\textbf{u}_1, \textbf{u}_2, \ldots, \textbf{u}_k$, og lad
+%
+$$\textbf{v} = \sum_{i=1}^{k} \zeta_i \textbf{u}^i \text{ og } \textbf{w} = \sum_{i=1}^{k} \theta_i \textbf{u}^i$$
+%
+være to elementer i $\S$, hvor $ \zeta_i \geq 0$, $ \theta_i \geq 0$, og $ \sum_{i=1}^{k} \zeta_i = \sum_{i=1}^{k} \theta_i = 1$. 
+Lad $ \lambda = [0,1]$. 
+Så er $$\lambda \textbf{v} + (1 - \lambda ) \textbf{w} = \lambda \sum_{i=1}^k \zeta_i \textbf{u}^i + (1 - \lambda) \sum_{i=1}^k \theta_i \textbf{u}^i = \sum_{i=1}^k (\lambda \zeta_i + (1-\lambda )\theta_i ) \textbf{u}^i.$$
 Bemærk, at koefficienterne $ \lambda \zeta_i + (1 - \lambda) \theta_i$, $i = 1, \ldots, k$, summerer til $1$ og ikke er negative. 
-Dermed er $ \lambda \textbf{v} + (1 - \lambda ) \textbf{w}$ en konveks kombination af vektorerne $\textbf{u}^1, \ldots, \textbf{u}^k$, og tilhører derfor mængden $S$, hvormed (d) er bevist. 
+Dermed er $ \lambda \textbf{v} + (1 - \lambda ) \textbf{w}$ en konveks kombination af vektorerne $\textbf{u}_1, \ldots, \textbf{u}_k$, og tilhører derfor mængden $S$, hvormed (d) er bevist. 
 \end{enumerate}
 \end{proof}

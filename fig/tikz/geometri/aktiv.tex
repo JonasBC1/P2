@@ -29,21 +29,21 @@
 %
 % Punkt 
 % -------------------------------------------------------
-\filldraw [black] (e) circle (0.2pt) node[anchor=south west] {$\mathbf{x}$};
-\filldraw [black] (b) circle (0.2pt) node[left] {$\mathbf{y}$};
+\filldraw [black] (e) circle (0.2pt) node[anchor=south west] {$\mathbf{v}$};
+\filldraw [black] (b) circle (0.2pt) node[left] {$\mathbf{u}$};
 \filldraw [black] (0.15,0.15,0.15) circle (0pt) node[above] {$\mathcal{P}$};
 % 
 % Koordinatsystemet 
 % -------------------------------------------------------
-\draw[thick,->] (0,0,0) -- (0.7,0,0) node[anchor=south east]{$x$};
+\draw[thick,->] (0,0,0) -- (0.7,0,0) node[anchor=south east]{$x_1$};
 \draw[thick] (0,0,0) -- (-0.1,0,0);
-\draw[thick,->] (0,0,0) -- (0,0.7,0) node[anchor=north west]{$y$};
+\draw[thick,->] (0,0,0) -- (0,0.7,0) node[anchor=north west]{$x_2$};
 \draw[thick] (0,0,0) -- (0,-0.1,0);
-\draw[thick,->] (0,0,0) -- (0,0,0.7) node[anchor=south east]{$z$};
+\draw[thick,->] (0,0,0) -- (0,0,0.7) node[anchor=south east]{$x_3$};
 \draw[thick] (0,0,0) -- (0,0,-0.1);
 % 
 \end{tikzpicture}
-  \caption{En polyede $\mathcal{P}= \{ \mathbf{x} \in \R^3 \text{  } | \text{  } x + y + z = 1, \text{  } x , y, z \geq 0  \}$. Punktet $\textbf{x}$ har tre aktive betingelser $x_1 + x_2 + x_3 = 1$, $z=0$ og $x=0$, og $\mathbf{y}$ har to aktive betingelser $x_1 + x_2 + x_3 = 1$ og $z=0$.}
+  \caption{Et polyeder $\mathcal{P}= \{ \mathbf{x} \in \R^3 \mid x_1 + x_2 + x_3 = 1, \text{  } x_1 , x_2, x_3 \geq 0  \}$. Punktet $\textbf{u}$ har tre aktive betingelser $x_1 + x_2 + x_3 = 1$, $x_1=0$ og $x_3=0$, og $\mathbf{v}$ har to aktive betingelser $x_1 + x_2 + x_3 = 1$ og $x_3=0$.}
   \label{fig:julieermegadeeeeeejliiiiig}
 \end{figure}
 %

@@ -12,11 +12,11 @@
 	\addplot[name path=b, domain={0:1}, color=myblue, style=very thick,samples=2]{2*x+10};
 	\addlegendentry{$2x_1-x_2 \leq -10$}
 	\addplot[name path=a, domain={0:13.5}, color=mygreen, style=very thick, samples=2]{x-7};
-	\addlegendentry{$x_1-x_2 \geq 7$}
+	\addlegendentry{$x_1-x_2 \geq \phantom{-2}7$}
 	\addplot[domain=0:15,samples=2,color=myred, style=very thick]{-x+20};
-	\addlegendentry{$x_1 + x_2 \leq 20$}
+	\addlegendentry{$\phantom{2}x_1 + x_2 \leq \phantom{-}20$}
 	\addplot[name path=c, domain={1:8}, color=black, style=very thick,samples=2]{12};
-	\addlegendentry{$x_2 \leq 12$}
+	\addlegendentry{$\phantom{2x_1+}x_2 \leq \phantom{-}12$}
 	
 	\tikzfillbetween [of=a and b]{myblue!15}
 	\tikzfillbetween [of=c and a]{myblue!15}
