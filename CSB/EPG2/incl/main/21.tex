@@ -40,57 +40,7 @@ x_{n+1} & = x_n+h \\
 y_{n+1} & = y_n + h f(x_n,y_n),
 \end{align*}
 %
-%
-%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Flot graf alla Julie     %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%\begin{center}
-%\begin{tikzpicture}[scale=12]
-%%
-%% Koordinater 
-%% ------------------------------------------------------
-%\coordinate (a) at (0.1,0.35);
-%\coordinate (b) at (0.4,0.3);
-%\coordinate (c) at (0.7,0.1);
-%%
-%%        
-%% Streger 
-%% -------------------------------------------------------
-%  \draw[densely dotted](0.1,0.25) -- (a);
-%  \draw[densely dotted](0.4,0.25) -- (b);
-%  \draw[densely dotted](0.55,0.23) -- (0.55,0.15);
-%  \draw[densely dotted](0.475,0.23) -- (0.475,0.21);
-%  \draw[very thick, color=AAUblue2](a) parabola (b);
-% % \draw[very thick, color=AAUblue2](a) parabola[bend at end] (b);
-%  \draw[thick](0.1,0.23) -- (0.1,0.27); % (a)
-%  \draw[thick](0.7,0.23) -- (0.7,0.27); % (b)
-%  \draw[thick](0.4,0.23) -- (0.4,0.27); % (m_1)
-%  \draw[thick](0.55,0.23) -- (0.55,0.27); % (m_2)
-%  \draw[thick](0.475,0.23) -- (0.475,0.27); % (m_3)
-%%
-%%
-%% Punkt 
-%% -------------------------------------------------------
-%\node at (0.1,0.2) (){$a$};
-%\node at (0.7,0.3) (){$b$};
-%\node at (0.4,0.2) (){$m_1$};
-%\node at (0.55,0.3) (){$m_2$};
-%\node at (0.475,0.3) (){$m_3$};
-%% 
-%%
-%% Koordinatsystemet 
-%% -------------------------------------------------------
-%\draw[thick,->] (-0.1,0.25) -- (0.8,0.25) node[anchor=south east]{$x$};
-%\draw[thick,->] (0,0.1) -- (0,0.6) node[anchor=north west]{$y$};
-%%
-%\end{tikzpicture}
-%  \captionof{figure}{Illustration af bisektionsmetoden, hvor $m_1=\frac{a+b}{2}$, $m_2=\frac{m_1+b}{2}$, $m_3=\frac{m_1+m_2}{2}$.}
-%  \label{fig:bis}
-%\end{center}
-%%
-
+\input{fig/tikz/euler}
 %
 \subsection*{Korrigeret Eulers metode}
 Et skridt i den \textbf{Korrigerede Eulers metode}, starter med man finder hældningen $k_1$ i begyndelsespunktet $x_0$.
@@ -105,8 +55,8 @@ k_2 & = f \left( x_n + \frac{h}{2} , y_n = + \frac{h}{2} k_1 \right)  \\
 x_{n+1} & = x_n+h \\
 y_{n+1} & = y_n + h k_2 
 \end{align*}
-% 
-% 
+%
+\input{fig/tikz/korri}
 %
 \subsection*{Modificeret Eulers metode}
 Et skridt i den \textbf{Modificeret Eulers metode}, starter med man finder hældningen $k_1$ i begyndelsespunktet $x_0$.
@@ -127,8 +77,8 @@ x_{n+1} & = x_n+h \\
 y_{n+1} & = y_n + \frac{h}{2} (k_1 + k_2 )
 \end{align*}
 % 
-
-
+\input{fig/tikz/modi}
+%
 \subsection*{Heuns metode}
 Et skridt i den \textbf{Heuns metode}, starter med man finder hældningen $k_1$ i begyndelsespunktet $x_0$.
 Så følger man langs tangentvektoren til $\frac{2}{3}$ Eulerskridt.
@@ -147,5 +97,6 @@ k_2 & = f \left( x_n + \frac{2}{3} h , y_n = + \frac{2}{3} h k_1 \right) \\
 x_{n+1} & = x_n+h \\
 y_{n+1} & = y_n + \frac{h}{4} (k_1 + k_2 )
 \end{align*}
-
-
+%
+\input{fig/tikz/heun}
+%

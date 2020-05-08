@@ -1,0 +1,113 @@
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Flot graf alla Julie     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{figure}[h!]
+\begin{center}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{tikzpicture}[scale=7.3]
+%
+% Koordinater 
+% ------------------------------------------------------
+\coordinate (a) at (0.1,0.3);
+\coordinate (b) at (0.7,0.3);
+\coordinate (k2) at (0.4,0.577);
+%
+% Funktion
+% ------------------------------------------------------
+\draw[very thick, color=AAUblue2] (a) .. controls (0.3,0.5) and (0.45,0.5) .. (b);   
+%
+% K1 
+% ------------------------------------------------------
+\draw[dashed, very thick, color=AAUred] (a) -- (0.47,0.64);
+% K2
+% ------------------------------------------------------
+\draw[dashed, very thick, color=AAUgreen] (0.3,0.585) -- (0.5,0.568);
+
+%
+\draw[thick](0.1,0.18) -- (0.1,0.22); % (a)
+\draw[thick](0.7,0.18) -- (0.7,0.22); % (b)
+\draw[thick](0.4,0.18) -- (0.4,0.22); % (m_1)
+%  \draw[thick](0.55,0.23) -- (0.55,0.27); % (m_2)
+%  \draw[thick](0.475,0.23) -- (0.475,0.27); % (m_3)
+%
+% Punkt 
+% -------------------------------------------------------
+\filldraw [black] (k2) circle (0.1pt); 
+\filldraw [black] (a) circle (0.1pt);  
+\filldraw [black] (b) circle (0.1pt); 
+%
+\node at (0.1,0.12) (){$x_0$};
+\node at (0.7,0.12) (){$x_1$};
+\node at (0.39,0.12) (){$x_0 + \frac{h}{2}$};
+%
+%\node at (0.55,0.3) (){$m_2$};
+%\node at (0.475,0.3) (){$m_3$};
+% 
+%
+% Koordinatsystemet 
+% -------------------------------------------------------
+\draw[thick,->] (-0.05,0.2) -- (0.85,0.2) node[anchor=south east]{$x$};
+\draw[thick,->] (0,0.1) -- (0,0.7) node[anchor=north west]{$y$};
+%
+%
+\end{tikzpicture}
+\end{minipage}
+%
+%
+\begin{minipage}[b]{0.45\textwidth}
+\begin{tikzpicture}[scale=7.3]
+%
+% Koordinater 
+% ------------------------------------------------------
+\coordinate (a) at (0.1,0.3);
+\coordinate (b) at (0.7,0.3);
+\coordinate (k2) at (0.4,0.577);
+%
+% Funktion
+% ------------------------------------------------------
+\draw[very thick, color=AAUblue2] (a) .. controls (0.3,0.5) and (0.45,0.5) .. (b);   
+%
+% K1 
+% ------------------------------------------------------
+%\draw[dashed, very thick, color=AAUred] (a) -- (0.47,0.64);
+% K2
+% ------------------------------------------------------
+%\draw[dashed, very thick, color=AAUgreen] (0.3,0.585) -- (0.5,0.568);
+%\draw[dashed, very thick, color=AAUgreen] (0.3,0.457) -- (0.5,0.44); 
+\draw[dashed, very thick, color=AAUgreen] (a) -- (0.7,0.249); 
+
+%
+\draw[thick](0.1,0.18) -- (0.1,0.22); % (a)
+\draw[thick](0.7,0.18) -- (0.7,0.22); % (b)
+\draw[thick](0.4,0.18) -- (0.4,0.22); % (m_1)
+%  \draw[thick](0.55,0.23) -- (0.55,0.27); % (m_2)
+%  \draw[thick](0.475,0.23) -- (0.475,0.27); % (m_3)
+%
+% Punkt 
+% -------------------------------------------------------
+%\filldraw [black] (k2) circle (0.1pt); 
+\filldraw [black] (a) circle (0.1pt);  
+\filldraw [black] (b) circle (0.1pt); 
+\filldraw [black] (0.7,0.249) circle (0.1pt); 
+%
+\node at (0.1,0.12) (){$x_0$};
+\node at (0.7,0.12) (){$x_1$};
+\node at (0.39,0.12) (){$x_0 + \frac{h}{2}$};
+%
+%\node at (0.55,0.3) (){$m_2$};
+%\node at (0.475,0.3) (){$m_3$};
+% 
+%
+% Koordinatsystemet 
+% -------------------------------------------------------
+\draw[thick,->] (-0.05,0.2) -- (0.85,0.2) node[anchor=south east]{$x$};
+\draw[thick,->] (0,0.1) -- (0,0.7) node[anchor=north west]{$y$};
+%
+\end{tikzpicture}
+\end{minipage}
+  \caption{Illustration af et skridt i Korrigeret Eulers metode, hvor  hældningen $k_1$ er markeret med rød, og hældningen $k_2$ er markeret med grøn.}
+  \label{fig:kori}
+\end{center}
+\end{figure}
