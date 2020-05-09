@@ -113,3 +113,21 @@ giver samme resultat, som trapezmetoden anvendt på
 y_0 + \int_a^b f(x) dx.
 \end{align*}
 %
+For den modificeret Eulermetode haves, at
+%
+\begin{align*}
+x_{n+1} &= x_n + h\\
+k_1 &= f(x_n)\\
+k_2 &= f(x_{n+1}\\
+y_{n+1} &= y_n + \frac{h}{2}(k_1 + k_2)\\
+&\downarrow\\
+y_N &= y_0 + \frac{h}{2}\left( f(x_0) + 2(f(x_1) + f(x_2) + \cdots + f(x_{N-1})) + f(x_N) \right)\\
+ &= y_0 + \frac{h}{2}\left(f(a) + 2\sum_{j=1}^{N-1}f(x_j) + f(b)\right).
+\end{align*}
+%
+For trapezmetoden haves, at
+%
+\begin{align*}
+T_N &= \frac{h}{2} \left(f(a) + 2\sum_{j=1}^{N-1} f(x_j) + f(b) \right)\\
+y_0 + T_N  &= y_0 + \frac{h}{2} \left(f(a) + 2\sum_{j=1}^{N-1} f(x_j) + f(b) \right)
+\end{align*}
