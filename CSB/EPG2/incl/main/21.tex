@@ -24,7 +24,7 @@ Forklar, at den modificerede Euler metode anvendt på problemet
 til approksimation af $y(b)$, er det samme som trapezmetoden anvendt til at approksimere 
 %
 \begin{align*}
-y_0 + fisk jeg gider ikke skrive dette ind :P
+y_0 + \int_{a}^{b} f(x) dx
 \end{align*}
 % 
 \end{color}
@@ -99,4 +99,17 @@ y_{n+1} & = y_n + \frac{h}{4} (k_1 + k_2 )
 \end{align*}
 %
 \input{fig/tikz/heun}
+%
+\subsection*{Euler metode og trapezmetoden}
+%
+Det vises nu, at modificeret Euler metode anvendt på
+\begin{align*}
+\frac{dy}{dx}=f(x),\phantom{hi}y(a)=y_0
+\end{align*}
+%
+giver samme resultat, som trapezmetoden anvendt på
+%
+\begin{align*}
+y_0 + \int_a^b f(x) dx.
+\end{align*}
 %

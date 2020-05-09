@@ -3,10 +3,53 @@
 %
 \begin{color}{AAUblue2}
 %
-fisk
+%DEN HER GIDER JEG I HVERT FALDE IKKE OG SKRIVE IND XD SÅÅÅÅ EN ELLER ANDDEN SOM GODT KUNNE LAVE ANDET END AT SPILLE COMPUTERSPIL FÅR ÆREN AF DETTE XD HEHEHEHEHEHEHE
+%\\\\
+%meh 
+%\\\\
+RK4 metoden og de andre metoder kan anvendes til numerisk løsning af systemer af differentialligninger. 
+Følgende tager udgangspunkt i et konkret eksempel. Der er givet et system af differentialligninger, som anvendes til modellering af en ufarlig infektion i population. 
+Populationen består af $N$ individer og antages konstant i tid. Den opdeles i tre kategorier. $x_1(t)$ er antallet af individer
+der er modtagelige for smitte på tidspunktet $t$. $x_2(t)$ er antallet af smittede individer.
+Disse kan smitte de individer der er modtagelige. 
+$x_3(t)$ betegner individer der enten er immune, eller som er blevet immune efter at have været smittet.
+%
+%Modellen er beskrevet ved følgende tre differentialligninger: 
+%
+%\begin{align}
+%\frac{dx_1}{dt} & = - \alpha x_1 x_2, \\
+%\frac{dx_2}{dt} & = \alpha x_1 x_2 - \beta x_2 , \\
+%\frac{dx_3}{dt} & = \beta x_2.
+%\end{align}
+%
+Vi kan skrive systemet og begyndelsesbetingelsen på vektorform som
+%
+\begin{align*}
+\frac{d}{dt} 
+\begin{bmatrix}
+x_1 (t) \\
+x_2 (t) 
+\end{bmatrix} = 
+\begin{bmatrix}
+- \alpha x_1 (t) x_2 (t) \\
+\alpha x_1 (t) x_2 (t) - \beta x_2 (t) 
+\end{bmatrix}
+,
+\begin{bmatrix}
+x_1 (0) \\
+x_2 (0) 
+\end{bmatrix}
+= 
+\begin{bmatrix}
+x_{10} \\
+x_{20}
+\end{bmatrix}
+\end{align*}
+%
+Parameteren $\alpha$ beskriver den rate hvormed de modtagelige individer bliver smittet.
+Parameteren $\beta$ beskriver den rate hvormed smittede individer overstår infektionen. 
 % 
 \end{color}
-\\\\
 %
 \input{incl/main/23a}
 \input{incl/main/23b}
