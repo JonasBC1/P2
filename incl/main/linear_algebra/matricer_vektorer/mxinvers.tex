@@ -106,9 +106,9 @@ Så for hver af de operationer findes der en tilsvarende elementær matrix.
 %måske noget mere her (at det er vigtigt for rækkeoperationer?). 
 % 
 \begin{kor}{}{eleinv}
-Matrixligningerne $A\textbf{x}=\textbf{b}$ og $A_R\textbf{x}=\textbf{c}$ har samme løsninger, hvor 
+Ligningssystemerne $A\textbf{x}=\textbf{b}$ og $A_R\textbf{x}=\textbf{c}$ har samme løsninger, hvor 
 $[A_R \mid \textbf{c}]$
-er den reducerede trappeform af den udvidede matrix 
+er den reducerede trappeform af totalmatricen
 $[A \mid\textbf{b}].$
 \end{kor}\noindent
 %
@@ -138,7 +138,7 @@ Heraf følger, at $A=P^{-1}A_R$ og $\textbf{b}=P^{-1}\textbf{c}$, da $P$ er inve
 \\\\
 Antag, at $\textbf{v}$ er en løsning til $A\textbf{x}=\textbf{b}$. Så er
 $$
-R\textbf{v}=(PA)\textbf{v}=P(A\textbf{v})=P\textbf{b}=\textbf{c},
+A_R\textbf{v}=(PA)\textbf{v}=P(A\textbf{v})=P\textbf{b}=\textbf{c},
 $$
 hvormed $\textbf{v}$ er en løsning til $A_R\textbf{x}=\textbf{c}$. 
 Antag nu i stedet, at $\textbf{v}$ er en løsning til $A_R\textbf{x}=\textbf{c}$. Så er

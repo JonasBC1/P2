@@ -32,7 +32,7 @@ Endnu et vigtigt element, som er tiltalende ved den reviderede metode, er rumkom
 Her kan der igen være en ret betydelig forskel, afhængigt af størrelsen på $n$.\\\\
 %
 Selvom antallet af basale mulige løsninger kan stige eksponentielt med antallet af variabler og betingelser, så har simplexmetoden typisk fundet en optimal løsning efter $O(m)$ iterationer.
-Dog eksisterer der polyeder, hvor antallet af pivoteringer påkrævet stiger eksponentielt.
+Dog eksisterer der polyedre, hvor antallet af pivoteringer påkrævet stiger eksponentielt.
 For ikke-degenererede problemer bevæger simplexmetoden sig altid fra et ekstremumspunkt til en af dets naboer og forbedre værdien af objektfunktionen.
 Betragt et polyeder med eksponentielt antal af ekstremumspunkter samt en sti der besøger alle ekstremumspunkter.
 Stien er lavet ved, fra et ekstremumspunkt, at besøge et ekstremumspunkt med mindre værdi.
@@ -58,13 +58,13 @@ Lad $\mathcal{P}_n$ være et polyeder i $\R^n$ begrænset af betingelserne $\var
 \item Ved induktion vises det, at $\mathcal{P}_n$ har $2^n$ ekstremumspunkter. 
 Basistrinnet, hvor $n=1$ følger trivielt.
 Antag nu, at resultatet gælder for $n=k$.
-Polyedret $\mathcal{P}_{k+1}$ er begrænset af samme betingelser som $\mathcal{P}_{k}$ med tilføjelse af betingelsen $\varepsilon x_{k} \leq x_{k+1} \leq 1 - \epsilon x_{k}$.
+Polyederet $\mathcal{P}_{k+1}$ er begrænset af samme betingelser som $\mathcal{P}_{k}$ med tilføjelse af betingelsen $\varepsilon x_{k} \leq x_{k+1} \leq 1 - \epsilon x_{k}$.
 Den øvre og nedre begrænsning i $\varepsilon x_{k} \leq x_{k+1} \leq 1 - \varepsilon x_{k}$ kan ikke skære hinanden mens $ 0 \leq x_k \leq 1$ er opfyldt.
 Dette medfører, at hvert ekstremumspunkt i $\mathcal{P}_{k}$ giver anledning til to entydige ekstremumspunkter i $\mathcal{P}_{k+1}$, hvilket viser (a).
 \item Med induktion vises det, at ekstremumspunkterne i $\mathcal{P}_n$ kan arrangeres således, at hvert ekstremumspunkt er nabo til og har mindre værdi end det forrige ekstremumspunkt.
 Basistrinnet for $n=1$ følger trivielt.
 Antag nu, at resultatet gælder for  $n = k$.
-$\mathcal{P}_{k+1}$ kan spittes i to $\mathcal{P}_{k}$ polyeder.
+$\mathcal{P}_{k+1}$ kan deles i to $\mathcal{P}_{k}$ polyedre.
 Et, hvor $\varepsilon x_{k} \leq x_{k+1}$ er aktiv og et, hvor $x_{k+1} \leq 1 - \varepsilon x_{k}$ er aktiv.
 Da er det muligt at finde den ønskede udspændende sti i $\mathcal{P}_{k+1}$ ved først at tage den udspændende sti i $\mathcal{P}_{k}$, hvor $\varepsilon x_{k} \leq x_{k+1}$ er aktiv, skifte til $\mathcal{P}_{k}$, hvor $x_{k+1} \leq 1 - \varepsilon x_{k}$ er aktiv og tage dennes udspændende sti i modsat rækkefølge.
 Dette viser (b), da $x_k$ er stærkt voksende i det første $\mathcal{P}_{k}$ og stærkt faldende i det andet $\mathcal{P}_{k}$, hvilket medfører, at $x_{k+1}$ er stærkt voksende hele stien.
