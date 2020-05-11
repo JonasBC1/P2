@@ -98,9 +98,13 @@ Så for hver af de operationer findes der en tilsvarende elementær matrix.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% hjælp
 \end{proof}
 %
-\\
+%\\
+\newpage
+\noindent
+%
 \ref{thm:eleinv} medfører desuden \ref{kor:eleinv}.
-%måske noget mere her (at det er vigtigt for rækkeoperationer?).  
+%måske noget mere her (at det er vigtigt for rækkeoperationer?). 
+% 
 \begin{kor}{}{eleinv}
 Matrixligningerne $A\textbf{x}=\textbf{b}$ og $A_R\textbf{x}=\textbf{c}$ har samme løsninger, hvor 
 $[A_R \mid \textbf{c}]$
@@ -245,6 +249,8 @@ Ved at udføre rækkeoperationer omdannes $A$ til reduceret trappeform.
 0 & 0 & \hlight{-1} & 1 & -2 & 1 \\
 \end{block}
 \end{blockarray}	\\
+\end{align*}
+\begin{align*}
 \xrightarrow{R_3 \rightarrow -1R_3} &
 \begin{blockarray}{cccccc}
 \begin{block}{[ccc|ccc]}
@@ -305,6 +311,9 @@ Da er følgende udsagn ækvivalente.
 %hvis vi tager det sidste punkt med er vi også nødt til at redegøre for det. 
 \end{enumerate}
 \end{thm}
+%
+\newpage
+%
 \begin{proof}
 Lad $A$ være en $n \times n$ matrix.
 Jævnfør \ref{thm:mxinvertibel} er (a) og (b) ækvivalente. 
