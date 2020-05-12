@@ -3,15 +3,81 @@
 %
 \begin{color}{AAUblue2}
 %
-fisk
+\textbf{Opgavebeskrivelse:} \\
+Redegør for interpolerende kvadraturregler. 
+Beskriv de tre regler, midtpunktsreglen, trapezreglen, og Simpsons regel. 
+Udled mindst en af reglerne. Forklar begrebet ‘grad af præcision’ for en interpolerende kvadraturregel. 
+Angiv grad af præcision for de tre ovennævnte regler. 
+Svarene skal begrundes.
 % 
 \end{color}
 \\\\
-% 
-%
+%  
+\textbf{Besvarelse:} \\
+Interpolerende kvadraturregler approksimerer en funktion $f(x)$ med et polynomie $p(x)$ over et interval for at beregne det bestemte integrale for $p(x)$, således at 
+\begin{align}
+    \int_{a}^{b} f(x) dx \approx \int_{a}^{b} p(x) dx.
+\end{align}
+Nedenfor er henholdsvis midtpunktsreglen, trapezreglen og Simpsons regel beskrevet, der alle tre er typer af kvadraturregler.  
+
+Midtpunktsreglen tager udgangspunkt i funktionsværdien i midtpunktet mellem to punkter $a$ og $b$, og denne multipliceres med $(b-a)$.
+Således bestemmes et rektangel fra $a$ til $b$ under funktionen, hvor højden svarer til funktionsværdien imellem de to punkter. 
+Rektanglet har til hensigt at approksimere integralet for funktionen. \\
+Midtpunktsreglen er givet ved formlen
+\begin{align*}
+M_1 = (b-a)f(\frac{a+b}{2})=hf(\frac{a+b}{2}).    
+\end{align*}
+\\
+Polynomiet dannet af midtpunktsreglen er givet ved  
+\begin{align*}
+P_{M}(x)=f(\frac{a+b}{2}) \cdot 1, x \in \left [a,b  \right ].
+\end{align*}
+På figur \ref{fig:midtpunkt} ses en illustration af midtpunktsreglen. 
 \input{fig/tikz/julieerdejligmidt}
-%
+
+Trapezreglen benytter Lagrange-interpolation med to punkter i stedet for et. 
+Arealet af en trapez med hjørnerne $A, B, C$ og $D$ er givet ved formlen $h(\frac{|AB| + |CD|}{2})$. 
+Heraf reglens navn, da formlen danner et trapez under funktionen, der har til hensigt at approksimere integralet for den oprindelige funktion. \\
+Trapezreglen er givet ved formlen 
+\begin{align*}
+T_1 = \frac{(b-a)}{2}(f(a)+f(b))=h (\frac{f(a)+f(b)}{2}).
+\end{align*}
+Genkald, at 
+\begin{align}
+    \int_{a}^{b} f(x) dx = \Bar{f}(b-a),
+\end{align}
+hvor $\Bar{f}$ er den gennemsnitlige funktionsværdi i intervallet $[a,b]$.
+Bemærk, at trapezreglen tager udgangspunkt i, at gennemsnittet for funktionsværdien er gennemsnittet $a$ og $b$, og approksimerer dermed integralet for $f(x)$. 
+Midtpunktsreglen gør det samme, men med ét punkt i stedet for 
+\\
+Det interpolerende polynomium fundet via trapezreglen er givet ved
+\begin{align*}
+P_{T}(x)=f(a)\frac{x-b}{a-b}+f(b)\frac{x-a}{b-a}       
+\end{align*}
+På figur \ref{fig:trapez} ses et eksempel på trapezreglen. 
 \input{fig/tikz/julieerdejligtrapez}
-%
+
+Simpsons regel benytter Lagrange-interpolation med tre punkter og udregner integralet under en parabel, modsat de førnævnte to regler, der udregner integraler under lige linjer. 
+Simpsons regel er givet ved formlen 
+\begin{align*}
+S_2 = \frac{(b-a)}{6}(f(a)+4f(\frac{a+b}{2})+f(b)=\frac{\widetilde{h}}{3}(f(a)+4f(\frac{a+b}{2})+f(b))
+\end{align*}
+Det interpolerende polynomium fundet via Simpsons regel er givet ved formlen
+\begin{align*}
+P_{S}(x)=f(a)\frac{(x-m)(x-b)}{(a-m)(a-b)}+f(m)\frac{(x-a)(x-b)}{(m-a)(m-b)}+f(b)\frac{(x-a)(x-m)}{(b-a)(b-m)}.
+\end{align*} \\\\
+%%%%%Se video: https://www.youtube.com/watch?v=7MoRzPObRf0
+På figur \ref{fig:simpsons} ses et eksempel på Simpsons regel. 
 \input{fig/tikz/julieerdejligsimpsons}
+
+Graden af præcision $m$ for en interpolerende kvadraturregel er det største $n \in \mathbb{Z^+}$, således at formlen er præcis for $x^k$, for alle $k = 0, 1, \ldots , n$, men ikke for $n+1$.
+Midtpunktsreglen har eksempelvis en grad af præcision $m=1$, da den udregner integralet i et førstegradspolynomium, således at 
+\begin{align}
+    \int_{a}^{b} f(x) dx = \int_{a}^{b} p(x) dx.
+\end{align}
+Dette er ikke nødvendigvis tilfældet for andengradspolynomier, da $f(\frac{b+a}{2}$ ikke nødvendigvis er lig $\Bar{f}$. 
+Trapezreglens grad af præcision er ligeledes $m=1$ af lignende årsag som midtpunktsreglen: $f(\frac{(f(a)+f(b))}{2}$ er kun nødvendigvis lig $\Bar{f}$ for førstegradspolynomier. 
+
+Simpsons regel har grad af præcision $m=3$, da ?????
+% hvaffor??  hjælp mig, det pinnochio
 %
