@@ -13,65 +13,66 @@ Så eksisterer der en optimal løsning, som er et ekstremumspunkt i $\mathcal{P}
 \begin{proof}
 Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et polyeder $\mathcal{P}$. 
 Antag, at der i $\mathcal{P}$ er mindst ét ekstremumspunkt, samt at en optimal løsning eksisterer. 
-Lad $Q \neq \emptyset $ være mængden af optimale løsninger, lad $\mathcal{P} = \{\textbf{x} \in \R^n | \textbf{A}\textbf{x} \geq \textbf{b} \}$, og lad $v$ være den optimale værdi for $\textbf{c}^T \textbf{x}$. 
-Da $\mathcal{P}$ er løsningsmængden, og $Q \subset \mathcal{P}$, så er $Q = \{\textbf{x} \in \R^n | \textbf{A}\textbf{x} \geq \textbf{b} \text{, } \textbf{c}^T \textbf{x} = v \}$ og dermed også et polyeder. 
+Lad $Q \neq \emptyset $ være mængden af optimale løsninger, lad $\mathcal{P} = \{\textbf{x} \in \R^n | \textbf{A}\textbf{x} \geq \textbf{b} \}$, og lad $y$ være den optimale værdi for $\textbf{c}^T \textbf{x}$. 
+Da $\mathcal{P}$ er løsningsmængden, og $Q \subset \mathcal{P}$, så er $Q = \{\textbf{x} \in \R^n | \textbf{A}\textbf{x} \geq \textbf{b} \text{, } \textbf{c}^T \textbf{x} = y \}$ og dermed også et polyeder. 
 Jævnfør \ref{thm:ekstremums1} indeholder $\mathcal{P}$ ingen linjer, hvormed $Q$ ikke indeholder linjer. 
 Jævnfør \ref{thm:ekstremums1} indeholder $Q$ dermed et ekstremumspunkt. \\
-Lad nu den optimale løsning $\textbf{x}^*$ være et ekstremumspunkt i $Q$. 
-Ved hjælp af modstrid vises nu, at $\textbf{x}^*$ også er et ekstremumspunkt i $P$. 
-Antag derfor, at $\textbf{x}^*$ \textit{ikke} er et ekstremumspunkt i $\mathcal{P}$. 
-Så eksisterer der $\textbf{y} \in \mathcal{P}$, $\textbf{y} \neq \textbf{x}^*$, og $\textbf{z} \in P$, $\textbf{z} \neq \textbf{x}^*$, samt et $\lambda \in [0,1]$, således $ \textbf{x}^* = \lambda \textbf{y} + (1 - \lambda) \textbf{z}$. 
-Deraf følger, at $v = \textbf{c}^T \textbf{x}^* =  \lambda \textbf{c}^T \textbf{y} + (1 - \lambda) \textbf{c}^T \textbf{z}$. 
-Desuden må det gælde, at $\textbf{c}^T \textbf{y} \geq v$ og $\textbf{c}^T \textbf{z} \geq v$, da $v$ er den optimale værdi. 
-Dette medfører dog, at $ \textbf{c}^T \textbf{y} = \textbf{c}^T \textbf{z} = v$, samt at $\textbf{y} \in Q$ og $\textbf{z} \in Q$. 
-Derved opstår modstriden, da $\textbf{x}^*$ er et ekstremumspunkt i $Q$. 
-Således er det ved modstrid vist, at $\textbf{x}^*$ er et ekstremumspunkt i $\mathcal{P}$, samt at det er en optimal løsning, da $\textbf{x}^* \in Q$. 
+Lad nu den optimale løsning $\textbf{v}$ være et ekstremumspunkt i $Q$. 
+Ved hjælp af modstrid vises nu, at $\textbf{v}$ også er et ekstremumspunkt i $P$. 
+Antag derfor, at $\textbf{v}$ \textit{ikke} er et ekstremumspunkt i $\mathcal{P}$. 
+Så eksisterer der $\textbf{u} \in \mathcal{P}$, $\textbf{u} \neq \textbf{v}$, og $\textbf{w} \in P$, $\textbf{w} \neq \textbf{v}$, samt et $\lambda \in [0,1]$, således $ \textbf{v} = \lambda \textbf{u} + (1 - \lambda) \textbf{w}$. 
+Deraf følger, at $y = \textbf{c}^T \textbf{v} =  \lambda \textbf{c}^T \textbf{u} + (1 - \lambda) \textbf{c}^T \textbf{w}$. 
+Desuden må det gælde, at $\textbf{c}^T \textbf{u} \geq y$ og $\textbf{c}^T \textbf{w} \geq y$, da $y$ er den optimale værdi. 
+Dette medfører dog, at $ \textbf{c}^T \textbf{u} = \textbf{c}^T \textbf{w} = y$, samt at $\textbf{u} \in Q$ og $\textbf{w} \in Q$. 
+Derved opstår modstriden, da $\textbf{v}$ er et ekstremumspunkt i $Q$. 
+Således er det ved modstrid vist, at $\textbf{v}$ er et ekstremumspunkt i $\mathcal{P}$, samt at det er en optimal løsning, da $\textbf{v} \in Q$. 
 \end{proof}\\
 %
 %
 %
 Som nævnt gælder \ref{thm:optiekstrem1} kun for polyedre på standard form og begrænsede polyedre. 
-\ref{thm:optiekstrem2} kan betragtes som en udvidelse af \ref{thm:optiekstrem1} og viser, at der findes en optimal løsning, så længe den optimale værdi af objektfunktionen er endelig. 
+\ref{thm:optiekstrem2} kan betragtes som en udvidelse af \ref{thm:optiekstrem1} og viser, at der findes en optimal løsning, så længe den optimale værdi af objektfunktionen ikke er $-\infty$. 
 %
 \begin{thm}{}{optiekstrem2}
-Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et polyeder $P$. 
-Antag, at der i $P$ er mindst ét ekstremumspunkt. 
+Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et polyeder $\mathcal{P}$. 
+Antag, at der i $\mathcal{P}$ er mindst ét ekstremumspunkt. 
 Så er den optimale værdi af objektfunktionen lig $- \infty$, eller også findes et optimalt ekstremumspunkt. 
 \end{thm}
 %
 \begin{proof}
-Bemærk indledningsvist, at et element $\textbf{x}$ i et polyder $\mathcal{P}$ har rang$(\textbf{x})=k$, hvis der findes præcis $k$ lineært uafhængige betingelser, der er aktive ved $\textbf{x}$. 
-Antag, at den optimale værdi af objektfunktionen er endelig. 
+Bemærk indledningsvist, at et element $\textbf{v}$ i et polyeder $\mathcal{P}$ har rang$(\textbf{v})=k$, hvis der findes præcis $k$ lineært uafhængige betingelser, som er aktive ved $\textbf{v}$. 
+Antag, at den optimale værdi af objektfunktionen ikke er $-\infty$. 
 \\\\
 %
-Lad et polyeder $\mathcal{P} = \{\textbf{x} \in \R^n \mid \textbf{A}\textbf{x} \geq \textbf{b} \}$ og bemærk, at $\textbf{x} \in \mathcal{P}$, hvor $\textbf{x}$ har rang$(\textbf{x})=k$, $k < n$. 
-Lad $i = \{ i \mid \textbf{a}^T_i \textbf{x} = b_i \}$, hvor $\textbf{a}^T_i$ er den $i$'te række af $A$. 
-Da $k < n$, ligger vektorerne $\textbf{a}_i$, $i \in I$, i et ægte underrum af $ \R^n$, og der kan vælges en ikke-nul vektor $\textbf{d} \in \R$, som er ortogonal til hver $\textbf{a}_i$. 
-Det kan desuden antages, at $\textbf{c}^T \textbf{d} \leq \textbf{0}$, ved muligvis at tage negationen af $\textbf{d}$. 
+Lad et polyeder $\mathcal{P} = \{\textbf{x} \in \R^n \mid \textbf{A}\textbf{x} \geq \textbf{b} \}$ og bemærk, at $\textbf{v} \in \mathcal{P}$, hvor rang$(\textbf{v})=k$, $k < n$. 
+Lad $I = \{ i \mid \textbf{a}^T_i \textbf{v} = b_i \}$, hvor $\textbf{a}^T_i$ er den $i$'te række af $A$. 
+Da $k < n$, ligger vektorerne $\textbf{a}_i$, $i \in I$, i et ægte underrum af $ \R^n$, og der kan vælges en ikke-nul vektor $\textbf{d} \in \R^n$, som er ortogonal til hver $\textbf{a}_i$. 
+Det kan desuden antages, at $\textbf{c}^T \textbf{d} \leq \textbf{0}$, ved at tage negationen af $\textbf{d}$, såfremt det er nødvendigt. 
 \\\\
 %
-Antag nu, at $\textbf{c}^T \textbf{d} < 0$, og lad $\textbf{y} = \textbf{x} + \lambda \textbf{d}$, $ \lambda \in \R^+$, være en halvlinje. 
+Antag nu, at $\textbf{c}^T \textbf{d} < 0$, og lad $\textbf{u} = \textbf{v} + \lambda \textbf{d}$, $ \lambda \in \R^+$, være en halvlinje. 
 %Hvad er en halvlinje...?? 
-Alle punkter på denne halvlinje opfylder $\textbf{a}^T_i \textbf{y} = b_i$, som i beviset for \ref{thm:ekstremums1}. 
+Alle punkter på denne halvlinje opfylder $\textbf{a}^T_i \textbf{u} = b_i$, som i beviset for \ref{thm:ekstremums1}. 
 %Er ovenstående rigtigt?? 
-Hvis hele halvlinjen var indeholdt i $\mathcal{P}$, havde den optimale værdi for objektfunktionen været $- \infty $; men det antages indledningsvist i dette bevis, at denne værdi er endelig. 
+Hvis hele halvlinjen var indeholdt i $\mathcal{P}$, havde den optimale værdi for objektfunktionen været $- \infty $; men det antages indledningsvist, at denne værdi er endelig. 
 Så er ikke hele halvlinjen indeholdt i $\mathcal{P}$, og den udgår dermed fra $\mathcal{P}$ på et tidspunkt. 
-Når halvlinjen er på grænsen af $\mathcal{P}$, lige inden dens udgang derfra, er der et optimalt $ \lambda^* > 0$ og et $j \in I$, således at $\textbf{a}^T_i (\textbf{x} + \lambda^* \textbf{d} ) = b_j $.
+Når halvlinjen er på grænsen af $\mathcal{P}$, lige inden dens udgang derfra, er der et optimalt $ \lambda^* > 0$ og et $j \notin I$, således at $\textbf{a}^T_j (\textbf{v} + \lambda^* \textbf{d} ) = b_j $.
 \\\\%Se Horias noter fra tirsdag d. 24/3. Det gav så god mening, da han forklarede det, men nu kan jeg ikke huske, hvad han ville have. 
-Lad nu $\textbf{y} = \textbf{x} + \lambda^* \textbf{d} $ og bemærk, at $ \textbf{c}^T \textbf{y} < \textbf{c}^T \textbf{x}$, da $ \lambda \in \R^+ $. 
-Det vides fra beviset for \ref{thm:ekstremums1}, at $\textbf{a}_j$ er lineært uafhængig af $\textbf{a}_i$, samt at rangen af $\textbf{y}$ minimum er $k + 1$. 
+Lad nu $\textbf{u} = \textbf{v} + \lambda^* \textbf{d} $ og bemærk, at $ \textbf{c}^T \textbf{u} < \textbf{c}^T \textbf{v}$, da $ \lambda \in \R^+ $. 
+Det vides fra beviset for \ref{thm:ekstremums1}, at $\textbf{a}_j$ er lineært uafhængig af $\textbf{a}_i$, samt at rangen af $\textbf{u}$ minimum er $k + 1$. 
 \\\\
 %
-Antag nu, at $\textbf{c}^T \textbf{d} = 0$, og lad en linje være $\textbf{y} = \textbf{x} + \lambda \textbf{d}$, hvor $ \lambda $ er en arbitrær skalar. 
-Eftersom $\mathcal{P}$ ikke indeholder linjer, må linjen nødvendigvis udgå fra $P$ på et tidspunkt. 
-Som før haves nu igen en vektor $\textbf{y}$, hvis rang er højere end rangen af $\textbf{x}$. 
-Da $\textbf{c}^T \textbf{d} = 0$, haves desuden, at $\textbf{c}^T \textbf{y} = \textbf{c}^T \textbf{x}$. 
-Det er nu vist, at der i begge tilfælde findes et punkt $\textbf{y}$ med højere rang end $\textbf{x}$, således $\textbf{c}^T \textbf{y} \leq \textbf{c}^T \textbf{x}$. 
+Antag nu, at $\textbf{c}^T \textbf{d} = 0$, og lad en linje være $\textbf{u} = \textbf{v} + \lambda \textbf{d}$, hvor $ \lambda $ er en arbitrær skalar. 
+Eftersom $\mathcal{P}$ ikke indeholder uendelige linjer, må linjen nødvendigvis udgå fra $P$ på et tidspunkt. 
+Som før haves nu igen en vektor $\textbf{u}$, hvis rang er højere end rangen af $\textbf{v}$. 
+Da $\textbf{c}^T \textbf{d} = 0$, haves desuden, at $\textbf{c}^T \textbf{u} = \textbf{c}^T \textbf{v}$. 
+Det er nu vist, at der i begge tilfælde findes et punkt $\textbf{u}$ med højere rang end $\textbf{v}$, således $\textbf{c}^T \textbf{u} \leq \textbf{c}^T \textbf{v}$. 
 Antag, at denne proces nu fortsættes.
-Så findes en vektor $\textbf{w}$ med rang$(\textbf{w})=n$, hvormed den er en basal mulig løsning, således at $\textbf{c}^T \textbf{w} \leq \textbf{c}^T \textbf{x}$. 
+Så findes en vektor $\textbf{w}$ med rang$(\textbf{w})=n$, hvormed den er en basal mulig løsning, således at $\textbf{c}^T \textbf{w} \leq \textbf{c}^T \textbf{v}$. 
 Lad $w_1, w_2, \ldots , w_r$ være de basale mulige løsninger i $\mathcal{P}$, og lad $\textbf{w}^*$ være en basal mulig løsning, således at $\textbf{c}^T \textbf{w}^* \leq \textbf{c}^T \textbf{w}_i$ for alle $i$. 
-Eftersom der for alle $\textbf{x}$ findes et $i$, således at $\textbf{c}^T \textbf{w}_i \leq \textbf{c}^T \textbf{x}$, følger det, at $\textbf{c}^T \textbf{w}^* \leq \textbf{c}^T \textbf{x}$ for alle $\textbf{x} \in \mathcal{P}$, hvormed vektoren $\textbf{w}^*$ er den optimale løsning. 
-\end{proof}\\
+Eftersom der for alle $\textbf{v}$ findes et $i$, således at $\textbf{c}^T \textbf{w}_i \leq \textbf{c}^T \textbf{v}$, følger det, at $\textbf{c}^T \textbf{w}^* \leq \textbf{c}^T \textbf{v}$ for alle $\textbf{v} \in \mathcal{P}$, hvormed vektoren $\textbf{w}^*$ er den optimale løsning. 
+\end{proof}
+\\
 %
 Eftersom ethvert lineært optimeringsproblem kan omskrives til et tilsvarende problem på standardform, kan \ref{thm:optiekstrem2} siges at gælde generelt. 
 Deraf haves \ref{kor:optiekstrem2}. 
@@ -80,5 +81,6 @@ Deraf haves \ref{kor:optiekstrem2}.
 Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et ikke-tomt polyeder.
 Så er den optimale værdi af objektfunktionen lig $- \infty$, eller også findes en optimal løsning. 
 \end{kor}
+\noindent
 %
-%
+Bemærk, at der kan laves ækvivalente sætninger, såfremt objektfunktionen skulle maksimeres.

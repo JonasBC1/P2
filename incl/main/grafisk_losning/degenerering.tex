@@ -1,18 +1,18 @@
 \section{Degenerering}
 % idonnotknow
-Af \ref{defn:basal} fremgår det, at der skal være $n$ aktive betingelser, for at $\mathbf{x}$ er en basal løsning. 
-Nedenfor defineres tilfælde, hvor der er flere end $n$ aktive betingelser. 
+Af \ref{defn:basal} fremgår det, at der skal være $n$ aktive betingelser, for at $\mathbf{v}$ er en basal løsning. 
+I \ref{defn:madserengud} defineres tilfælde, hvor der er flere end $n$ aktive betingelser. 
 %
-\begin{defn}{}{}
-En basal løsning $\mathbf{x} \in \R^n$ kaldes \textbf{degenereret}, hvis der er mere end $n$ aktive betingelser for $\mathbf{x}$.
+\begin{defn}{}{madserengud}
+En basal løsning $\mathbf{v} \in \R^n$ kaldes \textbf{degenereret}, hvis der er mere end $n$ aktive betingelser for $\mathbf{v}$.
 \end{defn}
 \noindent
 %
-En degenereret basal løsning har altså mere end de nødvendige $n$ aktive betingelser.
+En degenereret basal løsning har altså flere end de nødvendige $n$ aktive betingelser.
 % 
-I $\R^2$ findes en degenereret løsning i et skæringspunkt af tre eller flere linjer. 
-Til sammenligning findes en degenereret løsning i $\R^3$ i et skæringspunkt af fire eller flere flader. 
-På figur \ref{fig:mmmm2} ses $\mathbf{x}$, som er en degenereret basal løsning i $\R^2$, og på figur  \ref{fig:mmmm3} ses $\mathbf{x}$, som er en degenereret basal løsning i $\R^3$.
+I $\R^2$ findes en degenereret løsning i et skæringspunkt mellem tre eller flere linjer. 
+Til sammenligning findes en degenereret løsning i $\R^3$ i et skæringspunkt mellem fire eller flere flader. 
+På figur \ref{fig:mmmm2} ses $\mathbf{v}$, som er en degenereret basal løsning i $\R^2$, og på figur  \ref{fig:mmmm3} ses $\mathbf{v}$, som er en degenereret basal løsning i $\R^3$.
 Generelt vil en degenereret løsning opstå i skæringspunktet med mindst $n+1$ hyperplaner i $\R^n$.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -30,14 +30,14 @@ $
 %
 %
 Ligeledes findes en definition for en degenereret basal løsning for polyeder på standardform. 
-Jævnfør definition \ref{afsnit:fisk} skal der være $m$ aktive betingelser og $n-m$ aktive ikke-negativitetsbetingelserne. 
+Jævnfør afsnit \ref{afsnit:fisk} skal der være $m$ aktive betingelser og $n-m$ aktive ikke-negativitetsbetingelserne. 
 % Hedder det negativitetsbetingelser???? 
 Dermed skal et polyeder på standardform have flere end $m-n$ ikke-negativitetsbetingelserne for at have en degenereret basal løsning, hvilket er formuleret i \ref{defn:degenenene}. 
 %
 \begin{defn}{}{degenenene}
 Lad $\mathcal{P}$ være et polyeder på standardform
 $P=\{ \mathbf{x} \in \R^n \mid A \mathbf{x}=\mathbf{b},x \geq 0 \}$, og lad $m$ være antallet af rækker i $A$.
-En basal løsning $\mathbf{x}$ for $\mathcal{P}$ kaldes degenereret, hvis der er mere end $n-m$ af komponenterne i $\mathbf{x}$, der er lig $0$.
+En basal løsning $\mathbf{v}$ for $\mathcal{P}$ kaldes degenereret, hvis der er flere end $n-m$ af komponenterne i $\mathbf{v}$, der er lig $0$.
 \end{defn}
 %
 \begin{eks}{}{}
@@ -54,21 +54,21 @@ Betragt et polyeder $\mathcal{P}$ på standardform:
 \text{  } x_1 , x_2, x_3 \geq 0 \}
 \end{align*}
 %
-For $\mathcal{P}$ er $n=3$ dimensionen og $m=2$ aktive betingelser. 
-Løsningen $\mathbf{x}$ kaldes degenereret, hvis flere end $n-m=1$ af komponenterne i $\mathbf{x}$ er lig nul.
-Løsningen $\mathbf{x}= [ \text{ } 0 \text{  } 0 \text{  } 4 \text{ } ]^T $ er en degenereret basal løsning, da der er flere end ét komponent i $\mathbf{x}$, som er lig nul. 
-Derimod er  $\mathbf{x}= [ \text{ } 4 \text{  } 2 \text{  } 0 \text{ } ]^T $ en basal løsning, da der er kun er ét komponent i $\mathbf{x}$, som er lig $0$. 
+For $\mathcal{P}$ er dimensionen $n = 3$ og $m = 2$ aktive betingelser. 
+Løsningen $\mathbf{v}$ kaldes degenereret, hvis flere end $n-m=1$ af komponenterne i $\mathbf{v}$ er lig nul.
+Løsningen $\mathbf{v}= [ \text{ } 0 \text{  } 0 \text{  } 4 \text{ } ]^T $ er en degenereret basal løsning, da der er flere end ét komponent i $\mathbf{v}$, som er lig nul. 
+Derimod er  $\mathbf{u}= [ \text{ } 4 \text{  } 2 \text{  } 0 \text{ } ]^T $ en basal løsning, da der er kun er ét komponent i $\mathbf{u}$, som er lig $0$. 
 %
 \end{eks}
 % 
 %
 %
-I forbindelse med simplexmetoden har det vist sig at være problematisk med basale løsninger, der er degenererede, hvorfor disse vil forsøges undgået. 
-Dette vil blive belyst i afsnit \ref{coronaaaaaaaaaaa}.
-Ved en mindre ændring $\epsilon$ i en overflødig aktiv betingelse vil en degenereret basal løsning kunne undgås. 
-På figur \ref{fig:jegerikkesyg} ses $\mathbf{a}_1 \mathbf{x} = b_1$, som er en overflødig aktiv betingelse, der medfører en degenereret basal løsning $\mathbf{x}$.
-En lille ændring $\epsilon$ vil ændre den degenererede basale løsning til en basal løsning, hvilket kan ses på figur \ref{fig:mmmjegerikkesyg}, hvor 
-$\mathbf{a}_1 \mathbf{x} = b_1 - \epsilon$.
+For løsningsalgoritmer viser det sig at være problematisk med degenererede basale løsninger, hvorfor disse vil forsøges undgået. 
+%Dette belyses i afsnit \ref{coronaaaaaaaaaaa}.
+Ved en mindre ændring $\varepsilon$ i en overflødig aktiv betingelse kan en degenereret basal løsning undgås. 
+På figur \ref{fig:jegerikkesyg} ses $\mathbf{a}_1 \mathbf{x} = b_1$, som er en overflødig aktiv betingelse, der medfører en degenereret basal løsning $\mathbf{v}$.
+En lille ændring $\varepsilon$ vil ændre den degenererede basale løsning til en basal løsning, hvilket kan ses på figur \ref{fig:mmmjegerikkesyg}, hvor 
+$\mathbf{a}_1 \mathbf{x} = b_1 - \varepsilon$.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Flot graf alla Julie     %%%
@@ -84,5 +84,5 @@ $
 \end{center}
 %
 %
-I praktiske problemer, hvor $A$ og $\mathbf{b}$ har specifikke værdier , viser det sig dog ofte at der opstår degenererede basale løsninger.
+I praktiske problemer, hvor $A$ og $\mathbf{b}$ har specifikke værdier, viser det sig ofte, at der opstår degenererede basale løsninger.
 %

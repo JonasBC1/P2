@@ -12,12 +12,12 @@ vil den lokale optimale løsning være en global optimal løsning.
 %
 % Definition 3.1 i bert
 \begin{defn}{}{}
-Lad $\textbf{x}$ være et element af et polyeder $\mathcal{P}$.
-En vektor $\textbf{d}\in \R^n$ siges at være en  \textbf{mulig retning} fra $\textbf{x}$, hvis der eksisterer en positiv skalar $\theta$, således at $\textbf{x}+\theta \textbf{d}\in \mathcal{P}$.
+Lad $\textbf{v}$ være et element af et polyeder $\mathcal{P}$.
+En vektor $\textbf{d}\in \R^n$ siges at være en  \textbf{mulig retning} fra $\textbf{v}$, hvis der eksisterer en positiv skalar $\theta$, således at $\textbf{v}+\theta \textbf{d}\in \mathcal{P}$.
 \end{defn}
 \noindent
 %
-På figur \ref{fig:julieersmuuuuuk}, ses vektorerne $\mathbf{x}_1, \mathbf{x}_2$ og $\mathbf{x}_3$ i polyederet $\mathcal{P}$, samt tilhørende forskellige mulige retninger, som stadig er indholdt i $\mathcal{P}$.
+På figur \ref{fig:julieersmuuuuuk}, ses vektorerne $\mathbf{u}, \mathbf{v}$ og $\mathbf{w}$ i polyederet $\mathcal{P}$, samt tilhørende forskellige mulige retninger, som stadig er indholdt i $\mathcal{P}$.
 %
 \input{fig/tikz/simplex/mulig_retning}
 %
@@ -25,7 +25,7 @@ På figur \ref{fig:julieersmuuuuuk}, ses vektorerne $\mathbf{x}_1, \mathbf{x}_2$
 %
 % Definition 3.2 
 \begin{defn}{}{}
-Lad $\mathbf{x}$ være en basal løsning til en basis matrix $B$ og tilhørende objektfunktionen $\mathbf{c}_B=[ c_{B(1)},c_{B(2)}, \cdots , c_{B(m)} ]^T.$
+Lad $\mathbf{v}$ være en basal løsning til en basis matrix $B$ og tilhørende objektfunktionen $\mathbf{c}_B=[ c_{B(1)},c_{B(2)}, \cdots , c_{B(m)} ]^T.$
 For hver $j$'te basale retning defineres den \textbf{reducerede objektfunktion} $c_j^*$ som
 \begin{align*}
 c_j^* = c_j - \mathbf{c}_B^T B^{-1} \mathbf{A}_j.

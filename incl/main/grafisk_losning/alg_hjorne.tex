@@ -1,6 +1,6 @@
 %
 \begin{defn}{}{algh}
-Hvis en vektor $\textbf{x}$ opfylder $\textbf{a}^T_i\textbf{x}= b_i$ for $i \in M_1, M_2$ eller $M_3$, så er den tilsvarende betingelse at være \textbf{bindende} eller \textbf{aktive} i $\textbf{x}$.
+Hvis en vektor $\textbf{v}$ opfylder $\textbf{a}^T_i\textbf{v}= b_i$ for $i \in M_1, M_2$ eller $M_3$, så er den tilsvarende betingelse \textbf{bindende} eller \textbf{aktive} i $\textbf{v}$.
 \end{defn}\noindent
 %
 Bemærk, at $M_1, M_2$ og $M_3$ er indeksmængder for henholdsvis lighedsbetingelser og ulighedsbetingelser.
@@ -35,8 +35,8 @@ kan en basis for spannet dannes med $n$ af vektorerne, som er lineært uafhængi
 Hvis der ligeledes eksisterer $n$ vektorer i $\{\textbf{a}_i \mid i \in I\}$, som er lineært uafhængige, må disse udspænde hele $\R^n$.
 Dette viser, at (a) og (b) er ækvivalente.\\\\
 %
-Antag, at ligningssystemet $\textbf{a}^T_i\textbf{x}=b_i$, $i \in I$, har løsningerne $\textbf{x}_1$ og $\textbf{x}_2$.
-Så skal ikke-nulvektoren $\textbf{d} = \textbf{x}_1 - \textbf{x}_2$ opfylde, at $\textbf{a}^T_i\textbf{d}=0$ for alle $i \in I$.
+Antag, at ligningssystemet $\textbf{a}^T_i\textbf{x}=b_i$, $i \in I$, har løsningerne $\textbf{u}$ og $\textbf{v}$.
+Så skal ikke-nulvektoren $\textbf{d} = \textbf{u} - \textbf{v}$ opfylde, at $\textbf{a}^T_i\textbf{d}=0$ for alle $i \in I$.
 Dette kræver, at $\textbf{d}$ er ortogonal med alle $\textbf{a}_i$, $i \in I$ og dermed ikke er en linearkombination af disse vektorer.
 Dette medfører, at $\text{span}\{\textbf{a}_i \mid i \in I\} \neq \R^n$.
 %
@@ -51,17 +51,17 @@ Med dette og \ref{thm:betingi}(a) kan hjørnepunkterne defineres som \textit{bas
 %Bemærk, at alle betingelser skal være opfyldt, for at et givent punkt kan være en basal mulig løsning, samt at et punkt ikke behøver at opfylde alle betingelser for at kunne have $n$ bindende betingelser.
 %
 \begin{defn}{}{basal}
-Lad $\mathcal{P}$ være et polyeder defineret ved lineære ligheds- og ulighedsbetingelser og lad $\textbf{x}$ være en vektor i $\R^n$.
+Lad $\mathcal{P}$ være et polyeder defineret ved lineære ligheds- og ulighedsbetingelser og lad $\textbf{v}$ være en vektor i $\R^n$.
 %
 \begin{enumerate}[label=(\alph*)]
-\item Vektoren $\textbf{x}$ er en \textbf{basal løsning}, hvis:
+\item Vektoren $\textbf{v}$ er en \textbf{basal løsning}, hvis:
 %
 \begin{enumerate}[label=(\roman*)]
 \item Alle lighedsbetingelser er opfyldt.
 \item Der er $n$ af de bindende betingelser, som er lineært uafhængige.
 \end{enumerate}
 %
-\item Vektoren $\textbf{x}$ er en \textbf{basal mulig løsning}, hvis $\textbf{x}$ er en \textit{basal løsning}, og alle betingelser er opfyldt.
+\item Vektoren $\textbf{v}$ er en \textbf{basal mulig løsning}, hvis $\textbf{v}$ er en \textit{basal løsning}, og alle betingelser er opfyldt.
 \end{enumerate}
 \end{defn}\noindent
 %
@@ -76,13 +76,13 @@ Tre definitioner, som ønsker at beskrive det samme, er blevet givet.
 Det er muligt at skifte mellem definitionerne efter behov, da de er ækvivalente.
 %
 \begin{thm}{}{hjorneeq}
-Lad $\mathcal{P}$ være et ikke-tomt polyeder og lad vektoren $\textbf{x}\in \mathcal{P}$.
+Lad $\mathcal{P}$ være et ikke-tomt polyeder og lad vektoren $\textbf{v}\in \mathcal{P}$.
 Så er følgende udsagn ækvivalente:
 %
 \begin{enumerate}[label=(\alph*)]
-\item $\textbf{x}$ er et ekstremumspunkt.
-\item $\textbf{x}$ er et hjørnepunkt.
-\item $\textbf{x}$ er en basal mulig løsning.
+\item $\textbf{v}$ er et ekstremumspunkt.
+\item $\textbf{v}$ er et hjørnepunkt.
+\item $\textbf{v}$ er en basal mulig løsning.
 \end{enumerate}
 %
 \end{thm}
@@ -90,42 +90,42 @@ Så er følgende udsagn ækvivalente:
 \begin{proof}
 Lad $\mathcal{P}$ være et polyeder defineret ved betingelser på formen $\textbf{a}_i^T\textbf{x} \geq b_i$ og $\textbf{a}_i^T\textbf{x} = b_i$.\\\\
 %
-Lad $\textbf{x} \in \mathcal{P}$ være et hjørnepunkt. Jævnfør \ref{defn:hjoerner} eksisterer der så et $\textbf{c} \in \R^n$, således at $\textbf{c}^T\textbf{x} < \textbf{c}^T\textbf{y}$ for alle $\textbf{y}$, som opfylder $\textbf{y} \in \mathcal{P}$ og $\textbf{y} \neq \textbf{x}$.
-Hvis $\textbf{y} \in \mathcal{P}$, $\textbf{z} \in \mathcal{P}$, $\textbf{y} \neq \textbf{x}$, $\textbf{z} \neq \textbf{x}$ og $0 \leq \lambda \leq 1$, så er $\textbf{c}^T\textbf{x} < \textbf{c}^T\textbf{y}$ og $\textbf{c}^T\textbf{x} < \textbf{c}^T\textbf{z}$.
-Dette medfører, at $\textbf{c}^T\textbf{x} < \textbf{c}^T(\lambda \textbf{y} + (1-\lambda)\textbf{z})$, som betyder, at $\textbf{x} \neq \lambda \textbf{y} + (1 - \lambda)\textbf{z}$.
-Derfor kan $\textbf{x}$ ikke udtrykes som en kombination af to andre elementer i $\mathcal{P}$, hvilket betyder, at $\textbf{x}$ er et ekstremumspunkt ifølge \ref{defn:ekstrema}.
+Lad $\textbf{u} \in \mathcal{P}$ være et hjørnepunkt. Jævnfør \ref{defn:hjoerner} eksisterer der så et $\textbf{c} \in \R^n$, således at $\textbf{c}^T\textbf{u} < \textbf{c}^T\textbf{v}$ for alle $\textbf{v}$, som opfylder $\textbf{v} \in \mathcal{P}$ og $\textbf{v} \neq \textbf{u}$.
+Hvis $\textbf{v} \in \mathcal{P}$, $\textbf{w} \in \mathcal{P}$, $\textbf{v} \neq \textbf{u}$, $\textbf{w} \neq \textbf{u}$ og $0 \leq \lambda \leq 1$, så er $\textbf{c}^T\textbf{u} < \textbf{c}^T\textbf{v}$ og $\textbf{c}^T\textbf{u} < \textbf{c}^T\textbf{w}$.
+Dette medfører, at $\textbf{c}^T\textbf{u} < \textbf{c}^T(\lambda \textbf{v} + (1-\lambda)\textbf{w})$, som betyder, at $\textbf{u} \neq \lambda \textbf{v} + (1 - \lambda)\textbf{w}$.
+Derfor kan $\textbf{u}$ ikke udtrykes som en kombination af to andre elementer i $\mathcal{P}$, hvilket betyder, at $\textbf{u}$ er et ekstremumspunkt ifølge \ref{defn:ekstrema}.
 (b) medfører hermed (a).
 \\\\
 %
-Antag, at $\textbf{x} \in \mathcal{P}$ ikke er en basal mulig løsning og lad $I = \{ i \mid \textbf{a}_i^T \textbf{x} = b_i\}$.
-Da $\textbf{x}$ ikke er en basal mulig løsning, må der ikke eksistere $n$ lineært uafhængige vektorer af typen $\textbf{a}_i$, $i \in I$.
+Antag, at $\textbf{u} \in \mathcal{P}$ ikke er en basal mulig løsning og lad $I = \{ i \mid \textbf{a}_i^T \textbf{u} = b_i\}$.
+Da $\textbf{u}$ ikke er en basal mulig løsning, må der ikke eksistere $n$ lineært uafhængige vektorer af typen $\textbf{a}_i$, $i \in I$.
 Derfor må vektorerne $\textbf{a}_i$, $i \in I$, ligge i et ægte underrum af $\R^n$ og der eksisterer derfor en ikke-nulvektor $\textbf{d} \in \R^n$, således at $\textbf{a}_i^T\textbf{d} = 0$ for alle $i \in I$.
-Lad $\varepsilon$ være et lille, positivt tal, og betragt vektorerne $\textbf{y} = \textbf{x} + \varepsilon\textbf{d}$ og $\textbf{z} = \textbf{x} - \varepsilon\textbf{d}$.
-Bemærk, at $\textbf{a}_i^T \textbf{y} = \textbf{a}_i^T \textbf{x} = b_i$, for $i \in I$.
-Endvidere haves, at $\textbf{a}_i^T \textbf{x} > b_i$ for $i \notin I$ og givet, at $\varepsilon$ er småt nok, haves $\textbf{a}_i^T \textbf{y} > b_i$ for $i \notin I$.
-Det er her tilstrækkeligt at vælge $\varepsilon$, således at $\varepsilon \mid \textbf{a}_i^T\textbf{d} \mid < \textbf{a}_i^T\textbf{x} - b_i$ for alle $i \notin I$.
-Når $\varepsilon$ er lille nok, haves det, at $\textbf{y} \in \mathcal{P}$, og med samme argumentation haves, at $\textbf{z} \in \mathcal{P}$.
-Dette betyder, at $\textbf{x}$ ikke er et ekstremumspunkt, da $\textbf{x} = \frac{\textbf{y} + \textbf{z}}{2}$.
+Lad $\varepsilon$ være et lille, positivt tal, og betragt vektorerne $\textbf{v} = \textbf{u} + \varepsilon\textbf{d}$ og $\textbf{w} = \textbf{u} - \varepsilon\textbf{d}$.
+Bemærk, at $\textbf{a}_i^T \textbf{v} = \textbf{a}_i^T \textbf{u} = b_i$, for $i \in I$.
+Endvidere haves, at $\textbf{a}_i^T \textbf{u} > b_i$ for $i \notin I$ og givet, at $\varepsilon$ er småt nok, haves $\textbf{a}_i^T \textbf{v} > b_i$ for $i \notin I$.
+Det er her tilstrækkeligt at vælge $\varepsilon$, således at $\varepsilon \mid \textbf{a}_i^T\textbf{d} \mid < \textbf{a}_i^T\textbf{u} - b_i$ for alle $i \notin I$.
+Når $\varepsilon$ er lille nok, haves det, at $\textbf{v} \in \mathcal{P}$, og med samme argumentation haves, at $\textbf{w} \in \mathcal{P}$.
+Dette betyder, at $\textbf{u}$ ikke er et ekstremumspunkt, da $\textbf{u} = \frac{\textbf{v} + \textbf{w}}{2}$.
 Ved kontraponering ses (a) medfører (c).
 \\\\
 %
-Lad $\textbf{x}$ være en basal mulig løsning, lad $I = \{i \mid \textbf{a}_i^T\textbf{x} = b_i \}$ og lad $\textbf{c}=\sum_{i \in I} \textbf{a}_i$.
+Lad $\textbf{u}$ være en basal mulig løsning, lad $I = \{i \mid \textbf{a}_i^T\textbf{u} = b_i \}$ og lad $\textbf{c}=\sum_{i \in I} \textbf{a}_i$.
 Så haves, at
 %
 \begin{align*}
-\textbf{c}^T\textbf{x} = \sum_{i\in I}\textbf{a}_i^T\textbf{x} = \sum_{i\in I}b_i.
+\textbf{c}^T\textbf{u} = \sum_{i\in I}\textbf{a}_i^T\textbf{u} = \sum_{i\in I}b_i.
 \end{align*}
 %
-Yderligere haves, at $\textbf{a}_i^T\textbf{x} \geq b_i$ for ethvert $\textbf{x} \in \mathcal{P}$ og ethvert $i$, og 
+Yderligere haves, at $\textbf{a}_i^T\textbf{u} \geq b_i$ for ethvert $\textbf{u} \in \mathcal{P}$ og ethvert $i$, og 
 %
 \begin{align}\label{eq:ulig}
-\textbf{c}^T\textbf{x} = \sum_{i\in I}\textbf{a}_i^T\textbf{x} \geq \sum_{i\in I}b_i.
+\textbf{c}^T\textbf{u} = \sum_{i\in I}\textbf{a}_i^T\textbf{u} \geq \sum_{i\in I}b_i.
 \end{align}
 %
-Dette viser, at $\textbf{x}$ er en optimal løsning til minimumsproblemet $\textbf{c}^T\textbf{x}$ over $\mathcal{P}$.
-Yderligere holder uligheden i ligning \ref{eq:ulig}, hvis og kun hvis $\textbf{a}_i^T\textbf{x} = b_i$ for alle $i \in I$.
-Da $\textbf{x}$ er en basal mulig løsning, er der $n$ lineært uafhængige betingelser, som er bindende i $x$, og $x$ er en entydig løsning til ligningssystemet $\textbf{a}_i^T\textbf{x} = b_i$, $i \in I$.
-Det følger derfor, at $\textbf{x}$ er entydigt minimum til $\textbf{c}^T\textbf{x}$ over $\mathcal{P}$ og dermed et hjørnepunkt til $\mathcal{P}$.
+Dette viser, at $\textbf{u}$ er en optimal løsning til minimumsproblemet $\textbf{c}^T\textbf{u}$ over $\mathcal{P}$.
+Yderligere holder uligheden i ligning \ref{eq:ulig}, hvis og kun hvis $\textbf{a}_i^T\textbf{u} = b_i$ for alle $i \in I$.
+Da $\textbf{u}$ er en basal mulig løsning, er der $n$ lineært uafhængige betingelser, som er bindende i $x$, og $x$ er en entydig løsning til ligningssystemet $\textbf{a}_i^T\textbf{u} = b_i$, $i \in I$.
+Det følger derfor, at $\textbf{u}$ er entydigt minimum til $\textbf{c}^T\textbf{u}$ over $\mathcal{P}$ og dermed et hjørnepunkt til $\mathcal{P}$.
 (c) medfører hermed (b).
 %
 \end{proof}\\
@@ -137,7 +137,7 @@ Der kan kun være et endeligt antal af basale løsninger og basale mulige løsni
 \end{kor}
 %
 \begin{proof}
-Betragt et system af $m$ lineære ulighedsbetingelser for vektoren $\textbf{x} \in \R^n$.
+Betragt et system af $m$ lineære ulighedsbetingelser for vektoren $\textbf{v} \in \R^n$.
 Ved enhver basal løsning er der $n$ lineære ulighedsbetingelser, som er bindende.
 Da $n$ bindende lineære ulighedsbetingelser definerer et entydigt punkt, følger det, at en anden basal løsning må have en anden mængde af $n$ bindende lineære ulighedsbetingelser.
 Dette betyder, at antallet af basale løsninger har en øvre begrænsning, som afhænger af mængden af forskellige måder, hvorpå $n$ betingelser kan udvælges af de $m$ betingelser.
