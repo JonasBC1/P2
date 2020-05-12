@@ -23,7 +23,7 @@ $O(mn)$ aritmetiske operationer, da det er nødvendigt at udregne de indre produ
 Derfor er den samlede tidskompleksitet $O(m^3+mn)$ for den naive implementering.\\\\
 %
 Den reviderede metode bruger samme operationer som fuld-tabel implementeringen, men opdaterer kun $O(m^2)$ indgange og har derfor en tidskompleksiteten $O(m^2)$.
-Det kan dog forekomme, at metoden skal opdatere alle variabler.
+Det kan dog forekomme, at metoden skal opdatere alle variable.
 Hver udregning af en variabel kræver $O(m)$ operationer, hvilket medfører, at der i værste tilfælde bruges $O(mn)$ operationer.
 Da $m \leq n$, er tidskompleksiteten i værste tilfælde $O(mn)$.
 Med dette konkluderes det, at den reviderede metode aldrig vil køre langsommere end fuld-tabel og den naive implementering.
@@ -31,7 +31,7 @@ Samtidigt vil en iteration fra den reviderede metode være hurtigere end fuld-ta
 Endnu et vigtigt element, som er tiltalende ved den reviderede metode, er rumkompleksiteten på $O(m^2)$.
 Her kan der igen være en ret betydelig forskel, afhængigt af størrelsen på $n$.\\\\
 %
-Selvom antallet af basale mulige løsninger kan stige eksponentielt med antallet af variabler og betingelser, så har simplexmetoden typisk fundet en optimal løsning efter $O(m)$ iterationer.
+Selvom antallet af basale mulige løsninger kan stige eksponentielt med antallet af variable og betingelser, så har simplexmetoden typisk fundet en optimal løsning efter $O(m)$ iterationer.
 Dog eksisterer der polyedre, hvor antallet af pivoteringer påkrævet stiger eksponentielt.
 For ikke-degenererede problemer bevæger simplexmetoden sig altid fra et ekstremumspunkt til en af dets naboer og forbedre værdien af objektfunktionen.
 Betragt et polyeder med eksponentielt antal af ekstremumspunkter samt en sti der besøger alle ekstremumspunkter.

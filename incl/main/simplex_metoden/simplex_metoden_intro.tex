@@ -11,7 +11,7 @@ Simplexmetoden foretager som udgangspunkt følgende seks operationer, inden den 
 %
 % Denne skal eventuelt beskrives mere i dybdegående - Tager kort tid.
 \begin{enumerate}
-\item Omskriv optimeringsproblemet til standardform med slack-variabler.  %1
+\item Omskriv optimeringsproblemet til standardform med slack-variable.  %1
 \item Opstil simplextabellen for optimeringsproblemet.					 %2
 \item Tjek optimering og identificér en pivotindgang.					 %3
 \item Opstil en ny tabel ved hjælp af pivotering. 						 %4
@@ -49,10 +49,10 @@ Disse betingelser danner følgende optimeringsproblemet:
 % 
 Dualproblemet til \ref{haribooooo} vil istedet minimere indholdet af sukker og kulhydrater begrænset af forholdet mellem to typer slik i en slikpose.
 %
-\subsubsection{1. Opskriv optimeringsproblemet på standardform med slack-variabler.}
+\subsubsection{1. Opskriv optimeringsproblemet på standardform med slack-variable.}
 %
-Generelt tager simplexmodellen udgangspunkt i, at alle variablerne er positive. Jævnfør afsnit \ref{sec:standard} tilføjes $x_i^+$ og $x_i^-$, hvis der i optimeringsproblemet ikke er ikke-negativitetsbetingelser for variablerne. 
-I dette tilfælde er begge variabler positive, og det er derfor ikke nødvendigt at opdele variablerne. 
+Generelt tager simplexmodellen udgangspunkt i, at alle variablene er positive. Jævnfør afsnit \ref{sec:standard} tilføjes $x_i^+$ og $x_i^-$, hvis der i optimeringsproblemet ikke er ikke-negativitetsbetingelser for variablene. 
+I dette tilfælde er begge variable positive, og det er derfor ikke nødvendigt at opdele variablene. 
 Med udgangspunkt i metoden fra afsnit \ref{sec:standard} opstilles optimeringsproblemet derfor på standardform som
 %
 \begin{align*}
@@ -69,7 +69,7 @@ Dog er objektfunktionen omskrevet med udgangspunkt i
 \end{align*}
 hvor $z$ er den optimale værdi. 
 %
-Slack-variablerne $s_1$ og $s_2$ er her markeret med blå, da de i sidste ende ikke tilføjes til løsningen. 
+Slack-variablene $s_1$ og $s_2$ er her markeret med blå, da de i sidste ende ikke tilføjes til løsningen. 
 %
 \subsubsection{2. Opstil simplextabellen for optimeringsproblemet}		
 % 
@@ -84,10 +84,10 @@ Med udgangspunkt i et generelt lineært optimeringsproblem på formen
 					&\mathbf{x}				&\geq \mathbf{0},
 \end{array}
 \end{align*}
-er simplextabellen en matrix, som indeholder de lineære betingelser, slack-variablerne og objektfunktionen. 
-Matricen $\mathbf{A}$ opskrives først, og derefter opskrives identitesmatricen $e_{m+1}$, hvor $m$ er antallet af slack-variabler, samt den optimale løsning $z$, og til sidst opskrives $\mathbf{b}$. 
+er simplextabellen en matrix, som indeholder de lineære betingelser, slack-variablene og objektfunktionen. 
+Matricen $\mathbf{A}$ opskrives først, og derefter opskrives identitesmatricen $e_{m+1}$, hvor $m$ er antallet af slack-variable, samt den optimale løsning $z$, og til sidst opskrives $\mathbf{b}$. 
 Under $\mathbf{A}$ tilføjes objektfunktionen $- \mathbf{c}^T$. 
-Identitetsmatricen $I_m$, som dannes med udgangspunkt i antallet af slack-variabler danner basismatricen $B$.
+Identitetsmatricen $I_m$, som dannes med udgangspunkt i antallet af slack-variable danner basismatricen $B$.
 Med udgangspunkt i forrige optimeringsproblem ser en generel formel i simplextabellen dermed ud som følgende:
 %
 \begin{align*}
