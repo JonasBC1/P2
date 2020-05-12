@@ -1,3 +1,4 @@
+\newpage
 \subsection*{(c)}
 %
 \begin{color}{AAUblue2}
@@ -14,22 +15,58 @@ Beskriv hvad der sker med en ændring i gamma.
 \end{color}
 \\\\
 % 
-Se \textsc{opg2-system-vaccine.py}.
+Se \textsc{system-example-modi.py}. Implementeringerne er ved
+\textbf{\textit{def f(t, x)}}, linje $60$.
 \\\\
 %
-Værdien gamma forøger hvor hurtigt befolkningen bliver immun uden at have været smittet. Jo højere værdi af gamma jo hurtigere bliver befolkningen immun, og det maksimale antal der er smittet på en gang falder også. Det kan ses på figurene at hvis gamma ikke er nul så er antallet der bliver inficeret lavere
+Introduceres en vaccine, hvor $\gamma$ beskriver, hvor hurtigt der kan vaccineres, vil dette have en effekt på smittespredningen.
+Værdien gamma forøger dermed, hvor hurtigt befolkningen bliver immun uden at have været smittet. Jo højere værdi af gamma jo hurtigere bliver befolkningen immun.
+Først ses på udgangspunktet, dog med vaccine.
+Dette ses på figur \ref{fig:a1_b35_g5}.
 %
-%\includegraphics[scale=0.4]{fig/img/a1_b7_g0.png}
-%\includegraphics[scale=0.4]{fig/img/a1_b7_g5.png}\\
-%\includegraphics[scale=0.4]{fig/img/a1_b35_g0.png}
-%\includegraphics[scale=0.4]{fig/img/a1_b35_g5.png}\\
-%\includegraphics[scale=0.4]{fig/img/a2_b35_g0.png}
-%\includegraphics[scale=0.4]{fig/img/a2_b35_g5.png}\\
-%\includegraphics[scale=0.4]{fig/img/t_a1_b7_g0.png}
-%\includegraphics[scale=0.4]{fig/img/t_a1_b7_g5.png}\\
-%\includegraphics[scale=0.4]{fig/img/t_a1_b35_g0.png}
-%\includegraphics[scale=0.4]{fig/img/t_a1_b35_g5.png}\\
-%\includegraphics[scale=0.4]{fig/img/t_a2_b35_g0.png}
-%\includegraphics[scale=0.4]{fig/img/t_a2_b35_g5.png}\\
-%\includegraphics[scale=0.4]{fig/img/t_x1_1_x2_95.png}
-%\includegraphics[scale=0.4]{fig/img/x1_1_x2_95.png}\\
+\begin{figure}[!ht]
+\centering
+$
+\begin{matrix}
+\includegraphics[scale=0.5]{fig/img/a1_b35_g5.png}&
+\includegraphics[scale=0.5]{fig/img/t_a1_b35_g5.png}
+\end{matrix}
+$
+\caption{Smitten når $\alpha = 0.01$, $\beta = 0.35$ og $\gamma = 0.05$.}
+\label{fig:a1_b35_g5}
+\end{figure}
+\\\\
+%
+Her ses det, at vaccinen ikke har effekt på hvornår smitten topper, men reducere toppen.
+Naturligvis øger det også raten hvormed folk bliver immune.
+%
+\begin{figure}[!ht]
+\centering
+$
+\begin{matrix}
+\includegraphics[scale=0.5]{fig/img/a2_b35_g5.png}&
+\includegraphics[scale=0.5]{fig/img/t_a2_b35_g5.png}
+\end{matrix}
+$
+\caption{Smitten når $\alpha = 0.02$, $\beta = 0.35$ og $\gamma = 0.05$.}
+\label{fig:a2_b35_g5}
+\end{figure}
+\\\\
+%
+Det samme lader til at være tilfældet selv når $\alpha$ er blevet fordoblet, hvilket kan ses på figur \ref{fig:a2_b35_g5}.
+Det kan ses på figur \ref{fig:a1_b7_g5}, at når $\beta$ er fordoblet og der er tilføjet en vaccine er der dog ikke en betydelig forskel i antallet af smittede, men tilgengæld flatliner antallet af immune ikke med samme rate.
+%
+\begin{figure}[!ht]
+\centering
+$
+\begin{matrix}
+\includegraphics[scale=0.5]{fig/img/a1_b7_g5.png}&
+\includegraphics[scale=0.5]{fig/img/t_a1_b7_g5.png}
+\end{matrix}
+$
+\caption{Smitten når $\alpha = 0.01$, $\beta = 0.7$ og $\gamma = 0.05$.}
+\label{fig:a1_b7_g5}
+\end{figure}
+\\\\
+%
+Dermed falder det maksimale antal, der er smittet på en gang, og hvis gamma ikke er nul så er antallet, som bliver inficeret, lavere.
