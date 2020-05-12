@@ -1,19 +1,35 @@
 \subsection*{(c)}
 %
+\begin{color}{AAUblue2}
+%
+Modificer \textsc{opg2-system.py} til et system hvor $\gamma$ kan ændres med udgangspunkt i at modelles første ser ud som følgende 
+\begin{align}
+\frac{dx_1}{dt} &= - \alpha x_1 x_2 - \gamma x_1, \\
+\frac{dx_2}{dt} & = \alpha x_1 x_2 - \beta x_2 , \\
+\frac{dx_3}{dt} & = \beta x_2 + \gamma x_1.
+\end{align}
+%
+Beskriv hvad der sker med en ændring i gamma.  
+%
+\end{color}
+\\\\
+% 
+Se \textsc{opg2-system-vaccine.py}.
+\\\\
+%
 Værdien gamma forøger hvor hurtigt befolkningen bliver immun uden at have været smittet. Jo højere værdi af gamma jo hurtigere bliver befolkningen immun, og det maksimale antal der er smittet på en gang falder også. Det kan ses på figurene at hvis gamma ikke er nul så er antallet der bliver inficeret lavere
-
-
-\includegraphics[scale=0.4]{fig/img/a1_b7_g0.png}
-\includegraphics[scale=0.4]{fig/img/a1_b7_g5.png}\\
-\includegraphics[scale=0.4]{fig/img/a1_b35_g0.png}
-\includegraphics[scale=0.4]{fig/img/a1_b35_g5.png}\\
-\includegraphics[scale=0.4]{fig/img/a2_b35_g0.png}
-\includegraphics[scale=0.4]{fig/img/a2_b35_g5.png}\\
-\includegraphics[scale=0.4]{fig/img/t_a1_b7_g0.png}
-\includegraphics[scale=0.4]{fig/img/t_a1_b7_g5.png}\\
-\includegraphics[scale=0.4]{fig/img/t_a1_b35_g0.png}
-\includegraphics[scale=0.4]{fig/img/t_a1_b35_g5.png}\\
-\includegraphics[scale=0.4]{fig/img/t_a2_b35_g0.png}
-\includegraphics[scale=0.4]{fig/img/t_a2_b35_g5.png}\\
-\includegraphics[scale=0.4]{fig/img/t_x1_1_x2_95.png}
-\includegraphics[scale=0.4]{fig/img/x1_1_x2_95.png}\\
+%
+%\includegraphics[scale=0.4]{fig/img/a1_b7_g0.png}
+%\includegraphics[scale=0.4]{fig/img/a1_b7_g5.png}\\
+%\includegraphics[scale=0.4]{fig/img/a1_b35_g0.png}
+%\includegraphics[scale=0.4]{fig/img/a1_b35_g5.png}\\
+%\includegraphics[scale=0.4]{fig/img/a2_b35_g0.png}
+%\includegraphics[scale=0.4]{fig/img/a2_b35_g5.png}\\
+%\includegraphics[scale=0.4]{fig/img/t_a1_b7_g0.png}
+%\includegraphics[scale=0.4]{fig/img/t_a1_b7_g5.png}\\
+%\includegraphics[scale=0.4]{fig/img/t_a1_b35_g0.png}
+%\includegraphics[scale=0.4]{fig/img/t_a1_b35_g5.png}\\
+%\includegraphics[scale=0.4]{fig/img/t_a2_b35_g0.png}
+%\includegraphics[scale=0.4]{fig/img/t_a2_b35_g5.png}\\
+%\includegraphics[scale=0.4]{fig/img/t_x1_1_x2_95.png}
+%\includegraphics[scale=0.4]{fig/img/x1_1_x2_95.png}\\
