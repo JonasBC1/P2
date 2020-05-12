@@ -10,11 +10,20 @@ Hvis et lineært optimeringsproblem er på formen
 					&\mathbf{x}				&\geq \mathbf{0},
 \end{array}
 \end{align*}
+eller
+\begin{align*}
+\begin{array}{lrl}
+\text{Minimér}		&z - \textbf{c}^T\textbf{x}	&	=0		\\
+\text{begrænset af}	&A\textbf{x}	&=\mathbf{b},	\\
+					&\mathbf{x}				&\geq \mathbf{0},
+\end{array}
+\end{align*}
 %
 er optimeringsproblemet på \textit{standardform}.
-Bemærk, at problemet på standardform er et maksimumsproblem, og betingelserne er lighedsbetingelser og ikke-negativsbetingelser.
+Bemærk, at problemet på standardform er et maksimumsproblem eller minimumsproblem, og betingelserne er lighedsbetingelser og ikke-negativsbetingelser.
 \\\\
 %
+Man kan dertil omskrives mellem dem.
 For at omskrive et minimumsproblem til et maksimumsproblem multipliceres objektfunktionen med $-1$, og ulighedsbetingelserne ændres fra $A_ix_i \geq b_i$ til $-A_ix_i \leq -b_i$.
 \\\\
 %
@@ -25,6 +34,7 @@ Variable, der ikke har en ikke-negativsbegrænsning, opdeles i $x_i^+$ og $x_i^-
 Dertil isoleres objektfunktionen, så $z$ er positiv på venstre side af lighedstegnet og sættes lig nul.
 Med denne fremgangsmåde kan alle lineære optimeringsproblemer omskrives til standardform.
 Det er derfor kun nødvendigt med en metode til at løse optimeringsproblemer på denne form.
+Generelt er rapporten med udgangspunkt i minimumsproblemer, men ækvivalente udtalelser kan opstilles for maksimumsproblemer.
 %
 %\begin{align*}
 %\sum^n_{i=1} \mathbf{A}_i x_i = \mathbf{b}.
