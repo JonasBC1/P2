@@ -8,6 +8,113 @@ Et polyeder $\mathcal{P} \in \R^n$ indeholder en \textbf{uendelig linje}, hvis d
 \end{defn}
 \noindent
 %
+\textcolor{red}{
+På figur \ref{fig:julieerovergud1} ses et polyeder $\mathcal{P}$, hvor $\mathbf{x} + \lambda \mathbf{d}$ ikke tilhører $\mathcal{P}$, og dermed indeholder polyederet ikke en linje. 
+Hvorimod på figur \ref{fig:julieerovergud2} ses et polyeder $\mathcal{P}_2$, hvor $\mathbf{x} + \lambda \mathbf{d}$ tilhører $\mathcal{P}_2$, og dermed indeholder polyederet en linje.
+}
+\\\\
+\begin{center}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Flot graf alla Julie     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{minipage}[b]{0.45\textwidth}
+%
+\begin{center}
+%
+\begin{tikzpicture}[scale=6]
+% Koordinater 
+% ------------------------------------------------------
+\coordinate (a) at (0.5,0,0);
+\coordinate (b) at (0,0,0);
+\coordinate (c) at (0,0.5,0);
+\coordinate (d) at (0,0,0);
+\coordinate (e) at (0.25,0.25,0);
+%
+% Planet - Hyperplanet
+% -------------------------------------------------------
+\filldraw [fill=myblue,opacity=0.3] 
+         (a) -- (b) -- (c) -- (a);
+%        
+% Streger 
+% -------------------------------------------------------
+  \draw[thick](-0.1,0.6,0)--(0.6,-0.1,0);
+  \draw[thick](c)--(a);
+  \draw[thick, color=myred](-0.05,0.55,0)--(0.1,0.4,0);
+%
+%
+% Punkt 
+% -------------------------------------------------------
+%\filldraw [black] (e) circle (0.2pt) node[anchor=south west] {$\mathbf{v}$};
+%\filldraw [black] (b) circle (0.2pt) node[left] {$\mathbf{u}$};
+\filldraw [black] (0.15,0.15,0) circle (0pt) node[above] {$\mathcal{P}_1$};
+
+\filldraw [black] (-0.05,0.55,0) circle (0.2pt) node[anchor=north east] {$\mathbf{x} + \lambda \mathbf{d} $};
+\filldraw [black] (0.1,0.4,0) circle (0.2pt) node[anchor=north east] {$\mathbf{x}$};
+% 
+% Koordinatsystemet 
+% -------------------------------------------------------
+\draw[thick,->] (0,0,0) -- (0.7,0,0) node[anchor=south east]{$x_1$};
+\draw[thick] (0,0,0) -- (-0.1,0,0);
+\draw[thick,->] (0,0,0) -- (0,0.7,0) node[anchor=north west]{$x_2$};
+\draw[thick] (0,0,0) -- (0,-0.1,0);
+% 
+\end{tikzpicture}
+  \captionof{figure}{Illustration af et polyeder $\mathcal{P}_1$, hvor $\mathbf{x} + \lambda \mathbf{d}$ ikke tilhører $\mathcal{P}_1$, og dermed indeholder polyederet ikke en linje.}
+  \label{fig:julieerovergud1}
+\end{center}
+\end{minipage}
+%
+\phantom{..}
+%
+\begin{minipage}[b]{0.45\textwidth}
+\begin{center}
+%
+\begin{tikzpicture}[scale=6]
+% Koordinater 
+% ------------------------------------------------------
+\coordinate (a) at (0.5,0,0);
+\coordinate (b) at (0,0,0);
+\coordinate (c) at (0,0.5,0);
+\coordinate (d) at (0,0,0);
+\coordinate (e) at (0.25,0.25,0);
+%
+% Planet - Hyperplanet
+% -------------------------------------------------------
+\filldraw [fill=myblue,opacity=0.3] 
+         (-0.1,0.6,0) -- (0.6,-0.1,0) -- (0.7,-0.1,0) -- (0.7,0.7,0) -- (-0.1,0.7,0)-- (-0.1,0.6,0);
+%        
+% Streger 
+% -------------------------------------------------------
+  \draw[thick](-0.1,0.6,0)--(0.6,-0.1,0);
+  \draw[thick](c)--(a);
+   \draw[thick, color=myred](-0.05,0.55,0)--(0.1,0.4,0);
+%
+%
+% Punkt 
+% -------------------------------------------------------
+%\filldraw [black] (e) circle (0.2pt) node[anchor=south west] {$\mathbf{v}$};
+%\filldraw [black] (b) circle (0.2pt) node[left] {$\mathbf{u}$};
+\filldraw [black] (0.4,0.4,0) circle (0pt) node[above] {$\mathcal{P}_2$};
+
+\filldraw [black] (-0.05,0.55,0) circle (0.2pt) node[anchor=north east] {$\mathbf{x} + \lambda \mathbf{d} $};
+\filldraw [black] (0.1,0.4,0) circle (0.2pt) node[anchor=north east] {$\mathbf{x}$};
+% 
+% Koordinatsystemet 
+% -------------------------------------------------------
+\draw[thick,->] (0,0,0) -- (0.7,0,0) node[anchor=south east]{$x_1$};
+\draw[thick] (0,0,0) -- (-0.1,0,0);
+\draw[thick,->] (0,0,0) -- (0,0.7,0) node[anchor=north west]{$x_2$};
+\draw[thick] (0,0,0) -- (0,-0.1,0);
+% 
+\end{tikzpicture}
+  \captionof{figure}{Illustration af et polyeder $\mathcal{P}_2$, hvor $\mathbf{x} + \lambda \mathbf{d}$ tilhører $\mathcal{P}_2$, og dermed indeholder polyederet en linje.}
+  \label{fig:julieerovergud2}
+\end{center}
+\end{minipage}
+\end{center}
+%
 Af \ref{defn:klogemads} kan \ref{thm:ekstremums1} udledes.
 %
 \begin{thm}{}{ekstremums1}
@@ -21,7 +128,6 @@ Så er følgende udsagn ækvivalente.
 \end{enumerate}
 \end{thm}
 %
-\newpage
 %
 \begin{proof}
 Lad $\textbf{v}$ være et element i $\mathcal{P}$ og lad $I = \{ i \mid \textbf{a}_i^T\textbf{v} = b_i \}$.

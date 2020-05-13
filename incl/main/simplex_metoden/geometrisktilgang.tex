@@ -1,4 +1,4 @@
-\section{Geometrisk tilgang til simplexmetoden}
+\section{Optimale betingelser}
 \label{julieerfantalastiskogvidunderlig}
 % --------------------------------------------------------------
 %
@@ -12,7 +12,7 @@ vil den lokale optimale løsning være en global optimal løsning.
 % Definition 3.1 i bert
 \begin{defn}{}{}
 Lad $\textbf{v}$ være et element af et polyeder $\mathcal{P}$.
-En vektor $\textbf{d}\in \R^n$ siges at være en  \textbf{mulig retning} fra $\textbf{v}$, hvis der eksisterer en positiv skalar $\theta$, således at $\textbf{v}+\theta \textbf{d}\in \mathcal{P}$.
+En vektor $\textbf{d}\in \R^n$ siges at være en \textbf{mulig retning} fra $\textbf{v}$, hvis der eksisterer en positiv skalar $\theta$, således at $\textbf{v}+\theta \textbf{d}\in \mathcal{P}$.
 \end{defn}
 \noindent
 %
@@ -20,27 +20,270 @@ På figur \ref{fig:julieersmuuuuuk}, ses vektorerne $\mathbf{u}, \mathbf{v}$ og 
 %
 \input{fig/tikz/simplex/mulig_retning}
 %
-Hjørnerne afsøges derved gennem en reduceret objektfunktion.
-Se \ref{defn:kogtskinke}.
+%Hjørnerne afsøges derved gennem en reduceret objektfunktion.
+%Se \ref{defn:kogtskinke}.
+%
+\textcolor{red}{
+For at finde en ny mulig retning $\mathbf{d}$, bevæges der i en retning, hvor værdien af en ikke-basal variable $x_j$ øges, og andre ikke-basale variable fastholdes. 
+Dermed vil vektoren $\mathbf{d}_j = 1$, og $\mathbf{d}_i = 0$ for henholdsvis den ikke-basale variable $x_j$ og de andre ikke-basale variable $x_i$, hvor $i \neq j$.
+Vektoren 
+\begin{align*}
+\mathbf{d}_B = \left( d_{B(1)}, d_{B(2)}, \ldots , d_{B(m)} \right),
+\end{align*} 
+bestående af de mulige retninger for basis variablerne, 
+kontureres.
+Da $\mathbf{x}$ er en basal mulig løsning gælder, at $A \mathbf{x} = \mathbf{b}$. 
+Eftersom $\mathbf{x}+ \theta \mathbf{d}$ skal være en mulig løsning, gælder $A ( \mathbf{x}+ \theta \mathbf{d}) = \mathbf{b}$.
+Deraf haves, at 
+\begin{align*}
+A ( \mathbf{x}+ \theta \mathbf{d}) &=  A \mathbf{x} + \theta A \mathbf{d} = \mathbf{b} \\
+& \Updownarrow \\
+\mathbf{b} + \theta A \mathbf{d} & = \mathbf{b} \\
+& \Updownarrow \\
+\theta A \mathbf{d} & = \mathbf{0}.
+\end{align*} 
+Bemærk, at $\theta$ er en positiv skalar. 
+Dermed skal $\mathbf{d}$ tilhører $\text{nrum}(A)$.
+Eftersom $\mathbf{d}_j = 1$ og $\mathbf{d}_i = 0$ så er 
+%
+\begin{align*}
+\mathbf{0} = A \mathbf{d} & = \sum^n_{i = 1} \mathbf{A}_i d_i \\
+& =  \mathbf{A}_j  + \sum^m_{i = 1} \mathbf{A}_{B(i)} d_{D(i)} \\
+& =  \mathbf{A}_j  + B \mathbf{d}_B.
+\end{align*}
+%
+Da basis matricen $B$ er invertibel haves, at 
+% 
+\begin{align*}
+\mathbf{A}_j  + B \mathbf{d}_B & = 0 \\
+& \Updownarrow \\
+B \mathbf{d}_B & = - \mathbf{A}_j \\
+& \Updownarrow \\
+\mathbf{d}_B & = - B^{-1} \mathbf{A}_j .
+\end{align*}
+% 
+Denne mulige retning $d$, tilhørende $x_j$, kaldes den \textit{$j$'te basale retning}.
+% 
+\begin{defn}{}{}
+Lad $\mathbf{x}$ være en basal mulig løsning. 
+Den \textbf{$j$'te basale retning} $\mathbf{d}$, fra $\mathbf{x}$, for et ikke-basalt variabel $x_j$, har komponenterne 
+%
+\begin{align*}
+d_j & = 1, \\
+d_i & = 0 \phantom{hej} for i \neq b(1), \ldots , B(m) \wedge i \neq j, \\
+\mathbf{d}_B & = - B^{-1} \mathbf{A}_j.
+\end{align*}
+% 
+\end{defn}
+\noindent
+%
+Bemærk, at overstående kun sikre lighedsbegrænsningerne, og ikke ikke-negativitetsbetingelserne. 
+Eftersom $x_j$ øges, og de andre ikke-basale variable fastholdes, kan følgende scenarier opstå. 
+\begin{itemize}
+\item Antag, at $\mathbf{x}$ er en ikke-degenereret basal mulig løsning. 
+Dermed er $\mathbf{x}_B > \mathbf{0}$. 
+Hvis $\theta$ er lille nok, vil $\mathbf{x}_B + \theta \mathbf{d}_B \geq 0 $, og $\mathbf{d}$ er dermed en mulig retning. 
+\item Antag, at $\mathbf{x}$ er en degenereret basal mulig løsning. 
+Dermed er $\mathbf{d}$ ikke altid en mulig retning. 
+Eftersom $\mathbf{d}$ er degenereret, er det muligt at en basis variable $x_{B(i)}=0$, og den tilsvarende komponent $d_{B(i)}$ er negativ. 
+I dette tilfælde, vil en bevægelse i den $j$'te mulige retning forlade polyedret, da en ikke-negativitetsbetingelse brydes af $\mathbf{x} + \theta \mathbf{d}$ for alle positive $\theta$. 
+\end{itemize}
+%
+På figur \ref{fig:julieerengud} de to scenarier. 
+Bemærk, at $A$ har de to ikke-basis variable $x_1$ og $x_3$ og $x_2,$ $x_4$ og $x_5$ er basis variable.
+I hjørnet $A$ fastholdes ikke-basis variablen $x_3$, og $x_1$ øges. 
+Dermed bevæges der i retningen ad randen $AB$. 
+Bemærk, at $B$ har de to ikke-basis variable $x_3$ og $x_5$ og $x_1,$ $x_1$ og $x_4$ er basis variable.
+I hjørnet $B$ fastholdes ikke-basis variablen $x_5$, og $x_3$ øges. 
+Dermed bevæges der i retningen ad randen $BC$, hvilket bryder en ikke-negativitetsbetingelse, og dermed ikke en mulig retning. 
+}
+%
+\begin{center}
+%
+\begin{tikzpicture}[scale=5]
+%
+% Koordinater
+% -------------------------------------------------------
+\coordinate (a) at (0,0,0); 
+\coordinate (b) at (0.7,0,0); 
+\coordinate (c) at (0.393,0.55,0); 
+\coordinate (d) at (0.252,0.805,0);
+\coordinate (e) at (0.066,0.434,0);
+\coordinate (f) at (0,0.41,0);
+\coordinate (g) at (0,0.305,0);
+\coordinate (h) at (-0.15,0,0); 
+%
+% Farvning
+% -------------------------------------------------------
+\filldraw[fill=myblue,opacity=0.3](a)--(b)--(c)--(f)--(a);
+  %\draw[thick](-0.2,-0.1,0)--(0.3,0.9,0); % n -> d  
+  \draw[thick](0.2,0.9,0)-- node[anchor=north east] {$x_4=0$} (0.757,-0.1,0); % d -> b
+  \draw[thick](-0.3,0.3,0)-- node[above] {$x_3=0$ \phantom{hej}} (0.8,0.7,0); % f -> c
+  \draw[thick](0.12,0.9,0)-- node[anchor=south west] {$x_5=0$} (0.9,-0.1,0); % ekstra
+% 
+%
+% Punkterne 
+% -------------------------------------------------------
+%\filldraw [black] (a) circle (0.2pt) node[anchor=north west] {$A$};
+%\filldraw [black] (b) circle (0.2pt) node[anchor=north east] {$B$};
+\filldraw [black] (c) circle (0.2pt) node[anchor=south west] {$B$};
+\filldraw [black] (0.822,0,0) circle (0.2pt) node[anchor=south west] {$C$};
+%\filldraw [black] (d) circle (0.2pt) node[anchor=west] {$D$};
+%\filldraw [black] (e) circle (0.2pt) node[anchor=north west] {$E$};
+\filldraw [black] (f) circle (0.2pt) node[anchor=south east] {$A$};
+%\filldraw [black] (g) circle (0.2pt) node[anchor=east] {$G$};
+%\filldraw [black] (h) circle (0.2pt) node[anchor=north west] {$H$};
+%
+% 
+\filldraw [black] (0.27,0.17,0) circle (0pt) node[above] {$\mathcal{P}$};
+% 
+% Koordinatssystem 
+% -------------------------------------------------------
+\draw[thick] (0,0,0) -- node[anchor=north east] {$x_2=0$} (0.9,0,0);
+\draw[thick] (0,0,0) -- (-0.2,0,0);
+\draw[thick] (0,0,0) -- node[anchor=north east] {$x_1=0$} (0,0.5,0);
+\draw[thick] (0,0.5,0) -- (0,0.9,0);
+\draw[thick] (0,0,0) -- (0,-0.2,0);
+%
+\end{tikzpicture}
+  \captionof{figure}{Illustration af en mulig retning, der svarer til randen $AB$, og en ikke-mulig retning, der svarer til randen $BC$, som bryder en ikke-negativitetsbetingelse.}
+  \label{fig:julieerengud}
+\end{center}
+%
+\textcolor{red}{
+Heraf, opstår et problem med degenerede løsninger, og af den grund forsøges disse undgået.
+\\\\
+%
+Ved en bevægelse i en mulig retning, medfører det at 
+\begin{align*}
+\mathbf{c}^T \mathbf{d} = \mathbf{c}^T_B \mathbf{d}_B + c_j,
+\end{align*}
+hvor 
+$$\mathbf{c}_B=[ c_{B(1)},c_{B(2)}, \cdots , c_{B(m)} ]^T.$$
+Bemærk, da $\mathbf{d}_B = - B^{-1} \mathbf{A}_j$, er 
+\begin{align*}
+\mathbf{c}^T \mathbf{d} &= \mathbf{c}^T_B ( - B^{-1} \mathbf{A}_j ) + c_j \\
+& = c_j - \mathbf{c}^T_B (B^{-1} \mathbf{A}_j).
+\end{align*}
+%
+For at omkostningen minimeres skal $c_j - \mathbf{c}^T_B (B^{-1} \mathbf{A}_j ) < 0$, da 
+% 
+\begin{align*}
+\mathbf{c}^T  ( \mathbf{x} + \theta \mathbf{d} )  = \mathbf{c}^T  \mathbf{x} + \theta \mathbf{c}^T \mathbf{d} = \mathbf{c}^T  \mathbf{x} + \theta ( c_j - \mathbf{c}^T_B (B^{-1} \mathbf{A}_j ) ) < \mathbf{c}^T \mathbf{x} 
+\end{align*}
+%
+for alle positive $\theta$.
+Størrelsen for reduktionen for hvert $\theta$ kaldes \textit{den reducerede omkostning}.
 %
 % Definition 3.2 
 \begin{defn}{}{kogtskinke}
-Lad $\mathbf{v}$ være en basal løsning til en basis matrix $B$ og tilhørende objektfunktionen $$\mathbf{c}_B=[ c_{B(1)},c_{B(2)}, \cdots , c_{B(m)} ]^T.$$
-For hver $j$'te basale retning defineres den \textbf{reducerede objektfunktion} $c_j^*$ som
+Lad $\mathbf{v}$ være en basal løsning til en basis matrix $B$ og tilhørende omkostningsvektoren $$\mathbf{c}_B=[ c_{B(1)},c_{B(2)}, \cdots , c_{B(m)} ]^T.$$
+For hver $j$'te basale retning defineres den \textbf{reducerede omkostning} $c_j^*$ som
 \begin{align*}
 c_j^* = c_j - \mathbf{c}_B^T B^{-1} \mathbf{A}_j.
 \end{align*} 
-% Nogle kalder den den reducerede omkostning.
 %
 \end{defn}
 \noindent
 %
-Simplexmetoden afsøger dermed hjørnerne på denne vis, hvilket kan bevises, dette er dog udenfor rapportens sigte.
+\textit{Den reducerede omkostningsvektor} $\mathbf{c}^*$ indeholder alle de reducerede omkostninger, hvor den $k$'te række betegner den reducerede omkostning, for den $k$'te basale retning.
+%
+\begin{align*}
+\mathbf{c}^* = (\mathbf{c}^T - \mathbf{c}_B^T B^{-1} A)^T = 
+\begin{blockarray}{[c]}
+c_1 - \mathbf{c}_B^T B^{-1} \mathbf{A}_1 \\
+\vdots \\
+c_k - \mathbf{c}_B^T B^{-1} \mathbf{A}_k \\
+\vdots \\
+c_n - \mathbf{c}_B^T B^{-1} \mathbf{A}_n
+\end{blockarray}.
+\end{align*}
+%
+Betragt de basale indgange i den reducerede omkostningsvektor,
+%
+\begin{align*}
+c^*_{B(j)} & = c_{B(j)} - \mathbf{c}_B^T B^{-1} \mathbf{A}_{B(j)} \\
+& = c_{B(j)} - \mathbf{c}_B^T \mathbf{e_j} \\
+& = c_{B(j)} -  c_{B(j)}  \\
+& = 0.
+\end{align*}
+%
+Dermed er indgangende til de basale variable, er lig nul, da de mulige retninger er nulvektoren. 
+Det kan derfor ikke betale sig at øge basale variable.
+\\\\
+Hvis den reducerede omkostningsvektor $\mathbf{c} \geq \mathbf{0}$, er den basale mulige løsning et lokalt minimum i objektfunktionen og dermed et globalt minimum. Heraf er den optimale løsning fundet. Dette tilfælde belyses i sætning \ref{thm:julieerguden}.
+%
+\begin{thm}{}{julieerguden}
+Lad $\mathbf{x}$ være en basal mulig løsning, til en basis matrix $B$ og lad $\mathbf{c}^*$ være den reducerede omkostningsvektor. 
+\begin{enumerate}[label = (\alph*)]
+\item Hvis $\mathbf{c}^* \geq 0$, så er $\mathbf{x}$ optimal.
+\item Hvis $\mathbf{x}$ er optimal og ikke-degenereret, så er $\mathbf{c}^* \geq 0$.
+\end{enumerate}
+\end{thm}
+%
+\begin{proof}
+Bevis udelades.
+%\begin{enumerate}[label = (\alph*)]
+%\item Antag, at $\bar{\textbf{c}} \geq \textbf{0}$. Lad $\textbf{y}$ være en arbitrær mulig løsning, og $\textbf{d} = \textbf{y} - \textbf{x}$. Grundet de mulige løsninger, er $\textbf{A} \textbf{x} = \textbf{A} \textbf{y} = \textbf{b}$, hvormed $\textbf{A} \textbf{d} = \textbf{0}$. Sidstnævnte kan skrives som 
+%$$\textbf{B} \textbf{d}_B + \sum_{i \in N} \textbf{A}_i d_i = \textbf{0},$$
+%hvor $N$ er mængden af indekser, der svarer til de ikke-basale variabler i basen. %wtf fatter slet ikke det her lol
+%$\textbf{B}$ er invertibel, hvormed det haves, at 
+%$$\textbf{d}_B = -\sum_{i \in N} \textbf{B}^{-1} \textbf{A}_i d_i ,$$
+%og
+%$$\textbf{c}' \textbf{d} = \textbf{c}'_B \textbf{d}_B + \sum_{i \in N} c_i d_i = \sum_{i \in N} (c_i - \textbf{c}'_B \textbf{B}^{-1} \textbf{A}_i) d_i = \sum_{i \in N} \bar{c}_i d_i .$$
+%%nanananana fatter intet, hvorfor har vi dette med? 
+%For ethvert ikke-basalt indeks $i \in N$ må der eksistere et $x_i = 0$, samt et $y_i \geq 0$, da $\textbf{y}$ er en mulig løsning. 
+%Deraf haves, at $d_i \geq 0$ og $\bar{c}_i d_i \geq 0$ for alle $i \in N$. 
+%Dermed er $\textbf{c}' (\textbf{y} - \textbf{x} = \textbf{c}' \textbf{d} \geq 0$, og $\textbf{x}$ er en optimal løsning, eftersom $\textbf{y}$ er en arbitrær mulig løsning. 
+%%
+%%
+%\item Antag, at $x$ er en ikke-degenereret basal mulig løsning, og at $\bar{c}_j < 0$ for et $j$. Eftersom den reducerede objektfunktion for en basal variabel altid er $0$, må $x_j$ være en ikke-basal variabel, og $\bar{c}_j$ må være ændringshastigheden for objektfunktionen i den $j$'te basale retning. 
+%%Wtf er ovenstående for noget lort
+%Da $\textbf{x}$ ikke er degenereret, er den $j$'te basale retning en mulig retning for mindskelse af objektfunktionen. 
+%Der findes dermed mulige løsninger, hvis objektfunktion har lavere værdi end $\textbf{x}$'s, ved at bevæge sig i denne retning, hvormed $\textbf{x}$ ikke er optimal. 
+%\end{enumerate}
+\end{proof}
+\\
+%
+Dermed er alle basale retninger, mulige retninger, hvis et problem er givet uden degenererede løsninger. 
+Heraf defineres \textit{optimal basismatrix}.
+%
+% Definition 3.3 
+\begin{defn}{}{julieergudenoveralleguder}
+En basismatrix $B$, kaldes optimal, hvis:
+%
+\begin{enumerate}[label = (\alph*)]
+\item $B^{-1} \mathbf{b} \geq \mathbf{0}$, og
+\item $\mathbf{c}^* \geq \mathbf{0}$.
+\end{enumerate}
+%
+\end{defn}
+\noindent
+%
+\section{Kontruktionen af Simplex-metoden}
+%
+%Simplexmetoden afsøger dermed hjørnerne på denne vis, hvis de ikke er degenererede basale mulige løsninger.
+%Dermed vil en optimal basismatrix sikre en løsning indenfor løsningsmængden. % er lidt i tvivl om denne sætning er helt rigtigt.
+%bla bla 
+Afsnit \ref{julieerfantalastiskogvidunderlig} belyser at simplexmetoden fidner basale retninger, som reducere omkostningen i objektfunktionen. Nu undersøges hvilken mulig retning, der skal vælges. 
+Omkostningsvektoren $\mathbf{c}^*$ udregnes for en given basal mulig løsning. 
+Hvis ingen basale retninger vil reducerer omkostningen  er løsningen optimal. 
+Hvis den reducerede omkostning $c^*_j$ er negativ, følges den mulige retning $\mathbf{d}$. 
+Hermed vil $x_j$ stige, og de resterende ikke-basale variable fastholdes.
+Eftersom det ønskes at minimere omkostningen, bevæges der så langt som muligt væk fra $\mathbf{x}$, så omkostningsen falder.
+Det ønskes dermed at finde den største skalar
+\begin{align*}
+\theta^* = \max \{ \theta \geq 0 \mid \textbf{x} + \theta^*\textbf{d} \in \mathcal{P} \},
+\end{align*}
+%
+der opfylder, at $\mathbf{x} + \theta^* \mathbf{d}$ er en mulig løsning.
+% Nu kan vi eventuelt udelede \theta^* xD 
+}
+%
+%
+%	\input{incl/main/simplex_metoden/thm_3.1}
+%	
+%	\input{incl/main/simplex_metoden/thm_3.2}
+%	\input{incl/main/simplex_metoden/thm_3.3}
+%
 
-
-
-	\input{incl/main/simplex_metoden/thm_3.1}
-	
-	
-	\input{incl/main/simplex_metoden/thm_3.2}
-	\input{incl/main/simplex_metoden/thm_3.3}
