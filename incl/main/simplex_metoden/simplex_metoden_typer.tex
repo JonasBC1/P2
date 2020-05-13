@@ -20,7 +20,14 @@ Ved hjælp af dette vil der kunne konstrueres den retning, hvor man bevæger sig
 Endeligt kan $$\theta^* = \max \{ \theta \geq 0 \mid \textbf{x} + \theta^*\textbf{d} \in \mathcal{P} \}$$ bestemmes, samt den variabel der gør, at basen forlades, og derved kan en ny basal mulig løsning konstrueres. 
 En iteration af den naive simpleximplementering gennemløber følgende punkter: 
 %
-\begin{col}{Den naive implementering}{}
+\begin{tcolorbox}[
+title=Den naive implementering,
+colback		= myblue!15,
+colframe	= myblue!15,
+coltitle	= black,
+before skip	= 20pt plus 2pt,
+after skip	= 20pt plus 2pt,
+fonttitle	= \bfseries]
 \begin{enumerate}
 \item En normal iteration starter med et basis bestående af de basale rækker $\textbf{A}_{B(1)},\ldots,\textbf{A}_{B(m)}$ og den tilhørende basale mulige løsning $\textbf{x}$.
 \item Beregn den reducerede objektfunktion $c_j^* = c_j - \mathbf{c}_B^T \textbf{B}^{-1}A_j$ for alle ikke-basale indekser $j$. Hvis de alle er ikke-negative, så er den nuværende basale mulige løsning optimal; ellers vælges et indeks $j$, hvorom det gælder, at $c^*_j<0.$
@@ -29,14 +36,21 @@ En iteration af den naive simpleximplementering gennemløber følgende punkter:
 $$\theta^*= min_{ \{i=1,\ldots,m|u_i>0 \} }        \dfrac{x_{B(i)}}{u_i}.$$
 \item Lad $l$ være indekset for $\theta^*=  \dfrac{x_{B(l)}}{u_l}$. Dan et nyt basis ved at udskifte $\textbf{A}_{B(l)}$ med $\textbf{A}_j$. Hvis $\textbf{y}$ er den nye basale mulige løsning, så er værdierne af de nye basale variable $y_j=\theta^*$ og $y_{B(i)}=x_{B(i)}-\theta^*u_i,i\neq l.$
 \end{enumerate}
-\end{col}
+\end{tcolorbox}
 %
 \subsection{Den reviderede implementering}
 Problemet ved den naive implementering er dens potentielt høje tidskompleksitet, da den er nødsaget til at løse to lineære ligningssystemer.
 En alternativ implementering til dette er den revidere implementering, som benytter matricen $B^{-1}$ ved hver iteration, samt er vektorerne $\mathbf{c}_{\text{B}}^T B^{-1}$ og $B^{-1} \mathbf{A}_j$ udregnet ved hjælp af matrix-vektor multiplikation.
 En iteration af den reviderede simpleximplementering gennemløber følgende punkter: 
 % 
-\begin{col}{Den reviderede implementering}{}
+\begin{tcolorbox}[
+title=Den reviderede implementering,
+colback		= myblue!15,
+colframe	= myblue!15,
+coltitle	= black,
+before skip	= 20pt plus 2pt,
+after skip	= 20pt plus 2pt,
+fonttitle	= \bfseries]
 \begin{enumerate}
 \item I en typisk iteration startes med en basis indeholdende basissøjlerne $A_{B(1)},\ldots,A_{B(m)}$, en associeret basal mulig løsning $\mathbf{v}$, samt en invers $B^{-1}$ af basismatricen. 
 \item Udregn rækkevektoren $\mathbf{p}^T=\mathbf{c}_{\text{B}}^T B^{-1}$ og udregn dernæst den reducerede objektfunktion $c_j^* = c_j - \mathbf{p}^T \mathbf{A}_j$.
@@ -56,7 +70,7 @@ Tilføj enhver række et multiplum af den $l$'te række for at få den sidste s�
 De første $m$ søjler er resultatet af matricen ${B^*}^{-1}$.
 %Nogle der har en ide til at gøre dette pænere? Det er B-stjerne i -1% 
 \end{enumerate}
-\end{col}
+\end{tcolorbox}
 \noindent
 %
 %
@@ -72,7 +86,14 @@ Endelig er elementet, der tilhører både pivotrækken og pivotsøjlen, betegnet
 Bemærk desuden, at dette element er $u_l$ og altid er positivt, da algoritmen ellers var stoppet i trinnet før. 
 For at klarlægge hvordan fuld-tabel implementeringen fungerer, vil der i følgende blive gennemgået en iteration: 
 %
-\begin{col}{Fuld-tabel implementeringen}{}
+\begin{tcolorbox}[
+title=Fuld-tabel implementering,
+colback		= myblue!15,
+colframe	= myblue!15,
+coltitle	= black,
+before skip	= 20pt plus 2pt,
+after skip	= 20pt plus 2pt,
+fonttitle	= \bfseries]
 \begin{enumerate}
 \item I en typisk iteration, startes der med at opstille en simplextabel associeret med en basismatrix $\mathbf{B}$ og en tilsvarende basal mulig løsning $\mathbf{v}.$
 \item Dernæst undersøges om den reducerede værdi i objektfunktionen i simplextabellen.
@@ -83,7 +104,7 @@ Hvis dette ikke er tilfældet, så vælg ethvert $j$, hvor $c_j^* < 0$.
 Søjlen $\mathbf{A}_{B(l)}$ udgår fra basen og søjlen $\mathbf{A}_j$ indgår i basen. 
 \item Tilføj for hver række i tabellen en konstant multiplum af den $l$'te række, som er pivotrækken, så $u_l$, som er pivoteringsindgangen bliver lig med $1$ og alle andre indgange i pivotsøjlen bliver $0$. 
 \end{enumerate}
-\end{col}
+\end{tcolorbox}
 \noindent
 %
 Bemærk, at det er denne implementering, som er brugt i afsnit \ref{afsnittet}.
