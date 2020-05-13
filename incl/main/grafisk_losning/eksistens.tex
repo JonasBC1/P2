@@ -4,7 +4,7 @@ Dette afsnit belyser tilstrækkelige og nødvendige betingelser for, at et polye
 Dette gøres ved at undersøge, om polyederet indeholder en \textit{uendelig linje}.
 %
 \begin{defn}{}{klogemads}
-Et polyeder $\mathcal{P} \in \R^n$ indeholder en \textbf{uendelig linje}, hvis der eksisterer en vektor $\textbf{x} \in \mathcal{P}$ og en ikke-nulvektor $\textbf{d} \in \mathcal{P}$, således at $\textbf{x} + \lambda \textbf{d} \in \mathcal{P}$ for alle skalarer $\lambda$.
+Et polyeder $\mathcal{P} \in \R^n$ indeholder en \textbf{uendelig linje}, hvis der eksisterer en vektor $\textbf{v} \in \mathcal{P}$ og en ikke-nulvektor $\textbf{d} \in \mathcal{P}$, således at $\textbf{v} + \lambda \textbf{d} \in \mathcal{P}$ for alle skalarer $\lambda$.
 \end{defn}
 \noindent
 %
@@ -24,31 +24,31 @@ Så er følgende udsagn ækvivalente.
 \newpage
 %
 \begin{proof}
-Lad $\textbf{x}$ være et element i $\mathcal{P}$ og lad $I = \{ i \mid \textbf{a}_i^T\textbf{x} = b_i \}$.
-Hvis $n$ af vektorerne  $\textbf{a}_i, i \in I$, svarende til de aktive betingelser, er lineært uafhængige, så er $\textbf{x}$ en basal mulig løsning, og der eksisterer et ekstremumspunkt.
+Lad $\textbf{v}$ være et element i $\mathcal{P}$ og lad $I = \{ i \mid \textbf{a}_i^T\textbf{v} = b_i \}$.
+Hvis $n$ af vektorerne  $\textbf{a}_i, i \in I$, svarende til de aktive betingelser, er lineært uafhængige, så er $\textbf{v}$ en basal mulig løsning, og der eksisterer et ekstremumspunkt.
 Hvis dette ikke er tilfældet, ligger alle vektorerne $\textbf{a}_i, i \in I$, i et ægte underrum af $\R^n$, og der eksisterer en ikke-nulvektor $\textbf{d} \in \R^n$, således at $\textbf{a}_i^T\textbf{d} = 0$ for alle $i \in I$.
-Betragt linjen bestående af alle punkter på formen $\textbf{y} = \textbf{x} + \lambda \textbf{d}$, hvor $\lambda$ er en vilkårlig skalar.
-For $i \in I$ haves, at $$\textbf{a}_i^T\textbf{y} = \textbf{a}_i^T\textbf{x} + \lambda \textbf{a}_i^T\textbf{d} = \textbf{a}_i^T\textbf{x} = b_i.$$
-De betingelser, der er aktive i $\textbf{x}$, er således også aktive i alle punkter på linjen.
+Betragt linjen bestående af alle punkter på formen $\textbf{u} = \textbf{v} + \lambda \textbf{d}$, hvor $\lambda$ er en vilkårlig skalar.
+For $i \in I$ haves, at $$\textbf{a}_i^T\textbf{u} = \textbf{a}_i^T\textbf{v} + \lambda \textbf{a}_i^T\textbf{d} = \textbf{a}_i^T\textbf{v} = b_i.$$
+De betingelser, der er aktive i $\textbf{v}$, er således også aktive i alle punkter på linjen.
 Antages det, at $\mathcal{P}$ ikke indeholder en uendelig linje, så må der eksistere et $\lambda$, hvor en af betingelserne ikke længere er opfyldt.
 I punktet, hvor betingelsen er ved at blive brudt, må en ny betingelse blive aktiv.
-Derfor må der eksistere et $\lambda_j$, $j \notin I$, således at $\textbf{a}_j^T (\textbf{x} + \lambda_j\textbf{d}) = b_j$.\\\\
+Derfor må der eksistere et $\lambda_j$, $j \notin I$, således at $\textbf{a}_j^T (\textbf{v} + \lambda_j\textbf{d}) = b_j$.\\\\
 %
-Det haves, at $\textbf{a}_j^T\textbf{x} \neq b_j$, da $j \notin I$, og $\textbf{a}_i^T (\textbf{x} + \lambda_j\textbf{d}) = b_j$.
+Det haves, at $\textbf{a}_j^T\textbf{v} \neq b_j$, da $j \notin I$, og $\textbf{a}_i^T (\textbf{v} + \lambda_j\textbf{d}) = b_j$.
 Derfor er $\textbf{a}_j^T\textbf{d} \neq 0$ og $\textbf{a}_i^T\textbf{d} = 0$ for alle $i \in I$.
 Derfor er $\textbf{d}$ ortogonal med alle linearkombinationer af vektorerne $\textbf{a}_i, i\in I$.
 Da $\textbf{d}$ ikke er ortogonal med $\textbf{a}_j$, konkluderes det, at $\textbf{a}_j$ ikke er en linearkombination af vektorerne $\textbf{a}_i, i \in I$.
-Det er derfor muligt at forøge antallet af aktive lineært uafhængige betingelser med mindst én ved at gå fra $\textbf{x}$ til $\textbf{x} + \lambda_j\textbf{d}$.
+Det er derfor muligt at forøge antallet af aktive lineært uafhængige betingelser med mindst én ved at gå fra $\textbf{v}$ til $\textbf{v} + \lambda_j\textbf{d}$.
 Dette argument gentages indtil et punkt er nået, hvor der er $n$ lineært uafhængige betingelser, som er aktive.
 Dette punkt vil således være en basal mulig løsning, da der er $n$ aktive betingelser og punktet er inde for $\mathcal{P}$, hvilket viser, at (b) medfører (a).\\\\
 %
-Hvis $\mathcal{P}$ har et ekstremumspunkt $\textbf{x}$, så er $\textbf{x}$ en basal mulig løsning og der eksisterer $n$ betingelser, som er aktive ved $\textbf{x}$.
+Hvis $\mathcal{P}$ har et ekstremumspunkt $\textbf{v}$, så er $\textbf{v}$ en basal mulig løsning og der eksisterer $n$ betingelser, som er aktive ved $\textbf{v}$.
 Betingelsernes tilsvarende vektorer $\textbf{a}_i$ er lineært uafhængige, hvilket giver, at (a) medfører (c).
 \\\\
 %
 Lad $n$ af vektorerne $\textbf{a}_i$ være lineært uafhængige og antag, at det er $\textbf{a}_1, \textbf{a}_2, \ldots , \textbf{a}_n$, som er lineært uafhængige.
-Antag, at $\mathcal{P}$ indeholder en linje $\textbf{x} + \lambda \textbf{d}$, hvor $\textbf{d}$ ikke er en nulvektor.
-Så haves, at $\textbf{a}_i^T (\textbf{x} + \lambda \textbf{d}) \geq b_i$ for alle $i$ og alle $\lambda$.
+Antag, at $\mathcal{P}$ indeholder en linje $\textbf{v} + \lambda \textbf{d}$, hvor $\textbf{d}$ ikke er en nulvektor.
+Så haves, at $\textbf{a}_i^T (\textbf{v} + \lambda \textbf{d}) \geq b_i$ for alle $i$ og alle $\lambda$.
 Det konkluderes, at $\textbf{a}_i^T \textbf{d} = 0$ for alle $i$, da både  $\textbf{a}_i^T \textbf{d} < 0$ og  $\textbf{a}_i^T \textbf{d} > 0$ medfører, at der eksisterer et $\lambda$, som bryder betingelsen.
 Da vektorerne $\textbf{a}_i, i = 1, 2, \ldots, n,$ er lineært uafhængige, medfører det, at $\textbf{d}=\textbf{0}$.
 Dette giver en modstrid og derfor må (c) medfører (b).

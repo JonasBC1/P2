@@ -1,5 +1,4 @@
-%
-\section{Konstruktion af simplexmetoden}
+\section{Geometrisk tilgang til simplexmetoden}
 \label{julieerfantalastiskogvidunderlig}
 % --------------------------------------------------------------
 %
@@ -17,15 +16,16 @@ En vektor $\textbf{d}\in \R^n$ siges at være en  \textbf{mulig retning} fra $\t
 \end{defn}
 \noindent
 %
-På figur \ref{fig:julieersmuuuuuk}, ses vektorerne $\mathbf{u}, \mathbf{v}$ og $\mathbf{w}$ i polyederet $\mathcal{P}$, samt tilhørende forskellige mulige retninger, som stadig er indholdt i $\mathcal{P}$.
+På figur \ref{fig:julieersmuuuuuk}, ses vektorerne $\mathbf{u}, \mathbf{v}$ og $\mathbf{w}$ i polyederet $\mathcal{P}$, samt tilhørende forskellige mulige retninger, som stadig er indeholdt i $\mathcal{P}$.
 %
 \input{fig/tikz/simplex/mulig_retning}
 %
-%
+Hjørnerne afsøges derved gennem en reduceret objektfunktion.
+Se \ref{defn:kogtskinke}.
 %
 % Definition 3.2 
-\begin{defn}{}{}
-Lad $\mathbf{v}$ være en basal løsning til en basis matrix $B$ og tilhørende objektfunktionen $\mathbf{c}_B=[ c_{B(1)},c_{B(2)}, \cdots , c_{B(m)} ]^T.$
+\begin{defn}{}{kogtskinke}
+Lad $\mathbf{v}$ være en basal løsning til en basis matrix $B$ og tilhørende objektfunktionen $$\mathbf{c}_B=[ c_{B(1)},c_{B(2)}, \cdots , c_{B(m)} ]^T.$$
 For hver $j$'te basale retning defineres den \textbf{reducerede objektfunktion} $c_j^*$ som
 \begin{align*}
 c_j^* = c_j - \mathbf{c}_B^T B^{-1} \mathbf{A}_j.
@@ -36,4 +36,5 @@ c_j^* = c_j - \mathbf{c}_B^T B^{-1} \mathbf{A}_j.
 \noindent
 %
 % Noget mere tekst her 
-% Det med simplextabellen 
+% Det med simplextabellen
+Simplexmetoden afsøger dermed hjørnerne på denne vis, hvilket kan bevises, dette er dog udenfor rapportens sigte.
