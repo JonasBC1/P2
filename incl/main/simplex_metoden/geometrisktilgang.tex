@@ -246,7 +246,7 @@ Bevis udelades.
 \\
 %
 Dermed er alle basale retninger, mulige retninger, hvis et problem er givet uden degenererede løsninger. 
-Heraf defineres \textit{optimal basismatrix}.
+Heraf defineres \textit{optimal basismatrix}.}
 %
 % Definition 3.3 
 \begin{defn}{}{julieergudenoveralleguder}
@@ -259,31 +259,3 @@ En basismatrix $B$, kaldes optimal, hvis:
 %
 \end{defn}
 \noindent
-%
-\section{Kontruktionen af Simplex-metoden}
-%
-%Simplexmetoden afsøger dermed hjørnerne på denne vis, hvis de ikke er degenererede basale mulige løsninger.
-%Dermed vil en optimal basismatrix sikre en løsning indenfor løsningsmængden. % er lidt i tvivl om denne sætning er helt rigtigt.
-%bla bla 
-Afsnit \ref{julieerfantalastiskogvidunderlig} belyser at simplexmetoden fidner basale retninger, som reducere omkostningen i objektfunktionen. Nu undersøges hvilken mulig retning, der skal vælges. 
-Omkostningsvektoren $\mathbf{c}^*$ udregnes for en given basal mulig løsning. 
-Hvis ingen basale retninger vil reducerer omkostningen  er løsningen optimal. 
-Hvis den reducerede omkostning $c^*_j$ er negativ, følges den mulige retning $\mathbf{d}$. 
-Hermed vil $x_j$ stige, og de resterende ikke-basale variable fastholdes.
-Eftersom det ønskes at minimere omkostningen, bevæges der så langt som muligt væk fra $\mathbf{x}$, så omkostningsen falder.
-Det ønskes dermed at finde den største skalar
-\begin{align*}
-\theta^* = \max \{ \theta \geq 0 \mid \textbf{x} + \theta^*\textbf{d} \in \mathcal{P} \},
-\end{align*}
-%
-der opfylder, at $\mathbf{x} + \theta^* \mathbf{d}$ er en mulig løsning.
-% Nu kan vi eventuelt udelede \theta^* xD 
-}
-%
-%
-%	\input{incl/main/simplex_metoden/thm_3.1}
-%	
-%	\input{incl/main/simplex_metoden/thm_3.2}
-%	\input{incl/main/simplex_metoden/thm_3.3}
-%
-
