@@ -6,7 +6,7 @@ Der findes tre forskellige implementeringer af simplexmetoden, henholdsvis den \
 \subsection{Den naive implementering}
 I den naive implementering af simplexmetoden overgår ingen af de bærende elementer fra en iteration til den næste iteration. 
 For den indledende iteration, haves indekserne
-$B(1),\ldots,B(m)$ for de givne basisvariable. 
+$B(1),\ldots,B(m)$ for de givne basale variable. 
 Derudfra kan der dannes en basismatrix $B$ og beregnes $\mathbf{p}^T=\mathbf{c}_{\text{B}}^T B^{-1}$ ved at løse det lineære ligningssystem $\mathbf{p}^T B=\mathbf{c}_{\text{B}}^T$ for den ukendte vektor $\mathbf{p}$.
 Den reducerede objektfunktion $c_j^* = c_j - \mathbf{c}_B^T B^{-1}A_j$ for enhver variabel $x_j$, er derfor givet ved formelen
 %

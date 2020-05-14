@@ -5,7 +5,7 @@
 For at finde den optimale løsning kan der udvælges en basal løsning og undersøges, hvorvidt der findes andre løsninger, som er bedre, end den valgte. 
 Hvis der ikke findes bedre løsninger, er den valgte basale løsning den optimale løsning. 
 Eftersom der jævnfør afsnit \ref{julieerlakker} optimeres for en konveks funktion over en konveks mængde, %Det er det med at et lokal minimum er et globalt minimum xD
-vil den lokale optimale løsning være en global optimal løsning. 
+vil den lokale optimale løsning være den globale optimale løsning. 
 %
 %Når der undersøges om der findes et nabo punkt, hvis løsning er bedre, så er det ikke nødvendigt at undersøge i retningen, som leder ud af den basal mulige område.
 %
@@ -30,7 +30,7 @@ Vektoren
 \begin{align*}
 \mathbf{d}_B = \left( d_{B(1)}, d_{B(2)}, \ldots , d_{B(m)} \right),
 \end{align*} 
-bestående af de mulige retninger for basis variablerne, 
+bestående af de mulige retninger for de basale variable, 
 kontureres.
 Da $\mathbf{x}$ er en basal mulig løsning gælder, at $A \mathbf{x} = \mathbf{b}$. 
 Eftersom $\mathbf{x}+ \theta \mathbf{d}$ skal være en mulig løsning, gælder $A ( \mathbf{x}+ \theta \mathbf{d}) = \mathbf{b}$.
@@ -85,16 +85,16 @@ Dermed er $\mathbf{x}_B > \mathbf{0}$.
 Hvis $\theta$ er lille nok, vil $\mathbf{x}_B + \theta \mathbf{d}_B \geq 0 $, og $\mathbf{d}$ er dermed en mulig retning. 
 \item Antag, at $\mathbf{x}$ er en degenereret basal mulig løsning. 
 Dermed er $\mathbf{d}$ ikke altid en mulig retning. 
-Eftersom $\mathbf{d}$ er degenereret, er det muligt at en basis variable $x_{B(i)}=0$, og den tilsvarende komponent $d_{B(i)}$ er negativ. 
-I dette tilfælde, vil en bevægelse i den $j$'te mulige retning forlade polyedret, da en ikke-negativitetsbetingelse brydes af $\mathbf{x} + \theta \mathbf{d}$ for alle positive $\theta$. 
+Eftersom $\mathbf{d}$ er degenereret, er det muligt at en basal variable $x_{B(i)}=0$, og den tilsvarende komponent $d_{B(i)}$ er negativ. 
+I dette tilfælde, vil en bevægelse i den $j$'te mulige retning forlade polyederet, da en ikke-negativitetsbetingelse brydes af $\mathbf{x} + \theta \mathbf{d}$ for alle positive $\theta$. 
 \end{itemize}
 %
 På figur \ref{fig:julieerengud} de to scenarier. 
-Bemærk, at $A$ har de to ikke-basis variable $x_1$ og $x_3$ og $x_2,$ $x_4$ og $x_5$ er basis variable.
-I hjørnet $A$ fastholdes ikke-basis variablen $x_3$, og $x_1$ øges. 
+Bemærk, at $A$ har de to ikke-basale variable $x_1$ og $x_3$ og $x_2,$ $x_4$ og $x_5$ er basale variable.
+I hjørnet $A$ fastholdes den ikke-basale variabel $x_3$, og $x_1$ øges. 
 Dermed bevæges der i retningen ad randen $AB$. 
-Bemærk, at $B$ har de to ikke-basis variable $x_3$ og $x_5$ og $x_1,$ $x_1$ og $x_4$ er basis variable.
-I hjørnet $B$ fastholdes ikke-basis variablen $x_5$, og $x_3$ øges. 
+Bemærk, at $B$ har de to ikke-basale variable $x_3$ og $x_5$ og $x_1,$ $x_1$ og $x_4$ er basale variable.
+I hjørnet $B$ fastholdes den ikke-basale variabel $x_5$, og $x_3$ øges. 
 Dermed bevæges der i retningen ad randen $BC$, hvilket bryder en ikke-negativitetsbetingelse, og dermed ikke en mulig retning. 
 }
 %

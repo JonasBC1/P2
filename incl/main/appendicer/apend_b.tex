@@ -1,21 +1,34 @@
-\chapter{Vigtige egenskaber}
+\chapter{Bliver slettet lige om lidt}
 %
-Følgende udvalgte egenskaber ved lineært afhængige og uafhængige mængder, er vigtige for visse beviser senere i rapporten.
-\subsubsection{Egenskaber af lineært afhængige og uafhængige mængder}\label{egenskab_lin}
+Egenskaber for lineært afhængige og uafhængige mængder.
+%
+\begin{thm}{}{egenskab_lin}
 \begin{enumerate}
-\item En mængde bestående af én ikke-nul er lineært uafhængig, men $\{\textbf{0}\}$ er lineært afhængig.
-\item Ethvert underrum af $\R^n$ der indeholder mere end $n$ vektorer er lineært afhængig
-\item Hvis spannet $\S$ er et underrum af $\R^n$ og ingen vektorer kan fjernes uden at ændre spannet, så er $\S$ lineært uafhængig
+\item En mængde bestående af én ikke-nulvektor er lineært uafhængig, men $\{\textbf{0}\}$ er lineært afhængig.
+\item Ethvert underrum af $\R^n$, der indeholder mere end $n$ vektorer, er lineært afhængigt.
+\item Hvis spannet af $\S$ er et underrum af $\R^n$, og ingen vektorer kan fjernes uden at ændre spannet, så er $\S$ lineært uafhængig.
 \end{enumerate}
-
-
-\chapter{Vigtig sætning}
+\end{thm}
+%
+\chapter{Span og dimension}
 %
 \ref{thm:spandim}, der omhandler spannet og dimensionen, er vigtig i forhold til visse egenskaber nævnt i rapporten.
+%
 \begin{thm}{}{spandim}
-Antag, at spannet $\S$ af vektorerne $\mathbf{x}_1,\ldots,\mathbf{x}_K$ har dimension $m$, så gælder det, at 
+Antag, at spannet $\S$ af vektorene $\textbf{x}_1,\ldots,\textbf{x}_c$ har dimension $m$.
+Så gælder, at
 \begin{enumerate}[label=(\alph*)]
-    \item Der eksisterer en basis af $\S$, som indeholder $m$ af vektorerne $\mathbf{x}_1,\ldots,\mathbf{x}_K$.
-    \item Hvis $k \leq m$ og $\mathbf{x}_1,\ldots,\mathbf{x}_k$ er lineært uafhængige, kan der dannes en basis af $\S$ ved at starte med $\mathbf{x}_1,\ldots,\mathbf{x}_k$, og dernæst vælge $m-k$ af vektorerne $\mathbf{x}_{k+1},\ldots,\mathbf{x}_{K}$.
+\item Der eksisterer en base af $\S$ bestående af $m$ af vektorene $\mathbf{x}_1,\ldots,\mathbf{x}_c$.
+\item Hvis $k\leq m$ og $\mathbf{x}_1,\ldots,\mathbf{x}_k$ er lineært uafhængige, kan der skabes en base $\S$ ved $\mathbf{x}_1,\ldots,\mathbf{x}_k$, hvor der ligeledes vælges $m-k$ af vektorene $\mathbf{x}_{k+1},\ldots,\textbf{x}_c$.
 \end{enumerate}
-\end{thm}{}
+\end{thm}
+
+\begin{proof}
+Da (a) er et tilfælde af (b), hvor $k=0$, er beviset for (b) tilstrækkeligt.
+Hvis alle vektorer $\mathbf{x}_{k+1},\ldots,\textbf{x}_c$ kan opnås som linearkombination af $\mathbf{x}_1,\ldots,\mathbf{x}_k$, så er alle vektorer i $\mathbf{x}_{1},\ldots,\textbf{x}_c$ ligeledes en linearkombination af $\mathbf{x}_1,\ldots,\mathbf{x}_k$, hvor $\mathbf{x}_1,\ldots,\mathbf{x}_k$ udgør en base.
+Såfremt dette ikke er tilfældet, gælder det, at en eller flere vektorer i $\mathbf{x}_{k+1},\ldots,\textbf{x}_c$ ikke er linearkombination af $\mathbf{x}_1,\ldots,\mathbf{x}_k$. 
+Der udvælges nu en lineær uafhængig vektor i $\mathbf{x}_{k+1},\ldots,\textbf{x}_c$.
+Derved opnås der en mængde bestående af $k+1$ lineært uafhængige vektorer fra $\mathbf{x}_{1},\ldots,x_c$.
+Den proces gentages $m-k$ gange og derved opnås basen af $\S$.
+\end{proof}
+%

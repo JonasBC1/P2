@@ -1,15 +1,15 @@
 \section{Pivoteringsløkker}
-Ved degenererede basale løsninger er der en risiko for, at simplexmetoden blot skifter variable ind og ud af basis, således at den sidder fast i en uendelig løkke.  
-For at garantere at simplexmetoden stopper ved en optimal værdi og ikke fortsætter med at pivotere uendeligt, kan der indføres forskellige regler for, hvilken variabel skal komme ind i løsningen.
+Ved degenererede basale løsninger er der en risiko for, at simplexmetoden blot skifter variable ind og ud af basis, således at den sidder fast i en uendelig \textit{pivoteringsløkke}.  
+For at garantere at simplexmetoden stopper ved en optimal værdi og ikke fortsætter med at pivotere uendeligt, kan der indføres forskellige regler for, hvilken variabel, der bringes ind i løsningen.
 
 \subsection{Lexicografi}
 %ingen ide om det hedder lexicografi på dansk men skiver det indtil videre
 %
-Før den \textit{lexicografiske} metode til at vælge pivotsøjler introduceres, er det nødvendigt at definere lexicografi.
+Før den \textit{lexicografiske metode} til at vælge pivotsøjler introduceres, er det nødvendigt at definere \textit{lexicografi}.
 \begin{defn}{}{}
 En vektor $\textbf{u}\in \R^n$ er \textbf{lexicografisk} større, eller mindre end en vektor $\textbf{v}\in \R^n$, hvis $\textbf{v} \neq \textbf{u}$ og den første ikke-nul indgang i $\textbf{u}-\textbf{v}$ er henholdsvis positiv eller negativ. Dette noteres
 \begin{align*}
-\textbf{u} >^L \textbf{v} \text{ eller } \textbf{u} <^L \textbf{v}.
+\textbf{u} >^L \textbf{v} \phantom{..} \text{ eller }\phantom{..} \textbf{u} <^L \textbf{v}.
 \end{align*} 
 \end{defn}
 \noindent
@@ -24,14 +24,14 @@ $$\textbf{u}=
 3\\
 1\\
 \end{bmatrix}
-,
+,\phantom{..}
 \textbf{v}=
 \begin{bmatrix}
 2\\
 1\\
 2\\
 \end{bmatrix}
-\text{ og }
+\phantom{..}\text{ og }\phantom{..}
 \textbf{z}=
 \begin{bmatrix}
 3\\
@@ -39,47 +39,51 @@ $$\textbf{u}=
 2\\
 \end{bmatrix}
 .$$
-Så er $\textbf{u}$  lexicografisk større end $\textbf{v}$, $\textbf{u} >^L \textbf{v}$, da den første ikke-nul værdi af $\textbf{u}-\textbf{v}$ er $2$, $\textbf{u} <^L \textbf{z}$.
-Til gengæld er $\textbf{u}$ lexicografisk mindre end $\textbf{z}$, da den første ikke-nul værdi er $-1$.
+Så er $\textbf{u}$  lexicografisk større end $\textbf{v}$, $\textbf{u} >^L \textbf{v}$, da den første ikke-nul værdi af $\textbf{u}-\textbf{v}$ er $2$.
+Til gengæld er $\textbf{u}$ lexicografisk mindre end $\textbf{z}$, $\textbf{u} <^L \textbf{z}$, da den første ikke-nul værdi er $-1$.
+Bemærk, at alle $3$ vektorer er lexicografisk positive.
 \end{eks}
 %
 Følgende er en lexicografisk metode til at udvælge de rækker, der skal pivoteres.
 \begin{enumerate}
-\item Vælg en arbitrær søjle $\textbf{A}_j$ til at indgå i basis, så længe dens reducerede pris $c_j$ er negativ.
-Lad $\textbf{u}$ være den $j$'te søjle af tabulaen.
-\item For hvert $i$ med $u_i>0$ divideres den $i$'te række med $u_i$, og den lexicografisk mindste række vælges. 
-Hvis rækken $L$ er den lexicografisk mindste række, så forlader den $L$'te basisvariabel $x_B(L)$ basen.
+\item Vælg en arbitrær søjle $\textbf{A}_j$ til at indgå i basen, så længe dens reducerede omkostning $c_j^*$ er negativ.
+Lad $\textbf{u}$ være den $j$'te søjle i simplextabellen.
+\item For hvert $i$, hvor $u_i>0$, divideres den $i$'te række med $u_i$, og den lexicografisk mindste række vælges. 
+Hvis rækken $L$ er den lexicografisk mindste række, så forlader den $L$'te basale variabel, $x_{B(L)}$, basen.
 \end{enumerate}
 %
 Det følger, at ethvert valg af pivotering via den lexicografiske metode er entydig, da der ellers ville være en anden række, som var proportional med den valgte række. 
-Dette er i strid med antagelsen om, at rækkerne er lineært uafhængige, hvilket er tilfældet.
+Dette er i strid med antagelsen om, at rækkerne er lineært uafhængige.
 %
 \begin{thm}{}{}
-Antag, at simplexmetoden starter med, at alle rækker af en simplextabel, foruden den $0$'te række, er lexicografisk positive. Hvis den lexicografiske metode til at vælge pivotering er fulgt, så gælder der, at
+Antag, at simplexmetoden starter med, at alle rækker i en $m \times n$ simplextabel foruden rækken med objektfunktionen, den $m$'te række, er lexicografisk positive.
+Hvis den lexicografiske metode til at vælge pivotering er fulgt, så gælder det, at
+%
 \begin{enumerate}[label=(\alph*)]
-\item Alle rækkerne foruden den nulte række forbliver lexicografiske positive gennem algoritmen.
-\item Den $0$'te række vokser strengt lexicografisk for hver iteration.
+\item Alle rækkerne foruden den $m$'te række forbliver lexicografiske positive gennem algoritmen.
+\item Den $m$'te række vokser strengt lexicografisk for hver iteration.
 \item Simplexmetoden stopper efter et endeligt antal iterationer. 
 \end{enumerate}
 \end{thm}
 %
 \begin{proof}
 \begin{enumerate}[label=(\alph*)]
-\item Antag, at alle rækkerne af en simplextabel, udover den $0$'te række, er lexicografisk positive i begyndelsen af en iteration af simplex. 
-Antag dernæst, at $x_j$ kommer ind i løsningen, og at pivotrækken er den $l$'te række. Så gælder der per den lexicografiske metode, at
+\item Antag, at alle rækkerne af en simplextabel, udover den $m$'te række, er lexicografisk positive i begyndelsen af en iteration af simplex. 
+Antag dernæst, at $x_j$ bringes ind i løsningen, og at pivotrækken er den $l$'te række.
+Så gælder der jævnfør den lexicografiske metode, at
 $$\dfrac{l\text{'te række}}{u_l}<^L \dfrac{i\text{'te række}}{u_i}, \text{  hvis } i\neq l \text{ og }u_i>0.$$
 For at bestemme den nye tabel divideres den $l$'te række med den positive variabel $u_l$ og forbliver dermed lexicografisk positiv.
-For rækker $i$, hvor $u_i<0$, skal der lægges et positivt multiplum af pivotrækken til for at få den $i,j$'te indgang til at give nul. 
+For rækker $i$, hvor $u_i<0$, skal der lægges et positivt multiplum af pivotrækken til, således at den $(i,j)$'te indgang bliver nul. 
 Grundet begge rækkers lexicografiske positivitet er den resulterende række også lexicografisk positiv. 
 For rækker $i$, hvor $u_i>0$ og $i\neq l$, haves, at
 $$\text{(nye }i\text{'te række)}=\text{(gamle }i\text{'te række)}-\dfrac{u_i}{u_l}\text{(gamle }l\text{'te række)}.$$
 Grundet den tidligere ulighed, som opfyldes af de gamle rækker, vides det, at den nye $i$'te række også er lexicografisk positiv.
 % 
-\item I begyndelsen af hver iteration, er pivotværdien i den $0$'te række negativ, så der skal ligges et positiv multiplum af pivotrækken til. 
-Da pivotrækken er lexicografisk positiv, stiger den $0$'te række lexicografisk.
+\item I begyndelsen af hver iteration, er pivotværdien i den $m$'te række negativ, så der skal ligges et positiv multiplum af pivotrækken til. 
+Da pivotrækken er lexicografisk positiv, stiger den $m$'te række lexicografisk.
 % 
-\item Eftersom den $0$'te række stiger lexicografisk for hver iteration, kan den aldrig returnere til en tidligere værdi.
-Eftersom den $0$'te række er bestemt entydig ud fra nuværende basis, så kan intet basis gentage sig selv, og derfor må simplexmetoden stoppe efter et endeligt antal iterationer.
+\item Eftersom den $m$'te række stiger lexicografisk for hver iteration, kan den aldrig returnere til en tidligere værdi.
+Da den $m$'te række er bestemt entydig ud fra nuværende basis, så kan intet basis gentage sig selv, og derfor må simplexmetoden stoppe efter et endeligt antal iterationer.
 \end{enumerate}
 \end{proof}
 %

@@ -1,14 +1,18 @@
-\chapter{Vigtige beviser}
+\chapter{Entydigheden af en matrix på reduceret trappeform}
 
 \begin{thm}{}{redutrap}
-Lad $A$ være en matrix med den reducerede trappeform $R$. Så er følgende sandt:
+Lad $A$ være en matrix med den reducerede trappeform $A_R$.
+Så er følgende sandt:
 \begin{enumerate}[label=(\alph*)]
-\item  Hvis en søjle j i $A$ er en linearkombination  af andre søjler i $A$, så er søjlen i $R$ en linearkombination af de tilsvarende søjler i $R$ med de samme koefficienter.
-\item  Hvis en søjle j i $R$ er en linearkombination  af andre søjler i $R$, så er søjlen i $A$ en linearkombination af de tilsvarende søjler i $A$ med de samme koefficienter.
+\item  Hvis en søjle $j$ i $A$ er en linearkombination  af andre søjler i $A$, så er søjlen i $A_R$ en linearkombination af de tilsvarende søjler i $A_R$ med de samme koefficienter.
+\item  Hvis en søjle $j$ i $A_R$ er en linearkombination  af andre søjler i $A_R$, så er søjlen i $A$ en linearkombination af de tilsvarende søjler i $A$ med de samme koefficienter.
 \end{enumerate}
 \end{thm}%
 \begin{proof}
-I følgde \ref{thm:eleinv}, så gælder det, at der findes en invertibel matrix $P$, så $PA=R$. Deraf gælder $P\textbf{a}_i=\textbf{r}_i$ for alle $i$. Antag, at søjlen $j$. i $A$ er en linearkombination af de andre søjler i $A$. Så findes skalarer $c_1,c_2,\ldots,c_k$, så det gælder at \\
+Jævnfør \ref{thm:eleinv} så gælder det, at der findes en invertibel matrix $P$, så $PA=A_R$.
+Deraf gælder $P\textbf{a}_i=\textbf{r}_i$ for alle $i$.
+Antag, at søjlen $j$ i $A$ er en linearkombination af de andre søjler i $A$.
+Så findes skalarer $c_1,c_2,\ldots,c_k$, så det gælder, at \\
 \begin{equation}
 \textbf{a}_j=c_1\textbf{a}_1+c_2\textbf{a}_2+\cdots+c_k\textbf{a}_k.
 \end{equation}
@@ -16,45 +20,52 @@ Derfor
 \begin{align*}
 \textbf{r}_j=P\textbf{a}_j&=P(c_1\textbf{a}_1+c_2\textbf{a}_2+\cdots+c_k\textbf{a}_k) \\
 &= c_1P\textbf{a}_1+c_2P\textbf{a}_2+\cdots+c_kP\textbf{a}_k\\
-&= c_1\textbf{r}_1+c_2\textbf{r}_2+\cdots+c_k\textbf{r}_k
+&= c_1\textbf{r}_1+c_2\textbf{r}_2+\cdots+c_k\textbf{r}_k.
 \end{align*}
-Beviset for (b) er lignende ved at benytte $\textbf{r}_i=P^-1\textbf{a}_i.$
-\end{proof} \\
+Beviset for (b) gør brug af sammen fremgangsmåde, men benytter dog $\textbf{r}_i=P^{-1}\textbf{a}_i.$
+\end{proof}\\
 %
-Heraf kan der en række egenskaber ved en matrix på reducerede trappeform, som kommer af foregående bevis samt definitioner og sætninger, som er gennemgået i rapporten: \\\\
+Heraf kan der udledes en række egenskaber for en matrix på reduceret trappeform.
 %
-Lad $R$ være en $m \times n$ matrix på reduceret trappeform. Så gælder følgende egenskaber
+\begin{lem}{}{denderlort}
+Lad $A_R$ være en $m \times n$ matrix på reduceret trappeform.
+Så gælder, at
 \begin{enumerate}[label=(\alph*)]
-\item En søjle i $R$ er en pivotsøjle, hvis og kun hvis, den er ikke-nul og ikke er en linearkombination af de foregående søjler i $R$. 
-\item Den $j$'te pivotsøjle i $R$ er den $j$'te standard i $\R^m$, $\textbf{e}_j$, og derfor er pivotsøjlerne i $R$ lineært uafhængige. 
-\item Antag at $\textbf{r}_j$ ikke er en pivotsøjle i $R$, og at der er $k$ pivotsøjler i $R$ før $\textbf{r}_j$. Så gælder det, at $\textbf{r}_j$ er en linearkombination af de $k$ forudgående pivotsøjler og koefficienterne er de $k$-første indgange i $\textbf{r}_j$. 
+\item En søjle i $A_R$ er en pivotsøjle, hvis og kun hvis den er ikke-nul og ikke er en linearkombination af de foregående søjler i $A_R$. 
+\item Den $j$'te pivotsøjle i $A_R$ er $\textbf{e}_j \in \R^m$ og derfor er pivotsøjlerne i $A_R$ lineært uafhængige. 
+\item Antag, at $\textbf{r}_j$ ikke er en pivotsøjle i $A_R$, og at der er $k$ pivotsøjler i $A_R$ før $\textbf{r}_j$.
+Så gælder det, at $\textbf{r}_j$ er en linearkombination af de $k$ forudgående pivotsøjler og koefficienterne er de $k$ første indgange i $\textbf{r}_j$. 
 \end{enumerate}
+\end{lem}
+\noindent
 %
-Det forudgående kan opskrives som følgende sætning, som bruges til \ref{thm:entydig}.
+\ref{lem:denderlort} følger direkte af \ref{defn:trap} og \ref{defn:redtrap}
+og kan generaliseres til \ref{lem:pivotu}, som bruges til \ref{thm:entydig}.
 %
-\begin{thm}{}{pivotu}
+\begin{lem}{}{pivotu}
 Følgende udsagn er sande for enhver matrix $A$: 
 \begin{enumerate}[label=(\alph*)]
-\item Pivotsøjlerne i $A$ er lineær uafhængige. 
-\item Enhver ikke-pivotsøjle i $A$ er en linarkombination af den forrige pivotsøjle i A, hvor koefficienterne i linearkombinationen er indgangene i den tilsvarende søjle i den reducerede trappeform af $A$. 
+\item Pivotsøjlerne i $A$ er lineært uafhængige. 
+\item Enhver ikke-pivotsøjle i $A$ er en linearkombination af de forrige pivotsøjler i $A$, hvor koefficienterne i linearkombinationen er indgangene i den tilsvarende søjle i den reducerede trappeform af $A$. 
 \end{enumerate} 
-\end{thm}
+\end{lem}
 %
 \begin{thm}{}{entydig}
 Enhver matrix kan, ved hjælp af elementære rækkeoperationer, kun blive omdannet til en entydig matrix på reduceret trappeform.
 \end{thm}
 %
 \begin{proof}
-I følgende bevis refereres der til de tidligere egenskaber for en matrix på reduceret trappeform. \\\\
-Lad $A$ væære en matrix og $R$ være den reduceret trappeform af $A$. 
-Udfra egenskab (a), så gælder det, at en søjle i $R$ er en pivotsøjle i $R$, hvis og kun hvis, den er ikke-nul og ikke er en linearkombination af de forudgående pivotsøjler i $R$. 
-Jævnfør \ref{thm:redutrap} gælder det, at hvis en søjle i $R$ er en pivotsøjle, så er den ikke en linearkombination af de forudgående søjler i $R$ og deraf er søjlen i $A$ heller ikke en linearkombination af de forudgående  søjler i $A$, hvilket betyder at positionerne af pivotsøjlerne i $R$ er entydigt bestemt af søjlerne i $A$. 
-Endvidere gælder det, udfra egenskab (b), at den $j$-te pivotsøjle i $R$ er den $j$-te standardvektor i $\R^m$, og derfor er pivotsøjlerne i $R$ endvidere entydigt bestemt af søjlerne i $A$. \\\\
-Dernæst bevises, at ikke-pivotsøjlerne i $R$ også er bestemt af søjlerne i $A$. 
-Antag, at $\textbf{r}_j$ ikke er en pivotsøjle i $R$.
-Hvis $\textbf{r}_j=\textbf{0}$ medfører $\textbf{a}_j$=$\textbf{0}$ jævnfør \ref{thm:redutrap}. 
-Antag så at $\textbf{r}_j \neq \textbf{0}$, så gælder det, udfra egenskab(c), så er $\textbf{r}_j$ en linarkombination af de forudgående pivotsøjler i $R$, som er lineær uafhængig. 
-Det gælder endvidere, at kofficienterne i linearkombination er de første indgange i $\textbf{r}_j$, hvor der er en koefficient for hver forudgående pivotsøjle, hvor de resterende indgange er nul. 
-Jævnfør \ref{thm:redutrap}, så er $\textbf{a}_j$ også en linearkombination af de forudgående pivotsøjler i $A$, som også er lineær uafhængig og har de samme koefficienter, som afhænger af $A$. 
-Derfor er $\textbf{r}_j$ entydigt bestemt af $A$ og konkludere deraf, at $R$ er entydig bestemt af $A$. 
+I følgende bevis refereres der til de tidligere egenskaber for en matrix på reduceret trappeform.\\\\
+Lad $A$ være en matrix og $A_R$ være den reducerede trappeform af $A$. 
+Jævnfør \ref{lem:denderlort}(a) gælder det, at en søjle i $A_R$ er en pivotsøjle i $A_R$, hvis og kun hvis den er en ikke-nulsøjle og ikke er en linearkombination af de forudgående pivotsøjler i $A_R$. 
+Jævnfør \ref{thm:redutrap} gælder det, at hvis en søjle i $A_R$ er en pivotsøjle, så er den ikke en linearkombination af de forudgående søjler i $A_R$ og deraf er søjlen i $A$ heller ikke en linearkombination af de forudgående  søjler i $A$, hvilket betyder at positionerne af pivotsøjlerne i $A_R$ er entydigt bestemt af søjlerne i $A$. 
+Endvidere gælder det, jævnfør \ref{lem:denderlort}(b), at den $j$'te pivotsøjle i $A_R$ er den $j$'te standardvektor i $\R^m$, og derfor er pivotsøjlerne i $A_R$ endvidere entydigt bestemt af søjlerne i $A$. \\\\
+Dernæst bevises, at ikke-pivotsøjlerne i $A_R$ også er bestemt af søjlerne i $A$. 
+Antag, at $\textbf{r}_j$ ikke er en pivotsøjle i $A_R$.
+Hvis $\textbf{r}_j = \textbf{0}$ medfører det, at $\textbf{a}_j = \textbf{0}$ jævnfør \ref{thm:redutrap}. 
+Antag nu, at $\textbf{r}_j \neq \textbf{0}$.
+Så gælder det jævnfør \ref{lem:denderlort}(c), at $\textbf{r}_j$ er en linearkombination af de forudgående pivotsøjler i $A_R$, som er lineært uafhængige. 
+Det gælder endvidere, at koefficienterne i linearkombinationen er indgangene i $\textbf{r}_j$, hvor indgangene, som ville være rækkens første ikke-nul-indgang, er nulindgange.
+Jævnfør \ref{thm:redutrap} er $\textbf{a}_j$ ligeledes en linearkombination af de forudgående pivotsøjler i $A$, som er lineært uafhængige og har de samme koefficienter, der afhænger af $A$. 
+Derfor er $\textbf{r}_j$ entydigt bestemt af $A$ og det konkluderes deraf, at $A_R$ er entydig bestemt af $A$. 
 \end{proof}
