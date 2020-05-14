@@ -4,12 +4,13 @@
 %Simplexmetoden afsøger dermed hjørnerne på denne vis, hvis de ikke er degenererede basale mulige løsninger.
 %Dermed vil en optimal basismatrix sikre en løsning indenfor løsningsmængden. % er lidt i tvivl om denne sætning er helt rigtigt.
 %bla bla 
-Afsnit \ref{julieerfantalastiskogvidunderlig} belyser at simplexmetoden fidner basale retninger, som reducere omkostningen i objektfunktionen. Nu undersøges hvilken mulig retning, der skal vælges. 
+Afsnit \ref{julieerfantalastiskogvidunderlig} belyser at simplexmetoden finder basale retninger, som reducere omkostningen i objektfunktionen. 
+Med optimale betingelser undersøges nu, hvilken mulig retning, der skal vælges. 
 Omkostningsvektoren $\mathbf{c}^*$ udregnes for en given basal mulig løsning. 
 Hvis ingen basale retninger vil reducerer omkostningen  er løsningen optimal. 
-Hvis den reducerede omkostning $c^*_j$ er negativ, følges den mulige retning $\mathbf{d}$. 
+Hvis den reducerede omkostning $c^*_j$ er negativ, for en mulige retning $\mathbf{d}$, følges denne retning. 
 Hermed vil $x_j$ stige, og de resterende ikke-basale variable fastholdes.
-Eftersom det ønskes at minimere omkostningen, bevæges der så langt som muligt væk fra $\mathbf{x}$, så omkostningsen falder.
+Eftersom det ønskes at minimere omkostningen, bevæges der så langt væk som muligt fra $\mathbf{x}$, så omkostningen falder.
 Det ønskes dermed at finde den største skalar
 \begin{align*}
 \theta^* = \max \{ \theta \geq 0 \mid \textbf{x} + \theta^*\textbf{d} \in \mathcal{P} \},
@@ -17,6 +18,14 @@ Det ønskes dermed at finde den største skalar
 %
 der opfylder, at $\mathbf{x} + \theta^* \mathbf{d}$ er en mulig løsning.
 % Nu kan vi eventuelt udelede \theta^* xD 
+Herefter beregnes omkostningsvektoren for den nye mulige løsning, og samme procedure gentages. Sådan forsættes dette indtil, at ingen basale retninger reducere omkostningen, og løsningen dermed er optimal.
+%\\\\
+% Vi kan eventuelt her beskrive kort med ord den formel som bliver brugt i den naive implimentering 
+%
+%Den største skalar 
+%\begin{align*}
+%\theta^*
+%\end{align*}
 }
 %
 %
