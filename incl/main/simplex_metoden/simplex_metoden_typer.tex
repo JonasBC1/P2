@@ -1,7 +1,7 @@
 %
 \section{Implementering}
 \label{julieergudesmuk}
-\textcolor{red}{Metoden, hvor der bevæges fra en basal mulig løsning, til en ny basal mulig løsning, hvor omkostningen minimeres, ved hjælp af basale retninger i polyederet, kaldes simplexmetoden.}
+\textcolor{red}{Metoden, hvor der bevæges fra en basal mulig løsning til en ny basal mulig løsning, hvor omkostningen minimeres ved hjælp af basale retninger i polyederet, kaldes simplexmetoden.}
 Der findes tre forskellige implementeringer af simplexmetoden, henholdsvis den \textit{naive}, den \textit{reviderede}, og \textit{fuld-tabel} implementeringen.
 %
 \subsection{Den naive implementering}
@@ -15,7 +15,7 @@ Den reducerede omkostning $c_j^* = c_j - \mathbf{c}_B^T B^{-1}A_j$ for enhver va
 c_j^* = c_j - \mathbf{p}^T A_j.
 \end{align*}
 %
-Afhængigt af hvilken pivoteringsregel, som benyttes, er det nødvendigt at udregne alle de mulige reducerede omkostninger, \textcolor{red}{eller i så fald udregne indtil en negativ objektfunktion opstår.}
+Afhængigt af hvilken pivoteringsregel benyttes, er det nødvendigt at udregne alle de mulige reducerede omkostninger, \textcolor{red}{eller i så fald udregne indtil en negativ objektfunktion opstår.}
 Når en søjle $\mathbf{A}_j$ er valgt til at være en del af basen, løses det lineære ligningssystem $\mathbf{Bu}=\mathbf{A}_j$ for at bestemme vektoren $\mathbf{u}=\mathbf{B}^{-1}\mathbf{A}_j$.
 Ved hjælp af dette vil der kunne konstrueres den retning, hvor man bevæger sig væk fra de nuværende basale mulige løsninger.
 Endeligt kan $$\theta^* = \max \{ \theta \geq 0 \mid \textbf{x} + \theta^*\textbf{d} \in \mathcal{P} \}$$ bestemmes, samt den variabel der gør, at basen forlades, og derved kan en ny basal mulig løsning konstrueres. 
