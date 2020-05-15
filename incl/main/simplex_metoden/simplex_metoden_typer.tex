@@ -30,12 +30,17 @@ before skip	= 20pt plus 2pt,
 after skip	= 20pt plus 2pt,
 fonttitle	= \bfseries]
 \begin{enumerate}
-\item En normal iteration starter med et basis bestående af de basale rækker $\textbf{A}_{B(1)},\ldots,\textbf{A}_{B(m)}$ og den tilhørende basale mulige løsning $\textbf{x}$.
-\item Beregn den reducerede objektfunktion $c_j^* = c_j - \mathbf{c}_B^T \textbf{B}^{-1}A_j$ for alle ikke-basale indekser $j$. Hvis de alle er ikke-negative, så er den nuværende basale mulige løsning optimal; ellers vælges et indeks $j$, hvorom det gælder, at $c^*_j<0.$
-\item Udregn $\textbf{u}=\textbf{B}^{-1}\textbf{A}_j$. Hvis der ikke er nogen komponent af $\textbf{u}$, som er positiv, så er $\theta ^*=\infty$, den optimale løsnings værdi er $-\infty$, og algorithmen stopper.
-\item Hvis en komponent af $\textbf{u}$ er positiv, så lad 
-$$\theta^*= \underset{\{i=1,\ldots,m|u_i>0 \} }{\text{min}}  \dfrac{x_{B(i)}}{u_i}.$$
-\item Lad $l$ være indekset for $\theta^*=  \dfrac{x_{B(l)}}{u_l}$. Dan et nyt basis ved at udskifte $\textbf{A}_{B(l)}$ med $\textbf{A}_j$. Hvis $\textbf{y}$ er den nye basale mulige løsning, så er værdierne af de nye basale variable $y_j=\theta^*$ og $y_{B(i)}=x_{B(i)}-\theta^*u_i,i\neq l.$
+\item En normal iteration starter med et basis bestående af de basale rækker $\textbf{A}_{B(1)},\ldots,\textbf{A}_{B(m)}$ og den tilhørende basale mulige løsning $\textbf{v}$.
+\item Beregn den reducerede omkostning $c_j^* = c_j - \mathbf{c}_B^T \textbf{B}^{-1}A_j$ for alle ikke-basale indekser $j$.
+Hvis alle er ikke-negative, så er den nuværende basale mulige løsning optimal; ellers vælges et indeks $j$, hvorom det gælder, at $c^*_j<0.$
+\item Udregn $\textbf{u}=\textbf{B}^{-1}\textbf{A}_j$.
+Hvis ingen komponent i $\textbf{u}$, er positiv, så er $\theta ^*=\infty$, den optimale løsningsværdi er $-\infty$, og algorithmen stopper.
+\item Hvis en komponent i $\textbf{u}$ er positiv, så lad 
+$$\theta^*= \min_{ \{i=1,\ldots,m|u_i>0 \} }        \dfrac{x_{B(i)}}{u_i}.$$
+\item Lad $l$ være indekset for $\theta^*=  \dfrac{x_{B(l)}}{u_l}$.
+Dan en nyt base ved at udskifte $\textbf{A}_{B(l)}$ med $\textbf{A}_j$.
+Den nye basale mulige løsning, $\textbf{w}$, har så de nye basale variable $w_j=\theta^*$ og $w_{B(i)}=v_{B(i)}-\theta^*u_i$ for $i\neq l.$
+%Hvis $\textbf{w}$ er den nye basale mulige løsning, så er værdierne af de nye basale variable $y_j=\theta^*$ og $y_{B(i)}=x_{B(i)}-\theta^*u_i,i\neq l.$
 \end{enumerate}
 \end{tcolorbox}
 %
