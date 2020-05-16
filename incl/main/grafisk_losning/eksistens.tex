@@ -1,10 +1,10 @@
 \section{Eksistens af ekstremumspunkter}
 %
 Dette afsnit belyser tilstrækkelige og nødvendige betingelser for, at et polyeder har mindst ét ekstremumspunkt, da dette ikke er tilfældet for alle polyedre. 
-Dette gøres ved at undersøge, om polyederet indeholder en \textit{uendelig linje}.
+Dette gøres ved at undersøge, om polyederet indeholder en \textit{linje}.
 %
 \begin{defn}{}{klogemads}
-Et polyeder $\mathcal{P} \in \R^n$ indeholder en \textbf{uendelig linje}, hvis der eksisterer en vektor $\textbf{v} \in \mathcal{P}$ og en ikke-nulvektor $\textbf{d} \in \mathcal{P}$, således at $\textbf{v} + \lambda \textbf{d} \in \mathcal{P}$ for alle skalarer $\lambda$.
+Et polyeder $\mathcal{P} \in \R^n$ indeholder en \textbf{linje}, hvis der eksisterer en vektor $\textbf{v} \in \mathcal{P}$ og en ikke-nulvektor $\textbf{d} \in \mathcal{P}$, således at $\textbf{v} + \lambda \textbf{d} \in \mathcal{P}$ for alle skalarer $\lambda$.
 \end{defn}
 \noindent
 %
@@ -123,7 +123,7 @@ Så er følgende udsagn ækvivalente.
 %
 \begin{enumerate}[label = (\alph*)]
 \item $\mathcal{P}$ har mindst ét ekstremumspunkt.
-\item $\mathcal{P}$ indeholder ikke en uendelig linje.
+\item $\mathcal{P}$ indeholder ikke en linje.
 \item Der eksisterer $n$ vektorer i mængden $\{\mathbf{a}_1, \mathbf{a}_2, \ldots , \mathbf{a}_m \}$, som er lineært uafhængige.
 \end{enumerate}
 \end{thm}
@@ -136,7 +136,7 @@ Hvis dette ikke er tilfældet, ligger alle vektorerne $\textbf{a}_i, i \in I$, i
 Betragt linjen bestående af alle punkter på formen $\textbf{u} = \textbf{v} + \lambda \textbf{d}$, hvor $\lambda$ er en vilkårlig skalar.
 For $i \in I$ haves, at $$\textbf{a}_i^T\textbf{u} = \textbf{a}_i^T\textbf{v} + \lambda \textbf{a}_i^T\textbf{d} = \textbf{a}_i^T\textbf{v} = b_i.$$
 De betingelser, der er aktive i $\textbf{v}$, er således også aktive i alle punkter på linjen.
-Antages det, at $\mathcal{P}$ ikke indeholder en uendelig linje, så må der eksistere et $\lambda$, hvor en af betingelserne ikke længere er opfyldt.
+Antages det, at $\mathcal{P}$ ikke indeholder en linje, så må der eksistere et $\lambda$, hvor en af betingelserne ikke længere er opfyldt.
 I punktet, hvor betingelsen er ved at blive brudt, må en ny betingelse blive aktiv.
 Derfor må der eksistere et $\lambda_j$, $j \notin I$, således at $\textbf{a}_j^T (\textbf{v} + \lambda_j\textbf{d}) = b_j$.\\\\
 %
@@ -160,7 +160,7 @@ Da vektorerne $\textbf{a}_i, i = 1, 2, \ldots, n,$ er lineært uafhængige, medf
 Dette giver en modstrid og derfor må (c) medfører (b).
 \end{proof}\\
 %
-Bemærk, at begrænsede polyedre ikke indeholder en uendelig linje.
+Bemærk, at begrænsede polyedre ikke indeholder en linje.
 Ligeledes indeholder den positive kvadrant $\{ \textbf{x} \mid \textbf{x} \geq \textbf{0}\}$ ikke uendelige linjer og da polyedre på standardform befinder sig i den positive kvadrant, indeholder disse heller ikke uendelige linjer.
 Dette giver \ref{kor:adenstatistiker}.
 %Det følger af sætning 3.7 på grund af det oversåtende
