@@ -40,8 +40,8 @@ Disse betingelser danner optimeringsproblemet
 \begin{align*}
 \begin{array}{lrrlr} 
 \text{Maksimer}		&	\multicolumn{2}{c}{z=5x_1+4x_2}  &\\
-\text{begrænset af}	&3x_1& +5x_2			&\leq 	&78,\\
-					&4x_1& + x_2				&\leq	& 36,\\
+\text{begrænset af}	&3x_1 \phantom{,} & +5x_2			&\leq 	&78,\\
+					&4x_1 \phantom{,}& + x_2				&\leq	& 36,\\
 					&x_1,& x_2				&\geq	& 0.
 \end{array}
 \end{align*}
@@ -80,9 +80,9 @@ Med udgangspunkt i et generelt lineært optimeringsproblem på formen
 \end{align*}
 er simplextabellen en matrix, som indeholder de lineære betingelser, slack-variablene og objektfunktionen. 
 Matricen $\mathbf{A}$ opskrives først, og derefter opskrives identitesmatricen $e_{m+1}$, hvor $m$ er antallet af slack-variable, samt den optimale løsning $z$, og til sidst opskrives $\mathbf{b}$. 
-Under $\mathbf{A}$ tilføjes objektfunktionen $- \mathbf{c}^T$. 
+Under $\mathbf{A}$ tilføjes omkostningsvektoren $- \mathbf{c}^T$. 
 Identitetsmatricen $I_m$, som dannes med udgangspunkt i antallet af slack-variable danner basismatricen $B$.
-En general form for simplextabbelen ser ud som følger:
+En general form for simplextabellen ser ud som følger:
 %
 \begin{align*}
 \begin{blockarray}{ccccccccccc}
@@ -114,7 +114,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 %
 \subsubsection{3. Kontroller for optimalitet ellers identificér en pivoteringsindgang}
 %
-Først kontrolleres for optimalitet ved at finde det mindste negative koefficient i objektfunktionen, hvilket findes i nederste række i simplextabellen:
+Først kontrolleres for optimalitet ved at finde det mindste negative koefficient i omkostningsvektoren, hvilket findes i nederste række i simplextabellen:
 %
 \begin{align*}
 \begin{blockarray}{cccccc}
@@ -196,8 +196,8 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 %
 \subsubsection{5. Gentag trin 3 og 4 indtil den optimale løsning er fundet}
 %
-Denne proces fortsættes nu, indtil der ikke er flere negative tal i objektfunktionen.
-Bemærk, at \textit{pivotering} er processen fra valget af den mindste negative værdi i objektfunktionen indtil en ny værdi i objektfunktionen kan vælges.
+Denne proces fortsættes nu, indtil der ikke er flere negative tal i omkostningsvektoren.
+Bemærk, at \textit{pivotering} er processen fra valget af den mindste negative værdi i omkostningsvektoren indtil en ny værdi i omkostningsvektoren kan vælges.
 Der kontrolleres for optimalitet igen, og en ny pivoteringsindgang er valgt ved den mindste negative værdi. 
 Denne er markeret i nedenstående matrix.	
 %Jeg tænker, at ovenstående kan præciseres, men jeg er blank pt.... Så hvad ved jeg :0) 
@@ -270,7 +270,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 %
 \subsubsection{6. Identificér den optimale løsning}
 %
-Eftersom der ikke er flere negative værdier i objektfunktionen, er den optimale løsning nu fundet. 
+Eftersom der ikke er flere negative værdier i omkostningsvektoren, er den optimale løsning nu fundet. 
 Denne løsning kan aflæses direkte af simplextabellen, og den optimale løsning for eksemplet er dermed
 %
 \begin{align*}

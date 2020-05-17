@@ -30,7 +30,7 @@ Vektoren
 \begin{align*}
 \mathbf{d}_B = \left( d_{B(1)}, d_{B(2)}, \ldots , d_{B(m)} \right),
 \end{align*} 
-bestående af de mulige retninger for de basale variable, 
+bestående af de mulige retninger for de basale index, 
 kontureres.
 Da $\mathbf{x}$ er en basal mulig løsning, gælder det, at $A \mathbf{x} = \mathbf{b}$. 
 Eftersom $\mathbf{x}+ \theta \mathbf{d}$ skal være en mulig løsning, gælder det, at $A ( \mathbf{x}+ \theta \mathbf{d}) = \mathbf{b}$.
@@ -70,7 +70,7 @@ Den \textbf{$j$'te basale retning} $\mathbf{d}$, fra $\mathbf{x}$, for en ikke-b
 %
 \begin{align*}
 d_j & = 1, \\
-d_i & = 0 \phantom{hej} for i \neq b(1), \ldots , B(m) \wedge i \neq j, \\
+d_i & = 0 \phantom{hej} \text{ for } i \neq b(1), \ldots , B(m) \wedge i \neq j, \\
 \mathbf{d}_B & = - B^{-1} \mathbf{A}_j.
 \end{align*}
 % 
@@ -199,7 +199,7 @@ c_n - \mathbf{c}_B^T B^{-1} \mathbf{A}_n
 \end{blockarray}.
 \end{align*}
 %
-Betragt de basale indgange i den reducerede omkostningsvektor
+Betragt de indgange, for de basale variable i den reducerede omkostningsvektor
 %
 \begin{align*}
 c^*_{B(j)} & = c_{B(j)} - \mathbf{c}_B^T B^{-1} \mathbf{A}_{B(j)} \\
@@ -211,7 +211,7 @@ c^*_{B(j)} & = c_{B(j)} - \mathbf{c}_B^T B^{-1} \mathbf{A}_{B(j)} \\
 Dermed er indgangene til de basale variable lig nul, da de mulige retninger er nulvektoren. 
 Det kan derfor ikke betale sig at øge basale variable.
 \\\\
-Hvis den reducerede omkostningsvektor $\mathbf{c} \geq \mathbf{0}$, er den basale mulige løsning et lokalt minimum i objektfunktionen og dermed et globalt minimum. Heraf er den optimale løsning fundet. Dette tilfælde belyses i sætning \ref{thm:julieerguden}.
+Hvis den reducerede omkostningsvektor $\mathbf{c}^* \geq \mathbf{0}$, er den basale mulige løsning et lokalt minimum i objektfunktionen og dermed et globalt minimum. Heraf er den optimale løsning fundet. Dette tilfælde belyses i sætning \ref{thm:julieerguden}.
 %
 \begin{thm}{}{julieerguden}
 Lad $\mathbf{x}$ være en basal mulig løsning til en basismatrix $B$, og lad $\mathbf{c}^*$ være den reducerede omkostningsvektor. 
@@ -250,7 +250,7 @@ Heraf defineres \textit{optimal basismatrix}.}
 %
 % Definition 3.3 
 \begin{defn}{}{julieergudenoveralleguder}
-En basismatrix $B$ kaldes optimal, hvis
+En basismatrix $B$ kaldes \textbf{optimal}, hvis
 %
 \begin{enumerate}[label = (\alph*)]
 \item $B^{-1} \mathbf{b} \geq \mathbf{0}$, og

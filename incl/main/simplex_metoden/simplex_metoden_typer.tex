@@ -16,7 +16,7 @@ c_j^* = c_j - \mathbf{p}^T A_j.
 \end{align*}
 %
 Afhængigt af hvilken pivoteringsregel benyttes, er det nødvendigt at udregne alle de mulige reducerede omkostninger, \textcolor{red}{eller i så fald udregne indtil en negativ objektfunktion opstår.}
-Når en søjle $\mathbf{A}_j$ er valgt til at være en del af basen, løses det lineære ligningssystem $\mathbf{Bu}=\mathbf{A}_j$ for at bestemme vektoren $\mathbf{u}=\mathbf{B}^{-1}\mathbf{A}_j$.
+Når en søjle $\mathbf{A}_j$ er valgt til at være en del af basen, løses det lineære ligningssystem $B\mathbf{u}=\mathbf{A}_j$ for at bestemme vektoren $\mathbf{u}=B^{-1}\mathbf{A}_j$.
 Ved hjælp af dette vil der kunne konstrueres den retning, hvor man bevæger sig væk fra de nuværende basale mulige løsninger.
 Endeligt kan $$\theta^* = \max \{ \theta \geq 0 \mid \textbf{x} + \theta^*\textbf{d} \in \mathcal{P} \}$$ bestemmes, samt den variabel der gør, at basen forlades, og derved kan en ny basal mulig løsning konstrueres. 
 En iteration af den naive simpleximplementering gennemløber følgende punkter: 
@@ -82,11 +82,12 @@ De første $m$ søjler er resultatet af matricen ${B^*}^{-1}$.
 %
 \subsection{Fuld-tabel implementeringen}
 Slutteligt er det interessant at beskrive fuld-tabel implementeringen. 
-Det er gældende for fuld-tabel implementeringen, at den i stedet for at opretholde og opdatere matricen $\mathbf{B}^{-1}$ ved hver iteration, som i den reviderede implementering; så opretholder og opdaterer den $m \times (n+1)$ matricen, givet ved $\mathbf{B}^{-1} \left [ \mathbf{A} \mid \mathbf{b} \right ]$, med søjlerne $\mathbf{B}^{-1}\mathbf{b}$ og $\mathbf{B}^{-1}\mathbf{A}_1,\ldots,\mathbf{B}^{-1}\mathbf{A}_n$. 
+Det er gældende for fuld-tabel implementeringen, at den i stedet for at opretholde og opdatere matricen $B^{-1}$ ved hver iteration, som i den reviderede implementering; 
+så opretholder og opdaterer den $m \times (n+1)$ matricen, givet ved $B^{-1} \left [ A \mid \mathbf{b} \right ]$, med søjlerne $B^{-1}\mathbf{b}$ og $B^{-1}\mathbf{A}_1,\ldots,B^{-1}\mathbf{A}_n$. 
 Denne matrix betegnes som en simplextabel.
-Søjlen $\mathbf{B}^{-1}\mathbf{b}$ indeholder værdierne for de basale variable.
-Søjlen $\mathbf{B}^{-1}\mathbf{A}_i$ betegnes som den $i$'te søjle af tabellen.
-Søjlen $\mathbf{u} = \mathbf{B}^{-1}\mathbf{A}_j$ er svarende til den variabel, som er i basen, er betegnet som pivotsøjlen. 
+Søjlen $B^{-1}\mathbf{b}$ indeholder værdierne for de basale variable.
+Søjlen $B^{-1}\mathbf{A}_i$ betegnes som den $i$'te søjle af tabellen.
+Søjlen $\mathbf{u} = B^{-1}\mathbf{A}_j$ er svarende til den variabel, der er i basen, er betegnet som pivotsøjlen. 
 Hvis den $l$'te basale variabel udgår fra basen, så er den $l$'te række, betegnet som pivotrækken. 
 Endelig er elementet, der tilhører både pivotrækken og pivotsøjlen, betegnet ved pivoteringsindgangen.
 Bemærk desuden, at dette element er $u_l$ og altid er positivt, da algoritmen ellers var stoppet i trinnet før. 

@@ -32,17 +32,17 @@ Således er det ved modstrid vist, at $\textbf{v}$ er et ekstremumspunkt i $\mat
 %
 %
 Som nævnt gælder \ref{thm:optiekstrem1} kun for polyedre på standard form og begrænsede polyedre. 
-\ref{thm:optiekstrem2} kan betragtes som en udvidelse af \ref{thm:optiekstrem1} og viser, at der findes en optimal løsning, så længe den optimale værdi af objektfunktionen ikke er $-\infty$. 
+\ref{thm:optiekstrem2} kan betragtes som en udvidelse af \ref{thm:optiekstrem1} og viser, at der findes en optimal løsning, så længe den optimale omkostning ikke er $-\infty$. 
 %
 \begin{thm}{}{optiekstrem2}
 Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et polyeder $\mathcal{P}$. 
 Antag, at der i $\mathcal{P}$ er mindst ét ekstremumspunkt. 
-Så er den optimale værdi af objektfunktionen lig $- \infty$, eller også findes et optimalt ekstremumspunkt. 
+Så er den optimale omkostning lig $- \infty$, eller også findes et optimalt ekstremumspunkt. 
 \end{thm}
 %
 \begin{proof}
 Bemærk indledningsvist, at et element $\textbf{v}$ i et polyeder $\mathcal{P}$ har rang$(\textbf{v})=k$, hvis der findes præcis $k$ lineært uafhængige betingelser, som er aktive ved $\textbf{v}$. 
-Antag, at den optimale værdi af objektfunktionen ikke er $-\infty$. 
+Antag, at den optimale omkostning ikke er $-\infty$. 
 \\\\
 %
 Lad et polyeder $\mathcal{P} = \{\textbf{x} \in \R^n \mid \textbf{A}\textbf{x} \geq \textbf{b} \}$ og bemærk, at $\textbf{v} \in \mathcal{P}$, hvor rang$(\textbf{v})=k$, $k < n$. 
@@ -55,7 +55,7 @@ Antag nu, at $\textbf{c}^T \textbf{d} < 0$, og lad $\textbf{u} = \textbf{v} + \l
 %Hvad er en halvlinje...?? 
 Alle punkter på denne halvlinje opfylder $\textbf{a}^T_i \textbf{u} = b_i$, som i beviset for \ref{thm:ekstremums1}. 
 %Er ovenstående rigtigt?? 
-Hvis hele halvlinjen var indeholdt i $\mathcal{P}$, havde den optimale værdi for objektfunktionen været $- \infty $; men det antages indledningsvist, at denne værdi er endelig. 
+Hvis hele halvlinjen var indeholdt i $\mathcal{P}$, havde den optimale omkostning været $- \infty $; men det antages indledningsvist, at denne værdi er endelig. 
 Så er ikke hele halvlinjen indeholdt i $\mathcal{P}$, og den udgår dermed fra $\mathcal{P}$ på et tidspunkt. 
 Når halvlinjen er på grænsen af $\mathcal{P}$, lige inden dens udgang derfra, er der et optimalt $ \lambda^* > 0$ og et $j \notin I$, således at $\textbf{a}^T_j (\textbf{v} + \lambda^* \textbf{d} ) = b_j $.
 \\\\%Se Horias noter fra tirsdag d. 24/3. Det gav så god mening, da han forklarede det, men nu kan jeg ikke huske, hvad han ville have. 
@@ -80,7 +80,7 @@ Deraf haves \ref{kor:optiekstrem2}.
 %
 \begin{kor}{}{optiekstrem2}
 Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et ikke-tomt polyeder.
-Så er den optimale værdi af objektfunktionen lig $- \infty$, eller også findes en optimal løsning. 
+Så er den optimale omkostning lig $- \infty$, eller også findes en optimal løsning. 
 \end{kor}
 \noindent
 %

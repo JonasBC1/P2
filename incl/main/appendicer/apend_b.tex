@@ -15,20 +15,20 @@ Egenskaber for lineært afhængige og uafhængige mængder.
 \ref{thm:spandim}, der omhandler spannet og dimensionen, er vigtig i forhold til visse egenskaber nævnt i rapporten.
 %
 \begin{thm}{}{spandim}
-Antag, at spannet $\S$ af vektorene $\textbf{x}_1,\ldots,\textbf{x}_c$ har dimension $m$.
+Antag, at spannet $\S$ af vektorene $\textbf{v}_1,\ldots,\textbf{v}_c$ har dimension $m$.
 Så gælder, at
 \begin{enumerate}[label=(\alph*)]
-\item Der eksisterer en base af $\S$ bestående af $m$ af vektorene $\mathbf{x}_1,\ldots,\mathbf{x}_c$.
-\item Hvis $k\leq m$ og $\mathbf{x}_1,\ldots,\mathbf{x}_k$ er lineært uafhængige, kan der skabes en base $\S$ ved $\mathbf{x}_1,\ldots,\mathbf{x}_k$, hvor der ligeledes vælges $m-k$ af vektorene $\mathbf{x}_{k+1},\ldots,\textbf{x}_c$.
+\item Der eksisterer en base af $\S$ bestående af $m$ af vektorene $\mathbf{v}_1,\ldots,\mathbf{v}_c$.
+\item Hvis $k\leq m$ og $\mathbf{v}_1,\ldots,\mathbf{v}_k$ er lineært uafhængige, kan der skabes en base $\S$ ved $\mathbf{v}_1,\ldots,\mathbf{v}_k$, hvor der ligeledes vælges $m-k$ af vektorene $\mathbf{v}_{k+1},\ldots,\textbf{v}_c$.
 \end{enumerate}
 \end{thm}
 
 \begin{proof}
 Da (a) er et tilfælde af (b), hvor $k=0$, er beviset for (b) tilstrækkeligt.
-Hvis alle vektorer $\mathbf{x}_{k+1},\ldots,\textbf{x}_c$ kan opnås som linearkombination af $\mathbf{x}_1,\ldots,\mathbf{x}_k$, så er alle vektorer i $\mathbf{x}_{1},\ldots,\textbf{x}_c$ ligeledes en linearkombination af $\mathbf{x}_1,\ldots,\mathbf{x}_k$, hvor $\mathbf{x}_1,\ldots,\mathbf{x}_k$ udgør en base.
-Såfremt dette ikke er tilfældet, gælder det, at en eller flere vektorer i $\mathbf{x}_{k+1},\ldots,\textbf{x}_c$ ikke er linearkombination af $\mathbf{x}_1,\ldots,\mathbf{x}_k$. 
-Der udvælges nu en lineær uafhængig vektor i $\mathbf{x}_{k+1},\ldots,\textbf{x}_c$.
-Derved opnås der en mængde bestående af $k+1$ lineært uafhængige vektorer fra $\mathbf{x}_{1},\ldots,x_c$.
+Hvis alle vektorer $\mathbf{v}_{k+1},\ldots,\textbf{v}_c$ kan opnås som linearkombination af $\mathbf{v}_1,\ldots,\mathbf{v}_k$, så er alle vektorer i $\mathbf{v}_{1},\ldots,\textbf{v}_c$ ligeledes en linearkombination af $\mathbf{v}_1,\ldots,\mathbf{v}_k$, hvor $\mathbf{v}_1,\ldots,\mathbf{v}_k$ udgør en base.
+Såfremt dette ikke er tilfældet, gælder det, at en eller flere vektorer i $\mathbf{v}_{k+1},\ldots,\textbf{v}_c$ ikke er linearkombination af $\mathbf{v}_1,\ldots,\mathbf{v}_k$. 
+Der udvælges nu en lineær uafhængig vektor i $\mathbf{v}_{k+1},\ldots,\textbf{v}_c$.
+Derved opnås der en mængde bestående af $k+1$ lineært uafhængige vektorer fra $\mathbf{v}_{1},\ldots,\mathbf{v}$.
 Den proces gentages $m-k$ gange og derved opnås basen af $\S$.
 \end{proof}
 %
