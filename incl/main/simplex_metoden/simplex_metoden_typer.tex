@@ -30,7 +30,7 @@ before skip	= 20pt plus 2pt,
 after skip	= 20pt plus 2pt,
 fonttitle	= \bfseries]
 \begin{enumerate}
-\item En normal iteration starter med en basis bestående af de basale rækker $\textbf{A}_{B(1)},\ldots,\textbf{A}_{B(m)}$ og den tilhørende basale mulige løsning $\textbf{v}$.
+\item En normal iteration starter med et basis bestående af de basale rækker $\textbf{A}_{B(1)},\ldots,\textbf{A}_{B(m)}$ og den tilhørende basale mulige løsning $\textbf{v}$.
 \item Beregn den reducerede omkostning $c_j^* = c_j - \mathbf{c}_B^T \textbf{B}^{-1}A_j$ for alle ikke-basale indekser $j$.
 Hvis alle er ikke-negative, så er den nuværende basale mulige løsning optimal; ellers vælges et indeks $j$, hvorom det gælder, at $c^*_j<0.$
 \item Udregn $\textbf{u}=\textbf{B}^{-1}\textbf{A}_j$.
@@ -38,7 +38,7 @@ Hvis ingen komponent i $\textbf{u}$, er positiv, så er $\theta ^*=\infty$, den 
 \item Hvis en komponent i $\textbf{u}$ er positiv, så lad 
 $$\theta^*= \min_{ \{i=1,\ldots,m|u_i>0 \} }        \dfrac{x_{B(i)}}{u_i}.$$
 \item Lad $l$ være indekset for $\theta^*=  \dfrac{x_{B(l)}}{u_l}$.
-Dan en ny basis ved at udskifte $\textbf{A}_{B(l)}$ med $\textbf{A}_j$.
+Dan en nyt base ved at udskifte $\textbf{A}_{B(l)}$ med $\textbf{A}_j$.
 Den nye basale mulige løsning, $\textbf{w}$, har så de nye basale variable $w_j=\theta^*$ og $w_{B(i)}=v_{B(i)}-\theta^*u_i$ for $i\neq l.$
 %Hvis $\textbf{w}$ er den nye basale mulige løsning, så er værdierne af de nye basale variable $y_j=\theta^*$ og $y_{B(i)}=x_{B(i)}-\theta^*u_i,i\neq l.$
 \end{enumerate}
@@ -59,7 +59,7 @@ after skip	= 20pt plus 2pt,
 fonttitle	= \bfseries]
 \begin{enumerate}
 \item I en typisk iteration startes med en basis indeholdende basissøjlerne $A_{B(1)},\ldots,A_{B(m)}$, en associeret basal mulig løsning $\mathbf{v}$, samt en invers $B^{-1}$ af basismatricen. 
-\item Udregn rækkevektoren $\mathbf{p}^T=\mathbf{c}_{\text{B}}^T B^{-1}$ og udregn dernæst den reducerede objektfunktion $c_j^* = c_j - \mathbf{p}^T \mathbf{A}_j$.
+\item Udregn rækkevektoren $\mathbf{p}^T=\mathbf{c}_{\text{B}}^T B^{-1}$ og udregn dernæst den reducerede omkostning $c_j^* = c_j - \mathbf{p}^T \mathbf{A}_j$.
 Hvis resultaterne alle er ikke-negative, vil det resultere i at den givne basal mulige løsning er optimal, og algoritmen vil slutte ved dette punkt. Hvis dette ikke er tilfældet, så vælg et $j$, hvor $c_j^* < 0$.
 \item Udregn $\mathbf{u}=B^{-1}\mathbf{A}_j$.
 Hvis intet komponent i $\mathbf{u}$ er positivt, så er den optimale pris $-\infty$, og algoritmen vil slutte ved dette trin. 
@@ -70,7 +70,7 @@ Hvis intet komponent i $\mathbf{u}$ er positivt, så er den optimale pris $-\inf
 \begin{align*}
 \theta^*=\underset{\{i=1,\ldots,m \mid u_i>0\}}{\text{min}}\frac{x_{B(i)}}{u_i}.
 \end{align*}
-\item Bestem $l$, så $$\theta^*=\frac{x_{B(l)}}{u_l}$$ er gældende. Bestem dernæst en ny basis ved at udskifte $\mathbf{A}_{B(l)}$ med $\mathbf{A}_j$. Hvis $\mathbf{w}$ er den nye basal mulige løsning, så er værdierne for de nye basale værdier $w_j=\theta^*$ samt $w_{B(i)}=v_{B(i)}-\theta^*u_i$, hvor $i \neq l$.
+\item Bestem $l$, så $$\theta^*=\frac{x_{B(l)}}{u_l}$$ er gældende. Bestem dernæst en ny base ved at udskifte $\mathbf{A}_{B(l)}$ med $\mathbf{A}_j$. Hvis $\mathbf{w}$ er den nye basal mulige løsning, så er værdierne for de nye basale værdier $w_j=\theta^*$ samt $w_{B(i)}=v_{B(i)}-\theta^*u_i$, hvor $i \neq l$.
 \item Endeligt bestem $m \times (m+1)$ matricen $\left [B^{-1} \mid \mathbf{u} \right ]$.
 Tilføj enhver række et multiplum af den $l$'te række for at få den sidste søjle til at være lig med enhedsvektoren $\mathbf{e}_l$.
 De første $m$ søjler er resultatet af matricen ${B^*}^{-1}$.
@@ -103,7 +103,7 @@ after skip	= 20pt plus 2pt,
 fonttitle	= \bfseries]
 \begin{enumerate}
 \item I en typisk iteration, startes der med at opstille en simplextabel associeret med en basismatrix $\mathbf{B}$ og en tilsvarende basal mulig løsning $\mathbf{v}.$
-\item Dernæst undersøges om den reducerede værdi i objektfunktionen i simplextabellen.
+\item Dernæst undersøges den reducerede omkostning i simplextabellen.
 Hvis alle indgange er ikke-negative, så er den nuværende basal mulige løsning den optimale, og algoritmen vil slutte ved dette punkt.
 Hvis dette ikke er tilfældet, så vælg ethvert $j$, hvor $c_j^* < 0$.
 \item Betragt vektoren $\mathbf{u}=\mathbf{B}^{-1}\mathbf{A}_j$, hvor den $j$'te søjle, som er pivotsøjlen, i tabellen. Hvis intet komponent i $\mathbf{u}$ er positivt, så er den optimale pris $-\infty$, og algoritmen vil slutte ved dette trin. 
