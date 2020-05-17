@@ -17,7 +17,7 @@ c_j^* = c_j - \mathbf{p}^T A_j.
 %
 Afhængigt af hvilken pivoteringsregel benyttes, er det nødvendigt at udregne alle de mulige reducerede omkostninger, \textcolor{red}{eller i så fald udregne indtil en negativ objektfunktion opstår.}
 Når en søjle $\mathbf{A}_j$ er valgt til at være en del af basen, løses det lineære ligningssystem $B\mathbf{u}=\mathbf{A}_j$ for at bestemme vektoren $\mathbf{u}=B^{-1}\mathbf{A}_j$.
-Ved hjælp af dette vil der kunne konstrueres den retning, hvor man bevæger sig væk fra de nuværende basale mulige løsninger.
+Ved hjælp af dette vil der kunne konstrueres den basal retning, hvor man bevæger sig væk fra de nuværende basale mulige løsninger.
 Endeligt kan $$\theta^* = \max \{ \theta \geq 0 \mid \textbf{x} + \theta^*\textbf{d} \in \mathcal{P} \}$$ bestemmes, samt den variabel der gør, at basen forlades, og derved kan en ny basal mulig løsning konstrueres. 
 En iteration af den naive simpleximplementering gennemløber følgende punkter: 
 %
