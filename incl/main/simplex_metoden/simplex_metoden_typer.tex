@@ -1,24 +1,25 @@
 %
 \section{Implementering}
 \label{julieergudesmuk}
-\textcolor{red}{Metoden, hvor der bevæges fra en basal mulig løsning til en ny basal mulig løsning, hvor omkostningen minimeres ved hjælp af basale retninger i polyederet, kaldes simplexmetoden.}
-Der findes tre forskellige implementeringer af simplexmetoden, henholdsvis den \textit{naive}, den \textit{reviderede}, og \textit{fuld-tabel} implementeringen.
+En måde at traversere fra en basal mulig løsning til en ny basal mulig løsning er ved simplexmetoden, hvor omkostningen minimeres ved hjælp af basale retninger i polyederet.
+Der findes forskellige implementeringer af simplexmetoden.
+Tre, som bliver uddybet er henholdsvis den \textit{naive}, den \textit{reviderede}, og \textit{fuld-tabel} implementeringen.
 %
 \subsection{Den naive implementering}
 I den naive implementering af simplexmetoden overgår ingen af de bærende elementer fra en iteration til den næste iteration. 
-For den indledende iteration, haves indekserne
-$B(1),\ldots,B(m)$ for de givne basale variable. 
+For den indledende iteration, haves de basale indeks
+$B(1),\ldots,B(m)$ for de givne basale variable $v_{B(i)}$. 
 Derudfra kan der dannes en basismatrix $B$ og beregnes $\mathbf{p}^T=\mathbf{c}_{\text{B}}^T B^{-1}$ ved at løse det lineære ligningssystem $\mathbf{p}^T B=\mathbf{c}_{\text{B}}^T$ for den ukendte vektor $\mathbf{p}$.
-Den reducerede omkostning $c_j^* = c_j - \mathbf{c}_B^T B^{-1}A_j$ for enhver variabel $x_j$, er derfor givet ved formelen
+Den reducerede omkostning $c_j^* = c_j - \mathbf{c}_B^T B^{-1}\textbf{a}_j$ for enhver variabel $v_j$, er derfor givet ved formelen
 %
 \begin{align*}
-c_j^* = c_j - \mathbf{p}^T A_j.
+c_j^* = c_j - \mathbf{p}^T \textbf{a}_j.
 \end{align*}
 %
-Afhængigt af hvilken pivoteringsregel benyttes, er det nødvendigt at udregne alle de mulige reducerede omkostninger, \textcolor{red}{eller i så fald udregne indtil en negativ objektfunktion opstår.}
-Når en søjle $\mathbf{A}_j$ er valgt til at være en del af basen, løses det lineære ligningssystem $B\mathbf{u}=\mathbf{A}_j$ for at bestemme vektoren $\mathbf{u}=B^{-1}\mathbf{A}_j$.
+Afhængigt af hvilken pivoteringsregel, der benyttes, er det nødvendigt at udregne alle de mulige reducerede omkostninger, eller indtil en negativ reduceret omkostning opstår.
+Når en søjle $\mathbf{a}_j$ er valgt til at være en del af basen, løses det lineære ligningssystem $B\mathbf{u}=\mathbf{a}_j$ for at bestemme vektoren $\mathbf{u}=B^{-1}\mathbf{a}_j$.
 Ved hjælp af dette vil der kunne konstrueres den basal retning, hvor man bevæger sig væk fra de nuværende basale mulige løsninger.
-Endeligt kan $$\theta^* = \max \{ \theta \geq 0 \mid \textbf{x} + \theta^*\textbf{d} \in \mathcal{P} \}$$ bestemmes, samt den variabel der gør, at basen forlades, og derved kan en ny basal mulig løsning konstrueres. 
+Endeligt kan $$\theta^* = \max \{ \theta \geq 0 \mid \textbf{v} + \theta^*\textbf{d} \in \mathcal{P} \}$$ bestemmes, samt den variabel der gør, at basen forlades, og derved kan en ny basal mulig løsning konstrueres. 
 En iteration af den naive simpleximplementering gennemløber følgende punkter: 
 %
 \begin{tcolorbox}[
@@ -30,15 +31,15 @@ before skip	= 20pt plus 2pt,
 after skip	= 20pt plus 2pt,
 fonttitle	= \bfseries]
 \begin{enumerate}
-\item En normal iteration starter med et basis bestående af de basale rækker $\textbf{A}_{B(1)},\ldots,\textbf{A}_{B(m)}$ og den tilhørende basale mulige løsning $\textbf{v}$.
-\item Beregn den reducerede omkostning $c_j^* = c_j - \mathbf{c}_B^T \textbf{B}^{-1}A_j$ for alle ikke-basale indekser $j$.
+\item Start med en basismatrix $B$ bestående af de basale søjler $\textbf{a}_{B(1)},\ldots,\textbf{a}_{B(m)}$ og den tilhørende basale mulige løsning $\textbf{v}$.
+\item Beregn den reducerede omkostning $$c_j^* = c_j - \mathbf{c}_B^T B^{-1}\textbf{a}_j$$ for alle ikke-basale indekser $j$.
 Hvis alle er ikke-negative, så er den nuværende basale mulige løsning optimal; ellers vælges et indeks $j$, hvorom det gælder, at $c^*_j<0.$
-\item Udregn $\textbf{u}=\textbf{B}^{-1}\textbf{A}_j$.
+\item Udregn $\textbf{u}=B^{-1}\textbf{a}_j$.
 Hvis ingen komponent i $\textbf{u}$, er positiv, så er $\theta ^*=\infty$, den optimale løsningsværdi er $-\infty$, og algorithmen stopper.
 \item Hvis en komponent i $\textbf{u}$ er positiv, så lad 
-$$\theta^*= \min_{ \{i=1,\ldots,m|u_i>0 \} }        \dfrac{x_{B(i)}}{u_i}.$$
-\item Lad $l$ være indekset for $\theta^*=  \dfrac{x_{B(l)}}{u_l}$.
-Dan en nyt base ved at udskifte $\textbf{A}_{B(l)}$ med $\textbf{A}_j$.
+$$\theta^*= \min_{ \{i=1,\ldots,m|u_i>0 \} }        \dfrac{v_{B(i)}}{u_i}.$$
+\item Lad $l$ være indekset for $$\theta^*=  \dfrac{v_{B(l)}}{u_l}.$$
+Dan en ny basismatrix $\bar{B}$ ved at udskifte $\textbf{a}_{B(l)}$ med $\textbf{a}_j$.
 Den nye basale mulige løsning, $\textbf{w}$, har så de nye basale variable $w_j=\theta^*$ og $w_{B(i)}=v_{B(i)}-\theta^*u_i$ for $i\neq l.$
 %Hvis $\textbf{w}$ er den nye basale mulige løsning, så er værdierne af de nye basale variable $y_j=\theta^*$ og $y_{B(i)}=x_{B(i)}-\theta^*u_i,i\neq l.$
 \end{enumerate}
@@ -46,7 +47,9 @@ Den nye basale mulige løsning, $\textbf{w}$, har så de nye basale variable $w_
 %
 \subsection{Den reviderede implementering}
 Problemet ved den naive implementering er dens potentielt høje tidskompleksitet, da den er nødsaget til at løse to lineære ligningssystemer.
-En alternativ implementering til dette er den revidere implementering, som benytter matricen $B^{-1}$ ved hver iteration, samt er vektorerne $\mathbf{c}_{\text{B}}^T B^{-1}$ og $B^{-1} \mathbf{A}_j$ udregnet ved hjælp af matrix-vektor multiplikation.
+En alternativ implementering til dette er den revidere implementering, som benytter matricen $B^{-1}$ ved hver iteration.
+Vektorerne $\mathbf{c}_{\text{B}}^T B^{-1}$ og $B^{-1} \mathbf{a}_j$ udregnes ved hjælp af matrix-vektor multiplikation.
+Den naive implementering udregner $B^{-1}$ i starten af hver iteration på traditionelt vis, hvorimod den reviderede implementering udregner den i slutningen ved elementære rækkeoperationer på $[B \mid I]$.
 En iteration af den reviderede simpleximplementering gennemløber følgende punkter: 
 % 
 \begin{tcolorbox}[
@@ -58,22 +61,23 @@ before skip	= 20pt plus 2pt,
 after skip	= 20pt plus 2pt,
 fonttitle	= \bfseries]
 \begin{enumerate}
-\item I en typisk iteration startes med en basis indeholdende basissøjlerne $A_{B(1)},\ldots,A_{B(m)}$, en associeret basal mulig løsning $\mathbf{v}$, samt en invers $B^{-1}$ af basismatricen. 
-\item Udregn rækkevektoren $\mathbf{p}^T=\mathbf{c}_{\text{B}}^T B^{-1}$ og udregn dernæst den reducerede omkostning $c_j^* = c_j - \mathbf{p}^T \mathbf{A}_j$.
-Hvis resultaterne alle er ikke-negative, vil det resultere i at den givne basal mulige løsning er optimal, og algoritmen vil slutte ved dette punkt. Hvis dette ikke er tilfældet, så vælg et $j$, hvor $c_j^* < 0$.
-\item Udregn $\mathbf{u}=B^{-1}\mathbf{A}_j$.
-Hvis intet komponent i $\mathbf{u}$ er positivt, så er den optimale pris $-\infty$, og algoritmen vil slutte ved dette trin. 
-%
-% Cost er vel ligmed pris her?? Eller hvad? %
+\item Start med en basismatrix $B$ bestående af de basale søjler $\textbf{a}_{B(1)},\ldots,\textbf{a}_{B(m)}$, dens invers $B^{-1}$ og en tilhørende basal mulig løsning $\mathbf{v}$. 
+\item Udregn rækkevektoren $\mathbf{p}^T=\mathbf{c}_{\text{B}}^T B^{-1},$ og udregn dernæst den reducerede omkostning $$c_j^* = c_j - \mathbf{p}^T \mathbf{a}_j,$$ for alle ikke-basale indekser $j$.
+Hvis resultaterne alle er ikke-negative, vil det resultere i at den givne basal mulige løsning $\textbf{v}$ er optimal, og algoritmen vil slutte ved dette punkt.
+Hvis dette ikke er tilfældet, så vælg et $j$, hvor $c_j^* < 0$.
+\item Udregn $\mathbf{u}=B^{-1}\mathbf{a}_j$.
+Hvis intet komponent i $\mathbf{u}$ er positivt, så er den optimale omkostning $-\infty$, og algoritmen vil slutte ved dette trin. 
 %
 \item Hvis mindst en komponent i $\mathbf{u}$ er positivt, lad 
 \begin{align*}
-\theta^*=\underset{\{i=1,\ldots,m \mid u_i>0\}}{\text{min}}\frac{x_{B(i)}}{u_i}.
+\theta^*=\underset{\{i=1,\ldots,m \mid u_i>0\}}{\text{min}}\frac{v_{B(i)}}{u_i}.
 \end{align*}
-\item Bestem $l$, så $$\theta^*=\frac{x_{B(l)}}{u_l}$$ er gældende. Bestem dernæst en ny base ved at udskifte $\mathbf{A}_{B(l)}$ med $\mathbf{A}_j$. Hvis $\mathbf{w}$ er den nye basal mulige løsning, så er værdierne for de nye basale værdier $w_j=\theta^*$ samt $w_{B(i)}=v_{B(i)}-\theta^*u_i$, hvor $i \neq l$.
+\item Bestem $l$, så $$\theta^*=\frac{v_{B(l)}}{u_l}$$ er gældende.
+Bestem dernæst en ny basismatrix  $\bar{B}$ ved at udskifte $\mathbf{a}_{B(l)}$ med $\mathbf{a}_j$.
+Hvis $\mathbf{w}$ er den nye basal mulige løsning, så er værdierne for de nye basale værdier $w_j=\theta^*$ samt $w_{B(i)}=v_{B(i)}-\theta^*u_i$, hvor $i \neq l$.
 \item Endeligt bestem $m \times (m+1)$ matricen $\left [B^{-1} \mid \mathbf{u} \right ]$.
 Tilføj enhver række et multiplum af den $l$'te række for at få den sidste søjle til at være lig med enhedsvektoren $\mathbf{e}_l$.
-De første $m$ søjler er resultatet af matricen ${B^*}^{-1}$.
+De første $m$ søjler er resultatet af matricen $\bar{B}^{-1}$.
 %Nogle der har en ide til at gøre dette pænere? Det er B-stjerne i -1% 
 \end{enumerate}
 \end{tcolorbox}
@@ -83,12 +87,12 @@ De første $m$ søjler er resultatet af matricen ${B^*}^{-1}$.
 \subsection{Fuld-tabel implementeringen}
 Slutteligt er det interessant at beskrive fuld-tabel implementeringen. 
 Det er gældende for fuld-tabel implementeringen, at den i stedet for at opretholde og opdatere matricen $B^{-1}$ ved hver iteration, som i den reviderede implementering; 
-så opretholder og opdaterer den $m \times (n+1)$ matricen, givet ved $B^{-1} \left [ A \mid \mathbf{b} \right ]$, med søjlerne $B^{-1}\mathbf{b}$ og $B^{-1}\mathbf{A}_1,\ldots,B^{-1}\mathbf{A}_n$. 
+så opretholder og opdaterer den $m \times (n+1)$ matricen, givet ved $\left [ B^{-1} A \mid B^{-1} \mathbf{b} \right ]$, med søjlerne $B^{-1}\mathbf{a}_1,\ldots,B^{-1}\mathbf{a}_n$ og $B^{-1}\mathbf{b}$. 
 Denne matrix betegnes som en simplextabel.
 Søjlen $B^{-1}\mathbf{b}$ indeholder værdierne for de basale variable.
-Søjlen $B^{-1}\mathbf{A}_i$ betegnes som den $i$'te søjle af tabellen.
-Søjlen $\mathbf{u} = B^{-1}\mathbf{A}_j$ er svarende til den variabel, der er i basen, er betegnet som pivotsøjlen. 
-Hvis den $l$'te basale variabel udgår fra basen, så er den $l$'te række, betegnet som pivotrækken. 
+Søjlen $B^{-1}\mathbf{a}_i$ betegnes som den $i$'te søjle af tabellen.
+Søjlen $\mathbf{u} = B^{-1}\mathbf{a}_j$ er svarende til den variabel, der er i basen, er betegnet som pivotsøjlen. 
+Hvis den $l$'te basale variabel udgår fra basen, så er den $l$'te række, betegnet som pivotrækken.
 Endelig er elementet, der tilhører både pivotrækken og pivotsøjlen, betegnet ved pivoteringsindgangen.
 Bemærk desuden, at dette element er $u_l$ og altid er positivt, da algoritmen ellers var stoppet i trinnet før. 
 For at klarlægge hvordan fuld-tabel implementeringen fungerer, vil der i følgende blive gennemgået en iteration: 
@@ -102,17 +106,18 @@ before skip	= 20pt plus 2pt,
 after skip	= 20pt plus 2pt,
 fonttitle	= \bfseries]
 \begin{enumerate}
-\item I en typisk iteration, startes der med at opstille en simplextabel associeret med en basismatrix $\mathbf{B}$ og en tilsvarende basal mulig løsning $\mathbf{v}.$
+\item Start med at opstille en simplextabel med en tilhørende  basismatrix $B$, omkostningsvektoren $-\textbf{c}^T$ og en tilsvarende basal mulig løsning $\mathbf{v}.$
 \item Dernæst undersøges den reducerede omkostning i simplextabellen.
 Hvis alle indgange er ikke-negative, så er den nuværende basal mulige løsning den optimale, og algoritmen vil slutte ved dette punkt.
-Hvis dette ikke er tilfældet, så vælg ethvert $j$, hvor $c_j^* < 0$.
-\item Betragt vektoren $\mathbf{u}=\mathbf{B}^{-1}\mathbf{A}_j$, hvor den $j$'te søjle, som er pivotsøjlen, i tabellen. Hvis intet komponent i $\mathbf{u}$ er positivt, så er den optimale pris $-\infty$, og algoritmen vil slutte ved dette trin. 
-\item For hvert $i$, hvor $u_i$ er positivt, udregn forholdet $$\frac{x_{B(i)}}{u_i}.$$ 
+Hvis dette ikke er tilfældet, så vælg $j$, hvor $c_j^* < 0$.
+\item Betragt vektoren $\mathbf{u}=B^{-1}\mathbf{a}_j$, hvor den $j$'te søjle er pivotsøjlen, i tabellen.
+Hvis $\mathbf{u} > \textbf{0}$, så er den optimale omkostning $-\infty$, og algoritmen vil slutte ved dette trin. 
+\item For hvert $i$, hvor $u_i$ er positivt, udregn forholdet $$\frac{v_{B(i)}}{u_i}.$$ 
 Lad $l$ være det index af en række, som tilsvarer det laveste forhold,
 \begin{align*}
-\frac{x_{B(l)}}{u_l} \leq \frac{x_{B(i)}}{u_i}.
+\frac{v_{B(l)}}{u_l} \leq \frac{v_{B(i)}}{u_i}.
 \end{align*}
-Søjlen $\mathbf{A}_{B(l)}$ udgår fra basen og søjlen $\mathbf{A}_j$ indgår i basen. 
+Søjlen $\mathbf{a}_{B(l)}$ forlader basen og søjlen $\mathbf{a}_j$ indtræder i basen. 
 \item Tilføj for hver række i tabellen en konstant multiplum af den $l$'te række, som er pivotrækken, så $u_l$, som er pivoteringsindgangen bliver lig med $1$ og alle andre indgange i pivotsøjlen bliver $0$. 
 \end{enumerate}
 \end{tcolorbox}

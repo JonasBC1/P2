@@ -32,8 +32,8 @@ I følgende afsnit uddybes ovenstående punkter, samt tilhørende teori, med udg
 Haribo har to typer slikblandinger, $x_1$ og $x_2$, hvor profitten for disse henholdsvis er $5$ og $4$ valutaenheder.
 %(her kunne der også skrives tusind/millioner whatever ingen anelse om realistisk skala i haribos profitmargin).
 Disse er begrænset af produktionskapaciteten af lakrids og vingummi.
-Lakridsproduktion har en begrænsning på $78$ enheder, hvor der skal $3$ enheder lakrids i $x_1$ blandingen og $5$ enheder lakrids i $x_2$.
-Vingummiproduktionen har en begrænsning på $36$ enheder, hvor der skal $4$ enheder vingummi i $x_1$ blandingen og $1$ enhed vingummi i $x_2$. 
+Lakridsproduktion har en begrænsning på $78$ enheder, hvor der skal $3$ enheder lakrids i $x_1$ blandingen og $5$ enheder lakrids i $x_2$ blandingen.
+Vingummiproduktionen har en begrænsning på $36$ enheder, hvor der skal $4$ enheder vingummi i $x_1$ blandingen og $1$ enhed vingummi i $x_2$ blandingen. 
 %
 Disse betingelser danner optimeringsproblemet
 %
@@ -59,10 +59,11 @@ Med udgangspunkt i metoden fra afsnit \ref{sec:standard} opstilles optimeringspr
 \text{Maksimér}		& -5x_1 &-4x_2 &&& + z & =&0\phantom{,}\\
 \text{begrænset af}	&3x_1& +5x_2	& + \textcolor{blue}{s_1} 	&&&= 	&78,\\
 					&4x_1& + x_2	& & + \textcolor{blue}{s_2}	&&=	&	 36.\\
+					&x_1,& x_2			&&&	&\geq	& 0.
 \end{array}
 \end{align*}
 %
-Slack-variablene $s_1$ og $s_2$ er her markeret med blå, da de ikke indgår i den endelige løsning.
+Slack-variablene $\textcolor{blue}{s_1}$ og $\textcolor{blue}{s_2}$ er her markeret med blå, da de ikke indgår i den endelige løsning.
 %Slackvariablerne indgår i dualproblemets løsning. xd lit fam 420 
 %
 \subsubsection{2. Opstil simplextabellen for optimeringsproblemet}		
@@ -79,7 +80,7 @@ Med udgangspunkt i et generelt lineært optimeringsproblem på formen
 \end{array}
 \end{align*}
 er simplextabellen en matrix, som indeholder de lineære betingelser, slack-variablene og objektfunktionen. 
-Matricen $\mathbf{A}$ opskrives først, og derefter opskrives identitesmatricen $e_{m+1}$, hvor $m$ er antallet af slack-variable, samt den optimale løsning $z$, og til sidst opskrives $\mathbf{b}$. 
+Matricen $\mathbf{A}$ opskrives først, og derefter opskrives identitesmatricen $I_{m+1}$, hvor $m$ er antallet af slack-variable, samt den optimale omkostning $z$, og til sidst opskrives $\mathbf{b}$. 
 Under $\mathbf{A}$ tilføjes omkostningsvektoren $- \mathbf{c}^T$. 
 Identitetsmatricen $I_m$, som dannes med udgangspunkt i antallet af slack-variable danner basismatricen $B$.
 En general form for simplextabellen ser ud som følger:
@@ -93,7 +94,7 @@ a_{2,1} & a_{2,2} & \cdots & a_{2,n} & 0 & 1 & \cdots & 0 & 0 & b_2 \\
 \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
 a_{m,1} & a_{m,2} & \cdots & a_{m,n} & 0 & 0 & \cdots  & 1  & 0 & b_{m}\\
 \cline{1-10}
--c_1 & -c_2 & \cdots & -c_n & 0 & 0 & \cdots & 0 & 1 & v\\
+-c_1 & -c_2 & \cdots & -c_n & 0 & 0 & \cdots & 0 & 1 & z\\
 \end{block}
 \end{blockarray}.
 \end{align*}
@@ -114,7 +115,8 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 %
 \subsubsection{3. Kontroller for optimalitet ellers identificér en pivoteringsindgang}
 %
-Først kontrolleres for optimalitet ved at finde det mindste negative koefficient i omkostningsvektoren, hvilket findes i nederste række i simplextabellen:
+Først kontrolleres for optimalitet ved at kontrollere for negative koefficienter i omkostningsvektoren, hvilket findes i nederste række i simplextabellen.
+Såfremt en negativ koefficient eksisterer, findes den mindste af disse.
 %
 \begin{align*}
 \begin{blockarray}{cccccc}
@@ -131,7 +133,7 @@ x_1 & x_2 & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} & z & b \\
 Søjlen, hvori denne værdi er, kaldes \textit{pivotsøjlen}. 
 Herefter findes \textit{pivotrækken} og \textit{pivoteringsindgangen}, ved at finde den mindste $u_i$-værdi ud fra 
 \begin{align*}
-\frac{a_{i,j}}{b_j}=u_i
+u_i = \frac{a_{i,j}}{b_j}
 \end{align*}
 %
 i pivotsøjlen.
@@ -141,7 +143,7 @@ Pivoteringsindgangen findes ved at betragte
 u_1 = \frac{78}{3} = 26 \text{  } \text{ og } \text{   } u_2 = \frac{36}{4} = 9.
 \end{align*}
 %
-Eftersom $9$ er den laveste værdi, er $a_{2,1}$ pivoteringsindgangen, mens den række, som den er i, er pivotrækken. 
+Eftersom $9$ er den laveste værdi, er den $2.$ række pivotrækken og $a_{2,1}$ er dermed pivoteringsindgangen. 
 I nedenstående er pivoteringsindgangen markeret.
 %
 \begin{align*}
@@ -279,4 +281,4 @@ x_2 & = 12, \\
 z   & = 78.
 \end{align*}
 %
-Haribos profit vil derfor være størst ved produktion af $6$ enheder af $x_1$ blandingen og $12$ enheder af $x_2$ blandingen. Dette giver en profit på $78$ enheder.
+Haribos profit vil derfor være størst ved produktion af $6$ enheder af $x_1$ blandingen og $12$ enheder af $x_2$ blandingen. Dette giver en profit på $78$ valutaenheder.

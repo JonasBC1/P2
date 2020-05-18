@@ -31,19 +31,19 @@ Endnu et vigtigt element, som er tiltalende ved den reviderede metode, er rumkom
 Her kan der igen være en ret betydelig forskel, afhængigt af størrelsen på $n$.\\\\
 %
 Selvom antallet af basale mulige løsninger kan stige eksponentielt med antallet af variable og betingelser, så har simplexmetoden typisk fundet en optimal løsning efter $O(m)$ iterationer.
-Dog eksisterer der polyedre, hvor antallet af påkrævede pivoteringer  stiger eksponentielt.
-For ikke-degenererede problemer bevæger simplexmetoden sig altid fra et ekstremumspunkt til en af dets naboer og forbedrer omkostningen.
+Dog eksisterer der polyedre, hvor antallet af påkrævede pivoteringer stiger eksponentielt.
+For ikke-degenererede problemer bevæger simplexmetoden sig altid fra et ekstremumspunkt til en af dets tilstødende ekstremumspunkter og forbedrer omkostningen.
 Lad et polyeder have et eksponentielt antal af ekstremumspunkter, og lad en sti besøge alle disse.
 Denne sti er konstrueret ved, fra et ekstremumspunkt, at besøge et ekstremumspunkt med mindre omkostning.
 Med sådan et polyeder vil simplexmetoden, med en pivoteringsregel, som følger stien, kræve et eksponentielt antal af pivoteringer.
 %%
 \begin{thm}{}{}
-Betragt det lineære optimeringsproblem, hvor objektfunktionen $-x_n$ minimeres med betingelserne $\varepsilon \leq x_1 \leq 1$ og $\varepsilon x_{i-1} \leq x_i \leq 1 - \varepsilon x_{i-1}$ for $i = 2, 3, \ldots, n$ og $0 < \varepsilon < \frac{1}{2}$.
+Betragt det lineære optimeringsproblem, hvor objektfunktionen $\textbf{c}_n^T \textbf{x} = -x_n$ minimeres med betingelserne $\varepsilon \leq x_1 \leq 1$ og $\varepsilon x_{i-1} \leq x_i \leq 1 - \varepsilon x_{i-1}$ for $i = 2, 3, \ldots, n$ og $0 < \varepsilon < \frac{1}{2}$.
 Så gælder det, at
 %
 \begin{enumerate}[label=(\alph*)]
 \item Løsningsmængden har $2^n$ ekstremumspunkter.
-\item Ekstremumspunkterne kan arrangeres således, at hver er nabo til og har lavere værdi end det forrige ekstremumspunkt.
+\item Ekstremumspunkterne kan arrangeres således, at hvert tilstødende ekstremumspunkt har lavere omkostning end det forrige ekstremumspunkt.
 \item Der eksisterer en pivoteringsregel til simplexmetoden, således at den kræver $2^n-1$ pivoteringer, før algoritmen afsluttes.
 \end{enumerate}
 %
@@ -51,16 +51,18 @@ Så gælder det, at
 %
 \begin{proof}
 %
-Lad $\mathcal{P}_n$ være et polyeder i $\R^n$, begrænset af betingelserne $\varepsilon \leq x_1 \leq 1$ og $\varepsilon x_{i-1} \leq x_i \leq 1 - \varepsilon x_{i-1}$ for $i = 2, 3, \ldots, n$ og $0 < \varepsilon < \frac{1}{2}$.
+Lad $\mathcal{P}_n$ være et polyeder i $\R^n$, begrænset af betingelserne $\varepsilon \leq x_1 \leq 1$ og $$\varepsilon x_{i-1} \leq x_i \leq 1 - \varepsilon x_{i-1}$$ for $i = 2, 3, \ldots, n$ og $0 < \varepsilon < \frac{1}{2}$.
 %
 \begin{enumerate}[label = (\alph*)]
 \item Ved induktion vises, at $\mathcal{P}_n$ har $2^n$ ekstremumspunkter. 
 Basistrinnet, hvor $n=1$, følger trivielt.
 Antag nu, at resultatet gælder for $n=k$.
 Polyederet $\mathcal{P}_{k+1}$ er begrænset af samme betingelser som $\mathcal{P}_{k}$ med tilføjelse af betingelsen $\varepsilon x_{k} \leq x_{k+1} \leq 1 - \epsilon x_{k}$.
-Den øvre og nedre begrænsning i $\varepsilon x_{k} \leq x_{k+1} \leq 1 - \varepsilon x_{k}$ kan ikke skære hinanden, mens $ 0 \leq x_k \leq 1$ er opfyldt.
+Den øvre og nedre begrænsning i $\varepsilon x_{k} \leq x_{k+1} \leq 1 - \varepsilon x_{k}$ skærer ikke hinanden, mens $ x_{k-1} \leq x_k \leq 1 - \varepsilon x_{k-1}$ er opfyldt.
 Dette medfører, at hvert ekstremumspunkt i $\mathcal{P}_{k}$ giver anledning til to entydige ekstremumspunkter i $\mathcal{P}_{k+1}$, hvilket viser (a).
-\item Med induktion vises det, at ekstremumspunkterne i $\mathcal{P}_n$ kan arrangeres således, at hvert ekstremumspunkt er nabo til og har mindre værdi end det forrige ekstremumspunkt.
+%
+%
+\item Med induktion vises det, at ekstremumspunkterne $\textbf{p}_1, \ldots \textbf{p}_{2^n}$ i $\mathcal{P}_n$ kan arrangeres således, at hvert ekstremumspunkt tilstøder det forrige og $\textbf{c}_n^T  \textbf{p}_1 < \ldots < \textbf{c}_n^T  \textbf{p}_{2^n}$, når $\textbf{c}_n^T \textbf{x} = -x_n$.
 Basistrinnet for $n=1$ følger trivielt.
 Antag nu, at resultatet gælder for  $n = k$.
 $\mathcal{P}_{k+1}$ kan deles i to $\mathcal{P}_{k}$ polyedre.

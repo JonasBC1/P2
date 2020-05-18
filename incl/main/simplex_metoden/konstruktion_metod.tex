@@ -1,19 +1,23 @@
 \noindent
 Simplexmetoden finder basale retninger, som reducerer omkostningerne i objektfunktionen. 
-Med optimale betingelser undersøges nu, hvilken mulig retning, der skal vælges. 
+Med optimale betingelser undersøges nu, hvilken basal retning, der skal vælges. 
 Omkostningsvektoren $\mathbf{c}^*$ udregnes for en given basal mulig løsning. 
 Hvis ingen basale retninger kan reducere omkostningen, er løsningen optimal. 
-Hvis den reducerede omkostning $c^*_j$ er negativ for en mulig retning $\mathbf{d}$, vælges denne retning. 
+Hvis den reducerede omkostning $c^*_j$ er negativ for en basal retning $\mathbf{d}$, vælges denne retning. 
 Hermed vil $x_j$ stige, og de resterende ikke-basale variable fastholdes.
-Eftersom der søges at minimere omkostningen, bevæges der så langt væk som muligt fra $\mathbf{x}$, så omkostningen falder.
+Eftersom der søges at minimere omkostningen, bevæges der så langt i retning af $\textbf{d}$ som muligt, så omkostningen falder mest muligt.
 Det ønskes dermed at finde den største skalar
 \begin{align*}
-\theta^* = \max \{ \theta \geq 0 \mid \textbf{x} + \theta^*\textbf{d} \in \mathcal{P} \},
+\theta^* = \max \{ \theta \geq 0 \mid \textbf{x} + \theta\textbf{d} \in \mathcal{P} \},
 \end{align*}
 %
 der opfylder, at $\mathbf{x} + \theta^* \mathbf{d}$ er en mulig løsning.
 % Nu kan vi eventuelt udelede \theta^* xD 
-Herefter beregnes omkostningsvektoren for den nye mulige løsning, og samme procedure gentages. Dette forsættes, indtil ingen basale retninger reducerer omkostningen, og løsningen dermed er optimal.
+Herefter beregnes omkostningsvektoren for den nye mulige løsning, og samme procedure gentages.
+Dette forsættes, indtil ingen basale retninger reducerer omkostningen, og en optimal løsning er fundet.
+\textcolor{red}{
+Den løsning der traverseres fra forlader hermed basen og den nye basale mulige løsning indtræder i basen og de tidligere basale variable bliver dermed inaktive.}
+% og de tidligere basale variable bliver til ikke-basale variable.
 %\\\\
 % Vi kan eventuelt her beskrive kort med ord den formel som bliver brugt i den naive implimentering 
 %

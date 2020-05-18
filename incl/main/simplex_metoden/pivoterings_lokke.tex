@@ -41,15 +41,15 @@ $$\textbf{u}=
 .$$
 Så er $\textbf{u}$  lexicografisk større end $\textbf{v}$, $\textbf{u} >^L \textbf{v}$, da den første ikke-nul værdi af $\textbf{u}-\textbf{v}$ er $2$.
 Til gengæld er $\textbf{u}$ lexicografisk mindre end $\textbf{z}$, $\textbf{u} <^L \textbf{z}$, da den første ikke-nul værdi er $-1$.
-Bemærk, at alle $3$ vektorer er lexicografisk positive.
+Bemærk, at alle tre vektorer er lexicografisk positive.
 \end{eks}
 %
 Følgende er en lexicografisk metode til at udvælge de rækker, der skal pivoteres.
 \begin{enumerate}
-\item Vælg en arbitrær søjle $\textbf{A}_j$ til at indgå i basen, så længe dens reducerede omkostning $c_j^*$ er negativ.
-Lad $\textbf{u}$ være den $j$'te søjle i simplextabellen.
+\item Vælg en arbitrær søjle $\textbf{a}_j$ til at indtræde i basen, så længe dens reducerede omkostning $c_j^*$ er negativ.
+Lad $\textbf{v}$ være den $j$'te søjle i simplextabellen.
 \item For hvert $i$, hvor $u_i>0$, divideres den $i$'te række med $u_i$, og den lexicografisk mindste række vælges. 
-Hvis rækken $L$ er den lexicografisk mindste række, så forlader den $L$'te basale variabel, $x_{B(L)}$, basen.
+Hvis rækken $L$ er den lexicografisk mindste række, så forlader den $L$'te basale variabel, $v_{B(L)}$, basen.
 \end{enumerate}
 %
 Det følger, at ethvert valg af pivotering via den lexicografiske metode er entydig, da der ellers ville være en anden række, som var proportional med den valgte række. 
@@ -69,7 +69,7 @@ Hvis den lexicografiske metode til at vælge pivotering er fulgt, så gælder de
 \begin{proof}
 \begin{enumerate}[label=(\alph*)]
 \item Antag, at alle rækkerne af en simplextabel, udover den $m$'te række, er lexicografisk positive i begyndelsen af en iteration af simplex. 
-Antag dernæst, at $x_j$ bringes ind i løsningen, og at pivotrækken er den $l$'te række.
+Antag dernæst, at $v_j$ indtræder i løsningen, og at pivotrækken er den $l$'te række.
 Så gælder der jævnfør den lexicografiske metode, at
 $$\dfrac{l\text{'te række}}{u_l}<^L \dfrac{i\text{'te række}}{u_i}, \text{  hvis } i\neq l \text{ og }u_i>0.$$
 For at bestemme den nye tabel divideres den $l$'te række med den positive variabel $u_l$ og forbliver dermed lexicografisk positiv.
