@@ -107,7 +107,11 @@ fonttitle	= \bfseries]
 Hvis alle indgange er ikke-negative, så er den nuværende basal mulige løsning den optimale, og algoritmen vil slutte ved dette punkt.
 Hvis dette ikke er tilfældet, så vælg ethvert $j$, hvor $c_j^* < 0$.
 \item Betragt vektoren $\mathbf{u}=\mathbf{B}^{-1}\mathbf{A}_j$, hvor den $j$'te søjle, som er pivotsøjlen, i tabellen. Hvis intet komponent i $\mathbf{u}$ er positivt, så er den optimale pris $-\infty$, og algoritmen vil slutte ved dette trin. 
-\item For hvert $i$, hvor $u_i$ er positivt, udregn forholdet $$\frac{x_{B(i)}}{u_i}.$$ Lad $l$ være det index  af en række, som tilsvarer det laveste forhold.
+\item For hvert $i$, hvor $u_i$ er positivt, udregn forholdet $$\frac{x_{B(i)}}{u_i}.$$ 
+Lad $l$ være det index af en række, som tilsvarer det laveste forhold,
+\begin{align*}
+\frac{x_{B(l)}}{u_l} \leq \frac{x_{B(i)}}{u_i}.
+\end{align*}
 Søjlen $\mathbf{A}_{B(l)}$ udgår fra basen og søjlen $\mathbf{A}_j$ indgår i basen. 
 \item Tilføj for hver række i tabellen en konstant multiplum af den $l$'te række, som er pivotrækken, så $u_l$, som er pivoteringsindgangen bliver lig med $1$ og alle andre indgange i pivotsøjlen bliver $0$. 
 \end{enumerate}

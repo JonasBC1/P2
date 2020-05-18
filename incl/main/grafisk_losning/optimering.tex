@@ -10,6 +10,7 @@ Antag, at der i $\mathcal{P}$ er mindst ét ekstremumspunkt, samt at en optimal 
 Så eksisterer der en optimal løsning, som er et ekstremumspunkt i $\mathcal{P}$.
 \end{thm}
 %
+\input{fig/tikz/geometri/bevis}
 %
 \begin{proof}
 Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et polyeder $\mathcal{P}$. 
@@ -40,6 +41,7 @@ Antag, at der i $\mathcal{P}$ er mindst ét ekstremumspunkt.
 Så er den optimale omkostning lig $- \infty$, eller også findes et optimalt ekstremumspunkt. 
 \end{thm}
 %
+%
 \begin{proof}
 Bemærk indledningsvist, at et element $\textbf{v}$ i et polyeder $\mathcal{P}$ har rang$(\textbf{v})=k$, hvis der findes præcis $k$ lineært uafhængige betingelser, som er aktive ved $\textbf{v}$. 
 Antag, at den optimale omkostning ikke er $-\infty$. 
@@ -64,7 +66,7 @@ Det vides fra beviset for \ref{thm:ekstremums1}, at $\textbf{a}_j$ er lineært u
 \\\\
 %
 Antag nu, at $\textbf{c}^T \textbf{d} = 0$, og lad en linje være $\textbf{u} = \textbf{v} + \lambda \textbf{d}$, hvor $ \lambda $ er en arbitrær skalar. 
-Eftersom $\mathcal{P}$ ikke indeholder uendelige linjer, må linjen nødvendigvis udgå fra $P$ på et tidspunkt. 
+Eftersom $\mathcal{P}$ ikke indeholder uendelige linjer, må linjen nødvendigvis udgå fra $\mathcal{P}$ på et tidspunkt. 
 Som før haves nu igen en vektor $\textbf{u}$, hvis rang er højere end rangen af $\textbf{v}$. 
 Da $\textbf{c}^T \textbf{d} = 0$, haves desuden, at $\textbf{c}^T \textbf{u} = \textbf{c}^T \textbf{v}$. 
 Det er nu vist, at der i begge tilfælde findes et punkt $\textbf{u}$ med højere rang end $\textbf{v}$, således $\textbf{c}^T \textbf{u} \leq \textbf{c}^T \textbf{v}$. 
