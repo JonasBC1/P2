@@ -220,9 +220,10 @@ Lad $\mathbf{v}$ være en basal mulig løsning til en basismatrix $B$, og lad $\
 \item Hvis $\mathbf{v}$ er optimal og ikke-degenereret, så er $\mathbf{c}^* \geq 0$.
 \end{enumerate}
 \end{thm}
+\noindent
 %
-\begin{proof}
-Bevis udelades.
+Beviset udelades.
+Se \citep[Side 86]{bert}.\\\\
 %\begin{enumerate}[label = (\alph*)]
 %\item Antag, at $\bar{\textbf{c}} \geq \textbf{0}$. Lad $\textbf{y}$ være en arbitrær mulig løsning, og $\textbf{d} = \textbf{y} - \textbf{x}$. Grundet de mulige løsninger, er $\textbf{A} \textbf{x} = \textbf{A} \textbf{y} = \textbf{b}$, hvormed $\textbf{A} \textbf{d} = \textbf{0}$. Sidstnævnte kan skrives som 
 %$$\textbf{B} \textbf{d}_B + \sum_{i \in N} \textbf{A}_i d_i = \textbf{0},$$
@@ -242,11 +243,9 @@ Bevis udelades.
 %Da $\textbf{x}$ ikke er degenereret, er den $j$'te basale retning en mulig retning for mindskelse af objektfunktionen. 
 %Der findes dermed mulige løsninger, hvis objektfunktion har lavere værdi end $\textbf{x}$'s, ved at bevæge sig i denne retning, hvormed $\textbf{x}$ ikke er optimal. 
 %\end{enumerate}
-\end{proof}
-\\
 %
-Dermed er alle basale retninger mulige retninger, hvis et problem er givet uden degenererede løsninger. 
-Heraf defineres en \textit{optimal basismatrix}.
+Dermed er alle basale retninger, for en basal mulig løsning, mulige retninger, hvis problemet er givet uden degenererede løsninger. 
+Heraf defineres en \textit{optimal basismatrix}, for at have optimale betingelser i forbindelse med simplexmetoden.
 %
 % Definition 3.3 
 \begin{defn}{}{julieergudenoveralleguder}
@@ -258,4 +257,3 @@ En basismatrix $B$ kaldes \textbf{optimal}, hvis
 \end{enumerate}
 %
 \end{defn}
-\noindent
