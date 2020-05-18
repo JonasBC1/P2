@@ -1,5 +1,5 @@
 \newpage
-\section{Løsning til lineære ligningssystemer}
+\section{Løsning af lineære ligningssystemer}
 %
 Disse ligningssystemer kan løses ved hjælp af forskellige operationer,
 som introduceres i følgende afsnit.
@@ -8,12 +8,11 @@ som introduceres i følgende afsnit.
 Der eksisterer tre operationer, som kan udføres på rækkerne i matricen til et lineært ligningssystem.
 %
 \begin{defn}{}{element}
-Ved \textbf{ombytning} bytter to rækker plads i ligningssystemet, hvilket noteres
+Ved \textbf{ombytning} bytter rækkerne $R_i$ og $R_j$ plads i ligningssystemet, hvilket noteres
 \begin{align*}
 A \xrightarrow{R_i \leftrightarrow R_j} B, 
 \end{align*}
-hvor $A$ er matricen før rækkeoperationen udføres, og $B$ er matricen efter rækkeoperationen er udført. 
-$R_i$ og $R_j$ er rækker i $A$.\\\\
+hvor $A$ er matricen før rækkeoperationen udføres, og $B$ er matricen efter rækkeoperationen er udført.\\\\
 Ved \textbf{skalering} multipliceres en række med en skalar $c$, hvor $c \neq 0$, hvilket noteres
 \begin{align*}
 A \xrightarrow{R_i \rightarrow cR_i} B.
@@ -133,7 +132,7 @@ B=
 \end{align*}
 %
 $A$ er på trappeform, mens $B$ ikke er på trappeform. 
-Hvis der foretages en ombytning på række to og tre, da vil matrix $B$ ligeledes være på trappeform.
+Hvis der foretages en ombytning på række to og tre, da vil $B$ ligeledes være på trappeform.
 %
 \end{eks}
 %
@@ -152,7 +151,7 @@ En matrix er på \textbf{reduceret trappeform}, hvis den opfylder følgende krit
 \end{defn}
 \noindent
 %
-Bemærk, at den reducerede trappeform af en matrix $A$ kan noteres $A_R$.
+Bemærk, at den reducerede trappeform af en matrix $A$ vil blive noteret $A_R$.
 \\
 %
 \begin{eks}
@@ -160,7 +159,7 @@ Jævnfør \ref{defn:redtrap} er
 \begin{align*}
 A_R=
 \begin{blockarray}{ccccc}
-\begin{block}{[cccc|c]}
+\begin{block}{[ccccc]}
 1 & 0 & 5 & 0 & 0\\
 0 & 1 & 3 & 0 & 0\\
 0 & 0 & 0 & 1 & 0\\

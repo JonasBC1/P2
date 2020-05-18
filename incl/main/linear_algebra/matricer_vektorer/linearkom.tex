@@ -18,7 +18,7 @@ Skalarerne kaldes linearkombinationens koefficienter.
 %
 \noindent 
 %
-Bemærk at en linearkombination af én vektor er blot en skalering af vektoren.
+Bemærk, at en linearkombination af én vektor er blot en skalering af vektoren.
 \\\\
 %
 \begin{eks}
@@ -91,7 +91,7 @@ a_n
 \end{bmatrix}
 \end{align*}
 %
-i $\R^n$ kan skrives som linearkombination af $I_n$ i $\R^n$. 
+i $\R^n$ kan skrives som linearkombination af $I_n$. 
 Givet to ikke-parallelle vektorer $\mathbf{u}$ og $\mathbf{v}$ i $\R^2$, så er enhver anden vektor i $\R^2$ en linearkombination af $\mathbf{u}$ og $\mathbf{v}$. 
 %
 \subsection{Matrix-vektorprodukt}
@@ -139,7 +139,7 @@ $$A=
 \end{bmatrix}.
 $$
 %
-Eftersom $A$ har 3 søjler og \textbf{u} har 3 komponenter, så eksisterer $A\textbf{u}$ og findes ved
+Eftersom $A$ har 3 søjler og \textbf{u} har 3 komponenter, så $A\textbf{u}$ defineret og givet ved
 $$
 A\textbf{u}=
 \begin{bmatrix}
@@ -213,17 +213,17 @@ Lad $A$ og $B$ være $m \times n$ matricer, og lad $\mathbf{u}, \mathbf{v}$ og $
 \item $A(\mathbf{u}+\mathbf{v})=A\mathbf{u}+A\mathbf{v}$.
 \item $A(c\mathbf{u})=c(A\mathbf{u})=(cA)\mathbf{u}$ for enhver skalar $c$.
 \item $(A+B)\mathbf{u}=A\mathbf{u}+B\mathbf{u}$.
-\item $A\mathbf{e}_j=\mathbf{a}_j$ for $j=1,2,\ldots,n$, hvor $\mathbf{e}_j$ er den j'te standardvektor i $\R^n$.
+\item $A\mathbf{e}_j=\mathbf{a}_j$ for $j=1,2,\ldots,n$, hvor $\mathbf{e}_j$ er den $j$'te standardvektor i $\R^n$.
 \item Hvis $B$ er en $m \times n$ matrix, der opfylder, at $B\mathbf{w}=A\mathbf{w}$ for alle $\mathbf{w}$ i $\R^n$, så gælder, at $B=A$.
 \item $A\mathbf{0}$ er $m \times 1$ nulvektoren.
-\item Hvis $O$ er $m \times n$ nulmatricen, så gælder, at $O\mathbf{v}$ er $m \times 1$ nulvektoren.
+\item Givet $O_{m,n}$, så gælder, at $O_{m,n}\mathbf{v}$ er $m \times 1$ nulvektoren.
 \item $I_n\mathbf{v}=\mathbf{v}$.
 \end{enumerate}
 \end{thm}
 %
 \begin{proof}
 \begin{enumerate}[label=(\alph*)]
-\item Da de i'te komponenter af $\textbf{u}$ og $\textbf{v}$ er henholdsvis $u_i$ og $v_i$, kan det opskrives som
+\item Da de $i$'te komponenter af $\textbf{u}$ og $\textbf{v}$ er henholdsvis $u_i$ og $v_i$, kan det opskrives som
 \begin{align*}
 A(\mathbf{u}+\mathbf{v})&=(u_1+v_1)\mathbf{a}_1+(u_2+v_2)\mathbf{a}_2+\cdots + (u_n+v_n)\mathbf{a}_n \\
 &=(u_1\mathbf{a}_1+u_2\mathbf{a}_2+\cdots+u_n\mathbf{a}_n)+(v_1\mathbf{a}_1+v_2\mathbf{a}_2+\cdots+v_n\mathbf{a}_n) \\
@@ -262,7 +262,7 @@ B&=A.
 % \frac{\textbf{b}_1w_1+\textbf{b}_2 w_2+\cdots+\textbf{b}_n w_n}{w_1+ w_2+\cdots+ w_n} &=\frac{\textbf{a}_1 w_1+\textbf{a}_2 w_2+\cdots+\textbf{a}_n w_n}{w_1+ w_2+\cdots+ w_n} \rightarrow\\  
 \item Dette kan opskrives som
 \begin{align*}
-0\textbf{a}_1+0\textbf{a}_2+\cdots+0\textbf{a}_n.
+0\textbf{a}_1+0\textbf{a}_2+\cdots+0\textbf{a}_n = \textbf{0}_m.
 \end{align*}
 Resultatet er $\textbf{0}$ med $m$ rækker.
 %

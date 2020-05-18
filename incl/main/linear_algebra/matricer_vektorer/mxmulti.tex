@@ -136,7 +136,7 @@ Lad $A$ og $B$ være $k \times m$ matricer, $C$ være en $m \times n$ matrix, og
 Lad $A$ og $B$ være $k \times m$ matricer, $C$ være en $m \times n$ matrix, og $P$ og $Q$ være $n \times p$ matricer. 
 %
 \begin{enumerate}[label=(\alph*)]
-\item Den $(i,j)$'te indgang i matrixprodukterne $s(AC)$ og $(sA)C$ har formen $sa_{i,1}c_{1,j} + sa_{i,2}c_{2,j} + \cdots + sa_{i,m}c_{m,j}$, hvilket er det samme som $a_{i,1}sc_{1,j} + a_{i,2}sc_{2,j} + \cdots + a_{i,m}sc_{m,j}$, der er en indgang i $A(sC)$. 
+\item Den $(i,j)$'te indgang i matrixprodukterne $s(AC)$ og $(sA)C$ har formen $$sa_{i,1}c_{1,j} + sa_{i,2}c_{2,j} + \cdots + sa_{i,m}c_{m,j},$$ hvilket er det samme som $$a_{i,1}sc_{1,j} + a_{i,2}sc_{2,j} + \cdots + a_{i,m}sc_{m,j},$$ der er en indgang i $A(sC)$. 
 Da indgangene er ens, er matrixproduktet det samme i de tre tilfælde.
 %
 \item Bemærk, at $A$ ikke kan multipliceres med $P$, mens $C$ kan multipliceres med begge. 
@@ -145,9 +145,9 @@ At komponenten i den $(i,j)$'te indgang i $A(CP)$ er ækvivalent med komponenten
 % Måske er (b) ikke helt nok? 
 %
 \item Lad $\textbf{c}_j$ være en vilkårlig søjle i $C$. 
-Det følger deraf, at $(A+B)\textbf{c}_j=A\textbf{c}_j+B\textbf{c}_j$ jævnfør \ref{thm:mxvpro}.
+Det følger deraf, at $(A+B)\textbf{c}_j=A\textbf{c}_j+B\textbf{c}_j$ jævnfør \ref{thm:mxvpro}(c).
 % 
-\item  Lad $\textbf{p}_j$ og $\textbf{q}_j$ være søjler i henholdsvis $P$ og $Q$. Det følger deraf, at $C(\textbf{p}_j+\textbf{q}_j)=C\textbf{p}_j+C\textbf{q}_j$ jævnfør \ref{thm:mxvpro}. 
+\item  Lad $\textbf{p}_j$ og $\textbf{q}_j$ være søjler i henholdsvis $P$ og $Q$. Det følger deraf, at $C(\textbf{p}_j+\textbf{q}_j)=C\textbf{p}_j+C\textbf{q}_j$ jævnfør \ref{thm:mxvpro}(a). 
 %
 \item Da $I_k$ og $I_m$ henholdsvis korresponderer til antallet af rækker og søjler i $A$, er matrixprodukterne $I_kA$ og $AI_m$ defineret. 
 Da $I_k\textbf{a}_j=\textbf{a}_j$ og $\textbf{a}_iI_m=\textbf{a}_i$, er $I_kA=A$ og $AI_m=A$, hvormed $I_kA=AI_m$.

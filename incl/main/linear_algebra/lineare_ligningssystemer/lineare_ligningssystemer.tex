@@ -2,10 +2,10 @@
 %
 En \textit{lineær ligning} med variablene $x_1,x_2,\ldots ,x_n$ er en ligning, som har formen
 $$ c_1x_1+c_2x_2+\cdots+c_nx_n=b \text{,}$$ 
-hvor $\{c_1,c_2,\ldots,c_n\} \in \R$. 
+hvor $c_1,c_2,\ldots,c_n \in \R$. 
 %
 \begin{defn}{}{linlignsys}
-Et \textbf{lineært ligningssystem} er en mængde af $m$ lineære ligninger med de samme $n$ variable, hvor $\{m, n\} \in \Z^+$.
+Et \textbf{lineært ligningssystem} er en mængde af $m$ lineære ligninger med de samme $n$ variable, hvor $m, n \in \Z^+$.
 Dette kan skrives på formen
 \begin{align*}
 c_{1,1}x_1+c_{1,2}x_2+&\cdots+c_{1,n}x_n=b_1\\
@@ -20,16 +20,16 @@ hvor $c_{i,j}$ betegner koefficienten af $x_j$ i ligning $i$.
 Løsningen på et sådant system er en vektor
 \begin{center}
 $
-\mathbf{s} = 
+\mathbf{v} = 
 \begin{bmatrix}
-s_1\\
-s_2\\
+v_1\\
+v_2\\
 \vdots\\
-s_n
+v_n
 \end{bmatrix},
 $
 \end{center}
-i $\R ^n$, således at alle ligninger er opfyldt, når $x_i = s_i$.
+i $\R ^n$, således at alle ligninger er opfyldt, når $x_i = v_i$.
 %
 \\
 %
@@ -53,8 +53,8 @@ Alle lineære ligningssystemer har enten ingen, én eller uendeligt mange løsni
 Ligninger i $\R^2$ kan repræsenteres ved linjer, og ligninger i $\R^3$ kan repræsenteres ved planer.
 % Er det en eller et plan? Hess siger altid "en"... Hmmmmm.. 
 Hvis disse ligninger er parallelle og forskellige, har systemet ingen løsning.
-Hvis ligningerne er forskellige og ikke parallelle, så har systemet præcis én løsning, hvor ligningerne krydser hinanden.
-Hvis ligningerne er ens, har systemet uendeligt mange løsninger.
+Hvis ligningerne er forskellige og ikke parallelle, så har systemet præcis én løsning, hvor ligningerne er lig hinanden.
+Hvis ligningerne er ækvivalente, har systemet uendeligt mange løsninger.
 \\\\
 %
 Et system der har én eller flere løsninger kaldes \textit{konsistent}; ellers kaldes det \textit{inkonsistent}.
@@ -90,12 +90,7 @@ $$
 A kaldes for \textit{koefficientmatricen}. 
 %efter hårdt sammenleje bliver A matricen og b til totalmatricen
 \textit{Totalmatrixen} $[A \mid \mathbf{b}]$ dannes ved at kombinere koefficientmatricen med vektoren \textbf{b}.
-Totalmatrixen indeholder alle informationer, der skal bruges til at løse et lineært ligningssystem.
-En matrixligning kan også opskrives ved
-%
-\begin{align*}
-\sum^n_{i=1}{A_ix_i}=\textbf{b}.
-\end{align*}
+Totalmatrixen indeholder alle informationer, der skal bruges til at løse det lineære ligningssystem.
 %
 Totalmatricen opskrives på formen:
 %
@@ -112,8 +107,13 @@ a_{m,1} & a_{m,2} & \cdots & a_{m,n} & b_{m}\\
 \end{blockarray}.
 \end{equation*}
 %
+En matrixligning kan også opskrives ved
+%
+\begin{align*}
+\sum^n_{i=1}{A_ix_i}=\textbf{b}.
+\end{align*}
 \begin{eks}\label{eks:lig_mat}
-Med udgangspunkt i ligningssystemet fra \ref{eks:lignsys} følger det at
+Med udgangspunkt i ligningssystemet fra \ref{eks:lignsys} følger det, at
 $$A=
 \begin{bmatrix}
 1 & 0 & -1 & -2 & -8\\
@@ -137,7 +137,7 @@ x_5
 \end{bmatrix}
 $$
 %
-og totalmatricen 
+og
 %
 \begin{equation*}
   [A \mid \mathbf{b}] =

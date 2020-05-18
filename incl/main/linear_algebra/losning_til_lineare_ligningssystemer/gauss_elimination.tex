@@ -12,7 +12,7 @@ Algoritmen gennemgår således følgende skridt:
 \item Find første ikke-nulsøjle fra venstre i matricen.
 \item Ved rækkeombytning placeres en ikke-nulindgang øverst i pivotsøjlen.
 \item Skab nulindgange under pivotindgangen ved hjælp af rækkeudskiftning.
-\item Øverste række markeres som afsluttet og trin $1-4$ gennemføres nu på den næste række.
+\item Øverste række markeres som afsluttet og trin $1-4$, hvor afsluttede rækker ignoreres.
 Dette gentages, indtil alle rækker er markeret som afsluttet.
 \item Alle rækker med pivotindgange skaleres, så alle pivotindgange er lig $1$.
 \item Ved rækkeudskiftning sikres nu nulindgange over og under pivotindgangene.
@@ -31,10 +31,10 @@ x_1-x_3-2x_4-8x_5    &=  &-3 \\
 \end{array}
 \end{align*}
 %
-Ligningssystemet opskrevet som totalmatrix $[A \mid \mathbf{b}]$ er
+Ligningssystemet opskrevet som totalmatrix
 %
 \begin{equation*}
-A=
+[A \mid \mathbf{b}] =
 \begin{blockarray}{ccccccc}
 x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \begin{block}{[ccccc|c]c}
@@ -71,7 +71,7 @@ x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \end{blockarray}
 \end{equation*}
 %
-Algoritmen fortsættes nu med henblik på at opnå totalmatricen fra trappeform til reduceret trappeform.
+Algoritmen fortsættes nu med henblik på at reducere totalmatricen fra trappeform til reduceret trappeform.
 %
 \begin{equation*}
 \xrightarrow[R_2 \rightarrow R_2+2R_3]{R_1 \rightarrow R_1+2R_3}
@@ -119,7 +119,7 @@ x_4+2x_5    =&-1   &\iff &x_4   =&-2x_5-1.
 \end{array}
 \end{align*}
 %
-Løsningen, opskrevet som en parameterfremstilling, er dermed
+Løsningen, opskrevet som en parameterfremstilling, er dermed givet ved
 %
   \begin{align*}
     \mathbf{x} &= \begin{bmatrix}
@@ -177,7 +177,7 @@ For at beskrive matricers egenskaber i forhold til pivotindgange er der brug for
 Bemærk, at der for en $m \times n$ matrix gælder, at $\text{rang}(A)+\text{null}(A)=n$.\\
 %
 \begin{eks}
-Med udgangspunkt i matrix $A$ på reduceret trappeform fra \ref{eks_gauss} bliver rang og nullitet i således $\text{rang}(A)=3$ og $\text{null}(A)=3$.
+Med udgangspunkt i matrix $[A \mid \textbf{b}]$ på reduceret trappeform fra \ref{eks_gauss} bliver rang og nullitet i således $\text{rang}(A)=3$ og $\text{null}(A)=2$.
 \end{eks}
 %
 \begin{thm}{}{konsistens}
@@ -221,17 +221,17 @@ Hvis (c) er falsk, følger det, at
 $$0 x_1+0 x_2 + \ldots + 0x_n =d,$$
 %
 hvor $d\neq0$. Da dette ikke har nogen løsning, følger det, at ligningssystemet således bliver inkonsistent. 
-Såfremt (c) er sandt, gælder der omvendt, at alle rækker i den reducerede trappeform indeholder en løsning, som også er løsning til $A\mathbf{x}=\mathbf{b}$. 
+Såfremt (c) er sandt, gælder det, at alle rækker i den reducerede trappeform har en løsning, som også er løsning til $A\mathbf{x}=\mathbf{b}$. 
 Således er (a) og (c) ækvivalente.
 %
 \end{proof}
 \\
 %
 \begin{eks}
-Med udgangspunkt i \ref{eks_gauss} ses derfor, at ligningssystemet for $A\textbf{x}=\textbf{b}$ er konsistent, da $d$ ikke er en pivotindgang. Såfremt ligningssystemet skulle være inkonsistent, kunne den have formen
+Med udgangspunkt i \ref{eks_gauss} ses derfor, at ligningssystemet for $A\textbf{x}=\textbf{b}$ er konsistent, da der ikke er pivotindgang i sidste søjle. Såfremt ligningssystemet skulle være inkonsistent, kunne den have formen
 %
 \begin{align*}
-B=\begin{blockarray}{ccccccc}
+[B \mid \textbf{b} ]=\begin{blockarray}{ccccccc}
 x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \begin{block}{[ccccc|c]c}
   \hlight{1} & 0 & 0 & 0 & -1 & -2 \\
@@ -241,6 +241,6 @@ x_1 & x_2 & x_3 & x_4 & x_5 & b \\
 \end{blockarray},
 \end{align*}
 %
-hvor $d \neq 0$ er i indgang $b_{3,6}$. 
+da der eksisterer en pivotindgang i sidste søjle. 
 %
 \end{eks}

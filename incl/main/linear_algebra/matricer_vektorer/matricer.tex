@@ -3,7 +3,7 @@
 I forbindelse med løsning af lineære ligningssystemer og optimeringsproblemer er det nødvendigt at introducere \textit{matricer} og tilhørende notation. 
 %
 \begin{defn}{}{}
-En \textbf{matrix} er en rektangulær tabel, hvis elementer er \textbf{skalarer} $c \in \R$. 
+En \textbf{matrix} er en rektangulær tabel, hvis elementer er \textbf{skalarer} tilhørende $\R$. 
 En matrix med $m$ \textbf{rækker} og $n$ \textbf{søjler} har størrelsen $m \times n$.
 Hvis $m=n$, er matricen kvadratisk, noteret $n \times n$.
 Elementet $a_{i,j}$ i $i$'te række og $j$'te søjle kaldes den $(i,j)$'te-indgang i matricen. 
@@ -31,7 +31,7 @@ $$
 \noindent
 Enhver række $i$ eller søjle $j$ kan betragtes som en \textit{vektor}. 
 En matrix med én række kaldes en \textit{rækkevektor}, og en matrix med én søjle kaldes en \textit{søjlevektor}. 
-Med mindre andet er angivet opereres der med søjlevektorer.
+Medmindre andet er angivet, opereres der med søjlevektorer.
 I denne rapport noteres vektorer med små, fede bogstaver, såsom $\textbf{u}$ og $\textbf{v}$. 
 Søjlevektorer fra matricer med flere end én søjle noteres ofte med et indeks tilsvarende søjlen i matricen, eksempelvis:
 %
@@ -43,4 +43,11 @@ a_{2,j} \\
 \vdots \\
 a_{m,j} \\
 \end{bmatrix}.
-$$ 
+$$
+Ligeledes kan rækkevektorene fra en matrix noteres $\textbf{A}_i= 
+\begin{bmatrix}
+a_{i,1} &
+a_{i,2} &
+\ldots	&
+a_{i,n}
+\end{bmatrix}.$
