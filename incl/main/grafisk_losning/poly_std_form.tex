@@ -13,23 +13,23 @@ Såfremt $m \neq n$, skal der derfor vælges $n-m$ variable $x_i$ med henblik p�
 Det er dog ikke uvæsentligt, hvilke af disse variable der omdannes til $0$, hvilket belyses i \ref{thm:polystd}.
 %
 \begin{thm}{}{polystd}
-Lad begrænsningerne $A\textbf{x}=\mathbf{b}$ og $\textbf{x}\geq 0$.
+Lad begrænsningerne $A\textbf{x}=\mathbf{b}$ og $\textbf{x}\geq \textbf{0}$.
 Antag, at $A$ er en $m \times n$ matrix, som har lineært uafhængige rækker.
-Vektoren $\textbf{x} \in \R^n$ er en basal løsning, hvis og kun hvis $A\textbf{x}=\mathbf{b}$, og der eksisterer indekser $B(1),\ldots,B(m)$, hvorom der gælder følgende:
+Vektoren $\textbf{v} \in \R^n$ er en basal løsning, hvis og kun hvis $A\textbf{v}=\mathbf{b}$, og der eksisterer indekser $B(1),\ldots,B(m)$, hvorom der gælder følgende:
 \begin{enumerate}[label=(\alph*)]
-\item Søjlerne $\mathbf{A}_{B(1)},\ldots,\mathbf{A}_{B(m)}$ er lineært uafhængige.
+\item Søjlerne $\mathbf{a}_{B(1)},\ldots,\mathbf{a}_{B(m)}$ er lineært uafhængige.
 \item Hvis $i \neq B(1),\ldots, B(m)$, så er $x_i=0$.
 \end{enumerate}
 \end{thm}
 \begin{proof}
-Betragt et $\textbf{v} \in \R^n$ og antag, at der eksisterer indekser $\mathbf{A}_{B(1)},\ldots,\mathbf{A}_{B(m)}$, der opfylder (a) og (b).
+Betragt et $\textbf{v} \in \R^n$ og antag, at der eksisterer indekser $\mathbf{a}_{B(1)},\ldots,\mathbf{a}_{B(m)}$, der opfylder (a) og (b).
 %
 Det gælder således for de aktive begrænsninger, at $v_i=0$, når $i\neq B(1),\ldots,B(m)$, samt at $A\textbf{v}=\mathbf{b}$.
 Dette medfører, at 
 %
-$$\sum_{i=1}^{m}\textbf{A}_{B(i)}v_{B(i)}=\sum_{i=1}^{n}\textbf{A}_i v_i=A\textbf{v}=\textbf{b}.$$
+$$\sum_{i=1}^{m}\textbf{a}_{B(i)}v_{B(i)}=\sum_{i=1}^{n}\textbf{a}_i v_i=A\textbf{v}=\textbf{b}.$$
 %
-Da søjlerne $\textbf{A}_{B(i)}$ for $i=1,\ldots,m$ er lineært uafhængige, kan $v_{B(1)},\ldots,x_{B(m)}$ bestemmes entydigt. 
+Da søjlerne $\textbf{a}_{B(i)}$ for $i=1,\ldots,m$ er lineært uafhængige, kan $v_{B(1)},\ldots,x_{B(m)}$ bestemmes entydigt. 
 Dermed har ligningssystemet, som er skabt af de aktive begrænsninger, en entydig løsning.
 %x_{B(i)} fra "da søjlerne ..." 
 Jævnfør \ref{thm:betingi},
@@ -41,16 +41,16 @@ følger det, at der er $n$ aktive begrænsninger, hvoraf $\mathbf{v}$ er en basa
 Antag nu, at $\mathbf{v}$ er en basal løsning. 
 Det skal nu vises, at (a) og (b) da er opfyldt.
 Lad $v_{B(1)},\ldots,v_{B(k)}$ være ikke-nul komponenter i $\textbf{v}$.
-Eftersom $\mathbf{v}$ er en basal løsning, følger nu, at ligningssysemet givet ved de aktive begrænsninger $v_i=0$, når $i\neq B(1),\ldots,B(k)$, samt  $$\sum_{i=1}^{n}\mathbf{A}_i v_i=\mathbf{b},$$ har en entydig løsning. 
-Det samme må derfor gøre sig gældende for $$\sum_{i=1}^{k}\mathbf{A}_{B(i)}v_{B(i)}=\mathbf{b}.$$
-Det følger derfor, at søjlerne i $A_{B(1)},\ldots,A_{B(k)}$ er lineært uafhængige.
+Eftersom $\mathbf{v}$ er en basal løsning, følger nu, at ligningssysemet givet ved de aktive begrænsninger $v_i=0$, når $i\neq B(1),\ldots,B(k)$, samt  $$\sum_{i=1}^{n}\mathbf{a}_i v_i=\mathbf{b},$$ har en entydig løsning. 
+Det samme må derfor gøre sig gældende for $$\sum_{i=1}^{k}\mathbf{a}_{B(i)}v_{B(i)}=\mathbf{b}.$$
+Det følger derfor, at søjlerne i $\textbf{a}_{B(1)},\ldots,\textbf{a}_{B(k)}$ er lineært uafhængige.
 %
-Hvis dette ikke var tilfældet, ville der findes løsninger til $$\sum_{i=1}^{k}\mathbf{A}_{B(i)} \lambda_i=\mathbf{0}$$ udover den trivielle, hvor $\lambda_i=0$ for $i=1,2,\ldots,k$, hvilket ville betyde, at løsningen $\mathbf{v}$ ikke er entydig. 
+Hvis dette ikke var tilfældet, ville der findes løsninger til $$\sum_{i=1}^{k}\mathbf{a}_{B(i)} \lambda_i=\mathbf{0}$$ udover den trivielle, hvor $\lambda_i=0$ for $i=1,2,\ldots,k$, hvilket ville betyde, at løsningen $\mathbf{v}$ ikke er entydig. 
 Dette er i modstrid til, at denne er en basal løsning.
-$\mathbf{A}_{B(1)},\ldots ,\mathbf{A}_{B(k)}$ er således lineært uafhængige og $k \leq m$.
+$\mathbf{a}_{B(1)},\ldots ,\mathbf{a}_{B(k)}$ er således lineært uafhængige og $k \leq m$.
 Da $A$ har $m$ lineært uafhængige rækker, er der ligeledes $m$ lineært uafhængige søjler.
 %her kommer noget der følger fra sætning 1.3 i sektion 1.5 tror ikke vi har noget tilsvarende.
-Der kan derfor findes $m-k$ søjler $\textbf{A}_{B(k+1)},\ldots,\textbf{A}_{B(m)}$, hvorom det gælder, at søjlerne $\mathbf{A}_{B(i)}$ med $i=1,\ldots,m$, er lineært uafhængige.
+Der kan derfor findes $m-k$ søjler $\textbf{a}_{B(k+1)},\ldots,\textbf{a}_{B(m)}$, hvorom det gælder, at søjlerne $\mathbf{a}_{B(i)}$ med $i=1,\ldots,m$, er lineært uafhængige.
 Da $k \leq m$ gælder det, hvis $i \neq B(1),\ldots,B(m)$, at $i \neq B(1),\ldots,B(k)$ og $v_i=0$.
 %
 \end{proof}
@@ -60,27 +60,27 @@ Da $k \leq m$ gælder det, hvis $i \neq B(1),\ldots,B(m)$, at $i \neq B(1),\ldot
 Som følge af \ref{thm:polystd} kan basale løsninger konstrueres ved hjælp af følgende procedure.
 %
 \begin{enumerate}
-\item Vælg $m$ lineært uafhængige søjler $\textbf{A}_{B(1)},\ldots,\textbf{A}_{B(m)}.$
+\item Vælg $m$ lineært uafhængige søjler $\textbf{a}_{B(1)},\ldots,\textbf{a}_{B(m)}.$
 \item Lad $v_i=0$ for $i \neq B(1),\ldots,B(m).$
 \item Løs ligningssystemet med de $m$ ligninger, $A\textbf{x}=\textbf{b}$ for $x_{B(1)}, \ldots , x_{B(m)}.$
 \end{enumerate}
 %
 Findes en ikke-negativ løsning ved denne procedure, så er løsningen en basal mulig løsning.
-\textcolor{red}{Søjlerne $\textbf{A}_{B(1)},\ldots,\textbf{A}_{B(m)}$ kaldes for \textit{basale søjler}, og variablerne $x_{B(1)},\ldots,x_{B(m)}$ kaldes for \textit{basale variable}. De resterende søjler i $A$ kaldes derimod \textit{ikke-basale søjler} og de resterende variabler kaldes \textit{ikke-basale variable}. 
+Søjlerne $\textbf{a}_{B(1)},\ldots,\textbf{a}_{B(m)}$ kaldes for \textit{basale søjler}, og variablerne $x_{B(1)},\ldots,x_{B(m)}$ kaldes for \textit{basale variable}. De resterende søjler i $A$ kaldes \textit{ikke-basale søjler} og de resterende variabler kaldes \textit{ikke-basale variable}. 
 Mængden $\{ B(1),\ldots,B(m) \}$ kaldes løsningens \textit{base}, hvor elementerne kaldes for \textit{basale index}. 
-Dertil kaldes $B$ \textit{basismatricen}, hvor $B= [ \textbf{A}_{B(1)},\ldots,\textbf{A}_{B(m)} ] $.
-Hertil defineres basisvektoren $\mathbf{x}_B = ( x_{B(1)},\ldots,x_{B(m)})^T.$
-Eftersom de basale søjler er lineært uafhængige, har $B$ en invers matrix $B^{-1}$. }
+Dertil kaldes $B$ \textit{basismatricen}, hvor $B= [ \textbf{a}_{B(1)},\ldots,\textbf{a}_{B(m)} ] $.
+Hertil defineres basisvektoren $\mathbf{x}_B = [ x_{B(1)},\ldots,x_{B(m)}]^T.$
+Eftersom de basale søjler er lineært uafhængige, har $B$ en invers matrix $B^{-1}$.
 Hvert valg af de lineært uafhængige søjler svarer til forskellige baser for rummet.
 \\\\
 %
 Antagelsen om, at rækkerne er lineært uafhængige belyses i \ref{thm:julieerfantalastisk}.
 %
 \begin{thm}{}{julieerfantalastisk}
-Lad $P=\{\textbf{x} \mid  A\textbf{x}=\textbf{b},x \geq 0\}$ være et ikke-tomt polyeder, hvor $A$ er en $m \times n$ matrix med rækker $\textbf{a}^{T}_{1},\ldots,\textbf{a}^{T}_{m}$.
+Lad $\mathcal{P}=\{\textbf{x} \mid  A\textbf{x}=\textbf{b},x \geq 0\}$ være et ikke-tomt polyeder, hvor $A$ er en $m \times n$ matrix med rækker $\textbf{a}^{T}_{1},\ldots,\textbf{a}^{T}_{m}$.
 Antag, at rang$(A)=k<m$ og at rækkerne $\textbf{a}^T_{i_1},\ldots,\textbf{a}^T_{i_k}$ er lineært uafhængige. Givet polyederet 
 $$Q=\{\textbf{x} \mid \textbf{a}^T_{i_1}\textbf{x}=b_{i_1},\ldots,\textbf{a}^T_{i_k}\textbf{x}=b_{i_k}, \textbf{x} \geq 0  \}$$ 
-så er $Q=P$.
+så er $Q=\mathcal{P}$.
 \end{thm}
 \begin{proof}
 Det bevises i tilfældet af $i_1=1,\ldots,i_k=k$, som er tilfældet, hvor de første $k$ rækker er lineært uafhængige. 
@@ -88,14 +88,14 @@ Alle andre tilfælde kan omskrives til dette tilfælde ved rækkeombytning.
 Det gælder, at $\mathcal{P}$ er en delmængde af $Q$, da alle elementer i $\mathcal{P}$ opfylder $Q$'s betingelser.
 Det skal dernæst vises, at $Q$ er en delmængde af $\mathcal{P}$.
 Da rang$(A)=k$, har rækkerummet af $A$ dimension $k$, $\text{dim}(\text{row}(A)) = k$, og et basis bestående af søjlerne $\textbf{a}_1,\ldots,\textbf{a}_k$. 
-Derfor kan alle rækker $\textbf{a}_i$ af $A$ udtrykes som en linearkombination af de andre rækker ved $\textbf{a}_i=\sum^{k}_{j=1}\lambda_{ij}\textbf{a}_j$ for skalarer $\lambda_{ij}$. 
+Derfor kan alle rækker $\textbf{a}_i$ af $A$ udtrykes som en linearkombination af de andre rækker ved $\textbf{a}_i=\sum^{k}_{j=1}\lambda_{i,j}\textbf{a}_j$ for skalarer $\lambda_{i,j}$. 
 Lad $\textbf{v}$ være et element i $\mathcal{P}$. 
 Så gælder
-$$b_i=\textbf{a}_i\textbf{v}=\sum^{k}_{j=1}\lambda_{ij}\textbf{a}_j\textbf{v}=\sum^{k}_{j=1}\lambda_{ij}b_j,$$
+$$b_i=\textbf{a}_i\textbf{v}=\sum^{k}_{j=1}\lambda_{i,j}\textbf{a}_j\textbf{v}=\sum^{k}_{j=1}\lambda_{i,j}b_j,$$
 for $i=1,\ldots,m.$
 Betragt nu et element $\textbf{u}$ i $Q$. 
 Dette vil også tilhøre $\mathcal{P}$, da
-$$ \textbf{a}_i\textbf{u}=\sum^{k}_{j=1}\lambda_{ij}\textbf{a}_j\textbf{u}=\sum^{k}_{j=1}\lambda_{ij}b_j=b_i.$$
+$$ \textbf{a}_i\textbf{u}=\sum^{k}_{j=1}\lambda_{i,j}\textbf{a}_j\textbf{u}=\sum^{k}_{j=1}\lambda_{i,j}b_j=b_i.$$
 Dermed er det vist, at $Q$ er en delmængde til $\mathcal{P}$.
 Hermed er $Q=\mathcal{P}$, da $\mathcal{P}$ ligeledes er en delmængde af $Q$.
 \end{proof} \\

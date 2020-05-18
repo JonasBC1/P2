@@ -24,14 +24,14 @@ Bemærk, at problemet på standardform er et maksimumsproblem eller minimumsprob
 \\\\
 %
 Man kan dertil omskrives mellem dem.
-For at omskrive et minimumsproblem til et maksimumsproblem multipliceres objektfunktionen med $-1$, og ulighedsbetingelserne ændres fra $A_ix_i \geq b_i$ til $-A_ix_i \leq -b_i$.
+For at omskrive et minimumsproblem til et maksimumsproblem multipliceres objektfunktionen med $-1$, og ulighedsbetingelserne ændres fra $\textbf{A}_i \textbf{x} \geq b_i$ til $-\textbf{A}_i \textbf{x} \leq -b_i$.
 \\\\
 %
 For at få et givet problem med ulighedsbetingelser på standardform tilføjes \textit{slack-variable} til venstre side af ulighederne for at gøre dem til ligheder. 
 Hvis optimeringsproblemet har $m$ uligheder tilføjes $m$ slack-variable.
 I denne rapport noteres slack-variable $\textcolor{blue}{s_i}$, og markeres med blå.
 Variable, der ikke har en ikke-negativsbegrænsning, opdeles i $x_i^+$ og $x_i^-$, da alle reelle tal kan skrives som differencen mellem to positive tal.
-Dertil isoleres objektfunktionen, så $z$ er positiv på venstre side af lighedstegnet og sættes lig nul.
+Dertil isoleres $0$ i objektfunktionen, så $z$ er positiv på venstre side af lighedstegnet.
 Med denne fremgangsmåde kan alle lineære optimeringsproblemer omskrives til standardform.
 Det er derfor kun nødvendigt med en metode til at løse optimeringsproblemer på denne form.
 Generelt er rapporten med udgangspunkt i minimumsproblemer, men ækvivalente udtalelser kan opstilles for maksimumsproblemer.
@@ -53,7 +53,7 @@ Med udgangspunkt i fremgangsmetoden ovenfor er minimumsproblemet fra \ref{eks:mi
 %
 \begin{align*}
 \begin{array}{lrcccrcrcrcrcrcr}
-\text{Maksimér}		&z-4x_1 &+& 3x_2& & & & & & & & & = & 0\\
+\text{Maksimér}		&z-4x_1 &+& 3x_2& & & & & & & & & = & 0\phantom{,}\\
 \text{begrænset af}	&2x_1	&-	&x_2^+-x_2^-		&+	&\textcolor{blue}{s_1}&	&	&	&	&	&	&= 		&-10,\\
 					&-x_1	&+	&x_2^+-x_2^-		&	&	&+	&\textcolor{blue}{s_2} &	&	&	&	&=		& -7,\\
 					&x_1	&+	&x_2^+-x_2^-		&	&	&	&	&+	&\textcolor{blue}{s_3}&	&	&=		& 20,\\

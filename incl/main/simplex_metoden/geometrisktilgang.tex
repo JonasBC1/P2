@@ -2,8 +2,8 @@
 \label{julieerfantalastiskogvidunderlig}
 % --------------------------------------------------------------
 %
-For at finde den optimale løsning kan der udvælges en basal løsning og undersøges, hvorvidt der findes andre løsninger, som er bedre, end den valgte. 
-Hvis der ikke findes bedre løsninger, er den valgte basale løsning den optimale løsning. 
+For at finde den optimale løsning kan der udvælges en basal mulig løsning og undersøges, hvorvidt der findes andre løsninger, som er bedre, end den valgte. 
+Hvis der ikke findes bedre løsninger, er den valgte basale mulig løsning den optimale løsning. 
 Eftersom der jævnfør afsnit \ref{julieerlakker} optimeres for en konveks funktion over en konveks mængde, %Det er det med at et lokal minimum er et globalt minimum xD
 vil den lokale optimale løsning være den globale optimale løsning. 
 %
@@ -23,20 +23,20 @@ På figur \ref{fig:julieersmuuuuuk}, ses vektorerne $\mathbf{u}, \mathbf{v}$ og 
 %Hjørnerne afsøges derved gennem en reduceret objektfunktion.
 %Se \ref{defn:kogtskinke}.
 %
-\textcolor{red}{
+%\textcolor{red}{
 For at finde en ny mulig retning $\mathbf{d}$ bevæges der i en retning, hvor værdien af en ikke-basal variable $x_j$ øges, og andre ikke-basale variable fastholdes. 
-Dermed vil vektoren $\mathbf{d}_j = 1$, og $\mathbf{d}_i = 0$ for henholdsvis den ikke-basale variable $x_j$ og de andre ikke-basale variable $x_i$, hvor $i \neq j$.
+Dermed vil indgangen $d_j = 1$, og $d_i = 0$ for henholdsvis den ikke-basale variable $x_j$ og de andre ikke-basale variable $x_i$, hvor $i \neq j$.
 Vektoren 
 \begin{align*}
-\mathbf{d}_B = \left( d_{B(1)}, d_{B(2)}, \ldots , d_{B(m)} \right),
+\mathbf{d}_B = \left[ d_{B(1)}, d_{B(2)}, \ldots , d_{B(m)} \right]^T,
 \end{align*} 
 bestående af de mulige retninger for de basale index, 
 kontureres.
-Da $\mathbf{x}$ er en basal mulig løsning, gælder det, at $A \mathbf{x} = \mathbf{b}$. 
-Eftersom $\mathbf{x}+ \theta \mathbf{d}$ skal være en mulig løsning, gælder det, at $A ( \mathbf{x}+ \theta \mathbf{d}) = \mathbf{b}$.
+Da $\mathbf{v}$ er en basal mulig løsning, gælder det, at $A \mathbf{v} = \mathbf{b}$. 
+Eftersom $\mathbf{v}+ \theta \mathbf{d}$ skal være en mulig løsning, gælder det, at $A ( \mathbf{v}+ \theta \mathbf{d}) = \mathbf{b}$.
 Deraf haves, at 
 \begin{align*}
-A ( \mathbf{x}+ \theta \mathbf{d}) &=  A \mathbf{x} + \theta A \mathbf{d} = \mathbf{b} \\
+A ( \mathbf{v}+ \theta \mathbf{d}) &=  A \mathbf{v} + \theta A \mathbf{d} = \mathbf{b} \\
 & \Updownarrow \\
 \mathbf{b} + \theta A \mathbf{d} & = \mathbf{b} \\
 & \Updownarrow \\
@@ -44,11 +44,11 @@ A ( \mathbf{x}+ \theta \mathbf{d}) &=  A \mathbf{x} + \theta A \mathbf{d} = \mat
 \end{align*} 
 Bemærk, at $\theta$ er en positiv skalar. 
 Dermed skal $\mathbf{d}$ tilhøre $\text{nrum}(A)$.
-Eftersom $\mathbf{d}_j = 1$ og $\mathbf{d}_i = 0$, så er 
+Eftersom $d_j = 1$ og $d_i = 0$, så er 
 %
 \begin{align*}
 \mathbf{0} = A \mathbf{d} & = \sum^n_{i = 1} \mathbf{A}_i d_i \\
-& =  \mathbf{A}_j  + \sum^m_{i = 1} \mathbf{A}_{B(i)} d_{D(i)} \\
+& =  \mathbf{A}_j  + \sum^m_{i = 1} \mathbf{A}_{B(i)} d_{B(i)} \\
 & =  \mathbf{A}_j  + B \mathbf{d}_B.
 \end{align*}
 %
@@ -62,41 +62,42 @@ B \mathbf{d}_B & = - \mathbf{A}_j \\
 \mathbf{d}_B & = - B^{-1} \mathbf{A}_j .
 \end{align*}
 % 
-Denne mulige retning $d$, tilhørende $x_j$, kaldes den \textit{$j$'te basale retning}.
+Denne mulige retning $\textbf{d}$, tilhørende $v_j$, kaldes den \textit{$j$'te basale retning}.
 % 
 \begin{defn}{}{}
-Lad $\mathbf{x}$ være en basal mulig løsning. 
-Den \textbf{$j$'te basale retning} $\mathbf{d}$, fra $\mathbf{x}$, for en ikke-basal variabel $x_j$, har komponenterne 
+Lad $\mathbf{v}$ være en basal mulig løsning. 
+Den \textbf{$\textbf{j}$'te basale retning} $\mathbf{d}$, fra $\mathbf{v}$, for en ikke-basal variabel $v_j$, har komponenterne 
 %
 \begin{align*}
 d_j & = 1, \\
-d_i & = 0 \phantom{hej} \text{ for } i \neq b(1), \ldots , B(m) \wedge i \neq j, \\
+d_i & = 0 \phantom{hej} \text{ for } i \neq B(1), \ldots , B(m) \wedge i \neq j, \\
 \mathbf{d}_B & = - B^{-1} \mathbf{A}_j.
 \end{align*}
 % 
 \end{defn}
 \noindent
 %
-Bemærk, at overstående sikrer lighedsbegrænsningerne, men det sikrer ikke ikke-negativitetsbetingelserne. 
-Eftersom $x_j$ øges, og de andre ikke-basale variable fastholdes, kan følgende scenarier opstå. 
+Bemærk, at overstående sikrer lighedsbegrænsningerne, men det sikrer ikke ikke-negativitets-betingelserne.
+Eftersom $v_j$ øges, og de andre ikke-basale variable fastholdes, kan følgende scenarier opstå.
+%
 \begin{itemize}
-\item Antag, at $\mathbf{x}$ er en ikke-degenereret basal mulig løsning. 
-Dermed er $\mathbf{x}_B > \mathbf{0}$. 
-Hvis $\theta$ er småt nok, vil $\mathbf{x}_B + \theta \mathbf{d}_B \geq 0 $, og $\mathbf{d}$ er dermed en mulig retning. 
-\item Antag, at $\mathbf{x}$ er en degenereret basal mulig løsning. 
+\item Antag, at $\mathbf{v}$ er en ikke-degenereret basal mulig løsning. 
+Dermed er $\mathbf{v}_B > \mathbf{0}$. 
+Hvis $\theta$ er småt nok, vil $\mathbf{v}_B + \theta \mathbf{d}_B \geq 0 $, og $\mathbf{d}$ er dermed en mulig retning. 
+\item Antag, at $\mathbf{v}$ er en degenereret basal mulig løsning. 
 Dermed er $\mathbf{d}$ ikke altid en mulig retning. 
-Eftersom $\mathbf{d}$ er degenereret, er det muligt, at en basal variabel $x_{B(i)}=0$, og den tilsvarende komponent $d_{B(i)}$ er negativ. 
-I dette tilfælde vil en bevægelse i den $j$'te mulige retning forlade polyederet, da en ikke-negativitetsbetingelse brydes af $\mathbf{x} + \theta \mathbf{d}$ for alle positive $\theta$.
+Eftersom $\mathbf{d}$ er degenereret, er det muligt, at en basal variabel $v_{B(i)}=0$, og den tilsvarende komponent $d_{B(i)}$ er negativ. 
+I dette tilfælde vil en bevægelse i den $j$'te mulige retning forlade polyederet, da en ikke-negativitetsbetingelse brydes af $\mathbf{v} + \theta \mathbf{d}$ for alle positive $\theta$.
 \end{itemize}
 %
 På figur \ref{fig:julieerengud} ses de to scenarier. 
-Bemærk, at $A$ har de to ikke-basale variable $x_1$ og $x_3$ og $x_2,$ $x_4$ og $x_5$ er basale variable.
-I hjørnet $A$ fastholdes den ikke-basale variable $x_3$, og $x_1$ øges. 
-Dermed bevæges der mod randen $AB$. 
-Bemærk, at $B$ har de to ikke-basale variable $x_3$ og $x_5$ og $x_1,$ $x_1$ og $x_4$ er basale variable.
-I hjørnet $B$ fastholdes den ikke-basale variabel $x_5$, og $x_3$ øges. 
-Dermed bevæges der mod randen $BC$, hvilket bryder en ikke-negativitetsbetingelse, og dermed ikke en mulig retning. 
-}
+Bemærk, at $\textbf{u}$ har de to ikke-basale variable $x_1$ og $x_3$ imens $x_2,$ $x_4$ og $x_5$ er basale variable.
+I hjørnet $\textbf{u}$ fastholdes den ikke-basale variable $x_3$, og $x_1$ øges. 
+Dermed traverseres der mod $\textbf{v}$ langs linjen mellem $\textbf{u}$ og $\textbf{v}$. 
+Bemærk, at $\textbf{v}$ har de to ikke-basale variable $x_3$ og $x_5$ og $x_1,$ $x_1$ og $x_4$ er basale variable.
+I hjørnet $\textbf{v}$ fastholdes den ikke-basale variabel $x_5$, og $x_3$ øges. 
+Dermed traverseres der langs linjen $\textbf{v}$ og $\textbf{w}$, hvilket bryder en ikke-negativitetsbetingelse, og dermed ikke en mulig retning. 
+
 %
 \begin{center}
 %
@@ -126,11 +127,11 @@ Dermed bevæges der mod randen $BC$, hvilket bryder en ikke-negativitetsbetingel
 % -------------------------------------------------------
 %\filldraw [black] (a) circle (0.2pt) node[anchor=north west] {$A$};
 %\filldraw [black] (b) circle (0.2pt) node[anchor=north east] {$B$};
-\filldraw [black] (c) circle (0.2pt) node[anchor=south west] {$B$};
-\filldraw [black] (0.822,0,0) circle (0.2pt) node[anchor=south west] {$C$};
+\filldraw [black] (c) circle (0.2pt) node[anchor=south west] {$\textbf{v}$};
+\filldraw [black] (0.822,0,0) circle (0.2pt) node[anchor=south west] {$\textbf{w}$};
 %\filldraw [black] (d) circle (0.2pt) node[anchor=west] {$D$};
 %\filldraw [black] (e) circle (0.2pt) node[anchor=north west] {$E$};
-\filldraw [black] (f) circle (0.2pt) node[anchor=south east] {$A$};
+\filldraw [black] (f) circle (0.2pt) node[anchor=south east] {$\textbf{u}$};
 %\filldraw [black] (g) circle (0.2pt) node[anchor=east] {$G$};
 %\filldraw [black] (h) circle (0.2pt) node[anchor=north west] {$H$};
 %
@@ -146,11 +147,10 @@ Dermed bevæges der mod randen $BC$, hvilket bryder en ikke-negativitetsbetingel
 \draw[thick] (0,0,0) -- (0,-0.2,0);
 %
 \end{tikzpicture}
-  \captionof{figure}{Illustration af en mulig retning, der svarer til randen $AB$, og en ikke-mulig retning, der svarer til randen $BC$, som bryder en ikke-negativitetsbetingelse.}
+  \captionof{figure}{Illustration af en mulig retning, der svarer til linjen mellem $\textbf{u}$ og $\textbf{v}$, og en ikke-mulig retning, der svarer til linjen mellem $\textbf{v}$ og $\textbf{w}$, som bryder en ikke-negativitetsbetingelse.}
   \label{fig:julieerengud}
 \end{center}
 %
-\textcolor{red}{
 Heraf opstår et problem med degenererede løsninger, og af den grund forsøges disse undgået.
 \\\\
 %
@@ -160,16 +160,16 @@ Ved en bevægelse i en mulig retning medfører det, at
 \end{align*}
 hvor 
 $$\mathbf{c}_B=[ c_{B(1)},c_{B(2)}, \cdots , c_{B(m)} ]^T.$$
-Bemærk, at da $\mathbf{d}_B = - B^{-1} \mathbf{A}_j$, er 
+Bemærk, at da $\mathbf{d}_B = - B^{-1} \mathbf{a}_j$, er 
 \begin{align*}
-\mathbf{c}^T \mathbf{d} &= \mathbf{c}^T_B ( - B^{-1} \mathbf{A}_j ) + c_j \\
-& = c_j - \mathbf{c}^T_B (B^{-1} \mathbf{A}_j).
+\mathbf{c}^T \mathbf{d} &= \mathbf{c}^T_B ( - B^{-1} \mathbf{a}_j ) + c_j \\
+& = c_j - \mathbf{c}^T_B (B^{-1} \mathbf{a}_j).
 \end{align*}
 %
-For at omkostningen minimeres, skal $c_j - \mathbf{c}^T_B (B^{-1} \mathbf{A}_j ) < 0$, da 
+For, at omkostningen minimeres, skal $c_j - \mathbf{c}^T_B (B^{-1} \mathbf{a}_j ) < 0$, da 
 % 
 \begin{align*}
-\mathbf{c}^T  ( \mathbf{x} + \theta \mathbf{d} )  = \mathbf{c}^T  \mathbf{x} + \theta \mathbf{c}^T \mathbf{d} = \mathbf{c}^T  \mathbf{x} + \theta ( c_j - \mathbf{c}^T_B (B^{-1} \mathbf{A}_j ) ) < \mathbf{c}^T \mathbf{x} 
+\mathbf{c}^T  ( \mathbf{x} + \theta \mathbf{d} )  = \mathbf{c}^T  \mathbf{x} + \theta \mathbf{c}^T \mathbf{d} = \mathbf{c}^T  \mathbf{x} + \theta ( c_j - \mathbf{c}^T_B (B^{-1} \mathbf{a}_j ) ) < \mathbf{c}^T \mathbf{x},
 \end{align*}
 %
 for alle positive $\theta$.
@@ -177,10 +177,10 @@ Størrelsen for reduktionen for hvert $\theta$ kaldes \textit{den reducerede omk
 %
 % Definition 3.2 
 \begin{defn}{}{kogtskinke}
-Lad $\mathbf{v}$ være en basal løsning til en basismatrix $B$ og tilhørende omkostningsvektoren $$\mathbf{c}_B=[ c_{B(1)},c_{B(2)}, \cdots , c_{B(m)} ]^T.$$
+Lad $\mathbf{v}$ være en basal løsning til en basismatrix $B$ med den tilhørende omkostningsvektor $$\mathbf{c}_B=[ c_{B(1)},c_{B(2)}, \cdots , c_{B(m)} ]^T.$$
 For hver $j$'te basale retning defineres den \textbf{reducerede omkostning} $c_j^*$ som
 \begin{align*}
-c_j^* = c_j - \mathbf{c}_B^T B^{-1} \mathbf{A}_j.
+c_j^* = c_j - \mathbf{c}_B^T (B^{-1} \mathbf{a}_j).
 \end{align*} 
 %
 \end{defn}
@@ -191,18 +191,18 @@ c_j^* = c_j - \mathbf{c}_B^T B^{-1} \mathbf{A}_j.
 \begin{align*}
 \mathbf{c}^* = (\mathbf{c}^T - \mathbf{c}_B^T B^{-1} A)^T = 
 \begin{blockarray}{[c]}
-c_1 - \mathbf{c}_B^T B^{-1} \mathbf{A}_1 \\
+c_1 - \mathbf{c}_B^T B^{-1} \mathbf{a}_1 \\
 \vdots \\
-c_k - \mathbf{c}_B^T B^{-1} \mathbf{A}_k \\
+c_k - \mathbf{c}_B^T B^{-1} \mathbf{a}_k \\
 \vdots \\
-c_n - \mathbf{c}_B^T B^{-1} \mathbf{A}_n
+c_n - \mathbf{c}_B^T B^{-1} \mathbf{a}_n
 \end{blockarray}.
 \end{align*}
 %
 Betragt de indgange, for de basale variable i den reducerede omkostningsvektor
 %
 \begin{align*}
-c^*_{B(j)} & = c_{B(j)} - \mathbf{c}_B^T B^{-1} \mathbf{A}_{B(j)} \\
+c^*_{B(j)} & = c_{B(j)} - \mathbf{c}_B^T B^{-1} \mathbf{a}_{B(j)} \\
 & = c_{B(j)} - \mathbf{c}_B^T \mathbf{e_j} \\
 & = c_{B(j)} -  c_{B(j)}  \\
 & = 0.
@@ -214,10 +214,10 @@ Det kan derfor ikke betale sig at øge basale variable.
 Hvis den reducerede omkostningsvektor $\mathbf{c}^* \geq \mathbf{0}$, er den basale mulige løsning et lokalt minimum i objektfunktionen og dermed et globalt minimum. Heraf er den optimale løsning fundet. Dette tilfælde belyses i sætning \ref{thm:julieerguden}.
 %
 \begin{thm}{}{julieerguden}
-Lad $\mathbf{x}$ være en basal mulig løsning til en basismatrix $B$, og lad $\mathbf{c}^*$ være den reducerede omkostningsvektor. 
+Lad $\mathbf{v}$ være en basal mulig løsning til en basismatrix $B$, og lad $\mathbf{c}^*$ være den reducerede omkostningsvektor. 
 \begin{enumerate}[label = (\alph*)]
-\item Hvis $\mathbf{c}^* \geq 0$, så er $\mathbf{x}$ optimal.
-\item Hvis $\mathbf{x}$ er optimal og ikke-degenereret, så er $\mathbf{c}^* \geq 0$.
+\item Hvis $\mathbf{c}^* \geq \textbf{0}$, så er $\mathbf{v}$ optimal.
+\item Hvis $\mathbf{v}$ er optimal og ikke-degenereret, så er $\mathbf{c}^* \geq 0$.
 \end{enumerate}
 \end{thm}
 %
@@ -246,7 +246,7 @@ Bevis udelades.
 \\
 %
 Dermed er alle basale retninger mulige retninger, hvis et problem er givet uden degenererede løsninger. 
-Heraf defineres en \textit{optimal basismatrix}.}
+Heraf defineres en \textit{optimal basismatrix}.
 %
 % Definition 3.3 
 \begin{defn}{}{julieergudenoveralleguder}

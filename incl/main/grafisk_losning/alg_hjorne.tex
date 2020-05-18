@@ -3,7 +3,7 @@
 Hvis en vektor $\textbf{v}$ opfylder $\textbf{a}^T_i\textbf{v}= b_i$ for $i \in M_1, M_2$ eller $M_3$, så er den tilsvarende betingelse \textbf{bindende} eller \textbf{aktive} i $\textbf{v}$.
 \end{defn}\noindent
 %
-Bemærk, at $M_1, M_2$ og $M_3$ er indeksmængder for henholdsvis lighedsbetingelser og ulighedsbetingelser.
+Bemærk, at $M_1, M_2$ og $M_3$ er indeksmængder for henholdsvis lighedsbetingelser og de to typer ulighedsbetingelser.
 På figur \ref{fig:julieermegadeeeeeejliiiiig} ses et polyeder $\mathcal{P}= \{ \mathbf{x} \in \R^3 \mid x_1 + x_2 + x_3 = 1, \text{  } x_1 , x_2, x_3 \geq 0  \}$. 
 Punktet $\textbf{u}$ har tre aktive betingelser $x_1 + x_2 + x_3 = 1$, $x_1=0$ og $x_3=0$, og $\mathbf{v}$ har to aktive betingelser $x_1 + x_2 + x_3 = 1$ og $x_3=0$.
 %
@@ -14,7 +14,7 @@ Punktet $\textbf{u}$ har tre aktive betingelser $x_1 + x_2 + x_3 = 1$, $x_1=0$ o
 %
 %
 \begin{thm}{}{betingi}
-Lad $\textbf{x}$ være et element i $\R^n$ og lad $I=\{i \mid \textbf{a}^T_i\textbf{x}=b_i\}$ være en mængde af indekser på betingelser, der er bindende ved $\textbf{x}$.
+Lad $\textbf{v}$ være et element i $\R^n$ og lad $I=\{i \mid \textbf{a}^T_i\textbf{v}=b_i\}$ være en mængde af indekser på betingelser, der er bindende ved $\textbf{v}$.
 Så er følgende udsagn ækvivalente:
 %
 \begin{enumerate}[label=(\alph*)]
@@ -39,7 +39,7 @@ Dette medfører, at $\text{span}\{\textbf{a}_i \mid i \in I\} \neq \R^n$.
 %
 Antag nu, at vektorerne $\textbf{a}_i$, $i \in I$, ikke spænder over $\R^n$.
 Så er det muligt at vælge en ikke-nulvektor $\textbf{d}$, der er ortogonal med underrummet, som vektorerne spænder over.
-Hvis $\textbf{x}$ opfylder  $\textbf{a}^T_i\textbf{x}= b_i$, for alle $i \in I$, så haves, at $\textbf{a}^T_i(\textbf{x}+\textbf{d})= b_i$, for alle $i \in I$, og der er dermed adskillige løsninger.
+Hvis $\textbf{v}$ opfylder  $\textbf{a}^T_i\textbf{v}= b_i$, for alle $i \in I$, så haves, at $\textbf{a}^T_i(\textbf{v}+\textbf{d})= b_i$, for alle $i \in I$, og der er dermed adskillige løsninger.
 Dermed er det vist, at (b) og (c) er ækvivalente.
 \end{proof}\\
 %
@@ -121,7 +121,7 @@ Yderligere haves, at $\textbf{a}_i^T\textbf{u} \geq b_i$ for ethvert $\textbf{u}
 %
 Dette viser, at $\textbf{u}$ er en optimal løsning til minimumsproblemet $\textbf{c}^T\textbf{u}$ over $\mathcal{P}$.
 Yderligere holder uligheden i ligning \ref{eq:ulig}, hvis og kun hvis $\textbf{a}_i^T\textbf{u} = b_i$ for alle $i \in I$.
-Da $\textbf{u}$ er en basal mulig løsning, er der $n$ lineært uafhængige betingelser, som er bindende i $x$, og $x$ er en entydig løsning til ligningssystemet $\textbf{a}_i^T\textbf{u} = b_i$, $i \in I$.
+Da $\textbf{u}$ er en basal mulig løsning, er der $n$ lineært uafhængige betingelser, som er bindende i $\textbf{u}$, og $\textbf{u}$ er en entydig løsning til ligningssystemet $\textbf{a}_i^T\textbf{x} = b_i$, $i \in I$.
 Det følger derfor, at $\textbf{u}$ er entydigt minimum til $\textbf{c}^T\textbf{u}$ over $\mathcal{P}$ og dermed et hjørnepunkt til $\mathcal{P}$.
 (c) medfører hermed (b).
 %

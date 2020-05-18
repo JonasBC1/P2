@@ -10,8 +10,6 @@ Antag, at der i $\mathcal{P}$ er mindst ét ekstremumspunkt, samt at en optimal 
 Så eksisterer der en optimal løsning, som er et ekstremumspunkt i $\mathcal{P}$.
 \end{thm}
 %
-\input{fig/tikz/geometri/bevis}
-%
 \begin{proof}
 Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et polyeder $\mathcal{P}$. 
 Antag, at der i $\mathcal{P}$ er mindst ét ekstremumspunkt, samt at en optimal løsning eksisterer. 
@@ -20,9 +18,9 @@ Da $\mathcal{P}$ er løsningsmængden, og $Q \subset \mathcal{P}$, så er $Q = \
 Jævnfør \ref{thm:ekstremums1} indeholder $\mathcal{P}$ ingen linjer, hvormed $Q$ ikke indeholder linjer. 
 Jævnfør \ref{thm:ekstremums1} indeholder $Q$ dermed et ekstremumspunkt. \\
 Lad nu den optimale løsning $\textbf{v}$ være et ekstremumspunkt i $Q$. 
-Ved hjælp af modstrid vises nu, at $\textbf{v}$ også er et ekstremumspunkt i $P$. 
-Antag derfor, at $\textbf{v}$ \textit{ikke} er et ekstremumspunkt i $\mathcal{P}$. 
-Så eksisterer der $\textbf{u} \in \mathcal{P}$, $\textbf{u} \neq \textbf{v}$, og $\textbf{w} \in P$, $\textbf{w} \neq \textbf{v}$, samt et $\lambda \in [0,1]$, således $ \textbf{v} = \lambda \textbf{u} + (1 - \lambda) \textbf{w}$. 
+Ved hjælp af modstrid vises nu, at $\textbf{v}$ også er et ekstremumspunkt i $\mathcal{P}$. 
+Antag derfor, at $\textbf{v}$ ikke er et ekstremumspunkt i $\mathcal{P}$. 
+Så eksisterer der $\textbf{u} \in \mathcal{P}$, $\textbf{u} \neq \textbf{v}$, og $\textbf{w} \in \mathcal{P}$, $\textbf{w} \neq \textbf{v}$, samt et $\lambda \in [0,1]$, således $ \textbf{v} = \lambda \textbf{u} + (1 - \lambda) \textbf{w}$. 
 Deraf følger, at $y = \textbf{c}^T \textbf{v} =  \lambda \textbf{c}^T \textbf{u} + (1 - \lambda) \textbf{c}^T \textbf{w}$. 
 Desuden må det gælde, at $\textbf{c}^T \textbf{u} \geq y$ og $\textbf{c}^T \textbf{w} \geq y$, da $y$ er den optimale værdi. 
 Dette medfører dog, at $ \textbf{c}^T \textbf{u} = \textbf{c}^T \textbf{w} = y$, samt at $\textbf{u} \in Q$ og $\textbf{w} \in Q$. 
@@ -30,8 +28,9 @@ Derved opstår modstriden, da $\textbf{v}$ er et ekstremumspunkt i $Q$.
 Således er det ved modstrid vist, at $\textbf{v}$ er et ekstremumspunkt i $\mathcal{P}$, samt at det er en optimal løsning, da $\textbf{v} \in Q$. 
 \end{proof}\\
 %
+\input{fig/tikz/geometri/bevis}
 %
-%
+På figur \ref{fig:julieerAMAZING} ses en grafisk repræsentation af idéen i beviset.
 Som nævnt gælder \ref{thm:optiekstrem1} kun for polyedre på standard form og begrænsede polyedre. 
 \ref{thm:optiekstrem2} kan betragtes som en udvidelse af \ref{thm:optiekstrem1} og viser, at der findes en optimal løsning, så længe den optimale omkostning ikke er $-\infty$. 
 %
@@ -72,7 +71,7 @@ Da $\textbf{c}^T \textbf{d} = 0$, haves desuden, at $\textbf{c}^T \textbf{u} = \
 Det er nu vist, at der i begge tilfælde findes et punkt $\textbf{u}$ med højere rang end $\textbf{v}$, således $\textbf{c}^T \textbf{u} \leq \textbf{c}^T \textbf{v}$. 
 Antag, at denne proces nu fortsættes.
 Så findes en vektor $\textbf{w}$ med rang$(\textbf{w})=n$, hvormed den er en basal mulig løsning, således at $\textbf{c}^T \textbf{w} \leq \textbf{c}^T \textbf{v}$. 
-Lad $w_1, w_2, \ldots , w_r$ være de basale mulige løsninger i $\mathcal{P}$, og lad $\textbf{w}^*$ være en basal mulig løsning, således at $\textbf{c}^T \textbf{w}^* \leq \textbf{c}^T \textbf{w}_i$ for alle $i$. 
+Lad $\textbf{w}_1, \textbf{w}_2, \ldots , \textbf{w}_r$ være de basale mulige løsninger i $\mathcal{P}$, og lad $\textbf{w}^*$ være en basal mulig løsning, således at $\textbf{c}^T \textbf{w}^* \leq \textbf{c}^T \textbf{w}_i$ for alle $i$. 
 Eftersom der for alle $\textbf{v}$ findes et $i$, således at $\textbf{c}^T \textbf{w}_i \leq \textbf{c}^T \textbf{v}$, følger det, at $\textbf{c}^T \textbf{w}^* \leq \textbf{c}^T \textbf{v}$ for alle $\textbf{v} \in \mathcal{P}$, hvormed vektoren $\textbf{w}^*$ er den optimale løsning. 
 \end{proof}
 \\

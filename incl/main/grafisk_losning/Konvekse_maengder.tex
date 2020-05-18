@@ -1,4 +1,4 @@
-\section{Konvekse mængder}
+\section{Konvekse funktioner og konvekse mængder}
 \label{julieerlakker}
 %
 \input{fig/tikz/geometri/konveksfunktion}
@@ -58,7 +58,7 @@ Af \ref{defn:konvekskombihylster} følger \ref{thm:konveks}.
 \begin{enumerate}[label=(\alph*)]
 \item Lad $I$ være en indeksmængde, lad $\S_i$, $i \in I$, være konvekse mængder, og lad $ \lambda \in [0,1]$.
 Antag nu, at vektorerne $\textbf{u}$ og $\textbf{v}$ tilhører fællesmængden $ \bigcap_{i \in I} \S_i$. 
-Det haves, at $ \lambda \textbf{u} + (1 - \lambda )\textbf{v} \in \S_i$, eftersom enhver $\S_i$ er konveks og  indeholder $\textbf{u}$ og $\textbf{v}$. Derfor er $ \bigcap_{i \in I} S_i$ konveks, da $ \lambda \textbf{u} + (1 - \lambda )\textbf{v} \in  \bigcap_{i \in I} \S_i$, hvilket beviser (a).
+Det haves, at $ \lambda \textbf{u} + (1 - \lambda )\textbf{v} \in \S_i$, eftersom enhver $\S_i$ er konveks og  indeholder $\textbf{u}$ og $\textbf{v}$. Derfor er $ \bigcap_{i \in I} \S_i$ konveks, da $ \lambda \textbf{u} + (1 - \lambda )\textbf{v} \in  \bigcap_{i \in I} \S_i$, hvilket beviser (a).
 %
 \item Lad $\textbf{a}$ være en vektor, lad $b$ være en skalar, og lad $ \lambda \in [0,1]$. 
 Antag, at $\textbf{u}$ og $\textbf{v}$ henholdsvis opfylder, at $\textbf{a}^T \textbf{u} \geq b$ og $\textbf{a}^T \textbf{v} \geq b$, således de tilhører samme halvrum. 
@@ -91,8 +91,8 @@ $\sum^{k+1}_{i=1}\lambda_i\textbf{u}_i\in \S$, hvormed (c) er bevist.
 %
 $$\textbf{v} = \sum_{i=1}^{k} \zeta_i \textbf{u}^i \text{ og } \textbf{w} = \sum_{i=1}^{k} \theta_i \textbf{u}^i$$
 %
-være to elementer i $\S$, hvor $ \zeta_i \geq 0$, $ \theta_i \geq 0$, og $ \sum_{i=1}^{k} \zeta_i = \sum_{i=1}^{k} \theta_i = 1$. 
-Lad $ \lambda = [0,1]$. 
+være to elementer i $\S$, hvor $ \zeta_i \geq 0$, $ \theta_i \geq 0$, og $$ \sum_{i=1}^{k} \zeta_i = \sum_{i=1}^{k} \theta_i = 1.$$ 
+Lad $ \lambda = [0,1].$
 Så er $$\lambda \textbf{v} + (1 - \lambda ) \textbf{w} = \lambda \sum_{i=1}^k \zeta_i \textbf{u}^i + (1 - \lambda) \sum_{i=1}^k \theta_i \textbf{u}^i = \sum_{i=1}^k (\lambda \zeta_i + (1-\lambda )\theta_i ) \textbf{u}^i.$$
 Bemærk, at koefficienterne $ \lambda \zeta_i + (1 - \lambda) \theta_i$, $i = 1, \ldots, k$, summerer til $1$ og ikke er negative. 
 Dermed er $ \lambda \textbf{v} + (1 - \lambda ) \textbf{w}$ en konveks kombination af vektorerne $\textbf{u}_1, \ldots, \textbf{u}_k$, og tilhører derfor mængden $S$, hvormed (d) er bevist. 
