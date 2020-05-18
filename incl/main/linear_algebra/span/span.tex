@@ -108,7 +108,7 @@ Dette gør den, da det er muligt at besøge alle punkter ved at indføre passend
 \begin{figure}[h!]
 %
 \centering
-\begin{tikzpicture}
+\begin{tikzpicture} [scale=1.4]
   \draw[thin,gray!40] (-2.5,-2.5) grid (2.5,2.5);
   \draw[<->] (-2.5,0)--(2.5,0) node[right]{$x$};
   \draw[<->] (0,-2.5)--(0,2.5) node[above]{$y$};
@@ -177,6 +177,8 @@ x_1 & x_2 & x_3 & v \\
 \end{block}
 \end{blockarray}.
 \end{align*}
+\newpage
+\noindent
 %
 Totalmatricen omskrives nu til trappeform.
 %
@@ -290,11 +292,12 @@ Hvis en vektor $\mathbf{w}$ er i $\text{span}\{ \mathbf{u}_1, \mathbf{u}_2 , \ld
 kan denne opskrives $\mathbf{w}=c_1\mathbf{u}_1+c_2\mathbf{u}_2+ \ldots + c_k\mathbf{u}_k+b\mathbf{v}$, hvor $c_1,c_2,\ldots, c_k, b$ er skalarer.
 Ved substitution af $\mathbf{v}$ med $\{ \mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\}$ vides det, at $\mathbf{w}$ kan opskrives som en linearkombination af $\S$.
 Det gælder endvidere, at alle linearkombinationer i $\S$ også kan dannes fra vektorerne $\mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}$, hvis $\mathbf{v}$ multipliceres med skalaren $0$.
-Det følger derfor, at de to mængder har samme span. \\\\
+Det følger derfor, at de to mængder har samme span. 
+\\\\
 %
 Antag nu, at $\textbf{v}$ ikke er i $\text{span}\{\S\}$. 
 Det vil stadig gælde, at $\mathbf{v}$ er i spannet af 
-$\{ \mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\}$, da 
+$$\{ \mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\},$$ da 
 $\mathbf{v}=0\mathbf{u}_1+0\mathbf{u}_2+ \ldots + 0\mathbf{u}_k+1\mathbf{v}$.
 Derfor er
 $$\text{span}\{ \mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k \}

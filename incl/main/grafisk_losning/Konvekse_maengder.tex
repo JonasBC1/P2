@@ -1,12 +1,10 @@
-\section{Konvekse funktioner og konvekse mængder}
+\section{Konvekse mængder og konvekse funktioner}
 \label{julieerlakker}
-%
-\input{fig/tikz/geometri/konveksfunktion}
 %
 I forbindelse med mængder af vektorer er det vigtigt at definere \textit{konvekse mængder}.
 %
 \begin{defn}{}{konveks}
-En mængde $S \subset \R^n$ er \textbf{konveks}, hvis $\lambda \textbf{u} + (1- \lambda ) \textbf{v} \in S$ for ethvert $\textbf{u}, \textbf{v} \in S$ og ethvert $\lambda \in [0,1]$. 
+En mængde $\S \subset \R^n$ er \textbf{konveks}, hvis $\lambda \textbf{u} + (1- \lambda ) \textbf{v} \in \S$ for ethvert $\textbf{u}, \textbf{v} \in S$ og ethvert $\lambda \in [0,1]$. 
 \end{defn}
 \noindent
 %
@@ -53,7 +51,6 @@ Af \ref{defn:konvekskombihylster} følger \ref{thm:konveks}.
 \end{thm}
 %
 %
-\newpage
 \begin{proof}
 \begin{enumerate}[label=(\alph*)]
 \item Lad $I$ være en indeksmængde, lad $\S_i$, $i \in I$, være konvekse mængder, og lad $ \lambda \in [0,1]$.
@@ -62,7 +59,7 @@ Det haves, at $ \lambda \textbf{u} + (1 - \lambda )\textbf{v} \in \S_i$, efterso
 %
 \item Lad $\textbf{a}$ være en vektor, lad $b$ være en skalar, og lad $ \lambda \in [0,1]$. 
 Antag, at $\textbf{u}$ og $\textbf{v}$ henholdsvis opfylder, at $\textbf{a}^T \textbf{u} \geq b$ og $\textbf{a}^T \textbf{v} \geq b$, således de tilhører samme halvrum. 
-Så er $\textbf{a}^T (\lambda \textbf{u} + (1 - \lambda) \textbf{v} ) \geq \lambda b + (1 - \lambda ) b = b$, hvilket beviser, at $ \lambda \textbf{u} + (1 - \lambda )\textbf{v}$ tilhører samme halvrum, hvormed halvrummet er konvekst.
+Så er $$\textbf{a}^T (\lambda \textbf{u} + (1 - \lambda) \textbf{v} ) \geq \lambda b + (1 - \lambda ) b = b,$$ hvilket beviser, at $ \lambda \textbf{u} + (1 - \lambda )\textbf{v}$ tilhører samme halvrum, hvormed halvrummet er konvekst.
 Bemærk, at et polyeder er fællesmængden af et endeligt antal halvrum, og at (b) dermed er bevist jævnfør (a).
 %
 \item  Dette bevises ved induktion.
@@ -95,6 +92,23 @@ være to elementer i $\S$, hvor $ \zeta_i \geq 0$, $ \theta_i \geq 0$, og $$ \su
 Lad $ \lambda = [0,1].$
 Så er $$\lambda \textbf{v} + (1 - \lambda ) \textbf{w} = \lambda \sum_{i=1}^k \zeta_i \textbf{u}^i + (1 - \lambda) \sum_{i=1}^k \theta_i \textbf{u}^i = \sum_{i=1}^k (\lambda \zeta_i + (1-\lambda )\theta_i ) \textbf{u}^i.$$
 Bemærk, at koefficienterne $ \lambda \zeta_i + (1 - \lambda) \theta_i$, $i = 1, \ldots, k$, summerer til $1$ og ikke er negative. 
-Dermed er $ \lambda \textbf{v} + (1 - \lambda ) \textbf{w}$ en konveks kombination af vektorerne $\textbf{u}_1, \ldots, \textbf{u}_k$, og tilhører derfor mængden $S$, hvormed (d) er bevist. 
+Dermed er $ \lambda \textbf{v} + (1 - \lambda ) \textbf{w}$ en konveks kombination af vektorerne $\textbf{u}_1, \ldots, \textbf{u}_k$, og tilhører derfor mængden $\S$, hvormed (d) er bevist. 
 \end{enumerate}
 \end{proof}
+% 
+Envidere kan en funktion også være konveks.
+\begin{defn}{}{konveks}
+En funktion $f: \R^n \rightarrow \R$ er \textbf{konveks}, hvis 
+$$f(\lambda \textbf{u} + (1- \lambda ) \textbf{v}) \leq \lambda f( \textbf{u}) + (1- \lambda ) f(\textbf{v}) $$ 
+for ethvert $\textbf{u}, \textbf{v} \in \R^n$ og ethvert $\lambda \in [0,1]$.
+\end{defn}
+\noindent
+% 
+Hvis $f(\mathbf{u}) \leq f(\mathbf{v})$ i nærheden af $\mathbf{u}$, siges $\mathbf{u}$ at være et \textit{lokalt minimum} af $f$, og $\mathbf{u}$ siges at være et \textit{globalt minimum}, hvis det gælder  $f(\mathbf{u}) \leq f(\mathbf{v})$ for alle $\mathbf{v} \in \R^n$.
+Konvekse funktioner har dermed ikke et lokalt minimum, som ikke er et globalt minimum.
+På figur \ref{fig:julieerkonge} ses to funktioner. 
+En blå konveks funktion, hvor $\mathbf{u}_1$ er et globalt maksimum, da $f(\mathbf{u}_1) \leq f(\mathbf{v})$ for alle $\mathbf{v}$, 
+og en rød funktion, hvor $\mathbf{u}_2$ er et lokalt maksimum, da $f(\mathbf{u}_2) \leq f(\mathbf{v})$ for i nærheden af $\mathbf{u}_2$. 
+%
+\input{fig/tikz/geometri/konveksfunktion}
+%

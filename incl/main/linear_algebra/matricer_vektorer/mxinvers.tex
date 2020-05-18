@@ -34,7 +34,6 @@ Dermed er $B=C$ og $A$'s invers er derfor entydig.
 Da inversen er entydig, vil denne kaldes $A^{-1}$.
 Såfremt $A$ er en invertibel $n \times n$ matrix, gælder det for ethvert $\mathbf{b} \in \R^n$, at $A\textbf{x}=\mathbf{b}$ har den entydige løsning $A^{-1}\mathbf{b}$.
 Inverse matricer har en række egenskaber, som er formuleret i \ref{thm:mxinvers}. 
-\newpage
 %
 \begin{thm}{}{mxinvers}
 Givet to $n \times n$ matricer $A$ og $B$, så gælder, at:
@@ -100,8 +99,6 @@ Så for hver af de operationer findes der en tilsvarende elementær matrix.
 \end{proof}
 %
 %\\
-\newpage
-\noindent
 %
 \ref{thm:eleinv} medfører desuden \ref{kor:eleinv}.
 %måske noget mere her (at det er vigtigt for rækkeoperationer?). 
@@ -148,7 +145,6 @@ A\textbf{v}=(P^{-1}A_R)\textbf{v}=P^{-1}(A_R\textbf{v})=P^{-1}\textbf{c}=\textbf
 $$
 hvormed $\textbf{v}$ er en løsning til $A\textbf{x}=\textbf{b}$. 
 Dermed er det bevist, at $A\textbf{x}=\textbf{b}$ og $A_R\textbf{x}=\textbf{c}$ har samme løsning.
-
 \end{proof}
 \\
 Beviset for \ref{kor:eleinv} følger af beviset for \ref{thm:eleinv} med tilføjelsen, at hvis $\textbf{b}=\textbf{0}$, så er $\textbf{c}=\textbf{0}$, hvilket resulterer i nulvektoren i begge udtryk.\\\\
@@ -250,8 +246,7 @@ Ved at udføre rækkeoperationer omdannes $A$ til reduceret trappeform.
 0 & 0 & \hlight{-1} & 1 & -2 & 1 \\
 \end{block}
 \end{blockarray}	\\
-\end{align*}
-\begin{align*}
+%
 \xrightarrow{R_3 \rightarrow -1R_3} &
 \begin{blockarray}{cccccc}
 \begin{block}{[ccc|ccc]}
@@ -292,6 +287,7 @@ A^{-1}=\begin{blockarray}{ccc}
 \end{eks}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ref{thm:mxinvers2} beskriver yderligere egenskaber for invertible matricer. 
+\newpage
 %
 \begin{thm}{}{mxinvers2}
 %Givet to $m \times n$ matricer $A$ og $B$, så gælder, at (det er bare leftover aye?)
@@ -313,7 +309,6 @@ Da er følgende udsagn ækvivalente.
 \end{enumerate}
 \end{thm}
 %
-\newpage
 %
 \begin{proof}
 Lad $A$ være en $n \times n$ matrix.
