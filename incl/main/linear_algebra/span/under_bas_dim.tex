@@ -3,11 +3,11 @@ Det kan være brugbart at undersøge vektorer i en delmængde af $\R^n$.
 Denne delmængde kaldes et \textit{underrum}.
 %
 \begin{defn}{}{underrum}
-En mængde $W$, bestående af vektorer i $\R^n$, er et \textbf{underrum} af $\R^n$, hvis den opfylder følgende betingelser:	
+En mængde $\S$, bestående af vektorer i $\R^n$, er et \textbf{underrum} af $\R^n$, hvis den opfylder følgende betingelser:	
 \begin{enumerate}[label=(\alph*)]
-\item $\textbf{0}\in W$.
-\item $\textbf{u}$,$\textbf{v} \in W \rightarrow \textbf{u}+\textbf{v} \in W $.
-\item $\textbf{u} \in W$ og $c$ er en skalar, så er $\textbf{u}c \in W$.
+\item $\textbf{0}\in \S$.
+\item $\textbf{u}$,$\textbf{v} \in \S \rightarrow \textbf{u}+\textbf{v} \in \S $.
+\item $\textbf{u} \in \S$ og $c$ er en skalar, så er $\textbf{u}c \in \S$.
 \end{enumerate}
 \end{defn}
 \noindent
@@ -84,7 +84,8 @@ Hvis $A$ er en $m\times n$ matrix, så er nulrummet af $A$ et underrum af $\R^n$
 \end{thm}
 %
 \begin{proof}
-Eftersom $A$ er en $m\times n$ matrix, så er vektorerne i nulrummet i $\R^n$, da det er løsningerne til $A\textbf{x}=\textbf{0}$. $\textbf{0}$ er en del af nulrummet, da $A\textbf{0}=\textbf{0}$. 
+Eftersom $A$ er en $m\times n$ matrix, er vektorerne indeholdt i nulrummet til $\R^n$, da det er løsningerne til $A\textbf{x}=\textbf{0}$.
+$\textbf{0}$ er en del af nulrummet, da $A\textbf{0}=\textbf{0}$. 
 Hvis $\textbf{u}$ og $\textbf{v}$ er i nulrummet, så er $A\textbf{u}=\textbf{0}$ og $A\textbf{v}=\textbf{0}$. 
 Deraf haves, at
 %
@@ -114,8 +115,8 @@ Mens et underrum kan beskrives med en given mængde vektorer, så er det fordela
 Denne mængde kaldes en \textit{basis} for underrummet.
 %
 \begin{defn}{}{basisunderrum}
-Lad $\mathcal{P}$ være et ikke-nul-underrum af $\R^n$. 
-En \textbf{basis} for $\mathcal{P}$ er en lineært uafhængig mængde af \textbf{generatorer} for $\mathcal{P}$.
+Lad $\mathcal{U}$ være et ikke-nul-underrum af $\R^n$. 
+En \textbf{basis} for $\mathcal{U}$ er en lineært uafhængig mængde af \textbf{generatorer} for $\mathcal{U}$.
 \end{defn}
 \noindent
 Eksempelvis kan en mængde af standardvektorer $\{\textbf{e}_1,\textbf{e}_2,\ldots,\textbf{e}_n\}$ bruges som basis for $\R^n$.
@@ -126,11 +127,11 @@ Pivotsøjlerne i en matrix udgør en basis for dens søjlerum.
 Dette følger af \ref{lem:pivotu} i appendicer.
 %
 \begin{thm}{}{}
-Lad $V$ være et ikke-nul-underrum af $\R^n$. Enhver to baser for $V$ indeholder det samme antal vektorer.
+Lad $\mathcal{U}$ være et ikke-nul-underrum af $\R^n$. Enhver to baser for $\mathcal{U}$ indeholder det samme antal vektorer.
 \end{thm}
 \begin{proof}
-Antag, at $\{\textbf{u}_1,\textbf{u}_2,\ldots,\textbf{u}_k\} $ og $\{\textbf{v}_1,\textbf{v}_2,\ldots,\textbf{v}_p\} $ er baser for $V$ og lad $A=[\textbf{u}_1 \text{ } \textbf{u}_2 \text{ }  \ldots \text{ } \textbf{u}_k] $ og $B=[\textbf{v}_1 \text{ } \textbf{v}_2 \text{ }  \ldots \text{ } \textbf{v}_k] $.
-Eftersom $\{\textbf{u}_1,\textbf{u}_2,\ldots,\textbf{u}_k\} $ er en mængde af generatorer for $V$, så eksisterer der vektorer $\textbf{c}_i$ i $\R^k$, for $i=1,2,\ldots,p$, så $A\textbf{c}_i=\textbf{v}_i$.
+Antag, at $\{\textbf{u}_1,\textbf{u}_2,\ldots,\textbf{u}_k\} $ og $\{\textbf{v}_1,\textbf{v}_2,\ldots,\textbf{v}_p\} $ er baser for $\mathcal{U}$ og lad $A=[\textbf{u}_1 \text{ } \textbf{u}_2 \text{ }  \ldots \text{ } \textbf{u}_k] $ og $B=[\textbf{v}_1 \text{ } \textbf{v}_2 \text{ }  \ldots \text{ } \textbf{v}_k] $.
+Eftersom $\{\textbf{u}_1,\textbf{u}_2,\ldots,\textbf{u}_k\} $ er en mængde af generatorer for $\mathcal{U}$, så eksisterer der vektorer $\textbf{c}_i$ i $\R^k$, for $i=1,2,\ldots,p$, så $A\textbf{c}_i=\textbf{v}_i$.
 Lad $C=[\textbf{c}_1 \text{ } \textbf{c}_2 \text{ } \ldots \text{ } \textbf{c}_p]$.
 $C$ er dermed en $ k \times p$ matrix, hvorom det gælder, at $AC=B$.
 Antag nu, at der for nogle vektorer $\textbf{x}$ i $\R^p$ gælder, at $C\textbf{x}=\textbf{0}$. 

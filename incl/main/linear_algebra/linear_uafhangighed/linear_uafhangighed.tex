@@ -10,7 +10,7 @@ En mængde af vektorer i $\R^n$ er enten \textit{lineært afhængige} eller \tex
 % 
 \begin{defn}{}{linu}
 %En mængde af vektorer $\mathbf{u}_1, \mathbf{u}_2, \ldots , \mathbf{u}_k \in \R^n$ kaldes lineært uafhængige, hvis der eksisterer skalarer $x_1, x_2, \ldots , x_k$, sådan at ligningen 
-En mængde af vektorer $\mathbf{u}_1, \mathbf{u}_2, \ldots , \mathbf{u}_k \in \R^n$ er \textbf{lineært uafhængige}, hvis der eksisterer skalarer $x_1, x_2, \ldots , x_k$, sådan at ligningen 
+En mængde af vektorerne $\mathbf{u}_1, \mathbf{u}_2, \ldots , \mathbf{u}_k \in \R^n$ er \textbf{lineært uafhængige}, hvis der eksisterer skalarer $x_1, x_2, \ldots , x_k$, sådan at ligningen 
 \begin{align*}
 x_1\mathbf{u}_1 + x_2\mathbf{u}_2 + \cdots + x_k \mathbf{u}_k = \mathbf{0}
 \end{align*}
@@ -238,7 +238,7 @@ En mængden af vektorer er lineært afhængige, hvis:
 %
 Med udgangspunkt i \ref{fisk} ses det, at de to vektorer i $\S_2$ er parallelle og derfor er lineært afhængige. 
 \\\\
-Hvis det ikke ved hjælp af inspektion kan afgøres, om en matrix er lineært afhængig eller lineært uafhængig, kan det undersøges ved at opstille totalmatricen af mængden af vektorer, hvor matricen derefter via rækkeopperationer omdannes til trappeform. 
+Hvis det ikke ved inspektion kan afgøres, om en matrix er lineært afhængig eller lineært uafhængig, kan det undersøges ved at opstille en totalmatricen bestående af mængden af vektorer, hvor matricen derefter via rækkeopperationer omdannes til trappeform. 
 Hvis der er pivotindgange i alle søjlerne, er mængden af vektorer lineært uafhængige. Hvis der er frie variable, er mængden af vektorer derimod lineært afhængige.
 \\\\
 %
@@ -297,7 +297,7 @@ Ved hjælp af rækkeoperationerne omskrives totalmatricen til reduceret trappefo
 %
 \noindent
 \begin{align*}
-A=
+[A \mid \textbf{b}]=
 \begin{blockarray}{cccc}
 x_1 & x_2 & x_3 & b \\
 \begin{block}{[ccc|c]}
@@ -408,7 +408,7 @@ x_1+
 Ved hjælp af rækkeoperationer omskrives totalmatricen til trappeform:
 %
 \begin{align*}
-A=&
+[B \mid \textbf{b}]=&
 \begin{blockarray}{cccc}
 x_1 & x_2 & x_3 & b \\
 \begin{block}{[ccc|c]}

@@ -1,14 +1,14 @@
 \section{Lineær afbildning}
 %
-En matrix kan betragtes som en funktion, der afbilder en vektor i et rum.
+En matrix kan betragtes som en funktion, der afbilder en vektor fra et rum til et andet.
 %
 \begin{defn}{}{}
 Lad $\S _1 \subseteq \R^n$ og $\S _2 \subseteq \R^m$.
-En funktion $f$ fra $\S_1$ til $\S_2$, noteret $f:\S_1\rightarrow\S_2$, tildeler enhver vektor $\textbf{u}$ i $\S_1$ en entydig vektor $f(\textbf{u})$ i $\S_2$.
-Vektoren $f(\textbf{u})$ kaldes en \textbf{afbildning} af $\textbf{u}$.
+En funktion $f$ fra $\S_1$ til $\S_2$, noteret $f:\S_1\rightarrow\S_2$, tildeler enhver vektor $\textbf{v}$ i $\S_1$ en entydig vektor $f(\textbf{v})$ i $\S_2$.
+Vektoren $f(\textbf{v})$ kaldes en \textbf{afbildning} af $\textbf{v}$.
 %Hedder det codomænet på dansk? Lyder underligt. 
 $\S_1$ er \textbf{domænet} for funktionen $f$, mens $\S_2$ kaldes \textbf{codomænet} til $f$.
-\textbf{Værdimængden} for $f$ er defineret som mængden af afbildninger $f(\textbf{u})$ for alle $\textbf{v}\in \S_1$.
+\textbf{Værdimængden} for $f$ er defineret som mængden af afbildninger $f(\textbf{v})$ for alle $\textbf{v}\in \S_1$.
 \end{defn}\noindent
 %
 Bemærk, afbildning også kaldes transformation.
@@ -90,11 +90,11 @@ T(c\textbf{u} + k\textbf{v}) = T(c\textbf{u}) + T(k\textbf{v}) = cT(\textbf{u}) 
 \ref{thm:afbegen}(d) kan generaliseres til at vise, at lineær afbildning bevarer linearkombinationer.
 %Linearkombinationer
 \begin{lem}{}{}
-Lad $T:\R^n \rightarrow \R^m$ være en lineær afbildning, $\textbf{u}_1,\textbf{u}_2,\ldots,\textbf{u}_k$ være vektorer i $\R^n$ og lad $a_1,a_2,\ldots,a_k$ være skalarer. 
+Lad $T:\R^n \rightarrow \R^m$ være en lineær afbildning, $\textbf{v}_1,\textbf{v}_2,\ldots,\textbf{v}_k$ være vektorer i $\R^n$ og lad $c_1,c_2,\ldots,c_k$ være skalarer. 
 Så gælder, at
 %
 \begin{align*}
-T(a_1\textbf{u}_1 + a_2\textbf{u}_2 + \cdots + a_k\textbf{u}_k) = T(a_1\textbf{u}_1) + T(a_2\textbf{u}_2) + \cdots + T(a_k\textbf{u}_k).
+T(c_1\textbf{v}_1 + c_2\textbf{v}_2 + \cdots + c_k\textbf{v}_k) = T(c_1\textbf{v}_1) + T(c_2\textbf{v}_2) + \cdots + T(c_k\textbf{v}_k).
 \end{align*}
 %
 \end{lem}
@@ -104,8 +104,8 @@ Lemmaet følger direkte af \ref{thm:afbegen}(d).
 \end{proof}
 \\
 %
-Bemærk, at \ref{thm:afbegen}(a) i nogle tilfælde kan bruges til at vise, hvorvidt en funktion er ikke-lineær, hvis den ikke opfylder betingelsen. 
-Det kan dog forekomme, at en funktion opfylder betingelsen og stadig er ikke-lineær.
+Bemærk, at \ref{thm:afbegen}(a) i nogle tilfælde kan bruges til at vise, at en funktion ikke er lineær. 
+Det kan dog forekomme, at en funktion opfylder betingelsen og stadig ikke er lineær.
 % 
 \\\\
 % 
@@ -115,11 +115,11 @@ Hvis afbildningen $T$ er lineær, kan en tilsvarende matrix $A$ opstilles, såda
 % 
 \begin{thm}{}{fisk2}
 Lad $T: \R^n \rightarrow \R^m$ være lineær. 
-Så findes der en entydig $m \times n$ matrix
+Hvis der findes en entydig $m \times n$ matrix
 \begin{align*}
 A= [T(\mathbf{e}_1)\text{    } T(\mathbf{e}_2) \text{    } \ldots \text{    } T(\mathbf{e}_n)],
 \end{align*}
-hvor søjlerne er afbildninger af $T$ ud fra standardvektorene i $\R^n$, så det gælder, at $T(\mathbf{v})=A \mathbf{v}$ for alle $\mathbf{v} \in \R^n$.
+hvor søjlerne er afbildninger af $T$ ud fra standardvektorene i $\R^n$, så gælder det, at $T(\mathbf{v})=A \mathbf{v}$ for alle $\mathbf{v} \in \R^n$.
 \end{thm}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -191,9 +191,9 @@ T(\mathbf{e}_3)=
 2
 \end{bmatrix}.
 \end{align*}
-Derfor er standardmatricen for
+Derfor er $T = T_A$, hvor
 \begin{align*}
-T=
+A=
 \begin{bmatrix}
 5 & 1 & 0\\
 0 & 3 & 2

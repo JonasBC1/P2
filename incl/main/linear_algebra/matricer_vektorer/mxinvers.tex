@@ -4,7 +4,7 @@ Dermed kan enhver rækkeoperation udføres gennem matrixmultiplikation.
 En $n \times n$ matrix $E$ er elementær, hvis én rækkeoperation udført på $I_n$ resulterer i $E$. 
 %Eksempel? 
 \\\\
-Lad nu $A$ være en $m \times n$ matrix og $E$ en elementær $m \times m$ matrix, der er resultatet af én rækkeoperation udført på $I_m$. 
+Lad nu $A$ være en $m \times n$ matrix og $E$ en $m \times m$ elementær matrix.
 Matrixproduktet $EA$ kan opnås ved at udføre én rækkeoperation på $A$. 
 Enhver elementær matrix er desuden \textit{invertibel}, og dens \textit{invers} er også en elementær matrix. 
 %
@@ -24,7 +24,7 @@ Det gælder derfor fra \ref{defn:mxinvers}, at $A$ er inversen til $B$ og $C$.
 Derfor haves at $AB=BA=I_{n}$, samt at $AC=CA=I_{n}$. 
 Fra \ref{thm:mxmulti} haves derfor, at
 \begin{align*}
-B=BI_n&=B(AC) \\
+B=BI_n &=B(AC) \\
 &=(BA)C \\
 &=I_nC=C.
 \end{align*} 
@@ -37,7 +37,7 @@ Inverse matricer har en række egenskaber, som er formuleret i \ref{thm:mxinvers
 \newpage
 %
 \begin{thm}{}{mxinvers}
-Givet to $m \times n$ matricer $A$ og $B$, så gælder, at:
+Givet to $n \times n$ matricer $A$ og $B$, så gælder, at:
 \begin{enumerate}[label=(\alph*)]
 \item Hvis $A$ er invertibel, så er $A^{-1}$ invertibel, og $(A^{-1})^{-1}=A$.
 \item Hvis $A$ og $B$ er invertible, så er $AB$ invertibel, og $(AB)^{-1}=B^{-1}A^{-1}$.
@@ -161,7 +161,7 @@ $A$ er invertibel, hvis og kun hvis den reducerede trappeform af $A$ er $I_n$.
 \end{thm}
 %
 \begin{proof}
-Antag, at $n\times n$ matricen $A$ er invertibel, og at der findes en vektor $\textbf{u}$ i $\R^n$, så $A\textbf{u}=\textbf{0}$. 
+Antag, at $n\times n$ matricen $A$ er invertibel, og at der findes en vektor $\textbf{u} \in \R^n$, så $A\textbf{u}=\textbf{0}$. 
 Da $A$ er en invertibel matrix, gælder det for ethvert $\mathbf{b} \in \R^n$, at $A\textbf{x}=\mathbf{b}$ har løsningen $A^{-1}\mathbf{b}$ og derfor er $\textbf{u}=A^{-1}\textbf{0}=\textbf{0}$. 
 Den eneste løsning til problemet er derfor $\textbf{0}$. 
 Såfremt $A$ er invertibel, følger det derfor fra \ref{thm:mxlinuaf}, at $\text{rang}(A)=n$.

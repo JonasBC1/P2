@@ -4,7 +4,7 @@
 %
 \begin{defn}{}{}
 %
-For en ikke-tom mængde vektorer $\S = {\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k }$ i $\R^n$ er \textbf{spannet} af $\S$ mængden af alle linearkombinationer af $\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k$ i $\R^n$. 
+For en ikke-tom mængde af vektorer i $\R^n$ $\S = \{\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k \}$ er \textbf{spannet} af $\S$ mængden af alle linearkombinationer af $\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k$. 
 Denne mængde noteres $\text{span} \{ \S \}$ eller $\text{span}\{ \mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k \}$.
 %
 \end{defn}
@@ -70,7 +70,7 @@ Spannet for $\S_1$ bliver derfor:
 \end{align*}
 %
 Som det fremgår geometrisk på figur \ref{span_eks}, er $\text{span}\{\S_1 \}$ en ret linje. 
-Eftersom $\mathbf{u}_2$ er en mulig linearkombination af $\mathbf{u}_1$, kan dette reduceres til  
+Eftersom $\mathbf{u}_2$ er en linearkombination af $\mathbf{u}_1$, kan dette reduceres til  
 %
 \begin{align*}
 \text{span}\{\S_1 \} =
@@ -125,8 +125,8 @@ Dette gør den, da det er muligt at besøge alle punkter ved at indføre passend
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Typisk bruges spannet til at undersøge, hvorvidt en given vektor er en linearkombination af en vektormængde. 
-Dette gøres ved at undersøge, om en vektor kan konstrueres som linearkombination af vektorerne i mængden, hvilket undersøges ved hjælp af rækkereduktionsalgoritmen. 
+Rækkereduktionsalgoritmen kan bruges til at afgøre, hvorvidt en given vektor er en del af et givet span.
+Dette betyder, at rækkereduktionsalgoritmen kan bruges til at undersøge om en vektor er en linearkombination af en vektormængde.
 \\
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -167,9 +167,9 @@ Givet
 opskrives totalmatricen
 %
 \begin{align*}
-A=&
+[A \mid \textbf{v}]=&
 \begin{blockarray}{ccccc}
-\mathbf{u}_1 & \mathbf{u}_2 & \mathbf{u}_3 & \mathbf{v} \\
+x_1 & x_2 & x_3 & v \\
 \begin{block}{[ccc|c]c}
   1 & 1 & 1 & -1 \\
   2 & 1 & -1 & 2 \\
@@ -183,7 +183,7 @@ Totalmatricen omskrives nu til trappeform.
 \begin{align*}
 \xrightarrow[R_3 \rightarrow R_3-R_1]{R_2 \rightarrow R_2-2R_1}&
 \begin{blockarray}{ccccc}
-\mathbf{u}_1 & \mathbf{u}_2 & \mathbf{u}_3 & \mathbf{v} \\
+x_1 & x_2 & x_3 & v \\
 \begin{block}{[ccc|c]c}
   1 & 1 & 1 & -1 \\
   0 & -1 & -3 & 4 \\
@@ -193,7 +193,7 @@ Totalmatricen omskrives nu til trappeform.
 %
 \xrightarrow{R_3 \rightarrow R_3-R_2}&
 \begin{blockarray}{ccccc}
-\mathbf{u}_1 & \mathbf{u}_2 & \mathbf{u}_3 & \mathbf{v} \\
+x_1 & x_2 & x_3 & v \\
 \begin{block}{[ccc|c]c}
   \hlight{1} & 1 & 1 & -1 \\
   0 & \hlight{-1} & -3 & 4 \\
@@ -227,13 +227,13 @@ De følgende udsagn om en $m \times n$ matrix $A$ er ækvivalente:
 %
 \begin{proof}
 %
-Udsagn (a) og (b) er ækvivalente, eftersom det er en forudsætning, at der kan skabes en linearkombination af $A\mathbf{x} =\mathbf{b}$ for ethvert $\mathbf{b}$ i $\R^m$, da det netop er definitionen af spannet, der dækker $\R^m$. 
+Udsagn (a) og (b) er ækvivalente, eftersom det er en forudsætning, at der kan skabes en linearkombination af søjlerne i $A$ for ethvert $\mathbf{b}$ i $\R^m$, da det netop er definitionen af spannet, der dækker $\R^m$. 
 %
 Hvis der ikke er nogle nulrækker i den reducerede trappeform, følger det, at $\text{rang}\{A\} = m$, hvorfor (c) og (d) er ækvivalente. 
 Eftersom matricen er på reduceret trappeform, er denne derfor ækvivalent med (e).
 \\\\
 Det skal nu bevises at (b) og (c) er ækvivalente. 
-Lad $B$ være den reducerede trappeform af $A$ og
+Lad $A_R$ være den reducerede trappeform af $A$ og
 %
 \begin{align*}
 \mathbf{\mathbf{e}}_m = \begin{bmatrix}
@@ -245,27 +245,27 @@ Lad $B$ være den reducerede trappeform af $A$ og
 \end{align*}
 %
 i $\R^m$. 
-Gennem rækkereduktionsalgoritmen kan $A$ transformeres til $B$. 
-Da disse rækkeoperationer er reversible, følger det, at der findes en sekvens af rækkeoperationer, som kan transformere $B$ til $A$.
+Gennem rækkereduktionsalgoritmen kan $A$ transformeres til $A_R$. 
+Da disse rækkeoperationer er reversible, følger det, at der findes en sekvens af rækkeoperationer, som kan transformere $A_R$ til $A$.
 Hvis disse operationer udføres på totalmatricen 
-$[B \mid \mathbf{e}_m]$ 
+$[A_R \mid \mathbf{e}_m]$ 
 for at konstruere matricen 
 $[A \mid \mathbf{d}]$, 
 $\mathbf{d} \in \R^n$, 
 så følger det, at ligningssystemet $A\mathbf{x}=\mathbf{
-d}$ er ækvivalent med $B\mathbf{x}=\mathbf{e}_m$.
+d}$ er ækvivalent med $A_R\mathbf{x}=\mathbf{e}_m$.
 \\\\
 Hvis (b) er sand, følger det, at de to ligningssystemer er konsistente. 
-Det følger derfor af \ref{thm:konsistens}, at den sidste række ikke kan være en nulrække, da standardvektoren $\mathbf{e}_m$ har pivotindgang i sidste søjle, er ligningssystemet inkonsistent.
+Det følger derfor af \ref{thm:konsistens}, at den sidste række i $A$ og $A_R$ ikke kan være en nulrække, da dette ellers medører, at $\textbf{b} = \mathbf{e}_m$ giver pivotindgang i sidste søjle, som medfører, at ligningssystemet er inkonsistent.
 Dermed er $\text{rang}(A)=m$, hvilket leder til (c).
 % Dette kan eventuelt forklares dybere xD
 \\\\
 Antag, at (c) er sand. 
-Lad $[B \mid \mathbf{c}]$ 
+Lad $[A_R \mid \mathbf{c}]$ 
 være den reducerede trappeform af 
 $[A \mid \mathbf{b}]$.
-Eftersom $A$ har rangen $m$, følger det, at der ikke findes en nulrække i $B$.
-Derfor kan $[B \mid \mathbf{c}]$ ikke indeholde en nulrække, og der er derfor ikke pivot i sidste søjle.
+Eftersom $A$ har rangen $m$, følger det, at der ikke findes en nulrække i $A_R$.
+Derfor kan $[A_R \mid \mathbf{c}]$ ikke indeholde en nulrække, og der er derfor ikke pivot i sidste søjle.
 Det følger derfor jævnfør \ref{thm:konsistens}, at $A\mathbf{x}=\mathbf{b}$ er konsistent for alle $\mathbf{b}$, hvilket beviser, at (b) og (c) er ækvivalente.
 %
 \end{proof}
@@ -293,7 +293,7 @@ Det gælder endvidere, at alle linearkombinationer i $\S$ også kan dannes fra v
 Det følger derfor, at de to mængder har samme span. \\\\
 %
 Antag nu, at $\textbf{v}$ ikke er i $\text{span}\{\S\}$. 
-Det følger herfra, at $\mathbf{v}$ er i spannet af 
+Det vil stadig gælde, at $\mathbf{v}$ er i spannet af 
 $\{ \mathbf{u}_1,\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k , \mathbf{v}\}$, da 
 $\mathbf{v}=0\mathbf{u}_1+0\mathbf{u}_2+ \ldots + 0\mathbf{u}_k+1\mathbf{v}$.
 Derfor er
