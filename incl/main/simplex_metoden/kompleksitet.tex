@@ -76,7 +76,7 @@ hvilket viser (b).
 %Således er det muligt at finde den ønskede udspændende sti i $\mathcal{P}_{k+1}$ ved først at tage den udspændende sti i $\mathcal{P}_{k}$, hvor $\varepsilon x_{k} \leq x_{k+1}$ er aktiv, og dernæst at skifte til $\mathcal{P}_{k}$, hvor $x_{k+1} \leq 1 - \varepsilon x_{k}$ er aktiv og tage dennes udspændende sti i modsat rækkefølge.
 %Dette viser (b), da $x_k$ er strengt voksende i det første $\mathcal{P}_{k}$ og strengt faldende i det andet $\mathcal{P}_{k}$, hvilket medfører, at $x_{k+1}$ er strengt voksende gennem hele stien.
 %
-\item Jævnfør afsnit \ref{julieerfantalastiskogvidunderlig} bevæger simplexmetoden sig altid fra nabo til nabo, når problemet ikke er degenereret.
+\item Jævnfør afsnit \ref{julieerfantalastiskogvidunderlig} bevæger simplexmetoden sig altid til et tilstødende ekstremumspunkt, når problemet ikke er degenereret.
 Med udgangspunkt i (b) vides det, at der eksisterer en udspændende sti, som ender i problemets optimale løsning og $\textbf{c}^T\textbf{x}_i < \textbf{c}^T\textbf{x}_{i-1}$ for $i = 2, 3, \ldots ,n$.
 Dette medfører, at en pivoteringsregel, som mindsker omkostningen mindst muligt pr. pivotering, følger den udspændende sti og besøger alle $2^n$ ekstremumspunkter, hvilket viser (c).
 \end{enumerate}
