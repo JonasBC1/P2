@@ -32,7 +32,7 @@ Her kan der igen være en ret betydelig forskel, afhængigt af størrelsen på $
 %
 Selvom antallet af basale mulige løsninger kan stige eksponentielt med antallet af variable og betingelser, så har simplexmetoden typisk fundet en optimal løsning efter $O(m)$ iterationer.
 Dog eksisterer der polyedre, hvor antallet af påkrævede pivoteringer stiger eksponentielt.
-For ikke-degenererede problemer bevæger simplexmetoden sig altid fra et ekstremumspunkt til en af dets tilstødende ekstremumspunkter og forbedrer omkostningen.
+For ikke-degenererede problemer bevæger simplexmetoden sig altid fra et ekstremumspunkt til et af dets tilstødende ekstremumspunkter og forbedrer omkostningen.
 Lad et polyeder have et eksponentielt antal af ekstremumspunkter, og lad en sti besøge alle disse.
 Denne sti er konstrueret ved, fra et ekstremumspunkt, at besøge et ekstremumspunkt med mindre omkostning.
 Med sådan et polyeder vil simplexmetoden, med en pivoteringsregel, som følger stien, kræve et eksponentielt antal af pivoteringer.
@@ -62,15 +62,21 @@ Den øvre og nedre begrænsning i $\varepsilon x_{k} \leq x_{k+1} \leq 1 - \vare
 Dette medfører, at hvert ekstremumspunkt i $\mathcal{P}_{k}$ giver anledning til to entydige ekstremumspunkter i $\mathcal{P}_{k+1}$, hvilket viser (a).
 %
 %
-\item Med induktion vises det, at ekstremumspunkterne $\textbf{p}_1, \ldots \textbf{p}_{2^n}$ i $\mathcal{P}_n$ kan arrangeres således, at hvert ekstremumspunkt tilstøder det forrige og $\textbf{c}_n^T  \textbf{p}_1 < \ldots < \textbf{c}_n^T  \textbf{p}_{2^n}$, når $\textbf{c}_n^T \textbf{x} = -x_n$.
+\item Med induktion vises det, at ekstremumspunkterne $\textbf{p}_1, \ldots \textbf{p}_{2^n}$ i $\mathcal{P}_n$ kan arrangeres således, at hvert ekstremumspunkt tilstøder det forrige og $\textbf{c}_n^T  \textbf{p}_1 > \cdots > \textbf{c}_n^T  \textbf{p}_{2^n}$, når $\textbf{c}_n^T \textbf{x} = -x_n$.
 Basistrinnet for $n=1$ følger trivielt.
 Antag nu, at resultatet gælder for  $n = k$.
-$\mathcal{P}_{k+1}$ kan deles i to $\mathcal{P}_{k}$ polyedre.
-Et polyeder, hvor $\varepsilon x_{k} \leq x_{k+1}$ er aktiv og et polyeder, hvor $x_{k+1} \leq 1 - \varepsilon x_{k}$ er aktiv.
-Således er det muligt at finde den ønskede udspændende sti i $\mathcal{P}_{k+1}$ ved først at tage den udspændende sti i $\mathcal{P}_{k}$, hvor $\varepsilon x_{k} \leq x_{k+1}$ er aktiv, og dernæst at skifte til $\mathcal{P}_{k}$, hvor $x_{k+1} \leq 1 - \varepsilon x_{k}$ er aktiv og tage dennes udspændende sti i modsat rækkefølge.
-Dette viser (b), da $x_k$ er strengt voksende i det første $\mathcal{P}_{k}$ og strengt faldende i det andet $\mathcal{P}_{k}$, hvilket medfører, at $x_{k+1}$ er strengt voksende gennem hele stien.
+Da et polyeder er afgrænset af polyedre i en dimension lavere, kan to $\mathcal{P}_k$ afgrænse polyederet $\mathcal{P}_{k+1}$.
+Disse to afgrænsende polyedre vil henholdsvis have $\varepsilon x_{k} \leq x_{k+1}$ eller $x_{k+1} \leq 1 - \varepsilon x_{k}$ som aktiv betingelse i alle ekstremumspunkter.
+Da ekstremumspunkterne i $\mathcal{P}_k$ er arrangeret således, at $\textbf{c}_n^T  \textbf{p}_1 > \cdots > \textbf{c}_n^T  \textbf{p}_{2^n}$, kan den ønskede sti findes.
+Ekstremumspunkterne i $\mathcal{P}_{k+1}$ skal således arrangeres sådan, at $$1 - \varepsilon \textbf{c}_n^T \textbf{p}_{2^n} > \cdots > 1 - \varepsilon \textbf{c}_n^T  \textbf{p}_1 > \varepsilon \textbf{c}_n^T  \textbf{p}_1 > \cdots > \varepsilon \textbf{c}_n^T \textbf{p}_{2^n},$$
+hvilket viser (b).
+
+%$\mathcal{P}_{k+1}$ kan deles i to $\mathcal{P}_{k}$ polyedre.
+%Et polyeder, hvor $\varepsilon x_{k} \leq x_{k+1}$ er aktiv og et polyeder, hvor $x_{k+1} \leq 1 - \varepsilon x_{k}$ er aktiv.
+%Således er det muligt at finde den ønskede udspændende sti i $\mathcal{P}_{k+1}$ ved først at tage den udspændende sti i $\mathcal{P}_{k}$, hvor $\varepsilon x_{k} \leq x_{k+1}$ er aktiv, og dernæst at skifte til $\mathcal{P}_{k}$, hvor $x_{k+1} \leq 1 - \varepsilon x_{k}$ er aktiv og tage dennes udspændende sti i modsat rækkefølge.
+%Dette viser (b), da $x_k$ er strengt voksende i det første $\mathcal{P}_{k}$ og strengt faldende i det andet $\mathcal{P}_{k}$, hvilket medfører, at $x_{k+1}$ er strengt voksende gennem hele stien.
 %
-\item Jævnfør \textcolor{red}{afsnit \ref{julieerfantalastiskogvidunderlig}} bevæger simplexmetoden sig altid fra nabo til nabo, når problemet ikke er degenereret.
+\item Jævnfør afsnit \ref{julieerfantalastiskogvidunderlig} bevæger simplexmetoden sig altid fra nabo til nabo, når problemet ikke er degenereret.
 Med udgangspunkt i (b) vides det, at der eksisterer en udspændende sti, som ender i problemets optimale løsning og $\textbf{c}^T\textbf{x}_i < \textbf{c}^T\textbf{x}_{i-1}$ for $i = 2, 3, \ldots ,n$.
 Dette medfører, at en pivoteringsregel, som mindsker omkostningen mindst muligt pr. pivotering, følger den udspændende sti og besøger alle $2^n$ ekstremumspunkter, hvilket viser (c).
 \end{enumerate}
