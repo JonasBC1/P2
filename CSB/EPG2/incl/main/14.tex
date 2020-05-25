@@ -32,21 +32,21 @@ Ved at tage integralet for begge funktioner, og derefter plusse dem sammen, fåe
 (midtpunkt, trapez og Simpson). Hvor mange ækvidistante inddelinger skal der
 anvendes i hvert af de tre tilfælde for at opnå en fejl på mindre end $10^{-8}$?\\
 Ved midtpunkt er fejlen mindre end $10^{-8}$ ved cirka $4096$ indelinger.\\
-ved trapez sker dette først ved cirka 8192, altså senere end ved midtpunkt.\\ 
-Ved Simpsons regel sker dette ved ca $512$ og denne opnår dermed højere præcision ved færre iterationer end de foregående to.
-%(Har i andre forslag til hvor mange punkter og iterationer der skal med frem for fordoblingen
-\textbf{spørgsmål}:Hvad menes der med numerisk?\\
+Ved trapez sker dette først ved cirka $8192$, altså senere end ved midtpunkt.\\ 
+Ved simpsonreglen sker dette ved ca $512$ og denne opnår dermed højere præcision ved færre iterationer end de foregående to.
 \textbf{Besvarelse:} \\
 (d) Lav i de tre tilfælde numeriske eksperimenter, baseret på fordobling af antal delepunkter, og brug dem til en eksperimentel bestemmelse af ordenen af de tre
 metoder. Stemmer resultaterne med teorien? Hvis der er afvigelser, hvordan kan
 de så forklares?\\
 \textbf{spørgsmål}:Hvorfor springer orden så meget i Simpson efter 8192? \\
-\textbf{Besvarelse:}For både trapez samt midtpunktreglen stabliseres der omkring en orden på 4 efter et passende antal indellinger hvilket stemmer overens med teorien, dette er dog ikke tilfældet for Simpson. Den opnår de 16, men falder drastisk efterfølgende \\\\
+% Igen noget med fejlformler, og defirentier den funktion vi arbejder med, i forhold til fejlformlerne. Derefter kan vi konkludere hvorfor det begynder at afvige. --
+\textbf{Besvarelse:}For både trapez samt midtpunktreglen stabliseres der omkring en orden på 4 efter et passende antal inddelinger hvilket stemmer overens med teorien, dette er dog ikke tilfældet for Simpson. Den opnår de 16, men falder drastisk efterfølgende \\\\
 (e) Prøv at anvende en simpel adaptiv metode til at bestemme integralet (2). Hvad
-sker der hvis man inddeler i to delintervaller af samme længde. Hvordan bidrager
-de hver til fejlen i approksimationen? Angiv resultaterne for både trapezreglen og
-Simpsons regel. \\
+sker der hvis man inddeler i to delintervaller af samme længde. Hvordan bidrager de hver til fejlen i approksimationen? 
+Angiv resultaterne for både trapezreglen og Simpsons regel. \\
 \textbf{spørgsmål}: Vi har svært ved at skulle dele i to delintervaller og alt det Python-fis
+% Intervallet deles til 0-1.5 og 1.5-3 og husk at modificere Iexact, så skulle vi kunne konkludere fejlen. 
 \textbf{Besvarelse:} \\
+Integralet af funktionen fra 1.5 til 3 er præcist idet antallet af indelinger er ligegyldigt da det er et tredjegradspolynomium og funktionen forbliver stabil i hele intervallet, derimod sker der fra 0 til 1.5 det at funktionen skifter og derfor behov for et større antal indelinger og det biddrager hermed til at denne del af aproksimationen giver en større fejl med behov for et større antal indelinger.
 %%%%%%%%% DONZO GONZO %%%%%%%%%%
 %
