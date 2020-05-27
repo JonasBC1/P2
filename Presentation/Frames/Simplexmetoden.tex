@@ -1,0 +1,104 @@
+\section{Simplexmetoden}
+\begin{frame}
+\centering
+\Huge
+Simplexmetoden
+\end{frame}
+%
+\begin{frame}
+\frametitle{Simplexmetoden}
+\begin{itemize}
+\item Hvordan simplex afsøger hjørnepunkter.
+\end{itemize}
+\end{frame}
+%
+%     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     %%%%%                           %%%%%
+%     %%%%%      Person nummer 6      %%%%%
+%     %%%%%                           %%%%%
+%     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\begin{frame}
+%\frametitle{Simplexmetoden}
+%\begin{itemize}
+%\item Hvordan simplex afsøger hjørnepunkter.
+%\item \textbf{$nr. 6$}
+%\item Implementationer af simplex(tænker kort gennemgang af forskelle)
+%\item Gennemgang af fuld tabelimplementering (mere udførligt (eksempel)).
+%\item Lexicografi til valg af pivoteringsmetode.
+%\item Kompleksitet som udgangspunkt for valg af metode.
+%\item Afrunding / konklusion?!
+%\end{itemize}
+%\end{frame}
+%
+\begin{frame}
+\frametitle{Implementeringer}
+\begin{itemize}
+\item Den naive implementering 
+	\begin{itemize}
+	% \item Høj tidspkompleksitet 
+	\item Løser to lineær ligningssystemer
+	\end{itemize}
+\item Den reviderede implementering 
+	\begin{itemize}
+	\item $B^{-1}$ opdateres ved hver iteration
+	\end{itemize}
+\item Fuld-tabel implementeringen
+	\begin{itemize}
+	\item Simplextabel opdateres ved hver iteration
+	\end{itemize} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fuld-tabel implementeringen}
+\begin{itemize}
+\item Simplextabel 
+\item Pivotering
+\end{itemize}
+\begin{align*}
+\begin{blockarray}{ccccccccccc}
+x_1 & x_2 & \cdots & x_n & \textcolor{blue}{s_1} & \textcolor{blue}{s_2} &  \textcolor{blue}{\cdots} & \textcolor{blue}{s_m} & z & b \\
+\begin{block}{[cccc|ccccc|c]c}
+a_{1,1} & a_{1,2} & \cdots & a_{1,n} & 1 & 0 & \cdots & 0 & 0 & b_1 \\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n} & 0 & 1 & \cdots & 0 & 0 & b_2 \\
+\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n} & 0 & 0 & \cdots  & 1  & 0 & b_{m}\\
+\cline{1-10}
+-c_1 & -c_2 & \cdots & -c_n & 0 & 0 & \cdots & 0 & 1 & z\\
+\end{block}
+\end{blockarray}.
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Pivoteringsløkker}
+\begin{itemize}
+\item Lexicografi
+	\begin{itemize}
+	\item $\mathbf{u}$ er lexicografisk større $\textbf{u} >^L \textbf{v}$
+	\item $\mathbf{u}$ er lexicografisk mindre $ \textbf{u} <^L \textbf{v}$
+	\end{itemize}
+\item Lexicografiske metode 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Kompleksitet}
+%som udgangspunkt for valg af metode.
+\begin{itemize}
+\item Den naive implementering 
+	\begin{itemize}
+	% \item Høj tidspkompleksitet 
+	\item $O(m^3)$ 
+	\end{itemize}
+\item Den reviderede implementering 
+	\begin{itemize}
+	\item $O(mn)$
+	\end{itemize}
+\item Fuld-tabel implementeringen
+	\begin{itemize}
+	\item $O(mn)$
+	\end{itemize} 
+\end{itemize}
+\end{frame}
