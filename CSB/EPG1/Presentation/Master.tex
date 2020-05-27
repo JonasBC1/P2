@@ -1,0 +1,217 @@
+\documentclass[10pt]{beamer}
+\usetheme[
+%%% options passed to the outer theme
+%    hidetitle,           % hide the (short) title in the sidebar
+%    hideauthor,          % hide the (short) author in the sidebar
+%    hideinstitute,       % hide the (short) institute in the bottom of the sidebar
+%    shownavsym,          % show the navigation symbols
+%    width=2cm,           % width of the sidebar (default is 2 cm)
+%    hideothersubsections,% hide all subsections but the subsections in the current section
+%    hideallsubsections,  % hide all subsections
+    left               % right of left position of sidebar (default is right)
+%%% options passed to the color theme
+%    lightheaderbg,       % use a light header background
+  ]{AAUsidebar}
+
+% If you want to change the colors of the various elements in the theme, edit and uncomment the following lines
+% Change the bar and sidebar colors:
+%\setbeamercolor{AAUsidebar}{fg=red!20,bg=red}
+%\setbeamercolor{sidebar}{bg=red!20}
+% Change the color of the structural elements:
+%\setbeamercolor{structure}{fg=red}
+% Change the frame title text color:
+%\setbeamercolor{frametitle}{fg=blue}
+% Change the normal text color background:
+%\setbeamercolor{normal text}{bg=gray!10}
+% ... and you can of course change a lot more - see the beamer user manual.
+
+\usepackage{blkarray}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+\usepackage{helvet}
+\usepackage{tikz}                  % drawing vector graphics
+\usepackage{circuitikz}            % drawing circuits
+\usepackage{mathtools}
+%laplace
+\usepackage{mathrsfs}
+\usepackage{siunitx}    % si-units
+\usepackage{amssymb}
+
+%Bibliography
+\usepackage[square]{natbib}
+
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{physics}
+\usepackage{subcaption}
+\usepackage{stackengine}
+\usepackage{media9}
+\usepackage{multimedia}
+\mathtoolsset{showonlyrefs}
+
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning,calc}
+\usetikzlibrary{intersections}
+\usetikzlibrary{shapes.misc}
+\tikzset{>={Latex[width=1mm,length=1.2mm]},
+  Speaker/.pic={
+    \filldraw[fill=gray!40,pic actions] 
+    (-15pt,0) -- 
+      coordinate[midway] (-front) 
+    (15pt,0) -- 
+    ++([shift={(-6pt,8pt)}]0pt,0pt) coordinate (aux1) -- 
+    ++(-18pt,0) coordinate (aux2) 
+    -- cycle 
+    (aux1) -- ++(0,6pt) -- coordinate[midway] (-back) ++(-18pt,0) -- (aux2);
+  },cross/.style={cross out, draw=black, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt},cross/.default={1pt},
+  Box/.pic={
+  \draw (0,0) to (0.5,0) to (0.5,-1) to (0.5,-1) to (-.5,-1) to (-.5,0) to (0,0);
+  },
+  Sbox/.pic={
+  \draw (0,0) to (0,0.5) to (1.5,0.5) to (1.5,-0.5) to (0,-0.5) to (0,0);
+  },
+  Vbox/.pic={
+  \draw (0,0) to (1.5,0) to (1.5,-1) to (-1.5,-1) to (-1.5,0) to (0,0);
+  },
+  variables/.pic={
+  \draw (0,0) to (0,0.5) to (1.5,0.5) to (1.5,-0.5) to (0,-0.5) to (0,0);
+  \draw (0,0) to (1.5,0);
+  },
+  pics/microphone/.style={code={ 
+        \draw[black, line width=.2em, rounded corners=1.7ex] 
+            (-.85em,4.5ex) -- (-.85em,2ex) -- (.85em,2ex) -- (.85em,4.5ex);
+        \fill[black] 
+            (-.6em,5ex) to[rounded corners=1.2ex]  
+            (-.6em,2.5ex) to[rounded corners=1.2ex] (.6em,2.5ex)
+            -- (.6em,5ex) to[rounded corners=.2ex] ++(-.85em,0) to[rounded corners=.2ex] ++(0,.35ex) -- ++(.85em,0)  
+            -- (.6em,5.5ex) to[rounded corners=.2ex] ++(-.85em,0) to[rounded corners=.2ex] ++(0,.35ex) -- ++(.85em,0)
+            -- (.6em,6ex) to[rounded corners=.2ex] ++(-.85em,0) to[rounded corners=.2ex] ++(0,.35ex) -- ++(.85em,0)
+            -- (.6em,6.5ex) to[rounded corners=.2ex] ++(-.85em,0) to[rounded corners=.2ex] ++(0,.35ex) -- ++(.85em,0)
+            to[rounded corners=1.2ex]
+            (.6em,8ex) to[rounded corners=1.2ex]
+            (-.6em,8ex) to[rounded corners=1.2ex] cycle; 
+        \fill[black] (-.1em,1.8ex) rectangle (.1em,.5ex);
+        \fill[black] (-.5em,.5ex) rectangle (.5em,0);
+    }}}
+
+% colored hyperlinks
+\newcommand{\chref}[2]{%
+  \href{#1}{{\usebeamercolor[bg]{AAUsidebar}#2}}%
+}
+\tikzstyle{point} = [fill,shape=circle,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [fill=white,midway,inner sep=1pt]
+
+
+
+\title[CSB]% optional, use only with long paper titles
+{Eksamensopgave 1}
+
+\subtitle{Computerstøttede beregninger}  % could also be a conference name
+
+\date{9. Juni 2020}
+
+\author[Gruppe B303c] % optional, use only with lots of authors
+{
+	Daniel Bursac Hasanovic     \\
+	Jens Koldkur				\\
+	Jonas Bach Christensen		\\
+	Julie Havbo Lund			\\
+	Mads Bjerregaard Kjær		\\
+	Mathias Gammelgaard			\\
+	Rasmus Jespersgaard
+}
+% - Give the names in the same order as they appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation. See the beamer manual for an example
+
+\institute[
+%  {\includegraphics[scale=0.2]{aau_segl}}\\ %insert a company, department or university logo
+%  Dept.\ of Mathematical Sciences\\
+%  Skjernvej 4A\\
+%  DK-9220 Aalborg Ø
+] % optional - is placed in the bottom of the sidebar on every slide
+{% is placed on the title page
+%  Dept.\ of Mathematical Sciences\\
+%  Skjernvej 4A\\
+%  DK-9220 Aalborg Ø
+  
+  %there must be an empty line above this line - otherwise some unwanted space is added between the university and the country (I do not know why;( )
+}
+
+
+% specify a logo on the titlepage (you can specify additional logos an include them in 
+% institute command below
+\pgfdeclareimage[height=1.5cm]{titlepagelogo}{AAUgraphics/aau_logo_new} % placed on the title page
+%\pgfdeclareimage[height=1.5cm]{titlepagelogo2}{graphics/aau_logo_new} % placed on the title page
+\titlegraphic{% is placed on the bottom of the title page
+  \pgfuseimage{titlepagelogo}
+%  \hspace{1cm}\pgfuseimage{titlepagelogo2}
+}
+
+% Sets
+\newcommand{\N}{\mathbb{N}}  % natural numbers
+\newcommand{\Z}{\mathbb{Z}}  % integers
+\newcommand{\Q}{\mathbb{Q}}  % rational numbers
+\newcommand{\R}{\mathbb{R}}  % real numbers
+\newcommand{\C}{\mathbb{C}}  % complex numbers
+\newcommand{\I}{\mathbb{I}}  % imaginary numbers
+\renewcommand{\b}[1]{\mathbf{#1}}
+\renewcommand{\L}{\mathcal{L}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\Y}{\mathcal{Y}}
+\newcommand{\B}{\mathcal{B}}
+
+% Semantics
+\let\cross=\times
+\let\times=\cdot
+\newcommand{\euler}{e}%\mathfrak{e}}
+\renewcommand{\exp}[1]{\euler^{#1}}
+\renewcommand{\matrix}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\amatrix}[2]{\left[\begin{array}{@{}*{#1}{c}|c@{}}#2\end{array}\right]}
+\renewcommand{\vec}[1]{\mathrm{\mathbf{#1}}}
+\newcommand{\transpose}{^\intercal}
+% \newcommand{\dotproduct}{\boldsymbol{\cdot}}
+\newcommand{\dotp}{\dotproduct}
+\newcommand{\directsum}{\oplus}
+\newcommand{\cardinality}[1]{\mathit{card}\bigl({#1}\bigr)}
+\newcommand\oast{\stackMath\mathbin{\stackinset{c}{0ex}{c}{0ex}{\ast}{\bigcirc}}}
+
+% Other operators and concepts
+\newcommand{\bigO}{\mathcal{O}}                                             % big O
+\renewcommand\qedsymbol{$\blacksquare$}                                     % use black square as QED
+\DeclarePairedDelimiterXPP{\laplace}[1]{\mathscr{L}}{\{}{\}}{}{#1}          % Laplace transform
+\DeclarePairedDelimiterXPP{\invlaplace}[1]{\mathscr{L}^{-1}}{\{}{\}}{}{#1}  % Inverse laplace transform
+\DeclarePairedDelimiterXPP{\fourier}[1]{\mathscr{F}}{\{}{\}}{}{#1}          % Fourier transform
+\DeclarePairedDelimiterXPP{\invfourier}[1]{\mathscr{F}^{-1}}{\{}{\}}{}{#1}  % Inverse fourier transform
+
+\begin{document}
+% the titlepage
+{\aauwavesbg%
+\begin{frame}[plain,noframenumbering] % the plain option removes the sidebar and header from the title page
+  \titlepage
+\end{frame}}
+%%%%%%%%%%%%%%%%
+
+% TOC
+\begin{frame}{Disposition}{}
+\tableofcontents
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+\input{Frames/Del1.tex}
+\input{Frames/Del2.tex}
+
+
+\bibliographystyle{apalike}
+\nocite{*}
+% \begin{frame}{References}
+% \tiny\bibliography{bib/bibliography}
+% \end{frame}
+
+\end{document}
