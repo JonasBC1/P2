@@ -5,7 +5,7 @@ Created on Mon May 11 13:35:28 2020
 @author: rasmu
 """
 
-# Adaptiv Simpson. Naiv implementation der ikke bekymrer sig om genbrug af 
+# Adaptiv Trapez. Naiv implementation der ikke bekymrer sig om genbrug af 
 # funktionsevalueringer.
 
 import numpy as np
@@ -13,23 +13,22 @@ import matplotlib.pyplot as plt
 from math import sqrt
 
 # implementation af S_{2N} fra kursusgang 7
-def simpsonrule(f,a,b,N):
-    h = (b - a)/N # bemærk: Dette er dobbelt afstanden mellem kvadraturpunkterne
+def trapezrule(f,a,b,N):
+    h = (b - a)/N
     xL = a - h
     xR = a
     I = 0
     for k in range(N):
         xL = xL + h
         xR = xR + h
-        I = I + h*(f(xL)+4.0*f((xL+xR)/2.0)+f(xR))/6.0 # Bemærk: Division med 6, da vi bruger h
+        I = I + h*(f(xL)+f(xR))/2.0
     return I
-
 # global variabel til at gemme kvadraturpunkter, bruges KUN til plot
 quadpoints = []; 
   
 def adaptivestep(f,xL,xR,tol):
-    S2 = simpsonrule(f,xL,xR,1)
-    S4 = simpsonrule(f,xL,xR,2)
+    S2 = trapezrule(f,xL,xR,1)
+    S4 = trapezrule(f,xL,xR,2)
     xM = (xL+xR)/2
     quadpoints.append(xM) # bruges kun til plot
     if abs(S4-S2) <= 15*tol: # bemærk at faktoren 15 er specifik for Simpons regel
@@ -39,7 +38,7 @@ def adaptivestep(f,xL,xR,tol):
     else:
         return adaptivestep(f,xL,xM,tol/2) + adaptivestep(f,xM,xR,tol/2)
 
-def adaptivesimpson(f,a,b,tol):
+def adaptivetrapez(f,a,b,tol):
     quadpoints.append(a) # bruges kun til plot
     quadpoints.append(b) # bruges kun til plot
     return adaptivestep(f,a,b,tol)
@@ -49,21 +48,16 @@ def fun(x):
         return (x-sqrt(2))**2
     else: 
         return -(x-sqrt(2))**2
-a = 0
-b = 1.5 
-Iexact = (-(sqrt(2)-sqrt(2))**3/3) -(-(sqrt(0)-sqrt(2))**3/3)+((b-sqrt(2))**3/3-(sqrt(2)-sqrt(2))**3/3)
-#interval_1=(-(sqrt(2)-sqrt(2))**3/3) -(-(sqrt(0)-sqrt(2))**3/3)+((b-sqrt(2))**3/3-(sqrt(2)-sqrt(2))**3/3)
-#inteval_2= (b-sqrt(2))**3/3-(a-sqrt(2))**3/3 
-#helefunk=15-((31*sqrt(2))/3)
+Iexact = 15-((31*sqrt(2))/3)
     
-#a = 1.5
-#b = 3.0 
+a = 0.0
+b = 3.0
 # Pas på med for lav tolerance: Der er ikke sat et maksimum på antallet af 
 # inddelinger, så ved meget lav tolerance kan afrundingsfejl gøre at den 
 # rekursive inddeling ikke kan opnå tolerancen. 
 tol = 1e-5 
 
-J = adaptivesimpson(fun, a, b, tol)
+J = adaptivetrapez(fun, a, b, tol)
 print(J)
 print('Fejl: ',abs(Iexact-J))
 print('Antal indelinger: ', len(quadpoints)-1)
@@ -76,7 +70,7 @@ x = np.linspace(a,b,500);
 #plt.plot(x,fun(x),'b-')
 #plt.plot(quadpoints,fun(quadpoints),'r.')
 #plt.xlim([a,b])
-#plt.title('Adaptiv Simpson regel for $f(x) = x\,\sin(x^2)$')
+#plt.title('Adaptiv Trapez regel for $f(x) = x\,\sin(x^2)$')
 #plt.show()
 
 # Ved tolerance på 1e-4, giver øvre grænse på 13500 af fjerde afledede at der 

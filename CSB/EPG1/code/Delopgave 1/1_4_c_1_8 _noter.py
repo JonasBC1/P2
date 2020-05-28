@@ -11,13 +11,13 @@ import numpy as np
 import pylab as py
 
 
-# Define function to iterate
-def g(x):
-	return (x+15)/(np.cosh(75/x))
-
-# anden funktion som kan konveteres ind
+# Define function to iterate (frastødende påpunkt)
 #def g(x):
-#	return x*np.cosh(75/x)-15
+#	return (x+15)/(np.cosh(75/x))
+
+# anden funktion som kan konveteres ind (tiltrækkende påpunkt)
+def g(x):
+	return x*np.cosh(75/x)-15
     
 
 # Setup x array
@@ -58,22 +58,22 @@ py.plot(x, g(x), 'g', antialiased=True)
 state = x_init
 
 # Establish the arrays to hold the line end points
-x0 = [ ] # The x_n value
-x1 = [ ] # The next value x_n+1
+x = [ ] # The x_n value
+y = [ ] # The next value x_n+1
 # Iterate for a few time steps
-nIterates = 5
+nIterates = 10
 # nIterates = 40
 # Plot lines, showing how the iteration is reflected off of the identity
 for n in range(nIterates):
-	x0.append( state )
-	x1.append( state )
-	x0.append( state )
-	state = g(state)
-	x1.append( state )
+	x.append( state )
+	y.append( state )
+	x.append( state )
+	state = g( state )
+	y.append( state )
 
 # Plot the lines all at once. Also plot the starting value 
 # as a black dot.
-py.plot(x0, x1, 'r', x_init, x_init, '.k', antialiased=True)
+py.plot(x, y, 'r', x_init, x_init, '.k', antialiased=True)
 
 # Display plot in window
 py.show()

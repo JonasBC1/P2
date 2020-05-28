@@ -1,4 +1,7 @@
-# Sekantmetoden 
+############################
+####   Sekantmetoden    ####
+############################
+
 import numpy as np
 
 def secant(f,x0,x1,tol): # Funktionen 
@@ -22,4 +25,3 @@ s,count = secant(fun_test, x0, x1, tol)
 print ('x0 = %g and x1 = %g' % (x0,x1))
 print ('A zero is located at: %19.7E' % s)
 print ('Number of interations used: %d' % count)
-

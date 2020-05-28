@@ -82,6 +82,7 @@ def equi_bound(h, N):
 def f(x):
     return x**2-Dsin(D(10)*x)
 
+# Begyndelsesbetingelser
 a = D(0)
 b = D(3)
 

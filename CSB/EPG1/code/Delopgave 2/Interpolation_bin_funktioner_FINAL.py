@@ -22,7 +22,7 @@ def lagrange(x, x_values, y_values):  #funktionen defineres
         p.append(sum(temp))
     return p
 
-# Parameters for the experiment
+# Parameters for the experiment (begyndelsesbetingelser)
 a = 0
 b = 3
 
@@ -32,7 +32,7 @@ def f(x): #funktionen der ønskes undersøgt
 # Error bound for equidistant points for the function f(x)=x^2-sin(10x)
 def equi_bound(h, N):
     M = 10**(N+1) #M er funktionens maks da sinus går mellem 0 og 1 og maks for funktion derfor bliver 10^(n+1)
-    return 0.25*h**(N+1)*M #teoretisk fejl det fatter vi heller ikke
+    return 0.25*h**(N+1)*M #teoretisk fejl
 
 # Print the results
 print('-'*34)
@@ -40,12 +40,24 @@ print('      Lagrange interpolation ')
 print('-'*34)
 print('  N     Error bound       Error')
 print('-'*34)
-for N in range(10,300,10):
+
+Start   = 10
+Stop    = 200
+Step    = 10
+
+# Dårlig aproks
+# Start   = 1
+# Stop    = 13
+# Step    = 1
+
+for N in range(Start,Stop,Step):
     
     # Parameters for Lagrange interpolation
-    h = abs(b-a)/N   #Steplings=længden mellem hver x 
-    #x_values = [a+k*h for k in range(N+1)] #startværdi +et fortløbende*underindelinger(skabt af poly)
-    x_values = [3*(1-cos((k*pi)/N))/2 for k in range(N+1)] #X_j-værdier for Chebyshevpunkter (opgave 8)
+    h = abs(b-a)/N   #Steplings=længden mellem hver x
+
+    x_values = [a+k*h for k in range(N+1)] #startværdi +et fortløbende*underindelinger(skabt af poly)
+    #x_values = [3*(1-cos((k*pi)/N))/2 for k in range(N+1)] #X_j-værdier for Chebyshevpunkter (opgave 8)
+    
     y_values = [f(x_values[k]) for k in range(N+1)] #giver nogle y værdier fra funktionen
     
     # New points for calculating the error max|f(x)-p_N(x)|
@@ -70,12 +82,12 @@ for N in range(10,300,10):
 #funktioner til plots
 #approx som funktion af x_text
 def plot_vent():
-    plt.plot(x_test,approx, label='aproksimation')
-    plt.plot(x_test,y_test, label='funktion') #er det y_text(x_y) eller x_values(y_values)
-    plt.plot(x_test,temp2, label='fejl')    #den er her hvis vi har lyst til at plotte fejl
+    plt.plot(x_test,approx, label='Aproksimation') 
+    plt.plot(x_test,y_test, label='Funktion') #er det y_text(x_y) eller x_values(y_values)
+    plt.plot(x_test,temp2, label='Fejl')    #den er her hvis vi har lyst til at plotte fejl
     plt.xlabel('x')
     plt.ylabel('y')
-    plt.title('mehh')
+    plt.title('Interpolationspolynomium')
     #plt.axis([0,3,0,0.2])
     plt.legend()
     plt.savefig('ventetid_år.png',bbox_inches='tight')

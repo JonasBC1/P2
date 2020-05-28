@@ -1,3 +1,7 @@
+############################
+####   Newtonsmetode    ####
+############################
+
 import math
 
 def iter(f,df,xinit,tol):

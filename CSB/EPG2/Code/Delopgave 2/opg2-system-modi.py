@@ -51,15 +51,15 @@ x20     = 5
 N       = 100
 
 # Uden vaccine (Opg 2.3(a)) Ignorer gamme variablen
-def f(t, x):
-    return np.array([-alpha*x[0]*x[1],
-                     alpha*x[0]*x[1] - beta*x[1]])
+#def f(t, x):
+#    return np.array([-alpha*x[0]*x[1],
+#                     alpha*x[0]*x[1] - beta*x[1]])
 
 
 # Med vaccine (Opg 2.3(c)) 
-# def f(t, x):
-#    return np.array([-alpha*x[0]*x[1] - gamma*x[0],
-#                     alpha*x[0]*x[1] - beta*x[1]])
+def f(t, x):
+    return np.array([-alpha*x[0]*x[1] - gamma*x[0],
+                    alpha*x[0]*x[1] - beta*x[1]])
 
 
 # Numerical solution by RK4

@@ -2,8 +2,25 @@
 # linear system example
 import numpy as np
 import matplotlib.pyplot as plt
-from RK4 import *
 
+def RK4(f, t_start, x0, t_stop, n):
+    h = (t_stop - t_start)/n
+    t = [t_start]
+    x = [x0]
+    tn = t_start
+    xn = x0
+
+    for k in range(n):
+        k1 = f(tn,xn)
+        k2 = f(tn + h/2,xn + h*k1/2)
+        k3 = f(tn + h/2,xn + h*k2/2)
+        k4 = f(tn + h,xn + h*k3)
+        tn = tn + h
+        xn = xn + h*(k1 + 2*(k2 + k3) + k4)/6
+        t.append(tn)
+        x.append(xn)
+
+    return np.array(t), np.array(x)
 # time parameters
 t_start = 0.0
 t_stop = 10.0
