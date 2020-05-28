@@ -1,0 +1,118 @@
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Flot graf alla Julie     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+{ \small
+\begin{minipage}[b]{0.45\textwidth}
+\begin{tikzpicture}[scale=4]
+%
+% Koordinater 
+% ------------------------------------------------------
+\coordinate (a) at (0.1,0.3);
+\coordinate (b) at (0.7,0.3);
+\coordinate (k2) at (0.5,0.673);
+%
+% Funktion
+% ------------------------------------------------------
+\draw[very thick, color=AAUblue2] (a) .. controls (0.3,0.5) and (0.45,0.5) .. (b);   
+%
+% K1 
+% ------------------------------------------------------
+\draw[dashed, very thick, color=AAUred] (a) -- (0.57,0.74);
+
+% K2
+% ------------------------------------------------------
+\draw[dashed, very thick, color=AAUgreen] (0.4,0.714) -- (0.6,0.631);
+%\draw[dashed, very thick, color=AAUgreen] (0.4,0.465) -- (0.6,0.382);
+% 83
+%
+\draw[thick](0.1,-0.02) -- (0.1,0.02); % (a)
+\draw[thick](0.7,-0.02) -- (0.7,0.02); % (b)
+\draw[thick](0.5,-0.02) -- (0.5,0.02); % (m_1)
+%
+%
+% Punkt 
+% -------------------------------------------------------
+\filldraw [black] (k2) circle (0.1pt); 
+\filldraw [black] (a) circle (0.1pt);  
+\filldraw [black] (b) circle (0.1pt); 
+%
+\node at (0.1,-0.08) (){$x_0$};
+\node at (0.7,-0.08) (){$x_1$};
+\node at (0.51,-0.08) (){$x_0 + \frac{2}{3} h$};
+%
+%\node at (0.55,0.3) (){$m_2$};
+%\node at (0.475,0.3) (){$m_3$};
+% 
+%
+% Koordinatsystemet 
+% -------------------------------------------------------
+\draw[thick,->] (-0.05,0) -- (0.85,0) node[anchor=south east]{$x$};
+\draw[thick,->] (0,-0.1) -- (0,0.8) node[anchor=north west]{$y$};
+%
+%
+\end{tikzpicture}
+\end{minipage}
+%
+%
+\begin{minipage}[b]{0.45\textwidth}
+\begin{tikzpicture}[scale=4]
+%
+% Koordinater 
+% ------------------------------------------------------
+\coordinate (a) at (0.1,0.3);
+\coordinate (b) at (0.7,0.3);
+\coordinate (k2) at (0.7,0.0765);
+%
+% Funktion
+% ------------------------------------------------------
+\draw[very thick, color=AAUblue2] (a) .. controls (0.3,0.5) and (0.45,0.5) .. (b);   
+%
+% K1 
+% ------------------------------------------------------
+%\draw[dashed, very thick, color=AAUred] (a) -- (0.57,0.74);
+
+% K2
+% ------------------------------------------------------
+%\draw[dashed, very thick, color=AAUgreen] (0.4,0.714) -- (0.6,0.631);
+%\draw[dashed, very thick, color=AAUgreen] (0.4,0.465) -- (0.6,0.382);
+% 83
+%
+\draw[thick](0.1,-0.02) -- (0.1,0.02); % (a)
+\draw[thick](0.7,-0.02) -- (0.7,0.02); % (b)
+\draw[thick](0.5,-0.02) -- (0.5,0.02); % (m_1)
+%  \draw[thick](0.55,0.23) -- (0.55,0.27); % (m_2)
+%  \draw[thick](0.475,0.23) -- (0.475,0.27); % (m_3)
+%
+\draw[dashed, very thick, color=yellow] (a) -- (k2);
+%
+% Punkt 
+% -------------------------------------------------------
+\filldraw [black] (k2) circle (0.1pt); 
+\filldraw [black] (a) circle (0.1pt);  
+\filldraw [black] (b) circle (0.1pt); 
+%
+\node at (0.1,-0.08) (){$x_0$};
+\node at (0.7,-0.08) (){$x_1$};
+\node at (0.51,-0.08) (){$x_0 + \frac{2}{3} h$};
+%
+%\node at (0.55,0.3) (){$m_2$};
+%\node at (0.475,0.3) (){$m_3$};
+% 
+%
+% Koordinatsystemet 
+% -------------------------------------------------------
+\draw[thick,->] (-0.05,0) -- (0.85,0) node[anchor=south east]{$x$};
+\draw[thick,->] (0,-0.1) -- (0,0.8) node[anchor=north west]{$y$};
+%
+% rød stiger 100 pr 0.1 
+% grøn falder 81 pr 0.1 
+% Gennemsnit: 100 + 3*(-83) / 4 = -37,25
+% Gange med skridtlængen ( = 6)
+% = -223.5
+%
+%
+\end{tikzpicture}
+\end{minipage}
+}

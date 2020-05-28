@@ -1,6 +1,106 @@
+%\begin{frame}
+%\frametitle{Overskrift}
+%\begin{itemize}
+%\item Fisk
+%\end{itemize}
+%\end{frame}
+
 \begin{frame}
-\frametitle{Overskrift}
-\begin{itemize}
-\item Fisk
-\end{itemize}
+\frametitle{Eulers metode } 
+\begin{minipage}[b]{0.31\textwidth}
+\begin{align*}
+x_{n+1} & = x_n+h \\
+y_{n+1} & = y_n + h f(x_n,y_n) \\
+\phantom{x_1}\\
+\\
+\\
+\end{align*}
+\end{minipage}
+\phantom{hejmeddig}
+%
+\input{images/euler}
+\\
+\phantom{H}
+\\
+%
+\end{frame}
+%
+%
+%
+%
+\begin{frame}
+\frametitle{Korrigeret Eulersmetode } 
+\begin{minipage}[b]{0.31\textwidth}
+\begin{align*}
+k_1 & = f(x_n , y_n) \\
+k_2 & = f \left( x_n + \frac{h}{2} , y_n = + \frac{h}{2} k_1 \right)  \\
+\end{align*}
+\end{minipage} 
+\phantom{Hej}
+\begin{minipage}[b]{0.31\textwidth}
+\begin{align*}
+x_{n+1} & = x_n+h \\
+y_{n+1} & = y_n + h k_2 \\
+\end{align*}
+\end{minipage} 
+\\
+%
+\input{images/korri}
+\\
+\phantom{H}
+\\
+%
+\end{frame}
+%
+%
+%
+\begin{frame}
+\frametitle{Modificeret Eulersmetode}  
+\begin{minipage}[b]{0.31\textwidth}
+\begin{align*}
+k_1 & = f(x_n , y_n) \\
+k_2 & = f( x_n + h , y_n = + h k_1 ) \\
+\end{align*}
+%
+\end{minipage} 
+\phantom{Hej}
+\begin{minipage}[b]{0.31\textwidth}
+\begin{align*}
+x_{n+1} & = x_n+h \\
+y_{n+1} & = y_n + \frac{h}{2} (k_1 + k_2 ) \\
+\end{align*}
+%
+\end{minipage} 
+\\
+\input{images/modi}
+\\
+\phantom{H}
+\\
+%
+\end{frame}
+%
+%
+%
+\begin{frame}
+\frametitle{Heuns metode }
+\begin{minipage}[b]{0.31\textwidth}
+\begin{align*}
+k_1 & = f(x_n , y_n) \\
+k_2 & = f \left( x_n + \frac{2}{3} h , y_n = + \frac{2}{3} h k_1 \right) \\
+\end{align*}
+%
+\end{minipage} 
+\phantom{Hej}
+\begin{minipage}[b]{0.31\textwidth}
+\begin{align*}
+x_{n+1} & = x_n+h \\
+y_{n+1} & = y_n + \frac{h}{4} (k_1 + k_2 )  \\
+\end{align*}
+%
+\end{minipage} 
+\\
+\input{images/heun}
+\\
+\phantom{H}
+\\
 \end{frame}

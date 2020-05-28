@@ -1,0 +1,48 @@
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Flot graf alla Julie     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+{ \small
+\begin{minipage}[b]{0.31\textwidth}
+\begin{tikzpicture}[scale=4]
+%
+% Koordinater 
+% ------------------------------------------------------
+\coordinate (a) at (0.1,0.3);
+\coordinate (b) at (0.7,0.3);
+\coordinate (k2) at (0.7,0.862);
+%
+% Funktion
+% ------------------------------------------------------
+\draw[very thick, color=AAUblue2] (a) .. controls (0.3,0.5) and (0.45,0.5) .. (b);   
+%
+% K1 
+% ------------------------------------------------------
+\draw[dashed, very thick, color=AAUred] (a) -- (0.74,0.9);
+%
+\draw[thick](0.1,0.18) -- (0.1,0.22); % (a)
+\draw[thick](0.7,0.18) -- (0.7,0.22); % (b)
+%
+% Punkt 
+% -------------------------------------------------------
+\filldraw [black] (k2) circle (0.1pt); 
+\filldraw [black] (a) circle (0.1pt);  
+\filldraw [black] (b) circle (0.1pt); 
+%
+\node at (0.1,0.12) (){$x_0$};
+\node at (0.7,0.12) (){$x_1$};
+%
+%\node at (0.55,0.3) (){$m_2$};
+%\node at (0.475,0.3) (){$m_3$};
+% 
+%
+% Koordinatsystemet 
+% -------------------------------------------------------
+\draw[thick,->] (-0.05,0.2) -- (0.85,0.2) node[anchor=south east]{$x$};
+\draw[thick,->] (0,0.1) -- (0,1) node[anchor=north west]{$y$};
+%
+%
+\end{tikzpicture}
+\end{minipage}
+}
