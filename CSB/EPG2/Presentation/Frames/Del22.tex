@@ -1,6 +1,24 @@
 \begin{frame}
-\frametitle{Overskrift}
-\begin{itemize}
-\item Fisk
-\end{itemize}
+\frametitle{Runge-Kutta metoede}
+RK4:\\
+\begin{align*}
+k_1&=f(x_n,y_n)\\
+k_2&=f(x_n+\frac{h}{2},y_n+\frac{h}{2}k_1)\\
+k_3&=f(x_n+\frac{h}{2},y_n+\frac{h}{2}k_2)\\
+k_4&=f(x_n+h,y_n+h k_3)\\
+x_{n+1}&=x_n+h\\
+y_{n+1}&=y_n+\frac{h}{6}(k_1+2k_2+2k_3+k_4)
+\end{align*}
 \end{frame}
+
+\begin{frame}
+\frametitle{Simpsons regel}
+Hvis funktionen afhænger af en koordinat så svarer $k_1$ til startpunktet, $k_4$ til endepunktet og $k_2$ og $k_3$ bliver i midtpunktet
+\begin{align*}
+\int_a^bf(x)dx &\approx \frac{b-a}{6} \left( f(a)+4f \left( \frac{a+b}{2} \right) f(a+b)+f(b) \right)\\
+h&=b-a\\
+y_0+\int_a^bf(x)dx &\approx y_0+ \frac{h}{6} \left( f(a)+4f \left( \frac{h}{2} \right) f(h)+f(b) \right)\\
+y_{n+1}&=y_0+(k_1+2k_2+2k_3+k_4)
+\end{align*}
+\end{frame}
+
