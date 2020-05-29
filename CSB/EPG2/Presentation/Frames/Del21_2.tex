@@ -1,6 +1,34 @@
 \begin{frame}
-\frametitle{Overskrift}
+\frametitle{Modificeret Euler metode og trapezmetoden}
 \begin{itemize}
-\item Fisk
+\item Modifiveret Euler metode anvendt på $$\frac{dy}{dx}=f(x),\phantom{hi}y(a)=y_0$$
+\item Trapezmetoden anvendt på $$y_0 + \int_a^b f(x) dx$$
+\end{itemize}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Modificeret Euler metode og trapezmetoden}
+\begin{itemize}
+\item For modificeret Euler metode
+\begin{align*}
+x_{n+1} &= x_n + h\\
+k_1 &= f(x_n)\\
+k_2 &= f(x_{n+1} )\\
+y_{n+1} &= y_n + \frac{h}{2}(k_1 + k_2)\\
+&\downarrow\\
+y_N &= y_0 + \frac{h}{2}\left( f(x_0) + 2(f(x_1) + \cdots + f(x_{N-1})) + f(x_N) ) \right)\\
+ &= y_0 + \frac{h}{2}\left(f(a) + 2\sum_{j=1}^{N-1}f(x_j) + f(b)\right)
+\end{align*}
+\end{itemize}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Modificeret Euler metode og trapezmetoden}
+\begin{itemize}
+\item For trapezmetoden
+\begin{align*}
+T_N &= \frac{h}{2} \left(f(a) + 2\sum_{j=1}^{N-1} f(x_j) + f(b) \right)\\
+y_0 + T_N  &= y_0 + \frac{h}{2} \left(f(a) + 2\sum_{j=1}^{N-1} f(x_j) + f(b) \right)
+\end{align*}
 \end{itemize}
 \end{frame}
