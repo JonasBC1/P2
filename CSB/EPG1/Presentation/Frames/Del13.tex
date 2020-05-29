@@ -57,7 +57,7 @@
 \begin{frame}
 \frametitle{Integrationsmetoden} 
 \begin{itemize}
-\item Fixpunktsligning $f(x) = x$
+\item Fixpunktsligning $g(x) = x$
 \end{itemize}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -143,7 +143,7 @@
 % -------------------------------------------------------
 %
   \node at (0.7,0.05) (){$g(x)$};
-  \node at (0.67,0.6) (){$y=x$};
+  \node at (0.7,0.6) (){$y=x$};
   
   \node at (0.1,-0.05) (){$x_1$};
   \draw[densely dotted](0.497,0) -- (f);
@@ -174,8 +174,8 @@
 \begin{frame}
 \frametitle{Newtons metode}
 \begin{itemize}
-\item Newtons iterationsformel: \\
-$x_{n+1}=x_n- \frac{f(x_n)}{f'(x_n)}$
+\item Newtons iterationsformel: 
+$$x_{n+1}=x_n- \frac{f(x_n)}{f'(x_n)}$$
 \end{itemize}
 \begin{center}
 \begin{tikzpicture}[scale=7]
@@ -228,8 +228,8 @@ $x_{n+1}=x_n- \frac{f(x_n)}{f'(x_n)}$
 \begin{frame}
 \frametitle{Sekantmetoden} 
 \begin{itemize}
-\item Sekantmetodens iterationsformel: \\
-$x_{n+1}=x_n- \frac{x_n-x_{n-1}}{f(x_n)-f(x_{n-1})}f(x_n) $
+\item Sekantmetodens iterationsformel: 
+$$x_{n+1}=x_n- \frac{x_n-x_{n-1}}{f(x_n)-f(x_{n-1})}f(x_n) $$
 \end{itemize}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
