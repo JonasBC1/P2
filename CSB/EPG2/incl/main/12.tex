@@ -18,7 +18,7 @@ a = x_0 < x_1 < … x_{n-1} < x_n = b
 $h$ angiver længden intervallerne mellem fx $x_0$ og $x_1$ , og er givet ved $\frac{b-a}{n}$, som betyder, at intervallet derfor inddeles i $n$ såkaldte delintervaller eller underinddelinger. 
 Ideen er så for en sådanne sammensatte kvadraturregel, at der kan anvendes midtpunkt-, trapez- og Simpsons regel på hver af de mindre delintervaller fremfor hele intervallet fra a til b. 
 \\\\
-For at udledde den sammensatte kvadraturregel $T_N$ for et integrale, hvor intervallet opdeles i underinddelinger beskrives i følgende
+For at udlede den sammensatte kvadraturregel $T_N$ for et integrale, hvor intervallet opdeles i underinddelinger beskrives i følgende
 Trapez-reglen er som sagt, som følger
 \begin{align*}
 T = \frac{h}{2}(f(a)+f(b)),
@@ -27,7 +27,7 @@ og ved at omskrive trapez-reglen, så den gælder for to underinddelinger samt i
 \begin{align*}
 T_2=\frac{h}{2}(f(a)+f(a+h))+\frac{h}{2}(f(a+h)+f(b)= \frac{h}{2}(f(a)+2f(a+h)+f(b),
 \end{align*}
-hvor $h=\frac{b-a}{2}$. Bemærk her, at man har evalueringer i det to endepunkter a og b, samt 2 gange evaluering i de indre punkter. Dette er givet, da man benytter trapez-reglen fra intervallet $x_0$ til $x_1$ samt fra $x_1$ til $x_2$, som vil sige, at man har en evaluering i punktet $x_1$ to gange, og derfor divideres med $\frac{1}{2}$. Derved er det  videre muligt, at opskrive den generelle formel for den sammensatte kvadraturregel $T_n$ givet ved
+hvor $h=\frac{b-a}{2}$. Bemærk her, at man har evalueringer i det to endepunkter a og b, samt 2 gange evaluering i de indre punkter. Dette er givet, da man benytter trapez-reglen fra intervallet $x_0$ til $x_1$ samt fra $x_1$ til $x_2$, som vil sige, at man har en evaluering i punktet $x_1$ to gange, og derfor divideres med $\frac{1}{2}$. Derved er det videre muligt, at opskrive den generelle formel for den sammensatte kvadraturregel $T_n$ givet ved
 \begin{align*}
 T_n = \frac{1}{2}\left (  h\sum_{k=0}^{N-1}f(a+kh)+h\sum_{k=1}^{N}f(a+kh)\right )
 \end{align*}
