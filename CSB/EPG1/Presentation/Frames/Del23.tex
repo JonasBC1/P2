@@ -1,0 +1,25 @@
+\begin{frame}{Opgave 3: Fejl}
+    Scriptet \textsc{Interpolation bin.py} giver en vurdering af den maksimale fejl 
+    \begin{align*}
+    \underset{x \in \left [0,3 \right ]}{\text{max}} \lvert f(x)-p_N(x) \rvert
+    \end{align*}
+    for forskellige værdier af $N$. Det beregner også en teoretisk vurdering af fejlen, se nedenfor. Gennemgå dette script i detaljer. \textbf{Bemærk} at dette script ikke bruger \textsc{numpy}, men er baseret på lister. Begrundelsen er at vi skal være i stand til at modificere dette script til at anvende \textsc{decimal modulet}. Efter gennemgangen skal I modificere scriptet til at generere plots for små værdier af $N$, der i samme figur viser grafen for $f(x)$, grafen for $p(x)$ og knudepunkterne.
+\end{frame}
+
+\begin{frame}{Fejl}
+    \begin{itemize}
+        \item I scriptet starter man med at definere Lagrange funktionen. 
+        Dette gøres ved hjælp af lister, og en for-løkke, hvor j ikke må være lig $k$. 
+        Den ganger resultaterne fra listen temp sammen, og finder produktet.
+    
+        \item Så findes et Lagrange-interpoleret polynomium. 
+        Så opskrives parametrene og funktionen der ønskes undersøgt. 
+        Programmet finder efterfølgende nogle x- og y-værdier samt afstanden mellem x-værdierne. 
+        Så udregner programmet approximationen og løsningen. 
+        Til sidst udregner programmet fejlen og printer noget data. 
+    
+        \item I python scriptet \textsc{Interpolation bin funktioner.py}, ses modificeringen, så den genererer plots for små værdier af $N$, som i samme figur viser grafen for $f(x)$, grafen for $p(x)$ og knudepunkterne. 
+    \end{itemize}
+\end{frame}
+
+%MANGLER BILLEDE!

@@ -1,0 +1,35 @@
+\section{Delopgave 2: Interpolation af funktioner}
+\begin{frame}{Opgave 1: Lagrange-interpolation}
+    Gennemgå teorien for Lagrange interpolation baseret på datapunkterne $x_0, \ldots, x_N$ og $f_0, f_1, \ldots , f_N$. 
+\end{frame}
+
+\begin{frame}{Lagrange-interpolation}
+    \begin{itemize}
+        \item Lagrange-interpolation handler om at finde et polynomium $p(x_k)=f(x_k)$ af mindst mulig grad og er således en måde at approksimere en funktionsværdi givet $x_0 \ldots x_N$ og $N+1 $  $y$ værdier.
+        Det ønskes således at finde et polynomium med interpolationsegenskaben $p_{x_j}=y_j$,$j=0,1,\ldots,N$.
+
+        \item Problemet omhandler således at finde et $N$'te grads polynomium $p$, der tager funktionsværdien for $f$ i en givet mængde punkter. 
+        Ideen kan således relateres til taylorserier og konstruktion af taylorpolynomier, da disse ligeledes antager funktionsværdien i et givet udviklingspunkt.
+    \end{itemize}
+\end{frame}
+\begin{frame}{Lagrange-interpolation}
+    \begin{itemize}
+        \item Lagrange-polynomier er defineret ved \\
+            $
+            l_k(x)=\frac{\prod_{\substack{j=0 \\ {j \neq k}}}^{N}(x-x_j)}{\prod_{\substack{j=0 \\ {j \neq k}}}^{N}(x_k-x_j)}=\frac{(x-x_0) \cdots (x-x_{j-1}) \cdot (x-x_{j+1})\cdots(x-x_N)}{(x_j-x_0)\cdots (x_j-x_{j-1}) \cdot (x_j-x_{j+1})\cdots (x_j - x_N)}
+            $
+        \item Et Lagrange-interpoleret andensgradspolynomium er således givet ved $ p(x)=f(x_0)\frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}+f(x_1)\frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}+f(x_2)\frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)} $
+        \item Der eksisterer et entydigt Lagrange interpoleret polynomium for punkter givet ved $x_0, \ldots, x_N$ og $f_0, f_1, \ldots , f_N$.
+        
+    \end{itemize}
+\end{frame}
+\begin{frame}{Lagrange-interpolation bevis for entydighed}
+    Ved at finde sådanne polynomier, er deres eksistens bevist. 
+    Deres entydighed vil nu bevises. 
+    Antag, at $q_n$ og $p_n$ er to forskellige polynomier med grad $\leq n$, og at de begge interpolerer samme data. 
+    Så er graden af polynomiet $p_n - q_n$ også $\leq n$, og værdien af dette polynomie er $0$ ved $n+1$ datapunkter. 
+    Men en polynomie med grad $n$ har højst $n$ nuller, medmindre det er nulpolynomiet. 
+    Således er $p_n - q_n = 0$, hvormed $p_n = q_n$. 
+\end{frame}
+
+%HER DANIEL

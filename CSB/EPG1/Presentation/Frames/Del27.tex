@@ -1,0 +1,11 @@
+\begin{frame}{Opgave 7: Sammenligning af fejlen}
+    Gentag undersøgelserne af den maksimale fejl og sammenlign med den teoretiske vurdering ved at bruge decimalaritmetik-scriptet \textsc{Interpolation dec.py}. 
+    Prøv med forskellige værdier for antallet af betydende cifre. 
+    Hvad er konklusionen?
+\end{frame}
+
+\begin{frame}{Sammenligning af fejlen}
+    Ved lave værdier af betydende cifre er der dårlig præcision, og fejlen overstiger det teoretiske øvre estimat for grænsen. 
+    Vælges derimod et højt antal betydende cifre, eksempelvis $80$, bliver computationstiden højere, men fejlen forbliver mindre end den teoriske maksmiale fejl op til højere værdier af $N$.
+    Dette sker da der ved tidligere afrundinger skabes en situation, hvori afrundringsfejlen bliver mere problematisk des højere værdi af $N$ idet der multipliceres med afrundingsfejl i flere iterationer.
+\end{frame}
