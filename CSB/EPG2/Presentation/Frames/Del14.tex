@@ -1,10 +1,12 @@
 \begin{frame}{Opgave 4: Den adaptive metode}
     Vi skal nu se på en anvendelse. Vi definerer en funktion ved
-    \begin{align}
-    f(x)=\left \{ \substack{-(x-\sqrt{2})^2 \text{  } \text{for} \text{  } x \leq \sqrt{2} \\ (x-\sqrt{2})^2\text{  } \text{for} \text{  } x > \sqrt{2}}
-    \end{align}
-    
-    %Noget galt i ovenstående?
+\begin{align*}
+f(x) = 
+\begin{dcases}
+- \left( x - \sqrt{2} \right)^2 & x \leq \sqrt{2}\\
+\left( x - \sqrt{2} \right)^2 & x > \sqrt{2} \\
+\end{dcases}
+\end{align*} 
     
     Vi vil se på approksimation af integralet 
     \begin{align}
@@ -17,7 +19,7 @@
 \begin{frame}{Den adaptive metode}
     \begin{itemize}
         \item (a) Lav en Python funktion til beregning af funktionen defineret i (1).
-        \includegraphics[]{Billeder/1.4(a).png}
+        \includegraphics[]{images/1.4(a).png}
     \end{itemize}
 \end{frame}
 
@@ -28,7 +30,7 @@
         \item \begin{align*}
             \int^{\sqrt{2}}_0-(x-\sqrt{2})^2+\int^3_{\sqrt{2}}(x-\sqrt{2})^2=15-\frac{29\sqrt{2}}{3}-\frac{2^{\frac{3}{2}}}{3}=15-\frac{31\sqrt{2}}{3} 
             \end{align*} \\
-            Ved at tage integralet for begge funktioner, og derefter plusse dem sammen, fås den eksakte værdi $15-\frac{31\sqrt{2}}{3}$\\\\
+            Ved at tage integralet for begge funktioner, og derefter plusse dem sammen, fås den eksakte værdi $15-\frac{31\sqrt{2}}{3}$ \\
     \end{itemize}
 \end{frame}
 
