@@ -77,12 +77,12 @@ xe2 = xe[:,1]
 xe3 = N - xe1 - xe2
 
 # RK4 Plots
-plt.figure()
-plt.plot(xr1, xr2, 'r-', [x10], [x20], 'k.')
-plt.xlabel('Susceptible')
-plt.ylabel('Infected')
-plt.title(f'Alpha = {alpha:0.2f}, Beta = {beta:0.2f}, Gamma = {gamma:0.2f}')
-plt.show()
+# plt.figure()
+# plt.plot(xr1, xr2, 'r-', [x10], [x20], 'k.')
+# plt.xlabel('Susceptible')
+# plt.ylabel('Infected')
+# plt.title(f'Alpha = {alpha:0.2f}, Beta = {beta:0.2f}, Gamma = {gamma:0.2f}')
+# plt.show()
 
 plt.figure()
 plt.plot(tr, xr1, 'r-', tr, xr2, 'k-', tr, xr3, 'b-')
