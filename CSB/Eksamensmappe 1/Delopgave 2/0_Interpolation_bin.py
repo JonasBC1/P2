@@ -50,8 +50,8 @@ Step = 10
 
 for N in range(Start,Stop,Step): 
     
-    h = abs(b-a)/N   #Skridtlængde
-    x_values = [a+k*h for k in range(N+1)]                     # Startværdi +1 
+    h = abs(b-a)/N                                              # Skridtlængde
+    x_values = [a+k*h for k in range(N+1)]                      # Startværdi +1 
    
     y_values = [f(x_values[k]) for k in range(N+1)]             # y-værdier fra funktionen
     

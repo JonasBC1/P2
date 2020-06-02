@@ -1,87 +1,52 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon May 11 13:35:28 2020
-
-@author: rasmu
-"""
-
-# Adaptiv Trapez. Naiv implementation der ikke bekymrer sig om genbrug af 
-# funktionsevalueringer.
+#####################################
+####    Adaptiv Trapezsregel     ####
+#####################################
 
 import numpy as np
 import matplotlib.pyplot as plt
 from math import sqrt
 
-# implementation af S_{2N} fra kursusgang 7
-def trapezrule(f,a,b,N):
-    h = (b - a)/N
-    xL = a - h
-    xR = a
+
+def trapezrule(f,a,b,N):                # Funktion f, interval a,b og indelinger N
+    h = (b - a)/N                       # Skridtlængden
+    xL = a - h                          # De to punkter x_{j-1}  *Minus h fordi løkken starter med at lægge h til
+    xR = a                              # og x_j
     I = 0
     for k in range(N):
-        xL = xL + h
+        xL = xL + h                     # Første punkt bliver a til a+h
         xR = xR + h
-        I = I + h*(f(xL)+f(xR))/2.0
+        I = I + h*(f(xL)+f(xR))/2.0     # Trapez
     return I
-# global variabel til at gemme kvadraturpunkter, bruges KUN til plot
-quadpoints = []; 
+
+quadpoints = [];                    # Global variable - Gem kvadraturpunkter
   
 def adaptivestep(f,xL,xR,tol):
-    S2 = trapezrule(f,xL,xR,1)
-    S4 = trapezrule(f,xL,xR,2)
+    T2 = trapezrule(f,xL,xR,1)
+    T4 = trapezrule(f,xL,xR,2)
     xM = (xL+xR)/2
-    quadpoints.append(xM) # bruges kun til plot
-    if abs(S4-S2) <= 15*tol: # bemærk at faktoren 15 er specifik for Simpons regel
-        quadpoints.append((xL+xM)/2) # bruges kun til plot
-        quadpoints.append((xM+xR)/2) # bruges kun til plot
-        return S4 # denne approksimation har fejl ca. tol/(2^k) på delintervallet
+    quadpoints.append(xM)               # Tilføj
+    if abs(T4-T2) <= 3*tol:             # bemærk at faktoren 3 er specifik for Trapez regel
+        quadpoints.append((xL+xM)/2)    # Tilføj
+        quadpoints.append((xM+xR)/2)    # Tilføj
+        return T4                       # Fejl ca. tol/(2^k) på delintervallet
     else:
         return adaptivestep(f,xL,xM,tol/2) + adaptivestep(f,xM,xR,tol/2)
 
-def adaptivetrapez(f,a,b,tol):
-    quadpoints.append(a) # bruges kun til plot
-    quadpoints.append(b) # bruges kun til plot
-    return adaptivestep(f,a,b,tol)
-
-def fun(x):
+def fun(x):                             # Funktion
     if x>sqrt(2): 
         return (x-sqrt(2))**2
     else: 
         return -(x-sqrt(2))**2
-Iexact = 15-((31*sqrt(2))/3)
     
+Iexact = 15-((31*sqrt(2))/3)            # Eksakte værdi
+    
+# Begyndelsesbetingelser  
 a = 0.0
 b = 3.0
-# Pas på med for lav tolerance: Der er ikke sat et maksimum på antallet af 
-# inddelinger, så ved meget lav tolerance kan afrundingsfejl gøre at den 
-# rekursive inddeling ikke kan opnå tolerancen. 
+
 tol = 1e-5 
 
-J = adaptivetrapez(fun, a, b, tol)
+J = adaptivestep(fun, a, b, tol)
 print(J)
 print('Fejl: ',abs(Iexact-J))
 print('Antal indelinger: ', len(quadpoints)-1)
-
-# plot af kvadraturpunkter
-quadpoints = np.sort(np.array(quadpoints));
-x = np.linspace(a,b,500);
-#plt.figure()
-#plt.plot([a,b],[0,0],'k--')
-#plt.plot(x,fun(x),'b-')
-#plt.plot(quadpoints,fun(quadpoints),'r.')
-#plt.xlim([a,b])
-#plt.title('Adaptiv Trapez regel for $f(x) = x\,\sin(x^2)$')
-#plt.show()
-
-# Ved tolerance på 1e-4, giver øvre grænse på 13500 af fjerde afledede at der 
-# skal bruges S_166, frem for 112 inddelinger med adaptiv metode. En besparelse 
-# på 32,5%. 
-# Bemærk at den fjerde afledede tager meget store værdier i en lille del af 
-# intervallet.
-#plt.figure()
-# abs af fjerde afledede:
-#plt.plot(x,np.abs(-60*fun(x) - 80*(x**3)*np.cos(x**2) + 16*(x**4)*fun(x)),'b-') 
-#plt.xlim([a,b])
-#plt.ylim([0,13500])
-#plt.title('Plot af $|f^{(4)}|$')
-#plt.show()

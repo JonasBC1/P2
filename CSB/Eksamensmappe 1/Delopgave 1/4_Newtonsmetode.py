@@ -4,7 +4,7 @@
 
 import math
 
-def iter(f,df,xinit,tol):                  # Funktion 
+def newton(f,df,xinit,tol):                # Funktion 
 	xold = xinit + 1.0                     # Startværdi 
                                            # +1 for vi ikke starter under tollerencen
 	xnew = xinit                           # Næste værdi 
@@ -21,7 +21,7 @@ def fun1(x):                               # Eksakt funktion
 def dfun1(x):                              # Eksakt f'
 	return math.cosh(75/x)-75/x*math.sinh(75/x) - 1
 	
-sol, n = iter(fun1, dfun1, 100, 1E-12)     # Udregner den færdige 
+sol, n = newton(fun1, dfun1, 100, 1E-12)     # Udregner den færdige 
 
 print('Approximation is %8.7E' % sol)
 

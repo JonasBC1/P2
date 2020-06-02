@@ -10,8 +10,8 @@ import math
 h0 = 10
 T = 1
 p = 1
-L = T/p
-l = 10
+L = T/p                 # Lampda
+l = 10                  # Længde
 
 def cosh(x):            # cosh funktionen
     return(0.5*(math.exp(x)+math.exp(-x)))

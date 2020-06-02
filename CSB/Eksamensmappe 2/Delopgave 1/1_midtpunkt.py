@@ -34,6 +34,7 @@ L1 = [0.0 for i in range(iter_max)]
 L2 = [0.0 for i in range(iter_max)]
 L3 = [0.0 for i in range(iter_max)]
 
+# Begyndelsesbetingelser     
 a = 0.0
 b = 3.0
 

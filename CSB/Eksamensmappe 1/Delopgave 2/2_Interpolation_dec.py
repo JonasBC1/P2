@@ -5,7 +5,7 @@
 
 import decimal
 context = decimal.getcontext()  # Standard pakke 
-digits = 80                     # Væsendtlige sifte 
+digits = 80                     # Væsendtlige cifte 
 context.prec = digits           
 D = decimal.Decimal             # Decimal
 

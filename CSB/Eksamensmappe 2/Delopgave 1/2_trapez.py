@@ -7,7 +7,7 @@
 import numpy as np
 from math import sqrt
 
-def trapezoidalrule(f,a,b,N):           # Funktion f, interval a,b og indelinger N
+def trapezrule(f,a,b,N):                # Funktion f, interval a,b og indelinger N
     h = (b - a)/N                       # Skridtlængden
     xL = a - h                          # De to punkter x_{j-1}
     xR = a                              # og x_j
@@ -33,13 +33,15 @@ L0 = [0.0 for i in range(iter_max)]     # Liste med 15 "0"
 L1 = [0.0 for i in range(iter_max)]
 L2 = [0.0 for i in range(iter_max)]
 L3 = [0.0 for i in range(iter_max)]
+
+# Begyndelsesbetingelser
 a = 0.0
 b = 3.0
 
 for k in range(iter_max):               # N blive fordoblet
     N = 2**(k+1)                        # Den fordobler 
     L0[k] = N                           # Tilføjer N til listen
-    J = trapezoidalrule(fun, a, b, N) 
+    J = trapezrule(fun, a, b, N) 
     L1[k] = J                           # Appeksimation
     L2[k] = abs(J - Iexact)             # Fejlen
     if k>0:
