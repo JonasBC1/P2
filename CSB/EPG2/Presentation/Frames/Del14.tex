@@ -1,12 +1,30 @@
-\begin{frame}{Opgave 4: Den adaptive metode}
-    Vi skal nu se på en anvendelse. Vi definerer en funktion ved
-    \begin{align}
-    f(x)=\left \{ \substack{-(x-\sqrt{2})^2 \text{  } \text{for} \text{  } x \leq \sqrt{2} \\ (x-\sqrt{2})^2\text{  } \text{for} \text{  } x > \sqrt{2}}
-    \end{align}
+%\begin{frame}{Opgave 4: Den adaptive metode}
+%    Vi skal nu se på en anvendelse. Vi definerer en funktion ved
+%\begin{align*}
+%f(x) = 
+%\begin{dcases}
+%- \left( x - \sqrt{2} \right)^2 & x \leq \sqrt{2}\\
+%\left( x - \sqrt{2} \right)^2 & x > \sqrt{2} \\
+%\end{dcases}
+%\end{align*} 
+%    
+%    Vi vil se på approksimation af integralet 
+%    \begin{align}
+%    \int_{0}^{3}f(x)dx    
+%    \end{align}
+%    % 
+%\end{frame}
+
+\begin{frame}{Approksimation af integralet}
+\begin{align*}
+f(x) = 
+\begin{dcases}
+- \left( x - \sqrt{2} \right)^2 & x \leq \sqrt{2}\\
+\left( x - \sqrt{2} \right)^2 & x > \sqrt{2} \\
+\end{dcases}
+\end{align*} 
     
-    %Noget galt i ovenstående?
-    
-    Vi vil se på approksimation af integralet 
+    Approksimation af integralet 
     \begin{align}
     \int_{0}^{3}f(x)dx    
     \end{align}
@@ -14,10 +32,11 @@
 \end{frame}
 
 
+
 \begin{frame}{Den adaptive metode}
     \begin{itemize}
         \item (a) Lav en Python funktion til beregning af funktionen defineret i (1).
-        \includegraphics[]{Billeder/1.4(a).png}
+        \includegraphics[]{images/1.4(a).png}
     \end{itemize}
 \end{frame}
 
@@ -28,7 +47,7 @@
         \item \begin{align*}
             \int^{\sqrt{2}}_0-(x-\sqrt{2})^2+\int^3_{\sqrt{2}}(x-\sqrt{2})^2=15-\frac{29\sqrt{2}}{3}-\frac{2^{\frac{3}{2}}}{3}=15-\frac{31\sqrt{2}}{3} 
             \end{align*} \\
-            Ved at tage integralet for begge funktioner, og derefter plusse dem sammen, fås den eksakte værdi $15-\frac{31\sqrt{2}}{3}$\\\\
+            Ved at tage integralet for begge funktioner, og derefter plusse dem sammen, fås den eksakte værdi $15-\frac{31\sqrt{2}}{3}$ \\
     \end{itemize}
 \end{frame}
 
@@ -43,6 +62,17 @@
     \end{itemize} 
 \end{frame}
 
+\begin{frame}
+\begin{align*}
+\begin{array}{l|c|c|c}
+\text{Metode} & \text{Resultat}& \text{Fejl} &  \text{Inddelinger} \\
+\hline
+\text{Midtpunkt}	& 3.8645984782 \cdot 10^{-01} & 7.662 \cdot 10^{-09}	& 4096 \\
+\text{Trapez}		& 3.8645985304 \cdot 10^{-01} & 2.437 \cdot 10^{-09} & 8192 \\
+\text{Simpsons}		& 3.8645985931 \cdot 10^{-01} & 3.833 \cdot 10^{-09} & 512 \\
+\end{array}
+\end{align*}
+\end{frame}
 
 \begin{frame}{Den adaptive metode}
     \begin{itemize}
@@ -52,6 +82,14 @@
         %Hvorfor springer orden så meget i Simpson efter 8192?
         \item For både trapez samt midtpunktreglen stabliseres der omkring en orden på $4$ efter et passende antal inddelinger hvilket stemmer overens med teorien, dette er dog ikke tilfældet for Simpson. Den opnår de $16$, men falder drastisk efterfølgende.
     \end{itemize}
+    
+$$\begin{array}{l|c|c}
+\text{Metode} & \text{Inddelinger}& \text{Orden} \\
+\hline
+\text{Midtpunkt}	& 4		& 2 \\
+\text{Trapez}		& 4		& 2 \\
+\text{Simpsons}		& 16	& 4 \\
+\end{array}$$
 \end{frame}
 
 

@@ -1,10 +1,10 @@
-\begin{frame}{Opgave 1: Interpolerende kvadraturregler}
-    Redegør for interpolerende kvadraturregler. 
-    Beskriv de tre regler, midtpunktsreglen, trapezreglen, og Simpsons regel. 
-    Udled mindst en af reglerne. Forklar begrebet ‘grad af præcision’ for en interpolerende kvadraturregel. 
-    Angiv grad af præcision for de tre ovennævnte regler. 
-    Svarene skal begrundes.
-\end{frame}
+%\begin{frame}{Opgave 1: Interpolerende kvadraturregler}
+%    Redegør for interpolerende kvadraturregler. 
+%    Beskriv de tre regler, midtpunktsreglen, trapezreglen, og Simpsons regel. 
+%    Udled mindst en af reglerne. Forklar begrebet ‘grad af præcision’ for en interpolerende kvadraturregel. 
+%    Angiv grad af præcision for de tre ovennævnte regler. 
+%    Svarene skal begrundes.
+%\end{frame}
 
 \begin{frame}{Interpolerende kvadraturregler}
     Interpolerende kvadraturregler approksimerer en funktion $f(x)$ med et polynomie $p(x)$ over et interval for at beregne det bestemte integrale for $p(x)$, således at 
@@ -19,7 +19,7 @@
     Midtpunktsreglen tager udgangspunkt i funktionsværdien i midtpunktet mellem to punkter $a$ og $b$, og denne multipliceres med $(b-a)$.
     Således bestemmes et rektangel fra $a$ til $b$ under funktionen, hvor højden svarer til funktionsværdien imellem de to punkter. 
     Rektanglet har til hensigt at approksimere integralet for funktionen. 
-    \include{Billeder/Midtpunkt}
+    \include{images/Midtpunkt}
 \end{frame}
 
 
@@ -72,7 +72,7 @@
     \int_{a}^{b}f(x)dx-\frac{b-a}{2}\left [ f(a)+f(b) \right ]=-\frac{(b-a)h^2}{12}{f}''(\xi_T)
     \end{align*}
 \end{itemize}
-        \include{Billeder/Trapez}
+        \include{images/Trapez}
 \end{frame}
 
 
@@ -94,7 +94,7 @@
     \begin{align*}
     \int_{a}^{b}f(x)dx-\frac{\Tilde{h}}{3}\left [ f(a)+4f(a+h) + f(b) \right ]=-\frac{(b-a)\Tilde{h}^4}{180}{f}^{(4)}(\xi_S)
     \end{align*}
-    \include{Billeder/Simpsons}
+    \include{images/Simpsons}
 \end{frame}
 
 
