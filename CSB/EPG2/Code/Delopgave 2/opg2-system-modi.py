@@ -46,8 +46,8 @@ n       = 300
 alpha   = 0.01
 beta    = 0.35
 gamma   = 0.00
-x10     = 85
-x20     = 5
+x10     = 94
+x20     = 1
 N       = 100
 
 # Uden vaccine (Opg 2.3(a)) Ignorer gamme variablen
