@@ -94,7 +94,8 @@ for N in range(Start,Stop,Step): # Start, stop, spring
 def plot_vent():                                    # Til plot - approx som funktion af x_text
     plt.plot(x_test,approx, label='Aproksimation')
     plt.plot(x_test,y_test, label='Funktion') 
-    plt.plot(x_test,temp2, label='Fejl')    
+    plt.plot(x_test,temp2, label='Fejl')
+    plt.plot(x_values, y_values, 'o', color='black')    
     plt.xlabel('x')
     plt.ylabel('y')
     plt.title('Interpolationspolynomium')
