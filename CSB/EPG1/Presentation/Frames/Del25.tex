@@ -27,16 +27,20 @@
 %\end{frame}
 
 \begin{frame}{Teoretisk vurdering af fejlen}
-    Udtrykket for maksimal fejl kan derfor omskrives til
+    Udtrykket for den teoretiske fejl $\underset{x \in \left [0,3 \right ]}{\text{max}} \lvert f(x)-p_N(x) \rvert$ er givet ved 
+\begin{align*}
+f(x)-p(x) = \frac{(x-x_0)(x-x_1)\cdots(x-x_N)}{(N+1)!}f^{(N+1)}(\xi)
+\end{align*}
+Da 
+\begin{align*}
+    L(x)=(x-x_0)(x-x_1)\cdots(x-x_N).
+\end{align*}
+og da det kan vises for ækvidistante punkter $x_{j+1} - x_j = h$, at der gælder
     \begin{align*}
-    \underset{x \in \left [0,3 \right ]}{\text{max}} \lvert f(x)-p_N(x) \rvert \leq \frac{\frac{1}{4}(N+1)!h^{N+1}}{(N+1)!}f^{(N+1)}(\xi)=\frac{1}{4}h^{N+1}f^{(N+1)}(\xi).
+    \lvert L(x) \rvert \leq \frac{1}{4}(N+1)!h^{N+1}, \text{   } x \in \left [x_0, x_N \right ].
     \end{align*}
-    Det skal nu vises, at denne er lig $\frac{1}{4}h^{(N+1)}M$ hvor $M=10^{(N+1)}$ ved funktionen $f(x)=x^2-\sin(10x), x \in \mathbb{R}$ i intervallet $a=0$ til $b=3$, hvor $h$ er antallet af steplength, bliver $h=abs(b-a)/N$. 
-    Det skal nu vises, at $f(x)^{(N+1)}(\xi)$ kan omskrives til $M=10^{(N+1)}$.
-    For $N=0$ gælder, at $f'(x)=2x-10cos(10x)$.
-    For $N=1$ gælder, at $f''(x)=2+100sin(10x)$.
-    For $N=2$ gælder, at $f'''(x)=1000cos(10x)$. 
-    Den afledede vil herefter skifte mellem sinus og cosinus.
-    Maksimalværdien for disse vil altid være $1$ og den maksismale værdi for $N$'te afledede bliver derfor $10^{N+1}$.
-    Den teoretiske maksimale fejl er derfor $\frac{1}{4}h^{(N+1)}10^{(N+1)}$ for $N \geq 2$
+så kan følgende opstilles 
+\begin{align*}
+f(x)-p(x) = \frac{\frac{1}{4}(N+1)!h^{N+1}}{(N+1)!}f^{(N+1)}(\xi)=\frac{1}{4}h^{N+1}f^{(N+1)}(\xi).
+\end{align*}
 \end{frame}

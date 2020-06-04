@@ -5,12 +5,19 @@
 %    Hvor kommer problemerne fra? 
 %    I den forbindelse kan I inddrage den grafiske undersøgelse fra punkt 4.
 %\end{frame}
-
+\begin{frame}{Teoretisk vurdering af fejlen}
+Det skal nu vises, at $f^{(N+1)}(\xi)$ er givet ved $M=10^{(N+1)}$ for funktionen $f(x)=x^2-\sin(10x).$ \\
+  For $N=0$ gælder, at $f'(x)=2x-10cos(10x)$.\\
+  For $N=1$ gælder, at $f''(x)=2+100sin(10x)$.\\
+  For $N=2$ gælder, at $f'''(x)=1000cos(10x)$.\\
+  De efterfølgende afledede vil herefter skifte mellem sinus og cosinus.
+  Maksimalværdien for disse vil altid være $1$ og den maksimale værdi for den $N$'te afledede bliver derfor $10^{N+1}$. 
+\\
+  Den teoretiske maksimale fejl er derfor givet ved
+  $$\frac{1}{4}h^{(N+1)}10^{(N+1)}$$ for $N \geq 2$. 
+\end{frame}
 \begin{frame}{Størrelsen af $N$}
-    Den teoretiske fejl (max) bliver $10^{-10}$ ved $N=48$, men i det numeriske eksperiment bliver fejlen aldrig mindre eller lig $10^{-10}$. 
-    En mulig årsag til forandringer ved fejlen er divergens i yderpunkterne, hvilket kan gøre fejlen betydeligt større end den teoretiske, da de går mod $ \infty $ og $ - \infty $. Det kan også skyldes afrundingsfejl. 
-    \begin{figure}
-        \centering
-            \includegraphics[scale=0.45]{images/N=13.png}.
-    \end{figure}
+    Den teoretiske fejl (max) bliver $10^{-10}$ ved $N=48$, men i det numeriske eksperiment bliver fejlen aldrig mindre eller lig $10^{-10}$. \\ 
+    En mulig årsag til forandringer ved fejlen er divergens i yderpunkterne, hvilket kan gøre fejlen betydeligt større end den teoretiske, da de kan gå mod $ \infty $ og $ - \infty $. Det kan også skyldes afrundingsfejl. 
+  
 \end{frame}
