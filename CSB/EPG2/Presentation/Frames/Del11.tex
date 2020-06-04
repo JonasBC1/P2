@@ -7,18 +7,21 @@
 %\end{frame}
 
 \begin{frame}{Interpolerende kvadraturregler}
-    Interpolerende kvadraturregler approksimerer en funktion $f(x)$ med et polynomie $p(x)$ over et interval for at beregne det bestemte integrale for $p(x)$, således at 
-    \begin{align}
-        \int_{a}^{b} f(x) dx \approx \int_{a}^{b} p(x) dx.
-    \end{align}
-    På de følgende slides er henholdsvis midtpunktsreglen, trapezreglen og Simpsons regel beskrevet, der alle tre er typer af kvadraturregler. 
+
+\begin{itemize}
+    \item Interpolerende kvadraturregler approksimerer en funktion %$f(x)$ med et polynomie $p(x)$ over et interval for at beregne det bestemte integrale for $p(x)$, således at 
+    \item $ \int_{a}^{b} f(x) dx \approx \int_{a}^{b} p(x) dx. $
+    \item Midtpunktsreglen, trapezreglen og Simpsons regel. 
+    % På de følgende slides er henholdsvis midtpunktsreglen, trapezreglen og Simpsons regel beskrevet, der alle tre er typer af kvadraturregler. 
+    \end{itemize}
 \end{frame}
 
 
-\begin{frame}{Interpolerende kvadraturregler:Midtpunktsreglen}
+\begin{frame}{Interpolerende kvadraturregler: Midtpunktsreglen}
+%What do med overskriften? 
     Midtpunktsreglen tager udgangspunkt i funktionsværdien i midtpunktet mellem to punkter $a$ og $b$, og denne multipliceres med $(b-a)$.
-    Således bestemmes et rektangel fra $a$ til $b$ under funktionen, hvor højden svarer til funktionsværdien imellem de to punkter. 
-    Rektanglet har til hensigt at approksimere integralet for funktionen. 
+%    Således bestemmes et rektangel fra $a$ til $b$ under funktionen, hvor højden svarer til funktionsværdien imellem de to punkter. 
+%    Rektanglet har til hensigt at approksimere integralet for funktionen. 
     \include{images/Midtpunkt}
 \end{frame}
 
@@ -43,20 +46,23 @@
 \end{frame}
 
 
-\begin{frame}{Interpolerende kvadraturregler:Trapezreglen}
-    Trapezreglen benytter Lagrange-interpolation med to punkter i stedet for et. 
-    Arealet af en trapez med hjørnerne $A, B, C$ og $D$ er givet ved formlen $h(\frac{|AB| + |CD|}{2})$. 
-    Heraf reglens navn, da formlen danner et trapez under funktionen, der har til hensigt at approksimere integralet for den oprindelige funktion. \\
+\begin{frame}{Interpolerende kvadraturregler: Trapezreglen}
+\begin{itemize}
+    \item %Trapezreglen benytter Lagrange-interpolation med to punkter i stedet for et. 
+    %Arealet af en trapez med hjørnerne $A, B, C$ og $D$ er givet ved formlen $h(\frac{|AB| + |CD|}{2})$. 
+    %Heraf reglens navn, da formlen danner et trapez under funktionen, der har til hensigt at approksimere integralet for den oprindelige funktion. \\
     Trapezreglen er givet ved formlen 
     \begin{align*}
     T_1 = \frac{(b-a)}{2}(f(a)+f(b))=h (\frac{f(a)+f(b)}{2}).
     \end{align*}
-    Genkald, at 
-    \begin{align}
-        \int_{a}^{b} f(x) dx = \Bar{f}(b-a),
-    \end{align}
-    hvor $\Bar{f}$ er den gennemsnitlige funktionsværdi i intervallet $[a,b]$.
-    Bemærk, at trapezreglen tager udgangspunkt i, at gennemsnittet for funktionsværdien er gennemsnittet $a$ og $b$, og approksimerer dermed integralet for $f(x)$. 
+    %Genkald, at 
+   % \begin{align}
+%        \int_{a}^{b} f(x) dx = \Bar{f}(b-a),
+%    \end{align}
+%    hvor $\Bar{f}$ er den gennemsnitlige funktionsværdi i intervallet $[a,b]$.
+%    Bemærk, at trapezreglen tager udgangspunkt i, at gennemsnittet for funktionsværdien er gennemsnittet $a$ og $b$, og approksimerer dermed integralet for $f(x)$. 
+    \end{itemize}
+           \include{images/Trapez}
     % Midtpunktsreglen gør det samme, men med ét punkt i stedet for. 
 \end{frame}
 
@@ -72,24 +78,25 @@
     \int_{a}^{b}f(x)dx-\frac{b-a}{2}\left [ f(a)+f(b) \right ]=-\frac{(b-a)h^2}{12}{f}''(\xi_T)
     \end{align*}
 \end{itemize}
-        \include{images/Trapez}
 \end{frame}
 
 
-\begin{frame}{Interpolerende kvadraturregler}
-    Simpsons regel benytter Lagrange-interpolation med tre punkter og udregner integralet under en parabel, modsat de førnævnte to regler, der udregner integraler under lige linjer. 
-    Simpsons regel er givet ved formlen 
+\begin{frame}{Interpolerende kvadraturregler: Simpsons regel}
+    %Simpsons regel benytter Lagrange-interpolation med tre punkter og udregner integralet under en parabel, modsat de førnævnte to regler, der udregner integraler under lige linjer. 
+    \begin{itemize}
+    \item Simpsons regel er givet ved formlen 
     \begin{align*}
     S_2 = \frac{(b-a)}{6}(f(a)+4f(\frac{a+b}{2})+f(b)=\frac{\widetilde{h}}{3}(f(a)+4f(\frac{a+b}{2})+f(b))
     \end{align*}
-    Det interpolerende polynomium fundet via Simpsons regel er givet ved formlen
+    \item Det interpolerende polynomium fundet via Simpsons regel er givet ved formlen
     \begin{align*}
     P_{S}(x)=f(a)\frac{(x-m)(x-b)}{(a-m)(a-b)}+f(m)\frac{(x-a)(x-b)}{(m-a)(m-b)}+f(b)\frac{(x-a)(x-m)}{(b-a)(b-m)}.
     \end{align*}
+       \end{itemize}
 \end{frame}
 
 
-\begin{frame}{Interpolerende kvadraturregler:Fejlled Simpson}
+\begin{frame}{Interpolerende kvadraturregler: Fejlled Simpson}
     Fejlleddet for Simpsons regel er givet ved 
     \begin{align*}
     \int_{a}^{b}f(x)dx-\frac{\Tilde{h}}{3}\left [ f(a)+4f(a+h) + f(b) \right ]=-\frac{(b-a)\Tilde{h}^4}{180}{f}^{(4)}(\xi_S)
