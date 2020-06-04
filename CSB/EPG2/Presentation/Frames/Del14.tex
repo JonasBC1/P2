@@ -44,9 +44,11 @@ f(x) =
 \begin{frame}{Den adaptive metode}
     \begin{itemize}
         \item (b) Vis, at den eksakte værdi af integralet er $15-\frac{31\sqrt{2}}{3}$.
-        \item \begin{align*}
-            \int^{\sqrt{2}}_0-(x-\sqrt{2})^2+\int^3_{\sqrt{2}}(x-\sqrt{2})^2=15-\frac{29\sqrt{2}}{3}-\frac{2\sqrt{2}}{3}= \\ 15-\frac{31\sqrt{2}}{3} 
-            \end{align*} \\
+\begin{align*}
+\int^{\sqrt{2}}_0 &-(x-\sqrt{2})^2+\int^3_{\sqrt{2}}(x-\sqrt{2})^2\\
+&=15-\frac{29\sqrt{2}}{3}-\frac{2\sqrt{2}}{3} \\
+&=15-\frac{31\sqrt{2}}{3} 
+\end{align*} \\
             Ved at tage integralet for begge funktioner, og derefter plusse dem sammen, fås den eksakte værdi $15-\frac{31\sqrt{2}}{3}$ \\
     \end{itemize}
 \end{frame}
@@ -73,25 +75,16 @@ f(x) =
         %Hvorfor springer orden så meget i Simpson efter 8192?
         \item 2. og 4. ordens - $O(h^2)$ $O(h^4)$
         \item Afrundingsfejl
-        \item variationer i $f''$ og $f^{(4)}$
+        \item Variationer i $f''$ og $f^{(4)}$
     \end{itemize}
     
-$$\begin{array}{l|c|c}
-\text{Metode} & \text{Inddelinger}& \text{Orden} \\
+$$\begin{array}{l|c|c|c}
+\text{Metode} & \text{Inddelinger}& \text{Orden}^2 & \text{Orden}\\
 \hline
-\text{Midtpunkt}	& 64		& 4 \\
-\text{Trapez}		& 64		& 4 \\
-\text{Simpsons}		& 4096	& 16 \\
+\text{Midtpunkt}	& 64		& 4 	&2\\
+\text{Trapez}		& 64		& 4 	&2\\
+\text{Simpsons}		& 4096		& 16 	&4\\
 \end{array}$$
-
-$$\begin{array}{l|c|c}
-\text{Metode} & \text{Inddelinger}& \text{Orden} \\
-\hline
-\text{Midtpunkt}	& 4		& 2 \\
-\text{Trapez}		& 4		& 2 \\
-\text{Simpsons}		& 16	& 4 \\
-\end{array}$$
-
 \end{frame}
 
 
