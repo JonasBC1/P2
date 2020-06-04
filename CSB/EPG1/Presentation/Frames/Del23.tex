@@ -7,19 +7,10 @@
 %\end{frame}
 
 \begin{frame}{Gennemgang af scriptet}
-Umiddelbart foretrækker jeg bare at åbne scriptet og gennemgå hvor man kan se det? hvad tænker i?
     \begin{itemize}
-        \item I scriptet startes med definition Lagrange funktionen. 
-        Dette gøres ved hjælp af lister, og en for-løkke, hvor j ikke må være lig $k$. 
-        Den ganger resultaterne fra listen temp sammen, og finder produktet.
-    
-        \item Så findes et Lagrange-interpoleret polynomium. 
-        Så opskrives parametrene og funktionen der ønskes undersøgt. 
-        Programmet finder efterfølgende nogle x- og y-værdier samt afstanden mellem x-værdierne. 
-        Så udregner programmet approximationen og løsningen. 
-        Til sidst udregner programmet fejlen og printer noget data. 
-    
-        \item I python scriptet \textsc{Interpolation bin funktioner.py}, ses modificeringen, så den genererer plots for små værdier af $N$, som i samme figur viser grafen for $f(x)$, grafen for $p(x)$ og knudepunkterne. 
+        \item Definition af Lagrange funktionen
+        \item Lav et Lagrange-interpoleret polynomium. 
+        \item \textsc{Interpolation bin funktioner.py}, er  modificeret til den genererer plots. 
     \end{itemize}
     \begin{align*}
     \underset{x \in \left [0,3 \right ]}{\text{max}} \lvert f(x)-p_N(x) \rvert
