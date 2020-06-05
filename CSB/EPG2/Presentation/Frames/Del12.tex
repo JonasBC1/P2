@@ -4,31 +4,34 @@
 \end{frame}
 
 \begin{frame}{Sammensat kvadraturregel}
-    Ideen ved en sammensat kvadraturregel er, at man tager sit interval fra a til b og inddeler i ækvidistante inddelinger, hvor $x_0$ angiver a, og $x_n$ angiver b og så gælder der ydermere følgende
-    \begin{align*}
-    a = x_0 < x_1 < … x_{n-1} < x_n = b
-    \end{align*}
-    $h$ angiver længden intervallerne mellem fx $x_0$ og $x_1$ , og er givet ved $\frac{b-a}{n}$, som betyder, at intervallet derfor inddeles i $n$ såkaldte delintervaller eller underinddelinger. 
-    Ideen er så for en sådanne sammensatte kvadraturregel, at der kan anvendes midtpunkt-, trapez- og Simpsons regel på hver af de mindre delintervaller fremfor hele intervallet fra a til b. 
-\end{frame}
-
-
-\begin{frame}{Sammensat kvadraturregel}
-    For at udlede den sammensatte kvadraturregel $T_N$ for et integrale, hvor intervallet opdeles i underinddelinger beskrives i følgende
-    Trapez-reglen er som sagt, som følger
+Trapez-reglen er som sagt, som følger
     \begin{align*}
     T = \frac{h}{2}(f(a)+f(b)),
     \end{align*}
-    og ved at omskrive trapez-reglen, så den gælder for to underinddelinger samt indføre notationen for de tilsvarende venstre og højre Riemann summer $h(f(a)+f(a+h)$ og $h(f(a+h)+f(b))$, så får man følgende 
+\includegraphics[scale=0.4]{images/TRAPEZZI.png}
+\end{frame}
+
+\begin{frame}{Sammensat kvadraturregel}
+Man tager sit interval fra a til b og inddeler i ækvidistante inddelinger, hvor $x_0$ angiver a, og $x_n$ angiver b og så gælder der ydermere følgende
     \begin{align*}
-    T_2=\frac{h}{2}(f(a)+f(a+h))+\frac{h}{2}(f(a+h)+f(b)= \frac{h}{2}(f(a)+2f(a+h)+f(b),
+    a = x_0 < x_1 < … x_{n-1} < x_n = b
     \end{align*}
-    hvor $h=\frac{b-a}{2}$.
+\includegraphics[scale=0.3]{images/TRAPEZSAM.png}
+\end{frame}
+
+\begin{frame}{Sammensat kvadraturregel}
+    For at udlede trapez-reglen, så den gælder for to underinddelinger, så får man følgende 
+    \begin{align*}
+    T_2=\frac{h}{2}(f(a)+f(a+h))+\frac{h}{2}(f(a+h)+f(b) \\
+    = \frac{h}{2}(f(a)+2f(a+h)+f(b),
+    \end{align*}
+    hvor $h=\frac{b-a}{2}$. \\
+\includegraphics[width=40mm,scale=0.2]{images/TRAPEZ12.png}   
 \end{frame}
 
 
 \begin{frame}{Sammensat kvadraturregel}
-    Bemærk her, at man har evalueringer i det to endepunkter a og b, samt 2 gange evaluering i de indre punkter. Dette er givet, da man benytter trapez-reglen fra intervallet $x_0$ til $x_1$ samt fra $x_1$ til $x_2$, som vil sige, at man har en evaluering i punktet $x_1$ to gange, og derfor divideres med $\frac{1}{2}$. Derved er det videre muligt, at opskrive den generelle formel for den sammensatte kvadraturregel $T_n$ givet ved
+Dernæst er det videre muligt, at opskrive den generelle formel for den sammensatte kvadraturregel $T_n$ givet ved
     \begin{align*}
     T_n = \frac{1}{2}\left (  h\sum_{k=0}^{N-1}f(a+kh)+h\sum_{k=1}^{N}f(a+kh)\right )
     \end{align*}
