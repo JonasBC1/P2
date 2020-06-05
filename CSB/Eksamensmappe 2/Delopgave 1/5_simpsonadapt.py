@@ -40,7 +40,11 @@ def fun(x):                             # Funktion
         return -(x-sqrt(2))**2
     
 Iexact = 15-((31*sqrt(2))/3)            # Eksakte værdi
-    
+
+# interval_1 = (-(sqrt(2)-sqrt(2))**3/3) -(-(sqrt(0)-sqrt(2))**3/3)+((b-sqrt(2))**3/3-(sqrt(2)-sqrt(2))**3/3)
+# interval_2 = (b-sqrt(2))**3/3-(a-sqrt(2))**3/3 
+# helefunk   = 15-((31*sqrt(2))/3)
+
 # Begyndelsesbetingelser   
 a = 0.0
 b = 3.0

@@ -48,9 +48,9 @@ b = 1.5
 ############################
 
 Iexact = (-(sqrt(2)-sqrt(2))**3/3) -(-(sqrt(0)-sqrt(2))**3/3)+((b-sqrt(2))**3/3-(sqrt(2)-sqrt(2))**3/3)
-#interval_1=(-(sqrt(2)-sqrt(2))**3/3) -(-(sqrt(0)-sqrt(2))**3/3)+((b-sqrt(2))**3/3-(sqrt(2)-sqrt(2))**3/3)
-#inteval_2= (b-sqrt(2))**3/3-(a-sqrt(2))**3/3 
-#helefunk=15-((31*sqrt(2))/3)
+# interval_1 = (-(sqrt(2)-sqrt(2))**3/3) -(-(sqrt(0)-sqrt(2))**3/3)+((b-sqrt(2))**3/3-(sqrt(2)-sqrt(2))**3/3)
+# interval_2 = (b-sqrt(2))**3/3-(a-sqrt(2))**3/3 
+# helefunk   = 15-((31*sqrt(2))/3)
     
 tol = 1e-5 
 
