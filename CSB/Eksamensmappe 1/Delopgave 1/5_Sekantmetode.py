@@ -14,7 +14,7 @@ def secant(f,x0,x1,tol):                            # Funktionen
     return x1, count                                # Returnere 
 
 def fun_test(x):                                    # Eksakt funktion
-    return x*math.cosh(75/x) - x - 15
+    return x*np.cosh(75/x) - x - 15
 
 # Begyndelseskriterier
 x0 = 10
