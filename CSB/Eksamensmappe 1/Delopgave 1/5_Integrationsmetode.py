@@ -18,15 +18,15 @@ def iter(f, xinit, tol):                # Funktionen
 
 	return xnew, n                      # Returnere 
 
-def fun7(x):                            # Eksakt funktion
+def fun1(x):                            # Eksakt funktion
     return (x+15)/(math.cosh(75/x))
 
-def fun8(x):                            # Eksakt funktion
+def fun2(x):                            # Eksakt funktion
     return x*math.cosh(75/x)-15
 
 tol = 1E-12
 xinit = 100
 	
-nul, it = iter(fun8, xinit, tol)        # Udregner den færdige 
+nul, it = iter(fun2, xinit, tol)        # Udregner den færdige 
 
 print(f"Nulpunkt fundet ved x = {nul:0.7E} efter {it} iterationer.")
