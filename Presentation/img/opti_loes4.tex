@@ -1,0 +1,42 @@
+\begin{figure}[H]
+\centering
+%
+\begin{tikzpicture}
+%
+%
+% -------------------------------------------------------
+\begin{axis}[
+axis lines = left,
+xlabel = $x_1$,
+ylabel = \rotatebox{-90}{$x_2$},
+xmax=4,
+ymax=4,
+	legend style={at={(1,1)},anchor=north east},
+]
+%
+%
+%
+%
+%
+\addplot[name path=b, domain={0:3}, color=myblue, style=very thick,samples=2]{6-2*x};
+\addlegendentry{$2x_1+x_2 \geq 6$}
+\addplot[name path=a, domain={0:6}, color=myred, style=very thick, samples=2]{3-0.5*x};
+\addlegendentry{$x_1+2x_2 \geq 6$}
+%%%
+%%%
+\addplot[name path=d, domain=0:6,samples=2,color=white, style=ultra thin]{6};
+\addplot[name path=c, domain=0:3,samples=2,color=black, style=very thin]{0};
+
+\addplot[fill=myblue!15] fill between [of=d and b, soft clip={domain=0:2}];
+\addplot[fill=myblue!15] fill between [of=d and a, soft clip={domain=2:4}];
+
+\addplot[domain=0:2, samples=2, color=black, dotted, thick]{2-x};
+\addplot[domain=0:4, samples=2, color=black, dotted, thick]{4-x};
+\addplot[mark=*] coordinates {(2,2)};
+\addplot[mark=none, thick, ->] coordinates {(0,0) (1,1)} node[above right] {$\mathbf{v}$};
+\end{axis}
+\end{tikzpicture}
+\caption{En begrænset løsningsmængde, markeret med blå, afgrænset af lineære betingelser, hvor den optimale løsning er $\infty$ til problemet.}
+%
+\label{fig:opti_loes4}
+\end{figure}
