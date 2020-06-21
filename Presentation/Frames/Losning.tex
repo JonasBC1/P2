@@ -7,7 +7,7 @@ Løsning af lineær optimeringsproblemer
 \end{frame}
 %
 \begin{frame}
-\frametitle{Løsning af lineære optimeringsproblemer}
+\frametitle{Løsning af lineære \phantom{HHHHHHHH} optimeringsproblemer}
 \begin{itemize}
 \item \textbf{$nr. 3$}
 \item Intro til løsninger fra afsnit 2
@@ -22,9 +22,108 @@ Løsning af lineær optimeringsproblemer
 \end{frame}
 
 \begin{frame}
+\frametitle{Optimeringsproblemer}
+\begin{align*}
+\begin{array}{lrll}
+\text{Maksimér}		&\textbf{c}^T\textbf{x}	& = z		&\\
+\text{begrænset af}	&\textbf{a}^T\textbf{x}	&\geq b_i,	&i \in M_1,\\
+					&\textbf{a}^T\textbf{x}	&\leq b_i,	&i \in M_2,\\
+					&\textbf{a}^T\textbf{x}	& = b_i,	&i \in M_3,\\
+					&x_j					&\geq 0,	&j \in N_1,\\
+					&x_j					&\leq 0,	&j \in N_2,
+\end{array}
+\end{align*}
+\end{frame}
+
+\begin{frame}
 \frametitle{Grafisk løsning}
 \input{img/opti_loes1}
 \end{frame}
+
+\begin{frame}
+\frametitle{Grafisk løsning}
+\input{img/opti_loes2}
+\end{frame}
+
+\begin{frame}
+\frametitle{Grafisk løsning}
+\input{img/opti_loes3}
+\end{frame}
+
+\begin{frame}
+\frametitle{Grafisk løsning}
+\input{img/opti_loes4}
+\end{frame}
+
+\begin{frame}
+\frametitle{Grafisk løsning}
+\begin{itemize}
+\item En entydig optimal løsning
+\item Flere optimale løsninger 
+\\
+(Kinda uendelige ikke?????)
+\item En tom løsningsmængde
+\item $\infty$ eller $-\infty$ som optimal løsning 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Standardform}
+\begin{align*}
+\begin{array}{lrl}
+\text{Maksimér}		&z - \textbf{c}^T\textbf{x}	&	=0		\\
+\text{begrænset af}	&A\textbf{x}	&=\mathbf{b},	\\
+					&\mathbf{x}				&\geq \mathbf{0},
+\end{array}
+\end{align*}
+\begin{itemize}
+\item Omskrivning mellem min og maks 
+\item Slack-variabler
+\item Ikke-negativsbegrænsning: $x_i^+$ og $x_i^-$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Måske dualproblemer}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Polyeder}
+$$\mathcal{P} = \{\textbf{x} \in \R^n \mid A\mathbf{x}\geq \textbf{b}\}.$$
+\\
+$
+\begin{array}{cc}
+\input{img/polyede2}&
+\input{img/polyede3}
+\end{array}
+$
+\\
+\textbf{Polyeder på standardform} 
+$$\mathcal{P}=\{ \mathbf{x} \in \R^n  \mid  A\mathbf{x}=\mathbf{b}, \mathbf{x} \geq \mathbf{0} \},$$
+Gælder det også hyperplan, øvre halvrum og nedre halvrum?
+\end{frame}
+
+\begin{frame}
+\frametitle{Konvekse mængder og konveks hylster }
+\begin{itemize}
+\item \textbf{Konveks kombination: } \\ 
+Vektoren $\sum_{i=1}^{k} \lambda_i \textbf{v}_i$ af vektorerne $\textbf{v}_1, \textbf{v}_2, \ldots, \textbf{v}_k$
+\item \textbf{Konveks hylster: } \\
+Mængde af alle konvekse kombinationer \\
+\end{itemize}
+\input{img/konveks_eks_r2}
+\end{frame}
+
+\begin{frame}
+\frametitle{Konveks funktion}
+\input{img/konveksfunktion}
+\begin{itemize}
+\item Lokal minimum $\rightarrow$ Global minimum
+\end{itemize}
+\end{frame}
+
+
 
 %\begin{frame}
 %\frametitle{Grafisk løsning}
