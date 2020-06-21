@@ -40,13 +40,68 @@
 \input{Frames/4_mads/basal}
 \end{frame}
 %
+% Ækvivalens af hjørner
+% (b) -> (a)
+%
+\begin{frame}
+\frametitle{Ækvivalens mellem hjørner}
+\begin{itemize}
+\item Hjørnepunkt $\rightarrow$ ekstremumspunkt
+\end{itemize}
+%
+\begin{align*}
+\textbf{c}^T\textbf{u} &< \textbf{c}^T\textbf{v}\\
+\textbf{c}^T\textbf{u} &< \textbf{c}^T(\lambda\textbf{v} + (1-\lambda)\textbf{w})\\
+u &\neq \lambda\textbf{v} + (1-\lambda)\textbf{w}
+\end{align*}
+\end{frame}
+%
+% (a) -> (c)
+%
+\begin{frame}
+\frametitle{Ækvivalens mellem hjørner}
+\begin{itemize}
+\item Ikke basal mulig løsning $\rightarrow$ ikke ekstremumspunkt
+%
+\begin{itemize}
+\item Ekstremumspunkt $\rightarrow$ basal mulig løsning
+\end{itemize}
+\end{itemize}
+%
+\begin{align*}
+\textbf{v} &= \textbf{u} + \varepsilon\textbf{d}\\
+\textbf{w} &= \textbf{u} - \varepsilon\textbf{d}\\
+\varepsilon|\textbf{a}_i^T\textbf{d}| &< \textbf{a}_i^T\textbf{u}-b_i\\
+\textbf{a}_i^T\textbf{v} &> b_i, i\notin I\\
+\textbf{a}_i^T\textbf{w} &> b_i, i\notin I\\
+\textbf{u} &= \frac{1}{2}\textbf{v} + \frac{1}{2}\textbf{w}
+\end{align*}
+%
+\end{frame}
+%
+% (c) -> (b)
+%
+\begin{frame}
+\frametitle{Ækvivalens mellem hjørner}
+\begin{itemize}
+\item Basal mulig løsning $\rightarrow$ hjørnepunkt
+\end{itemize}
+%
+\begin{align*}
+\textbf{c} &= \sum_{i\in I} \textbf{a}_i\\
+\textbf{c}^T\textbf{u} &= \sum_{i\in I} \textbf{a}_i^T\textbf{u} = 
+ b_i\\
+\textbf{c}^T\textbf{v} &= \sum_{i\in I} \textbf{a}_i^T\textbf{u} \geq 
+ b_i\\
+\end{align*}
+\end{frame}
+%
 %
 %
 \begin{frame}
-\frametitle{Hjørner}
+\frametitle{Ækvivalens mellem hjørner}
 \begin{itemize}
 \item \textbf{$nr. 4$}
-\item Sæt 3.4 ækvivalens mellem hjørnepunkterne
 \item Bevis for løsninger i hjørnepunkter (3.8)
 \end{itemize}
 \end{frame}
