@@ -1,0 +1,42 @@
+\begin{frame}
+Lad et lineært optimeringsproblem være, at $\textbf{c}^T \textbf{x}$ skal minimeres over et polyeder $\mathcal{P}$. 
+Antag, at der i $\mathcal{P}$ er mindst ét ekstremumspunkt. 
+Så er den optimale omkostning lig $- \infty$, eller også findes et optimalt ekstremumspunkt.
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item $k$ lineært uafhæinge betingelser aktive ved et element $\textbf{v}\in \mathcal{P} \rightarrow rank(v)=k < n$ altså et ægte underum.
+\item $I = \{ i \mid \textbf{a}^T_i \textbf{v} = b_i \}$, hvor $\textbf{a}^T_i$ er den $i$'te række af $A$.
+\item  Der kan altså vælges en ikke $0$-vektor $\textbf{d} \in \mathcal{R}^n$ der er ortogonal med hver række i $A$.
+\item Halvlinjen $\textbf{u}=\textbf{v}+ \lambda \textbf{d}$, hvor $\lambda$ er positiv opfylder altså at $\textbf{a}^T_i \textbf{u} = b_i$
+\end{itemize}
+\end{frame}
+\begin{frame}
+\begin{itemize}
+\item Hvis $\textbf{u}$ ikke er uendelig er der således en grænseværdi hvor den udgår fra $\mathcal{P}$.
+\item Der findes så en vektor/punkt $\textbf{u}$ med højere rang end $\textbf{v}$, således $\textbf{c}^T \textbf{u} \leq \textbf{c}^T \textbf{v}$.
+\item Forsættes indtil den basale mulig løsning $\textbf{w}$ findes, hvor $\textbf{w}=rank(n)$ og $\textbf{c}^T \textbf{w} \leq \textbf{c}^T \textbf{v}$.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\begin{itemize}
+\item En løsning $w*$ skal nu findes hvorom det gælder at $\textbf{c}^T\textbf{w}*<\textbf{c}^T \textbf{w}_i$.
+\item Da $\textbf{c}^T \textbf{w}_i \leq \textbf{c}^T \textbf{v}$, er $\textbf{w}*$ en optimal løsning.
+\item Det centrale er derfor brugen af ortogonalitet, samt en optimal værdi af $\lambda$ således vi ender i et hjørnepunkt.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\begin{itemize}
+
+
+\item Metoden starter i origo.
+\item Basen er det punkt vi er i.
+\item Den største negative værdi identificeres, da det er punktet der vil forbedre løsningen hurtigst. Flyttes af kanterne. 
+\item Koeficienter ved pivotering bruges til at holde os indenfor polyedraet.
+\item Når der pivoteres omkring det før beskrevne element fundet gennem største negative og koefficienter, sikres dermed en løsning hvor en variabel bliver så stor som mulig uden at bryde grænserne hvilket er et hjørnepunkt.
+\item Gentages til nabopunkt.
+\end{itemize}
+\end{frame}
+
+
