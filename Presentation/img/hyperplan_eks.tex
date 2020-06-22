@@ -1,0 +1,44 @@
+\begin{center}
+\begin{tikzpicture}[scale=5]
+% Koordinater
+% -------------------------------------------------------
+\coordinate (c) at (0.7,1.2,1.2);
+\coordinate (d) at (1.2,1.2,1.2);
+\coordinate (g) at (1.2,0.7,1.2);
+\coordinate (h) at (0.7,0.7,1.2);
+%
+% Tegning af figur og kommentarer
+% -------------------------------------------------------
+%
+% Farve 
+% -------------------------------------------------------
+\filldraw[fill=myblue,opacity=0.3, thick](c)--(d)--(g)--(h)--(c);
+%
+% Linjer og navne
+% -------------------------------------------------------
+% a_1
+\draw[gray,thin,dashed](0.7,0.5,1.2)--(0.7,1.41,1.2);
+\draw[thick](h)--node[left]{$\mathbf{a}_1^T \mathbf{x}=b_1$} (c);
+\draw[thick,->](0.7,0.95,1.2)--(0.8,0.95,1.2) node[right]{$a_1$};
+%
+% a_2
+\draw[gray,thin,dashed](1.4,1.2,1.2)--(0.5,1.2,1.2);
+\draw[thick](d)--node[above]{$\mathbf{a}_2^T \mathbf{x}=b_2$} (c);
+\draw[thick,->](0.95,1.2,1.2)--(0.95,1.1,1.2) node[below]{$a_2$};
+%
+% a_3
+\draw[gray,thin,dashed](1.2,1.4,1.2)--(1.2,0.5,1.2);
+\draw[thick](d)--node[right] {$\mathbf{a}_3^T \mathbf{x}=b_3$} (g);
+\draw[thick,->](1.2,0.95,1.2)--(1.1,0.95,1.2) node[left]{$a_3$};
+%
+% a_4  
+\draw[gray,thin,dashed](1.4,0.7,1.2)--(0.5,0.7,1.2);
+\draw[thick](g)--node[below]{$\mathbf{a}_4^T \mathbf{x}=b_4$} (h);
+\draw[thick,->](0.95,0.7,1.2)--(0.95,0.8,1.2) node[above]{$a_4$};
+%
+% Navn til polyeden
+% -------------------------------------------------------
+\draw[black] (0.91,0.96,1.2) circle (0pt) node[anchor=west] {$\mathcal{P}$};
+%
+\end{tikzpicture}
+\end{center}

@@ -6,20 +6,19 @@
 Løsning af lineær optimeringsproblemer 
 \end{frame}
 %
-\begin{frame}
-\frametitle{Løsning af lineære \phantom{HHHHHHHH} optimeringsproblemer}
-\begin{itemize}
-\item \textbf{$nr. 3$}
-\item Intro til løsninger fra afsnit 2
-%De fire punkter fra raporten (angående løsninger)
-\item Standardform.
-\item Eventuelt dualproblemer som sidebemærkning. Hvis vi skal have det med måske en bemærkning om spilteori og nulsum(slackvariable løsning for dual).
-\item Polyedre og repræsentation(herunder standardform)
-\item Det konvekse hylster.
-\item Injektiv og surjektiv (bijektiv)
-\item Lokal $\rightarrow$ Global (omkring fig 3.9)
-\end{itemize}
-\end{frame}
+%\begin{frame}
+%\frametitle{Løsning af lineære \phantom{HHHHHHHHHHHH} optimeringsproblemer}
+%\begin{itemize}
+%\item \textbf{$nr. 3$}
+%\item Intro til løsninger fra afsnit 2
+%%De fire punkter fra raporten (angående løsninger)
+%\item Standardform.
+%\item Eventuelt dualproblemer som sidebemærkning. Hvis vi skal have det med måske en bemærkning om spilteori og nulsum(slackvariable løsning for dual).
+%\item Polyedre og repræsentation(herunder standardform)
+%\item Det konvekse hylster.
+%\item Lokal $\rightarrow$ Global (omkring fig 3.9)
+%\end{itemize}
+%\end{frame}
 
 \begin{frame}
 \frametitle{Optimeringsproblemer}
@@ -33,6 +32,15 @@ Løsning af lineær optimeringsproblemer
 					&x_j					&\leq 0,	&j \in N_2,
 \end{array}
 \end{align*}
+\begin{itemize}
+\item Objektfunktionen
+\item Lineær betingelser 
+\item Fra min til maks 
+\begin{itemize}
+\item -1 
+\item Ulighed
+\end{itemize}
+\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -59,11 +67,9 @@ Løsning af lineær optimeringsproblemer
 \frametitle{Grafisk løsning}
 \begin{itemize}
 \item En entydig optimal løsning
-\item Flere optimale løsninger 
-\\
-(Kinda uendelige ikke?????)
-\item En tom løsningsmængde
-\item $\infty$ eller $-\infty$ som optimal løsning 
+\item Uendelig mange optimale løsninger 
+\item En tom løsning
+\item $\infty$ eller $-\infty$ som optimal løsning  
 \end{itemize}
 \end{frame}
 
@@ -77,19 +83,59 @@ Løsning af lineær optimeringsproblemer
 \end{array}
 \end{align*}
 \begin{itemize}
-\item Omskrivning mellem min og maks 
-\item Slack-variabler
-\item Ikke-negativsbegrænsning: $x_i^+$ og $x_i^-$
+\item Lighedsbetingelser \\
+ 		Slack-variabler
+\item Ikke-negativsbetingelser \\ 
+		$x_i^+$ og $x_i^-$
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Måske dualproblemer}
+\frametitle{Dualproblemer}
+ÅÅÅÅÅH kloge mennesker, kan vi lige snakke om dette kort xD 
+\begin{align*}
+\begin{array}{lrl}
+\text{Maksimér}		&\textbf{c}^T\textbf{x}	& = z		\\
+\text{begrænset af}	&A\textbf{x}	&\leq \mathbf{b},	\\
+					&\mathbf{x}				&\geq \mathbf{0},
+\end{array}
+\end{align*}
+%
 
+%
+\begin{align*}
+\begin{array}{lrl}
+\text{Minimér}		&\textbf{p}^T\textbf{b}	& = v			\\
+\text{begrænset af}	&\textbf{p}^TA	&\geq \mathbf{c},	\\
+					&\mathbf{b}				&\geq \mathbf{0}
+\end{array}
+\end{align*}
+
+\begin{align*}
+\begin{array}{lrl}
+\text{Minimér}		&\textbf{b}^T\textbf{p}	& = v			\\
+\text{begrænset af}	&A^T \textbf{p}	&\geq \mathbf{c},	\\
+					&\mathbf{p}				&\geq \mathbf{0}
+\end{array}
+\end{align*}
+\begin{center}
+\begin{tabular}{llll}
+Primær  & Maksimér   & Minimér    & Dual         \\
+\hline
+Begræsninger & $\leq b_i$ & $\geq 0$   & Variable     \\
+             & $\geq b_i$ & $\leq 0$   &              \\
+             & $=b_i$     & fri        &            \\ 
+\hline             
+Variable     & $\geq 0$   & $\geq c_j$ & Begræsninger \\
+             & $\leq 0$   & $\leq c_j$ &              \\
+             & fri        & $=c_j$     &  
+\end{tabular}
+\end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Polyeder}
+\textbf{Polyeder}
 $$\mathcal{P} = \{\textbf{x} \in \R^n \mid A\mathbf{x}\geq \textbf{b}\}.$$
 \\
 $
@@ -101,26 +147,54 @@ $
 \\
 \textbf{Polyeder på standardform} 
 $$\mathcal{P}=\{ \mathbf{x} \in \R^n  \mid  A\mathbf{x}=\mathbf{b}, \mathbf{x} \geq \mathbf{0} \},$$
-Gælder det også hyperplan, øvre halvrum og nedre halvrum?
 \end{frame}
 
 \begin{frame}
-\frametitle{Konvekse mængder og konveks hylster }
+\frametitle{Hyperplan}
+\textbf{Hyperplan}
+$$\{\textbf{x} \in \R^n \mid \mathbf{a}^T \mathbf{x}=b\}$$ 
+%
+\textbf{Øvre halvrum}
+$$\{\textbf{x} \in \R^n \mid \mathbf{a}^T \mathbf{x} \geq b\}$$ 
+\textbf{Nedre halvrum}
+$$\{\textbf{x} \in \R^n \mid \mathbf{a}^T \mathbf{x} \leq b\}$$ 
+\end{frame}
+
+\begin{frame}
+\frametitle{Hyperplan}
+\textbf{Fællesmængden}
+\input{img/hyperplan_eks}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Konvekse hylster }
 \begin{itemize}
+\item \textbf{Konveks mængde: } \\
+$\lambda \textbf{u} + (1- \lambda ) \textbf{v} \in \mathcal{S}$
 \item \textbf{Konveks kombination: } \\ 
-Vektoren $\sum_{i=1}^{k} \lambda_i \textbf{v}_i$ af vektorerne $\textbf{v}_1, \textbf{v}_2, \ldots, \textbf{v}_k$
+Vektoren $\sum_{i=1}^{k} \lambda_i \textbf{v}_i$ af vektorerne $\textbf{v}_1, \textbf{v}_2, \ldots, \textbf{v}_k$ 
+\\ $\lambda$ summeret til 1
 \item \textbf{Konveks hylster: } \\
 Mængde af alle konvekse kombinationer \\
 \end{itemize}
+\phantom{H} \\
 \input{img/konveks_eks_r2}
 \end{frame}
 
 \begin{frame}
 \frametitle{Konveks funktion}
+\begin{itemize}
+	\item \textbf{Konveks:} 
+	$$f(\lambda \textbf{u} + (1- \lambda ) \textbf{v}) \leq \lambda f( \textbf{u}) + (1- \lambda ) f(\textbf{v}) $$ 
+	ÅÅÅÅÅH kloge mennesker, kan vi lige snakke om dette kort xD 
+\end{itemize}
 \input{img/konveksfunktion}
 \begin{itemize}
 \item Lokal minimum $\rightarrow$ Global minimum
 \end{itemize}
+\phantom{H} \\
+\phantom{H} \\
 \end{frame}
 
 
