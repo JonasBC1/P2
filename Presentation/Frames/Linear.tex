@@ -1,20 +1,110 @@
-\section{Lineær ligningssystemer}
+\section{Lineære ligningssystemer}
 \begin{frame}
 \centering
 \Huge
-Lineær ligningssystemer
+Lineære ligningssystemer
 \end{frame}
 %
 \begin{frame}
 \frametitle{Lineære ligningssystemer}
 \begin{itemize}
-\item \textbf{$nr. 2$}
-\item Lineære ligningssystemer
-\item Rækkeoperationer (evt. elemtentærmaticer)
-\item Trappeform
-\item Gauss-elimination
-\item Rang og Nullitet
-%Kort om Rang og Nullitet
+\item Et system af $m$ lineære ligninger med de samme $n$ variable. 
+\item Eksempel:
+\begin{align*}
+x_1-x_3-2x_4-8x_5&=-3 \\
+-2x_1+x_3+2x_4+9x_5&=5 \\
+3x_1-2x_3-3x_4-15x_5&=-9.
+\end{align*}
+\item Ingen, én eller uendeligt mange løsninger. 
+\item Hvis systemet ingen løsning har, er det inkonsistent. Ellers er det konsistent. 
 \end{itemize}
 \end{frame}
 %%
+\begin{frame}
+\frametitle{Lineære ligningssystemer}
+\begin{itemize}
+\item Lineære ligningssystemer kan opstilles i en totalmatrix. 
+\item Totalmatricen er koefficientmatricen udvidet. 
+\item Eksempel:
+\begin{equation*}
+  [A \mid \mathbf{b}] =
+\begin{blockarray}{ccccccc}
+x_1 & x_2 & x_3 & x_4 & x_5 & b \\
+\begin{block}{[ccccc|c]c}
+  1 & 0 & -1 & -2 & -8 & -3 \\
+  -2 & 0 & 1 & 2 & 9 & 5 \\
+  3 & 0 & -2 & -3 & -15 & -9 \\
+\end{block}
+\end{blockarray}.
+\end{equation*}
+\end{itemize}
+\end{frame}
+%%
+\begin{frame}
+\frametitle{Rækkeoperationer}
+\begin{itemize}
+\item Totalmatricen gør det let at udføre elementære rækkeoperationer. 
+\item Ombytning: $A \xrightarrow{R_i \leftrightarrow R_j} B$. 
+\item Skalering: $A \xrightarrow{R_i \rightarrow cR_i} B$.
+\item Udskiftning: $A \xrightarrow{R_i \rightarrow R_i + cR_h} B$.
+\end{itemize}
+\end{frame}
+%%
+\begin{frame}
+\frametitle{Trappeform}
+\begin{itemize}
+\item Kan opnås via elementære rækkeoperationer. 
+\item Ikke-nulrækker over nulrækker. 
+\item Første ikke-nulindgang ligger i en søjle til højre for ikke-nulindgangen i forrige række. 
+\item Hvis en søjle har den første ikke-nulindgang i en række, er alle understående indgange i søjlen nulindgange. 
+\item Eksempel: 
+\begin{align*}
+A=
+\begin{blockarray}{cccc}
+\begin{block}{[cccc]}
+2 & 4 & 8 & 2\\
+0 & 5 & -2 & 5\\
+0 & 0 & 2 & 7\\
+0 & 0 & 0 & 0\\
+\end{block}
+\end{blockarray}
+\text{ og }
+B=
+\begin{blockarray}{cccc}
+\begin{block}{[cccc]}
+2 & 4 & 8 & 2\\
+0 & 0 & -2 & 5\\
+0 & 4 & 2 & 7\\
+0 & 0 & 0 & 4\\
+\end{block}
+\end{blockarray}.
+\end{align*}
+\end{itemize}
+\end{frame}
+%%
+\begin{frame}
+\frametitle{Gauss-elimination}
+\begin{itemize}
+\item En algoritme, der benytter elementære rækkeoperationer. 
+\item Reducerer en matrix til reduceret trappeform. 
+\end{itemize}
+\begin{enumerate}
+\item Find første ikke-nulsøjle fra venstre i matricen.
+\item Ved rækkeombytning placeres en ikke-nulindgang øverst i pivotsøjlen.
+\item Skab nulindgange under pivotindgangen ved hjælp af rækkeudskiftning.
+\item Øverste række markeres som afsluttet og trin $1-4$, hvor afsluttede rækker ignoreres.
+Dette gentages, indtil alle rækker er markeret som afsluttet.
+\item Alle rækker med pivotindgange skaleres, så alle pivotindgange er lig $1$.
+\item Ved rækkeudskiftning sikres nu nulindgange over og under pivotindgangene.
+\end{enumerate}
+\end{frame}
+%%
+\begin{frame}
+\frametitle{Rang og nullitet}
+\begin{itemize}
+\item Rang$(A)$ er antallet af pivotsøjler i en matrix $A$. 
+\item Null$(A)$ er antallet er ikke-pivotsøjler i en matrix $A$. 
+\item I en $m \cross n$ matrix er Rang$(A)$ $+$ Null$(A) = n$. 
+% Kort!!
+\end{itemize}
+\end{frame}
