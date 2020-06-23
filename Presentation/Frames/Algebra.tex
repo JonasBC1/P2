@@ -8,16 +8,97 @@ Lineær algebra
 \begin{frame}
 \frametitle{Lineær Algebra}
 \begin{itemize}
-\item \textbf{$nr. 1$}
 \item Matrixsum og skalering.
 \item Transponering.
 \item Matrix-vektorprodukt og matrixmultiplikation.
 \item Linearkombinationer.
 \item Span.
 \item Lineær uafhængighed.
+\item Injektiv og surjektiv (bijektiv)
 \item Underrum.
 %Kort om Matrixsum og skalering, Transponering Matrix-vektorprodukt og matrixmultiplakation.
-\item Injektiv og surjektiv (bijektiv)
 \end{itemize}
 \end{frame}
 %%
+\begin{frame}
+\frametitle{Lineær Algebra}
+\begin{itemize}
+\item \textbf{Matrixsum, matrixsubtraktion, skalarmultiplikation: } \\ 
+\phantom{11}(A+B)\phantom{11111111}  (A-B)\phantom{1111111111111}  (cA)
+\item \textbf{Transponering: } \\ 
+\phantom{111}$(A^T)$ 
+\item \textbf{Matrix-vektorprodukt: } \\
+$(A\textbf{u}) =u_1\textbf{a}_1 + u_2\textbf{a}_2 + \cdots + u_n\textbf{a}_n.$ \\
+\item \textbf{Matrixmultiplikation: } \\
+$(AB) =
+\begin{bmatrix}
+A\textbf{b}_1 & A\textbf{b}_2 & \ldots & A\textbf{b}_p
+\end{bmatrix}\text{,}$
+%
+\item \textbf{Linearkombination: } \\
+$c_1\mathbf{u}_1+c_2\mathbf{u}_2+\ldots+c_k\mathbf{u}_k=\sum\limits_{i=1}^k c_i\mathbf{u}_i=\mathbf{v}$
+\end{itemize}
+\end{frame}
+%%
+\begin{frame}
+\frametitle{Lineær Algebra}
+\begin{itemize}
+\item \textbf{Span: } \\ 
+For en ikke-tom mængde af vektorer i $\R^n$ $S = \{\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k \}$ er \textbf{spannet} af $S$ mængden af alle linearkombinationer af $\mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k$. 
+Denne mængde noteres $\text{span} \{ S \}$ eller $\text{span}\{ \mathbf{u}_1, \mathbf{u}_2 , \ldots , \mathbf{u}_k \}$.
+\begin{figure}[h!]
+%
+\begin{tikzpicture} [scale=0.8]
+  \draw[thin,gray!40] (-2.5,-2.5) grid (2.5,2.5);
+  \draw[<->] (-2.5,0)--(2.5,0) node[right]{$x$};
+  \draw[<->] (0,-2.5)--(0,2.5) node[above]{$y$};
+  \draw[line width=2pt,AAUblue1,-stealth](0,0)--(-1,1) node[anchor=south west]{$\boldsymbol{\mathbf{u}_1}$};
+  \draw[line width=2pt,AAUred,-stealth](0,0)--(2,-2) node[anchor=north east]{$\boldsymbol{\mathbf{u}_2}$};
+  \draw[line width=2pt,AAUgreen,-stealth](0,0)--(1,2) node[anchor=north east]{$\boldsymbol{\mathbf{u}_3}$};
+\end{tikzpicture}
+%
+\caption{Grafisk repræsentation af vektorerne $\mathbf{u}_1, \mathbf{u}_2,  \mathbf{u}_3$.}
+\label{span_eks}
+\end{figure}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Lineær Algebra}
+\begin{itemize}
+\item \textbf{Lineær uafhængighed: } \\ 
+En mængde af vektorerne $\mathbf{u}_1, \mathbf{u}_2, \ldots , \mathbf{u}_k \in \R^n$ er \textbf{lineært uafhængige}, hvis der eksisterer skalarer $x_1, x_2, \ldots , x_k$, sådan at ligningen 
+\begin{align*}
+x_1\mathbf{u}_1 + x_2\mathbf{u}_2 + \cdots + x_k \mathbf{u}_k = \mathbf{0}
+\end{align*}
+kun har den trivielle løsning $x_1, x_2, \ldots, x_k = 0$.
+Ellers er vektorerne \textbf{lineært afhængige}.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Lineær Algebra}
+\begin{itemize}
+\item \textbf{Injektiv og surjektiv: } \\ 
+En funktion $f:\R^n \rightarrow \R^m$ siges at være \textbf{surjektiv}, hvis dens værdimængde er hele $\R^m$, tilsvarende at alle vektorer i $\R^m$ er en afbildning af mindst én vektor i $\R^n$.
+Funktionen siges at være \textbf{injektiv}, hvis hver entydig vektor i $\R^n$ har en entydig vektor i $\R^m$, som afbildning.
+Hvis en funktion er både injektiv og surjektiv, så er funktionen \textbf{bijektiv}.
+\end{itemize}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Lineær Algebra}
+\begin{itemize}
+\item \textbf{Underrum: } \\ 
+En mængde $\S$, bestående af vektorer i $\R^n$, er et \textbf{underrum} af $\R^n$, hvis den opfylder følgende betingelser:	
+\begin{itemize}
+\item $\textbf{0}\in \S$.
+\item $\textbf{u}$,$\textbf{v} \in \S \rightarrow \textbf{u}+\textbf{v} \in \S $.
+\item $\textbf{u} \in \S$ og $c$ er en skalar, så er $\textbf{u}c \in \S$.
+\end{itemize}
+\item \textbf{Basis: } \\ 
+Lad $\mathcal{U}$ være et ikke-nul-underrum af $\R^n$. 
+En \textbf{basis} for $\mathcal{U}$ er en lineært uafhængig mængde af \textbf{generatorer} for $\mathcal{U}$. \\ 
+\item \textbf{Dimension: } \\ 
+Mængden af vektorer, der udgør en basis for et givent ikke-nul-undderrum $V$ i $\R^n$, betegnes som \textbf{dimensionen} af $V$, hvilket noteres $\text{dim}(V)$. 
+\end{itemize}
+\end{frame}
+%
