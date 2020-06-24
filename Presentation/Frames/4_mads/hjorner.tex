@@ -47,13 +47,24 @@
 \frametitle{Ækvivalens mellem hjørner}
 \begin{itemize}
 \item Hjørnepunkt $\rightarrow$ ekstremumspunkt
+\begin{itemize}
+%
+\item Hjørnepunkt giver
 \end{itemize}
 %
-\begin{align*}
-\textbf{c}^T\textbf{u} &< \textbf{c}^T\textbf{v}\\
-\textbf{c}^T\textbf{u} &< \textbf{c}^T(\lambda\textbf{v} + (1-\lambda)\textbf{w})\\
-u &\neq \lambda\textbf{v} + (1-\lambda)\textbf{w}
-\end{align*}
+\centering
+$
+\begin{array}{ll}
+\textbf{c}^T\textbf{u} < \textbf{c}^T\textbf{v}, &\textbf{v}\in \mathcal{P}, \textbf{v} \neq \textbf{u}\\
+\textbf{c}^T\textbf{u} < \textbf{c}^T(\lambda\textbf{v} + (1-\lambda)\textbf{w}), &\textbf{v},\textbf{w} \in \mathcal{P}
+\end{array}
+$
+%
+\begin{itemize}
+\item $\textbf{u}$ er ikke en konveks kombination
+\end{itemize}
+\end{itemize}
+%
 \end{frame}
 %
 % (a) -> (c)
@@ -61,21 +72,25 @@ u &\neq \lambda\textbf{v} + (1-\lambda)\textbf{w}
 \begin{frame}
 \frametitle{Ækvivalens mellem hjørner}
 \begin{itemize}
-\item Ikke basal mulig løsning $\rightarrow$ ikke ekstremumspunkt
+\item Ekstremumspunkt $\rightarrow$ basal mulig løsning
 %
 \begin{itemize}
-\item Ekstremumspunkt $\rightarrow$ basal mulig løsning
+\item Under $n$ aktive lineært uafhængige betingelser
+\item $\textbf{d}$ ortogonal på underrummet
+\item Lille $\varepsilon$
 \end{itemize}
-\end{itemize}
+
 %
-\begin{align*}
-\textbf{v} &= \textbf{u} + \varepsilon\textbf{d}\\
-\textbf{w} &= \textbf{u} - \varepsilon\textbf{d}\\
-\varepsilon|\textbf{a}_i^T\textbf{d}| &< \textbf{a}_i^T\textbf{u}-b_i\\
-\textbf{a}_i^T\textbf{v} &> b_i, i\notin I\\
-\textbf{a}_i^T\textbf{w} &> b_i, i\notin I\\
-\textbf{u} &= \frac{1}{2}\textbf{v} + \frac{1}{2}\textbf{w}
-\end{align*}
+\centering
+$
+\begin{array}{ll}
+\textbf{a}_i^T(\textbf{u} \pm \varepsilon \textbf{d}) > b_i, &i\notin I\\
+\end{array}
+$
+\begin{itemize}
+\item $\textbf{u}$ konveks kombination
+\end{itemize}
+\end{itemize}
 %
 \end{frame}
 %
@@ -85,15 +100,21 @@ u &\neq \lambda\textbf{v} + (1-\lambda)\textbf{w}
 \frametitle{Ækvivalens mellem hjørner}
 \begin{itemize}
 \item Basal mulig løsning $\rightarrow$ hjørnepunkt
+\begin{itemize}
+\item Lav $\textbf{c} = \sum_{i\in I} \textbf{a}_i$
 \end{itemize}
 %
 \begin{align*}
-\textbf{c} &= \sum_{i\in I} \textbf{a}_i\\
 \textbf{c}^T\textbf{u} &= \sum_{i\in I} \textbf{a}_i^T\textbf{u} = 
- b_i\\
-\textbf{c}^T\textbf{v} &= \sum_{i\in I} \textbf{a}_i^T\textbf{u} \geq 
- b_i\\
+ \sum_{i\in I} b_i\\
+\textbf{c}^T\textbf{v} &= \sum_{i\in I} \textbf{a}_i^T\textbf{v} > 
+ \sum_{i\in I} b_i, &\textbf{v}\in \mathcal{P}, \textbf{v} \neq \textbf{u}
 \end{align*}
+%
+\begin{itemize}
+\item $\textbf{u}$ alene i hyperplanet $\textbf{c}^T\textbf{x} = \sum_{i\in I} b_i$
+\end{itemize}
+\end{itemize}
 \end{frame}
 %
 %
@@ -101,14 +122,18 @@ u &\neq \lambda\textbf{v} + (1-\lambda)\textbf{w}
 \begin{frame}
 \frametitle{Løsning i hjørne}
 \begin{itemize}
-\item $\textbf{u} \in Q$ er optimale løsninger til $\mathcal{P}$
-\item Antag $\textbf{u}$ ikke er ekstremumspunkt
-\end{itemize}
+\item Mindst ét ekstremumspunkt og optimal løsning
+\item $Q$ indeholder optimale løsninger i $\mathcal{P}$
+\item $\textbf{u}$ optimale løsninger til $\mathcal{P}$ og ekstremumspunkt til $Q$
+\item Antag $\textbf{u}$ ikke er ekstremumspunkt til $\mathcal{P}$
 %
 \begin{align*}
-\textbf{u} &= \lambda\textbf{u} + (1-\lambda)\textbf{w}\\
-\textbf{c}^T\textbf{u} &\geq y\\
-\textbf{c}^T\textbf{w} &\geq y\\
-\textbf{c}^T\textbf{u} &= \textbf{c}^T\textbf{w} = y
+\textbf{u} &= \lambda\textbf{v} + (1-\lambda)\textbf{w}\\
+\textbf{c}^T\textbf{v} &\geq y, \textbf{v} \in \mathcal{P}\\
+\textbf{c}^T\textbf{v} &= \textbf{c}^T\textbf{w} = y
 \end{align*}
+%
+\item $\textbf{u}$ ikke ekstremumspunkt i $Q$
+%
+\end{itemize}
 \end{frame}
